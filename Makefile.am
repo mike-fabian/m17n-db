@@ -30,7 +30,7 @@ pkgdata_DATA = \
 	mdb.xml mdb.rng
 
 EXTRA_DIST = config.rpath mkinstalldirs m4/ChangeLog \
-	mdb.dir \
+	mdb.xml \
 	${MISC_TABLE} \
 	BLOCK.tab \
 	${UNIDATA} \

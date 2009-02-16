@@ -1,0 +1,654 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>si</language>
+    <name>wijesekera-preedit-alt</name>
+  </tags>
+  <description>Sinhala input method based on SLS 1134 Rev. 2:2004.
+  &lt;http://www.fonts.lk/doc/sin-kbd-layout4.pdf&gt;
+This input method uses preedit rather than surrounding text.
+</description>
+  <title>සි</title>
+  <map-list>
+    <map id="map-consonant">
+      <rule>
+        <keyseq keys="l"/>
+        <insert string="ක"/>
+      </rule>
+      <rule>
+        <keyseq keys="L"/>
+        <insert string="ඛ"/>
+      </rule>
+      <rule>
+        <keyseq keys="."/>
+        <insert string="ග"/>
+      </rule>
+      <rule>
+        <keyseq keys="&gt;"/>
+        <insert string="ඝ"/>
+      </rule>
+      <rule>
+        <keyseq keys="X"/>
+        <insert string="ඞ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-.</key-event>
+        </keyseq>
+        <insert string="ඟ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <character-code>0x2E</character-code>
+          <key-event>A-z</key-event>
+        </keyseq>
+        <insert string="ඟ"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+        <insert string="ච"/>
+      </rule>
+      <rule>
+        <keyseq keys="P"/>
+        <insert string="ඡ"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <insert string="ජ"/>
+      </rule>
+      <rule>
+        <keyseq keys="C"/>
+        <insert string="ඣ"/>
+      </rule>
+      <rule>
+        <keyseq keys="["/>
+        <insert string="ඤ"/>
+      </rule>
+      <rule>
+        <keyseq keys="{"/>
+        <insert string="ඥ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-c</key-event>
+        </keyseq>
+        <insert string="ඦ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <character-code>0x63</character-code>
+          <key-event>A-z</key-event>
+        </keyseq>
+        <insert string="ඦ"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+        <insert string="ට"/>
+      </rule>
+      <rule>
+        <keyseq keys="G"/>
+        <insert string="ඨ"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <insert string="ඩ"/>
+      </rule>
+      <rule>
+        <keyseq keys="V"/>
+        <insert string="ඪ"/>
+      </rule>
+      <rule>
+        <keyseq keys="K"/>
+        <insert string="ණ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-v</key-event>
+        </keyseq>
+        <insert string="ඬ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <character-code>0x76</character-code>
+          <key-event>A-z</key-event>
+        </keyseq>
+        <insert string="ඬ"/>
+      </rule>
+      <rule>
+        <keyseq keys=";"/>
+        <insert string="ත"/>
+      </rule>
+      <rule>
+        <keyseq keys=":"/>
+        <insert string="ථ"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert string="ද"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <insert string="ධ"/>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+        <insert string="න"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-o</key-event>
+        </keyseq>
+        <insert string="ඳ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <character-code>0x6F</character-code>
+          <key-event>A-z</key-event>
+        </keyseq>
+        <insert string="ඳ"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+        <insert string="ප"/>
+      </rule>
+      <rule>
+        <keyseq keys="M"/>
+        <insert string="ඵ"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <insert string="බ"/>
+      </rule>
+      <rule>
+        <keyseq keys="N"/>
+        <insert string="භ"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert string="ම"/>
+      </rule>
+      <rule>
+        <keyseq keys="U"/>
+        <insert string="ඹ"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+        <insert string="ය"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+        <insert string="ර"/>
+      </rule>
+      <rule>
+        <keyseq keys=","/>
+        <insert string="ල"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+        <insert string="ව"/>
+      </rule>
+      <rule>
+        <keyseq keys="Y"/>
+        <insert string="ශ"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+        <insert string="ෂ"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert string="ස"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <insert string="හ"/>
+      </rule>
+      <rule>
+        <keyseq keys="&lt;"/>
+        <insert string="ළ"/>
+      </rule>
+      <rule>
+        <keyseq keys="F"/>
+        <insert string="ෆ"/>
+      </rule>
+      <rule>
+        <keyseq keys="&lt;q"/>
+        <insert string="ළු"/>
+      </rule>
+      <rule>
+        <keyseq keys="&lt;qE"/>
+        <insert string="ළූ"/>
+      </rule>
+    </map>
+    <map id="map-others">
+      <rule>
+        <keyseq keys="x"/>
+        <insert string="ං"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-x</key-event>
+        </keyseq>
+        <insert string="ඃ"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+        <insert string="අ"/>
+      </rule>
+      <rule>
+        <keyseq keys="wd"/>
+        <insert string="ආ"/>
+      </rule>
+      <rule>
+        <keyseq keys="we"/>
+        <insert string="ඇ"/>
+      </rule>
+      <rule>
+        <keyseq keys="wE"/>
+        <insert string="ඈ"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <insert string="ඉ"/>
+      </rule>
+      <rule>
+        <keyseq keys="B"/>
+        <insert string="ඊ"/>
+      </rule>
+      <rule>
+        <keyseq keys="W"/>
+        <insert string="උ"/>
+      </rule>
+      <rule>
+        <keyseq keys="WA"/>
+        <insert string="ඌ"/>
+      </rule>
+      <rule>
+        <keyseq keys="R"/>
+        <insert string="ඍ"/>
+      </rule>
+      <rule>
+        <keyseq keys="RD"/>
+        <insert string="ඎ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-,</key-event>
+        </keyseq>
+        <insert string="ඏ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-,</key-event>
+          <character-code>0x41</character-code>
+        </keyseq>
+        <insert string="ඐ"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+        <insert string="එ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ta"/>
+        <insert string="ඒ"/>
+      </rule>
+      <rule>
+        <keyseq keys="T"/>
+        <insert string="ඔ"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ta"/>
+        <insert string="ඕ"/>
+      </rule>
+      <rule>
+        <keyseq keys="TA"/>
+        <insert string="ඖ"/>
+      </rule>
+      <rule>
+        <keyseq keys="a"/>
+        <insert string="්"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <insert string="ා"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert string="ැ"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+        <insert string="ෑ"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+        <insert string="ු"/>
+      </rule>
+      <rule>
+        <keyseq keys="Q"/>
+        <insert string="ූ"/>
+      </rule>
+      <rule>
+        <keyseq keys="D"/>
+        <insert string="ෘ"/>
+      </rule>
+      <rule>
+        <keyseq keys="A"/>
+        <insert string="ෟ"/>
+      </rule>
+      <rule>
+        <keyseq keys="DD"/>
+        <insert string="ෲ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-a</key-event>
+        </keyseq>
+        <insert string="ෳ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-'</key-event>
+        </keyseq>
+        <insert string="෴"/>
+      </rule>
+      <rule>
+        <keyseq keys="J"/>
+        <insert string="ළු"/>
+      </rule>
+      <rule>
+        <keyseq keys="JE"/>
+        <insert string="ළූ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>S- </key-event>
+        </keyseq>
+        <insert string=" "/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A- </key-event>
+        </keyseq>
+        <insert string="‌"/>
+      </rule>
+      <rule>
+        <keyseq keys="H"/>
+        <insert string="්‍ය"/>
+      </rule>
+      <rule>
+        <keyseq keys="`"/>
+        <insert string="්‍ර"/>
+      </rule>
+      <rule>
+        <keyseq keys="~"/>
+        <insert string="ර්‍"/>
+      </rule>
+      <rule>
+        <keyseq keys="]"/>
+        <insert string=";"/>
+      </rule>
+      <rule>
+        <keyseq keys="}"/>
+        <insert string=":"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;"/>
+        <insert string="."/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;"/>
+        <insert string=","/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+        <insert string="&apos;"/>
+      </rule>
+      <rule>
+        <keyseq keys="Z"/>
+        <insert string="&quot;"/>
+      </rule>
+    </map>
+    <map id="map-is-pilla">
+      <rule>
+        <keyseq keys="s"/>
+        <insert string="ි"/>
+      </rule>
+      <rule>
+        <keyseq keys="S"/>
+        <insert string="ී"/>
+      </rule>
+    </map>
+    <map id="map-kombuva">
+      <rule>
+        <keyseq keys="f"/>
+        <insert string="ෙ"/>
+      </rule>
+    </map>
+    <map id="map-yansaya">
+      <rule>
+        <keyseq keys="H"/>
+      </rule>
+    </map>
+    <map id="map-rakaransaya">
+      <rule>
+        <keyseq keys="`"/>
+      </rule>
+    </map>
+    <map id="map-repaya">
+      <rule>
+        <keyseq keys="~"/>
+      </rule>
+    </map>
+    <map id="map-eyanna">
+      <rule>
+        <keyseq keys="w"/>
+      </rule>
+    </map>
+    <map id="map-al-lakuna">
+      <rule>
+        <keyseq keys="a"/>
+      </rule>
+    </map>
+    <map id="map-aela-pilla">
+      <rule>
+        <keyseq keys="d"/>
+      </rule>
+    </map>
+    <map id="map-gayanukitta">
+      <rule>
+        <keyseq keys="A"/>
+      </rule>
+    </map>
+    <map id="map-join">
+      <rule>
+        <keyseq keys="\"/>
+      </rule>
+    </map>
+    <map id="map-backspace">
+      <rule>
+        <keyseq>
+          <key-event>BackSpace</key-event>
+        </keyseq>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-consonant">
+        <shift-to id="state-consonant"/>
+      </branch>
+      <branch branch-selecting-map="map-others"/>
+      <branch branch-selecting-map="map-is-pilla">
+        <shift-to id="state-is-pilla"/>
+      </branch>
+      <branch branch-selecting-map="map-kombuva">
+        <shift-to id="state-kombuva"/>
+      </branch>
+    </state>
+    <state id="state-consonant">
+      <branch branch-selecting-map="map-rakaransaya">
+        <insert character="0x0DCA"/>
+        <insert character="0x200D"/>
+        <insert character="0x0DBB"/>
+      </branch>
+      <branch branch-selecting-map="map-yansaya">
+        <insert character="0x0DCA"/>
+        <insert character="0x200D"/>
+        <insert character="0x0DBA"/>
+      </branch>
+      <branch branch-selecting-map="map-repaya">
+        <move-to-marker position="@previous"/>
+        <insert character="0x0DBB"/>
+        <insert character="0x0DCA"/>
+        <insert character="0x200D"/>
+        <move-to-marker position="@next"/>
+      </branch>
+      <branch branch-selecting-map="map-is-pilla">
+        <shift-to id="state-is-pilla"/>
+      </branch>
+      <branch branch-selecting-map="map-join">
+        <insert character="0x0DCA"/>
+        <insert character="0x200D"/>
+        <shift-to id="state-consonant--join"/>
+      </branch>
+    </state>
+    <state id="state-consonant--join">
+      <branch branch-selecting-map="map-consonant">
+        <shift-to id="state-consonant"/>
+      </branch>
+      <branch branch-selecting-map="map-backspace">
+        <undo/>
+      </branch>
+    </state>
+    <state id="state-is-pilla">
+      <branch branch-selecting-map="map-rakaransaya">
+        <move-to-marker position="@previous"/>
+        <insert character="0x0DCA"/>
+        <insert character="0x200D"/>
+        <insert character="0x0DBB"/>
+        <shift-to id="state-init"/>
+      </branch>
+    </state>
+    <state id="state-kombuva">
+      <branch branch-selecting-map="map-eyanna">
+        <delete-to-marker position="@first"/>
+        <insert character="0x0D93"/>
+        <shift-to id="state-init"/>
+      </branch>
+      <branch branch-selecting-map="map-al-lakuna">
+        <delete-to-marker position="@first"/>
+        <insert character="0x0DDA"/>
+        <shift-to id="state-init"/>
+      </branch>
+      <branch branch-selecting-map="map-kombuva">
+        <delete-to-marker position="@first"/>
+        <insert character="0x0DDB"/>
+        <shift-to id="state-combu_deka"/>
+      </branch>
+      <branch branch-selecting-map="map-aela-pilla">
+        <delete-to-marker position="@first"/>
+        <insert character="0x0DDC"/>
+        <shift-to id="state-kombuva_haa_aela-pilla"/>
+      </branch>
+      <branch branch-selecting-map="map-gayanukitta">
+        <delete-to-marker position="@first"/>
+        <insert character="0x0DDE"/>
+        <shift-to id="state-init"/>
+      </branch>
+      <branch branch-selecting-map="map-consonant">
+        <move-to-marker position="@1"/>
+        <delete-to-marker position="@0"/>
+        <move-to-marker position="@last"/>
+        <insert character="0x0DD9"/>
+        <shift-to id="state-consonant--kombuva"/>
+      </branch>
+      <branch branch-selecting-map="map-backspace">
+        <undo/>
+      </branch>
+    </state>
+    <state id="state-combu_deka">
+      <branch branch-selecting-map="map-consonant">
+        <move-to-marker position="@1"/>
+        <delete-to-marker position="@0"/>
+        <move-to-marker position="@last"/>
+        <insert character="0x0DDB"/>
+        <shift-to id="state-init"/>
+      </branch>
+      <branch branch-selecting-map="map-backspace">
+        <undo/>
+      </branch>
+    </state>
+    <state id="state-kombuva_haa_aela-pilla">
+      <branch branch-selecting-map="map-al-lakuna">
+        <delete-to-marker position="@first"/>
+        <insert character="0x0DDD"/>
+        <shift-to id="state-init"/>
+      </branch>
+      <branch branch-selecting-map="map-backspace">
+        <undo/>
+      </branch>
+    </state>
+    <state id="state-consonant--kombuva">
+      <branch branch-selecting-map="map-al-lakuna">
+        <delete-to-marker position="@previous"/>
+        <insert character="0x0DDA"/>
+        <shift-to id="state-init"/>
+      </branch>
+      <branch branch-selecting-map="map-aela-pilla">
+        <delete-to-marker position="@previous"/>
+        <insert character="0x0DDC"/>
+        <shift-to id="state-consonant--kombuva_haa_aela-pilla"/>
+      </branch>
+      <branch branch-selecting-map="map-gayanukitta">
+        <delete-to-marker position="@previous"/>
+        <insert character="0x0DDE"/>
+        <shift-to id="state-init"/>
+      </branch>
+      <branch branch-selecting-map="map-yansaya">
+        <move-to-marker position="@previous"/>
+        <insert character="0x0DCA"/>
+        <insert character="0x200D"/>
+        <insert character="0x0DBA"/>
+        <move-to-marker position="@last"/>
+      </branch>
+      <branch branch-selecting-map="map-rakaransaya">
+        <move-to-marker position="@previous"/>
+        <insert character="0x0DCA"/>
+        <insert character="0x200D"/>
+        <insert character="0x0DBB"/>
+        <move-to-marker position="@last"/>
+      </branch>
+      <branch branch-selecting-map="map-join">
+        <shift-to id="state-consonant--join--kombuva"/>
+      </branch>
+      <branch branch-selecting-map="map-backspace">
+        <undo/>
+      </branch>
+    </state>
+    <state id="state-consonant--kombuva_haa_aela-pilla">
+      <branch branch-selecting-map="map-al-lakuna">
+        <delete-to-marker position="@previous"/>
+        <insert character="0x0DDD"/>
+        <shift-to id="state-init"/>
+      </branch>
+      <branch branch-selecting-map="map-backspace">
+        <undo/>
+      </branch>
+    </state>
+    <state id="state-consonant--join--kombuva">
+      <branch branch-selecting-map="map-consonant">
+        <move-to-marker position="@previous"/>
+        <delete-to-marker position="@previous"/>
+        <insert character="0x0DCA"/>
+        <insert character="0x200D"/>
+        <move-to-marker position="@next"/>
+        <insert character="0x0DD9"/>
+        <shift-to id="state-consonant--kombuva"/>
+      </branch>
+      <branch branch-selecting-map="map-backspace">
+        <undo/>
+      </branch>
+    </state>
+  </state-list>
+</input-method>

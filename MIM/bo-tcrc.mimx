@@ -1,0 +1,992 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>bo</language>
+    <name>tcrc</name>
+  </tags>
+  <description>Tibetan input method using the TCRC keyboard layout.
+For more information, see the page:
+  http://www.tibet.net/download/tcrckbd.rtf
+</description>
+  <title>ཀ</title>
+  <map-list>
+    <map id="map-map">
+      <rule>
+        <keyseq keys="!"/>
+        <insert string="༑"/>
+      </rule>
+      <rule>
+        <keyseq keys="@"/>
+        <insert string="༄"/>
+      </rule>
+      <rule>
+        <keyseq keys="#"/>
+        <insert string="༄༅"/>
+      </rule>
+      <rule>
+        <keyseq keys="^"/>
+        <insert string="྾"/>
+      </rule>
+      <rule>
+        <keyseq keys="&amp;"/>
+        <insert string="༼"/>
+      </rule>
+      <rule>
+        <keyseq keys="*"/>
+        <insert string="༽"/>
+      </rule>
+      <rule>
+        <keyseq keys="_"/>
+        <insert string="ཱྀ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+"/>
+        <insert string="ཾ"/>
+      </rule>
+      <rule>
+        <keyseq keys="|"/>
+        <insert string="༈"/>
+      </rule>
+      <rule>
+        <keyseq keys="`"/>
+        <insert string="༌"/>
+      </rule>
+      <rule>
+        <keyseq keys="1"/>
+        <insert string="༡"/>
+      </rule>
+      <rule>
+        <keyseq keys="2"/>
+        <insert string="༢"/>
+      </rule>
+      <rule>
+        <keyseq keys="3"/>
+        <insert string="༣"/>
+      </rule>
+      <rule>
+        <keyseq keys="4"/>
+        <insert string="༤"/>
+      </rule>
+      <rule>
+        <keyseq keys="5"/>
+        <insert string="༥"/>
+      </rule>
+      <rule>
+        <keyseq keys="6"/>
+        <insert string="༦"/>
+      </rule>
+      <rule>
+        <keyseq keys="7"/>
+        <insert string="༧"/>
+      </rule>
+      <rule>
+        <keyseq keys="8"/>
+        <insert string="༨"/>
+      </rule>
+      <rule>
+        <keyseq keys="9"/>
+        <insert string="༩"/>
+      </rule>
+      <rule>
+        <keyseq keys="0"/>
+        <insert string="༠"/>
+      </rule>
+      <rule>
+        <keyseq keys="-"/>
+        <insert string="ྀ"/>
+      </rule>
+      <rule>
+        <keyseq keys="="/>
+        <insert string="ྃ"/>
+      </rule>
+      <rule>
+        <keyseq keys="\"/>
+        <insert string="༔"/>
+      </rule>
+      <rule>
+        <keyseq keys="Q"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྛ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཋ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="W"/>
+        <insert string="ྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+        <insert string="ཻ"/>
+      </rule>
+      <rule>
+        <keyseq keys="R"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྲ྄"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ར྄"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="T"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྠ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཐ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="Y"/>
+        <insert string="-"/>
+      </rule>
+      <rule>
+        <keyseq keys="U"/>
+        <insert string="ཱུ"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+        <insert string="ཱི"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <insert string="ཽ"/>
+      </rule>
+      <rule>
+        <keyseq keys="P"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྥ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཕ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="{"/>
+        <insert string="`"/>
+      </rule>
+      <rule>
+        <keyseq keys="}"/>
+        <insert string="+"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྚ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཊ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྭ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཝ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert string="ེ"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྲ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ར"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྟ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཏ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྱ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཡ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert string="ུ"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert string="ི"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert string="ོ"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྤ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="པ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="["/>
+        <insert string="&apos;"/>
+      </rule>
+      <rule>
+        <keyseq keys="]"/>
+        <insert string=","/>
+      </rule>
+      <rule>
+        <keyseq keys="A"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྸ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཨ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="S"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྴ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཤ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="D"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྫ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཛ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="F"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྡྷ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="དྷ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="G"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྒྷ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="གྷ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="H"/>
+        <insert string="ྷ"/>
+      </rule>
+      <rule>
+        <keyseq keys="J"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྫྷ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཛྷ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="K"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྑ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཁ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="L"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ླ྄"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ལ྄"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys=":"/>
+        <insert string="ཿ"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;"/>
+        <insert string="ཱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="a"/>
+        <insert string="྄"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྶ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ས"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྡ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ད"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="f"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྔ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ང"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྒ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ག"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྷ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཧ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྗ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཇ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྐ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཀ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ླ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ལ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys=";"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྜྷ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཌྷ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྰ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="འ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="Z"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྮ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཞ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="X"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྪ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཚ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="C"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྖ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཆ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="V"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྞ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཎ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="B"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྦྷ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="བྷ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="N"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྙ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཉ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="M"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྵ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཥ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="&lt;"/>
+        <insert string="ླ"/>
+      </rule>
+      <rule>
+        <keyseq keys="&gt;"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྲ྄"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཪ྄"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="?"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྶ྄"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ས྄"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྯ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཟ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྩ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཙ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྕ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཅ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྜ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ཌ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྦ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="བ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྣ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="ན"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0F84</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert string="ྨ"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="མ"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="."/>
+        <insert string="ྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys=","/>
+        <insert string="ྱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="/"/>
+        <conditional>
+          <case>
+            <expr operator="|">
+              <expr operator="=">
+                <predefined-nth-previous-or-following-character position="-1"/>
+                <int-val>0x0F44</int-val>
+              </expr>
+              <expr operator="=">
+                <predefined-nth-previous-or-following-character position="-1"/>
+                <int-val>0x0F94</int-val>
+              </expr>
+            </expr>
+            <insert string="་"/>
+          </case>
+        </conditional>
+        <insert string="།"/>
+      </rule>
+      <rule>
+        <keyseq keys=" "/>
+        <conditional>
+          <case>
+            <expr operator="&amp;">
+              <expr operator="|">
+                <expr operator="=">
+                  <predefined-nth-previous-or-following-character position="-2"/>
+                  <int-val>0x0F42</int-val>
+                </expr>
+                <expr operator="=">
+                  <predefined-nth-previous-or-following-character position="-2"/>
+                  <int-val>0x0F92</int-val>
+                </expr>
+              </expr>
+              <expr operator="=">
+                <predefined-nth-previous-or-following-character position="-1"/>
+                <int-val>0x0F0B</int-val>
+              </expr>
+            </expr>
+            <delete-n-characters n="-1"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert string="་"/>
+          </case>
+        </conditional>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-map"/>
+    </state>
+  </state-list>
+</input-method>

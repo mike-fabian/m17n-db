@@ -1,0 +1,273 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>en</language>
+    <name>ispell</name>
+  </tags>
+  <description>Input method for English using ISPELL as a spell checker.
+It uses the loadable module libmimx-ispell.so to communicate with
+ISPELL program.  You can check the spelll of typed word by TAB
+key.  Not for an actual use, but for demonstrating what can be
+done by the m17n input method.
+</description>
+  <title>ISPELL</title>
+  <module-list>
+    <module id="module-libmimx-ispell">
+      <function id="function-ispell_word"/>
+      <function id="function-init"/>
+      <function id="function-fini"/>
+    </module>
+  </module-list>
+  <map-list>
+    <map id="map-alpha">
+      <rule>
+        <keyseq keys="A"/>
+        <insert string="A"/>
+      </rule>
+      <rule>
+        <keyseq keys="B"/>
+        <insert string="B"/>
+      </rule>
+      <rule>
+        <keyseq keys="C"/>
+        <insert string="C"/>
+      </rule>
+      <rule>
+        <keyseq keys="D"/>
+        <insert string="D"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+        <insert string="E"/>
+      </rule>
+      <rule>
+        <keyseq keys="F"/>
+        <insert string="F"/>
+      </rule>
+      <rule>
+        <keyseq keys="G"/>
+        <insert string="G"/>
+      </rule>
+      <rule>
+        <keyseq keys="H"/>
+        <insert string="H"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+        <insert string="I"/>
+      </rule>
+      <rule>
+        <keyseq keys="J"/>
+        <insert string="J"/>
+      </rule>
+      <rule>
+        <keyseq keys="K"/>
+        <insert string="K"/>
+      </rule>
+      <rule>
+        <keyseq keys="L"/>
+        <insert string="L"/>
+      </rule>
+      <rule>
+        <keyseq keys="M"/>
+        <insert string="M"/>
+      </rule>
+      <rule>
+        <keyseq keys="N"/>
+        <insert string="N"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <insert string="O"/>
+      </rule>
+      <rule>
+        <keyseq keys="P"/>
+        <insert string="P"/>
+      </rule>
+      <rule>
+        <keyseq keys="Q"/>
+        <insert string="Q"/>
+      </rule>
+      <rule>
+        <keyseq keys="R"/>
+        <insert string="R"/>
+      </rule>
+      <rule>
+        <keyseq keys="S"/>
+        <insert string="S"/>
+      </rule>
+      <rule>
+        <keyseq keys="T"/>
+        <insert string="T"/>
+      </rule>
+      <rule>
+        <keyseq keys="U"/>
+        <insert string="U"/>
+      </rule>
+      <rule>
+        <keyseq keys="V"/>
+        <insert string="V"/>
+      </rule>
+      <rule>
+        <keyseq keys="W"/>
+        <insert string="W"/>
+      </rule>
+      <rule>
+        <keyseq keys="X"/>
+        <insert string="X"/>
+      </rule>
+      <rule>
+        <keyseq keys="Y"/>
+        <insert string="Y"/>
+      </rule>
+      <rule>
+        <keyseq keys="Z"/>
+        <insert string="Z"/>
+      </rule>
+      <rule>
+        <keyseq keys="a"/>
+        <insert string="a"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <insert string="b"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <insert string="c"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <insert string="d"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert string="e"/>
+      </rule>
+      <rule>
+        <keyseq keys="f"/>
+        <insert string="f"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+        <insert string="g"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+        <insert string="h"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert string="i"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+        <insert string="j"/>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+        <insert string="k"/>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+        <insert string="l"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+        <insert string="m"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <insert string="n"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert string="o"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+        <insert string="p"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+        <insert string="q"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+        <insert string="r"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+        <insert string="s"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+        <insert string="t"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert string="u"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <insert string="v"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+        <insert string="w"/>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+        <insert string="x"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <insert string="y"/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+        <insert string="z"/>
+      </rule>
+    </map>
+    <map id="map-ispell">
+      <rule>
+        <keyseq>
+          <key-event>Tab</key-event>
+        </keyseq>
+        <call id="module-libmimx-ispell">
+          <function-reference id="function-ispell_word"/>
+	  <argument type="symbol"><variable-reference id="init"/></argument>
+          <argument type="symbol"><variable-reference id="select"/></argument>
+        </call>
+      </rule>
+    </map>
+    <map id="map-change">
+      <rule>
+        <keyseq>
+          <key-event>Left</key-event>
+        </keyseq>
+        <select selector="@previous"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>Right</key-event>
+        </keyseq>
+        <select selector="@next"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-alpha">
+        <shift-to id="state-alpha"/>
+      </branch>
+    </state>
+    <state id="state-alpha">
+      <branch branch-selecting-map="map-alpha"/>
+      <branch branch-selecting-map="map-ispell"/>
+    </state>
+    <state id="state-select">
+      <branch branch-selecting-map="map-change"/>
+    </state>
+  </state-list>
+</input-method>

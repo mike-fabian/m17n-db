@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The m17n database directory -->
+<grammar ns="http://www.m17n.org/mdb" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <start>
+    <element name="database">
+      <element name="doxygen">
+        <element name="page">
+          <attribute name="id">
+            <data type="token"/>
+          </attribute>
+          <text/>
+          <zeroOrMore>
+            <element name="section">
+              <attribute name="id">
+                <data type="ID"/>
+              </attribute>
+              <text/>
+            </element>
+          </zeroOrMore>
+        </element>
+      </element>
+      <zeroOrMore>
+        <element name="item">
+          <optional>
+            <attribute name="key1">
+              <data type="token"/>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute name="key2">
+              <data type="token"/>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute name="key3">
+              <data type="token"/>
+            </attribute>
+          </optional>
+          <attribute name="sectionid">
+            <data type="IDREF"/>
+          </attribute>
+          <optional>
+            <element name="description">
+              <text/>
+            </element>
+          </optional>
+          <choice>
+            <group>
+              <attribute name="key0">
+                <value>char-table</value>
+              </attribute>
+              <element name="source">
+                <element name="filename">
+                  <data type="string"/>
+                </element>
+              </element>
+            </group>
+            <group>
+              <attribute name="key0">
+                <choice>
+                  <data type="token">
+                    <param name="maxLength">9</param>
+                  </data>
+                  <data type="token">
+                    <param name="minLength">11</param>
+                  </data>
+                  <data type="token">
+                    <param name="pattern">[^c][^h][^a][^r][^\-][^t][^a][^b][^l][^e]</param>
+                  </data>
+                </choice>
+              </attribute>
+              <element name="source">
+                <element name="filename">
+                  <data type="string"/>
+                </element>
+                <choice>
+                  <element name="format">
+                    <value>plist</value>
+                  </element>
+                  <group>
+                    <element name="format">
+                      <value>xml</value>
+                    </element>
+                    <element name="schema">
+                      <attribute name="type">
+                        <choice>
+                          <value>dtd</value>
+                          <value>xml-schema</value>
+                          <value>relaxng</value>
+                          <value>schematron</value>
+                        </choice>
+                      </attribute>
+                      <element name="schema-filename">
+                        <data type="string"/>
+                      </element>
+                    </element>
+                  </group>
+                </choice>
+              </element>
+            </group>
+          </choice>
+          <optional>
+            <element name="properties">
+              <optional>
+                <ref name="version"/>
+              </optional>
+              <optional>
+                <ref name="font"/>
+              </optional>
+            </element>
+          </optional>
+        </element>
+      </zeroOrMore>
+    </element>
+  </start>
+  <define name="version">
+    <element name="version">
+      <element name="major-version">
+        <data type="integer">
+          <param name="pattern">[0-9][0-9]</param>
+        </data>
+      </element>
+      <element name="minor-version">
+        <data type="integer">
+          <param name="pattern">[0-9][0-9]</param>
+        </data>
+      </element>
+      <element name="patch-level">
+        <data type="integer">
+          <param name="pattern">[0-9][0-9]</param>
+        </data>
+      </element>
+    </element>
+  </define>
+  <define name="font">
+    <element name="font">
+      <optional>
+        <attribute name="foundry">
+          <data type="token"/>
+        </attribute>
+        <attribute name="family">
+          <data type="token"/>
+        </attribute>
+        <optional>
+          <attribute name="weight">
+            <data type="token"/>
+          </attribute>
+          <optional>
+            <attribute name="style">
+              <data type="token"/>
+            </attribute>
+            <optional>
+              <attribute name="stretch">
+                <data type="token"/>
+              </attribute>
+              <optional>
+                <attribute name="adstyle">
+                  <data type="token"/>
+                </attribute>
+              </optional>
+            </optional>
+          </optional>
+        </optional>
+      </optional>
+      <attribute name="registry">
+        <data type="token"/>
+      </attribute>
+      <optional>
+        <ref name="otf-specification"/>
+      </optional>
+      <optional>
+        <element name="lang-specification">
+          <data type="token">
+            <param name="minLength">2</param>
+            <param name="maxLength">3</param>
+          </data>
+        </element>
+      </optional>
+    </element>
+  </define>
+  <define name="otf-specification">
+    <element name="otf">
+      <attribute name="script"/>
+      <optional>
+        <attribute name="langsys"/>
+      </optional>
+      <optional>
+        <element name="gsub-features">
+          <oneOrMore>
+            <choice>
+              <element name="positive">
+                <data type="string">
+                  <param name="length">4</param>
+                </data>
+              </element>
+              <element name="negative">
+                <data type="string">
+                  <param name="length">4</param>
+                </data>
+              </element>
+            </choice>
+          </oneOrMore>
+        </element>
+      </optional>
+      <optional>
+        <element name="gpos-features">
+          <oneOrMore>
+            <choice>
+              <element name="positive">
+                <data type="string">
+                  <param name="length">4</param>
+                </data>
+              </element>
+              <element name="negative">
+                <data type="string">
+                  <param name="length">4</param>
+                </data>
+              </element>
+            </choice>
+          </oneOrMore>
+        </element>
+      </optional>
+    </element>
+  </define>
+</grammar>

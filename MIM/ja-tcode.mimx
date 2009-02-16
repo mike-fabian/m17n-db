@@ -1,0 +1,5435 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>ja</language>
+    <name>tcode</name>
+  </tags>
+  <description>Input method for Japanese with TCODE.
+</description>
+  <title>TC</title>
+  <map-list>
+    <map id="map-generic">
+      <rule>
+        <keyseq keys="q1"/>
+        <insert string="ヮ"/>
+      </rule>
+      <rule>
+        <keyseq keys="w1"/>
+        <insert string="ヰ"/>
+      </rule>
+      <rule>
+        <keyseq keys="e1"/>
+        <insert string="ヱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="r1"/>
+        <insert string="ヵ"/>
+      </rule>
+      <rule>
+        <keyseq keys="t1"/>
+        <insert string="ヶ"/>
+      </rule>
+      <rule>
+        <keyseq keys="y1"/>
+        <insert string="請"/>
+      </rule>
+      <rule>
+        <keyseq keys="u1"/>
+        <insert string="境"/>
+      </rule>
+      <rule>
+        <keyseq keys="i1"/>
+        <insert string="系"/>
+      </rule>
+      <rule>
+        <keyseq keys="o1"/>
+        <insert string="探"/>
+      </rule>
+      <rule>
+        <keyseq keys="p1"/>
+        <insert string="象"/>
+      </rule>
+      <rule>
+        <keyseq keys="a1"/>
+        <insert string="ゎ"/>
+      </rule>
+      <rule>
+        <keyseq keys="s1"/>
+        <insert string="ゐ"/>
+      </rule>
+      <rule>
+        <keyseq keys="d1"/>
+        <insert string="ゑ"/>
+      </rule>
+      <rule>
+        <keyseq keys="h1"/>
+        <insert string="盛"/>
+      </rule>
+      <rule>
+        <keyseq keys="j1"/>
+        <insert string="革"/>
+      </rule>
+      <rule>
+        <keyseq keys="k1"/>
+        <insert string="突"/>
+      </rule>
+      <rule>
+        <keyseq keys="l1"/>
+        <insert string="温"/>
+      </rule>
+      <rule>
+        <keyseq keys=";1"/>
+        <insert string="捕"/>
+      </rule>
+      <rule>
+        <keyseq keys="n1"/>
+        <insert string="依"/>
+      </rule>
+      <rule>
+        <keyseq keys="m1"/>
+        <insert string="繊"/>
+      </rule>
+      <rule>
+        <keyseq keys=",1"/>
+        <insert string="借"/>
+      </rule>
+      <rule>
+        <keyseq keys=".1"/>
+        <insert string="須"/>
+      </rule>
+      <rule>
+        <keyseq keys="/1"/>
+        <insert string="訳"/>
+      </rule>
+      <rule>
+        <keyseq keys="q2"/>
+        <insert string="丑"/>
+      </rule>
+      <rule>
+        <keyseq keys="w2"/>
+        <insert string="臼"/>
+      </rule>
+      <rule>
+        <keyseq keys="e2"/>
+        <insert string="宴"/>
+      </rule>
+      <rule>
+        <keyseq keys="r2"/>
+        <insert string="縁"/>
+      </rule>
+      <rule>
+        <keyseq keys="t2"/>
+        <insert string="曳"/>
+      </rule>
+      <rule>
+        <keyseq keys="y2"/>
+        <insert string="尚"/>
+      </rule>
+      <rule>
+        <keyseq keys="u2"/>
+        <insert string="賀"/>
+      </rule>
+      <rule>
+        <keyseq keys="i2"/>
+        <insert string="岸"/>
+      </rule>
+      <rule>
+        <keyseq keys="o2"/>
+        <insert string="責"/>
+      </rule>
+      <rule>
+        <keyseq keys="p2"/>
+        <insert string="漁"/>
+      </rule>
+      <rule>
+        <keyseq keys="a2"/>
+        <insert string="於"/>
+      </rule>
+      <rule>
+        <keyseq keys="s2"/>
+        <insert string="汚"/>
+      </rule>
+      <rule>
+        <keyseq keys="d2"/>
+        <insert string="乙"/>
+      </rule>
+      <rule>
+        <keyseq keys="f2"/>
+        <insert string="穏"/>
+      </rule>
+      <rule>
+        <keyseq keys="h2"/>
+        <insert string="益"/>
+      </rule>
+      <rule>
+        <keyseq keys="j2"/>
+        <insert string="援"/>
+      </rule>
+      <rule>
+        <keyseq keys="k2"/>
+        <insert string="周"/>
+      </rule>
+      <rule>
+        <keyseq keys="l2"/>
+        <insert string="域"/>
+      </rule>
+      <rule>
+        <keyseq keys=";2"/>
+        <insert string="荒"/>
+      </rule>
+      <rule>
+        <keyseq keys="n2"/>
+        <insert string="織"/>
+      </rule>
+      <rule>
+        <keyseq keys="m2"/>
+        <insert string="父"/>
+      </rule>
+      <rule>
+        <keyseq keys=",2"/>
+        <insert string="枚"/>
+      </rule>
+      <rule>
+        <keyseq keys=".2"/>
+        <insert string="乱"/>
+      </rule>
+      <rule>
+        <keyseq keys="/2"/>
+        <insert string="香"/>
+      </rule>
+      <rule>
+        <keyseq keys="q3"/>
+        <insert string="鬼"/>
+      </rule>
+      <rule>
+        <keyseq keys="w3"/>
+        <insert string="虚"/>
+      </rule>
+      <rule>
+        <keyseq keys="e3"/>
+        <insert string="狭"/>
+      </rule>
+      <rule>
+        <keyseq keys="r3"/>
+        <insert string="脅"/>
+      </rule>
+      <rule>
+        <keyseq keys="t3"/>
+        <insert string="驚"/>
+      </rule>
+      <rule>
+        <keyseq keys="y3"/>
+        <insert string="舎"/>
+      </rule>
+      <rule>
+        <keyseq keys="u3"/>
+        <insert string="喜"/>
+      </rule>
+      <rule>
+        <keyseq keys="i3"/>
+        <insert string="幹"/>
+      </rule>
+      <rule>
+        <keyseq keys="o3"/>
+        <insert string="丘"/>
+      </rule>
+      <rule>
+        <keyseq keys="p3"/>
+        <insert string="糖"/>
+      </rule>
+      <rule>
+        <keyseq keys="a3"/>
+        <insert string="奇"/>
+      </rule>
+      <rule>
+        <keyseq keys="s3"/>
+        <insert string="既"/>
+      </rule>
+      <rule>
+        <keyseq keys="d3"/>
+        <insert string="菊"/>
+      </rule>
+      <rule>
+        <keyseq keys="f3"/>
+        <insert string="却"/>
+      </rule>
+      <rule>
+        <keyseq keys="g3"/>
+        <insert string="享"/>
+      </rule>
+      <rule>
+        <keyseq keys="h3"/>
+        <insert string="康"/>
+      </rule>
+      <rule>
+        <keyseq keys="j3"/>
+        <insert string="徒"/>
+      </rule>
+      <rule>
+        <keyseq keys="k3"/>
+        <insert string="景"/>
+      </rule>
+      <rule>
+        <keyseq keys="l3"/>
+        <insert string="処"/>
+      </rule>
+      <rule>
+        <keyseq keys=";3"/>
+        <insert string="ぜ"/>
+      </rule>
+      <rule>
+        <keyseq keys="n3"/>
+        <insert string="譲"/>
+      </rule>
+      <rule>
+        <keyseq keys="m3"/>
+        <insert string="ヘ"/>
+      </rule>
+      <rule>
+        <keyseq keys=",3"/>
+        <insert string="模"/>
+      </rule>
+      <rule>
+        <keyseq keys=".3"/>
+        <insert string="降"/>
+      </rule>
+      <rule>
+        <keyseq keys="/3"/>
+        <insert string="走"/>
+      </rule>
+      <rule>
+        <keyseq keys="q4"/>
+        <insert string="孤"/>
+      </rule>
+      <rule>
+        <keyseq keys="w4"/>
+        <insert string="誇"/>
+      </rule>
+      <rule>
+        <keyseq keys="e4"/>
+        <insert string="黄"/>
+      </rule>
+      <rule>
+        <keyseq keys="r4"/>
+        <insert string="后"/>
+      </rule>
+      <rule>
+        <keyseq keys="t4"/>
+        <insert string="耕"/>
+      </rule>
+      <rule>
+        <keyseq keys="y4"/>
+        <insert string="布"/>
+      </rule>
+      <rule>
+        <keyseq keys="u4"/>
+        <insert string="苦"/>
+      </rule>
+      <rule>
+        <keyseq keys="i4"/>
+        <insert string="圧"/>
+      </rule>
+      <rule>
+        <keyseq keys="o4"/>
+        <insert string="恵"/>
+      </rule>
+      <rule>
+        <keyseq keys="p4"/>
+        <insert string="固"/>
+      </rule>
+      <rule>
+        <keyseq keys="a4"/>
+        <insert string="巧"/>
+      </rule>
+      <rule>
+        <keyseq keys="s4"/>
+        <insert string="克"/>
+      </rule>
+      <rule>
+        <keyseq keys="d4"/>
+        <insert string="懇"/>
+      </rule>
+      <rule>
+        <keyseq keys="f4"/>
+        <insert string="困"/>
+      </rule>
+      <rule>
+        <keyseq keys="g4"/>
+        <insert string="昏"/>
+      </rule>
+      <rule>
+        <keyseq keys="h4"/>
+        <insert string="邦"/>
+      </rule>
+      <rule>
+        <keyseq keys="j4"/>
+        <insert string="舞"/>
+      </rule>
+      <rule>
+        <keyseq keys="k4"/>
+        <insert string="雑"/>
+      </rule>
+      <rule>
+        <keyseq keys="l4"/>
+        <insert string="漢"/>
+      </rule>
+      <rule>
+        <keyseq keys=";4"/>
+        <insert string="緊"/>
+      </rule>
+      <rule>
+        <keyseq keys="n4"/>
+        <insert string="激"/>
+      </rule>
+      <rule>
+        <keyseq keys="m4"/>
+        <insert string="干"/>
+      </rule>
+      <rule>
+        <keyseq keys=",4"/>
+        <insert string="彦"/>
+      </rule>
+      <rule>
+        <keyseq keys=".4"/>
+        <insert string="均"/>
+      </rule>
+      <rule>
+        <keyseq keys="/4"/>
+        <insert string="又"/>
+      </rule>
+      <rule>
+        <keyseq keys="q5"/>
+        <insert string="奉"/>
+      </rule>
+      <rule>
+        <keyseq keys="w5"/>
+        <insert string="某"/>
+      </rule>
+      <rule>
+        <keyseq keys="e5"/>
+        <insert string="貌"/>
+      </rule>
+      <rule>
+        <keyseq keys="r5"/>
+        <insert string="卜"/>
+      </rule>
+      <rule>
+        <keyseq keys="y5"/>
+        <insert string="姿"/>
+      </rule>
+      <rule>
+        <keyseq keys="u5"/>
+        <insert string="絶"/>
+      </rule>
+      <rule>
+        <keyseq keys="i5"/>
+        <insert string="密"/>
+      </rule>
+      <rule>
+        <keyseq keys="o5"/>
+        <insert string="秘"/>
+      </rule>
+      <rule>
+        <keyseq keys="p5"/>
+        <insert string="押"/>
+      </rule>
+      <rule>
+        <keyseq keys="h5"/>
+        <insert string="衆"/>
+      </rule>
+      <rule>
+        <keyseq keys="j5"/>
+        <insert string="節"/>
+      </rule>
+      <rule>
+        <keyseq keys="k5"/>
+        <insert string="杉"/>
+      </rule>
+      <rule>
+        <keyseq keys="l5"/>
+        <insert string="肉"/>
+      </rule>
+      <rule>
+        <keyseq keys=";5"/>
+        <insert string="除"/>
+      </rule>
+      <rule>
+        <keyseq keys="n5"/>
+        <insert string="測"/>
+      </rule>
+      <rule>
+        <keyseq keys="m5"/>
+        <insert string="血"/>
+      </rule>
+      <rule>
+        <keyseq keys=",5"/>
+        <insert string="散"/>
+      </rule>
+      <rule>
+        <keyseq keys=".5"/>
+        <insert string="笑"/>
+      </rule>
+      <rule>
+        <keyseq keys="/5"/>
+        <insert string="弁"/>
+      </rule>
+      <rule>
+        <keyseq keys="q6"/>
+        <insert string="湖"/>
+      </rule>
+      <rule>
+        <keyseq keys="w6"/>
+        <insert string="礼"/>
+      </rule>
+      <rule>
+        <keyseq keys="e6"/>
+        <insert string="著"/>
+      </rule>
+      <rule>
+        <keyseq keys="r6"/>
+        <insert string="移"/>
+      </rule>
+      <rule>
+        <keyseq keys="t6"/>
+        <insert string="郷"/>
+      </rule>
+      <rule>
+        <keyseq keys="a6"/>
+        <insert string="償"/>
+      </rule>
+      <rule>
+        <keyseq keys="s6"/>
+        <insert string="欧"/>
+      </rule>
+      <rule>
+        <keyseq keys="d6"/>
+        <insert string="努"/>
+      </rule>
+      <rule>
+        <keyseq keys="f6"/>
+        <insert string="底"/>
+      </rule>
+      <rule>
+        <keyseq keys="g6"/>
+        <insert string="亜"/>
+      </rule>
+      <rule>
+        <keyseq keys="z6"/>
+        <insert string="禁"/>
+      </rule>
+      <rule>
+        <keyseq keys="x6"/>
+        <insert string="硝"/>
+      </rule>
+      <rule>
+        <keyseq keys="c6"/>
+        <insert string="樹"/>
+      </rule>
+      <rule>
+        <keyseq keys="v6"/>
+        <insert string="句"/>
+      </rule>
+      <rule>
+        <keyseq keys="b6"/>
+        <insert string="礎"/>
+      </rule>
+      <rule>
+        <keyseq keys="q7"/>
+        <insert string="端"/>
+      </rule>
+      <rule>
+        <keyseq keys="w7"/>
+        <insert string="飾"/>
+      </rule>
+      <rule>
+        <keyseq keys="e7"/>
+        <insert string="郵"/>
+      </rule>
+      <rule>
+        <keyseq keys="r7"/>
+        <insert string="塩"/>
+      </rule>
+      <rule>
+        <keyseq keys="t7"/>
+        <insert string="群"/>
+      </rule>
+      <rule>
+        <keyseq keys="u7"/>
+        <insert string="星"/>
+      </rule>
+      <rule>
+        <keyseq keys="i7"/>
+        <insert string="析"/>
+      </rule>
+      <rule>
+        <keyseq keys="o7"/>
+        <insert string="遷"/>
+      </rule>
+      <rule>
+        <keyseq keys="p7"/>
+        <insert string="宣"/>
+      </rule>
+      <rule>
+        <keyseq keys="a7"/>
+        <insert string="紅"/>
+      </rule>
+      <rule>
+        <keyseq keys="s7"/>
+        <insert string="傷"/>
+      </rule>
+      <rule>
+        <keyseq keys="d7"/>
+        <insert string="豪"/>
+      </rule>
+      <rule>
+        <keyseq keys="f7"/>
+        <insert string="維"/>
+      </rule>
+      <rule>
+        <keyseq keys="g7"/>
+        <insert string="脱"/>
+      </rule>
+      <rule>
+        <keyseq keys="h7"/>
+        <insert string="鼠"/>
+      </rule>
+      <rule>
+        <keyseq keys="j7"/>
+        <insert string="曹"/>
+      </rule>
+      <rule>
+        <keyseq keys="k7"/>
+        <insert string="奏"/>
+      </rule>
+      <rule>
+        <keyseq keys="l7"/>
+        <insert string="尊"/>
+      </rule>
+      <rule>
+        <keyseq keys="z7"/>
+        <insert string="絹"/>
+      </rule>
+      <rule>
+        <keyseq keys="x7"/>
+        <insert string="被"/>
+      </rule>
+      <rule>
+        <keyseq keys="c7"/>
+        <insert string="源"/>
+      </rule>
+      <rule>
+        <keyseq keys="v7"/>
+        <insert string="願"/>
+      </rule>
+      <rule>
+        <keyseq keys="b7"/>
+        <insert string="臨"/>
+      </rule>
+      <rule>
+        <keyseq keys="q8"/>
+        <insert string="刷"/>
+      </rule>
+      <rule>
+        <keyseq keys="w8"/>
+        <insert string="寿"/>
+      </rule>
+      <rule>
+        <keyseq keys="e8"/>
+        <insert string="順"/>
+      </rule>
+      <rule>
+        <keyseq keys="r8"/>
+        <insert string="危"/>
+      </rule>
+      <rule>
+        <keyseq keys="t8"/>
+        <insert string="砂"/>
+      </rule>
+      <rule>
+        <keyseq keys="y8"/>
+        <insert string="庶"/>
+      </rule>
+      <rule>
+        <keyseq keys="u8"/>
+        <insert string="粧"/>
+      </rule>
+      <rule>
+        <keyseq keys="i8"/>
+        <insert string="丈"/>
+      </rule>
+      <rule>
+        <keyseq keys="o8"/>
+        <insert string="称"/>
+      </rule>
+      <rule>
+        <keyseq keys="p8"/>
+        <insert string="蒸"/>
+      </rule>
+      <rule>
+        <keyseq keys="a8"/>
+        <insert string="舗"/>
+      </rule>
+      <rule>
+        <keyseq keys="s8"/>
+        <insert string="充"/>
+      </rule>
+      <rule>
+        <keyseq keys="d8"/>
+        <insert string="喫"/>
+      </rule>
+      <rule>
+        <keyseq keys="f8"/>
+        <insert string="腕"/>
+      </rule>
+      <rule>
+        <keyseq keys="g8"/>
+        <insert string="暴"/>
+      </rule>
+      <rule>
+        <keyseq keys="z8"/>
+        <insert string="批"/>
+      </rule>
+      <rule>
+        <keyseq keys="x8"/>
+        <insert string="慶"/>
+      </rule>
+      <rule>
+        <keyseq keys="c8"/>
+        <insert string="渉"/>
+      </rule>
+      <rule>
+        <keyseq keys="v8"/>
+        <insert string="竜"/>
+      </rule>
+      <rule>
+        <keyseq keys="b8"/>
+        <insert string="併"/>
+      </rule>
+      <rule>
+        <keyseq keys="q9"/>
+        <insert string="震"/>
+      </rule>
+      <rule>
+        <keyseq keys="w9"/>
+        <insert string="扱"/>
+      </rule>
+      <rule>
+        <keyseq keys="e9"/>
+        <insert string="片"/>
+      </rule>
+      <rule>
+        <keyseq keys="r9"/>
+        <insert string="札"/>
+      </rule>
+      <rule>
+        <keyseq keys="t9"/>
+        <insert string="乞"/>
+      </rule>
+      <rule>
+        <keyseq keys="u9"/>
+        <insert string="乃"/>
+      </rule>
+      <rule>
+        <keyseq keys="i9"/>
+        <insert string="如"/>
+      </rule>
+      <rule>
+        <keyseq keys="o9"/>
+        <insert string="尼"/>
+      </rule>
+      <rule>
+        <keyseq keys="a9"/>
+        <insert string="輪"/>
+      </rule>
+      <rule>
+        <keyseq keys="s9"/>
+        <insert string="倒"/>
+      </rule>
+      <rule>
+        <keyseq keys="d9"/>
+        <insert string="操"/>
+      </rule>
+      <rule>
+        <keyseq keys="f9"/>
+        <insert string="柄"/>
+      </rule>
+      <rule>
+        <keyseq keys="g9"/>
+        <insert string="魚"/>
+      </rule>
+      <rule>
+        <keyseq keys="z9"/>
+        <insert string="就"/>
+      </rule>
+      <rule>
+        <keyseq keys="x9"/>
+        <insert string="駐"/>
+      </rule>
+      <rule>
+        <keyseq keys="c9"/>
+        <insert string="揮"/>
+      </rule>
+      <rule>
+        <keyseq keys="v9"/>
+        <insert string="丹"/>
+      </rule>
+      <rule>
+        <keyseq keys="b9"/>
+        <insert string="鮮"/>
+      </rule>
+      <rule>
+        <keyseq keys="q0"/>
+        <insert string="弘"/>
+      </rule>
+      <rule>
+        <keyseq keys="w0"/>
+        <insert string="痛"/>
+      </rule>
+      <rule>
+        <keyseq keys="e0"/>
+        <insert string="票"/>
+      </rule>
+      <rule>
+        <keyseq keys="r0"/>
+        <insert string="訴"/>
+      </rule>
+      <rule>
+        <keyseq keys="t0"/>
+        <insert string="遺"/>
+      </rule>
+      <rule>
+        <keyseq keys="y0"/>
+        <insert string="欄"/>
+      </rule>
+      <rule>
+        <keyseq keys="u0"/>
+        <insert string="龍"/>
+      </rule>
+      <rule>
+        <keyseq keys="i0"/>
+        <insert string="略"/>
+      </rule>
+      <rule>
+        <keyseq keys="o0"/>
+        <insert string="慮"/>
+      </rule>
+      <rule>
+        <keyseq keys="p0"/>
+        <insert string="累"/>
+      </rule>
+      <rule>
+        <keyseq keys="a0"/>
+        <insert string="則"/>
+      </rule>
+      <rule>
+        <keyseq keys="s0"/>
+        <insert string="存"/>
+      </rule>
+      <rule>
+        <keyseq keys="d0"/>
+        <insert string="倍"/>
+      </rule>
+      <rule>
+        <keyseq keys="f0"/>
+        <insert string="牛"/>
+      </rule>
+      <rule>
+        <keyseq keys="g0"/>
+        <insert string="釈"/>
+      </rule>
+      <rule>
+        <keyseq keys="z0"/>
+        <insert string="綱"/>
+      </rule>
+      <rule>
+        <keyseq keys="x0"/>
+        <insert string="潟"/>
+      </rule>
+      <rule>
+        <keyseq keys="c0"/>
+        <insert string="創"/>
+      </rule>
+      <rule>
+        <keyseq keys="v0"/>
+        <insert string="背"/>
+      </rule>
+      <rule>
+        <keyseq keys="b0"/>
+        <insert string="皮"/>
+      </rule>
+      <rule>
+        <keyseq keys="1q"/>
+        <insert string="ヲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="2q"/>
+        <insert string="哀"/>
+      </rule>
+      <rule>
+        <keyseq keys="3q"/>
+        <insert string="暇"/>
+      </rule>
+      <rule>
+        <keyseq keys="4q"/>
+        <insert string="啓"/>
+      </rule>
+      <rule>
+        <keyseq keys="5q"/>
+        <insert string="把"/>
+      </rule>
+      <rule>
+        <keyseq keys="6q"/>
+        <insert string="酸"/>
+      </rule>
+      <rule>
+        <keyseq keys="7q"/>
+        <insert string="昼"/>
+      </rule>
+      <rule>
+        <keyseq keys="8q"/>
+        <insert string="炭"/>
+      </rule>
+      <rule>
+        <keyseq keys="9q"/>
+        <insert string="稲"/>
+      </rule>
+      <rule>
+        <keyseq keys="0q"/>
+        <insert string="湯"/>
+      </rule>
+      <rule>
+        <keyseq keys="qq"/>
+        <insert string="果"/>
+      </rule>
+      <rule>
+        <keyseq keys="wq"/>
+        <insert string="告"/>
+      </rule>
+      <rule>
+        <keyseq keys="eq"/>
+        <insert string="策"/>
+      </rule>
+      <rule>
+        <keyseq keys="rq"/>
+        <insert string="首"/>
+      </rule>
+      <rule>
+        <keyseq keys="tq"/>
+        <insert string="農"/>
+      </rule>
+      <rule>
+        <keyseq keys="yq"/>
+        <insert string="歩"/>
+      </rule>
+      <rule>
+        <keyseq keys="uq"/>
+        <insert string="回"/>
+      </rule>
+      <rule>
+        <keyseq keys="iq"/>
+        <insert string="務"/>
+      </rule>
+      <rule>
+        <keyseq keys="oq"/>
+        <insert string="島"/>
+      </rule>
+      <rule>
+        <keyseq keys="pq"/>
+        <insert string="開"/>
+      </rule>
+      <rule>
+        <keyseq keys="aq"/>
+        <insert string="報"/>
+      </rule>
+      <rule>
+        <keyseq keys="sq"/>
+        <insert string="紙"/>
+      </rule>
+      <rule>
+        <keyseq keys="dq"/>
+        <insert string="館"/>
+      </rule>
+      <rule>
+        <keyseq keys="fq"/>
+        <insert string="夜"/>
+      </rule>
+      <rule>
+        <keyseq keys="gq"/>
+        <insert string="位"/>
+      </rule>
+      <rule>
+        <keyseq keys="hq"/>
+        <insert string="給"/>
+      </rule>
+      <rule>
+        <keyseq keys="jq"/>
+        <insert string="員"/>
+      </rule>
+      <rule>
+        <keyseq keys="kq"/>
+        <insert string="ど"/>
+      </rule>
+      <rule>
+        <keyseq keys="lq"/>
+        <insert string="代"/>
+      </rule>
+      <rule>
+        <keyseq keys=";q"/>
+        <insert string="レ"/>
+      </rule>
+      <rule>
+        <keyseq keys="zq"/>
+        <insert string="欠"/>
+      </rule>
+      <rule>
+        <keyseq keys="xq"/>
+        <insert string="夏"/>
+      </rule>
+      <rule>
+        <keyseq keys="cq"/>
+        <insert string="彼"/>
+      </rule>
+      <rule>
+        <keyseq keys="vq"/>
+        <insert string="妻"/>
+      </rule>
+      <rule>
+        <keyseq keys="bq"/>
+        <insert string="善"/>
+      </rule>
+      <rule>
+        <keyseq keys="nq"/>
+        <insert string="相"/>
+      </rule>
+      <rule>
+        <keyseq keys="mq"/>
+        <insert string="家"/>
+      </rule>
+      <rule>
+        <keyseq keys=",q"/>
+        <insert string="的"/>
+      </rule>
+      <rule>
+        <keyseq keys=".q"/>
+        <insert string="対"/>
+      </rule>
+      <rule>
+        <keyseq keys="/q"/>
+        <insert string="歴"/>
+      </rule>
+      <rule>
+        <keyseq keys="1w"/>
+        <insert string="ゥ"/>
+      </rule>
+      <rule>
+        <keyseq keys="2w"/>
+        <insert string="逢"/>
+      </rule>
+      <rule>
+        <keyseq keys="3w"/>
+        <insert string="牙"/>
+      </rule>
+      <rule>
+        <keyseq keys="4w"/>
+        <insert string="掲"/>
+      </rule>
+      <rule>
+        <keyseq keys="5w"/>
+        <insert string="伐"/>
+      </rule>
+      <rule>
+        <keyseq keys="6w"/>
+        <insert string="貿"/>
+      </rule>
+      <rule>
+        <keyseq keys="7w"/>
+        <insert string="捜"/>
+      </rule>
+      <rule>
+        <keyseq keys="8w"/>
+        <insert string="異"/>
+      </rule>
+      <rule>
+        <keyseq keys="9w"/>
+        <insert string="隣"/>
+      </rule>
+      <rule>
+        <keyseq keys="0w"/>
+        <insert string="旧"/>
+      </rule>
+      <rule>
+        <keyseq keys="qw"/>
+        <insert string="概"/>
+      </rule>
+      <rule>
+        <keyseq keys="ww"/>
+        <insert string="買"/>
+      </rule>
+      <rule>
+        <keyseq keys="ew"/>
+        <insert string="詳"/>
+      </rule>
+      <rule>
+        <keyseq keys="rw"/>
+        <insert string="由"/>
+      </rule>
+      <rule>
+        <keyseq keys="tw"/>
+        <insert string="死"/>
+      </rule>
+      <rule>
+        <keyseq keys="yw"/>
+        <insert string="キ"/>
+      </rule>
+      <rule>
+        <keyseq keys="uw"/>
+        <insert string="せ"/>
+      </rule>
+      <rule>
+        <keyseq keys="iw"/>
+        <insert string="区"/>
+      </rule>
+      <rule>
+        <keyseq keys="ow"/>
+        <insert string="百"/>
+      </rule>
+      <rule>
+        <keyseq keys="pw"/>
+        <insert string="木"/>
+      </rule>
+      <rule>
+        <keyseq keys="aw"/>
+        <insert string="音"/>
+      </rule>
+      <rule>
+        <keyseq keys="sw"/>
+        <insert string="王"/>
+      </rule>
+      <rule>
+        <keyseq keys="dw"/>
+        <insert string="放"/>
+      </rule>
+      <rule>
+        <keyseq keys="fw"/>
+        <insert string="々"/>
+      </rule>
+      <rule>
+        <keyseq keys="gw"/>
+        <insert string="応"/>
+      </rule>
+      <rule>
+        <keyseq keys="hw"/>
+        <insert string="分"/>
+      </rule>
+      <rule>
+        <keyseq keys="jw"/>
+        <insert string="よ"/>
+      </rule>
+      <rule>
+        <keyseq keys="kw"/>
+        <insert string="ル"/>
+      </rule>
+      <rule>
+        <keyseq keys="lw"/>
+        <insert string="千"/>
+      </rule>
+      <rule>
+        <keyseq keys=";w"/>
+        <insert string="ア"/>
+      </rule>
+      <rule>
+        <keyseq keys="zw"/>
+        <insert string="財"/>
+      </rule>
+      <rule>
+        <keyseq keys="xw"/>
+        <insert string="針"/>
+      </rule>
+      <rule>
+        <keyseq keys="cw"/>
+        <insert string="裏"/>
+      </rule>
+      <rule>
+        <keyseq keys="vw"/>
+        <insert string="居"/>
+      </rule>
+      <rule>
+        <keyseq keys="bw"/>
+        <insert string="差"/>
+      </rule>
+      <rule>
+        <keyseq keys="nw"/>
+        <insert string="付"/>
+      </rule>
+      <rule>
+        <keyseq keys="mw"/>
+        <insert string="プ"/>
+      </rule>
+      <rule>
+        <keyseq keys=",w"/>
+        <insert string="ば"/>
+      </rule>
+      <rule>
+        <keyseq keys=".w"/>
+        <insert string="ュ"/>
+      </rule>
+      <rule>
+        <keyseq keys="/w"/>
+        <insert string="作"/>
+      </rule>
+      <rule>
+        <keyseq keys="1e"/>
+        <insert string="ヴ"/>
+      </rule>
+      <rule>
+        <keyseq keys="2e"/>
+        <insert string="宛"/>
+      </rule>
+      <rule>
+        <keyseq keys="3e"/>
+        <insert string="壊"/>
+      </rule>
+      <rule>
+        <keyseq keys="4e"/>
+        <insert string="携"/>
+      </rule>
+      <rule>
+        <keyseq keys="5e"/>
+        <insert string="避"/>
+      </rule>
+      <rule>
+        <keyseq keys="6e"/>
+        <insert string="攻"/>
+      </rule>
+      <rule>
+        <keyseq keys="7e"/>
+        <insert string="焼"/>
+      </rule>
+      <rule>
+        <keyseq keys="8e"/>
+        <insert string="闘"/>
+      </rule>
+      <rule>
+        <keyseq keys="9e"/>
+        <insert string="奈"/>
+      </rule>
+      <rule>
+        <keyseq keys="0e"/>
+        <insert string="夕"/>
+      </rule>
+      <rule>
+        <keyseq keys="qe"/>
+        <insert string="武"/>
+      </rule>
+      <rule>
+        <keyseq keys="we"/>
+        <insert string="残"/>
+      </rule>
+      <rule>
+        <keyseq keys="ee"/>
+        <insert string="両"/>
+      </rule>
+      <rule>
+        <keyseq keys="re"/>
+        <insert string="在"/>
+      </rule>
+      <rule>
+        <keyseq keys="te"/>
+        <insert string="!"/>
+      </rule>
+      <rule>
+        <keyseq keys="ye"/>
+        <insert string="や"/>
+      </rule>
+      <rule>
+        <keyseq keys="ue"/>
+        <insert string="出"/>
+      </rule>
+      <rule>
+        <keyseq keys="ie"/>
+        <insert string="タ"/>
+      </rule>
+      <rule>
+        <keyseq keys="oe"/>
+        <insert string="手"/>
+      </rule>
+      <rule>
+        <keyseq keys="pe"/>
+        <insert string="保"/>
+      </rule>
+      <rule>
+        <keyseq keys="ae"/>
+        <insert string="案"/>
+      </rule>
+      <rule>
+        <keyseq keys="se"/>
+        <insert string="曲"/>
+      </rule>
+      <rule>
+        <keyseq keys="de"/>
+        <insert string="情"/>
+      </rule>
+      <rule>
+        <keyseq keys="fe"/>
+        <insert string="引"/>
+      </rule>
+      <rule>
+        <keyseq keys="ge"/>
+        <insert string="職"/>
+      </rule>
+      <rule>
+        <keyseq keys="he"/>
+        <insert string="7"/>
+      </rule>
+      <rule>
+        <keyseq keys="je"/>
+        <insert string="か"/>
+      </rule>
+      <rule>
+        <keyseq keys="ke"/>
+        <insert string="("/>
+      </rule>
+      <rule>
+        <keyseq keys="le"/>
+        <insert string="ト"/>
+      </rule>
+      <rule>
+        <keyseq keys=";e"/>
+        <insert string="れ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ze"/>
+        <insert string="従"/>
+      </rule>
+      <rule>
+        <keyseq keys="xe"/>
+        <insert string="骨"/>
+      </rule>
+      <rule>
+        <keyseq keys="ce"/>
+        <insert string="厚"/>
+      </rule>
+      <rule>
+        <keyseq keys="ve"/>
+        <insert string="顔"/>
+      </rule>
+      <rule>
+        <keyseq keys="be"/>
+        <insert string="量"/>
+      </rule>
+      <rule>
+        <keyseq keys="ne"/>
+        <insert string="内"/>
+      </rule>
+      <rule>
+        <keyseq keys="me"/>
+        <insert string="工"/>
+      </rule>
+      <rule>
+        <keyseq keys=",e"/>
+        <insert string="八"/>
+      </rule>
+      <rule>
+        <keyseq keys=".e"/>
+        <insert string="テ"/>
+      </rule>
+      <rule>
+        <keyseq keys="/e"/>
+        <insert string="見"/>
+      </rule>
+      <rule>
+        <keyseq keys="1r"/>
+        <insert string="ヂ"/>
+      </rule>
+      <rule>
+        <keyseq keys="2r"/>
+        <insert string="囲"/>
+      </rule>
+      <rule>
+        <keyseq keys="3r"/>
+        <insert string="較"/>
+      </rule>
+      <rule>
+        <keyseq keys="4r"/>
+        <insert string="劇"/>
+      </rule>
+      <rule>
+        <keyseq keys="5r"/>
+        <insert string="卑"/>
+      </rule>
+      <rule>
+        <keyseq keys="6r"/>
+        <insert string="盤"/>
+      </rule>
+      <rule>
+        <keyseq keys="7r"/>
+        <insert string="帯"/>
+      </rule>
+      <rule>
+        <keyseq keys="8r"/>
+        <insert string="易"/>
+      </rule>
+      <rule>
+        <keyseq keys="9r"/>
+        <insert string="速"/>
+      </rule>
+      <rule>
+        <keyseq keys="0r"/>
+        <insert string="拡"/>
+      </rule>
+      <rule>
+        <keyseq keys="qr"/>
+        <insert string="風"/>
+      </rule>
+      <rule>
+        <keyseq keys="wr"/>
+        <insert string="階"/>
+      </rule>
+      <rule>
+        <keyseq keys="er"/>
+        <insert string="能"/>
+      </rule>
+      <rule>
+        <keyseq keys="rr"/>
+        <insert string="論"/>
+      </rule>
+      <rule>
+        <keyseq keys="tr"/>
+        <insert string="増"/>
+      </rule>
+      <rule>
+        <keyseq keys="yr"/>
+        <insert string="コ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ur"/>
+        <insert string="山"/>
+      </rule>
+      <rule>
+        <keyseq keys="ir"/>
+        <insert string="者"/>
+      </rule>
+      <rule>
+        <keyseq keys="or"/>
+        <insert string="発"/>
+      </rule>
+      <rule>
+        <keyseq keys="pr"/>
+        <insert string="立"/>
+      </rule>
+      <rule>
+        <keyseq keys="ar"/>
+        <insert string="横"/>
+      </rule>
+      <rule>
+        <keyseq keys="sr"/>
+        <insert string="興"/>
+      </rule>
+      <rule>
+        <keyseq keys="dr"/>
+        <insert string="刺"/>
+      </rule>
+      <rule>
+        <keyseq keys="fr"/>
+        <insert string="側"/>
+      </rule>
+      <rule>
+        <keyseq keys="gr"/>
+        <insert string="覚"/>
+      </rule>
+      <rule>
+        <keyseq keys="hr"/>
+        <insert string="き"/>
+      </rule>
+      <rule>
+        <keyseq keys="jr"/>
+        <insert string="っ"/>
+      </rule>
+      <rule>
+        <keyseq keys="kr"/>
+        <insert string="日"/>
+      </rule>
+      <rule>
+        <keyseq keys="lr"/>
+        <insert string="国"/>
+      </rule>
+      <rule>
+        <keyseq keys=";r"/>
+        <insert string="二"/>
+      </rule>
+      <rule>
+        <keyseq keys="zr"/>
+        <insert string="適"/>
+      </rule>
+      <rule>
+        <keyseq keys="xr"/>
+        <insert string="類"/>
+      </rule>
+      <rule>
+        <keyseq keys="cr"/>
+        <insert string="御"/>
+      </rule>
+      <rule>
+        <keyseq keys="vr"/>
+        <insert string="宇"/>
+      </rule>
+      <rule>
+        <keyseq keys="br"/>
+        <insert string="推"/>
+      </rule>
+      <rule>
+        <keyseq keys="nr"/>
+        <insert string="九"/>
+      </rule>
+      <rule>
+        <keyseq keys="mr"/>
+        <insert string="名"/>
+      </rule>
+      <rule>
+        <keyseq keys=",r"/>
+        <insert string="川"/>
+      </rule>
+      <rule>
+        <keyseq keys=".r"/>
+        <insert string="機"/>
+      </rule>
+      <rule>
+        <keyseq keys="/r"/>
+        <insert string="チ"/>
+      </rule>
+      <rule>
+        <keyseq keys="1t"/>
+        <insert string="ヅ"/>
+      </rule>
+      <rule>
+        <keyseq keys="2t"/>
+        <insert string="庵"/>
+      </rule>
+      <rule>
+        <keyseq keys="3t"/>
+        <insert string="寒"/>
+      </rule>
+      <rule>
+        <keyseq keys="4t"/>
+        <insert string="賢"/>
+      </rule>
+      <rule>
+        <keyseq keys="5t"/>
+        <insert string="藩"/>
+      </rule>
+      <rule>
+        <keyseq keys="6t"/>
+        <insert string="汽"/>
+      </rule>
+      <rule>
+        <keyseq keys="7t"/>
+        <insert string="換"/>
+      </rule>
+      <rule>
+        <keyseq keys="8t"/>
+        <insert string="延"/>
+      </rule>
+      <rule>
+        <keyseq keys="9t"/>
+        <insert string="雪"/>
+      </rule>
+      <rule>
+        <keyseq keys="0t"/>
+        <insert string="互"/>
+      </rule>
+      <rule>
+        <keyseq keys="qt"/>
+        <insert string="細"/>
+      </rule>
+      <rule>
+        <keyseq keys="wt"/>
+        <insert string="古"/>
+      </rule>
+      <rule>
+        <keyseq keys="et"/>
+        <insert string="利"/>
+      </rule>
+      <rule>
+        <keyseq keys="rt"/>
+        <insert string="ペ"/>
+      </rule>
+      <rule>
+        <keyseq keys="tt"/>
+        <insert string="ゃ"/>
+      </rule>
+      <rule>
+        <keyseq keys="yt"/>
+        <insert string="ナ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ut"/>
+        <insert string="金"/>
+      </rule>
+      <rule>
+        <keyseq keys="it"/>
+        <insert string="マ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ot"/>
+        <insert string="和"/>
+      </rule>
+      <rule>
+        <keyseq keys="pt"/>
+        <insert string="女"/>
+      </rule>
+      <rule>
+        <keyseq keys="at"/>
+        <insert string="崎"/>
+      </rule>
+      <rule>
+        <keyseq keys="st"/>
+        <insert string="白"/>
+      </rule>
+      <rule>
+        <keyseq keys="dt"/>
+        <insert string="ぐ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ft"/>
+        <insert string="官"/>
+      </rule>
+      <rule>
+        <keyseq keys="gt"/>
+        <insert string="球"/>
+      </rule>
+      <rule>
+        <keyseq keys="ht"/>
+        <insert string="上"/>
+      </rule>
+      <rule>
+        <keyseq keys="jt"/>
+        <insert string="く"/>
+      </rule>
+      <rule>
+        <keyseq keys="kt"/>
+        <insert string="8"/>
+      </rule>
+      <rule>
+        <keyseq keys="lt"/>
+        <insert string="え"/>
+      </rule>
+      <rule>
+        <keyseq keys=";t"/>
+        <insert string="年"/>
+      </rule>
+      <rule>
+        <keyseq keys="zt"/>
+        <insert string="母"/>
+      </rule>
+      <rule>
+        <keyseq keys="xt"/>
+        <insert string="奥"/>
+      </rule>
+      <rule>
+        <keyseq keys="ct"/>
+        <insert string="因"/>
+      </rule>
+      <rule>
+        <keyseq keys="vt"/>
+        <insert string="酒"/>
+      </rule>
+      <rule>
+        <keyseq keys="bt"/>
+        <insert string="伸"/>
+      </rule>
+      <rule>
+        <keyseq keys="nt"/>
+        <insert string="サ"/>
+      </rule>
+      <rule>
+        <keyseq keys="mt"/>
+        <insert string="建"/>
+      </rule>
+      <rule>
+        <keyseq keys=",t"/>
+        <insert string="パ"/>
+      </rule>
+      <rule>
+        <keyseq keys=".t"/>
+        <insert string="第"/>
+      </rule>
+      <rule>
+        <keyseq keys="/t"/>
+        <insert string="入"/>
+      </rule>
+      <rule>
+        <keyseq keys="1y"/>
+        <insert string="簡"/>
+      </rule>
+      <rule>
+        <keyseq keys="2y"/>
+        <insert string="徴"/>
+      </rule>
+      <rule>
+        <keyseq keys="3y"/>
+        <insert string="触"/>
+      </rule>
+      <rule>
+        <keyseq keys="4y"/>
+        <insert string="宗"/>
+      </rule>
+      <rule>
+        <keyseq keys="5y"/>
+        <insert string="植"/>
+      </rule>
+      <rule>
+        <keyseq keys="7y"/>
+        <insert string="索"/>
+      </rule>
+      <rule>
+        <keyseq keys="8y"/>
+        <insert string="射"/>
+      </rule>
+      <rule>
+        <keyseq keys="9y"/>
+        <insert string="濁"/>
+      </rule>
+      <rule>
+        <keyseq keys="0y"/>
+        <insert string="慢"/>
+      </rule>
+      <rule>
+        <keyseq keys="qy"/>
+        <insert string="害"/>
+      </rule>
+      <rule>
+        <keyseq keys="wy"/>
+        <insert string="賃"/>
+      </rule>
+      <rule>
+        <keyseq keys="ey"/>
+        <insert string="整"/>
+      </rule>
+      <rule>
+        <keyseq keys="ry"/>
+        <insert string="軽"/>
+      </rule>
+      <rule>
+        <keyseq keys="ty"/>
+        <insert string="評"/>
+      </rule>
+      <rule>
+        <keyseq keys="yy"/>
+        <insert string="佐"/>
+      </rule>
+      <rule>
+        <keyseq keys="uy"/>
+        <insert string="法"/>
+      </rule>
+      <rule>
+        <keyseq keys="iy"/>
+        <insert string="数"/>
+      </rule>
+      <rule>
+        <keyseq keys="oy"/>
+        <insert string="郎"/>
+      </rule>
+      <rule>
+        <keyseq keys="py"/>
+        <insert string="談"/>
+      </rule>
+      <rule>
+        <keyseq keys="ay"/>
+        <insert string="服"/>
+      </rule>
+      <rule>
+        <keyseq keys="sy"/>
+        <insert string="声"/>
+      </rule>
+      <rule>
+        <keyseq keys="dy"/>
+        <insert string="任"/>
+      </rule>
+      <rule>
+        <keyseq keys="fy"/>
+        <insert string="検"/>
+      </rule>
+      <rule>
+        <keyseq keys="gy"/>
+        <insert string="豊"/>
+      </rule>
+      <rule>
+        <keyseq keys="hy"/>
+        <insert string="美"/>
+      </rule>
+      <rule>
+        <keyseq keys="jy"/>
+        <insert string="題"/>
+      </rule>
+      <rule>
+        <keyseq keys="ky"/>
+        <insert string="井"/>
+      </rule>
+      <rule>
+        <keyseq keys="ly"/>
+        <insert string="洋"/>
+      </rule>
+      <rule>
+        <keyseq keys=";y"/>
+        <insert string="実"/>
+      </rule>
+      <rule>
+        <keyseq keys="zy"/>
+        <insert string="爆"/>
+      </rule>
+      <rule>
+        <keyseq keys="xy"/>
+        <insert string="仲"/>
+      </rule>
+      <rule>
+        <keyseq keys="cy"/>
+        <insert string="茶"/>
+      </rule>
+      <rule>
+        <keyseq keys="vy"/>
+        <insert string="率"/>
+      </rule>
+      <rule>
+        <keyseq keys="by"/>
+        <insert string="比"/>
+      </rule>
+      <rule>
+        <keyseq keys="ny"/>
+        <insert string="昔"/>
+      </rule>
+      <rule>
+        <keyseq keys="my"/>
+        <insert string="短"/>
+      </rule>
+      <rule>
+        <keyseq keys=",y"/>
+        <insert string="岩"/>
+      </rule>
+      <rule>
+        <keyseq keys=".y"/>
+        <insert string="巨"/>
+      </rule>
+      <rule>
+        <keyseq keys="/y"/>
+        <insert string="敗"/>
+      </rule>
+      <rule>
+        <keyseq keys="1u"/>
+        <insert string="承"/>
+      </rule>
+      <rule>
+        <keyseq keys="2u"/>
+        <insert string="章"/>
+      </rule>
+      <rule>
+        <keyseq keys="3u"/>
+        <insert string="候"/>
+      </rule>
+      <rule>
+        <keyseq keys="4u"/>
+        <insert string="途"/>
+      </rule>
+      <rule>
+        <keyseq keys="5u"/>
+        <insert string="複"/>
+      </rule>
+      <rule>
+        <keyseq keys="7u"/>
+        <insert string="冊"/>
+      </rule>
+      <rule>
+        <keyseq keys="8u"/>
+        <insert string="需"/>
+      </rule>
+      <rule>
+        <keyseq keys="9u"/>
+        <insert string="詑"/>
+      </rule>
+      <rule>
+        <keyseq keys="0u"/>
+        <insert string="迷"/>
+      </rule>
+      <rule>
+        <keyseq keys="qu"/>
+        <insert string="撃"/>
+      </rule>
+      <rule>
+        <keyseq keys="wu"/>
+        <insert string="折"/>
+      </rule>
+      <rule>
+        <keyseq keys="eu"/>
+        <insert string="追"/>
+      </rule>
+      <rule>
+        <keyseq keys="ru"/>
+        <insert string="隊"/>
+      </rule>
+      <rule>
+        <keyseq keys="tu"/>
+        <insert string="角"/>
+      </rule>
+      <rule>
+        <keyseq keys="yu"/>
+        <insert string="接"/>
+      </rule>
+      <rule>
+        <keyseq keys="uu"/>
+        <insert string="備"/>
+      </rule>
+      <rule>
+        <keyseq keys="iu"/>
+        <insert string="最"/>
+      </rule>
+      <rule>
+        <keyseq keys="ou"/>
+        <insert string="急"/>
+      </rule>
+      <rule>
+        <keyseq keys="pu"/>
+        <insert string="験"/>
+      </rule>
+      <rule>
+        <keyseq keys="au"/>
+        <insert string="変"/>
+      </rule>
+      <rule>
+        <keyseq keys="su"/>
+        <insert string="審"/>
+      </rule>
+      <rule>
+        <keyseq keys="du"/>
+        <insert string="改"/>
+      </rule>
+      <rule>
+        <keyseq keys="fu"/>
+        <insert string="昇"/>
+      </rule>
+      <rule>
+        <keyseq keys="gu"/>
+        <insert string="芸"/>
+      </rule>
+      <rule>
+        <keyseq keys="hu"/>
+        <insert string="宿"/>
+      </rule>
+      <rule>
+        <keyseq keys="ju"/>
+        <insert string="制"/>
+      </rule>
+      <rule>
+        <keyseq keys="ku"/>
+        <insert string="集"/>
+      </rule>
+      <rule>
+        <keyseq keys="lu"/>
+        <insert string="安"/>
+      </rule>
+      <rule>
+        <keyseq keys=";u"/>
+        <insert string="画"/>
+      </rule>
+      <rule>
+        <keyseq keys="zu"/>
+        <insert string="陽"/>
+      </rule>
+      <rule>
+        <keyseq keys="xu"/>
+        <insert string="構"/>
+      </rule>
+      <rule>
+        <keyseq keys="cu"/>
+        <insert string="旅"/>
+      </rule>
+      <rule>
+        <keyseq keys="vu"/>
+        <insert string="施"/>
+      </rule>
+      <rule>
+        <keyseq keys="bu"/>
+        <insert string="曜"/>
+      </rule>
+      <rule>
+        <keyseq keys="nu"/>
+        <insert string="遠"/>
+      </rule>
+      <rule>
+        <keyseq keys="mu"/>
+        <insert string="ォ"/>
+      </rule>
+      <rule>
+        <keyseq keys=",u"/>
+        <insert string="将"/>
+      </rule>
+      <rule>
+        <keyseq keys=".u"/>
+        <insert string="ぞ"/>
+      </rule>
+      <rule>
+        <keyseq keys="/u"/>
+        <insert string="塚"/>
+      </rule>
+      <rule>
+        <keyseq keys="1i"/>
+        <insert string="快"/>
+      </rule>
+      <rule>
+        <keyseq keys="2i"/>
+        <insert string="否"/>
+      </rule>
+      <rule>
+        <keyseq keys="3i"/>
+        <insert string="歯"/>
+      </rule>
+      <rule>
+        <keyseq keys="4i"/>
+        <insert string="筆"/>
+      </rule>
+      <rule>
+        <keyseq keys="5i"/>
+        <insert string="里"/>
+      </rule>
+      <rule>
+        <keyseq keys="7i"/>
+        <insert string="皿"/>
+      </rule>
+      <rule>
+        <keyseq keys="8i"/>
+        <insert string="輯"/>
+      </rule>
+      <rule>
+        <keyseq keys="9i"/>
+        <insert string="蓄"/>
+      </rule>
+      <rule>
+        <keyseq keys="0i"/>
+        <insert string="戻"/>
+      </rule>
+      <rule>
+        <keyseq keys="qi"/>
+        <insert string="浴"/>
+      </rule>
+      <rule>
+        <keyseq keys="wi"/>
+        <insert string="秀"/>
+      </rule>
+      <rule>
+        <keyseq keys="ei"/>
+        <insert string="糸"/>
+      </rule>
+      <rule>
+        <keyseq keys="ri"/>
+        <insert string="春"/>
+      </rule>
+      <rule>
+        <keyseq keys="ti"/>
+        <insert string="幸"/>
+      </rule>
+      <rule>
+        <keyseq keys="yi"/>
+        <insert string="記"/>
+      </rule>
+      <rule>
+        <keyseq keys="ui"/>
+        <insert string="朝"/>
+      </rule>
+      <rule>
+        <keyseq keys="ii"/>
+        <insert string="知"/>
+      </rule>
+      <rule>
+        <keyseq keys="oi"/>
+        <insert string="ワ"/>
+      </rule>
+      <rule>
+        <keyseq keys="pi"/>
+        <insert string="送"/>
+      </rule>
+      <rule>
+        <keyseq keys="ai"/>
+        <insert string="限"/>
+      </rule>
+      <rule>
+        <keyseq keys="si"/>
+        <insert string="研"/>
+      </rule>
+      <rule>
+        <keyseq keys="di"/>
+        <insert string="労"/>
+      </rule>
+      <rule>
+        <keyseq keys="fi"/>
+        <insert string="統"/>
+      </rule>
+      <rule>
+        <keyseq keys="gi"/>
+        <insert string="役"/>
+      </rule>
+      <rule>
+        <keyseq keys="hi"/>
+        <insert string="セ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ji"/>
+        <insert string="運"/>
+      </rule>
+      <rule>
+        <keyseq keys="ki"/>
+        <insert string="ツ"/>
+      </rule>
+      <rule>
+        <keyseq keys="li"/>
+        <insert string="特"/>
+      </rule>
+      <rule>
+        <keyseq keys=";i"/>
+        <insert string="谷"/>
+      </rule>
+      <rule>
+        <keyseq keys="zi"/>
+        <insert string="ァ"/>
+      </rule>
+      <rule>
+        <keyseq keys="xi"/>
+        <insert string="導"/>
+      </rule>
+      <rule>
+        <keyseq keys="ci"/>
+        <insert string="認"/>
+      </rule>
+      <rule>
+        <keyseq keys="vi"/>
+        <insert string="健"/>
+      </rule>
+      <rule>
+        <keyseq keys="bi"/>
+        <insert string="尾"/>
+      </rule>
+      <rule>
+        <keyseq keys="ni"/>
+        <insert string="序"/>
+      </rule>
+      <rule>
+        <keyseq keys="mi"/>
+        <insert string="振"/>
+      </rule>
+      <rule>
+        <keyseq keys=",i"/>
+        <insert string="練"/>
+      </rule>
+      <rule>
+        <keyseq keys=".i"/>
+        <insert string="念"/>
+      </rule>
+      <rule>
+        <keyseq keys="/i"/>
+        <insert string="働"/>
+      </rule>
+      <rule>
+        <keyseq keys="1o"/>
+        <insert string="包"/>
+      </rule>
+      <rule>
+        <keyseq keys="2o"/>
+        <insert string="納"/>
+      </rule>
+      <rule>
+        <keyseq keys="3o"/>
+        <insert string="頼"/>
+      </rule>
+      <rule>
+        <keyseq keys="4o"/>
+        <insert string="逃"/>
+      </rule>
+      <rule>
+        <keyseq keys="5o"/>
+        <insert string="寝"/>
+      </rule>
+      <rule>
+        <keyseq keys="7o"/>
+        <insert string="賛"/>
+      </rule>
+      <rule>
+        <keyseq keys="8o"/>
+        <insert string="瞬"/>
+      </rule>
+      <rule>
+        <keyseq keys="9o"/>
+        <insert string="貯"/>
+      </rule>
+      <rule>
+        <keyseq keys="0o"/>
+        <insert string="羊"/>
+      </rule>
+      <rule>
+        <keyseq keys="qo"/>
+        <insert string="積"/>
+      </rule>
+      <rule>
+        <keyseq keys="wo"/>
+        <insert string="程"/>
+      </rule>
+      <rule>
+        <keyseq keys="eo"/>
+        <insert string="断"/>
+      </rule>
+      <rule>
+        <keyseq keys="ro"/>
+        <insert string="低"/>
+      </rule>
+      <rule>
+        <keyseq keys="to"/>
+        <insert string="減"/>
+      </rule>
+      <rule>
+        <keyseq keys="yo"/>
+        <insert string="モ"/>
+      </rule>
+      <rule>
+        <keyseq keys="uo"/>
+        <insert string="資"/>
+      </rule>
+      <rule>
+        <keyseq keys="io"/>
+        <insert string="士"/>
+      </rule>
+      <rule>
+        <keyseq keys="oo"/>
+        <insert string="費"/>
+      </rule>
+      <rule>
+        <keyseq keys="po"/>
+        <insert string="ィ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ao"/>
+        <insert string="逆"/>
+      </rule>
+      <rule>
+        <keyseq keys="so"/>
+        <insert string="企"/>
+      </rule>
+      <rule>
+        <keyseq keys="do"/>
+        <insert string="精"/>
+      </rule>
+      <rule>
+        <keyseq keys="fo"/>
+        <insert string="ざ"/>
+      </rule>
+      <rule>
+        <keyseq keys="go"/>
+        <insert string="印"/>
+      </rule>
+      <rule>
+        <keyseq keys="ho"/>
+        <insert string="神"/>
+      </rule>
+      <rule>
+        <keyseq keys="jo"/>
+        <insert string="び"/>
+      </rule>
+      <rule>
+        <keyseq keys="ko"/>
+        <insert string="打"/>
+      </rule>
+      <rule>
+        <keyseq keys="lo"/>
+        <insert string="勤"/>
+      </rule>
+      <rule>
+        <keyseq keys=";o"/>
+        <insert string="ャ"/>
+      </rule>
+      <rule>
+        <keyseq keys="zo"/>
+        <insert string="殺"/>
+      </rule>
+      <rule>
+        <keyseq keys="xo"/>
+        <insert string="負"/>
+      </rule>
+      <rule>
+        <keyseq keys="co"/>
+        <insert string="何"/>
+      </rule>
+      <rule>
+        <keyseq keys="vo"/>
+        <insert string="履"/>
+      </rule>
+      <rule>
+        <keyseq keys="bo"/>
+        <insert string="般"/>
+      </rule>
+      <rule>
+        <keyseq keys="no"/>
+        <insert string="耳"/>
+      </rule>
+      <rule>
+        <keyseq keys="mo"/>
+        <insert string="授"/>
+      </rule>
+      <rule>
+        <keyseq keys=",o"/>
+        <insert string="版"/>
+      </rule>
+      <rule>
+        <keyseq keys=".o"/>
+        <insert string="効"/>
+      </rule>
+      <rule>
+        <keyseq keys="/o"/>
+        <insert string="視"/>
+      </rule>
+      <rule>
+        <keyseq keys="1p"/>
+        <insert string="唱"/>
+      </rule>
+      <rule>
+        <keyseq keys="2p"/>
+        <insert string="暮"/>
+      </rule>
+      <rule>
+        <keyseq keys="3p"/>
+        <insert string="憲"/>
+      </rule>
+      <rule>
+        <keyseq keys="4p"/>
+        <insert string="勉"/>
+      </rule>
+      <rule>
+        <keyseq keys="5p"/>
+        <insert string="罪"/>
+      </rule>
+      <rule>
+        <keyseq keys="8p"/>
+        <insert string="盾"/>
+      </rule>
+      <rule>
+        <keyseq keys="9p"/>
+        <insert string="虫"/>
+      </rule>
+      <rule>
+        <keyseq keys="qp"/>
+        <insert string="故"/>
+      </rule>
+      <rule>
+        <keyseq keys="wp"/>
+        <insert string="鉱"/>
+      </rule>
+      <rule>
+        <keyseq keys="ep"/>
+        <insert string="提"/>
+      </rule>
+      <rule>
+        <keyseq keys="rp"/>
+        <insert string="児"/>
+      </rule>
+      <rule>
+        <keyseq keys="tp"/>
+        <insert string="敷"/>
+      </rule>
+      <rule>
+        <keyseq keys="yp"/>
+        <insert string="無"/>
+      </rule>
+      <rule>
+        <keyseq keys="up"/>
+        <insert string="石"/>
+      </rule>
+      <rule>
+        <keyseq keys="ip"/>
+        <insert string="屋"/>
+      </rule>
+      <rule>
+        <keyseq keys="op"/>
+        <insert string="解"/>
+      </rule>
+      <rule>
+        <keyseq keys="pp"/>
+        <insert string="募"/>
+      </rule>
+      <rule>
+        <keyseq keys="ap"/>
+        <insert string="令"/>
+      </rule>
+      <rule>
+        <keyseq keys="sp"/>
+        <insert string="違"/>
+      </rule>
+      <rule>
+        <keyseq keys="dp"/>
+        <insert string="装"/>
+      </rule>
+      <rule>
+        <keyseq keys="fp"/>
+        <insert string="然"/>
+      </rule>
+      <rule>
+        <keyseq keys="gp"/>
+        <insert string="確"/>
+      </rule>
+      <rule>
+        <keyseq keys="hp"/>
+        <insert string="優"/>
+      </rule>
+      <rule>
+        <keyseq keys="jp"/>
+        <insert string="公"/>
+      </rule>
+      <rule>
+        <keyseq keys="kp"/>
+        <insert string="品"/>
+      </rule>
+      <rule>
+        <keyseq keys="lp"/>
+        <insert string="語"/>
+      </rule>
+      <rule>
+        <keyseq keys=";p"/>
+        <insert string="演"/>
+      </rule>
+      <rule>
+        <keyseq keys="zp"/>
+        <insert string="券"/>
+      </rule>
+      <rule>
+        <keyseq keys="xp"/>
+        <insert string="悪"/>
+      </rule>
+      <rule>
+        <keyseq keys="cp"/>
+        <insert string="秋"/>
+      </rule>
+      <rule>
+        <keyseq keys="vp"/>
+        <insert string="非"/>
+      </rule>
+      <rule>
+        <keyseq keys="bp"/>
+        <insert string="便"/>
+      </rule>
+      <rule>
+        <keyseq keys="np"/>
+        <insert string="示"/>
+      </rule>
+      <rule>
+        <keyseq keys="mp"/>
+        <insert string="即"/>
+      </rule>
+      <rule>
+        <keyseq keys=",p"/>
+        <insert string="難"/>
+      </rule>
+      <rule>
+        <keyseq keys=".p"/>
+        <insert string="普"/>
+      </rule>
+      <rule>
+        <keyseq keys="/p"/>
+        <insert string="辺"/>
+      </rule>
+      <rule>
+        <keyseq keys="1a"/>
+        <insert string="ぱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="2a"/>
+        <insert string="慰"/>
+      </rule>
+      <rule>
+        <keyseq keys="3a"/>
+        <insert string="我"/>
+      </rule>
+      <rule>
+        <keyseq keys="4a"/>
+        <insert string="兼"/>
+      </rule>
+      <rule>
+        <keyseq keys="5a"/>
+        <insert string="菱"/>
+      </rule>
+      <rule>
+        <keyseq keys="6a"/>
+        <insert string="桜"/>
+      </rule>
+      <rule>
+        <keyseq keys="7a"/>
+        <insert string="瀬"/>
+      </rule>
+      <rule>
+        <keyseq keys="8a"/>
+        <insert string="鳥"/>
+      </rule>
+      <rule>
+        <keyseq keys="9a"/>
+        <insert string="催"/>
+      </rule>
+      <rule>
+        <keyseq keys="0a"/>
+        <insert string="障"/>
+      </rule>
+      <rule>
+        <keyseq keys="qa"/>
+        <insert string="収"/>
+      </rule>
+      <rule>
+        <keyseq keys="wa"/>
+        <insert string="際"/>
+      </rule>
+      <rule>
+        <keyseq keys="ea"/>
+        <insert string="太"/>
+      </rule>
+      <rule>
+        <keyseq keys="ra"/>
+        <insert string="園"/>
+      </rule>
+      <rule>
+        <keyseq keys="ta"/>
+        <insert string="船"/>
+      </rule>
+      <rule>
+        <keyseq keys="ya"/>
+        <insert string="中"/>
+      </rule>
+      <rule>
+        <keyseq keys="ua"/>
+        <insert string="ス"/>
+      </rule>
+      <rule>
+        <keyseq keys="ia"/>
+        <insert string="も"/>
+      </rule>
+      <rule>
+        <keyseq keys="oa"/>
+        <insert string="お"/>
+      </rule>
+      <rule>
+        <keyseq keys="pa"/>
+        <insert string="定"/>
+      </rule>
+      <rule>
+        <keyseq keys="aa"/>
+        <insert string="種"/>
+      </rule>
+      <rule>
+        <keyseq keys="sa"/>
+        <insert string="岡"/>
+      </rule>
+      <rule>
+        <keyseq keys="da"/>
+        <insert string="結"/>
+      </rule>
+      <rule>
+        <keyseq keys="fa"/>
+        <insert string="進"/>
+      </rule>
+      <rule>
+        <keyseq keys="ga"/>
+        <insert string="真"/>
+      </rule>
+      <rule>
+        <keyseq keys="ha"/>
+        <insert string="3"/>
+      </rule>
+      <rule>
+        <keyseq keys="ja"/>
+        <insert string="と"/>
+      </rule>
+      <rule>
+        <keyseq keys="ka"/>
+        <insert string="〇"/>
+      </rule>
+      <rule>
+        <keyseq keys="la"/>
+        <insert string="て"/>
+      </rule>
+      <rule>
+        <keyseq keys=";a"/>
+        <insert string="る"/>
+      </rule>
+      <rule>
+        <keyseq keys="za"/>
+        <insert string="ヒ"/>
+      </rule>
+      <rule>
+        <keyseq keys="xa"/>
+        <insert string="江"/>
+      </rule>
+      <rule>
+        <keyseq keys="ca"/>
+        <insert string="別"/>
+      </rule>
+      <rule>
+        <keyseq keys="va"/>
+        <insert string="考"/>
+      </rule>
+      <rule>
+        <keyseq keys="ba"/>
+        <insert string="権"/>
+      </rule>
+      <rule>
+        <keyseq keys="na"/>
+        <insert string="ッ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ma"/>
+        <insert string="人"/>
+      </rule>
+      <rule>
+        <keyseq keys=",a"/>
+        <insert string="三"/>
+      </rule>
+      <rule>
+        <keyseq keys=".a"/>
+        <insert string="京"/>
+      </rule>
+      <rule>
+        <keyseq keys="/a"/>
+        <insert string="ち"/>
+      </rule>
+      <rule>
+        <keyseq keys="1s"/>
+        <insert string="ぴ"/>
+      </rule>
+      <rule>
+        <keyseq keys="2s"/>
+        <insert string="為"/>
+      </rule>
+      <rule>
+        <keyseq keys="3s"/>
+        <insert string="掛"/>
+      </rule>
+      <rule>
+        <keyseq keys="4s"/>
+        <insert string="嫌"/>
+      </rule>
+      <rule>
+        <keyseq keys="5s"/>
+        <insert string="紐"/>
+      </rule>
+      <rule>
+        <keyseq keys="6s"/>
+        <insert string="典"/>
+      </rule>
+      <rule>
+        <keyseq keys="7s"/>
+        <insert string="博"/>
+      </rule>
+      <rule>
+        <keyseq keys="8s"/>
+        <insert string="筋"/>
+      </rule>
+      <rule>
+        <keyseq keys="9s"/>
+        <insert string="忠"/>
+      </rule>
+      <rule>
+        <keyseq keys="0s"/>
+        <insert string="乳"/>
+      </rule>
+      <rule>
+        <keyseq keys="qs"/>
+        <insert string="若"/>
+      </rule>
+      <rule>
+        <keyseq keys="ws"/>
+        <insert string="雄"/>
+      </rule>
+      <rule>
+        <keyseq keys="es"/>
+        <insert string="査"/>
+      </rule>
+      <rule>
+        <keyseq keys="rs"/>
+        <insert string="ふ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ts"/>
+        <insert string="賞"/>
+      </rule>
+      <rule>
+        <keyseq keys="ys"/>
+        <insert string="わ"/>
+      </rule>
+      <rule>
+        <keyseq keys="us"/>
+        <insert string="ラ"/>
+      </rule>
+      <rule>
+        <keyseq keys="is"/>
+        <insert string="東"/>
+      </rule>
+      <rule>
+        <keyseq keys="os"/>
+        <insert string="生"/>
+      </rule>
+      <rule>
+        <keyseq keys="ps"/>
+        <insert string="ろ"/>
+      </rule>
+      <rule>
+        <keyseq keys="as"/>
+        <insert string="宅"/>
+      </rule>
+      <rule>
+        <keyseq keys="ss"/>
+        <insert string="熟"/>
+      </rule>
+      <rule>
+        <keyseq keys="ds"/>
+        <insert string="待"/>
+      </rule>
+      <rule>
+        <keyseq keys="fs"/>
+        <insert string="取"/>
+      </rule>
+      <rule>
+        <keyseq keys="gs"/>
+        <insert string="科"/>
+      </rule>
+      <rule>
+        <keyseq keys="hs"/>
+        <insert string="ー"/>
+      </rule>
+      <rule>
+        <keyseq keys="js"/>
+        <insert string="し"/>
+      </rule>
+      <rule>
+        <keyseq keys="ks"/>
+        <insert string="た"/>
+      </rule>
+      <rule>
+        <keyseq keys="ls"/>
+        <insert string="一"/>
+      </rule>
+      <rule>
+        <keyseq keys=";s"/>
+        <insert string="が"/>
+      </rule>
+      <rule>
+        <keyseq keys="zs"/>
+        <insert string="及"/>
+      </rule>
+      <rule>
+        <keyseq keys="xs"/>
+        <insert string="久"/>
+      </rule>
+      <rule>
+        <keyseq keys="cs"/>
+        <insert string="蔵"/>
+      </rule>
+      <rule>
+        <keyseq keys="vs"/>
+        <insert string="早"/>
+      </rule>
+      <rule>
+        <keyseq keys="bs"/>
+        <insert string="造"/>
+      </rule>
+      <rule>
+        <keyseq keys="ns"/>
+        <insert string="ロ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ms"/>
+        <insert string="ク"/>
+      </rule>
+      <rule>
+        <keyseq keys=",s"/>
+        <insert string="万"/>
+      </rule>
+      <rule>
+        <keyseq keys=".s"/>
+        <insert string="方"/>
+      </rule>
+      <rule>
+        <keyseq keys="/s"/>
+        <insert string="フ"/>
+      </rule>
+      <rule>
+        <keyseq keys="1d"/>
+        <insert string="ぷ"/>
+      </rule>
+      <rule>
+        <keyseq keys="2d"/>
+        <insert string="陰"/>
+      </rule>
+      <rule>
+        <keyseq keys="3d"/>
+        <insert string="敢"/>
+      </rule>
+      <rule>
+        <keyseq keys="4d"/>
+        <insert string="顕"/>
+      </rule>
+      <rule>
+        <keyseq keys="5d"/>
+        <insert string="描"/>
+      </rule>
+      <rule>
+        <keyseq keys="6d"/>
+        <insert string="採"/>
+      </rule>
+      <rule>
+        <keyseq keys="7d"/>
+        <insert string="謡"/>
+      </rule>
+      <rule>
+        <keyseq keys="8d"/>
+        <insert string="希"/>
+      </rule>
+      <rule>
+        <keyseq keys="9d"/>
+        <insert string="仏"/>
+      </rule>
+      <rule>
+        <keyseq keys="0d"/>
+        <insert string="察"/>
+      </rule>
+      <rule>
+        <keyseq keys="qd"/>
+        <insert string="指"/>
+      </rule>
+      <rule>
+        <keyseq keys="wd"/>
+        <insert string="氏"/>
+      </rule>
+      <rule>
+        <keyseq keys="ed"/>
+        <insert string="丸"/>
+      </rule>
+      <rule>
+        <keyseq keys="rd"/>
+        <insert string="続"/>
+      </rule>
+      <rule>
+        <keyseq keys="td"/>
+        <insert string="ェ"/>
+      </rule>
+      <rule>
+        <keyseq keys="yd"/>
+        <insert string="う"/>
+      </rule>
+      <rule>
+        <keyseq keys="ud"/>
+        <insert string="4"/>
+      </rule>
+      <rule>
+        <keyseq keys="id"/>
+        <insert string=")"/>
+      </rule>
+      <rule>
+        <keyseq keys="od"/>
+        <insert string="十"/>
+      </rule>
+      <rule>
+        <keyseq keys="pd"/>
+        <insert string="リ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ad"/>
+        <insert string="料"/>
+      </rule>
+      <rule>
+        <keyseq keys="sd"/>
+        <insert string="土"/>
+      </rule>
+      <rule>
+        <keyseq keys="dd"/>
+        <insert string="活"/>
+      </rule>
+      <rule>
+        <keyseq keys="fd"/>
+        <insert string="ね"/>
+      </rule>
+      <rule>
+        <keyseq keys="gd"/>
+        <insert string="参"/>
+      </rule>
+      <rule>
+        <keyseq keys="hd"/>
+        <insert string="い"/>
+      </rule>
+      <rule>
+        <keyseq keys="jd"/>
+        <insert string="、"/>
+      </rule>
+      <rule>
+        <keyseq keys="kd"/>
+        <insert string="の"/>
+      </rule>
+      <rule>
+        <keyseq keys="ld"/>
+        <insert string="5"/>
+      </rule>
+      <rule>
+        <keyseq keys=";d"/>
+        <insert string="1"/>
+      </rule>
+      <rule>
+        <keyseq keys="zd"/>
+        <insert string="投"/>
+      </rule>
+      <rule>
+        <keyseq keys="xd"/>
+        <insert string="義"/>
+      </rule>
+      <rule>
+        <keyseq keys="cd"/>
+        <insert string="算"/>
+      </rule>
+      <rule>
+        <keyseq keys="vd"/>
+        <insert string="半"/>
+      </rule>
+      <rule>
+        <keyseq keys="bd"/>
+        <insert string="県"/>
+      </rule>
+      <rule>
+        <keyseq keys="nd"/>
+        <insert string="ん"/>
+      </rule>
+      <rule>
+        <keyseq keys="md"/>
+        <insert string="ま"/>
+      </rule>
+      <rule>
+        <keyseq keys=",d"/>
+        <insert string="ン"/>
+      </rule>
+      <rule>
+        <keyseq keys=".d"/>
+        <insert string="つ"/>
+      </rule>
+      <rule>
+        <keyseq keys="/d"/>
+        <insert string="四"/>
+      </rule>
+      <rule>
+        <keyseq keys="1f"/>
+        <insert string="ぺ"/>
+      </rule>
+      <rule>
+        <keyseq keys="2f"/>
+        <insert string="隠"/>
+      </rule>
+      <rule>
+        <keyseq keys="3f"/>
+        <insert string="甘"/>
+      </rule>
+      <rule>
+        <keyseq keys="4f"/>
+        <insert string="牽"/>
+      </rule>
+      <rule>
+        <keyseq keys="5f"/>
+        <insert string="憤"/>
+      </rule>
+      <rule>
+        <keyseq keys="6f"/>
+        <insert string="君"/>
+      </rule>
+      <rule>
+        <keyseq keys="7f"/>
+        <insert string="純"/>
+      </rule>
+      <rule>
+        <keyseq keys="8f"/>
+        <insert string="副"/>
+      </rule>
+      <rule>
+        <keyseq keys="9f"/>
+        <insert string="盟"/>
+      </rule>
+      <rule>
+        <keyseq keys="0f"/>
+        <insert string="標"/>
+      </rule>
+      <rule>
+        <keyseq keys="qf"/>
+        <insert string="ぎ"/>
+      </rule>
+      <rule>
+        <keyseq keys="wf"/>
+        <insert string="格"/>
+      </rule>
+      <rule>
+        <keyseq keys="ef"/>
+        <insert string="次"/>
+      </rule>
+      <rule>
+        <keyseq keys="rf"/>
+        <insert string="習"/>
+      </rule>
+      <rule>
+        <keyseq keys="tf"/>
+        <insert string="火"/>
+      </rule>
+      <rule>
+        <keyseq keys="yf"/>
+        <insert string="あ"/>
+      </rule>
+      <rule>
+        <keyseq keys="uf"/>
+        <insert string="こ"/>
+      </rule>
+      <rule>
+        <keyseq keys="if"/>
+        <insert string="6"/>
+      </rule>
+      <rule>
+        <keyseq keys="of"/>
+        <insert string="学"/>
+      </rule>
+      <rule>
+        <keyseq keys="pf"/>
+        <insert string="月"/>
+      </rule>
+      <rule>
+        <keyseq keys="af"/>
+        <insert string="受"/>
+      </rule>
+      <rule>
+        <keyseq keys="sf"/>
+        <insert string="予"/>
+      </rule>
+      <rule>
+        <keyseq keys="df"/>
+        <insert string="切"/>
+      </rule>
+      <rule>
+        <keyseq keys="ff"/>
+        <insert string="育"/>
+      </rule>
+      <rule>
+        <keyseq keys="gf"/>
+        <insert string="池"/>
+      </rule>
+      <rule>
+        <keyseq keys="hf"/>
+        <insert string="。"/>
+      </rule>
+      <rule>
+        <keyseq keys="jf"/>
+        <insert string="◆"/>
+      </rule>
+      <rule>
+        <keyseq keys="kf"/>
+        <insert string="0"/>
+      </rule>
+      <rule>
+        <keyseq keys="lf"/>
+        <insert string="・"/>
+      </rule>
+      <rule>
+        <keyseq keys=";f"/>
+        <insert string="2"/>
+      </rule>
+      <rule>
+        <keyseq keys="zf"/>
+        <insert string="込"/>
+      </rule>
+      <rule>
+        <keyseq keys="xf"/>
+        <insert string="沢"/>
+      </rule>
+      <rule>
+        <keyseq keys="cf"/>
+        <insert string="軍"/>
+      </rule>
+      <rule>
+        <keyseq keys="vf"/>
+        <insert string="青"/>
+      </rule>
+      <rule>
+        <keyseq keys="bf"/>
+        <insert string="清"/>
+      </rule>
+      <rule>
+        <keyseq keys="nf"/>
+        <insert string="け"/>
+      </rule>
+      <rule>
+        <keyseq keys="mf"/>
+        <insert string="イ"/>
+      </rule>
+      <rule>
+        <keyseq keys=",f"/>
+        <insert string="す"/>
+      </rule>
+      <rule>
+        <keyseq keys=".f"/>
+        <insert string="電"/>
+      </rule>
+      <rule>
+        <keyseq keys="/f"/>
+        <insert string="地"/>
+      </rule>
+      <rule>
+        <keyseq keys="1g"/>
+        <insert string="ぽ"/>
+      </rule>
+      <rule>
+        <keyseq keys="2g"/>
+        <insert string="胃"/>
+      </rule>
+      <rule>
+        <keyseq keys="3g"/>
+        <insert string="患"/>
+      </rule>
+      <rule>
+        <keyseq keys="4g"/>
+        <insert string="厳"/>
+      </rule>
+      <rule>
+        <keyseq keys="5g"/>
+        <insert string="弊"/>
+      </rule>
+      <rule>
+        <keyseq keys="6g"/>
+        <insert string="犯"/>
+      </rule>
+      <rule>
+        <keyseq keys="7g"/>
+        <insert string="余"/>
+      </rule>
+      <rule>
+        <keyseq keys="8g"/>
+        <insert string="堀"/>
+      </rule>
+      <rule>
+        <keyseq keys="9g"/>
+        <insert string="肩"/>
+      </rule>
+      <rule>
+        <keyseq keys="0g"/>
+        <insert string="療"/>
+      </rule>
+      <rule>
+        <keyseq keys="qg"/>
+        <insert string="思"/>
+      </rule>
+      <rule>
+        <keyseq keys="wg"/>
+        <insert string="術"/>
+      </rule>
+      <rule>
+        <keyseq keys="eg"/>
+        <insert string="広"/>
+      </rule>
+      <rule>
+        <keyseq keys="rg"/>
+        <insert string="門"/>
+      </rule>
+      <rule>
+        <keyseq keys="tg"/>
+        <insert string="聞"/>
+      </rule>
+      <rule>
+        <keyseq keys="yg"/>
+        <insert string="本"/>
+      </rule>
+      <rule>
+        <keyseq keys="ug"/>
+        <insert string="さ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ig"/>
+        <insert string="ら"/>
+      </rule>
+      <rule>
+        <keyseq keys="og"/>
+        <insert string="高"/>
+      </rule>
+      <rule>
+        <keyseq keys="pg"/>
+        <insert string="シ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ag"/>
+        <insert string="英"/>
+      </rule>
+      <rule>
+        <keyseq keys="sg"/>
+        <insert string="ボ"/>
+      </rule>
+      <rule>
+        <keyseq keys="dg"/>
+        <insert string="加"/>
+      </rule>
+      <rule>
+        <keyseq keys="fg"/>
+        <insert string="室"/>
+      </rule>
+      <rule>
+        <keyseq keys="gg"/>
+        <insert string="少"/>
+      </rule>
+      <rule>
+        <keyseq keys="hg"/>
+        <insert string="で"/>
+      </rule>
+      <rule>
+        <keyseq keys="jg"/>
+        <insert string="は"/>
+      </rule>
+      <rule>
+        <keyseq keys="kg"/>
+        <insert string="に"/>
+      </rule>
+      <rule>
+        <keyseq keys="lg"/>
+        <insert string="な"/>
+      </rule>
+      <rule>
+        <keyseq keys=";g"/>
+        <insert string="を"/>
+      </rule>
+      <rule>
+        <keyseq keys="zg"/>
+        <insert string="転"/>
+      </rule>
+      <rule>
+        <keyseq keys="xg"/>
+        <insert string="空"/>
+      </rule>
+      <rule>
+        <keyseq keys="cg"/>
+        <insert string="性"/>
+      </rule>
+      <rule>
+        <keyseq keys="vg"/>
+        <insert string="使"/>
+      </rule>
+      <rule>
+        <keyseq keys="bg"/>
+        <insert string="級"/>
+      </rule>
+      <rule>
+        <keyseq keys="ng"/>
+        <insert string="業"/>
+      </rule>
+      <rule>
+        <keyseq keys="mg"/>
+        <insert string="時"/>
+      </rule>
+      <rule>
+        <keyseq keys=",g"/>
+        <insert string="「"/>
+      </rule>
+      <rule>
+        <keyseq keys=".g"/>
+        <insert string="長"/>
+      </rule>
+      <rule>
+        <keyseq keys="/g"/>
+        <insert string="み"/>
+      </rule>
+      <rule>
+        <keyseq keys="1h"/>
+        <insert string="朱"/>
+      </rule>
+      <rule>
+        <keyseq keys="2h"/>
+        <insert string="遅"/>
+      </rule>
+      <rule>
+        <keyseq keys="3h"/>
+        <insert string="甲"/>
+      </rule>
+      <rule>
+        <keyseq keys="4h"/>
+        <insert string="致"/>
+      </rule>
+      <rule>
+        <keyseq keys="5h"/>
+        <insert string="汎"/>
+      </rule>
+      <rule>
+        <keyseq keys="7h"/>
+        <insert string="衰"/>
+      </rule>
+      <rule>
+        <keyseq keys="8h"/>
+        <insert string="滋"/>
+      </rule>
+      <rule>
+        <keyseq keys="9h"/>
+        <insert string="沈"/>
+      </rule>
+      <rule>
+        <keyseq keys="0h"/>
+        <insert string="己"/>
+      </rule>
+      <rule>
+        <keyseq keys="qh"/>
+        <insert string="病"/>
+      </rule>
+      <rule>
+        <keyseq keys="wh"/>
+        <insert string="終"/>
+      </rule>
+      <rule>
+        <keyseq keys="eh"/>
+        <insert string="起"/>
+      </rule>
+      <rule>
+        <keyseq keys="rh"/>
+        <insert string="路"/>
+      </rule>
+      <rule>
+        <keyseq keys="th"/>
+        <insert string="越"/>
+      </rule>
+      <rule>
+        <keyseq keys="yh"/>
+        <insert string="む"/>
+      </rule>
+      <rule>
+        <keyseq keys="uh"/>
+        <insert string="南"/>
+      </rule>
+      <rule>
+        <keyseq keys="ih"/>
+        <insert string="原"/>
+      </rule>
+      <rule>
+        <keyseq keys="oh"/>
+        <insert string="駅"/>
+      </rule>
+      <rule>
+        <keyseq keys="ph"/>
+        <insert string="物"/>
+      </rule>
+      <rule>
+        <keyseq keys="ah"/>
+        <insert string="勢"/>
+      </rule>
+      <rule>
+        <keyseq keys="sh"/>
+        <insert string="必"/>
+      </rule>
+      <rule>
+        <keyseq keys="dh"/>
+        <insert string="講"/>
+      </rule>
+      <rule>
+        <keyseq keys="fh"/>
+        <insert string="愛"/>
+      </rule>
+      <rule>
+        <keyseq keys="gh"/>
+        <insert string="管"/>
+      </rule>
+      <rule>
+        <keyseq keys="hh"/>
+        <insert string="要"/>
+      </rule>
+      <rule>
+        <keyseq keys="jh"/>
+        <insert string="設"/>
+      </rule>
+      <rule>
+        <keyseq keys="kh"/>
+        <insert string="水"/>
+      </rule>
+      <rule>
+        <keyseq keys="lh"/>
+        <insert string="藤"/>
+      </rule>
+      <rule>
+        <keyseq keys=";h"/>
+        <insert string="有"/>
+      </rule>
+      <rule>
+        <keyseq keys="zh"/>
+        <insert string="素"/>
+      </rule>
+      <rule>
+        <keyseq keys="xh"/>
+        <insert string="兵"/>
+      </rule>
+      <rule>
+        <keyseq keys="ch"/>
+        <insert string="専"/>
+      </rule>
+      <rule>
+        <keyseq keys="vh"/>
+        <insert string="親"/>
+      </rule>
+      <rule>
+        <keyseq keys="bh"/>
+        <insert string="寮"/>
+      </rule>
+      <rule>
+        <keyseq keys="nh"/>
+        <insert string="ホ"/>
+      </rule>
+      <rule>
+        <keyseq keys="mh"/>
+        <insert string="共"/>
+      </rule>
+      <rule>
+        <keyseq keys=",h"/>
+        <insert string="ブ"/>
+      </rule>
+      <rule>
+        <keyseq keys=".h"/>
+        <insert string="平"/>
+      </rule>
+      <rule>
+        <keyseq keys="/h"/>
+        <insert string="楽"/>
+      </rule>
+      <rule>
+        <keyseq keys="1j"/>
+        <insert string="陣"/>
+      </rule>
+      <rule>
+        <keyseq keys="2j"/>
+        <insert string="鶴"/>
+      </rule>
+      <rule>
+        <keyseq keys="3j"/>
+        <insert string="鹿"/>
+      </rule>
+      <rule>
+        <keyseq keys="4j"/>
+        <insert string="貨"/>
+      </rule>
+      <rule>
+        <keyseq keys="5j"/>
+        <insert string="絡"/>
+      </rule>
+      <rule>
+        <keyseq keys="7j"/>
+        <insert string="趨"/>
+      </rule>
+      <rule>
+        <keyseq keys="8j"/>
+        <insert string="湿"/>
+      </rule>
+      <rule>
+        <keyseq keys="9j"/>
+        <insert string="添"/>
+      </rule>
+      <rule>
+        <keyseq keys="0j"/>
+        <insert string="已"/>
+      </rule>
+      <rule>
+        <keyseq keys="qj"/>
+        <insert string="常"/>
+      </rule>
+      <rule>
+        <keyseq keys="wj"/>
+        <insert string="張"/>
+      </rule>
+      <rule>
+        <keyseq keys="ej"/>
+        <insert string="薬"/>
+      </rule>
+      <rule>
+        <keyseq keys="rj"/>
+        <insert string="防"/>
+      </rule>
+      <rule>
+        <keyseq keys="tj"/>
+        <insert string="得"/>
+      </rule>
+      <rule>
+        <keyseq keys="yj"/>
+        <insert string="ケ"/>
+      </rule>
+      <rule>
+        <keyseq keys="uj"/>
+        <insert string="式"/>
+      </rule>
+      <rule>
+        <keyseq keys="ij"/>
+        <insert string="戦"/>
+      </rule>
+      <rule>
+        <keyseq keys="oj"/>
+        <insert string="関"/>
+      </rule>
+      <rule>
+        <keyseq keys="pj"/>
+        <insert string="男"/>
+      </rule>
+      <rule>
+        <keyseq keys="aj"/>
+        <insert string="輸"/>
+      </rule>
+      <rule>
+        <keyseq keys="sj"/>
+        <insert string="形"/>
+      </rule>
+      <rule>
+        <keyseq keys="dj"/>
+        <insert string="助"/>
+      </rule>
+      <rule>
+        <keyseq keys="fj"/>
+        <insert string="◇"/>
+      </rule>
+      <rule>
+        <keyseq keys="gj"/>
+        <insert string="流"/>
+      </rule>
+      <rule>
+        <keyseq keys="hj"/>
+        <insert string="連"/>
+      </rule>
+      <rule>
+        <keyseq keys="jj"/>
+        <insert string="鉄"/>
+      </rule>
+      <rule>
+        <keyseq keys="kj"/>
+        <insert string="教"/>
+      </rule>
+      <rule>
+        <keyseq keys="lj"/>
+        <insert string="力"/>
+      </rule>
+      <rule>
+        <keyseq keys=";j"/>
+        <insert string="ベ"/>
+      </rule>
+      <rule>
+        <keyseq keys="zj"/>
+        <insert string="毛"/>
+      </rule>
+      <rule>
+        <keyseq keys="xj"/>
+        <insert string="永"/>
+      </rule>
+      <rule>
+        <keyseq keys="cj"/>
+        <insert string="申"/>
+      </rule>
+      <rule>
+        <keyseq keys="vj"/>
+        <insert string="袋"/>
+      </rule>
+      <rule>
+        <keyseq keys="bj"/>
+        <insert string="良"/>
+      </rule>
+      <rule>
+        <keyseq keys="nj"/>
+        <insert string="私"/>
+      </rule>
+      <rule>
+        <keyseq keys="mj"/>
+        <insert string="ゴ"/>
+      </rule>
+      <rule>
+        <keyseq keys=",j"/>
+        <insert string="来"/>
+      </rule>
+      <rule>
+        <keyseq keys=".j"/>
+        <insert string="信"/>
+      </rule>
+      <rule>
+        <keyseq keys="/j"/>
+        <insert string="午"/>
+      </rule>
+      <rule>
+        <keyseq keys="1k"/>
+        <insert string="眼"/>
+      </rule>
+      <rule>
+        <keyseq keys="2k"/>
+        <insert string="繁"/>
+      </rule>
+      <rule>
+        <keyseq keys="3k"/>
+        <insert string="誌"/>
+      </rule>
+      <rule>
+        <keyseq keys="4k"/>
+        <insert string="招"/>
+      </rule>
+      <rule>
+        <keyseq keys="5k"/>
+        <insert string="季"/>
+      </rule>
+      <rule>
+        <keyseq keys="7k"/>
+        <insert string="垂"/>
+      </rule>
+      <rule>
+        <keyseq keys="8k"/>
+        <insert string="甚"/>
+      </rule>
+      <rule>
+        <keyseq keys="9k"/>
+        <insert string="徹"/>
+      </rule>
+      <rule>
+        <keyseq keys="0k"/>
+        <insert string="巳"/>
+      </rule>
+      <rule>
+        <keyseq keys="qk"/>
+        <insert string="寺"/>
+      </rule>
+      <rule>
+        <keyseq keys="wk"/>
+        <insert string="質"/>
+      </rule>
+      <rule>
+        <keyseq keys="ek"/>
+        <insert string="づ"/>
+      </rule>
+      <rule>
+        <keyseq keys="rk"/>
+        <insert string="港"/>
+      </rule>
+      <rule>
+        <keyseq keys="tk"/>
+        <insert string="条"/>
+      </rule>
+      <rule>
+        <keyseq keys="yk"/>
+        <insert string="話"/>
+      </rule>
+      <rule>
+        <keyseq keys="uk"/>
+        <insert string="座"/>
+      </rule>
+      <rule>
+        <keyseq keys="ik"/>
+        <insert string="線"/>
+      </rule>
+      <rule>
+        <keyseq keys="ok"/>
+        <insert string="ダ"/>
+      </rule>
+      <rule>
+        <keyseq keys="pk"/>
+        <insert string="橋"/>
+      </rule>
+      <rule>
+        <keyseq keys="ak"/>
+        <insert string="基"/>
+      </rule>
+      <rule>
+        <keyseq keys="sk"/>
+        <insert string="好"/>
+      </rule>
+      <rule>
+        <keyseq keys="dk"/>
+        <insert string="味"/>
+      </rule>
+      <rule>
+        <keyseq keys="fk"/>
+        <insert string="宝"/>
+      </rule>
+      <rule>
+        <keyseq keys="gk"/>
+        <insert string="争"/>
+      </rule>
+      <rule>
+        <keyseq keys="hk"/>
+        <insert string="デ"/>
+      </rule>
+      <rule>
+        <keyseq keys="jk"/>
+        <insert string="現"/>
+      </rule>
+      <rule>
+        <keyseq keys="kk"/>
+        <insert string="エ"/>
+      </rule>
+      <rule>
+        <keyseq keys="lk"/>
+        <insert string="他"/>
+      </rule>
+      <rule>
+        <keyseq keys=";k"/>
+        <insert string="度"/>
+      </rule>
+      <rule>
+        <keyseq keys="zk"/>
+        <insert string="等"/>
+      </rule>
+      <rule>
+        <keyseq keys="xk"/>
+        <insert string="浅"/>
+      </rule>
+      <rule>
+        <keyseq keys="ck"/>
+        <insert string="頃"/>
+      </rule>
+      <rule>
+        <keyseq keys="vk"/>
+        <insert string="落"/>
+      </rule>
+      <rule>
+        <keyseq keys="bk"/>
+        <insert string="命"/>
+      </rule>
+      <rule>
+        <keyseq keys="nk"/>
+        <insert string="村"/>
+      </rule>
+      <rule>
+        <keyseq keys="mk"/>
+        <insert string="ガ"/>
+      </rule>
+      <rule>
+        <keyseq keys=",k"/>
+        <insert string="製"/>
+      </rule>
+      <rule>
+        <keyseq keys=".k"/>
+        <insert string="校"/>
+      </rule>
+      <rule>
+        <keyseq keys="/k"/>
+        <insert string="ご"/>
+      </rule>
+      <rule>
+        <keyseq keys="1l"/>
+        <insert string="執"/>
+      </rule>
+      <rule>
+        <keyseq keys="2l"/>
+        <insert string="紹"/>
+      </rule>
+      <rule>
+        <keyseq keys="3l"/>
+        <insert string="夢"/>
+      </rule>
+      <rule>
+        <keyseq keys="4l"/>
+        <insert string="卸"/>
+      </rule>
+      <rule>
+        <keyseq keys="5l"/>
+        <insert string="阿"/>
+      </rule>
+      <rule>
+        <keyseq keys="7l"/>
+        <insert string="粋"/>
+      </rule>
+      <rule>
+        <keyseq keys="9l"/>
+        <insert string="爪"/>
+      </rule>
+      <rule>
+        <keyseq keys="0l"/>
+        <insert string="巴"/>
+      </rule>
+      <rule>
+        <keyseq keys="ql"/>
+        <insert string="停"/>
+      </rule>
+      <rule>
+        <keyseq keys="wl"/>
+        <insert string="領"/>
+      </rule>
+      <rule>
+        <keyseq keys="el"/>
+        <insert string="容"/>
+      </rule>
+      <rule>
+        <keyseq keys="rl"/>
+        <insert string="玉"/>
+      </rule>
+      <rule>
+        <keyseq keys="tl"/>
+        <insert string="右"/>
+      </rule>
+      <rule>
+        <keyseq keys="yl"/>
+        <insert string="べ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ul"/>
+        <insert string="民"/>
+      </rule>
+      <rule>
+        <keyseq keys="il"/>
+        <insert string="ソ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ol"/>
+        <insert string="点"/>
+      </rule>
+      <rule>
+        <keyseq keys="pl"/>
+        <insert string="遇"/>
+      </rule>
+      <rule>
+        <keyseq keys="al"/>
+        <insert string="足"/>
+      </rule>
+      <rule>
+        <keyseq keys="sl"/>
+        <insert string="草"/>
+      </rule>
+      <rule>
+        <keyseq keys="dl"/>
+        <insert string="築"/>
+      </rule>
+      <rule>
+        <keyseq keys="fl"/>
+        <insert string="観"/>
+      </rule>
+      <rule>
+        <keyseq keys="gl"/>
+        <insert string="言"/>
+      </rule>
+      <rule>
+        <keyseq keys="hl"/>
+        <insert string="車"/>
+      </rule>
+      <rule>
+        <keyseq keys="jl"/>
+        <insert string="成"/>
+      </rule>
+      <rule>
+        <keyseq keys="kl"/>
+        <insert string="天"/>
+      </rule>
+      <rule>
+        <keyseq keys="ll"/>
+        <insert string="世"/>
+      </rule>
+      <rule>
+        <keyseq keys=";l"/>
+        <insert string="文"/>
+      </rule>
+      <rule>
+        <keyseq keys="zl"/>
+        <insert string="板"/>
+      </rule>
+      <rule>
+        <keyseq keys="xl"/>
+        <insert string="客"/>
+      </rule>
+      <rule>
+        <keyseq keys="cl"/>
+        <insert string="師"/>
+      </rule>
+      <rule>
+        <keyseq keys="vl"/>
+        <insert string="税"/>
+      </rule>
+      <rule>
+        <keyseq keys="bl"/>
+        <insert string="飛"/>
+      </rule>
+      <rule>
+        <keyseq keys="nl"/>
+        <insert string="ノ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ml"/>
+        <insert string="完"/>
+      </rule>
+      <rule>
+        <keyseq keys=",l"/>
+        <insert string="重"/>
+      </rule>
+      <rule>
+        <keyseq keys=".l"/>
+        <insert string="約"/>
+      </rule>
+      <rule>
+        <keyseq keys="/l"/>
+        <insert string="各"/>
+      </rule>
+      <rule>
+        <keyseq keys="1;"/>
+        <insert string="岳"/>
+      </rule>
+      <rule>
+        <keyseq keys="2;"/>
+        <insert string="刑"/>
+      </rule>
+      <rule>
+        <keyseq keys="3;"/>
+        <insert string="弱"/>
+      </rule>
+      <rule>
+        <keyseq keys="4;"/>
+        <insert string="雲"/>
+      </rule>
+      <rule>
+        <keyseq keys="5;"/>
+        <insert string="窓"/>
+      </rule>
+      <rule>
+        <keyseq keys="7;"/>
+        <insert string="寸"/>
+      </rule>
+      <rule>
+        <keyseq keys="8;"/>
+        <insert string="瞳"/>
+      </rule>
+      <rule>
+        <keyseq keys="9;"/>
+        <insert string="陶"/>
+      </rule>
+      <rule>
+        <keyseq keys="q;"/>
+        <insert string="河"/>
+      </rule>
+      <rule>
+        <keyseq keys="w;"/>
+        <insert string="置"/>
+      </rule>
+      <rule>
+        <keyseq keys="e;"/>
+        <insert string="供"/>
+      </rule>
+      <rule>
+        <keyseq keys="r;"/>
+        <insert string="試"/>
+      </rule>
+      <rule>
+        <keyseq keys="t;"/>
+        <insert string="席"/>
+      </rule>
+      <rule>
+        <keyseq keys="y;"/>
+        <insert string="期"/>
+      </rule>
+      <rule>
+        <keyseq keys="u;"/>
+        <insert string="ゾ"/>
+      </rule>
+      <rule>
+        <keyseq keys="i;"/>
+        <insert string="歳"/>
+      </rule>
+      <rule>
+        <keyseq keys="o;"/>
+        <insert string="強"/>
+      </rule>
+      <rule>
+        <keyseq keys="p;"/>
+        <insert string="係"/>
+      </rule>
+      <rule>
+        <keyseq keys="a;"/>
+        <insert string="婦"/>
+      </rule>
+      <rule>
+        <keyseq keys="s;"/>
+        <insert string="段"/>
+      </rule>
+      <rule>
+        <keyseq keys="d;"/>
+        <insert string="衛"/>
+      </rule>
+      <rule>
+        <keyseq keys="f;"/>
+        <insert string="額"/>
+      </rule>
+      <rule>
+        <keyseq keys="g;"/>
+        <insert string="渋"/>
+      </rule>
+      <rule>
+        <keyseq keys="h;"/>
+        <insert string="主"/>
+      </rule>
+      <rule>
+        <keyseq keys="j;"/>
+        <insert string="映"/>
+      </rule>
+      <rule>
+        <keyseq keys="k;"/>
+        <insert string="書"/>
+      </rule>
+      <rule>
+        <keyseq keys="l;"/>
+        <insert string="可"/>
+      </rule>
+      <rule>
+        <keyseq keys=";;"/>
+        <insert string="へ"/>
+      </rule>
+      <rule>
+        <keyseq keys="z;"/>
+        <insert string="伝"/>
+      </rule>
+      <rule>
+        <keyseq keys="x;"/>
+        <insert string="庭"/>
+      </rule>
+      <rule>
+        <keyseq keys="c;"/>
+        <insert string="課"/>
+      </rule>
+      <rule>
+        <keyseq keys="v;"/>
+        <insert string="着"/>
+      </rule>
+      <rule>
+        <keyseq keys="b;"/>
+        <insert string="坂"/>
+      </rule>
+      <rule>
+        <keyseq keys="n;"/>
+        <insert string="近"/>
+      </rule>
+      <rule>
+        <keyseq keys="m;"/>
+        <insert string="外"/>
+      </rule>
+      <rule>
+        <keyseq keys=",;"/>
+        <insert string="米"/>
+      </rule>
+      <rule>
+        <keyseq keys=".;"/>
+        <insert string="ョ"/>
+      </rule>
+      <rule>
+        <keyseq keys="/;"/>
+        <insert string="光"/>
+      </rule>
+      <rule>
+        <keyseq keys="1z"/>
+        <insert string="ぁ"/>
+      </rule>
+      <rule>
+        <keyseq keys="3z"/>
+        <insert string="瓦"/>
+      </rule>
+      <rule>
+        <keyseq keys="6z"/>
+        <insert string="呼"/>
+      </rule>
+      <rule>
+        <keyseq keys="7z"/>
+        <insert string="幅"/>
+      </rule>
+      <rule>
+        <keyseq keys="8z"/>
+        <insert string="歓"/>
+      </rule>
+      <rule>
+        <keyseq keys="9z"/>
+        <insert string="功"/>
+      </rule>
+      <rule>
+        <keyseq keys="0z"/>
+        <insert string="盗"/>
+      </rule>
+      <rule>
+        <keyseq keys="qz"/>
+        <insert string="徳"/>
+      </rule>
+      <rule>
+        <keyseq keys="wz"/>
+        <insert string="渡"/>
+      </rule>
+      <rule>
+        <keyseq keys="ez"/>
+        <insert string="守"/>
+      </rule>
+      <rule>
+        <keyseq keys="rz"/>
+        <insert string="登"/>
+      </rule>
+      <rule>
+        <keyseq keys="tz"/>
+        <insert string="退"/>
+      </rule>
+      <rule>
+        <keyseq keys="yz"/>
+        <insert string="店"/>
+      </rule>
+      <rule>
+        <keyseq keys="uz"/>
+        <insert string="持"/>
+      </rule>
+      <rule>
+        <keyseq keys="iz"/>
+        <insert string="町"/>
+      </rule>
+      <rule>
+        <keyseq keys="oz"/>
+        <insert string="所"/>
+      </rule>
+      <rule>
+        <keyseq keys="pz"/>
+        <insert string="ほ"/>
+      </rule>
+      <rule>
+        <keyseq keys="az"/>
+        <insert string="件"/>
+      </rule>
+      <rule>
+        <keyseq keys="sz"/>
+        <insert string="友"/>
+      </rule>
+      <rule>
+        <keyseq keys="dz"/>
+        <insert string="卒"/>
+      </rule>
+      <rule>
+        <keyseq keys="fz"/>
+        <insert string="初"/>
+      </rule>
+      <rule>
+        <keyseq keys="gz"/>
+        <insert string="慣"/>
+      </rule>
+      <rule>
+        <keyseq keys="hz"/>
+        <insert string="行"/>
+      </rule>
+      <rule>
+        <keyseq keys="jz"/>
+        <insert string="ド"/>
+      </rule>
+      <rule>
+        <keyseq keys="kz"/>
+        <insert string="円"/>
+      </rule>
+      <rule>
+        <keyseq keys="lz"/>
+        <insert string="小"/>
+      </rule>
+      <rule>
+        <keyseq keys=";z"/>
+        <insert string="ジ"/>
+      </rule>
+      <rule>
+        <keyseq keys="zz"/>
+        <insert string="ヨ"/>
+      </rule>
+      <rule>
+        <keyseq keys="xz"/>
+        <insert string="誤"/>
+      </rule>
+      <rule>
+        <keyseq keys="cz"/>
+        <insert string="証"/>
+      </rule>
+      <rule>
+        <keyseq keys="vz"/>
+        <insert string="含"/>
+      </rule>
+      <rule>
+        <keyseq keys="bz"/>
+        <insert string="%"/>
+      </rule>
+      <rule>
+        <keyseq keys="nz"/>
+        <insert string="海"/>
+      </rule>
+      <rule>
+        <keyseq keys="mz"/>
+        <insert string="道"/>
+      </rule>
+      <rule>
+        <keyseq keys=",z"/>
+        <insert string="ず"/>
+      </rule>
+      <rule>
+        <keyseq keys=".z"/>
+        <insert string="西"/>
+      </rule>
+      <rule>
+        <keyseq keys="/z"/>
+        <insert string="げ"/>
+      </rule>
+      <rule>
+        <keyseq keys="1x"/>
+        <insert string="ぃ"/>
+      </rule>
+      <rule>
+        <keyseq keys="6x"/>
+        <insert string="紀"/>
+      </rule>
+      <rule>
+        <keyseq keys="7x"/>
+        <insert string="破"/>
+      </rule>
+      <rule>
+        <keyseq keys="8x"/>
+        <insert string="郡"/>
+      </rule>
+      <rule>
+        <keyseq keys="9x"/>
+        <insert string="抗"/>
+      </rule>
+      <rule>
+        <keyseq keys="0x"/>
+        <insert string="幡"/>
+      </rule>
+      <rule>
+        <keyseq keys="qx"/>
+        <insert string="械"/>
+      </rule>
+      <rule>
+        <keyseq keys="wx"/>
+        <insert string="刊"/>
+      </rule>
+      <rule>
+        <keyseq keys="ex"/>
+        <insert string="訪"/>
+      </rule>
+      <rule>
+        <keyseq keys="rx"/>
+        <insert string="融"/>
+      </rule>
+      <rule>
+        <keyseq keys="tx"/>
+        <insert string="雨"/>
+      </rule>
+      <rule>
+        <keyseq keys="yx"/>
+        <insert string="全"/>
+      </rule>
+      <rule>
+        <keyseq keys="ux"/>
+        <insert string="じ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ix"/>
+        <insert string="自"/>
+      </rule>
+      <rule>
+        <keyseq keys="ox"/>
+        <insert string="議"/>
+      </rule>
+      <rule>
+        <keyseq keys="px"/>
+        <insert string="明"/>
+      </rule>
+      <rule>
+        <keyseq keys="ax"/>
+        <insert string="宮"/>
+      </rule>
+      <rule>
+        <keyseq keys="sx"/>
+        <insert string="伊"/>
+      </rule>
+      <rule>
+        <keyseq keys="dx"/>
+        <insert string="求"/>
+      </rule>
+      <rule>
+        <keyseq keys="fx"/>
+        <insert string="技"/>
+      </rule>
+      <rule>
+        <keyseq keys="gx"/>
+        <insert string="写"/>
+      </rule>
+      <rule>
+        <keyseq keys="hx"/>
+        <insert string="通"/>
+      </rule>
+      <rule>
+        <keyseq keys="jx"/>
+        <insert string="カ"/>
+      </rule>
+      <rule>
+        <keyseq keys="kx"/>
+        <insert string="社"/>
+      </rule>
+      <rule>
+        <keyseq keys="lx"/>
+        <insert string="野"/>
+      </rule>
+      <rule>
+        <keyseq keys=";x"/>
+        <insert string="同"/>
+      </rule>
+      <rule>
+        <keyseq keys="zx"/>
+        <insert string="判"/>
+      </rule>
+      <rule>
+        <keyseq keys="xx"/>
+        <insert string="規"/>
+      </rule>
+      <rule>
+        <keyseq keys="cx"/>
+        <insert string="感"/>
+      </rule>
+      <rule>
+        <keyseq keys="vx"/>
+        <insert string="値"/>
+      </rule>
+      <rule>
+        <keyseq keys="bx"/>
+        <insert string="ギ"/>
+      </rule>
+      <rule>
+        <keyseq keys="nx"/>
+        <insert string="当"/>
+      </rule>
+      <rule>
+        <keyseq keys="mx"/>
+        <insert string="理"/>
+      </rule>
+      <rule>
+        <keyseq keys=",x"/>
+        <insert string="メ"/>
+      </rule>
+      <rule>
+        <keyseq keys=".x"/>
+        <insert string="ウ"/>
+      </rule>
+      <rule>
+        <keyseq keys="/x"/>
+        <insert string="グ"/>
+      </rule>
+      <rule>
+        <keyseq keys="1c"/>
+        <insert string="ぅ"/>
+      </rule>
+      <rule>
+        <keyseq keys="6c"/>
+        <insert string="房"/>
+      </rule>
+      <rule>
+        <keyseq keys="7c"/>
+        <insert string="績"/>
+      </rule>
+      <rule>
+        <keyseq keys="8c"/>
+        <insert string="識"/>
+      </rule>
+      <rule>
+        <keyseq keys="9c"/>
+        <insert string="属"/>
+      </rule>
+      <rule>
+        <keyseq keys="0c"/>
+        <insert string="衣"/>
+      </rule>
+      <rule>
+        <keyseq keys="qc"/>
+        <insert string="帝"/>
+      </rule>
+      <rule>
+        <keyseq keys="wc"/>
+        <insert string="始"/>
+      </rule>
+      <rule>
+        <keyseq keys="ec"/>
+        <insert string="了"/>
+      </rule>
+      <rule>
+        <keyseq keys="rc"/>
+        <insert string="極"/>
+      </rule>
+      <rule>
+        <keyseq keys="tc"/>
+        <insert string="熱"/>
+      </rule>
+      <rule>
+        <keyseq keys="yc"/>
+        <insert string="バ"/>
+      </rule>
+      <rule>
+        <keyseq keys="uc"/>
+        <insert string="部"/>
+      </rule>
+      <rule>
+        <keyseq keys="ic"/>
+        <insert string="六"/>
+      </rule>
+      <rule>
+        <keyseq keys="oc"/>
+        <insert string="経"/>
+      </rule>
+      <rule>
+        <keyseq keys="pc"/>
+        <insert string="動"/>
+      </rule>
+      <rule>
+        <keyseq keys="ac"/>
+        <insert string="局"/>
+      </rule>
+      <rule>
+        <keyseq keys="sc"/>
+        <insert string="頭"/>
+      </rule>
+      <rule>
+        <keyseq keys="dc"/>
+        <insert string="配"/>
+      </rule>
+      <rule>
+        <keyseq keys="fc"/>
+        <insert string="黒"/>
+      </rule>
+      <rule>
+        <keyseq keys="gc"/>
+        <insert string="院"/>
+      </rule>
+      <rule>
+        <keyseq keys="hc"/>
+        <insert string="だ"/>
+      </rule>
+      <rule>
+        <keyseq keys="jc"/>
+        <insert string="り"/>
+      </rule>
+      <rule>
+        <keyseq keys="kc"/>
+        <insert string="―"/>
+      </rule>
+      <rule>
+        <keyseq keys="lc"/>
+        <insert string="め"/>
+      </rule>
+      <rule>
+        <keyseq keys=";c"/>
+        <insert string="大"/>
+      </rule>
+      <rule>
+        <keyseq keys="zc"/>
+        <insert string="済"/>
+      </rule>
+      <rule>
+        <keyseq keys="xc"/>
+        <insert string="吉"/>
+      </rule>
+      <rule>
+        <keyseq keys="cc"/>
+        <insert string="ゆ"/>
+      </rule>
+      <rule>
+        <keyseq keys="vc"/>
+        <insert string="器"/>
+      </rule>
+      <rule>
+        <keyseq keys="bc"/>
+        <insert string="照"/>
+      </rule>
+      <rule>
+        <keyseq keys="nc"/>
+        <insert string="不"/>
+      </rule>
+      <rule>
+        <keyseq keys="mc"/>
+        <insert string="合"/>
+      </rule>
+      <rule>
+        <keyseq keys=",c"/>
+        <insert string="面"/>
+      </rule>
+      <rule>
+        <keyseq keys=".c"/>
+        <insert string="政"/>
+      </rule>
+      <rule>
+        <keyseq keys="/c"/>
+        <insert string="オ"/>
+      </rule>
+      <rule>
+        <keyseq keys="1v"/>
+        <insert string="ぇ"/>
+      </rule>
+      <rule>
+        <keyseq keys="6v"/>
+        <insert string="去"/>
+      </rule>
+      <rule>
+        <keyseq keys="7v"/>
+        <insert string="疑"/>
+      </rule>
+      <rule>
+        <keyseq keys="8v"/>
+        <insert string="ぢ"/>
+      </rule>
+      <rule>
+        <keyseq keys="9v"/>
+        <insert string="綿"/>
+      </rule>
+      <rule>
+        <keyseq keys="0v"/>
+        <insert string="離"/>
+      </rule>
+      <rule>
+        <keyseq keys="qv"/>
+        <insert string="読"/>
+      </rule>
+      <rule>
+        <keyseq keys="wv"/>
+        <insert string="鈴"/>
+      </rule>
+      <rule>
+        <keyseq keys="ev"/>
+        <insert string="恐"/>
+      </rule>
+      <rule>
+        <keyseq keys="rv"/>
+        <insert string="督"/>
+      </rule>
+      <rule>
+        <keyseq keys="tv"/>
+        <insert string="況"/>
+      </rule>
+      <rule>
+        <keyseq keys="yv"/>
+        <insert string="後"/>
+      </rule>
+      <rule>
+        <keyseq keys="uv"/>
+        <insert string="間"/>
+      </rule>
+      <rule>
+        <keyseq keys="iv"/>
+        <insert string="場"/>
+      </rule>
+      <rule>
+        <keyseq keys="ov"/>
+        <insert string="ニ"/>
+      </rule>
+      <rule>
+        <keyseq keys="pv"/>
+        <insert string="産"/>
+      </rule>
+      <rule>
+        <keyseq keys="av"/>
+        <insert string="向"/>
+      </rule>
+      <rule>
+        <keyseq keys="sv"/>
+        <insert string="府"/>
+      </rule>
+      <rule>
+        <keyseq keys="dv"/>
+        <insert string="富"/>
+      </rule>
+      <rule>
+        <keyseq keys="fv"/>
+        <insert string="直"/>
+      </rule>
+      <rule>
+        <keyseq keys="gv"/>
+        <insert string="倉"/>
+      </rule>
+      <rule>
+        <keyseq keys="hv"/>
+        <insert string="新"/>
+      </rule>
+      <rule>
+        <keyseq keys="jv"/>
+        <insert string="」"/>
+      </rule>
+      <rule>
+        <keyseq keys="kv"/>
+        <insert string="9"/>
+      </rule>
+      <rule>
+        <keyseq keys="lv"/>
+        <insert string="子"/>
+      </rule>
+      <rule>
+        <keyseq keys=";v"/>
+        <insert string="五"/>
+      </rule>
+      <rule>
+        <keyseq keys="zv"/>
+        <insert string="説"/>
+      </rule>
+      <rule>
+        <keyseq keys="xv"/>
+        <insert string="週"/>
+      </rule>
+      <rule>
+        <keyseq keys="cv"/>
+        <insert string="号"/>
+      </rule>
+      <rule>
+        <keyseq keys="vv"/>
+        <insert string="葉"/>
+      </rule>
+      <rule>
+        <keyseq keys="bv"/>
+        <insert string="派"/>
+      </rule>
+      <rule>
+        <keyseq keys="nv"/>
+        <insert string="委"/>
+      </rule>
+      <rule>
+        <keyseq keys="mv"/>
+        <insert string="化"/>
+      </rule>
+      <rule>
+        <keyseq keys=",v"/>
+        <insert string="ビ"/>
+      </rule>
+      <rule>
+        <keyseq keys=".v"/>
+        <insert string="目"/>
+      </rule>
+      <rule>
+        <keyseq keys="/v"/>
+        <insert string="市"/>
+      </rule>
+      <rule>
+        <keyseq keys="1b"/>
+        <insert string="ぉ"/>
+      </rule>
+      <rule>
+        <keyseq keys="6b"/>
+        <insert string="秒"/>
+      </rule>
+      <rule>
+        <keyseq keys="7b"/>
+        <insert string="範"/>
+      </rule>
+      <rule>
+        <keyseq keys="8b"/>
+        <insert string="核"/>
+      </rule>
+      <rule>
+        <keyseq keys="9b"/>
+        <insert string="影"/>
+      </rule>
+      <rule>
+        <keyseq keys="0b"/>
+        <insert string="麻"/>
+      </rule>
+      <rule>
+        <keyseq keys="qb"/>
+        <insert string="族"/>
+      </rule>
+      <rule>
+        <keyseq keys="wb"/>
+        <insert string="丁"/>
+      </rule>
+      <rule>
+        <keyseq keys="eb"/>
+        <insert string="未"/>
+      </rule>
+      <rule>
+        <keyseq keys="rb"/>
+        <insert string="才"/>
+      </rule>
+      <rule>
+        <keyseq keys="tb"/>
+        <insert string="返"/>
+      </rule>
+      <rule>
+        <keyseq keys="yb"/>
+        <insert string="問"/>
+      </rule>
+      <rule>
+        <keyseq keys="ub"/>
+        <insert string="ム"/>
+      </rule>
+      <rule>
+        <keyseq keys="ib"/>
+        <insert string="七"/>
+      </rule>
+      <rule>
+        <keyseq keys="ob"/>
+        <insert string="住"/>
+      </rule>
+      <rule>
+        <keyseq keys="pb"/>
+        <insert string="北"/>
+      </rule>
+      <rule>
+        <keyseq keys="ab"/>
+        <insert string="割"/>
+      </rule>
+      <rule>
+        <keyseq keys="sb"/>
+        <insert string="ぶ"/>
+      </rule>
+      <rule>
+        <keyseq keys="db"/>
+        <insert string="番"/>
+      </rule>
+      <rule>
+        <keyseq keys="fb"/>
+        <insert string="望"/>
+      </rule>
+      <rule>
+        <keyseq keys="gb"/>
+        <insert string="元"/>
+      </rule>
+      <rule>
+        <keyseq keys="hb"/>
+        <insert string="事"/>
+      </rule>
+      <rule>
+        <keyseq keys="jb"/>
+        <insert string="田"/>
+      </rule>
+      <rule>
+        <keyseq keys="kb"/>
+        <insert string="会"/>
+      </rule>
+      <rule>
+        <keyseq keys="lb"/>
+        <insert string="前"/>
+      </rule>
+      <rule>
+        <keyseq keys=";b"/>
+        <insert string="そ"/>
+      </rule>
+      <rule>
+        <keyseq keys="zb"/>
+        <insert string="休"/>
+      </rule>
+      <rule>
+        <keyseq keys="xb"/>
+        <insert string="省"/>
+      </rule>
+      <rule>
+        <keyseq keys="cb"/>
+        <insert string="央"/>
+      </rule>
+      <rule>
+        <keyseq keys="vb"/>
+        <insert string="福"/>
+      </rule>
+      <rule>
+        <keyseq keys="bb"/>
+        <insert string="毎"/>
+      </rule>
+      <rule>
+        <keyseq keys="nb"/>
+        <insert string="気"/>
+      </rule>
+      <rule>
+        <keyseq keys="mb"/>
+        <insert string="売"/>
+      </rule>
+      <rule>
+        <keyseq keys=",b"/>
+        <insert string="下"/>
+      </rule>
+      <rule>
+        <keyseq keys=".b"/>
+        <insert string="都"/>
+      </rule>
+      <rule>
+        <keyseq keys="/b"/>
+        <insert string="株"/>
+      </rule>
+      <rule>
+        <keyseq keys="1n"/>
+        <insert string="欲"/>
+      </rule>
+      <rule>
+        <keyseq keys="2n"/>
+        <insert string="巣"/>
+      </rule>
+      <rule>
+        <keyseq keys="3n"/>
+        <insert string="茂"/>
+      </rule>
+      <rule>
+        <keyseq keys="4n"/>
+        <insert string="述"/>
+      </rule>
+      <rule>
+        <keyseq keys="5n"/>
+        <insert string="朗"/>
+      </rule>
+      <rule>
+        <keyseq keys="qn"/>
+        <insert string="帰"/>
+      </rule>
+      <rule>
+        <keyseq keys="wn"/>
+        <insert string="庁"/>
+      </rule>
+      <rule>
+        <keyseq keys="en"/>
+        <insert string="昨"/>
+      </rule>
+      <rule>
+        <keyseq keys="rn"/>
+        <insert string="跡"/>
+      </rule>
+      <rule>
+        <keyseq keys="tn"/>
+        <insert string="ゲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="yn"/>
+        <insert string="洗"/>
+      </rule>
+      <rule>
+        <keyseq keys="un"/>
+        <insert string="羽"/>
+      </rule>
+      <rule>
+        <keyseq keys="in"/>
+        <insert string="個"/>
+      </rule>
+      <rule>
+        <keyseq keys="on"/>
+        <insert string="医"/>
+      </rule>
+      <rule>
+        <keyseq keys="pn"/>
+        <insert string="静"/>
+      </rule>
+      <rule>
+        <keyseq keys="an"/>
+        <insert string="億"/>
+      </rule>
+      <rule>
+        <keyseq keys="sn"/>
+        <insert string="録"/>
+      </rule>
+      <rule>
+        <keyseq keys="dn"/>
+        <insert string="赤"/>
+      </rule>
+      <rule>
+        <keyseq keys="fn"/>
+        <insert string="想"/>
+      </rule>
+      <rule>
+        <keyseq keys="gn"/>
+        <insert string="消"/>
+      </rule>
+      <rule>
+        <keyseq keys="hn"/>
+        <insert string="支"/>
+      </rule>
+      <rule>
+        <keyseq keys="jn"/>
+        <insert string="協"/>
+      </rule>
+      <rule>
+        <keyseq keys="kn"/>
+        <insert string="用"/>
+      </rule>
+      <rule>
+        <keyseq keys="ln"/>
+        <insert string="表"/>
+      </rule>
+      <rule>
+        <keyseq keys=";n"/>
+        <insert string="正"/>
+      </rule>
+      <rule>
+        <keyseq keys="zn"/>
+        <insert string="図"/>
+      </rule>
+      <rule>
+        <keyseq keys="xn"/>
+        <insert string="挙"/>
+      </rule>
+      <rule>
+        <keyseq keys="cn"/>
+        <insert string="険"/>
+      </rule>
+      <rule>
+        <keyseq keys="vn"/>
+        <insert string="ゼ"/>
+      </rule>
+      <rule>
+        <keyseq keys="bn"/>
+        <insert string="波"/>
+      </rule>
+      <rule>
+        <keyseq keys="nn"/>
+        <insert string="ヤ"/>
+      </rule>
+      <rule>
+        <keyseq keys="mn"/>
+        <insert string="心"/>
+      </rule>
+      <rule>
+        <keyseq keys=",n"/>
+        <insert string="界"/>
+      </rule>
+      <rule>
+        <keyseq keys=".n"/>
+        <insert string="意"/>
+      </rule>
+      <rule>
+        <keyseq keys="/n"/>
+        <insert string="今"/>
+      </rule>
+      <rule>
+        <keyseq keys="1m"/>
+        <insert string="迫"/>
+      </rule>
+      <rule>
+        <keyseq keys="2m"/>
+        <insert string="災"/>
+      </rule>
+      <rule>
+        <keyseq keys="3m"/>
+        <insert string="恋"/>
+      </rule>
+      <rule>
+        <keyseq keys="4m"/>
+        <insert string="脳"/>
+      </rule>
+      <rule>
+        <keyseq keys="5m"/>
+        <insert string="老"/>
+      </rule>
+      <rule>
+        <keyseq keys="qm"/>
+        <insert string="監"/>
+      </rule>
+      <rule>
+        <keyseq keys="wm"/>
+        <insert string="寄"/>
+      </rule>
+      <rule>
+        <keyseq keys="em"/>
+        <insert string="裁"/>
+      </rule>
+      <rule>
+        <keyseq keys="rm"/>
+        <insert string="達"/>
+      </rule>
+      <rule>
+        <keyseq keys="tm"/>
+        <insert string="芝"/>
+      </rule>
+      <rule>
+        <keyseq keys="ym"/>
+        <insert string="響"/>
+      </rule>
+      <rule>
+        <keyseq keys="um"/>
+        <insert string="忘"/>
+      </rule>
+      <rule>
+        <keyseq keys="im"/>
+        <insert string="討"/>
+      </rule>
+      <rule>
+        <keyseq keys="om"/>
+        <insert string="史"/>
+      </rule>
+      <rule>
+        <keyseq keys="pm"/>
+        <insert string="環"/>
+      </rule>
+      <rule>
+        <keyseq keys="am"/>
+        <insert string="色"/>
+      </rule>
+      <rule>
+        <keyseq keys="sm"/>
+        <insert string="貸"/>
+      </rule>
+      <rule>
+        <keyseq keys="dm"/>
+        <insert string="販"/>
+      </rule>
+      <rule>
+        <keyseq keys="fm"/>
+        <insert string="編"/>
+      </rule>
+      <rule>
+        <keyseq keys="gm"/>
+        <insert string="仕"/>
+      </rule>
+      <rule>
+        <keyseq keys="hm"/>
+        <insert string="先"/>
+      </rule>
+      <rule>
+        <keyseq keys="jm"/>
+        <insert string="多"/>
+      </rule>
+      <rule>
+        <keyseq keys="km"/>
+        <insert string="商"/>
+      </rule>
+      <rule>
+        <keyseq keys="lm"/>
+        <insert string="ハ"/>
+      </rule>
+      <rule>
+        <keyseq keys=";m"/>
+        <insert string="交"/>
+      </rule>
+      <rule>
+        <keyseq keys="zm"/>
+        <insert string="之"/>
+      </rule>
+      <rule>
+        <keyseq keys="xm"/>
+        <insert string="末"/>
+      </rule>
+      <rule>
+        <keyseq keys="cm"/>
+        <insert string="ぼ"/>
+      </rule>
+      <rule>
+        <keyseq keys="vm"/>
+        <insert string="街"/>
+      </rule>
+      <rule>
+        <keyseq keys="bm"/>
+        <insert string="免"/>
+      </rule>
+      <rule>
+        <keyseq keys="nm"/>
+        <insert string="再"/>
+      </rule>
+      <rule>
+        <keyseq keys="mm"/>
+        <insert string="ネ"/>
+      </rule>
+      <rule>
+        <keyseq keys=",m"/>
+        <insert string="〜"/>
+      </rule>
+      <rule>
+        <keyseq keys=".m"/>
+        <insert string="口"/>
+      </rule>
+      <rule>
+        <keyseq keys="/m"/>
+        <insert string="台"/>
+      </rule>
+      <rule>
+        <keyseq keys="1,"/>
+        <insert string="留"/>
+      </rule>
+      <rule>
+        <keyseq keys="2,"/>
+        <insert string="列"/>
+      </rule>
+      <rule>
+        <keyseq keys="3,"/>
+        <insert string="刻"/>
+      </rule>
+      <rule>
+        <keyseq keys="4,"/>
+        <insert string="豆"/>
+      </rule>
+      <rule>
+        <keyseq keys="5,"/>
+        <insert string="看"/>
+      </rule>
+      <rule>
+        <keyseq keys="q,"/>
+        <insert string="竹"/>
+      </rule>
+      <rule>
+        <keyseq keys="w,"/>
+        <insert string="注"/>
+      </rule>
+      <rule>
+        <keyseq keys="e,"/>
+        <insert string="介"/>
+      </rule>
+      <rule>
+        <keyseq keys="r,"/>
+        <insert string="具"/>
+      </rule>
+      <rule>
+        <keyseq keys="t,"/>
+        <insert string="失"/>
+      </rule>
+      <rule>
+        <keyseq keys="y,"/>
+        <insert string="司"/>
+      </rule>
+      <rule>
+        <keyseq keys="u,"/>
+        <insert string="迎"/>
+      </rule>
+      <rule>
+        <keyseq keys="i,"/>
+        <insert string="華"/>
+      </rule>
+      <rule>
+        <keyseq keys="o,"/>
+        <insert string="許"/>
+      </rule>
+      <rule>
+        <keyseq keys="p,"/>
+        <insert string="補"/>
+      </rule>
+      <rule>
+        <keyseq keys="a,"/>
+        <insert string="左"/>
+      </rule>
+      <rule>
+        <keyseq keys="s,"/>
+        <insert string="態"/>
+      </rule>
+      <rule>
+        <keyseq keys="d,"/>
+        <insert string="花"/>
+      </rule>
+      <rule>
+        <keyseq keys="f,"/>
+        <insert string="栄"/>
+      </rule>
+      <rule>
+        <keyseq keys="g,"/>
+        <insert string="ザ"/>
+      </rule>
+      <rule>
+        <keyseq keys="h,"/>
+        <insert string="調"/>
+      </rule>
+      <rule>
+        <keyseq keys="j,"/>
+        <insert string="混"/>
+      </rule>
+      <rule>
+        <keyseq keys="k,"/>
+        <insert string="ポ"/>
+      </rule>
+      <rule>
+        <keyseq keys="l,"/>
+        <insert string="決"/>
+      </rule>
+      <rule>
+        <keyseq keys=";,"/>
+        <insert string="ミ"/>
+      </rule>
+      <rule>
+        <keyseq keys="z,"/>
+        <insert string="州"/>
+      </rule>
+      <rule>
+        <keyseq keys="x,"/>
+        <insert string="払"/>
+      </rule>
+      <rule>
+        <keyseq keys="c,"/>
+        <insert string="乗"/>
+      </rule>
+      <rule>
+        <keyseq keys="v,"/>
+        <insert string="庫"/>
+      </rule>
+      <rule>
+        <keyseq keys="b,"/>
+        <insert string="状"/>
+      </rule>
+      <rule>
+        <keyseq keys="n,"/>
+        <insert string="団"/>
+      </rule>
+      <rule>
+        <keyseq keys="m,"/>
+        <insert string="計"/>
+      </rule>
+      <rule>
+        <keyseq keys=",,"/>
+        <insert string="夫"/>
+      </rule>
+      <rule>
+        <keyseq keys=".,"/>
+        <insert string="食"/>
+      </rule>
+      <rule>
+        <keyseq keys="/,"/>
+        <insert string="総"/>
+      </rule>
+      <rule>
+        <keyseq keys="1."/>
+        <insert string="替"/>
+      </rule>
+      <rule>
+        <keyseq keys="2."/>
+        <insert string="沼"/>
+      </rule>
+      <rule>
+        <keyseq keys="3."/>
+        <insert string="?"/>
+      </rule>
+      <rule>
+        <keyseq keys="4."/>
+        <insert string="辞"/>
+      </rule>
+      <rule>
+        <keyseq keys="5."/>
+        <insert string="献"/>
+      </rule>
+      <rule>
+        <keyseq keys="q."/>
+        <insert string="ゅ"/>
+      </rule>
+      <rule>
+        <keyseq keys="w."/>
+        <insert string="修"/>
+      </rule>
+      <rule>
+        <keyseq keys="e."/>
+        <insert string="究"/>
+      </rule>
+      <rule>
+        <keyseq keys="r."/>
+        <insert string="答"/>
+      </rule>
+      <rule>
+        <keyseq keys="t."/>
+        <insert string="養"/>
+      </rule>
+      <rule>
+        <keyseq keys="y."/>
+        <insert string="復"/>
+      </rule>
+      <rule>
+        <keyseq keys="u."/>
+        <insert string="並"/>
+      </rule>
+      <rule>
+        <keyseq keys="i."/>
+        <insert string="浦"/>
+      </rule>
+      <rule>
+        <keyseq keys="o."/>
+        <insert string="ユ"/>
+      </rule>
+      <rule>
+        <keyseq keys="p."/>
+        <insert string="冷"/>
+      </rule>
+      <rule>
+        <keyseq keys="a."/>
+        <insert string="ぬ"/>
+      </rule>
+      <rule>
+        <keyseq keys="s."/>
+        <insert string="展"/>
+      </rule>
+      <rule>
+        <keyseq keys="d."/>
+        <insert string="警"/>
+      </rule>
+      <rule>
+        <keyseq keys="f."/>
+        <insert string="型"/>
+      </rule>
+      <rule>
+        <keyseq keys="g."/>
+        <insert string="誰"/>
+      </rule>
+      <rule>
+        <keyseq keys="h."/>
+        <insert string="組"/>
+      </rule>
+      <rule>
+        <keyseq keys="j."/>
+        <insert string="選"/>
+      </rule>
+      <rule>
+        <keyseq keys="k."/>
+        <insert string="党"/>
+      </rule>
+      <rule>
+        <keyseq keys="l."/>
+        <insert string="択"/>
+      </rule>
+      <rule>
+        <keyseq keys=";."/>
+        <insert string="体"/>
+      </rule>
+      <rule>
+        <keyseq keys="z."/>
+        <insert string="例"/>
+      </rule>
+      <rule>
+        <keyseq keys="x."/>
+        <insert string="満"/>
+      </rule>
+      <rule>
+        <keyseq keys="c."/>
+        <insert string="津"/>
+      </rule>
+      <rule>
+        <keyseq keys="v."/>
+        <insert string="準"/>
+      </rule>
+      <rule>
+        <keyseq keys="b."/>
+        <insert string="遊"/>
+      </rule>
+      <rule>
+        <keyseq keys="n."/>
+        <insert string="戸"/>
+      </rule>
+      <rule>
+        <keyseq keys="m."/>
+        <insert string="ひ"/>
+      </rule>
+      <rule>
+        <keyseq keys=",."/>
+        <insert string="ょ"/>
+      </rule>
+      <rule>
+        <keyseq keys=".."/>
+        <insert string="価"/>
+      </rule>
+      <rule>
+        <keyseq keys="/."/>
+        <insert string="与"/>
+      </rule>
+      <rule>
+        <keyseq keys="1/"/>
+        <insert string="還"/>
+      </rule>
+      <rule>
+        <keyseq keys="2/"/>
+        <insert string="更"/>
+      </rule>
+      <rule>
+        <keyseq keys="3/"/>
+        <insert string="占"/>
+      </rule>
+      <rule>
+        <keyseq keys="4/"/>
+        <insert string="箱"/>
+      </rule>
+      <rule>
+        <keyseq keys="5/"/>
+        <insert string="矢"/>
+      </rule>
+      <rule>
+        <keyseq keys="q/"/>
+        <insert string="志"/>
+      </rule>
+      <rule>
+        <keyseq keys="w/"/>
+        <insert string="抜"/>
+      </rule>
+      <rule>
+        <keyseq keys="e/"/>
+        <insert string="航"/>
+      </rule>
+      <rule>
+        <keyseq keys="r/"/>
+        <insert string="層"/>
+      </rule>
+      <rule>
+        <keyseq keys="t/"/>
+        <insert string="深"/>
+      </rule>
+      <rule>
+        <keyseq keys="y/"/>
+        <insert string="担"/>
+      </rule>
+      <rule>
+        <keyseq keys="u/"/>
+        <insert string="陸"/>
+      </rule>
+      <rule>
+        <keyseq keys="i/"/>
+        <insert string="巻"/>
+      </rule>
+      <rule>
+        <keyseq keys="o/"/>
+        <insert string="競"/>
+      </rule>
+      <rule>
+        <keyseq keys="p/"/>
+        <insert string="護"/>
+      </rule>
+      <rule>
+        <keyseq keys="a/"/>
+        <insert string="根"/>
+      </rule>
+      <rule>
+        <keyseq keys="s/"/>
+        <insert string="様"/>
+      </rule>
+      <rule>
+        <keyseq keys="d/"/>
+        <insert string="独"/>
+      </rule>
+      <rule>
+        <keyseq keys="f/"/>
+        <insert string="止"/>
+      </rule>
+      <rule>
+        <keyseq keys="g/"/>
+        <insert string="堂"/>
+      </rule>
+      <rule>
+        <keyseq keys="h/"/>
+        <insert string="銀"/>
+      </rule>
+      <rule>
+        <keyseq keys="j/"/>
+        <insert string="以"/>
+      </rule>
+      <rule>
+        <keyseq keys="k/"/>
+        <insert string="ヌ"/>
+      </rule>
+      <rule>
+        <keyseq keys="l/"/>
+        <insert string="営"/>
+      </rule>
+      <rule>
+        <keyseq keys=";/"/>
+        <insert string="治"/>
+      </rule>
+      <rule>
+        <keyseq keys="z/"/>
+        <insert string="字"/>
+      </rule>
+      <rule>
+        <keyseq keys="x/"/>
+        <insert string="材"/>
+      </rule>
+      <rule>
+        <keyseq keys="c/"/>
+        <insert string="過"/>
+      </rule>
+      <rule>
+        <keyseq keys="v/"/>
+        <insert string="諸"/>
+      </rule>
+      <rule>
+        <keyseq keys="b/"/>
+        <insert string="単"/>
+      </rule>
+      <rule>
+        <keyseq keys="n/"/>
+        <insert string="身"/>
+      </rule>
+      <rule>
+        <keyseq keys="m/"/>
+        <insert string="ピ"/>
+      </rule>
+      <rule>
+        <keyseq keys=",/"/>
+        <insert string="勝"/>
+      </rule>
+      <rule>
+        <keyseq keys="./"/>
+        <insert string="反"/>
+      </rule>
+      <rule>
+        <keyseq keys="//"/>
+        <insert string="ズ"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-generic"/>
+    </state>
+  </state-list>
+</input-method>

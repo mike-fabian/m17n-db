@@ -1,0 +1,1771 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>si</language>
+    <name>wijesekera</name>
+  </tags>
+  <description>Sinhala input method based on SLS 1134 Rev. 2:2004.
+  &lt;http://www.fonts.lk/doc/sin-kbd-layout4.pdf&gt;
+This input method requires surrounding text support.
+</description>
+  <title>සි</title>
+  <macro-list>
+    <macro id="macro-forward">
+      <set id="cc3">
+        <predefined-nth-previous-or-following-character position="+3"/>
+      </set>
+      <conditional>
+        <case>
+          <expr operator="&amp;">
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="+1"/>
+              <int-val>0x0DCA</int-val>
+            </expr>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="+2"/>
+              <int-val>0x200D</int-val>
+            </expr>
+            <expr operator="&gt;=">
+              <variable-reference id="cc3"/>
+              <int-val>0x0D9A</int-val>
+            </expr>
+            <expr operator="&lt;=">
+              <variable-reference id="cc3"/>
+              <int-val>0x0DC6</int-val>
+            </expr>
+          </expr>
+          <delete-n-characters n="+3"/>
+          <insert character="0x0DCA"/>
+          <insert character="0x200D"/>
+          <insert character-or-string="variable">
+            <variable-reference id="cc3"/>
+          </insert>
+          <macro-reference id="macro-forward"/>
+        </case>
+      </conditional>
+    </macro>
+    <macro id="macro-backward">
+      <set id="cc1">
+        <predefined-nth-previous-or-following-character position="-1"/>
+      </set>
+      <conditional>
+        <case>
+          <expr operator="&amp;">
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-3"/>
+              <int-val>0x0DCA</int-val>
+            </expr>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-2"/>
+              <int-val>0x200D</int-val>
+            </expr>
+            <expr operator="&gt;=">
+              <variable-reference id="cc1"/>
+              <int-val>0x0D9A</int-val>
+            </expr>
+            <expr operator="&lt;=">
+              <variable-reference id="cc1"/>
+              <int-val>0x0DC6</int-val>
+            </expr>
+          </expr>
+          <delete-n-characters n="-3"/>
+          <insert character="0x0DCA"/>
+          <insert character="0x200D"/>
+          <insert character-or-string="variable">
+            <variable-reference id="cc1"/>
+          </insert>
+          <move-to-marker position="@first"/>
+          <macro-reference id="macro-backward"/>
+        </case>
+      </conditional>
+    </macro>
+    <macro id="macro-delete-preceding-zw">
+      <conditional>
+        <case>
+          <expr operator="|">
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x200C</int-val>
+            </expr>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x200D</int-val>
+            </expr>
+          </expr>
+          <delete-n-characters n="-1"/>
+          <macro-reference id="macro-delete-preceding-zw"/>
+        </case>
+      </conditional>
+    </macro>
+    <macro id="macro-delete-following-zw">
+      <conditional>
+        <case>
+          <expr operator="|">
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="+1"/>
+              <int-val>0x200C</int-val>
+            </expr>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="+1"/>
+              <int-val>0x200D</int-val>
+            </expr>
+          </expr>
+          <delete-n-characters n="+1"/>
+          <macro-reference id="macro-delete-following-zw"/>
+        </case>
+      </conditional>
+    </macro>
+    <macro id="macro-merge-kombuva">
+      <delete-n-characters n="-1"/>
+      <delete-n-characters n="+2"/>
+      <insert character-or-string="variable">
+        <variable-reference id="c1"/>
+      </insert>
+    </macro>
+  </macro-list>
+  <map-list>
+    <map id="map-consonant">
+      <rule>
+        <keyseq keys="l"/>
+        <insert string="ක"/>
+      </rule>
+      <rule>
+        <keyseq keys="L"/>
+        <insert string="ඛ"/>
+      </rule>
+      <rule>
+        <keyseq keys="."/>
+        <insert string="ග"/>
+      </rule>
+      <rule>
+        <keyseq keys="&gt;"/>
+        <insert string="ඝ"/>
+      </rule>
+      <rule>
+        <keyseq keys="X"/>
+        <insert string="ඞ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-.</key-event>
+        </keyseq>
+        <insert string="ඟ"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+        <insert string="ච"/>
+      </rule>
+      <rule>
+        <keyseq keys="P"/>
+        <insert string="ඡ"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <insert string="ජ"/>
+      </rule>
+      <rule>
+        <keyseq keys="C"/>
+        <insert string="ඣ"/>
+      </rule>
+      <rule>
+        <keyseq keys="["/>
+        <insert string="ඤ"/>
+      </rule>
+      <rule>
+        <keyseq keys="{"/>
+        <insert string="ඥ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-c</key-event>
+        </keyseq>
+        <insert string="ඦ"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+        <insert string="ට"/>
+      </rule>
+      <rule>
+        <keyseq keys="G"/>
+        <insert string="ඨ"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <insert string="ඩ"/>
+      </rule>
+      <rule>
+        <keyseq keys="V"/>
+        <insert string="ඪ"/>
+      </rule>
+      <rule>
+        <keyseq keys="K"/>
+        <insert string="ණ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-v</key-event>
+        </keyseq>
+        <insert string="ඬ"/>
+      </rule>
+      <rule>
+        <keyseq keys=";"/>
+        <insert string="ත"/>
+      </rule>
+      <rule>
+        <keyseq keys=":"/>
+        <insert string="ථ"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert string="ද"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <insert string="ධ"/>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+        <insert string="න"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-o</key-event>
+        </keyseq>
+        <insert string="ඳ"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+        <insert string="ප"/>
+      </rule>
+      <rule>
+        <keyseq keys="M"/>
+        <insert string="ඵ"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <insert string="බ"/>
+      </rule>
+      <rule>
+        <keyseq keys="N"/>
+        <insert string="භ"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert string="ම"/>
+      </rule>
+      <rule>
+        <keyseq keys="U"/>
+        <insert string="ඹ"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+        <insert string="ය"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+        <insert string="ර"/>
+      </rule>
+      <rule>
+        <keyseq keys=","/>
+        <insert string="ල"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+        <insert string="ව"/>
+      </rule>
+      <rule>
+        <keyseq keys="Y"/>
+        <insert string="ශ"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+        <insert string="ෂ"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert string="ස"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <insert string="හ"/>
+      </rule>
+      <rule>
+        <keyseq keys="&lt;"/>
+        <insert string="ළ"/>
+      </rule>
+      <rule>
+        <keyseq keys="F"/>
+        <insert string="ෆ"/>
+      </rule>
+    </map>
+    <map id="map-misc">
+      <rule>
+        <keyseq keys="x"/>
+        <insert string="ං"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-x</key-event>
+        </keyseq>
+        <insert string="ඃ"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+        <insert string="අ"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <insert string="ඉ"/>
+      </rule>
+      <rule>
+        <keyseq keys="B"/>
+        <insert string="ඊ"/>
+      </rule>
+      <rule>
+        <keyseq keys="W"/>
+        <insert string="උ"/>
+      </rule>
+      <rule>
+        <keyseq keys="R"/>
+        <insert string="ඍ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-,</key-event>
+        </keyseq>
+        <insert string="ඏ"/>
+      </rule>
+      <rule>
+        <keyseq keys="T"/>
+        <insert string="ඔ"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+        <insert string="ි"/>
+      </rule>
+      <rule>
+        <keyseq keys="S"/>
+        <insert string="ී"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+        <insert string="ු"/>
+      </rule>
+      <rule>
+        <keyseq keys="Q"/>
+        <insert string="ූ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-a</key-event>
+        </keyseq>
+        <insert string="ෳ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-'</key-event>
+        </keyseq>
+        <insert string="෴"/>
+      </rule>
+      <rule>
+        <keyseq keys="]"/>
+        <insert string=";"/>
+      </rule>
+      <rule>
+        <keyseq keys="}"/>
+        <insert string=":"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;"/>
+        <insert string="."/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;"/>
+        <insert string=","/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+        <insert string="&apos;"/>
+      </rule>
+      <rule>
+        <keyseq keys="Z"/>
+        <insert string="&quot;"/>
+      </rule>
+      <rule>
+        <keyseq keys="|"/>
+        <insert string="‍්"/>
+      </rule>
+      <rule>
+        <keyseq keys="J"/>
+        <insert string="ළු"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>S- </key-event>
+        </keyseq>
+        <insert string=" "/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A- </key-event>
+        </keyseq>
+        <insert string="‌"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+        <set id="c">
+          <predefined-nth-previous-or-following-character position="-2"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0DD9</int-val>
+            </expr>
+            <conditional>
+              <case>
+                <expr operator="=">
+                  <variable-reference id="c"/>
+                  <int-val>0x200C</int-val>
+                </expr>
+                <delete-n-characters n="-2"/>
+                <insert character="0x0D93"/>
+              </case>
+              <case>
+                <expr operator="|">
+                  <expr operator="&lt;">
+                    <variable-reference id="c"/>
+                    <int-val>0x0D9A</int-val>
+                  </expr>
+                  <expr operator="&gt;">
+                    <variable-reference id="c"/>
+                    <int-val>0x0DC6</int-val>
+                  </expr>
+                </expr>
+                <delete-n-characters n="-1"/>
+                <insert character="0x0D93"/>
+              </case>
+              <case>
+                <int-val>1</int-val>
+                <insert character="0x0D91"/>
+              </case>
+            </conditional>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert character="0x0D91"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="a"/>
+        <set id="c">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D91</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert character="0x0D92"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D94</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert character="0x0D95"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0DD9</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert character="0x0DDA"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0DDC</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert character="0x0DDD"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert character="0x0DCA"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <set id="c">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D85</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert character="0x0D86"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0DD9</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert character="0x0DDC"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert character="0x0DCF"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0D85</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert character="0x0D87"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert character="0x0DD0"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+        <set id="c">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D85</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert character="0x0D88"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0DD4</int-val>
+            </expr>
+            <conditional>
+              <case>
+                <expr operator="=">
+                  <predefined-nth-previous-or-following-character position="-2"/>
+                  <int-val>0x0DC5</int-val>
+                </expr>
+                <delete-n-characters n="-1"/>
+                <insert character="0x0DD6"/>
+              </case>
+              <case>
+                <int-val>1</int-val>
+                <insert character="0x0DD1"/>
+              </case>
+            </conditional>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert character="0x0DD1"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="D"/>
+        <set id="c">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D8D</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert character="0x0D8E"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0DD8</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert character="0x0DF2"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert character="0x0DD8"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="A"/>
+        <set id="c">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D8B</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert character="0x0D8C"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D8F</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert character="0x0D90"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D94</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert character="0x0D96"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0DD9</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert character="0x0DDE"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert character="0x0DDF"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="f"/>
+        <set id="c">
+          <predefined-nth-previous-or-following-character position="+1"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <variable-reference id="c"/>
+                <int-val>0x0D9A</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <variable-reference id="c"/>
+                <int-val>0x0DC6</int-val>
+              </expr>
+            </expr>
+            <delete-n-characters n="+1"/>
+            <insert character-or-string="variable">
+              <variable-reference id="c"/>
+            </insert>
+            <macro-reference id="macro-forward"/>
+            <set id="c">
+              <predefined-nth-previous-or-following-character position="+1"/>
+            </set>
+            <conditional>
+              <case>
+                <expr operator="=">
+                  <variable-reference id="c"/>
+                  <int-val>0x0DCA</int-val>
+                </expr>
+                <delete-n-characters n="+1"/>
+                <insert character="0x0DDA"/>
+              </case>
+              <case>
+                <expr operator="=">
+                  <variable-reference id="c"/>
+                  <int-val>0x0DD9</int-val>
+                </expr>
+                <delete-n-characters n="+1"/>
+                <insert character="0x0DDB"/>
+              </case>
+              <case>
+                <expr operator="=">
+                  <variable-reference id="c"/>
+                  <int-val>0x0DCF</int-val>
+                </expr>
+                <delete-n-characters n="+1"/>
+                <insert character="0x0DDC"/>
+              </case>
+              <case>
+                <expr operator="=">
+                  <variable-reference id="c"/>
+                  <int-val>0x0DDF</int-val>
+                </expr>
+                <delete-n-characters n="+1"/>
+                <insert character="0x0DDE"/>
+              </case>
+              <case>
+                <int-val>1</int-val>
+                <insert character="0x0DD9"/>
+              </case>
+            </conditional>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D91</int-val>
+            </expr>
+            <delete-n-characters n="+1"/>
+            <insert character="0x0D93"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0DD9</int-val>
+            </expr>
+            <delete-n-characters n="+1"/>
+            <insert character="0x0DDB"/>
+          </case>
+          <case>
+            <expr operator="&amp;">
+              <expr operator="=">
+                <variable-reference id="c"/>
+                <int-val>0x200C</int-val>
+              </expr>
+              <expr operator="=">
+                <predefined-nth-previous-or-following-character position="+2"/>
+                <int-val>0x0DD9</int-val>
+              </expr>
+            </expr>
+            <delete-n-characters n="+2"/>
+            <insert character="0x200C"/>
+            <insert character="0x0DDB"/>
+          </case>
+          <case>
+            <expr operator="&amp;">
+              <expr operator="=">
+                <predefined-nth-previous-or-following-character position="-1"/>
+                <int-val>0x0DD9</int-val>
+              </expr>
+              <expr operator="|">
+                <expr operator="&lt;">
+                  <predefined-nth-previous-or-following-character position="-2"/>
+                  <int-val>0x0D9A</int-val>
+                </expr>
+                <expr operator="&gt;">
+                  <predefined-nth-previous-or-following-character position="-2"/>
+                  <int-val>0x0DC6</int-val>
+                </expr>
+              </expr>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert character="0x0DDB"/>
+          </case>
+          <case>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <predefined-nth-previous-or-following-character position="-1"/>
+                <int-val>0x0D9A</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <predefined-nth-previous-or-following-character position="-1"/>
+                <int-val>0x0DC6</int-val>
+              </expr>
+            </expr>
+            <insert character="0x200C"/>
+            <insert character="0x0DD9"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <insert character="0x0DD9"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-z</key-event>
+        </keyseq>
+        <set id="c">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0DAF</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert character="0x0DB3"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D9C</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert character="0x0D9F"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0DA9</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert character="0x0DAC"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0DA2</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <insert character="0x0DA6"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="H"/>
+        <set id="c">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0DD9</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0DDB</int-val>
+            </expr>
+            <delete-n-characters n="-1"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <set id="c">
+              <int-val>0</int-val>
+            </set>
+          </case>
+        </conditional>
+        <conditional>
+          <case>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <predefined-nth-previous-or-following-character position="-1"/>
+                <int-val>0x0D9A</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <predefined-nth-previous-or-following-character position="-1"/>
+                <int-val>0x0DC6</int-val>
+              </expr>
+            </expr>
+            <insert character="0x0DCA"/>
+            <insert character="0x200D"/>
+            <insert character="0x0DBA"/>
+          </case>
+        </conditional>
+        <conditional>
+          <case>
+            <expr operator="&gt;">
+              <variable-reference id="c"/>
+              <int-val>0</int-val>
+            </expr>
+            <insert character-or-string="variable">
+              <variable-reference id="c"/>
+            </insert>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="`"/>
+        <set id="c">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="|">
+              <expr operator="=">
+                <variable-reference id="c"/>
+                <int-val>0x0DD9</int-val>
+              </expr>
+              <expr operator="=">
+                <variable-reference id="c"/>
+                <int-val>0x0DDB</int-val>
+              </expr>
+              <expr operator="=">
+                <variable-reference id="c"/>
+                <int-val>0x0DD2</int-val>
+              </expr>
+              <expr operator="=">
+                <variable-reference id="c"/>
+                <int-val>0x0DD3</int-val>
+              </expr>
+            </expr>
+            <delete-n-characters n="-1"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <set id="c">
+              <int-val>0</int-val>
+            </set>
+          </case>
+        </conditional>
+        <conditional>
+          <case>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <predefined-nth-previous-or-following-character position="-1"/>
+                <int-val>0x0D9A</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <predefined-nth-previous-or-following-character position="-1"/>
+                <int-val>0x0DC6</int-val>
+              </expr>
+            </expr>
+            <insert character="0x0DCA"/>
+            <insert character="0x200D"/>
+            <insert character="0x0DBB"/>
+          </case>
+        </conditional>
+        <conditional>
+          <case>
+            <expr operator="&gt;">
+              <variable-reference id="c"/>
+              <int-val>0</int-val>
+            </expr>
+            <insert character-or-string="variable">
+              <variable-reference id="c"/>
+            </insert>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq keys="~"/>
+        <set id="c">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="|">
+              <expr operator="=">
+                <variable-reference id="c"/>
+                <int-val>0x0DD9</int-val>
+              </expr>
+              <expr operator="=">
+                <variable-reference id="c"/>
+                <int-val>0x0DDB</int-val>
+              </expr>
+            </expr>
+            <delete-n-characters n="-1"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <set id="c">
+              <int-val>0</int-val>
+            </set>
+          </case>
+        </conditional>
+        <macro-reference id="macro-backward"/>
+        <conditional>
+          <case>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <predefined-nth-previous-or-following-character position="-1"/>
+                <int-val>0x0D9A</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <predefined-nth-previous-or-following-character position="-1"/>
+                <int-val>0x0DC6</int-val>
+              </expr>
+            </expr>
+            <set id="c1">
+              <predefined-nth-previous-or-following-character position="-1"/>
+            </set>
+            <delete-n-characters n="-1"/>
+            <insert character-or-string="variable">
+              <variable-reference id="c1"/>
+            </insert>
+            <move-to-marker position="@first"/>
+            <insert character="0x0DBB"/>
+            <insert character="0x0DCA"/>
+            <insert character="0x200D"/>
+          </case>
+        </conditional>
+        <conditional>
+          <case>
+            <expr operator="&gt;">
+              <variable-reference id="c"/>
+              <int-val>0</int-val>
+            </expr>
+            <move-to-marker position="@last"/>
+            <insert character-or-string="variable">
+              <variable-reference id="c"/>
+            </insert>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>BackSpace</key-event>
+        </keyseq>
+        <macro-reference id="macro-delete-preceding-zw"/>
+        <set id="c">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="&lt;">
+              <variable-reference id="c"/>
+              <int-val>0</int-val>
+            </expr>
+            <unhandle/>
+          </case>
+        </conditional>
+        <delete-n-characters n="-1"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D86</int-val>
+            </expr>
+            <insert character="0x0D85"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D87</int-val>
+            </expr>
+            <insert character="0x0D85"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D88</int-val>
+            </expr>
+            <insert character="0x0D85"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D8C</int-val>
+            </expr>
+            <insert character="0x0D8B"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D8E</int-val>
+            </expr>
+            <insert character="0x0D8D"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D90</int-val>
+            </expr>
+            <insert character="0x0D8F"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D92</int-val>
+            </expr>
+            <insert character="0x0D8F"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D93</int-val>
+            </expr>
+            <conditional>
+              <case>
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <predefined-nth-previous-or-following-character position="-1"/>
+                    <int-val>0x0D9A</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <predefined-nth-previous-or-following-character position="-1"/>
+                    <int-val>0x0DC6</int-val>
+                  </expr>
+                </expr>
+                <insert character="0x200C"/>
+              </case>
+            </conditional>
+            <insert character="0x0DD9"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D95</int-val>
+            </expr>
+            <insert character="0x0D94"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D96</int-val>
+            </expr>
+            <insert character="0x0D94"/>
+          </case>
+          <case>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <variable-reference id="c"/>
+                <int-val>0x0D9A</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <variable-reference id="c"/>
+                <int-val>0x0DC6</int-val>
+              </expr>
+              <expr operator="=">
+                <predefined-nth-previous-or-following-character position="-2"/>
+                <int-val>0x0DCA</int-val>
+              </expr>
+              <expr operator="=">
+                <predefined-nth-previous-or-following-character position="-1"/>
+                <int-val>0x200D</int-val>
+              </expr>
+            </expr>
+            <conditional>
+              <case>
+                <expr operator="=">
+                  <predefined-nth-previous-or-following-character position="-3"/>
+                  <int-val>0x0DBB</int-val>
+                </expr>
+                <delete-n-characters n="-3"/>
+                <insert character-or-string="variable">
+                  <variable-reference id="c"/>
+                </insert>
+              </case>
+              <case>
+                <int-val>1</int-val>
+                <delete-n-characters n="-2"/>
+              </case>
+            </conditional>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0DD9</int-val>
+            </expr>
+            <conditional>
+              <case>
+                <expr operator="|">
+                  <expr operator="&lt;">
+                    <predefined-nth-previous-or-following-character position="-1"/>
+                    <int-val>0x0D9A</int-val>
+                  </expr>
+                  <expr operator="&gt;">
+                    <predefined-nth-previous-or-following-character position="-1"/>
+                    <int-val>0x0DC6</int-val>
+                  </expr>
+                </expr>
+              </case>
+              <case>
+                <expr operator="=">
+                  <predefined-nth-previous-or-following-character position="+1"/>
+                  <int-val>0x0D91</int-val>
+                </expr>
+                <delete-n-characters n="-1"/>
+                <delete-n-characters n="+1"/>
+                <insert character="0x0D93"/>
+              </case>
+              <case>
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <predefined-nth-previous-or-following-character position="+1"/>
+                    <int-val>0x0D9A</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <predefined-nth-previous-or-following-character position="+1"/>
+                    <int-val>0x0DC6</int-val>
+                  </expr>
+                </expr>
+                <set id="c1">
+                  <predefined-nth-previous-or-following-character position="+1"/>
+                </set>
+                <conditional>
+                  <case>
+                    <expr operator="=">
+                      <predefined-nth-previous-or-following-character position="+2"/>
+                      <int-val>0x0DD9</int-val>
+                    </expr>
+                    <macro-reference id="macro-merge-kombuva"/>
+                    <insert character="0x0DDB"/>
+                  </case>
+                  <case>
+                    <expr operator="=">
+                      <predefined-nth-previous-or-following-character position="+2"/>
+                      <int-val>0x0DCA</int-val>
+                    </expr>
+                    <macro-reference id="macro-merge-kombuva"/>
+                    <insert character="0x0DDA"/>
+                  </case>
+                  <case>
+                    <expr operator="=">
+                      <predefined-nth-previous-or-following-character position="+2"/>
+                      <int-val>0x0DCF</int-val>
+                    </expr>
+                    <macro-reference id="macro-merge-kombuva"/>
+                    <insert character="0x0DDC"/>
+                  </case>
+                  <case>
+                    <expr operator="=">
+                      <predefined-nth-previous-or-following-character position="+2"/>
+                      <int-val>0x0DDF</int-val>
+                    </expr>
+                    <macro-reference id="macro-merge-kombuva"/>
+                    <insert character="0x0DDE"/>
+                  </case>
+                  <case>
+                    <int-val>1</int-val>
+                    <delete-n-characters n="-1"/>
+                    <delete-n-characters n="+1"/>
+                    <insert character-or-string="variable">
+                      <variable-reference id="c1"/>
+                    </insert>
+                    <insert character="0x0DD9"/>
+                  </case>
+                </conditional>
+              </case>
+              <case>
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <predefined-nth-previous-or-following-character position="-2"/>
+                    <int-val>0x0D9A</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <predefined-nth-previous-or-following-character position="-2"/>
+                    <int-val>0x0DC6</int-val>
+                  </expr>
+                </expr>
+                <delete-n-characters n="-1"/>
+                <insert character="0x200C"/>
+                <insert character="0x0DD9"/>
+              </case>
+              <case>
+                <expr operator="&amp;">
+                  <expr operator="=">
+                    <predefined-nth-previous-or-following-character position="-4"/>
+                    <int-val>0x0DBB</int-val>
+                  </expr>
+                  <expr operator="=">
+                    <predefined-nth-previous-or-following-character position="-3"/>
+                    <int-val>0x0DCA</int-val>
+                  </expr>
+                  <expr operator="=">
+                    <predefined-nth-previous-or-following-character position="-2"/>
+                    <int-val>0x200D</int-val>
+                  </expr>
+                </expr>
+                <set id="c1">
+                  <predefined-nth-previous-or-following-character position="-1"/>
+                </set>
+                <delete-n-characters n="-4"/>
+                <insert character-or-string="variable">
+                  <variable-reference id="c1"/>
+                </insert>
+                <insert character="0x0DD9"/>
+              </case>
+              <case>
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <predefined-nth-previous-or-following-character position="-4"/>
+                    <int-val>0x0D9A</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <predefined-nth-previous-or-following-character position="-4"/>
+                    <int-val>0x0DC6</int-val>
+                  </expr>
+                  <expr operator="=">
+                    <predefined-nth-previous-or-following-character position="-3"/>
+                    <int-val>0x0DCA</int-val>
+                  </expr>
+                  <expr operator="=">
+                    <predefined-nth-previous-or-following-character position="-2"/>
+                    <int-val>0x200D</int-val>
+                  </expr>
+                </expr>
+                <delete-n-characters n="-3"/>
+                <insert character="0x0DD9"/>
+              </case>
+              <case>
+                <int-val>1</int-val>
+                <delete-n-characters n="-1"/>
+                <insert character="0x0DD9"/>
+              </case>
+            </conditional>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0DDA</int-val>
+            </expr>
+            <insert character="0x0DD9"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0DDB</int-val>
+            </expr>
+            <conditional>
+              <case>
+                <expr operator="|">
+                  <expr operator="&lt;">
+                    <predefined-nth-previous-or-following-character position="-1"/>
+                    <int-val>0x0D9A</int-val>
+                  </expr>
+                  <expr operator="&gt;">
+                    <predefined-nth-previous-or-following-character position="-1"/>
+                    <int-val>0x0DC6</int-val>
+                  </expr>
+                </expr>
+                <insert character="0x0DD9"/>
+              </case>
+              <case>
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <predefined-nth-previous-or-following-character position="-2"/>
+                    <int-val>0x0D9A</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <predefined-nth-previous-or-following-character position="-2"/>
+                    <int-val>0x0DC6</int-val>
+                  </expr>
+                </expr>
+                <delete-n-characters n="-1"/>
+                <insert character="0x200C"/>
+                <insert character="0x0DDB"/>
+              </case>
+              <case>
+                <expr operator="&amp;">
+                  <expr operator="=">
+                    <predefined-nth-previous-or-following-character position="-4"/>
+                    <int-val>0x0DBB</int-val>
+                  </expr>
+                  <expr operator="=">
+                    <predefined-nth-previous-or-following-character position="-3"/>
+                    <int-val>0x0DCA</int-val>
+                  </expr>
+                  <expr operator="=">
+                    <predefined-nth-previous-or-following-character position="-2"/>
+                    <int-val>0x200D</int-val>
+                  </expr>
+                </expr>
+                <set id="c1">
+                  <predefined-nth-previous-or-following-character position="-1"/>
+                </set>
+                <delete-n-characters n="-4"/>
+                <insert character-or-string="variable">
+                  <variable-reference id="c1"/>
+                </insert>
+                <insert character="0x0DDB"/>
+              </case>
+              <case>
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <predefined-nth-previous-or-following-character position="-4"/>
+                    <int-val>0x0D9A</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <predefined-nth-previous-or-following-character position="-4"/>
+                    <int-val>0x0DC6</int-val>
+                  </expr>
+                  <expr operator="=">
+                    <predefined-nth-previous-or-following-character position="-3"/>
+                    <int-val>0x0DCA</int-val>
+                  </expr>
+                  <expr operator="=">
+                    <predefined-nth-previous-or-following-character position="-2"/>
+                    <int-val>0x200D</int-val>
+                  </expr>
+                </expr>
+                <delete-n-characters n="-3"/>
+                <insert character="0x0DDB"/>
+              </case>
+              <case>
+                <int-val>1</int-val>
+                <delete-n-characters n="-1"/>
+                <insert character="0x0DDB"/>
+              </case>
+            </conditional>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0DDC</int-val>
+            </expr>
+            <insert character="0x0DD9"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0DDD</int-val>
+            </expr>
+            <insert character="0x0DDC"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0DDE</int-val>
+            </expr>
+            <insert character="0x0DD9"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0DF2</int-val>
+            </expr>
+            <insert character="0x0DD8"/>
+          </case>
+        </conditional>
+        <conditional>
+          <case>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <predefined-nth-previous-or-following-character position="-1"/>
+                <int-val>0x0D9A</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <predefined-nth-previous-or-following-character position="-1"/>
+                <int-val>0x0DC6</int-val>
+              </expr>
+              <expr operator="|">
+                <expr operator="=">
+                  <predefined-nth-previous-or-following-character position="+1"/>
+                  <int-val>0x0DD9</int-val>
+                </expr>
+                <expr operator="=">
+                  <predefined-nth-previous-or-following-character position="+1"/>
+                  <int-val>0x0DDB</int-val>
+                </expr>
+              </expr>
+            </expr>
+            <insert character="0x200C"/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>Delete</key-event>
+        </keyseq>
+        <macro-reference id="macro-delete-following-zw"/>
+        <set id="c">
+          <predefined-nth-previous-or-following-character position="+1"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="&lt;">
+              <variable-reference id="c"/>
+              <int-val>0</int-val>
+            </expr>
+            <unhandle/>
+          </case>
+        </conditional>
+        <delete-n-characters n="+1"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D86</int-val>
+            </expr>
+            <insert character="0x0DCF"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D87</int-val>
+            </expr>
+            <insert character="0x0DD0"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D88</int-val>
+            </expr>
+            <insert character="0x0DD1"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D8C</int-val>
+            </expr>
+            <insert character="0x0DDF"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D8E</int-val>
+            </expr>
+            <insert character="0x0DD8"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D90</int-val>
+            </expr>
+            <insert character="0x0DDF"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D92</int-val>
+            </expr>
+            <insert character="0x0DCA"/>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0D93</int-val>
+            </expr>
+            <insert character="0x0D91"/>
+          </case>
+          <case>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <variable-reference id="c"/>
+                <int-val>0x0D9A</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <variable-reference id="c"/>
+                <int-val>0x0DC6</int-val>
+              </expr>
+            </expr>
+            <macro-reference id="macro-forward"/>
+            <conditional>
+              <case>
+                <expr operator="=">
+                  <predefined-nth-previous-or-following-character position="+1"/>
+                  <int-val>0x0DD9</int-val>
+                </expr>
+                <delete-n-characters n="+1"/>
+                <move-to-marker position="@first"/>
+                <insert character-or-string="variable">
+                  <variable-reference id="c"/>
+                </insert>
+              </case>
+              <case>
+                <expr operator="=">
+                  <predefined-nth-previous-or-following-character position="+1"/>
+                  <int-val>0x0DDB</int-val>
+                </expr>
+                <delete-n-characters n="+1"/>
+                <insert character="0x0DD9"/>
+                <move-to-marker position="@first"/>
+                <insert character-or-string="variable">
+                  <variable-reference id="c"/>
+                </insert>
+              </case>
+              <case>
+                <expr operator="=">
+                  <predefined-nth-previous-or-following-character position="+1"/>
+                  <int-val>0x0DDA</int-val>
+                </expr>
+                <delete-n-characters n="+1"/>
+                <insert character="0x0DCA"/>
+                <move-to-marker position="@first"/>
+                <insert character-or-string="variable">
+                  <variable-reference id="c"/>
+                </insert>
+              </case>
+              <case>
+                <expr operator="=">
+                  <predefined-nth-previous-or-following-character position="+1"/>
+                  <int-val>0x0DDC</int-val>
+                </expr>
+                <delete-n-characters n="+1"/>
+                <insert character="0x0DCF"/>
+                <move-to-marker position="@first"/>
+                <insert character-or-string="variable">
+                  <variable-reference id="c"/>
+                </insert>
+              </case>
+              <case>
+                <expr operator="=">
+                  <predefined-nth-previous-or-following-character position="+1"/>
+                  <int-val>0x0DDE</int-val>
+                </expr>
+                <delete-n-characters n="+1"/>
+                <insert character="0x0DDF"/>
+                <move-to-marker position="@first"/>
+                <insert character-or-string="variable">
+                  <variable-reference id="c"/>
+                </insert>
+              </case>
+              <case>
+                <int-val>1</int-val>
+                <delete-to-marker position="@first"/>
+              </case>
+            </conditional>
+          </case>
+          <case>
+            <expr operator="=">
+              <variable-reference id="c"/>
+              <int-val>0x0DDB</int-val>
+            </expr>
+            <insert character="0x0DD9"/>
+          </case>
+        </conditional>
+      </rule>
+    </map>
+    <map id="map-join">
+      <rule>
+        <keyseq keys="\"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-consonant">
+        <move-to-marker position="@first"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0DD9</int-val>
+            </expr>
+            <conditional>
+              <case>
+                <expr operator="=">
+                  <predefined-nth-previous-or-following-character position="-2"/>
+                  <int-val>0x200C</int-val>
+                </expr>
+                <delete-n-characters n="-2"/>
+                <move-to-marker position="@last"/>
+                <insert character="0x0DD9"/>
+              </case>
+              <case>
+                <expr operator="|">
+                  <expr operator="&lt;">
+                    <predefined-nth-previous-or-following-character position="-2"/>
+                    <int-val>0x0D9A</int-val>
+                  </expr>
+                  <expr operator="&gt;">
+                    <predefined-nth-previous-or-following-character position="-2"/>
+                    <int-val>0x0DC6</int-val>
+                  </expr>
+                </expr>
+                <delete-n-characters n="-1"/>
+                <move-to-marker position="@last"/>
+                <insert character="0x0DD9"/>
+              </case>
+            </conditional>
+          </case>
+          <case>
+            <expr operator="=">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>0x0DDB</int-val>
+            </expr>
+            <conditional>
+              <case>
+                <expr operator="=">
+                  <predefined-nth-previous-or-following-character position="-2"/>
+                  <int-val>0x200C</int-val>
+                </expr>
+                <delete-n-characters n="-2"/>
+                <move-to-marker position="@last"/>
+                <insert character="0x0DDB"/>
+              </case>
+              <case>
+                <expr operator="|">
+                  <expr operator="&lt;">
+                    <predefined-nth-previous-or-following-character position="-2"/>
+                    <int-val>0x0D9A</int-val>
+                  </expr>
+                  <expr operator="&gt;">
+                    <predefined-nth-previous-or-following-character position="-2"/>
+                    <int-val>0x0DC6</int-val>
+                  </expr>
+                </expr>
+                <delete-n-characters n="-1"/>
+                <move-to-marker position="@last"/>
+                <insert character="0x0DDB"/>
+              </case>
+            </conditional>
+          </case>
+        </conditional>
+      </branch>
+      <branch branch-selecting-map="map-misc"/>
+      <branch branch-selecting-map="map-join">
+        <shift-to id="state-join"/>
+      </branch>
+    </state>
+    <state id="state-join">
+      <branch branch-selecting-map="map-consonant">
+        <move-to-marker position="@first"/>
+        <set id="c">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="|">
+              <expr operator="=">
+                <variable-reference id="c"/>
+                <int-val>0x0DD9</int-val>
+              </expr>
+              <expr operator="=">
+                <variable-reference id="c"/>
+                <int-val>0x0DDB</int-val>
+              </expr>
+            </expr>
+            <conditional>
+              <case>
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <predefined-nth-previous-or-following-character position="-2"/>
+                    <int-val>0x0D9A</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <predefined-nth-previous-or-following-character position="-2"/>
+                    <int-val>0x0DC6</int-val>
+                  </expr>
+                </expr>
+                <delete-n-characters n="-1"/>
+                <insert character="0x0DCA"/>
+                <insert character="0x200D"/>
+                <move-to-marker position="@last"/>
+                <insert character-or-string="variable">
+                  <variable-reference id="c"/>
+                </insert>
+              </case>
+            </conditional>
+          </case>
+          <case>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <variable-reference id="c"/>
+                <int-val>0x0D9A</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <variable-reference id="c"/>
+                <int-val>0x0DC6</int-val>
+              </expr>
+            </expr>
+            <insert character="0x0DCA"/>
+            <insert character="0x200D"/>
+          </case>
+        </conditional>
+        <shift-to id="state-init"/>
+      </branch>
+      <catch-all-branch>
+        <shift-to id="state-init"/>
+      </catch-all-branch>
+    </state>
+  </state-list>
+</input-method>

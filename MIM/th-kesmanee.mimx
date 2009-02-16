@@ -1,0 +1,1358 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>th</language>
+    <name>kesmanee</name>
+  </tags>
+  <description>Thai input method simulating the Kesmanee keyboard
+with WTT 2.0 input sequence correction.
+The correction algorithm follows the one shown in the following 
+  &lt;http://linux.thai.net/~thep/th-xim/&gt;
+</description>
+  <title>ท</title>
+  <variable-list>
+    <variable id="level">
+      <description>
+        <get-text>Acceptance level
+The level of character sequence acceptance defined in WTT 2.0.
+0 accepts any key sequence.  2 accepts only orthographic ones.
+1 is somewhere between.</get-text>
+      </description>
+      <value type="integer">1</value>
+      <variable-value-candidate>
+        <c-value valuetype="integer">0</c-value>
+        <c-value valuetype="integer">1</c-value>
+        <c-value valuetype="integer">2</c-value>
+      </variable-value-candidate>
+    </variable>
+  </variable-list>
+  <macro-list>
+    <macro id="macro-cp">
+      <conditional>
+        <case>
+          <expr operator="=">
+            <variable-reference id="level"/>
+            <int-val>0</int-val>
+          </expr>
+          <set id="ret">
+            <int-val>1</int-val>
+          </set>
+        </case>
+        <case>
+          <int-val>1</int-val>
+          <macro-reference id="macro-cp12"/>
+        </case>
+      </conditional>
+    </macro>
+    <macro id="macro-ac">
+      <conditional>
+        <case>
+          <expr operator="=">
+            <variable-reference id="level"/>
+            <int-val>0</int-val>
+          </expr>
+          <set id="ret">
+            <int-val>1</int-val>
+          </set>
+        </case>
+        <case>
+          <expr operator="=">
+            <variable-reference id="level"/>
+            <int-val>1</int-val>
+          </expr>
+          <macro-reference id="macro-ac1"/>
+        </case>
+        <case>
+          <int-val>1</int-val>
+          <macro-reference id="macro-ac2"/>
+        </case>
+      </conditional>
+    </macro>
+    <macro id="macro-cp12">
+      <set id="ret">
+        <int-val>0</int-val>
+      </set>
+      <conditional>
+        <case>
+          <expr operator="|">
+            <expr operator="=">
+              <variable-reference id="arg2"/>
+              <int-val>0x0E31</int-val>
+            </expr>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <variable-reference id="arg2"/>
+                <int-val>0x0E34</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <variable-reference id="arg2"/>
+                <int-val>0x0E3A</int-val>
+              </expr>
+            </expr>
+            <expr operator="=">
+              <variable-reference id="arg2"/>
+              <int-val>0x0E4E</int-val>
+            </expr>
+          </expr>
+          <conditional>
+            <case>
+              <expr operator="|">
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E01</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E23</int-val>
+                  </expr>
+                </expr>
+                <expr operator="=">
+                  <variable-reference id="arg1"/>
+                  <int-val>0x0E25</int-val>
+                </expr>
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E27</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E2E</int-val>
+                  </expr>
+                </expr>
+              </expr>
+              <set id="ret">
+                <int-val>1</int-val>
+              </set>
+            </case>
+          </conditional>
+        </case>
+        <case>
+          <expr operator="&amp;">
+            <expr operator="&gt;=">
+              <variable-reference id="arg2"/>
+              <int-val>0x0E48</int-val>
+            </expr>
+            <expr operator="&lt;=">
+              <variable-reference id="arg2"/>
+              <int-val>0x0E4B</int-val>
+            </expr>
+          </expr>
+          <conditional>
+            <case>
+              <expr operator="|">
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E01</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E23</int-val>
+                  </expr>
+                </expr>
+                <expr operator="=">
+                  <variable-reference id="arg1"/>
+                  <int-val>0x0E25</int-val>
+                </expr>
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E27</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E2E</int-val>
+                  </expr>
+                </expr>
+                <expr operator="=">
+                  <variable-reference id="arg1"/>
+                  <int-val>0x0E31</int-val>
+                </expr>
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E34</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E39</int-val>
+                  </expr>
+                </expr>
+              </expr>
+              <set id="ret">
+                <int-val>1</int-val>
+              </set>
+            </case>
+          </conditional>
+        </case>
+        <case>
+          <expr operator="&amp;">
+            <expr operator="&gt;=">
+              <variable-reference id="arg2"/>
+              <int-val>0x0E4C</int-val>
+            </expr>
+            <expr operator="&lt;=">
+              <variable-reference id="arg2"/>
+              <int-val>0x0E4D</int-val>
+            </expr>
+          </expr>
+          <conditional>
+            <case>
+              <expr operator="|">
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E01</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E23</int-val>
+                  </expr>
+                </expr>
+                <expr operator="=">
+                  <variable-reference id="arg1"/>
+                  <int-val>0x0E25</int-val>
+                </expr>
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E27</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E2E</int-val>
+                  </expr>
+                </expr>
+                <expr operator="=">
+                  <variable-reference id="arg1"/>
+                  <int-val>0x0E38</int-val>
+                </expr>
+                <expr operator="=">
+                  <variable-reference id="arg1"/>
+                  <int-val>0x0E34</int-val>
+                </expr>
+              </expr>
+              <set id="ret">
+                <int-val>1</int-val>
+              </set>
+            </case>
+          </conditional>
+        </case>
+        <case>
+          <expr operator="=">
+            <variable-reference id="arg2"/>
+            <int-val>0x0E47</int-val>
+          </expr>
+          <conditional>
+            <case>
+              <expr operator="|">
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E01</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E23</int-val>
+                  </expr>
+                </expr>
+                <expr operator="=">
+                  <variable-reference id="arg1"/>
+                  <int-val>0x0E25</int-val>
+                </expr>
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E27</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E2E</int-val>
+                  </expr>
+                </expr>
+                <expr operator="=">
+                  <variable-reference id="arg1"/>
+                  <int-val>0x0E35</int-val>
+                </expr>
+                <expr operator="=">
+                  <variable-reference id="arg1"/>
+                  <int-val>0x0E37</int-val>
+                </expr>
+              </expr>
+              <set id="ret">
+                <int-val>1</int-val>
+              </set>
+            </case>
+          </conditional>
+        </case>
+      </conditional>
+    </macro>
+    <macro id="macro-ac1">
+      <set id="ret">
+        <int-val>1</int-val>
+      </set>
+      <conditional>
+        <case>
+          <expr operator="|">
+            <expr operator="=">
+              <variable-reference id="arg2"/>
+              <int-val>0x0E31</int-val>
+            </expr>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <variable-reference id="arg2"/>
+                <int-val>0x0E34</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <variable-reference id="arg2"/>
+                <int-val>0x0E3A</int-val>
+              </expr>
+            </expr>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <variable-reference id="arg2"/>
+                <int-val>0x0E47</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <variable-reference id="arg2"/>
+                <int-val>0x0E4E</int-val>
+              </expr>
+            </expr>
+          </expr>
+          <set id="ret">
+            <int-val>0</int-val>
+          </set>
+        </case>
+      </conditional>
+    </macro>
+    <macro id="macro-ac2">
+      <set id="ret">
+        <int-val>0</int-val>
+      </set>
+      <conditional>
+        <case>
+          <expr operator="|">
+            <expr operator="&lt;=">
+              <variable-reference id="arg2"/>
+              <int-val>0x001F</int-val>
+            </expr>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <variable-reference id="arg2"/>
+                <int-val>0x0080</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <variable-reference id="arg2"/>
+                <int-val>0x009F</int-val>
+              </expr>
+            </expr>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <variable-reference id="arg2"/>
+                <int-val>0x0E01</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <variable-reference id="arg2"/>
+                <int-val>0x0E23</int-val>
+              </expr>
+            </expr>
+            <expr operator="=">
+              <variable-reference id="arg2"/>
+              <int-val>0x0E25</int-val>
+            </expr>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <variable-reference id="arg2"/>
+                <int-val>0x0E27</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <variable-reference id="arg2"/>
+                <int-val>0x0E2E</int-val>
+              </expr>
+            </expr>
+          </expr>
+          <set id="ret">
+            <int-val>1</int-val>
+          </set>
+        </case>
+        <case>
+          <expr operator="|">
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <variable-reference id="arg2"/>
+                <int-val>0x0020</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <variable-reference id="arg2"/>
+                <int-val>0x007E</int-val>
+              </expr>
+            </expr>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <variable-reference id="arg2"/>
+                <int-val>0x00A0</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <variable-reference id="arg2"/>
+                <int-val>0x0E00</int-val>
+              </expr>
+            </expr>
+            <expr operator="=">
+              <variable-reference id="arg2"/>
+              <int-val>0x0E2F</int-val>
+            </expr>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <variable-reference id="arg2"/>
+                <int-val>0x0E3F</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <variable-reference id="arg2"/>
+                <int-val>0x0E44</int-val>
+              </expr>
+            </expr>
+            <expr operator="=">
+              <variable-reference id="arg2"/>
+              <int-val>0x0E46</int-val>
+            </expr>
+            <expr operator="&gt;">
+              <variable-reference id="arg2"/>
+              <int-val>0x0E4E</int-val>
+            </expr>
+          </expr>
+          <conditional>
+            <case>
+              <expr operator="|">
+                <expr operator="&lt;">
+                  <variable-reference id="arg1"/>
+                  <int-val>0x0E40</int-val>
+                </expr>
+                <expr operator="&gt;">
+                  <variable-reference id="arg1"/>
+                  <int-val>0x0E44</int-val>
+                </expr>
+              </expr>
+              <set id="ret">
+                <int-val>1</int-val>
+              </set>
+            </case>
+          </conditional>
+        </case>
+        <case>
+          <expr operator="|">
+            <expr operator="=">
+              <variable-reference id="arg2"/>
+              <int-val>0x0E30</int-val>
+            </expr>
+            <expr operator="=">
+              <variable-reference id="arg2"/>
+              <int-val>0x0E32</int-val>
+            </expr>
+            <expr operator="=">
+              <variable-reference id="arg2"/>
+              <int-val>0x0E33</int-val>
+            </expr>
+          </expr>
+          <conditional>
+            <case>
+              <expr operator="|">
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E01</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E23</int-val>
+                  </expr>
+                </expr>
+                <expr operator="=">
+                  <variable-reference id="arg1"/>
+                  <int-val>0x0E25</int-val>
+                </expr>
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E27</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E2E</int-val>
+                  </expr>
+                </expr>
+                <expr operator="=">
+                  <variable-reference id="arg1"/>
+                  <int-val>0x0E30</int-val>
+                </expr>
+                <expr operator="=">
+                  <variable-reference id="arg1"/>
+                  <int-val>0x0E32</int-val>
+                </expr>
+                <expr operator="=">
+                  <variable-reference id="arg1"/>
+                  <int-val>0x0E33</int-val>
+                </expr>
+                <expr operator="=">
+                  <variable-reference id="arg1"/>
+                  <int-val>0x0E45</int-val>
+                </expr>
+                <expr operator="=">
+                  <variable-reference id="arg1"/>
+                  <int-val>0x0E38</int-val>
+                </expr>
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E48</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E4B</int-val>
+                  </expr>
+                </expr>
+              </expr>
+              <set id="ret">
+                <int-val>1</int-val>
+              </set>
+            </case>
+          </conditional>
+        </case>
+        <case>
+          <expr operator="=">
+            <variable-reference id="arg2"/>
+            <int-val>0x0E45</int-val>
+          </expr>
+          <conditional>
+            <case>
+              <expr operator="|">
+                <expr operator="=">
+                  <variable-reference id="arg1"/>
+                  <int-val>0x0E24</int-val>
+                </expr>
+                <expr operator="=">
+                  <variable-reference id="arg1"/>
+                  <int-val>0x0E26</int-val>
+                </expr>
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E48</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E4B</int-val>
+                  </expr>
+                </expr>
+              </expr>
+              <set id="ret">
+                <int-val>1</int-val>
+              </set>
+            </case>
+          </conditional>
+        </case>
+        <case>
+          <expr operator="|">
+            <expr operator="=">
+              <variable-reference id="arg2"/>
+              <int-val>0x0E24</int-val>
+            </expr>
+            <expr operator="=">
+              <variable-reference id="arg2"/>
+              <int-val>0x0E26</int-val>
+            </expr>
+          </expr>
+          <conditional>
+            <case>
+              <expr operator="&amp;">
+                <expr operator="|">
+                  <expr operator="&lt;">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E40</int-val>
+                  </expr>
+                  <expr operator="&gt;">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E44</int-val>
+                  </expr>
+                </expr>
+                <expr operator="!">
+                  <expr operator="=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E24</int-val>
+                  </expr>
+                </expr>
+                <expr operator="!">
+                  <expr operator="=">
+                    <variable-reference id="arg1"/>
+                    <int-val>0x0E26</int-val>
+                  </expr>
+                </expr>
+              </expr>
+              <set id="ret">
+                <int-val>1</int-val>
+              </set>
+            </case>
+          </conditional>
+        </case>
+      </conditional>
+    </macro>
+  </macro-list>
+  <map-list>
+    <map id="map-map">
+      <rule>
+        <keyseq keys="!"/>
+        <insert string="+"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;"/>
+        <insert string="."/>
+      </rule>
+      <rule>
+        <keyseq keys="#"/>
+        <insert string="๒"/>
+      </rule>
+      <rule>
+        <keyseq keys="$"/>
+        <insert string="๓"/>
+      </rule>
+      <rule>
+        <keyseq keys="%"/>
+        <insert string="๔"/>
+      </rule>
+      <rule>
+        <keyseq keys="&amp;"/>
+        <insert string="฿"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;"/>
+        <insert string="ง"/>
+      </rule>
+      <rule>
+        <keyseq keys="("/>
+        <insert string="๖"/>
+      </rule>
+      <rule>
+        <keyseq keys=")"/>
+        <insert string="๗"/>
+      </rule>
+      <rule>
+        <keyseq keys="*"/>
+        <insert string="๕"/>
+      </rule>
+      <rule>
+        <keyseq keys="+"/>
+        <insert string="๙"/>
+      </rule>
+      <rule>
+        <keyseq keys=","/>
+        <insert string="ม"/>
+      </rule>
+      <rule>
+        <keyseq keys="-"/>
+        <insert string="ข"/>
+      </rule>
+      <rule>
+        <keyseq keys="."/>
+        <insert string="ใ"/>
+      </rule>
+      <rule>
+        <keyseq keys="/"/>
+        <insert string="ฝ"/>
+      </rule>
+      <rule>
+        <keyseq keys="0"/>
+        <insert string="จ"/>
+      </rule>
+      <rule>
+        <keyseq keys="1"/>
+        <insert string="ๅ"/>
+      </rule>
+      <rule>
+        <keyseq keys="2"/>
+        <insert string="/"/>
+      </rule>
+      <rule>
+        <keyseq keys="3"/>
+        <insert string="-"/>
+      </rule>
+      <rule>
+        <keyseq keys="4"/>
+        <insert string="ภ"/>
+      </rule>
+      <rule>
+        <keyseq keys="5"/>
+        <insert string="ถ"/>
+      </rule>
+      <rule>
+        <keyseq keys="6"/>
+        <insert string="ุ"/>
+      </rule>
+      <rule>
+        <keyseq keys="7"/>
+        <insert string="ึ"/>
+      </rule>
+      <rule>
+        <keyseq keys="8"/>
+        <insert string="ค"/>
+      </rule>
+      <rule>
+        <keyseq keys="9"/>
+        <insert string="ต"/>
+      </rule>
+      <rule>
+        <keyseq keys=":"/>
+        <insert string="ซ"/>
+      </rule>
+      <rule>
+        <keyseq keys=";"/>
+        <insert string="ว"/>
+      </rule>
+      <rule>
+        <keyseq keys="&lt;"/>
+        <insert string="ฒ"/>
+      </rule>
+      <rule>
+        <keyseq keys="="/>
+        <insert string="ช"/>
+      </rule>
+      <rule>
+        <keyseq keys="&gt;"/>
+        <insert string="ฬ"/>
+      </rule>
+      <rule>
+        <keyseq keys="?"/>
+        <insert string="ฦ"/>
+      </rule>
+      <rule>
+        <keyseq keys="@"/>
+        <insert string="๑"/>
+      </rule>
+      <rule>
+        <keyseq keys="A"/>
+        <insert string="ฤ"/>
+      </rule>
+      <rule>
+        <keyseq keys="B"/>
+        <insert string="ฺ"/>
+      </rule>
+      <rule>
+        <keyseq keys="C"/>
+        <insert string="ฉ"/>
+      </rule>
+      <rule>
+        <keyseq keys="D"/>
+        <insert string="ฏ"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+        <insert string="ฎ"/>
+      </rule>
+      <rule>
+        <keyseq keys="F"/>
+        <insert string="โ"/>
+      </rule>
+      <rule>
+        <keyseq keys="G"/>
+        <insert string="ฌ"/>
+      </rule>
+      <rule>
+        <keyseq keys="H"/>
+        <insert string="็"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+        <insert string="ณ"/>
+      </rule>
+      <rule>
+        <keyseq keys="J"/>
+        <insert string="๋"/>
+      </rule>
+      <rule>
+        <keyseq keys="K"/>
+        <insert string="ษ"/>
+      </rule>
+      <rule>
+        <keyseq keys="L"/>
+        <insert string="ศ"/>
+      </rule>
+      <rule>
+        <keyseq keys="M"/>
+        <insert string="?"/>
+      </rule>
+      <rule>
+        <keyseq keys="N"/>
+        <insert string="์"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <insert string="ฯ"/>
+      </rule>
+      <rule>
+        <keyseq keys="P"/>
+        <insert string="ญ"/>
+      </rule>
+      <rule>
+        <keyseq keys="Q"/>
+        <insert string="๐"/>
+      </rule>
+      <rule>
+        <keyseq keys="R"/>
+        <insert string="ฑ"/>
+      </rule>
+      <rule>
+        <keyseq keys="S"/>
+        <insert string="ฆ"/>
+      </rule>
+      <rule>
+        <keyseq keys="T"/>
+        <insert string="ธ"/>
+      </rule>
+      <rule>
+        <keyseq keys="U"/>
+        <insert string="๊"/>
+      </rule>
+      <rule>
+        <keyseq keys="V"/>
+        <insert string="ฮ"/>
+      </rule>
+      <rule>
+        <keyseq keys="W"/>
+        <insert string="&quot;"/>
+      </rule>
+      <rule>
+        <keyseq keys="X"/>
+        <insert string=")"/>
+      </rule>
+      <rule>
+        <keyseq keys="Y"/>
+        <insert string="ํ"/>
+      </rule>
+      <rule>
+        <keyseq keys="Z"/>
+        <insert string="("/>
+      </rule>
+      <rule>
+        <keyseq keys="["/>
+        <insert string="บ"/>
+      </rule>
+      <rule>
+        <keyseq keys="\"/>
+        <insert string="ฃ"/>
+      </rule>
+      <rule>
+        <keyseq keys="]"/>
+        <insert string="ล"/>
+      </rule>
+      <rule>
+        <keyseq keys="^"/>
+        <insert string="ู"/>
+      </rule>
+      <rule>
+        <keyseq keys="_"/>
+        <insert string="๘"/>
+      </rule>
+      <rule>
+        <keyseq keys="`"/>
+        <insert string="_"/>
+      </rule>
+      <rule>
+        <keyseq keys="a"/>
+        <insert string="ฟ"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <insert string="ิ"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <insert string="แ"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <insert string="ก"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert string="ำ"/>
+      </rule>
+      <rule>
+        <keyseq keys="f"/>
+        <insert string="ด"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+        <insert string="เ"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+        <insert string="้"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert string="ร"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+        <insert string="่"/>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+        <insert string="า"/>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+        <insert string="ส"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+        <insert string="ท"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <insert string="ื"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert string="น"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+        <insert string="ย"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+        <insert string="ๆ"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+        <insert string="พ"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+        <insert string="ห"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+        <insert string="ะ"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert string="ี"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <insert string="อ"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+        <insert string="ไ"/>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+        <insert string="ป"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <insert string="ั"/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+        <insert string="ผ"/>
+      </rule>
+      <rule>
+        <keyseq keys="{"/>
+        <insert string="ฐ"/>
+      </rule>
+      <rule>
+        <keyseq keys="|"/>
+        <insert string="ฅ"/>
+      </rule>
+      <rule>
+        <keyseq keys="}"/>
+        <insert string=","/>
+      </rule>
+      <rule>
+        <keyseq keys="~"/>
+        <insert string="%"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-map">
+        <delete-to-marker position="@first"/>
+        <pushback-n-events n="1"/>
+        <shift-to id="state-main"/>
+      </branch>
+    </state>
+    <state id="state-main">
+      <branch branch-selecting-map="map-map">
+        <set id="x">
+          <predefined-nth-previous-or-following-character position="-3"/>
+        </set>
+        <set id="y">
+          <predefined-nth-previous-or-following-character position="-2"/>
+        </set>
+        <set id="z">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <set id="arg1">
+          <variable-reference id="y"/>
+        </set>
+        <set id="arg2">
+          <variable-reference id="z"/>
+        </set>
+        <macro-reference id="macro-cp"/>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <variable-reference id="ret"/>
+              <int-val>1</int-val>
+            </expr>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <macro-reference id="macro-ac"/>
+            <conditional>
+              <case>
+                <expr operator="=">
+                  <variable-reference id="ret"/>
+                  <int-val>1</int-val>
+                </expr>
+              </case>
+              <case>
+                <int-val>1</int-val>
+                <set id="arg1">
+                  <variable-reference id="x"/>
+                </set>
+                <set id="arg2">
+                  <variable-reference id="z"/>
+                </set>
+                <macro-reference id="macro-cp"/>
+                <conditional>
+                  <case>
+                    <expr operator="=">
+                      <variable-reference id="ret"/>
+                      <int-val>1</int-val>
+                    </expr>
+                    <set id="arg1">
+                      <variable-reference id="z"/>
+                    </set>
+                    <set id="arg2">
+                      <variable-reference id="y"/>
+                    </set>
+                    <macro-reference id="macro-cp"/>
+                    <conditional>
+                      <case>
+                        <expr operator="=">
+                          <variable-reference id="ret"/>
+                          <int-val>1</int-val>
+                        </expr>
+                        <delete-n-characters n="-2"/>
+                        <insert character-or-string="variable">
+                          <variable-reference id="z"/>
+                        </insert>
+                        <insert character-or-string="variable">
+                          <variable-reference id="y"/>
+                        </insert>
+                      </case>
+                      <case>
+                        <int-val>1</int-val>
+                        <set id="arg1">
+                          <variable-reference id="x"/>
+                        </set>
+                        <set id="arg2">
+                          <variable-reference id="y"/>
+                        </set>
+                        <macro-reference id="macro-cp"/>
+                        <conditional>
+                          <case>
+                            <expr operator="=">
+                              <variable-reference id="ret"/>
+                              <int-val>1</int-val>
+                            </expr>
+                            <delete-n-characters n="-2"/>
+                            <insert character-or-string="variable">
+                              <variable-reference id="z"/>
+                            </insert>
+                          </case>
+                          <case>
+                            <expr operator="&amp;">
+                              <expr operator="|">
+                                <expr operator="=">
+                                  <variable-reference id="y"/>
+                                  <int-val>0x0E30</int-val>
+                                </expr>
+                                <expr operator="=">
+                                  <variable-reference id="y"/>
+                                  <int-val>0x0E32</int-val>
+                                </expr>
+                                <expr operator="=">
+                                  <variable-reference id="y"/>
+                                  <int-val>0x0E33</int-val>
+                                </expr>
+                              </expr>
+                              <expr operator="&gt;=">
+                                <variable-reference id="z"/>
+                                <int-val>0x0E48</int-val>
+                              </expr>
+                              <expr operator="&lt;=">
+                                <variable-reference id="z"/>
+                                <int-val>0x0E4B</int-val>
+                              </expr>
+                            </expr>
+                            <delete-n-characters n="-2"/>
+                            <insert character-or-string="variable">
+                              <variable-reference id="z"/>
+                            </insert>
+                            <insert character-or-string="variable">
+                              <variable-reference id="y"/>
+                            </insert>
+                          </case>
+                          <case>
+                            <int-val>1</int-val>
+                            <delete-n-characters n="-1"/>
+                          </case>
+                        </conditional>
+                      </case>
+                    </conditional>
+                  </case>
+                  <case>
+                    <int-val>1</int-val>
+                    <set id="arg1">
+                      <variable-reference id="x"/>
+                    </set>
+                    <set id="arg2">
+                      <variable-reference id="z"/>
+                    </set>
+                    <macro-reference id="macro-ac"/>
+                    <conditional>
+                      <case>
+                        <expr operator="&amp;">
+                          <expr operator="=">
+                            <variable-reference id="ret"/>
+                            <int-val>1</int-val>
+                          </expr>
+                          <expr operator="&amp;">
+                            <expr operator="&gt;=">
+                              <variable-reference id="y"/>
+                              <int-val>0x0E01</int-val>
+                            </expr>
+                            <expr operator="&lt;=">
+                              <variable-reference id="y"/>
+                              <int-val>0x0E5B</int-val>
+                            </expr>
+                          </expr>
+                          <expr operator="&amp;">
+                            <expr operator="&gt;=">
+                              <variable-reference id="z"/>
+                              <int-val>0x0E01</int-val>
+                            </expr>
+                            <expr operator="&lt;=">
+                              <variable-reference id="z"/>
+                              <int-val>0x0E5B</int-val>
+                            </expr>
+                          </expr>
+                        </expr>
+                        <delete-n-characters n="-2"/>
+                        <insert character-or-string="variable">
+                          <variable-reference id="z"/>
+                        </insert>
+                      </case>
+                      <case>
+                        <int-val>1</int-val>
+                        <delete-n-characters n="-1"/>
+                      </case>
+                    </conditional>
+                  </case>
+                </conditional>
+              </case>
+            </conditional>
+          </case>
+        </conditional>
+        <set id="w">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="&gt;">
+              <variable-reference id="predefined-surround-text-flag"/>
+              <int-val>-2</int-val>
+            </expr>
+            <commit/>
+          </case>
+          <case>
+            <expr operator="|">
+              <expr operator="&amp;">
+                <expr operator="&gt;=">
+                  <variable-reference id="w"/>
+                  <int-val>0x0000</int-val>
+                </expr>
+                <expr operator="&lt;=">
+                  <variable-reference id="w"/>
+                  <int-val>0x0E00</int-val>
+                </expr>
+              </expr>
+              <expr operator="=">
+                <variable-reference id="w"/>
+                <int-val>0x0E2F</int-val>
+              </expr>
+              <expr operator="=">
+                <variable-reference id="w"/>
+                <int-val>0x0E3F</int-val>
+              </expr>
+              <expr operator="=">
+                <variable-reference id="w"/>
+                <int-val>0x0E46</int-val>
+              </expr>
+              <expr operator="&gt;=">
+                <variable-reference id="w"/>
+                <int-val>0x0E4F</int-val>
+              </expr>
+            </expr>
+            <commit/>
+          </case>
+          <case>
+            <expr operator="|">
+              <expr operator="&amp;">
+                <expr operator="&gt;=">
+                  <variable-reference id="w"/>
+                  <int-val>0x0E01</int-val>
+                </expr>
+                <expr operator="&lt;=">
+                  <variable-reference id="w"/>
+                  <int-val>0x0E23</int-val>
+                </expr>
+              </expr>
+              <expr operator="=">
+                <variable-reference id="w"/>
+                <int-val>0x0E25</int-val>
+              </expr>
+              <expr operator="&amp;">
+                <expr operator="&gt;=">
+                  <variable-reference id="w"/>
+                  <int-val>0x0E27</int-val>
+                </expr>
+                <expr operator="&lt;=">
+                  <variable-reference id="w"/>
+                  <int-val>0x0E2E</int-val>
+                </expr>
+              </expr>
+            </expr>
+            <conditional>
+              <case>
+                <expr operator="|">
+                  <expr operator="=">
+                    <predefined-nth-previous-or-following-character position="-2"/>
+                    <int-val>0x0E24</int-val>
+                  </expr>
+                  <expr operator="=">
+                    <predefined-nth-previous-or-following-character position="-2"/>
+                    <int-val>0x0E26</int-val>
+                  </expr>
+                </expr>
+              </case>
+              <case>
+                <int-val>1</int-val>
+                <delete-n-characters n="-1"/>
+                <commit/>
+                <insert character-or-string="variable">
+                  <variable-reference id="w"/>
+                </insert>
+              </case>
+            </conditional>
+          </case>
+          <case>
+            <expr operator="|">
+              <expr operator="&amp;">
+                <expr operator="&gt;=">
+                  <variable-reference id="w"/>
+                  <int-val>0x0E40</int-val>
+                </expr>
+                <expr operator="&lt;=">
+                  <variable-reference id="w"/>
+                  <int-val>0x0E45</int-val>
+                </expr>
+              </expr>
+              <expr operator="=">
+                <variable-reference id="w"/>
+                <int-val>0x0E24</int-val>
+              </expr>
+              <expr operator="=">
+                <variable-reference id="w"/>
+                <int-val>0x0E26</int-val>
+              </expr>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <commit/>
+            <insert character-or-string="variable">
+              <variable-reference id="w"/>
+            </insert>
+          </case>
+          <case>
+            <expr operator="|">
+              <expr operator="=">
+                <variable-reference id="w"/>
+                <int-val>0x0E30</int-val>
+              </expr>
+              <expr operator="=">
+                <variable-reference id="w"/>
+                <int-val>0x0E32</int-val>
+              </expr>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <set id="v">
+              <predefined-nth-previous-or-following-character position="-1"/>
+            </set>
+            <conditional>
+              <case>
+                <expr operator="|">
+                  <expr operator="&amp;">
+                    <expr operator="&gt;=">
+                      <variable-reference id="v"/>
+                      <int-val>0x0E01</int-val>
+                    </expr>
+                    <expr operator="&lt;=">
+                      <variable-reference id="v"/>
+                      <int-val>0x0E23</int-val>
+                    </expr>
+                  </expr>
+                  <expr operator="=">
+                    <variable-reference id="v"/>
+                    <int-val>0x0E25</int-val>
+                  </expr>
+                  <expr operator="&amp;">
+                    <expr operator="&gt;=">
+                      <variable-reference id="v"/>
+                      <int-val>0x0E27</int-val>
+                    </expr>
+                    <expr operator="&lt;=">
+                      <variable-reference id="v"/>
+                      <int-val>0x0E2E</int-val>
+                    </expr>
+                  </expr>
+                </expr>
+                <delete-n-characters n="-1"/>
+                <commit/>
+                <insert character-or-string="variable">
+                  <variable-reference id="v"/>
+                </insert>
+                <insert character-or-string="variable">
+                  <variable-reference id="w"/>
+                </insert>
+              </case>
+              <case>
+                <int-val>1</int-val>
+                <commit/>
+                <insert character-or-string="variable">
+                  <variable-reference id="w"/>
+                </insert>
+              </case>
+            </conditional>
+          </case>
+        </conditional>
+      </branch>
+    </state>
+  </state-list>
+</input-method>

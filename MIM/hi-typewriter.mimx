@@ -1,0 +1,426 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>hi</language>
+    <name>typewriter</name>
+  </tags>
+  <description>Hindi input method with `typewriter' method.
+Still experimental.
+</description>
+  <title>क</title>
+  <map-list>
+    <map id="map-consonant">
+      <rule>
+        <keyseq keys="!"/>
+        <insert character="2317"/>
+      </rule>
+      <rule>
+        <keyseq keys="+"/>
+        <insert character="2315"/>
+      </rule>
+      <rule>
+        <keyseq keys="Q"/>
+        <insert character="2324"/>
+      </rule>
+      <rule>
+        <keyseq keys="W"/>
+        <insert character="2320"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+        <insert character="2310"/>
+      </rule>
+      <rule>
+        <keyseq keys="R"/>
+        <insert character="2312"/>
+      </rule>
+      <rule>
+        <keyseq keys="T"/>
+        <insert character="2314"/>
+      </rule>
+      <rule>
+        <keyseq keys="Y"/>
+        <insert character="2349"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <insert character="2348"/>
+      </rule>
+      <rule>
+        <keyseq keys="U"/>
+        <insert character="2329"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert character="2361"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+        <insert character="2328"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert character="2327"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <insert character="2343"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert character="2342"/>
+      </rule>
+      <rule>
+        <keyseq keys="P"/>
+        <insert character="2333"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+        <insert character="2332"/>
+      </rule>
+      <rule>
+        <keyseq keys="{"/>
+        <insert character="2338"/>
+      </rule>
+      <rule>
+        <keyseq keys="["/>
+        <insert character="2337"/>
+      </rule>
+      <rule>
+        <keyseq keys="}"/>
+        <insert character="2334"/>
+      </rule>
+      <rule>
+        <keyseq keys="A"/>
+        <insert character="2323"/>
+      </rule>
+      <rule>
+        <keyseq keys="S"/>
+        <insert character="2319"/>
+      </rule>
+      <rule>
+        <keyseq keys="D"/>
+        <insert character="2309"/>
+      </rule>
+      <rule>
+        <keyseq keys="F"/>
+        <insert character="2311"/>
+      </rule>
+      <rule>
+        <keyseq keys="G"/>
+        <insert character="2313"/>
+      </rule>
+      <rule>
+        <keyseq keys="H"/>
+        <insert character="2347"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+        <insert character="2346"/>
+      </rule>
+      <rule>
+        <keyseq keys="J"/>
+        <insert character="2353"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+        <insert character="2352"/>
+      </rule>
+      <rule>
+        <keyseq keys="K"/>
+        <insert character="2326"/>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+        <insert character="2325"/>
+      </rule>
+      <rule>
+        <keyseq keys="L"/>
+        <insert character="2341"/>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+        <insert character="2340"/>
+      </rule>
+      <rule>
+        <keyseq keys=":"/>
+        <insert character="2331"/>
+      </rule>
+      <rule>
+        <keyseq keys=";"/>
+        <insert character="2330"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;"/>
+        <insert character="2336"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;"/>
+        <insert character="2335"/>
+      </rule>
+      <rule>
+        <keyseq keys="|"/>
+        <insert character="2321"/>
+      </rule>
+      <rule>
+        <keyseq keys="~"/>
+        <insert character="2322"/>
+      </rule>
+      <rule>
+        <keyseq keys="Z"/>
+        <insert character="2318"/>
+      </rule>
+      <rule>
+        <keyseq keys="C"/>
+        <insert character="2339"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <insert character="2350"/>
+      </rule>
+      <rule>
+        <keyseq keys="V"/>
+        <insert character="2345"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <insert character="2344"/>
+      </rule>
+      <rule>
+        <keyseq keys="B"/>
+        <insert character="2356"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <insert character="2357"/>
+      </rule>
+      <rule>
+        <keyseq keys="N"/>
+        <insert character="2355"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <insert character="2354"/>
+      </rule>
+      <rule>
+        <keyseq keys="M"/>
+        <insert character="2358"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+        <insert character="2360"/>
+      </rule>
+      <rule>
+        <keyseq keys="&lt;"/>
+        <insert character="2359"/>
+      </rule>
+      <rule>
+        <keyseq keys="/"/>
+        <insert character="2351"/>
+      </rule>
+    </map>
+    <map id="map-halant">
+      <rule>
+        <keyseq keys="d"/>
+        <insert character="2381"/>
+      </rule>
+    </map>
+    <map id="map-vowel-I">
+      <rule>
+        <keyseq keys="f"/>
+        <insert character="2367"/>
+      </rule>
+    </map>
+    <map id="map-else">
+      <rule>
+        <keyseq keys="1"/>
+        <insert character="2407"/>
+      </rule>
+      <rule>
+        <keyseq keys="@"/>
+        <insert character="2373"/>
+      </rule>
+      <rule>
+        <keyseq keys="2"/>
+        <insert character="2408"/>
+      </rule>
+      <rule>
+        <keyseq keys="#"/>
+        <insert character="35"/>
+      </rule>
+      <rule>
+        <keyseq keys="3"/>
+        <insert character="2409"/>
+      </rule>
+      <rule>
+        <keyseq keys="$"/>
+        <insert character="36"/>
+      </rule>
+      <rule>
+        <keyseq keys="4"/>
+        <insert character="2410"/>
+      </rule>
+      <rule>
+        <keyseq keys="5"/>
+        <insert character="2411"/>
+      </rule>
+      <rule>
+        <keyseq keys="6"/>
+        <insert character="2412"/>
+      </rule>
+      <rule>
+        <keyseq keys="7"/>
+        <insert character="2413"/>
+      </rule>
+      <rule>
+        <keyseq keys="8"/>
+        <insert character="2414"/>
+      </rule>
+      <rule>
+        <keyseq keys="("/>
+        <insert character="40"/>
+      </rule>
+      <rule>
+        <keyseq keys="9"/>
+        <insert character="2415"/>
+      </rule>
+      <rule>
+        <keyseq keys=")"/>
+        <insert character="41"/>
+      </rule>
+      <rule>
+        <keyseq keys="0"/>
+        <insert character="2406"/>
+      </rule>
+      <rule>
+        <keyseq keys="_"/>
+        <insert character="2307"/>
+      </rule>
+      <rule>
+        <keyseq keys="-"/>
+        <insert character="45"/>
+      </rule>
+      <rule>
+        <keyseq keys="="/>
+        <insert character="2371"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+        <insert character="2380"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+        <insert character="2376"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert character="2366"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+        <insert character="2368"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+        <insert character="2370"/>
+      </rule>
+      <rule>
+        <keyseq keys="]"/>
+        <insert character="2364"/>
+      </rule>
+      <rule>
+        <keyseq keys="a"/>
+        <insert character="2379"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+        <insert character="2375"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+        <insert character="2369"/>
+      </rule>
+      <rule>
+        <keyseq keys="\"/>
+        <insert character="2377"/>
+      </rule>
+      <rule>
+        <keyseq keys="`"/>
+        <insert character="2378"/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+        <insert character="2374"/>
+      </rule>
+      <rule>
+        <keyseq keys="X"/>
+        <insert character="2305"/>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+        <insert character="2306"/>
+      </rule>
+      <rule>
+        <keyseq keys=","/>
+        <insert character="44"/>
+      </rule>
+      <rule>
+        <keyseq keys="&gt;"/>
+        <insert character="2404"/>
+      </rule>
+      <rule>
+        <keyseq keys="."/>
+        <insert character="46"/>
+      </rule>
+      <rule>
+        <keyseq keys="?"/>
+        <insert character="2399"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-consonant"/>
+      <branch branch-selecting-map="map-halant"/>
+      <branch branch-selecting-map="map-else"/>
+      <branch branch-selecting-map="map-vowel-I">
+        <shift-to id="state-after-vowel-I"/>
+      </branch>
+    </state>
+    <state id="state-after-vowel-I">
+      <branch branch-selecting-map="map-consonant">
+        <move-to-marker position="@first"/>
+        <delete-to-marker position="@next"/>
+        <move-to-marker position="@last"/>
+        <insert string="ि"/>
+        <shift-to id="state-after-consonant"/>
+      </branch>
+      <branch branch-selecting-map="map-vowel-I">
+        <delete-to-marker position="@previous"/>
+        <pushback-n-events n="1"/>
+        <shift-to id="state-init"/>
+      </branch>
+      <catch-all-branch>
+        <shift-to id="state-init"/>
+      </catch-all-branch>
+    </state>
+    <state id="state-after-consonant">
+      <branch branch-selecting-map="map-halant">
+        <move-to-marker position="@previous"/>
+        <delete-to-marker position="@previous"/>
+        <move-to-marker position="@last"/>
+        <insert string="ि"/>
+        <shift-to id="state-after-consonant-halant"/>
+      </branch>
+    </state>
+    <state id="state-after-consonant-halant">
+      <branch branch-selecting-map="map-consonant">
+        <move-to-marker position="@previous"/>
+        <delete-to-marker position="@previous"/>
+        <move-to-marker position="@last"/>
+        <insert string="ि"/>
+        <shift-to id="state-after-consonant"/>
+      </branch>
+    </state>
+  </state-list>
+</input-method>

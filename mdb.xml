@@ -1,0 +1,206 @@
+<?xml version='1.0'?>
+
+<database xmlns="http://www.m17n.org/mdb">
+
+<!--   mdb.dir  The m17n database directory	
+;; Copyright (C) 2003, 2004, 2005, 2006
+;;   National Institute of Advanced Industrial Science and Technology (AIST)
+;;   Registration Number H15PRO112 
+
+;; This file is part of the m17n database; a sub-part of the m17n
+;; library.
+
+;; The m17n library is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU Lesser General Public License
+;; as published by the Free Software Foundation; either version 2.1 of
+;; the License, or (at your option) any later version.
+
+;; The m17n library is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with the m17n library; if not, write to the Free
+;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+;; General format: (TAG0 TAG1 [ TAG2 [ TAG3 ] ] FILE)
+;;	TAG0..TAG3 must be symbol.
+;;	FILE must be string of the form "...".
+;; This file must contain only ASCII characters. -->
+<doxygen>
+  <page id="m17nDBData">
+    Data provided by the m17n database
+    <section id="charprop">
+      Character Property
+    </section>
+    <section id="mim">
+      Input method 
+      See @ref mdbIM for the format of these files.
+    </section>
+    <section id="flt">
+      Font Layout Table
+      See @ref mdbFLT for the format of these files.
+    </section>
+    <section id="fontset">
+      Fontset
+      See @ref mdbFontset for the format of these files.
+    </section>
+    <section id="misc">
+      The other data
+    </section>
+  </page>
+</doxygen>
+
+<!-- charprop -->
+
+<item  key0="char-table" key1="symbol" key2="category" sectionid="charprop">
+  <description>Unicode general category for each character that is available as
+  #Mcategory property.</description>
+  <source><filename>CATEGORY.tab</filename></source>
+</item>
+
+<item key0="char-table" key1="integer" key2="combining-class" sectionid="charprop">
+  <description>Unicode combining class for each character that is available as
+  #Mcombining_class property.</description>
+  <source><filename>COMBINE.tab</filename></source>
+</item>
+
+<item key0="char-table" key1="symbol" key2="bidirectional-category" sectionid="charprop">
+  <description>Unicode BIDI category for each character that is available as
+  #Mbidi_category property.</description>
+  <source><filename>BIDI.tab</filename></source>
+</item>
+
+<item key0="char-table" key1="integer" key2="simple-case-folding" sectionid="charprop">
+  <description>Unicode case-folding mapping of each character that is available as
+  #Msimple_case_folding property.</description>
+  <source><filename>CASE-S.tab</filename></source>
+</item>
+
+<item key0="char-table" key1="mtext" key2="complicated-case-folding" sectionid="charprop">
+  <description>Unicode complicated case-folding mapping of each character that is
+  available as #Mcomplicated_case_folding property.</description>
+  <source><filename>CASE-C.tab</filename></source>
+</item>
+
+<item key0="char-table" key1="string" key2="name" sectionid="charprop">
+  <description>Unicode character name for each character that is available as
+  #Mname property.</description>
+  <source><filename>NAME.tab</filename></source>
+</item>
+
+<item key0="char-table" key1="symbol" key2="script" sectionid="charprop">
+  <description>Unicode script name for each character that is available as
+  #Mscript property.</description>
+  <source><filename>SCRIPT.tab</filename></source>
+</item>
+
+<item key0="char-table" key1="integer" key2="cased" sectionid="charprop">
+  <description>Unicode properties for case operations.  Integer value 1 means
+  cased (D47, Unicode 4.0, p.89), 2 means case-ignorable (D47a,
+  Unicode 4.1.0), and 3 means both.  Available as #Mcased property.</description>
+  <source><filename>CASED.tab</filename></source>
+</item>
+
+<item key0="char-table" key1="symbol" key2="soft-dotted" sectionid="charprop"> 
+  <description>Unicode property for case operations.  Available as #Msoft_dotted
+  property.</description>
+  <source><filename>SOFT-DOTTED.tab</filename></source>
+</item>
+
+<item key0="char-table" key1="plist" key2="case-mapping" sectionid="charprop">
+  <description>Unicode case mapping of each character that is available as
+  #Mcase_mapping property. </description>
+  <source><filename>CASE-MAPPING.tab</filename></source>
+</item>
+
+<item key0="char-table" key1="symbol" key2="block" sectionid="charprop">
+  <description>Unicode fallback script name for each character that is available
+  as #Mblock property.  Generated manually by referring UCD
+  Blocks.txt.</description>
+  <source><filename>BLOCK.tab</filename></source>
+</item>
+
+<!-- mim -->
+
+<item key0="input-method" key1="*" sectionid="mim">
+  <description>The actual tags and filename are defined in each file with extension "mim". </description>
+  <source>
+    <filename>*.mimx</filename>
+    <format>xml</format>
+    <schema type="relaxng">
+      <schema-filename>mim.rng</schema-filename>
+    </schema>
+  </source>
+</item>
+
+<!-- flt -->
+<item key0="font" key1="layouter" key2="*" sectionid="flt">
+  <description>The actual tags and filename are defined in each file with extension "flt".</description>
+  <source><filename>*.flt</filename><format>plist</format></source>
+</item>
+
+<!-- fontset -->
+
+<item key0="fontset" key1="default" sectionid="fontset">
+  <source><filename>default.fst</filename><format>plist</format></source>
+</item>
+<item key0="fontset" key1="xfont" sectionid="fontset">
+  <source><filename>xfont.fst</filename><format>plist</format></source>
+</item>
+<item key0="fontset" key1="truetype" sectionid="fontset">
+  <source><filename>truetype.fst</filename><format>plist</format></source>
+</item>
+<item key0="fontset" key1="generic" sectionid="fontset">
+  <source><filename>generic.fst</filename><format>plist</format></source>
+</item>
+
+<!-- misc -->
+<item key0="font" key1="encoding" sectionid="misc">
+  <source><filename>FONTENC.tbl</filename><format>plist</format></source>
+</item>
+<item key0="font" key1="resize" sectionid="misc">
+  <source><filename>FONTSIZE.tbl</filename><format>plist</format></source>
+</item>
+
+<item key0="charset-list" sectionid="misc">
+  <source><filename>CHARSET.tbl</filename><format>plist</format></source>
+</item>
+
+<item key0="coding-list" sectionid="misc">
+  <source><filename>CODING.tbl</filename><format>plist</format></source>
+</item>
+
+<item key0="locale" key1="codeset" sectionid="misc">
+  <source><filename>LOCALE.cs</filename><format>plist</format></source>
+</item>
+<item key0="locale" key1="alias" sectionid="misc">
+  <source><filename>LOCALE.ali</filename><format>plist</format></source>
+</item>
+
+<item key0="char-table" key1="integer" key2="linebreak" sectionid="misc">
+  <source><filename>LINEBREAK.tab</filename></source>
+</item>
+
+<item key0="language" key1="name" key2="*" sectionid="misc">
+  <source><filename>*.lnm</filename><format>plist</format></source>
+</item>
+
+<item key0="standard" key1="language" key2="iso639" sectionid="misc">
+  <source><filename>LANGUAGE.tbl</filename><format>plist</format></source>
+</item>
+<item key0="standard" key1="script" key2="otf" sectionid="misc"> <!--	;obsolete-->
+  <source><filename>SCRIPT-OTF.tbl</filename><format>plist</format></source>
+</item>
+<item key0="unicode" key1="script" key2="language" sectionid="misc">  <!--	;obsolete-->
+  <source><filename>SCRIPT-LANGUAGE.tbl</filename><format>plist</format></source>
+</item>
+<item key0="standard" key1="script" key2="unicode" sectionid="misc">
+  <source><filename>SCRIPT.tbl</filename><format>plist</format></source>
+</item>
+
+</database>
+
+

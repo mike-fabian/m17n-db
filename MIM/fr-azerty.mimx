@@ -1,0 +1,645 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>fr</language>
+    <name>azerty</name>
+  </tags>
+  <description>
+    <get-text>Simulating Azerty keyboard on English keyboard.
+
+     &amp;1  é2  "3  '4  (5  -6  è7  _8  ç9  à0  )°  =_  ²~
+      aA  zZ  eE  rR  tT  yY  uU  iI  oO  pP  ^¨  $£
+       qQ  sS  dD  fF  gG  hH  jJ  kK  lL  mM  ù%  *|
+        wW  xX  cC  vV  bB  nN  ,?  ;.  :/  !§
+
+'[' and '{' are used as a dead key to type a character with the
+circumflex and diaeresis respectively (e.g. '[' 'e' -&gt; "ê").
+
+'Alt-2' and 'Alt-7' are used as a dead key to type a character
+with tilde and grave respectively (e.g. 'Alt-2' 'n' -&gt; "ñ").
+
+'Ctrl-Alt-2' and 'Ctrl-Alt-7' can be used as 'Alt-2' and 'Alt-7'
+respectively.
+
+Azerty keyboard has one more key at the bottom left corner for
+inputting "&lt;" and "&gt;".  As a normal English keyboard doesn't
+have such a key left, type '&lt;' and '&gt;' twice for "&lt;" and "&gt;"
+respectively.</get-text>
+  </description>
+  <title>AZ </title>
+  <map-list>
+    <map id="map-normal">
+      <rule>
+        <keyseq keys="1"/>
+        <insert character="38"/>
+      </rule>
+      <rule>
+        <keyseq keys="2"/>
+        <insert character="233"/>
+      </rule>
+      <rule>
+        <keyseq keys="3"/>
+        <insert character="34"/>
+      </rule>
+      <rule>
+        <keyseq keys="4"/>
+        <insert character="39"/>
+      </rule>
+      <rule>
+        <keyseq keys="5"/>
+        <insert character="40"/>
+      </rule>
+      <rule>
+        <keyseq keys="6"/>
+        <insert character="45"/>
+      </rule>
+      <rule>
+        <keyseq keys="7"/>
+        <insert character="232"/>
+      </rule>
+      <rule>
+        <keyseq keys="8"/>
+        <insert character="95"/>
+      </rule>
+      <rule>
+        <keyseq keys="9"/>
+        <insert character="231"/>
+      </rule>
+      <rule>
+        <keyseq keys="0"/>
+        <insert character="224"/>
+      </rule>
+      <rule>
+        <keyseq keys="-"/>
+        <insert character="41"/>
+      </rule>
+      <rule>
+        <keyseq keys="="/>
+        <insert character="61"/>
+      </rule>
+      <rule>
+        <keyseq keys="`"/>
+        <insert character="178"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+        <insert character="97"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+        <insert character="122"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert character="101"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+        <insert character="114"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+        <insert character="116"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <insert character="121"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert character="117"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert character="105"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert character="111"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+        <insert character="112"/>
+      </rule>
+      <rule>
+        <keyseq keys="]"/>
+        <insert character="36"/>
+      </rule>
+      <rule>
+        <keyseq keys="a"/>
+        <insert character="113"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+        <insert character="115"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <insert character="100"/>
+      </rule>
+      <rule>
+        <keyseq keys="f"/>
+        <insert character="102"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+        <insert character="103"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+        <insert character="104"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+        <insert character="106"/>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+        <insert character="107"/>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+        <insert character="108"/>
+      </rule>
+      <rule>
+        <keyseq keys=";"/>
+        <insert character="109"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;"/>
+        <insert character="249"/>
+      </rule>
+      <rule>
+        <keyseq keys="\"/>
+        <insert character="42"/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+        <insert character="119"/>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+        <insert character="120"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <insert character="99"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <insert character="118"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <insert character="98"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <insert character="110"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+        <insert character="44"/>
+      </rule>
+      <rule>
+        <keyseq keys=","/>
+        <insert character="59"/>
+      </rule>
+      <rule>
+        <keyseq keys="."/>
+        <insert character="58"/>
+      </rule>
+      <rule>
+        <keyseq keys="/"/>
+        <insert character="33"/>
+      </rule>
+      <rule>
+        <keyseq keys="!"/>
+        <insert character="49"/>
+      </rule>
+      <rule>
+        <keyseq keys="@"/>
+        <insert character="50"/>
+      </rule>
+      <rule>
+        <keyseq keys="#"/>
+        <insert character="51"/>
+      </rule>
+      <rule>
+        <keyseq keys="$"/>
+        <insert character="52"/>
+      </rule>
+      <rule>
+        <keyseq keys="%"/>
+        <insert character="53"/>
+      </rule>
+      <rule>
+        <keyseq keys="^"/>
+        <insert character="54"/>
+      </rule>
+      <rule>
+        <keyseq keys="&amp;"/>
+        <insert character="55"/>
+      </rule>
+      <rule>
+        <keyseq keys="*"/>
+        <insert character="56"/>
+      </rule>
+      <rule>
+        <keyseq keys="("/>
+        <insert character="57"/>
+      </rule>
+      <rule>
+        <keyseq keys=")"/>
+        <insert character="48"/>
+      </rule>
+      <rule>
+        <keyseq keys="_"/>
+        <insert character="176"/>
+      </rule>
+      <rule>
+        <keyseq keys="+"/>
+        <insert character="43"/>
+      </rule>
+      <rule>
+        <keyseq keys="~"/>
+        <insert character="126"/>
+      </rule>
+      <rule>
+        <keyseq keys="Q"/>
+        <insert character="65"/>
+      </rule>
+      <rule>
+        <keyseq keys="W"/>
+        <insert character="90"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+        <insert character="69"/>
+      </rule>
+      <rule>
+        <keyseq keys="R"/>
+        <insert character="82"/>
+      </rule>
+      <rule>
+        <keyseq keys="T"/>
+        <insert character="84"/>
+      </rule>
+      <rule>
+        <keyseq keys="Y"/>
+        <insert character="89"/>
+      </rule>
+      <rule>
+        <keyseq keys="U"/>
+        <insert character="85"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+        <insert character="73"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <insert character="79"/>
+      </rule>
+      <rule>
+        <keyseq keys="P"/>
+        <insert character="80"/>
+      </rule>
+      <rule>
+        <keyseq keys="}"/>
+        <insert character="163"/>
+      </rule>
+      <rule>
+        <keyseq keys="A"/>
+        <insert character="81"/>
+      </rule>
+      <rule>
+        <keyseq keys="S"/>
+        <insert character="83"/>
+      </rule>
+      <rule>
+        <keyseq keys="D"/>
+        <insert character="68"/>
+      </rule>
+      <rule>
+        <keyseq keys="F"/>
+        <insert character="70"/>
+      </rule>
+      <rule>
+        <keyseq keys="G"/>
+        <insert character="71"/>
+      </rule>
+      <rule>
+        <keyseq keys="H"/>
+        <insert character="72"/>
+      </rule>
+      <rule>
+        <keyseq keys="J"/>
+        <insert character="74"/>
+      </rule>
+      <rule>
+        <keyseq keys="K"/>
+        <insert character="75"/>
+      </rule>
+      <rule>
+        <keyseq keys="L"/>
+        <insert character="76"/>
+      </rule>
+      <rule>
+        <keyseq keys=":"/>
+        <insert character="77"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;"/>
+        <insert character="37"/>
+      </rule>
+      <rule>
+        <keyseq keys="|"/>
+        <insert character="181"/>
+      </rule>
+      <rule>
+        <keyseq keys="Z"/>
+        <insert character="87"/>
+      </rule>
+      <rule>
+        <keyseq keys="X"/>
+        <insert character="88"/>
+      </rule>
+      <rule>
+        <keyseq keys="C"/>
+        <insert character="67"/>
+      </rule>
+      <rule>
+        <keyseq keys="V"/>
+        <insert character="86"/>
+      </rule>
+      <rule>
+        <keyseq keys="B"/>
+        <insert character="66"/>
+      </rule>
+      <rule>
+        <keyseq keys="N"/>
+        <insert character="78"/>
+      </rule>
+      <rule>
+        <keyseq keys="M"/>
+        <insert character="63"/>
+      </rule>
+      <rule>
+        <keyseq keys="&lt;"/>
+        <insert character="46"/>
+      </rule>
+      <rule>
+        <keyseq keys="&lt;&lt;"/>
+        <insert character="60"/>
+      </rule>
+      <rule>
+        <keyseq keys="&gt;"/>
+        <insert character="47"/>
+      </rule>
+      <rule>
+        <keyseq keys="&gt;&gt;"/>
+        <insert character="62"/>
+      </rule>
+      <rule>
+        <keyseq keys="?"/>
+        <insert character="167"/>
+      </rule>
+    </map>
+    <map id="map-left-square-bracket">
+      <rule>
+        <keyseq keys="["/>
+      </rule>
+    </map>
+    <map id="map-left-curly-bracket">
+      <rule>
+        <keyseq keys="{"/>
+      </rule>
+    </map>
+    <map id="map-alt-2">
+      <rule>
+        <keyseq>
+          <key-event>A-2</key-event>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>C-A-2</key-event>
+        </keyseq>
+      </rule>
+    </map>
+    <map id="map-alt-7">
+      <rule>
+        <keyseq>
+          <key-event>A-7</key-event>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>C-A-7</key-event>
+        </keyseq>
+      </rule>
+    </map>
+    <map id="map-circumflex">
+      <rule>
+        <keyseq keys="["/>
+        <insert character="94"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+        <insert character="226"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert character="234"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert character="238"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert character="244"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert character="251"/>
+      </rule>
+      <rule>
+        <keyseq keys="Q"/>
+        <insert character="194"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+        <insert character="202"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+        <insert character="206"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <insert character="212"/>
+      </rule>
+      <rule>
+        <keyseq keys="U"/>
+        <insert character="219"/>
+      </rule>
+    </map>
+    <map id="map-diaeresis">
+      <rule>
+        <keyseq keys="{"/>
+        <insert character="168"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+        <insert character="228"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert character="235"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert character="239"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert character="246"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert character="252"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <insert character="255"/>
+      </rule>
+      <rule>
+        <keyseq keys="Q"/>
+        <insert character="196"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+        <insert character="203"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+        <insert character="207"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <insert character="214"/>
+      </rule>
+      <rule>
+        <keyseq keys="U"/>
+        <insert character="220"/>
+      </rule>
+      <rule>
+        <keyseq keys="Y"/>
+        <insert character="376"/>
+      </rule>
+    </map>
+    <map id="map-tilde">
+      <rule>
+        <keyseq keys="3"/>
+        <insert character="126"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+        <insert character="227"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <insert character="241"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert character="245"/>
+      </rule>
+    </map>
+    <map id="map-grave">
+      <rule>
+        <keyseq keys="q"/>
+        <insert character="224"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert character="232"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert character="236"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert character="242"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert character="249"/>
+      </rule>
+      <rule>
+        <keyseq keys="Q"/>
+        <insert character="192"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+        <insert character="200"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+        <insert character="204"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <insert character="210"/>
+      </rule>
+      <rule>
+        <keyseq keys="U"/>
+        <insert character="217"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-normal"/>
+      <branch branch-selecting-map="map-left-square-bracket">
+        <shift-to id="state-circumflex"/>
+      </branch>
+      <branch branch-selecting-map="map-left-curly-bracket">
+        <shift-to id="state-diaeresis"/>
+      </branch>
+      <branch branch-selecting-map="map-alt-2">
+        <shift-to id="state-tilde"/>
+      </branch>
+      <branch branch-selecting-map="map-alt-7">
+        <shift-to id="state-grave"/>
+      </branch>
+    </state>
+    <state id="state-circumflex">
+      <state-title-text>AZ^</state-title-text>
+      <branch branch-selecting-map="map-circumflex">
+        <shift-to id="state-init"/>
+      </branch>
+    </state>
+    <state id="state-diaeresis">
+      <state-title-text>AZ¨</state-title-text>
+      <branch branch-selecting-map="map-diaeresis">
+        <shift-to id="state-init"/>
+      </branch>
+    </state>
+    <state id="state-tilde">
+      <state-title-text>AZ~</state-title-text>
+      <branch branch-selecting-map="map-tilde">
+        <shift-to id="state-init"/>
+      </branch>
+    </state>
+    <state id="state-grave">
+      <state-title-text>AZ`</state-title-text>
+      <branch branch-selecting-map="map-grave">
+        <shift-to id="state-init"/>
+      </branch>
+    </state>
+  </state-list>
+</input-method>

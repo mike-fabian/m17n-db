@@ -1,0 +1,261 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>zh</language>
+    <name>pinyin</name>
+  </tags>
+  <description>Input method for Chinese Pinyin characters.
+Note that it's not for inputting Han characters.
+</description>
+  <title>PinYin</title>
+  <map-list>
+    <map id="map-vowel">
+      <rule>
+        <keyseq keys="a"/>
+        <insert>
+          <list-of-candidates>a ā á ǎ à</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ai"/>
+        <insert>
+          <list-of-candidates>ai āi ái ǎi ài</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="an"/>
+        <insert>
+          <list-of-candidates>an ān án ǎn àn</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ang"/>
+        <insert>
+          <list-of-candidates>ang āng áng ǎng àng</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ao"/>
+        <insert>
+          <list-of-candidates>ao āo áo ǎo ào</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert>
+          <list-of-candidates>e ē é ě è</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ei"/>
+        <insert>
+          <list-of-candidates>ei ēi éi ěi èi</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="en"/>
+        <insert>
+          <list-of-candidates>en ēn én ěn èn</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="eng"/>
+        <insert>
+          <list-of-candidates>eng ēng éng ěng èng</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="er"/>
+        <insert>
+          <list-of-candidates>er ēr ér ěr èr</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert>
+          <list-of-candidates>i ī í ǐ ì</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ia"/>
+        <insert>
+          <list-of-candidates>ia iā iá iǎ ià</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ian"/>
+        <insert>
+          <list-of-candidates>ian iān ián iǎn iàn</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="iang"/>
+        <insert>
+          <list-of-candidates>iang iāng iáng iǎng iàng</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="iao"/>
+        <insert>
+          <list-of-candidates>iao iāo iáo iǎo iào</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ie"/>
+        <insert>
+          <list-of-candidates>ie iē ié iě iè</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="in"/>
+        <insert>
+          <list-of-candidates>in īn ín ǐn ìn</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ing"/>
+        <insert>
+          <list-of-candidates>ing īng íng ǐng ìng</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="iong"/>
+        <insert>
+          <list-of-candidates>iong iōng ióng iǒng iòng</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="iu"/>
+        <insert>
+          <list-of-candidates>iu iū iú iǔ iù</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert>
+          <list-of-candidates>o ō ó ǒ ò</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ong"/>
+        <insert>
+          <list-of-candidates>ong ōng óng ǒng òng</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ou"/>
+        <insert>
+          <list-of-candidates>ou ōu óu ǒu òu</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert>
+          <list-of-candidates>u ū ú ǔ ù</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="u:"/>
+        <insert>
+          <list-of-candidates>ü ǖ ǘ ǚ ǜ</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <insert>
+          <list-of-candidates>ü ǖ ǘ ǚ ǜ</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ua"/>
+        <insert>
+          <list-of-candidates>ua uā uá uǎ uà</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="uai"/>
+        <insert>
+          <list-of-candidates>uai uāi uái uǎi uài</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="uan"/>
+        <insert>
+          <list-of-candidates>uan uān uán uǎn uàn</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="uang"/>
+        <insert>
+          <list-of-candidates>uang uāng uáng uǎng uàng</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ue"/>
+        <insert>
+          <list-of-candidates>ue uē ué uě uè</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="u:e"/>
+        <insert>
+          <list-of-candidates>üe üē üé üě üè</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ve"/>
+        <insert>
+          <list-of-candidates>üe üē üé üě üè</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ui"/>
+        <insert>
+          <list-of-candidates>ui uī uí uǐ uì</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="un"/>
+        <insert>
+          <list-of-candidates>un ūn ún ǔn ùn</list-of-candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="uo"/>
+        <insert>
+          <list-of-candidates>uo uō uó uǒ uò</list-of-candidates>
+        </insert>
+      </rule>
+    </map>
+    <map id="map-tone">
+      <rule>
+        <keyseq keys="1"/>
+        <select index="1"/>
+      </rule>
+      <rule>
+        <keyseq keys="2"/>
+        <select index="2"/>
+      </rule>
+      <rule>
+        <keyseq keys="3"/>
+        <select index="3"/>
+      </rule>
+      <rule>
+        <keyseq keys="4"/>
+        <select index="4"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-vowel">
+        <shift-to id="state-select"/>
+      </branch>
+    </state>
+    <state id="state-select">
+      <branch branch-selecting-map="map-tone">
+        <shift-to id="state-init"/>
+      </branch>
+    </state>
+  </state-list>
+</input-method>

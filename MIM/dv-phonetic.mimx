@@ -1,0 +1,278 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>dv</language>
+    <name>phonetic</name>
+  </tags>
+  <description>Dhivehi input method simulating the Dhivehi phonetic keyboard.
+The layout is approved by the Molvidian Ministry of
+Communication, Science and Technology.
+  &lt;http://www.mcst.gov.mv/News_and_Events/xpfonts.htm&gt;
+</description>
+  <title>dv-ph</title>
+  <map-list>
+    <map id="map-generic">
+      <rule>
+        <keyseq keys="q"/>
+        <insert character="1968"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+        <insert character="1927"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert character="1964"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+        <insert character="1923"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+        <insert character="1932"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <insert character="1940"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert character="1962"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert character="1960"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert character="1966"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+        <insert character="1941"/>
+      </rule>
+      <rule>
+        <keyseq keys="a"/>
+        <insert character="1958"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+        <insert character="1936"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <insert character="1931"/>
+      </rule>
+      <rule>
+        <keyseq keys="f"/>
+        <insert character="1930"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+        <insert character="1934"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+        <insert character="1920"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+        <insert character="1942"/>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+        <insert character="1926"/>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+        <insert character="1933"/>
+      </rule>
+      <rule>
+        <keyseq keys=";"/>
+        <insert character="1563"/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+        <insert character="1938"/>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+        <insert character="215"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <insert character="1943"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <insert character="1928"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <insert character="1924"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <insert character="1922"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+        <insert character="1929"/>
+      </rule>
+      <rule>
+        <keyseq keys=","/>
+        <insert character="1548"/>
+      </rule>
+      <rule>
+        <keyseq keys="Q"/>
+        <insert character="1956"/>
+      </rule>
+      <rule>
+        <keyseq keys="W"/>
+        <insert character="1954"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+        <insert character="1965"/>
+      </rule>
+      <rule>
+        <keyseq keys="R"/>
+        <insert character="1948"/>
+      </rule>
+      <rule>
+        <keyseq keys="T"/>
+        <insert character="1939"/>
+      </rule>
+      <rule>
+        <keyseq keys="Y"/>
+        <insert character="1952"/>
+      </rule>
+      <rule>
+        <keyseq keys="U"/>
+        <insert character="1963"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+        <insert character="1961"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <insert character="1967"/>
+      </rule>
+      <rule>
+        <keyseq keys="P"/>
+        <insert character="247"/>
+      </rule>
+      <rule>
+        <keyseq keys="A"/>
+        <insert character="1959"/>
+      </rule>
+      <rule>
+        <keyseq keys="S"/>
+        <insert character="1921"/>
+      </rule>
+      <rule>
+        <keyseq keys="D"/>
+        <insert character="1937"/>
+      </rule>
+      <rule>
+        <keyseq keys="F"/>
+        <insert character="65010"/>
+      </rule>
+      <rule>
+        <keyseq keys="G"/>
+        <insert character="1955"/>
+      </rule>
+      <rule>
+        <keyseq keys="H"/>
+        <insert character="1945"/>
+      </rule>
+      <rule>
+        <keyseq keys="J"/>
+        <insert character="1947"/>
+      </rule>
+      <rule>
+        <keyseq keys="K"/>
+        <insert character="1946"/>
+      </rule>
+      <rule>
+        <keyseq keys="L"/>
+        <insert character="1925"/>
+      </rule>
+      <rule>
+        <keyseq keys="Z"/>
+        <insert character="1953"/>
+      </rule>
+      <rule>
+        <keyseq keys="X"/>
+        <insert character="1944"/>
+      </rule>
+      <rule>
+        <keyseq keys="C"/>
+        <insert character="1949"/>
+      </rule>
+      <rule>
+        <keyseq keys="V"/>
+        <insert character="1957"/>
+      </rule>
+      <rule>
+        <keyseq keys="B"/>
+        <insert character="1950"/>
+      </rule>
+      <rule>
+        <keyseq keys="N"/>
+        <insert character="1935"/>
+      </rule>
+      <rule>
+        <keyseq keys="M"/>
+        <insert character="1951"/>
+      </rule>
+      <rule>
+        <keyseq keys="?"/>
+        <insert character="1567"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-v</key-event>
+        </keyseq>
+        <insert character="8205"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-b</key-event>
+        </keyseq>
+        <insert character="8204"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-n</key-event>
+        </keyseq>
+        <insert character="8206"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-m</key-event>
+        </keyseq>
+        <insert character="8207"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-;</key-event>
+        </keyseq>
+        <insert character="59"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-,</key-event>
+        </keyseq>
+        <insert character="44"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-generic"/>
+    </state>
+  </state-list>
+</input-method>

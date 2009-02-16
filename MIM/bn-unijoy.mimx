@@ -1,0 +1,568 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>bn</language>
+    <name>unijoy</name>
+  </tags>
+  <description>Bengali input method simulating Unijoy keyboard layout.
+  &lt;http://ekushey.org/projects/shadhinota/uni_joy.html&gt;
+</description>
+  <title>ক</title>
+  <map-list>
+    <map id="map-livekey">
+      <rule>
+        <keyseq keys="`"/>
+        <insert string="‌"/>
+      </rule>
+      <rule>
+        <keyseq keys="1"/>
+        <insert string="১"/>
+      </rule>
+      <rule>
+        <keyseq keys="2"/>
+        <insert string="২"/>
+      </rule>
+      <rule>
+        <keyseq keys="3"/>
+        <insert string="৩"/>
+      </rule>
+      <rule>
+        <keyseq keys="4"/>
+        <insert string="৪"/>
+      </rule>
+      <rule>
+        <keyseq keys="5"/>
+        <insert string="৫"/>
+      </rule>
+      <rule>
+        <keyseq keys="6"/>
+        <insert string="৬"/>
+      </rule>
+      <rule>
+        <keyseq keys="7"/>
+        <insert string="৭"/>
+      </rule>
+      <rule>
+        <keyseq keys="8"/>
+        <insert string="৮"/>
+      </rule>
+      <rule>
+        <keyseq keys="9"/>
+        <insert string="৯"/>
+      </rule>
+      <rule>
+        <keyseq keys="0"/>
+        <insert string="০"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+        <insert string="ঙ"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+        <insert string="য"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert string="ড"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+        <insert string="প"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+        <insert string="ট"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <insert string="চ"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert string="জ"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert string="হ"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert string="গ"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+        <insert string="ড়"/>
+      </rule>
+      <rule>
+        <keyseq keys="\"/>
+        <insert string="ঃ"/>
+      </rule>
+      <rule>
+        <keyseq keys="a"/>
+        <insert string="ৃ"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+        <insert string="ু"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <insert string="ি"/>
+      </rule>
+      <rule>
+        <keyseq keys="f"/>
+        <insert string="া"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+        <insert string="ব"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+        <insert string="ক"/>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+        <insert string="ত"/>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+        <insert string="দ"/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+        <insert string="্র"/>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+        <insert string="ো"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <insert string="ে"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <insert string="র"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <insert string="ন"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <insert string="স"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+        <insert string="ম"/>
+      </rule>
+      <rule>
+        <keyseq keys="~"/>
+        <insert string="‍"/>
+      </rule>
+      <rule>
+        <keyseq keys="$"/>
+        <insert string="৳"/>
+      </rule>
+      <rule>
+        <keyseq keys="^"/>
+        <insert string="÷"/>
+      </rule>
+      <rule>
+        <keyseq keys="&amp;"/>
+        <insert string="ঁ"/>
+      </rule>
+      <rule>
+        <keyseq keys="*"/>
+        <insert string="×"/>
+      </rule>
+      <rule>
+        <keyseq keys="Q"/>
+        <insert string="ং"/>
+      </rule>
+      <rule>
+        <keyseq keys="W"/>
+        <insert string="য়"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+        <insert string="ঢ"/>
+      </rule>
+      <rule>
+        <keyseq keys="R"/>
+        <insert string="ফ"/>
+      </rule>
+      <rule>
+        <keyseq keys="T"/>
+        <insert string="ঠ"/>
+      </rule>
+      <rule>
+        <keyseq keys="Y"/>
+        <insert string="ছ"/>
+      </rule>
+      <rule>
+        <keyseq keys="U"/>
+        <insert string="ঝ"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+        <insert string="ঞ"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <insert string="ঘ"/>
+      </rule>
+      <rule>
+        <keyseq keys="P"/>
+        <insert string="ঢ়"/>
+      </rule>
+      <rule>
+        <keyseq keys="|"/>
+        <insert string="ৎ"/>
+      </rule>
+      <rule>
+        <keyseq keys="A"/>
+        <insert string="র্"/>
+      </rule>
+      <rule>
+        <keyseq keys="S"/>
+        <insert string="ূ"/>
+      </rule>
+      <rule>
+        <keyseq keys="D"/>
+        <insert string="ী"/>
+      </rule>
+      <rule>
+        <keyseq keys="F"/>
+        <insert string="অ"/>
+      </rule>
+      <rule>
+        <keyseq keys="G"/>
+        <insert string="।"/>
+      </rule>
+      <rule>
+        <keyseq keys="H"/>
+        <insert string="ভ"/>
+      </rule>
+      <rule>
+        <keyseq keys="J"/>
+        <insert string="খ"/>
+      </rule>
+      <rule>
+        <keyseq keys="K"/>
+        <insert string="থ"/>
+      </rule>
+      <rule>
+        <keyseq keys="L"/>
+        <insert string="ধ"/>
+      </rule>
+      <rule>
+        <keyseq keys="Z"/>
+        <insert string="্য"/>
+      </rule>
+      <rule>
+        <keyseq keys="X"/>
+        <insert string="ৌ"/>
+      </rule>
+      <rule>
+        <keyseq keys="C"/>
+        <insert string="ৈ"/>
+      </rule>
+      <rule>
+        <keyseq keys="V"/>
+        <insert string="ল"/>
+      </rule>
+      <rule>
+        <keyseq keys="B"/>
+        <insert string="ণ"/>
+      </rule>
+      <rule>
+        <keyseq keys="N"/>
+        <insert string="ষ"/>
+      </rule>
+      <rule>
+        <keyseq keys="M"/>
+        <insert string="শ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-=</key-event>
+        </keyseq>
+        <insert string="≠"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-e</key-event>
+        </keyseq>
+        <insert string="ঈ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-u</key-event>
+        </keyseq>
+        <insert string="ঊ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-i</key-event>
+        </keyseq>
+        <insert string="ঐ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-o</key-event>
+        </keyseq>
+        <insert string="ঔ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-a</key-event>
+        </keyseq>
+        <insert string="ঋ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-s</key-event>
+        </keyseq>
+        <insert string="উ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-d</key-event>
+        </keyseq>
+        <insert string="ই"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-f</key-event>
+        </keyseq>
+        <insert string="আ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-g</key-event>
+        </keyseq>
+        <insert string="্"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-h</key-event>
+        </keyseq>
+        <insert string="ৰ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-x</key-event>
+        </keyseq>
+        <insert string="ও"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-c</key-event>
+        </keyseq>
+        <insert string="এ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-v</key-event>
+        </keyseq>
+        <insert string="ৱ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-.</key-event>
+        </keyseq>
+        <insert string="়"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-!</key-event>
+        </keyseq>
+        <insert string="৴"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-@</key-event>
+        </keyseq>
+        <insert string="৵"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-#</key-event>
+        </keyseq>
+        <insert string="৶"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-$</key-event>
+        </keyseq>
+        <insert string="৷"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-%</key-event>
+        </keyseq>
+        <insert string="৲"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-&amp;</key-event>
+        </keyseq>
+        <insert string="৺"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-)</key-event>
+        </keyseq>
+        <insert string="৸"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-_</key-event>
+        </keyseq>
+        <insert string="৹"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-Q</key-event>
+        </keyseq>
+        <insert string="ঌ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-W</key-event>
+        </keyseq>
+        <insert string="ৡ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-I</key-event>
+        </keyseq>
+        <insert string="ঽ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-Z</key-event>
+        </keyseq>
+        <insert string="ৢ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-X</key-event>
+        </keyseq>
+        <insert string="ৗ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-C</key-event>
+        </keyseq>
+        <insert string="ৠ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-V</key-event>
+        </keyseq>
+        <insert string="ৣ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-B</key-event>
+        </keyseq>
+        <insert string="ৄ"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-&lt;</key-event>
+        </keyseq>
+        <insert string="≤"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>A-&gt;</key-event>
+        </keyseq>
+        <insert string="≥"/>
+      </rule>
+    </map>
+    <map id="map-deadkey">
+      <rule>
+        <keyseq keys="g"/>
+        <insert string="্"/>
+      </rule>
+    </map>
+    <map id="map-independent">
+      <rule>
+        <keyseq keys="f"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="আ"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ই"/>
+      </rule>
+      <rule>
+        <keyseq keys="D"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ঈ"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="উ"/>
+      </rule>
+      <rule>
+        <keyseq keys="S"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ঊ"/>
+      </rule>
+      <rule>
+        <keyseq keys="a"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ঋ"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="এ"/>
+      </rule>
+      <rule>
+        <keyseq keys="C"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ঐ"/>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ও"/>
+      </rule>
+      <rule>
+        <keyseq keys="X"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ঔ"/>
+      </rule>
+      <rule>
+        <keyseq keys="G"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="॥"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-livekey"/>
+      <branch branch-selecting-map="map-deadkey">
+        <shift-to id="state-virama"/>
+      </branch>
+    </state>
+    <state id="state-virama">
+      <branch branch-selecting-map="map-independent">
+        <shift-to id="state-init"/>
+      </branch>
+      <catch-all-branch>
+        <shift-to id="state-init"/>
+      </catch-all-branch>
+    </state>
+  </state-list>
+</input-method>

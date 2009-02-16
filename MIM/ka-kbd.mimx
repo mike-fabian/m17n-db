@@ -1,0 +1,175 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>ka</language>
+    <name>kbd</name>
+  </tags>
+  <description>Georgian input method simulating the Georgian keyboard.
+</description>
+  <title>გ</title>
+  <map-list>
+    <map id="map-map">
+      <rule>
+        <keyseq keys="a"/>
+        <insert character="4304"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <insert character="4305"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+        <insert character="4306"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <insert character="4307"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert character="4308"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <insert character="4309"/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+        <insert character="4310"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+        <insert character="4311"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert character="4312"/>
+      </rule>
+      <rule>
+        <keyseq keys=".k"/>
+        <insert character="4313"/>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+        <insert character="4314"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+        <insert character="4315"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <insert character="4316"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert character="4317"/>
+      </rule>
+      <rule>
+        <keyseq keys=".p"/>
+        <insert character="4318"/>
+      </rule>
+      <rule>
+        <keyseq keys="+z"/>
+        <insert character="4319"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+        <insert character="4320"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+        <insert character="4321"/>
+      </rule>
+      <rule>
+        <keyseq keys=".t"/>
+        <insert character="4322"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert character="4323"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+        <insert character="4324"/>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+        <insert character="4325"/>
+      </rule>
+      <rule>
+        <keyseq keys=".g"/>
+        <insert character="4326"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+        <insert character="4327"/>
+      </rule>
+      <rule>
+        <keyseq keys="+s"/>
+        <insert character="4328"/>
+      </rule>
+      <rule>
+        <keyseq keys="+c"/>
+        <insert character="4329"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <insert character="4330"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+        <insert character="4331"/>
+      </rule>
+      <rule>
+        <keyseq keys=".c"/>
+        <insert character="4332"/>
+      </rule>
+      <rule>
+        <keyseq keys=".+c"/>
+        <insert character="4333"/>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+        <insert character="4334"/>
+      </rule>
+      <rule>
+        <keyseq keys="+j"/>
+        <insert character="4335"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+        <insert character="4336"/>
+      </rule>
+      <rule>
+        <keyseq keys="q1"/>
+        <insert character="4340"/>
+      </rule>
+      <rule>
+        <keyseq keys="e0"/>
+        <insert character="4337"/>
+      </rule>
+      <rule>
+        <keyseq keys="o1"/>
+        <insert character="4341"/>
+      </rule>
+      <rule>
+        <keyseq keys="i1"/>
+        <insert character="4338"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+        <insert character="4339"/>
+      </rule>
+      <rule>
+        <keyseq keys="f"/>
+        <insert character="4342"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-map"/>
+    </state>
+  </state-list>
+</input-method>

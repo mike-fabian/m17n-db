@@ -1,0 +1,800 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>cmc</language>
+    <name>kbd</name>
+  </tags>
+  <description>
+    <get-text>Cham input method simulating Cham keyboard.
+Cham characters are encoded in logical order in memory and in files.
+But, you can type Cham text in visual order with this input method.
+Backspace and Delete also work in the manner of visual order.</get-text>
+  </description>
+  <title>ꨌꩌk</title>
+  <map-list>
+    <map id="map-independent">
+      <rule>
+        <keyseq keys="a"/>
+        <insert string="ꨀ"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+        <insert string="ꨁ"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert string="ꨂ"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert string="ꨃ"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert string="ꨄ"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert string="ꨅ"/>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+        <insert string="ꨆ"/>
+      </rule>
+      <rule>
+        <keyseq keys="A"/>
+        <insert string="ꨇ"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+        <insert string="ꨈ"/>
+      </rule>
+      <rule>
+        <keyseq keys="G"/>
+        <insert string="ꨉ"/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+        <insert string="ꨊ"/>
+      </rule>
+      <rule>
+        <keyseq keys="Z"/>
+        <insert string="ꨋ"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <insert string="ꨌ"/>
+      </rule>
+      <rule>
+        <keyseq keys="S"/>
+        <insert string="ꨍ"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+        <insert string="ꨄ"/>
+      </rule>
+      <rule>
+        <keyseq keys="J"/>
+        <insert string="ꨏ"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <insert string="ꨐ"/>
+      </rule>
+      <rule>
+        <keyseq keys="V"/>
+        <insert string="ꨑ"/>
+      </rule>
+      <rule>
+        <keyseq keys="W"/>
+        <insert string="ꨒ"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+        <insert string="ꨓ"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+        <insert string="ꨔ"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <insert string="ꨕ"/>
+      </rule>
+      <rule>
+        <keyseq keys="D"/>
+        <insert string="ꨖ"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <insert string="ꨗ"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+        <insert string="ꨘ"/>
+      </rule>
+      <rule>
+        <keyseq keys="Q"/>
+        <insert string="ꨙ"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+        <insert string="ꨚ"/>
+      </rule>
+      <rule>
+        <keyseq keys="F"/>
+        <insert string="ꨛ"/>
+      </rule>
+      <rule>
+        <keyseq keys="f"/>
+        <insert string="ꨜ"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <insert string="ꨝ"/>
+      </rule>
+      <rule>
+        <keyseq keys="B"/>
+        <insert string="ꨞ"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+        <insert string="ꨟ"/>
+      </rule>
+      <rule>
+        <keyseq keys="M"/>
+        <insert string="ꨠ"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <insert string="ꨡ"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <insert string="ꨢ"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+        <insert string="ꨣ"/>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+        <insert string="ꨤ"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+        <insert string="ꨥ"/>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+        <insert string="ꨦ"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+        <insert string="ꨧ"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+        <insert string="ꨨ"/>
+      </rule>
+    </map>
+    <map id="map-post-vowel">
+      <rule>
+        <keyseq keys="%"/>
+        <insert string="ꨩ"/>
+      </rule>
+      <rule>
+        <keyseq keys="^"/>
+        <insert string="ꨩꨮ"/>
+      </rule>
+      <rule>
+        <keyseq keys="{"/>
+        <insert string="ꨪ"/>
+      </rule>
+      <rule>
+        <keyseq keys="["/>
+        <insert string="ꨪꩌ"/>
+      </rule>
+      <rule>
+        <keyseq keys="}"/>
+        <insert string="ꨫ"/>
+      </rule>
+      <rule>
+        <keyseq keys="]"/>
+        <insert string="ꨬ"/>
+      </rule>
+      <rule>
+        <keyseq keys="`"/>
+        <insert string="ꨭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="@"/>
+        <insert string="ꨮ"/>
+      </rule>
+      <rule>
+        <keyseq keys="$"/>
+        <insert string="ꨮꩃ"/>
+      </rule>
+      <rule>
+        <keyseq keys="#"/>
+        <insert string="ꨮꩌ"/>
+      </rule>
+      <rule>
+        <keyseq keys="&lt;"/>
+        <insert string="ꨱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;"/>
+        <insert string="ꨱꨮ"/>
+      </rule>
+      <rule>
+        <keyseq keys="&gt;"/>
+        <insert string="ꨱꩌ"/>
+      </rule>
+      <rule>
+        <keyseq keys=","/>
+        <insert string="ꨲ"/>
+      </rule>
+    </map>
+    <map id="map-pre-vowel">
+      <rule>
+        <keyseq keys="-"/>
+        <insert string="ꨯ"/>
+      </rule>
+      <rule>
+        <keyseq keys="="/>
+        <insert string="ꨰ"/>
+      </rule>
+    </map>
+    <map id="map-post-medial">
+      <rule>
+        <keyseq keys="~"/>
+        <insert string="ꨳ"/>
+      </rule>
+      <rule>
+        <keyseq keys="*"/>
+        <insert string="ꨵ"/>
+      </rule>
+      <rule>
+        <keyseq keys=")"/>
+        <insert string="ꨵꨭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="("/>
+        <insert string="ꨵꨶ"/>
+      </rule>
+      <rule>
+        <keyseq keys="&amp;"/>
+        <insert string="ꨶ"/>
+      </rule>
+    </map>
+    <map id="map-pre-medial">
+      <rule>
+        <keyseq keys="\"/>
+        <insert string="ꨴ"/>
+      </rule>
+    </map>
+    <map id="map-final">
+      <rule>
+        <keyseq keys="K"/>
+        <insert string="ꩀ"/>
+      </rule>
+      <rule>
+        <keyseq keys="U"/>
+        <insert string="ꩂ"/>
+      </rule>
+      <rule>
+        <keyseq keys="/"/>
+        <insert string="ꩃ"/>
+      </rule>
+      <rule>
+        <keyseq keys="C"/>
+        <insert string="ꩄ"/>
+      </rule>
+      <rule>
+        <keyseq keys="T"/>
+        <insert string="ꩅ"/>
+      </rule>
+      <rule>
+        <keyseq keys="N"/>
+        <insert string="ꩆ"/>
+      </rule>
+      <rule>
+        <keyseq keys="P"/>
+        <insert string="ꩇ"/>
+      </rule>
+      <rule>
+        <keyseq keys="Y"/>
+        <insert string="ꩈ"/>
+      </rule>
+      <rule>
+        <keyseq keys="R"/>
+        <insert string="ꩉ"/>
+      </rule>
+      <rule>
+        <keyseq keys="L"/>
+        <insert string="ꩊ"/>
+      </rule>
+      <rule>
+        <keyseq keys="X"/>
+        <insert string="ꩋ"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;"/>
+        <insert string="ꩌ"/>
+      </rule>
+      <rule>
+        <keyseq keys="H"/>
+        <insert string="ꩍ"/>
+      </rule>
+    </map>
+    <map id="map-misc">
+      <rule>
+        <keyseq keys="0"/>
+        <insert string="꩐"/>
+      </rule>
+      <rule>
+        <keyseq keys="1"/>
+        <insert string="꩑"/>
+      </rule>
+      <rule>
+        <keyseq keys="2"/>
+        <insert string="꩒"/>
+      </rule>
+      <rule>
+        <keyseq keys="3"/>
+        <insert string="꩓"/>
+      </rule>
+      <rule>
+        <keyseq keys="4"/>
+        <insert string="꩔"/>
+      </rule>
+      <rule>
+        <keyseq keys="5"/>
+        <insert string="꩕"/>
+      </rule>
+      <rule>
+        <keyseq keys="6"/>
+        <insert string="꩖"/>
+      </rule>
+      <rule>
+        <keyseq keys="7"/>
+        <insert string="꩗"/>
+      </rule>
+      <rule>
+        <keyseq keys="8"/>
+        <insert string="꩘"/>
+      </rule>
+      <rule>
+        <keyseq keys="9"/>
+        <insert string="꩙"/>
+      </rule>
+      <rule>
+        <keyseq keys="_"/>
+        <insert string="꩜"/>
+      </rule>
+      <rule>
+        <keyseq keys="|"/>
+        <insert string="꩝"/>
+      </rule>
+      <rule>
+        <keyseq keys="||"/>
+        <insert string="꩞"/>
+      </rule>
+      <rule>
+        <keyseq keys="|||"/>
+        <insert string="꩟"/>
+      </rule>
+      <rule>
+        <keyseq keys=";"/>
+        <insert string=","/>
+      </rule>
+    </map>
+    <map id="map-edit">
+      <rule>
+        <keyseq>
+          <key-event>BackSpace</key-event>
+        </keyseq>
+        <set id="PREV">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <variable-reference id="PREV"/>
+              <variable-reference id="PM"/>
+            </expr>
+            <set id="PREV">
+              <predefined-nth-previous-or-following-character position="-2"/>
+            </set>
+            <conditional>
+              <case>
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <variable-reference id="PREV"/>
+                    <int-val>0xAA00</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <variable-reference id="PREV"/>
+                    <int-val>0xAA28</int-val>
+                  </expr>
+                </expr>
+                <delete-n-characters n="-2"/>
+                <insert character-or-string="variable">
+                  <variable-reference id="PM"/>
+                </insert>
+              </case>
+              <case>
+                <int-val>1</int-val>
+                <unhandle/>
+              </case>
+            </conditional>
+          </case>
+          <case>
+            <expr operator="|">
+              <expr operator="=">
+                <variable-reference id="PREV"/>
+                <variable-reference id="PV1"/>
+              </expr>
+              <expr operator="=">
+                <variable-reference id="PREV"/>
+                <variable-reference id="PV2"/>
+              </expr>
+            </expr>
+            <conditional>
+              <case>
+                <expr operator="=">
+                  <predefined-nth-previous-or-following-character position="-2"/>
+                  <variable-reference id="PM"/>
+                </expr>
+                <conditional>
+                  <case>
+                    <expr operator="&amp;">
+                      <expr operator="&gt;=">
+                        <predefined-nth-previous-or-following-character position="-3"/>
+                        <int-val>0xAA00</int-val>
+                      </expr>
+                      <expr operator="&lt;=">
+                        <predefined-nth-previous-or-following-character position="-3"/>
+                        <int-val>0xAA28</int-val>
+                      </expr>
+                    </expr>
+                    <delete-n-characters n="-4"/>
+                    <insert character-or-string="variable">
+                      <variable-reference id="PREV"/>
+                    </insert>
+                    <insert character-or-string="variable">
+                      <variable-reference id="PM"/>
+                    </insert>
+                  </case>
+                  <case>
+                    <int-val>1</int-val>
+                    <unhandle/>
+                  </case>
+                </conditional>
+              </case>
+              <case>
+                <expr operator="&amp;">
+                  <expr operator="&gt;=">
+                    <predefined-nth-previous-or-following-character position="-2"/>
+                    <int-val>0xAA00</int-val>
+                  </expr>
+                  <expr operator="&lt;=">
+                    <predefined-nth-previous-or-following-character position="-2"/>
+                    <int-val>0xAA28</int-val>
+                  </expr>
+                </expr>
+                <delete-n-characters n="-2"/>
+                <insert character-or-string="variable">
+                  <variable-reference id="PREV"/>
+                </insert>
+              </case>
+              <case>
+                <int-val>1</int-val>
+                <unhandle/>
+              </case>
+            </conditional>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <unhandle/>
+          </case>
+        </conditional>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>Delete</key-event>
+        </keyseq>
+        <set id="NEXT">
+          <predefined-nth-previous-or-following-character position="+1"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <variable-reference id="NEXT"/>
+                <int-val>0xAA00</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <variable-reference id="NEXT"/>
+                <int-val>0xAA28</int-val>
+              </expr>
+            </expr>
+            <set id="N2">
+              <predefined-nth-previous-or-following-character position="+2"/>
+            </set>
+            <conditional>
+              <case>
+                <expr operator="=">
+                  <variable-reference id="N2"/>
+                  <variable-reference id="PM"/>
+                </expr>
+                <set id="N3">
+                  <predefined-nth-previous-or-following-character position="+3"/>
+                </set>
+                <conditional>
+                  <case>
+                    <expr operator="|">
+                      <expr operator="=">
+                        <variable-reference id="N3"/>
+                        <variable-reference id="PV1"/>
+                      </expr>
+                      <expr operator="=">
+                        <variable-reference id="N3"/>
+                        <variable-reference id="PV2"/>
+                      </expr>
+                    </expr>
+                    <delete-n-characters n="+3"/>
+                    <insert character-or-string="variable">
+                      <variable-reference id="NEXT"/>
+                    </insert>
+                    <insert character-or-string="variable">
+                      <variable-reference id="N2"/>
+                    </insert>
+                  </case>
+                  <case>
+                    <int-val>1</int-val>
+                    <delete-n-characters n="+2"/>
+                    <insert character-or-string="variable">
+                      <variable-reference id="NEXT"/>
+                    </insert>
+                  </case>
+                </conditional>
+              </case>
+              <case>
+                <expr operator="|">
+                  <expr operator="=">
+                    <variable-reference id="N2"/>
+                    <variable-reference id="PV1"/>
+                  </expr>
+                  <expr operator="=">
+                    <variable-reference id="N2"/>
+                    <variable-reference id="PV2"/>
+                  </expr>
+                </expr>
+                <delete-n-characters n="+2"/>
+                <insert character-or-string="variable">
+                  <variable-reference id="NEXT"/>
+                </insert>
+              </case>
+              <case>
+                <int-val>1</int-val>
+                <unhandle/>
+              </case>
+            </conditional>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <unhandle/>
+          </case>
+        </conditional>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <state-hook>
+        <set id="PM">
+          <int-val>0xAA34</int-val>
+        </set>
+        <set id="PV1">
+          <int-val>0xAA2F</int-val>
+        </set>
+        <set id="PV2">
+          <int-val>0xAA30</int-val>
+        </set>
+      </state-hook>
+      <branch branch-selecting-map="map-independent">
+        <set id="C">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <set id="PREV">
+          <predefined-nth-previous-or-following-character position="-2"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <variable-reference id="PREV"/>
+              <variable-reference id="PM"/>
+            </expr>
+            <set id="PREV">
+              <predefined-nth-previous-or-following-character position="-3"/>
+            </set>
+            <conditional>
+              <case>
+                <expr operator="|">
+                  <expr operator="=">
+                    <variable-reference id="PREV"/>
+                    <variable-reference id="PV1"/>
+                  </expr>
+                  <expr operator="=">
+                    <variable-reference id="PREV"/>
+                    <variable-reference id="PV2"/>
+                  </expr>
+                </expr>
+                <delete-n-characters n="-3"/>
+                <insert character-or-string="variable">
+                  <variable-reference id="C"/>
+                </insert>
+                <insert character-or-string="variable">
+                  <variable-reference id="PM"/>
+                </insert>
+                <insert character-or-string="variable">
+                  <variable-reference id="PREV"/>
+                </insert>
+              </case>
+              <case>
+                <expr operator="|">
+                  <expr operator="&lt;">
+                    <variable-reference id="PREV"/>
+                    <int-val>0xAA00</int-val>
+                  </expr>
+                  <expr operator="&gt;">
+                    <variable-reference id="PREV"/>
+                    <int-val>0xAA28</int-val>
+                  </expr>
+                </expr>
+                <delete-n-characters n="-2"/>
+                <insert character-or-string="variable">
+                  <variable-reference id="C"/>
+                </insert>
+                <insert character-or-string="variable">
+                  <variable-reference id="PM"/>
+                </insert>
+              </case>
+            </conditional>
+          </case>
+          <case>
+            <expr operator="|">
+              <expr operator="=">
+                <variable-reference id="PREV"/>
+                <variable-reference id="PV1"/>
+              </expr>
+              <expr operator="=">
+                <variable-reference id="PREV"/>
+                <variable-reference id="PV2"/>
+              </expr>
+            </expr>
+            <conditional>
+              <case>
+                <expr operator="=">
+                  <predefined-nth-previous-or-following-character position="-3"/>
+                  <variable-reference id="PM"/>
+                </expr>
+              </case>
+              <case>
+                <expr operator="|">
+                  <expr operator="&lt;">
+                    <predefined-nth-previous-or-following-character position="-3"/>
+                    <int-val>0xAA00</int-val>
+                  </expr>
+                  <expr operator="&gt;">
+                    <predefined-nth-previous-or-following-character position="-3"/>
+                    <int-val>0xAA28</int-val>
+                  </expr>
+                </expr>
+                <delete-n-characters n="-2"/>
+                <insert character-or-string="variable">
+                  <variable-reference id="C"/>
+                </insert>
+                <insert character-or-string="variable">
+                  <variable-reference id="PREV"/>
+                </insert>
+              </case>
+            </conditional>
+          </case>
+        </conditional>
+      </branch>
+      <branch branch-selecting-map="map-pre-vowel">
+        <set id="C">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <set id="NEXT">
+          <predefined-nth-previous-or-following-character position="+1"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <variable-reference id="NEXT"/>
+                <int-val>0xAA00</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <variable-reference id="NEXT"/>
+                <int-val>0xAA28</int-val>
+              </expr>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <delete-n-characters n="+1"/>
+            <insert character-or-string="variable">
+              <variable-reference id="NEXT"/>
+            </insert>
+            <insert character-or-string="variable">
+              <variable-reference id="C"/>
+            </insert>
+            <set id="NEXT">
+              <predefined-nth-previous-or-following-character position="+1"/>
+            </set>
+          </case>
+        </conditional>
+        <conditional>
+          <case>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <variable-reference id="NEXT"/>
+                <int-val>0xAA33</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <variable-reference id="NEXT"/>
+                <int-val>0xAA36</int-val>
+              </expr>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <delete-n-characters n="+1"/>
+            <insert character-or-string="variable">
+              <variable-reference id="NEXT"/>
+            </insert>
+            <insert character-or-string="variable">
+              <variable-reference id="C"/>
+            </insert>
+          </case>
+        </conditional>
+      </branch>
+      <branch branch-selecting-map="map-pre-medial">
+        <set id="C">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <set id="NEXT">
+          <predefined-nth-previous-or-following-character position="+1"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="&amp;">
+              <expr operator="&gt;=">
+                <variable-reference id="NEXT"/>
+                <int-val>0xAA00</int-val>
+              </expr>
+              <expr operator="&lt;=">
+                <variable-reference id="NEXT"/>
+                <int-val>0xAA28</int-val>
+              </expr>
+            </expr>
+            <delete-n-characters n="-1"/>
+            <delete-n-characters n="+1"/>
+            <insert character-or-string="variable">
+              <variable-reference id="NEXT"/>
+            </insert>
+            <insert character-or-string="variable">
+              <variable-reference id="C"/>
+            </insert>
+          </case>
+        </conditional>
+      </branch>
+      <branch branch-selecting-map="map-post-medial"/>
+      <branch branch-selecting-map="map-post-vowel"/>
+      <branch branch-selecting-map="map-final"/>
+      <branch branch-selecting-map="map-misc"/>
+      <branch branch-selecting-map="map-edit"/>
+    </state>
+  </state-list>
+</input-method>

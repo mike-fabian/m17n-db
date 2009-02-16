@@ -1,0 +1,26 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>zh</language>
+    <name>py-b5</name>
+  </tags>
+  <description>Chinese Big5 input method with Pinyin sequence.
+In addition to Chinese characters, fullwidth latin characters and
+symbols are available in fullwidth mode (turns on and off by
+"&gt;&gt;" and "&lt;&lt;" respectively).  This mode can also be turned on
+temporarily by typing "Z".
+</description>
+  <title>拼B5</title>
+  <variable-list>
+    <variable id="candidates-group-size"/>
+    <variable id="candidates-charset">
+      <value type="symbol">big5</value>
+    </variable>
+  </variable-list>
+  <map-list>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="zh-py.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:map)"/>
+  </map-list>
+  <state-list>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="zh-py.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:state)"/>
+  </state-list>
+</input-method>

@@ -1,0 +1,183 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>he</language>
+    <name>kbd</name>
+  </tags>
+  <description>Hebrew input method simulating the Hebrew keyboard.
+    1!  2@  3#  4$  5%  6^  7&amp;  8*  9(  0)  -_  =+  ;~ 
+      /Q  'W  קE  רR  אT  טY  וU  ןI  םO  פP  [{  ]} 
+       שA  דS  גD  כF  עG  יH  חJ  לK  ךL  ף:  ,"  \| 
+         זZ  סX  בC  הV  נB  מN  צM  ת&lt;  ץ&gt;  .? 
+</description>
+  <title>ע</title>
+  <map-list>
+    <map id="map-map">
+      <rule>
+        <keyseq keys="`"/>
+        <insert character="59"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+        <insert character="47"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+        <insert character="39"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert character="1511"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+        <insert character="1512"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+        <insert character="1488"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <insert character="1496"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert character="1493"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert character="1503"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert character="1501"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+        <insert character="1508"/>
+      </rule>
+      <rule>
+        <keyseq keys="a"/>
+        <insert character="1513"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+        <insert character="1491"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <insert character="1490"/>
+      </rule>
+      <rule>
+        <keyseq keys="f"/>
+        <insert character="1499"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+        <insert character="1506"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+        <insert character="1497"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+        <insert character="1495"/>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+        <insert character="1500"/>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+        <insert character="1498"/>
+      </rule>
+      <rule>
+        <keyseq keys=";"/>
+        <insert character="1507"/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+        <insert character="1494"/>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+        <insert character="1505"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <insert character="1489"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <insert character="1492"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <insert character="1504"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <insert character="1502"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+        <insert character="1510"/>
+      </rule>
+      <rule>
+        <keyseq keys=","/>
+        <insert character="1514"/>
+      </rule>
+      <rule>
+        <keyseq keys="."/>
+        <insert character="1509"/>
+      </rule>
+      <rule>
+        <keyseq keys="/"/>
+        <insert character="46"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;"/>
+        <insert character="44"/>
+      </rule>
+      <rule>
+        <keyseq keys="("/>
+        <insert string=")"/>
+      </rule>
+      <rule>
+        <keyseq keys=")"/>
+        <insert string="("/>
+      </rule>
+      <rule>
+        <keyseq keys="&lt;"/>
+        <insert string="&gt;"/>
+      </rule>
+      <rule>
+        <keyseq keys="&gt;"/>
+        <insert string="&lt;"/>
+      </rule>
+      <rule>
+        <keyseq keys="["/>
+        <insert string="]"/>
+      </rule>
+      <rule>
+        <keyseq keys="]"/>
+        <insert string="["/>
+      </rule>
+      <rule>
+        <keyseq keys="{"/>
+        <insert string="}"/>
+      </rule>
+      <rule>
+        <keyseq keys="}"/>
+        <insert string="{"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-map"/>
+    </state>
+  </state-list>
+</input-method>

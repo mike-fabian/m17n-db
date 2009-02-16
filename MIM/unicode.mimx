@@ -1,0 +1,209 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>t</language>
+    <name>unicode</name>
+  </tags>
+  <description>
+    <get-text>Input method for Unicode BMP characters using hexadigits.
+Type C-u followed by four hexadecimal numbers [0-9A-Fa-f]
+of a Unicode character code.
+</get-text>
+  </description>
+  <title>UNICODE</title>
+  <variable-list>
+    <variable id="prompt">
+      <description>
+        <get-text>Preedit prompt
+Prompt string shown in the preedit area while typing hexadecimal numbers.</get-text>
+      </description>
+      <value type="string">U+</value>
+    </variable>
+  </variable-list>
+  <command-list>
+    <command id="command-start">
+      <description>
+        <get-text>Start Unicode
+Start typing hexadecimal numbers of Unicode character.</get-text>
+      </description>
+      <keyseq>
+        <key-event>C-U</key-event>
+      </keyseq>
+    </command>
+  </command-list>
+  <map-list>
+    <map id="map-starter">
+      <rule>
+        <command-reference id="command-start"/>
+        <insert character-or-string="variable">
+          <variable-reference id="prompt"/>
+        </insert>
+      </rule>
+    </map>
+    <map id="map-hex">
+      <rule>
+        <keyseq keys="0"/>
+        <insert string="0"/>
+      </rule>
+      <rule>
+        <keyseq keys="1"/>
+        <insert string="1"/>
+      </rule>
+      <rule>
+        <keyseq keys="2"/>
+        <insert string="2"/>
+      </rule>
+      <rule>
+        <keyseq keys="3"/>
+        <insert string="3"/>
+      </rule>
+      <rule>
+        <keyseq keys="4"/>
+        <insert string="4"/>
+      </rule>
+      <rule>
+        <keyseq keys="5"/>
+        <insert string="5"/>
+      </rule>
+      <rule>
+        <keyseq keys="6"/>
+        <insert string="6"/>
+      </rule>
+      <rule>
+        <keyseq keys="7"/>
+        <insert string="7"/>
+      </rule>
+      <rule>
+        <keyseq keys="8"/>
+        <insert string="8"/>
+      </rule>
+      <rule>
+        <keyseq keys="9"/>
+        <insert string="9"/>
+      </rule>
+      <rule>
+        <keyseq keys="A"/>
+        <insert string="A"/>
+      </rule>
+      <rule>
+        <keyseq keys="B"/>
+        <insert string="B"/>
+      </rule>
+      <rule>
+        <keyseq keys="C"/>
+        <insert string="C"/>
+      </rule>
+      <rule>
+        <keyseq keys="D"/>
+        <insert string="D"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+        <insert string="E"/>
+      </rule>
+      <rule>
+        <keyseq keys="F"/>
+        <insert string="F"/>
+      </rule>
+      <rule>
+        <keyseq keys="a"/>
+        <insert string="A"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <insert string="B"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <insert string="C"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <insert string="D"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert string="E"/>
+      </rule>
+      <rule>
+        <keyseq keys="f"/>
+        <insert string="F"/>
+      </rule>
+    </map>
+    <map id="map-backspace">
+      <rule>
+        <keyseq>
+          <key-event>BackSpace</key-event>
+        </keyseq>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-starter">
+        <set id="code">
+          <int-val>0</int-val>
+        </set>
+        <set id="count">
+          <int-val>0</int-val>
+        </set>
+        <shift-to id="state-uni-hex"/>
+      </branch>
+    </state>
+    <state id="state-uni-hex">
+      <branch branch-selecting-map="map-hex">
+        <set id="this">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="&lt;">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>65</int-val>
+            </expr>
+            <sub id="this">
+              <int-val>48</int-val>
+            </sub>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <sub id="this">
+              <int-val>55</int-val>
+            </sub>
+          </case>
+        </conditional>
+        <set id="code">
+          <expr operator="+">
+            <expr operator="*">
+              <variable-reference id="code"/>
+              <int-val>16</int-val>
+            </expr>
+            <variable-reference id="this"/>
+          </expr>
+        </set>
+        <set id="count">
+          <expr operator="+">
+            <variable-reference id="count"/>
+            <int-val>1</int-val>
+          </expr>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <variable-reference id="count"/>
+              <int-val>4</int-val>
+            </expr>
+            <delete-to-marker position="@first"/>
+            <insert character-or-string="variable">
+              <variable-reference id="code"/>
+            </insert>
+            <shift-to id="state-init"/>
+          </case>
+        </conditional>
+      </branch>
+      <branch branch-selecting-map="map-backspace">
+        <undo/>
+      </branch>
+    </state>
+  </state-list>
+</input-method>

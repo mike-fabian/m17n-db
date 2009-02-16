@@ -1,0 +1,1179 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>bo</language>
+    <name>wylie</name>
+  </tags>
+  <description>Tibetan input method based on the Wylie transliteration.
+It is actually the re-implementation of Emacs' tibetan-wylie input method,
+and is slightly different from Extended Wylie Transliteration Scheme (EWTS).
+The exact EWTS-based input method is in bo-ewts.mim.</description>
+  <title>ཀ</title>
+  <map-list>
+    <map id="map-consonant">
+      <rule>
+        <keyseq keys="&apos;"/>
+        <insert string="འ"/>
+      </rule>
+      <rule>
+        <keyseq keys="A"/>
+        <insert string="ཨ"/>
+      </rule>
+      <rule>
+        <keyseq keys="D"/>
+        <insert string="ཌ"/>
+      </rule>
+      <rule>
+        <keyseq keys="DH"/>
+        <insert string="ཌྷ"/>
+      </rule>
+      <rule>
+        <keyseq keys="H"/>
+        <insert string="ཧ"/>
+      </rule>
+      <rule>
+        <keyseq keys="N"/>
+        <insert string="ཎ"/>
+      </rule>
+      <rule>
+        <keyseq keys="R"/>
+        <insert string="ཪ"/>
+      </rule>
+      <rule>
+        <keyseq keys="SH"/>
+        <insert string="ཥ"/>
+      </rule>
+      <rule>
+        <keyseq keys="T"/>
+        <insert string="ཊ"/>
+      </rule>
+      <rule>
+        <keyseq keys="TH"/>
+        <insert string="ཋ"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <insert string="བ"/>
+      </rule>
+      <rule>
+        <keyseq keys="bh"/>
+        <insert string="བྷ"/>
+      </rule>
+      <rule>
+        <keyseq keys="bl"/>
+        <insert string="བླ"/>
+      </rule>
+      <rule>
+        <keyseq keys="bld"/>
+        <insert string="བལྡ"/>
+      </rule>
+      <rule>
+        <keyseq keys="blt"/>
+        <insert string="བལྟ"/>
+      </rule>
+      <rule>
+        <keyseq keys="br"/>
+        <insert string="བྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="brd"/>
+        <insert string="བརྡ"/>
+      </rule>
+      <rule>
+        <keyseq keys="brdz"/>
+        <insert string="བརྫ"/>
+      </rule>
+      <rule>
+        <keyseq keys="brg"/>
+        <insert string="བརྒ"/>
+      </rule>
+      <rule>
+        <keyseq keys="brj"/>
+        <insert string="བརྗ"/>
+      </rule>
+      <rule>
+        <keyseq keys="brk"/>
+        <insert string="བརྐ"/>
+      </rule>
+      <rule>
+        <keyseq keys="brl"/>
+        <insert string="བརླ"/>
+      </rule>
+      <rule>
+        <keyseq keys="brn"/>
+        <insert string="བརྣ"/>
+      </rule>
+      <rule>
+        <keyseq keys="brng"/>
+        <insert string="བརྔ"/>
+      </rule>
+      <rule>
+        <keyseq keys="brny"/>
+        <insert string="བརྙ"/>
+      </rule>
+      <rule>
+        <keyseq keys="brt"/>
+        <insert string="བརྟ"/>
+      </rule>
+      <rule>
+        <keyseq keys="brts"/>
+        <insert string="བརྩ"/>
+      </rule>
+      <rule>
+        <keyseq keys="by"/>
+        <insert string="བྱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <insert string="ཅ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ch"/>
+        <insert string="ཆ"/>
+      </rule>
+      <rule>
+        <keyseq keys="cw"/>
+        <insert string="ཅྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <insert string="ད"/>
+      </rule>
+      <rule>
+        <keyseq keys="dh"/>
+        <insert string="དྷ"/>
+      </rule>
+      <rule>
+        <keyseq keys="dr"/>
+        <insert string="དྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="dw"/>
+        <insert string="དྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="dz"/>
+        <insert string="ཛ"/>
+      </rule>
+      <rule>
+        <keyseq keys="dzh"/>
+        <insert string="ཛྷ"/>
+      </rule>
+      <rule>
+        <keyseq keys="dzr"/>
+        <insert string="ཛྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+        <insert string="ག"/>
+      </rule>
+      <rule>
+        <keyseq keys="gh"/>
+        <insert string="གྷ"/>
+      </rule>
+      <rule>
+        <keyseq keys="gl"/>
+        <insert string="གླ"/>
+      </rule>
+      <rule>
+        <keyseq keys="gr"/>
+        <insert string="གྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="grw"/>
+        <insert string="གྲྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="gw"/>
+        <insert string="གྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="gy"/>
+        <insert string="གྱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+        <insert string="ཧ"/>
+      </rule>
+      <rule>
+        <keyseq keys="hr"/>
+        <insert string="ཧྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="hw"/>
+        <insert string="ཧྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+        <insert string="ཇ"/>
+      </rule>
+      <rule>
+        <keyseq keys="jr"/>
+        <insert string="ཇྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+        <insert string="ཀ"/>
+      </rule>
+      <rule>
+        <keyseq keys="kSH"/>
+        <insert string="ཀྵ"/>
+      </rule>
+      <rule>
+        <keyseq keys="kh"/>
+        <insert string="ཁ"/>
+      </rule>
+      <rule>
+        <keyseq keys="khr"/>
+        <insert string="ཁྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="khw"/>
+        <insert string="ཁྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="khy"/>
+        <insert string="ཁྱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="kl"/>
+        <insert string="ཀླ"/>
+      </rule>
+      <rule>
+        <keyseq keys="kr"/>
+        <insert string="ཀྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="kw"/>
+        <insert string="ཀྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ky"/>
+        <insert string="ཀྱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+        <insert string="ལ"/>
+      </rule>
+      <rule>
+        <keyseq keys="lb"/>
+        <insert string="ལྦ"/>
+      </rule>
+      <rule>
+        <keyseq keys="lc"/>
+        <insert string="ལྕ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ld"/>
+        <insert string="ལྡ"/>
+      </rule>
+      <rule>
+        <keyseq keys="lg"/>
+        <insert string="ལྒ"/>
+      </rule>
+      <rule>
+        <keyseq keys="lh"/>
+        <insert string="ལྷ"/>
+      </rule>
+      <rule>
+        <keyseq keys="lj"/>
+        <insert string="ལྗ"/>
+      </rule>
+      <rule>
+        <keyseq keys="lk"/>
+        <insert string="ལྐ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ln"/>
+        <insert string="ལྣ"/>
+      </rule>
+      <rule>
+        <keyseq keys="lng"/>
+        <insert string="ལྔ"/>
+      </rule>
+      <rule>
+        <keyseq keys="lp"/>
+        <insert string="ལྤ"/>
+      </rule>
+      <rule>
+        <keyseq keys="lt"/>
+        <insert string="ལྟ"/>
+      </rule>
+      <rule>
+        <keyseq keys="lw"/>
+        <insert string="ལྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+        <insert string="མ"/>
+      </rule>
+      <rule>
+        <keyseq keys="mr"/>
+        <insert string="མྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="my"/>
+        <insert string="མྱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <insert string="ན"/>
+      </rule>
+      <rule>
+        <keyseq keys="ng"/>
+        <insert string="ང"/>
+      </rule>
+      <rule>
+        <keyseq keys="ny"/>
+        <insert string="ཉ"/>
+      </rule>
+      <rule>
+        <keyseq keys="nyw"/>
+        <insert string="ཉྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+        <insert string="པ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ph"/>
+        <insert string="ཕ"/>
+      </rule>
+      <rule>
+        <keyseq keys="phr"/>
+        <insert string="ཕྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="phy"/>
+        <insert string="ཕྱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="phyw"/>
+        <insert string="ཕྱྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="pr"/>
+        <insert string="པྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="py"/>
+        <insert string="པྱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+        <insert string="ར"/>
+      </rule>
+      <rule>
+        <keyseq keys="rb"/>
+        <insert string="རྦ"/>
+      </rule>
+      <rule>
+        <keyseq keys="rd"/>
+        <insert string="རྡ"/>
+      </rule>
+      <rule>
+        <keyseq keys="rdz"/>
+        <insert string="རྫ"/>
+      </rule>
+      <rule>
+        <keyseq keys="rg"/>
+        <insert string="རྒ"/>
+      </rule>
+      <rule>
+        <keyseq keys="rgw"/>
+        <insert string="རྒྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="rgy"/>
+        <insert string="རྒྱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="rj"/>
+        <insert string="རྗ"/>
+      </rule>
+      <rule>
+        <keyseq keys="rk"/>
+        <insert string="རྐ"/>
+      </rule>
+      <rule>
+        <keyseq keys="rky"/>
+        <insert string="རྐྱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="rl"/>
+        <insert string="རླ"/>
+      </rule>
+      <rule>
+        <keyseq keys="rm"/>
+        <insert string="རྨ"/>
+      </rule>
+      <rule>
+        <keyseq keys="rmy"/>
+        <insert string="རྨྱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="rn"/>
+        <insert string="རྣ"/>
+      </rule>
+      <rule>
+        <keyseq keys="rng"/>
+        <insert string="རྔ"/>
+      </rule>
+      <rule>
+        <keyseq keys="rny"/>
+        <insert string="རྙ"/>
+      </rule>
+      <rule>
+        <keyseq keys="rt"/>
+        <insert string="རྟ"/>
+      </rule>
+      <rule>
+        <keyseq keys="rts"/>
+        <insert string="རྩ"/>
+      </rule>
+      <rule>
+        <keyseq keys="rtsw"/>
+        <insert string="རྩྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="rw"/>
+        <insert string="རྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+        <insert string="ས"/>
+      </rule>
+      <rule>
+        <keyseq keys="sb"/>
+        <insert string="སྦ"/>
+      </rule>
+      <rule>
+        <keyseq keys="sbr"/>
+        <insert string="སྦྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="sby"/>
+        <insert string="སྦྱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="sd"/>
+        <insert string="སྡ"/>
+      </rule>
+      <rule>
+        <keyseq keys="sg"/>
+        <insert string="སྒ"/>
+      </rule>
+      <rule>
+        <keyseq keys="sgr"/>
+        <insert string="སྒྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="sgy"/>
+        <insert string="སྒྱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="sh"/>
+        <insert string="ཤ"/>
+      </rule>
+      <rule>
+        <keyseq keys="shr"/>
+        <insert string="ཤྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="shw"/>
+        <insert string="ཤྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="sk"/>
+        <insert string="སྐ"/>
+      </rule>
+      <rule>
+        <keyseq keys="skr"/>
+        <insert string="སྐྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="sky"/>
+        <insert string="སྐྱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="sl"/>
+        <insert string="སླ"/>
+      </rule>
+      <rule>
+        <keyseq keys="sm"/>
+        <insert string="སྨ"/>
+      </rule>
+      <rule>
+        <keyseq keys="smr"/>
+        <insert string="སྨྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="smy"/>
+        <insert string="སྨྱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="sn"/>
+        <insert string="སྣ"/>
+      </rule>
+      <rule>
+        <keyseq keys="sng"/>
+        <insert string="སྔ"/>
+      </rule>
+      <rule>
+        <keyseq keys="snr"/>
+        <insert string="སྣྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="sny"/>
+        <insert string="སྙ"/>
+      </rule>
+      <rule>
+        <keyseq keys="sp"/>
+        <insert string="སྤ"/>
+      </rule>
+      <rule>
+        <keyseq keys="spr"/>
+        <insert string="སྤྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="spy"/>
+        <insert string="སྤྱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="sr"/>
+        <insert string="སྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="st"/>
+        <insert string="སྟ"/>
+      </rule>
+      <rule>
+        <keyseq keys="sts"/>
+        <insert string="སྩ"/>
+      </rule>
+      <rule>
+        <keyseq keys="sw"/>
+        <insert string="སྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+        <insert string="ཏ"/>
+      </rule>
+      <rule>
+        <keyseq keys="th"/>
+        <insert string="ཐ"/>
+      </rule>
+      <rule>
+        <keyseq keys="thr"/>
+        <insert string="ཐྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="tr"/>
+        <insert string="ཏྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ts"/>
+        <insert string="ཙ"/>
+      </rule>
+      <rule>
+        <keyseq keys="tsh"/>
+        <insert string="ཚ"/>
+      </rule>
+      <rule>
+        <keyseq keys="tshw"/>
+        <insert string="ཚྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="tsw"/>
+        <insert string="ཙྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="tw"/>
+        <insert string="ཏྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+        <insert string="ཝ"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <insert string="ཡ"/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+        <insert string="ཟ"/>
+      </rule>
+      <rule>
+        <keyseq keys="zh"/>
+        <insert string="ཞ"/>
+      </rule>
+      <rule>
+        <keyseq keys="zhw"/>
+        <insert string="ཞྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="zl"/>
+        <insert string="ཟླ"/>
+      </rule>
+      <rule>
+        <keyseq keys="zw"/>
+        <insert string="ཟྭ"/>
+      </rule>
+    </map>
+    <map id="map-subjoined">
+      <rule>
+        <keyseq keys="+tsh"/>
+        <insert string="ྪ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+dzh"/>
+        <insert string="ྫྷ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+kSH"/>
+        <insert string="ྐྵ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+kh"/>
+        <insert string="ྑ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+gh"/>
+        <insert string="ྒྷ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+ng"/>
+        <insert string="ྔ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+ch"/>
+        <insert string="ྖ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+ny"/>
+        <insert string="ྙ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+TH"/>
+        <insert string="ྛ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+DH"/>
+        <insert string="ྜྷ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+th"/>
+        <insert string="ྠ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+dh"/>
+        <insert string="ྡྷ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+ph"/>
+        <insert string="ྥ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+bh"/>
+        <insert string="ྦྷ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+ts"/>
+        <insert string="ྩ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+dz"/>
+        <insert string="ྫ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+zh"/>
+        <insert string="ྮ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+sh"/>
+        <insert string="ྴ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+SH"/>
+        <insert string="ྵ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+k"/>
+        <insert string="ྐ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+g"/>
+        <insert string="ྒ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+c"/>
+        <insert string="ྕ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+j"/>
+        <insert string="ྗ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+T"/>
+        <insert string="ྚ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+D"/>
+        <insert string="ྜ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+N"/>
+        <insert string="ྞ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+t"/>
+        <insert string="ྟ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+d"/>
+        <insert string="ྡ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+n"/>
+        <insert string="ྣ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+p"/>
+        <insert string="ྤ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+b"/>
+        <insert string="ྦ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+m"/>
+        <insert string="ྨ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+w"/>
+        <insert string="ྭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+z"/>
+        <insert string="ྯ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+&apos;"/>
+        <insert string="ྰ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+y"/>
+        <insert string="ྱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+r"/>
+        <insert string="ྲ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+l"/>
+        <insert string="ླ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+s"/>
+        <insert string="ྶ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+h"/>
+        <insert string="ྷ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+A"/>
+        <insert string="ྸ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+W"/>
+        <insert string="ྺ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+Y"/>
+        <insert string="ྻ"/>
+      </rule>
+      <rule>
+        <keyseq keys="+R"/>
+        <insert string="ྼ"/>
+      </rule>
+    </map>
+    <map id="map-non-stacking">
+      <rule>
+        <keyseq keys="-d"/>
+        <insert string="ད"/>
+      </rule>
+      <rule>
+        <keyseq keys="-y"/>
+        <insert string="ཡ"/>
+      </rule>
+    </map>
+    <map id="map-vowel">
+      <rule>
+        <keyseq keys="frr"/>
+        <insert string="ཷ"/>
+      </rule>
+      <rule>
+        <keyseq keys="fll"/>
+        <insert string="ཹ"/>
+      </rule>
+      <rule>
+        <keyseq keys="fa"/>
+        <insert string="ཱ"/>
+      </rule>
+      <rule>
+        <keyseq keys="fi"/>
+        <insert string="ཱི"/>
+      </rule>
+      <rule>
+        <keyseq keys="fu"/>
+        <insert string="ཱུ"/>
+      </rule>
+      <rule>
+        <keyseq keys="fr"/>
+        <insert string="ྲྀ"/>
+      </rule>
+      <rule>
+        <keyseq keys="fl"/>
+        <insert string="ླྀ"/>
+      </rule>
+      <rule>
+        <keyseq keys="fI"/>
+        <insert string="ཱྀ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ai"/>
+        <insert string="ཻ"/>
+      </rule>
+      <rule>
+        <keyseq keys="au"/>
+        <insert string="ཽ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ee"/>
+        <insert string="ཻ"/>
+      </rule>
+      <rule>
+        <keyseq keys="oo"/>
+        <insert string="ཽ"/>
+      </rule>
+      <rule>
+        <keyseq keys="a"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert string="ི"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert string="ུ"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert string="ེ"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert string="ོ"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+        <insert string="ཻ"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <insert string="ཽ"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+        <insert string="ྀ"/>
+      </rule>
+      <rule>
+        <keyseq keys=","/>
+        <insert string="྄"/>
+      </rule>
+    </map>
+    <map id="map-modifier">
+      <rule>
+        <keyseq keys="M"/>
+        <insert string="ཾ"/>
+      </rule>
+      <rule>
+        <keyseq keys="~"/>
+        <insert string="ྂ"/>
+      </rule>
+      <rule>
+        <keyseq keys="`"/>
+        <insert string="ྃ"/>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+        <insert string="ྈ"/>
+      </rule>
+      <rule>
+        <keyseq keys="X"/>
+        <insert string="ྉ"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <insert string="྆"/>
+      </rule>
+      <rule>
+        <keyseq keys="V"/>
+        <insert string="྇"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+        <insert string="ྊ"/>
+      </rule>
+      <rule>
+        <keyseq keys="Q"/>
+        <insert string="ྋ"/>
+      </rule>
+      <rule>
+        <keyseq keys="_/"/>
+        <insert string="༙"/>
+      </rule>
+      <rule>
+        <keyseq keys="_o"/>
+        <insert string="༷"/>
+      </rule>
+      <rule>
+        <keyseq keys="_O"/>
+        <insert string="༵"/>
+      </rule>
+    </map>
+    <map id="map-punctuation">
+      <rule>
+        <keyseq keys="."/>
+        <insert string=" "/>
+      </rule>
+      <rule>
+        <keyseq keys=":"/>
+        <insert string="ཿ"/>
+      </rule>
+      <rule>
+        <keyseq keys=" "/>
+        <insert string="་"/>
+      </rule>
+      <rule>
+        <keyseq keys="/"/>
+        <insert string="།"/>
+      </rule>
+      <rule>
+        <keyseq keys="//"/>
+        <insert string="༎"/>
+      </rule>
+      <rule>
+        <keyseq keys="////"/>
+        <insert string="༎ ༎"/>
+      </rule>
+      <rule>
+        <keyseq keys="$"/>
+        <insert string="༏"/>
+      </rule>
+      <rule>
+        <keyseq keys="/&quot;"/>
+        <insert string="༐"/>
+      </rule>
+      <rule>
+        <keyseq keys="&amp;"/>
+        <insert string="༐"/>
+      </rule>
+      <rule>
+        <keyseq keys=";"/>
+        <insert string="༑"/>
+      </rule>
+      <rule>
+        <keyseq keys="%"/>
+        <insert string="༔"/>
+      </rule>
+      <rule>
+        <keyseq keys="!"/>
+        <insert string="༈"/>
+      </rule>
+      <rule>
+        <keyseq keys="&lt;"/>
+        <insert string="༼"/>
+      </rule>
+      <rule>
+        <keyseq keys="&gt;"/>
+        <insert string="༽"/>
+      </rule>
+      <rule>
+        <keyseq keys="@"/>
+        <insert string="྅"/>
+      </rule>
+      <rule>
+        <keyseq keys="*"/>
+        <insert string="༄༅"/>
+      </rule>
+      <rule>
+        <keyseq keys="#"/>
+        <insert string="༄༅༅"/>
+      </rule>
+      <rule>
+        <keyseq keys="^"/>
+        <insert string="༆"/>
+      </rule>
+      <rule>
+        <keyseq keys="0"/>
+        <insert string="༠"/>
+      </rule>
+      <rule>
+        <keyseq keys="1"/>
+        <insert string="༡"/>
+      </rule>
+      <rule>
+        <keyseq keys="2"/>
+        <insert string="༢"/>
+      </rule>
+      <rule>
+        <keyseq keys="3"/>
+        <insert string="༣"/>
+      </rule>
+      <rule>
+        <keyseq keys="4"/>
+        <insert string="༤"/>
+      </rule>
+      <rule>
+        <keyseq keys="5"/>
+        <insert string="༥"/>
+      </rule>
+      <rule>
+        <keyseq keys="6"/>
+        <insert string="༦"/>
+      </rule>
+      <rule>
+        <keyseq keys="7"/>
+        <insert string="༧"/>
+      </rule>
+      <rule>
+        <keyseq keys="8"/>
+        <insert string="༨"/>
+      </rule>
+      <rule>
+        <keyseq keys="9"/>
+        <insert string="༩"/>
+      </rule>
+      <rule>
+        <keyseq keys="-0"/>
+        <insert string="༳"/>
+      </rule>
+      <rule>
+        <keyseq keys="-1"/>
+        <insert string="༪"/>
+      </rule>
+      <rule>
+        <keyseq keys="-2"/>
+        <insert string="༫"/>
+      </rule>
+      <rule>
+        <keyseq keys="-3"/>
+        <insert string="༬"/>
+      </rule>
+      <rule>
+        <keyseq keys="-4"/>
+        <insert string="༭"/>
+      </rule>
+      <rule>
+        <keyseq keys="-5"/>
+        <insert string="༮"/>
+      </rule>
+      <rule>
+        <keyseq keys="-6"/>
+        <insert string="༯"/>
+      </rule>
+      <rule>
+        <keyseq keys="-7"/>
+        <insert string="༰"/>
+      </rule>
+      <rule>
+        <keyseq keys="-8"/>
+        <insert string="༱"/>
+      </rule>
+      <rule>
+        <keyseq keys="-9"/>
+        <insert string="༲"/>
+      </rule>
+      <rule>
+        <keyseq keys="|"/>
+        <insert string="ༀ"/>
+        <insert string="༁"/>
+        <insert string="༂"/>
+        <insert string="༃"/>
+        <insert string="༇"/>
+        <insert string="༉"/>
+        <insert string="༊"/>
+        <insert string="༒"/>
+        <insert string="༓"/>
+        <insert string="༕"/>
+        <insert string="༖"/>
+        <insert string="༗"/>
+        <insert string="༘"/>
+        <insert string="༙"/>
+        <insert string="༚"/>
+        <insert string="༛"/>
+        <insert string="༜"/>
+        <insert string="༝"/>
+        <insert string="༞"/>
+        <insert string="༟"/>
+        <insert string="༴"/>
+        <insert string="༶"/>
+        <insert string="༸"/>
+        <insert string="༺"/>
+        <insert string="༻"/>
+        <insert string="༾"/>
+        <insert string="༿"/>
+        <insert string="྾"/>
+        <insert string="྿"/>
+        <insert string="࿀"/>
+        <insert string="࿁"/>
+        <insert string="࿂"/>
+        <insert string="࿃"/>
+        <insert string="࿄"/>
+        <insert string="࿅"/>
+        <insert string="࿆"/>
+        <insert string="࿇"/>
+        <insert string="࿈"/>
+        <insert string="࿉"/>
+        <insert string="࿊"/>
+        <insert string="࿋"/>
+        <insert string="࿌"/>
+        <insert string="࿏"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-consonant">
+        <shift-to id="state-svm"/>
+      </branch>
+      <branch branch-selecting-map="map-subjoined"/>
+      <branch branch-selecting-map="map-non-stacking">
+        <shift-to id="state-svm"/>
+      </branch>
+      <branch branch-selecting-map="map-vowel"/>
+      <branch branch-selecting-map="map-modifier"/>
+      <branch branch-selecting-map="map-punctuation"/>
+    </state>
+    <state id="state-svm">
+      <branch branch-selecting-map="map-subjoined"/>
+      <branch branch-selecting-map="map-vowel">
+        <shift-to id="state-vm"/>
+      </branch>
+      <branch branch-selecting-map="map-modifier">
+        <shift-to id="state-m"/>
+      </branch>
+    </state>
+    <state id="state-vm">
+      <branch branch-selecting-map="map-vowel"/>
+      <branch branch-selecting-map="map-modifier">
+        <shift-to id="state-m"/>
+      </branch>
+    </state>
+    <state id="state-m">
+      <branch branch-selecting-map="map-modifier"/>
+    </state>
+  </state-list>
+</input-method>

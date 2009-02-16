@@ -1,0 +1,91 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>da</language>
+    <name>post</name>
+  </tags>
+  <description>Danish input method with postfix modifiers.
+</description>
+  <title>da-post</title>
+  <map-list>
+    <map id="map-trans">
+      <rule>
+        <keyseq keys="AA"/>
+        <insert character="197"/>
+      </rule>
+      <rule>
+        <keyseq keys="aa"/>
+        <insert character="229"/>
+      </rule>
+      <rule>
+        <keyseq keys="AE"/>
+        <insert character="198"/>
+      </rule>
+      <rule>
+        <keyseq keys="ae"/>
+        <insert character="230"/>
+      </rule>
+      <rule>
+        <keyseq keys="OE"/>
+        <insert character="216"/>
+      </rule>
+      <rule>
+        <keyseq keys="oe"/>
+        <insert character="248"/>
+      </rule>
+      <rule>
+        <keyseq keys="E&apos;"/>
+        <insert character="201"/>
+      </rule>
+      <rule>
+        <keyseq keys="e&apos;"/>
+        <insert character="233"/>
+      </rule>
+      <rule>
+        <keyseq keys="AAA"/>
+        <insert string="A"/>
+        <insert string="A"/>
+      </rule>
+      <rule>
+        <keyseq keys="aaa"/>
+        <insert string="a"/>
+        <insert string="a"/>
+      </rule>
+      <rule>
+        <keyseq keys="AEE"/>
+        <insert string="A"/>
+        <insert string="E"/>
+      </rule>
+      <rule>
+        <keyseq keys="aee"/>
+        <insert string="a"/>
+        <insert string="e"/>
+      </rule>
+      <rule>
+        <keyseq keys="OEE"/>
+        <insert string="O"/>
+        <insert string="E"/>
+      </rule>
+      <rule>
+        <keyseq keys="oee"/>
+        <insert string="o"/>
+        <insert string="e"/>
+      </rule>
+      <rule>
+        <keyseq keys="E&apos;&apos;"/>
+        <insert string="E"/>
+        <insert string="&apos;"/>
+      </rule>
+      <rule>
+        <keyseq keys="e&apos;&apos;"/>
+        <insert string="e"/>
+        <insert string="&apos;"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-trans"/>
+    </state>
+  </state-list>
+</input-method>

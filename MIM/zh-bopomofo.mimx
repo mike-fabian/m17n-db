@@ -1,0 +1,191 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>zh</language>
+    <name>bopomofo</name>
+  </tags>
+  <description>Bopomofo input method using this keyboard layout.
+   ㄅ  ㄉ  ˇ   ˋ  ㄓ  ˊ  ˙   ㄚ  ㄞ  ㄢ  ㄦ  =+
+    ㄆ  ㄊ  ㄍ  ㄐ  ㄔ  ㄗ  ㄧ  ㄛ  ㄟ  ㄣ  [{  ]}
+     ㄇ  ㄋ  ㄎ  ㄑ  ㄕ  ㄘ  ㄨ  ㄜ  ㄠ  ㄤ  '"  \|
+      ㄈ  ㄌ  ㄏ  ㄒ  ㄖ  ㄙ  ㄩ  ㄝ  ㄡ  ㄥ
+</description>
+  <title>BOPO</title>
+  <map-list>
+    <map id="map-map">
+      <rule>
+        <keyseq keys="1"/>
+        <insert character="12549"/>
+      </rule>
+      <rule>
+        <keyseq keys="2"/>
+        <insert character="12553"/>
+      </rule>
+      <rule>
+        <keyseq keys="3"/>
+        <insert character="711"/>
+      </rule>
+      <rule>
+        <keyseq keys="4"/>
+        <insert character="715"/>
+      </rule>
+      <rule>
+        <keyseq keys="5"/>
+        <insert character="12563"/>
+      </rule>
+      <rule>
+        <keyseq keys="6"/>
+        <insert character="714"/>
+      </rule>
+      <rule>
+        <keyseq keys="7"/>
+        <insert character="729"/>
+      </rule>
+      <rule>
+        <keyseq keys="8"/>
+        <insert character="12570"/>
+      </rule>
+      <rule>
+        <keyseq keys="9"/>
+        <insert character="12574"/>
+      </rule>
+      <rule>
+        <keyseq keys="0"/>
+        <insert character="12578"/>
+      </rule>
+      <rule>
+        <keyseq keys="-"/>
+        <insert character="12582"/>
+      </rule>
+      <rule>
+        <keyseq keys="`"/>
+        <insert character="8364"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+        <insert character="12550"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+        <insert character="12554"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert character="12557"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+        <insert character="12560"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+        <insert character="12564"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <insert character="12567"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert character="12583"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert character="12571"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert character="12575"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+        <insert character="12579"/>
+      </rule>
+      <rule>
+        <keyseq keys="a"/>
+        <insert character="12551"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+        <insert character="12555"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <insert character="12558"/>
+      </rule>
+      <rule>
+        <keyseq keys="f"/>
+        <insert character="12561"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+        <insert character="12565"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+        <insert character="12568"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+        <insert character="12584"/>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+        <insert character="12572"/>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+        <insert character="12576"/>
+      </rule>
+      <rule>
+        <keyseq keys=";"/>
+        <insert character="12580"/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+        <insert character="12552"/>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+        <insert character="12556"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <insert character="12559"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <insert character="12562"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <insert character="12566"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <insert character="12569"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+        <insert character="12585"/>
+      </rule>
+      <rule>
+        <keyseq keys=","/>
+        <insert character="12573"/>
+      </rule>
+      <rule>
+        <keyseq keys="."/>
+        <insert character="12577"/>
+      </rule>
+      <rule>
+        <keyseq keys="/"/>
+        <insert character="12581"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-map"/>
+    </state>
+  </state-list>
+</input-method>

@@ -1,0 +1,4079 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>zh</language>
+    <name>quick</name>
+  </tags>
+  <description>Chinese input method with QUICK method.
+In addition to Chinese characters, fullwidth latin characters and
+symbols are available in fullwidth mode (turns on and off by
+"&gt;&gt;" and "&lt;&lt;" respectively).  This mode can also be turned on
+temporarily by typing "Z".
+</description>
+  <title>簡易</title>
+  <variable-list>
+    <variable id="candidates-group-size"/>
+  </variable-list>
+  <map-list>
+    <map id="map-starter">
+      <rule>
+        <keyseq keys="a"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+      </rule>
+      <rule>
+        <keyseq keys="f"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+      </rule>
+    </map>
+    <map id="map-map">
+      <rule>
+        <keyseq keys="aa"/>
+        <insert>
+          <candidates>間日暗晶暑曰昌曙昍暙闍閶閽闇𣈏𣊫𣊭</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ab"/>
+        <insert>
+          <candidates>明晴晡晞閒昺暠暪曘曞昞閙㫻</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ac"/>
+        <insert>
+          <candidates>題顯曠暝闐顥晪暊曊闠閧𨴴</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ad"/>
+        <insert>
+          <candidates>閑昧杲旴冔暆閫闑晽槩㫲𣉢𥟟</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ae"/>
+        <insert>
+          <candidates>最暖暴曼曝暇曖昄昅昹晙閿闅閖㫞㿺𣌊</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="af"/>
+        <insert>
+          <candidates>照景闖晾炅曛煦暸闌炚晱焛暕煝暩暻鴠曣鱀鶗鶡鷃鷐鷴鷳曭鵾鶥鷼㬎</candidates>
+          <candidates>㬙䳭𤋁𨳒𨶹𪂇</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ag"/>
+        <insert>
+          <candidates>量閨旺曜閏堲晊塈暀閮曈閵闉闛曤𤦉</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ah"/>
+        <insert>
+          <candidates>影易閉暘昒昐昜晜晹尟閟昣𨉖</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ai"/>
+        <insert>
+          <candidates>時閥戥昤閎閩曇旳昡暷琞閠㬢𣆂𣊉</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="aj"/>
+        <insert>
+          <candidates>早聞旱闡暈旰暉曄闢閈晬暔閛暲曋暺旿晫暤暭曍曎閗</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ak"/>
+        <insert>
+          <candidates>映昊暌暾閔闋旲旼旻猒晸暯閺曒闃闞曮敭晈暎関𣆳𣋒</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="al"/>
+        <insert>
+          <candidates>即昂晰閘昕昴昦郿鄤曏晣曱</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="am"/>
+        <insert>
+          <candidates>星旦暄昀暨閂晅閆暡曌閾闒闟昰暅暒暳𣊊𣌟</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="an"/>
+        <insert>
+          <candidates>門剔旯昑昲閌閅𣈥𣈯𨳊</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ao"/>
+        <insert>
+          <candidates>是閃歇昃曷晁閡闕欥昳暵暰曚歞暶閦𣋡</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ap"/>
+        <insert>
+          <candidates>昆悶匙昵曬曨𨳍𨶙</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="aq"/>
+        <insert>
+          <candidates>闈暐暽韙闥㫠𣊬</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ar"/>
+        <insert>
+          <candidates>問闊晌晤昭晗晷閣閤暱閭闆昫晑閜誾謈晧暿䦡𣇉</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="as"/>
+        <insert>
+          <candidates>昨勖晟曦勗昉昈昮晇閍昘朂𣇷𣈳𣌀</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="at"/>
+        <insert>
+          <candidates>開關盟昱昇闔閞暟曀闓</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="au"/>
+        <insert>
+          <candidates>晚既巴冒眉晓曉晃閱冕岊旵旽昢晥晛晼晻晲閐毼毷毾閹闀闚晄暚鼂䦧</candidates>
+          <candidates>𣅽𣇈𣈲𧡰</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="av"/>
+        <insert>
+          <candidates>晨晏曩艮暍閬闤妟㫰</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="aw"/>
+        <insert>
+          <candidates>晒闣閪𣈴</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ax"/>
+        <insert>
+          <candidates>閻閰𣋠</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ay"/>
+        <insert>
+          <candidates>晦閼</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ba"/>
+        <insert>
+          <candidates>脂賭睹腊貊膾贈胉眴睧腤膱賰瞷瞺𥌓𦡮</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bb"/>
+        <insert>
+          <candidates>月睛朋骨肺購瞞脯腈幂髓肭膈賄冪豽睄睊睎睔腢膌瞝貒瞲膼臑矊髇瞯</candidates>
+          <candidates>矋脪䐭䝼𥋘𥌎𦢈</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bc"/>
+        <insert>
+          <candidates>具貝賺腆冥脎臁瞑瞋膩賸臏贖臢胑貁賏賟瞚膹頯瞶顐矉顝矌贔髍髕贘</candidates>
+          <candidates>鑍㓁䐓䫤𦉪𦛼𦝁𧹏𩓚</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bd"/>
+        <insert>
+          <candidates>爭采睜脖眯瞇睬孚脒脬臊盱貅髁睏冞胣眛貤腜賝矂冧腂賖㬹䏭𧴯𧶄</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="be"/>
+        <insert>
+          <candidates>愛受服股脉膝肢腹販腺矍爰脲滕臌睃瞍骰眅朘脙脧腏睖睩朡腶皸賕骳</candidates>
+          <candidates>貑臒雘矎貜瞹膄䁓䐂𠖎𥄫𥊙𦢊</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bf"/>
+        <insert>
+          <candidates>然縣瞭瞧騰瞅膘祭炙腙瞟繇賒鵬鷂鸚睒膆賧鴅瞗縢膫膴膲瞴臐鵙矄臕</candidates>
+          <candidates>鵰鵩臙鶤鶪鶢鶻矘県眎肧賩鴡鵎鷄鸎鸜黱𤉷𤔡𥇧𥈡𦅚𦡞𦦨</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bg"/>
+        <insert>
+          <candidates>雞肚雕膛腫眶墾睦瞳臃脞塍膣眭睚睢瞠雎瞿貍胵脭脡脽腛膗朣膧臛矐</candidates>
+          <candidates>臞矔矅膶貛賍𥅾𦢓𦣇</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bh"/>
+        <insert>
+          <candidates>財彩腸盼膨膠豺彤肜胗眇睇豸彫賜胏眕贂朌膓䏟䏲𧶽</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bi"/>
+        <insert>
+          <candidates>冤膊賤豹腑冠爵眩肘肽肱髑賻髖矚肕肒眃胘胠胕戙脟睋骫蜰膞膙螣臅</candidates>
+          <candidates>臗蠈颻髆蠫朎𦞙</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bj"/>
+        <insert>
+          <candidates>軍脾肝賊辭罕腩睥髀盰肸豻眲睅脺睟骭膟貏賥瞕膵賱瞫瞱貚贉𥇍𦋐𦠜</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bk"/>
+        <insert>
+          <candidates>敗胸网膜冈胶腋奚胭朕腠睽瞰貘狊胈胦眹朠睙瞁瞙骹貕骾贆覹矙眏睺</candidates>
+          <candidates>罓𥉐</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bl"/>
+        <insert>
+          <candidates>脚腳鼎郛胛胂腼骱肵盺眒胹郥鄆郹郻鄍賗鼏膷瞓䁪𥇦𦉫</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bm"/>
+        <insert>
+          <candidates>且胜睡胆腔腥肛胚囗胝膻骶賦盷眐脛貾貹腄貆翢瞈膕髊睲睻瞾䁯䐥𦜖</candidates>
+          <candidates>𧷜</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bn"/>
+        <insert>
+          <candidates>剛則盯肌肮冗删胰刖腧眵刪貯骯肊刐刞肐盵肣胇眝胻剮眱脝貥睮貐甖</candidates>
+          <candidates>矃脷</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bo"/>
+        <insert>
+          <candidates>臉眨贝朦睫眺骸冢肷胍胲豚腴腚貶睞賅瞼矇胅朒朓眣脁脥腞睼瞛瞨臄</candidates>
+          <candidates>贌䀹䁢䐁</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bp"/>
+        <insert>
+          <candidates>懇懸眠朧腮臆眦貔矓腍膍瞣骴眤肶贃䀝𠖥𦚱𩨨</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bq"/>
+        <insert>
+          <candidates>用胖瞬舜腱膦眸瞵眻貄眫睷脌𢆡𥋇</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="br"/>
+        <insert>
+          <candidates>同周貼膽胳瞎胎賠骼瞻貉膳朐胴膪眙貂骷骺髂貽賂謄谿贍冏咼胊眧眳</candidates>
+          <candidates>腒睭腡膇賙賳貙譻瞘脗脴詧䁥𦛚𦞳𧵓𧵳</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bs"/>
+        <insert>
+          <candidates>勝助膀臟凸肪胯肋肟胙腭眄贓盻眑骻臇矏朥脇贜𦛨𩩍</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bt"/>
+        <insert>
+          <candidates>體瞪冊瞌皿肼胼脰臚髒豋膉膃賹贐髗䁅䁗𥅈</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bu"/>
+        <insert>
+          <candidates>见見目亂脫肥胞貌脆甩岡乳腕氍虢朊肫胱脘腌盹眈睨覓罌朏眊胐乿脕</candidates>
+          <candidates>睆睍睌腃貀貺睕睠腯瞃覞瞡膮膬賵覭覶髐鼆冚睸脃骲䁱䏙𥇣𥌑𦞴𦡆𧵦</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bv"/>
+        <insert>
+          <candidates>眼腿腰脈脹妥嬰胺罔媵脤賑賬膿臘髏盳眓眽腇腲膢瞜貗朖臈骽𦟌</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bw"/>
+        <insert>
+          <candidates>腦貓瞄腷膰冨腖𦚵</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="bx"/>
+        <insert>
+          <candidates>舀臍</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="by"/>
+        <insert>
+          <candidates>丹胩腓脢円</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ca"/>
+        <insert>
+          <candidates>錯曾鉑鈤銆鍺錩錔錉鍇鐠鐕銁鏳鐧鑥𨫌𨯩𨰝</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="cb"/>
+        <insert>
+          <candidates>鋪銷錦鑰鈉鈽鎬鎘鏑鈅鈰鉔鉓銪鋗錆錥錹錋錀鍗鎙鏞鐍鏼鐹鑐鑈鑴鈵</candidates>
+          <candidates>銱銿鍴鍸鍽鏋鏛鏰鐈鐗䤭𨦉𨦨𨧨𨧹𨩈𨩋𨫢𨭬𨯅</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="cc"/>
+        <insert>
+          <candidates>金鎮鑽貧鎖頌頒鐮釜鑫鋇谼鉥錤錪鍞顉鎌鏔鐨鐀鐉鐼鑌鑕釟鉷鋲鍂鎭</candidates>
+          <candidates>鎻鏆鐄鑛䥥𨩅𨫋𨭦𨯵𨯿𨰦𨰰𨰹𨰻</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="cd"/>
+        <insert>
+          <candidates>銖錚鎳鑠釪釨鉌銤銌銇銝鋍錞錁鍒鍱鎎鎟鏬鏿鏶鐰鐷鑅釶鍦䤪𨨥𨩚𨫟</candidates>
+          <candidates>𨬡𨭥𨮏</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ce"/>
+        <insert>
+          <candidates>錄鍛鍍鈑鈹鍰鏝鑤鈒鈙銢鋄銶鋟鋑錣鋷錂鍜鍐鍑鎪鎩鏮鏺鑀鑊鑗钁淾</candidates>
+          <candidates>銾䤼𨥖𨨏𨯙</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="cf"/>
+        <insert>
+          <candidates>鍬鍊鎢鏢鏍鑣炃鈥鳻錟錼錝鎷鎍鵜鵒鏚鏣鐐鐎鶲钂釥鈈錰鍄鐛鑂鑔鵭</candidates>
+          <candidates>䥪𨪛𨭆𨯧𨯨𪄇</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="cg"/>
+        <insert>
+          <candidates>鐵鐘鑼坌鈕銓銼鋰錐鍾鏜鏗釷鉒銍銈銋鋌錴鍠鍷鏙鑸鑵鈓鋥錱鑃䥓𨧀</candidates>
+          <candidates>𨫆𨫠𨯗</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ch"/>
+        <insert>
+          <candidates>分弟鈔錫鉍銻鍚釤釮鈖銵鎀豂鏐鏒鐋鐊鐬銹釖釾鉁𨥨𨧼𨭌</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ci"/>
+        <insert>
+          <candidates>公錢鈴釣鑄釵釩鉉鏘鐲谹釸鈦鈆鈜鈺鉧鉣銩鋐鋝鋨螸鎡鎒鎛鏹鏄鏀鐏</candidates>
+          <candidates>鐖鑆鑮鑱钃蚠鈎鋳鍀鍅鑧𨧻𨨲𨫎𨰜𩗩</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="cj"/>
+        <insert>
+          <candidates>針鋒鋅鏈銲鐸鑷釬鈄鉺銔錍錌鍕鎨鏎鐔鏵鑝釺鋽鎽鏠鏱𨥾𨩇𨪚𨭐</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ck"/>
+        <insert>
+          <candidates>父鎂鈸鉸鍥鏃攽敓釱鈌鉠銦鋘鍭豃鏌鐓鏾钀鈫鍈鍨鐭𨩉𨫼𨰫</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="cl"/>
+        <insert>
+          <candidates>卻爺丫斧釧鉀鉚弚邠郤鈏釿銂鄫鋉鎯鈡鉮鋛鋣鎁鎅鐁鐤𨦪𨧜𨧞𨧺𨨶𨰉</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="cm"/>
+        <insert>
+          <candidates>鏟翁鉗錘釭鈞鉦鉭鉏鉎鉽銊谾鋞錏鋋鍹鎉鎈鏏鑯鉟鉢鍟鎠𨦫𨯪</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="cn"/>
+        <insert>
+          <candidates>爹釘剃瓮甑釗鈐釔釕釚釳鈧鉶鉹銕鋓鍆鍘鑏鉘鍮鎆䥑𡯂𨥤𨧣𨧤𨪃𨬫</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="co"/>
+        <insert>
+          <candidates>欲錠欽鈇釽鉯鈲銚鋏錸鍉鎵鏇鏦鏷鐌鐻鐩鐱鑳鉄鍁鐝䥲𨧧𨪂𨫪𨬢𨭣𨮙</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="cp"/>
+        <insert>
+          <candidates>总鋼忿慾釴鈊鈚鉈鈮鈱銠鋱鋕憌錵鍶懖鎞鎴鏕鏸鐿豅鑢鑨鍃鏓麄𢚖𢤹</candidates>
+          <candidates>𨨩𨪜𨫞𨬌𨯚𨰣</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="cq"/>
+        <insert>
+          <candidates>鍵谻鉡鉾鍏鏻鐽銉鎿鑻𨫡𨬯𨭤</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="cr"/>
+        <insert>
+          <candidates>谷銅鍋鉛鉤鋁鈷鋸釦銘鉻錡錮鎔鎚鎗鈳鉊鉆鈶鉰鉐谽銛銗鉿銣銡鋙鋯</candidates>
+          <candidates>鋊鋦鋡錧錒錭鋿鍼鍣鍧鎝鎕鏂鐑鑩鉕鉫銄錇鍩鏴鐥𥖹𥗛𨦼𨧡𨭎</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="cs"/>
+        <insert>
+          <candidates>鋤鈣兮鉅銬鍔鎊鐫釢釫鈁鋮銙鐒鐪鑶鈼鎸𨯫</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ct"/>
+        <insert>
+          <candidates>盆鉼錳鎰鑑鑪弅鈃鋀錛鎧鎑鐙鑉鉝銏鐦𨩄𨩙</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="cu"/>
+        <insert>
+          <candidates>爸鏡銳岔兌鈍鉋銑鐃釓毤鈀鈂鈗銃鉬銫銧鋎鋧錈鋺錓鋾鍎鎲鎤尣鈨鈪</candidates>
+          <candidates>鋔鋴鋶鎇鎐鑬䒏䤞䤥𨥈𨥉𨦸𨬭</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="cv"/>
+        <insert>
+          <candidates>銀鑲銨錶鏤釹鉞銥鋃鋩鋠鋹鎃鍖鍻鍡鎱鐶鑞鎄鑹𨩆𨪁𨫀𨬓𨯂𨯬𨰃</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="cw"/>
+        <insert>
+          <candidates>鐺鈾鈿錙錨鐳鎦鐇鑭錬鍢鑘𨩊𨬬</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="cx"/>
+        <insert>
+          <candidates>鏽錎鍤鑇䤾</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="cy"/>
+        <insert>
+          <candidates>釙鉲鉖鋂䤵</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="da"/>
+        <insert>
+          <candidates>槽柏椿楷杳楮檜櫓栒栺棤棔榰榗槆槢樴橧橁櫡櫧晳栢椙橺㭼</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="db"/>
+        <insert>
+          <candidates>橋棉構桶棚橘梢柄棗橢棘柿枘槁榍檎朿柟栜栯梋桸棆棈楈楀楄楴楜椯</candidates>
+          <candidates>榾樀樆樠槦樇檛檽檷韝欈楕樃樋橌橗橣櫔韒㯂𣑐𣑲𣖜𣙟</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="dc"/>
+        <insert>
+          <candidates>橫頗賴棋枳楨槓檳櫃櫝朳柶柼栱梖椪椇榠槏槙樍賚樲橨樻檟櫇櫍欑韥</candidates>
+          <candidates>梹樌檱𣗍</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="dd"/>
+        <insert>
+          <candidates>木林棵森株李桴椁榛梱樑橾杅杝杍柂栫桲梌梊棌椈棎棞棦椕椸楪楙楺</candidates>
+          <candidates>榤樔樼橖檁韕韖韘櫟櫯楳槕槡檏㯗㰑𣕧𣚭𣜿𣞁𣟕</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="de"/>
+        <insert>
+          <candidates>樣极皮板枝隸椒棱梭棣椴梂杸柀梫桼棷棳棴椵楥榎槾樧檓檴櫠櫌欉栐</candidates>
+          <candidates>椂椶槺橃㮀䪖</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="df"/>
+        <insert>
+          <candidates>標杯禁杰焚柬棕柰椋楝楸槭樵檫紮梑棪榚榪榡榞槂槱樏橑橪鶆鶇鶒鷘</candidates>
+          <candidates>欓鸉欙樜橅橴鴂鶫㭂㯲𣏹𣜃𣜠𣜭𣞢</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="dg"/>
+        <insert>
+          <candidates>權柱枉框杜桂榷栓椎桎梃桷樘櫂檯杻埜梐桯梩梉桽楏楻榳樦橦橍檉欋</candidates>
+          <candidates>欏楃樫樭𣗎𨤳</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="dh"/>
+        <insert>
+          <candidates>才材楊梯杉彬杪桫棼枴鬱枒枌柲梤楌樛槮橕檅柹𣕚𣘀</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="di"/>
+        <insert>
+          <candidates>機樹村构松梦寸槐韌橱杓杈柃梵榭樽棧楓檮櫥杋枟柎蚻榑榯蜤槸槫橶</candidates>
+          <candidates>檥檒欂欃蠜韣欘欚栂樳橒檝檲檵櫉欝𣏾𣗳𣙀𣚦𣟂</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="dj"/>
+        <insert>
+          <candidates>杆末樟樺杵枰梓棹楠楫榫槔槲枓桿皯枺栮桻椑椊楎榵韎槤樥橝橭樿檡</candidates>
+          <candidates>櫆韗韟韡杄枠榟槹檊韠㮖𣗏𣘚𣝦</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="dk"/>
+        <insert>
+          <candidates>校模梗枚樊檄楔杖楱橄敕夬杕柍柭栚猌楩楑槉榩榽韍樉橔枤栶楧㯳𣐀</candidates>
+          <candidates>𣖙𣙙</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="dl"/>
+        <insert>
+          <candidates>桥束析柳梆郴榔椰柙槨櫛朻柛桏栭栦楖梀梛郲棩郼鼒栁棅榊檙㭱</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="dm"/>
+        <insert>
+          <candidates>本極整查植柑杠桓檀柢栩棰楂槎楦榻槿枑枃柸柤柦栻桱翉椌椏棫梴槥</candidates>
+          <candidates>樝槶橿櫪櫼欞杢杫枏柾栍椬㮼𣏴𣏵𣜖𣜯</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="dn"/>
+        <insert>
+          <candidates>机刺杭榆剌杼桁栘檸刌朾朹杚枔柫桋栵梣棽楟楋椼橩檦梈椚椾櫈㓟</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="do"/>
+        <insert>
+          <candidates>來檢楚核桃橡椽檬柩橛樅樸枎杴柣柧柉栨梜欶棶椓楰椗僰樕槬檖檨檚</candidates>
+          <candidates>檺櫞椘榢𣑯𣔙𣔰𣠺</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="dp"/>
+        <insert>
+          <candidates>想棍麓枇柁栳懋欐朼杙杺杹柅惁棯棇楒憖橞檍櫳梽椛楤樚樬檧櫘櫶𢡟</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="dq"/>
+        <insert>
+          <candidates>样棒攀楗樨韋杽柈揧椲舝橉檞櫸桝橓欅㯬㿹𣛟</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="dr"/>
+        <insert>
+          <candidates>槍格椅枯樞榕檐桔棺枷柯桐梧杏柘枸栝梏椐榀槌楛櫚礬櫺柌枮桮梮梒</candidates>
+          <candidates>桾梠棓棝椆椥楉楁椷榶榙韐橏檹檶櫙櫮枱柖柗櫊㭘㭲㭻㯝㯴𠵍𣟖</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ds"/>
+        <insert>
+          <candidates>柜朽榜楞榨柞枋枵栲樗朸杇枍柺柪桍梬橯檇櫋勅勑栃栛㮙㰕</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="dt"/>
+        <insert>
+          <candidates>械檻橙楹柵枅枻柆栟梇梪榼榿榓橀韞櫨枿桖榅榲㰘𣖕𣙷𣛮𣟗𧯴</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="du"/>
+        <insert>
+          <candidates>相概枕梳桅橇札杌杞杷栀桄楣皰梔梡榣橈櫬欖杬杶枆枙柷柮枹梲棬棡</candidates>
+          <candidates>楯榹榥樈槻槴檤櫏梘梶椀椃㭠㯄𠌊𣏌𣏞𣏺</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="dv"/>
+        <insert>
+          <candidates>根樓婪桉椹榱樾棲櫻桹桭桵椄棖楬椳椻榬榐橠韔檭櫰欀杧楆楡楲檂辳</candidates>
+          <candidates>𣐿𣞼</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="dw"/>
+        <insert>
+          <candidates>東榴欄檔栖柚檑棟檣椔楢楅瑍榃樄橎櫑欗梄</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="dx"/>
+        <insert>
+          <candidates>樁桕韜槄橚櫅櫹</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="dy"/>
+        <insert>
+          <candidates>朴梅柝榧柊栴棜棑檌枬</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ea"/>
+        <insert>
+          <candidates>潜潛泊汨汩洵渚滏漕潴沓湣澗涾涽淐湆湝湷潳潽潧潪澮瀦洦湐𣇹𣾂</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="eb"/>
+        <insert>
+          <candidates>滿清消湖涌潮溝滴滑漏沛漓浦溯湍渭淆洧涓浠潸潲濡瀹灞淪滯瀰汭淯</candidates>
+          <candidates>淜湇湑湡渧滈滆溎溍漘漰滫潃滽潏濄澫濔濿濷瀡灊洅渪澝㳍㵎𣳽𣻸𣾷</candidates>
+          <candidates>𤀑𤁗</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ec"/>
+        <insert>
+          <candidates>演洪滨濱潰滇沭泗浜淇淦溟潢濂瀵鋈鎏漬潠澦瀆瀨瀕汃泬浿浾湴淟湞</candidates>
+          <candidates>溓滜濆澒潩澬鍌鍙瀇濻瀢瀩顙瀷瀻灒灝灦灨洂湏濓瀬灐錃頮㵑㶊𣲵𣳉</candidates>
+          <candidates>𣾁𤂌𤃡𤅄𤅎𤅖𤅺𨮜</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ed"/>
+        <insert>
+          <candidates>深游染淨浮涂梁渠池淋涤滌澡淳桑滁粱柒沐沲洙渫溱溧滹潺汙沬灤洊</candidates>
+          <candidates>浡涍浨涃淭淉淗湤滘溙漅澖潗澯澲濼渘潹澟濚瀞㳜㵩㶅𣓥𣳼𣳿𣶶𣸑𣸯</candidates>
+          <candidates>𣺉𤀻𤂋𤄿</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ee"/>
+        <insert>
+          <candidates>沒水双汉渡波漆漫浸潑澱瀑漾泳涵汲浚淑溆淼湲濩汳汥沝淩淥敪溰滱</candidates>
+          <candidates>漃漮澓潻濴濲瀔瀀瀫灁叒浗湶溵𣲙𣲷𣿀𣿯𤀼</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ef"/>
+        <insert>
+          <candidates>源滅濕涼淡潔漂漁燙潦淙湫溲漯潟鴻瀉鯊沶洃溈湅渿湠溔溹漹漈潶潕</candidates>
+          <candidates>潐潫澋澿濝瀌瀠鵽瀿瀳鸂溸漴濙㵯𣶷𤄄𤄏𤏁𪃡𪄣</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="eg"/>
+        <insert>
+          <candidates>注灌潤滩灘圣汪淮涅洼涯淫湮湟渥滢潼濉濯浬湩塗溼濰洭洷垽浧淕堻</candidates>
+          <candidates>湹塣溦漼漜漟澭瀍瀅瀖灈灉灅灕坔洤涏滙漄𡌂𡒗𣻹𣻺𣽿𣾀𣿅𣿬</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="eh"/>
+        <insert>
+          <candidates>沙涉湯滲泌渺涕澎沏汾沕泲沴浵漻滮漡濊濏灪涁瀃𣶼</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ei"/>
+        <insert>
+          <candidates>法沟淺濁滋濺濤汰叉汐蚤汊泠泫泓淞溥溽澍汍汎滷潯汋沄汯泭浤涐淂</candidates>
+          <candidates>渢溞溾漙漒澐濈澪濧璗瀎瀜灂瀺灟魙澊灋瑬㴻𣶽𣸮𣻷𣿭𤂅𤅕𤅜</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ej"/>
+        <insert>
+          <candidates>渾汗沫潭汛湃汁淬洱淖漳滓準漣澤汻泙涆涬湳渳湒滸滭潬澕澣澼濣濢</candidates>
+          <candidates>灄灛汘浲㳯𣂎𣺿𤂍</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ek"/>
+        <insert>
+          <candidates>決激淚液漠湊溪汹洶沃澳澈汶泱洇溴澉渙瀲汏汱沷洨洑浂洢浭浟涘涋</candidates>
+          <candidates>洖淏渼渜湀湨湥渶潎漵滶漺澂潡潣澞渂湙漖潄㵟𣿮</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="el"/>
+        <insert>
+          <candidates>济漸沖洲沂渊浙泖涑淅淠湎澌濞淵汌沜洏浺洍漷濎瀄澵𣶸</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="em"/>
+        <insert>
+          <candidates>江叠渣瀝沮溺涎泔洹渲溻澶瀚瀣沍泜涇澀沚泍泹泩涳淢淔淽渱湦溠滻</candidates>
+          <candidates>漍澅潝瀸灗汮泟洆湼漋漌澁㳋𣲚𣳇𣵀𣵾𣶺𣿫𤅷</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="en"/>
+        <insert>
+          <candidates>汽測沸灣泞汀渝汔沆洌涔涮湔瀛濘瀏氿沀洟洬洐剟浰淛渟漧滼瀱汵汿</candidates>
+          <candidates>涥渕灜𣶹𣻗𣼵𤅀𤅗</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="eo"/>
+        <insert>
+          <candidates>漢泛淀漩泅漱洮浞涿溷濮濠浹濛泆泒淶欼湜溛潀漇漎潒濋澽澨澰歠沢</candidates>
+          <candidates>澻灍㵪㵵㶑𣶏𣷸𣺊𣽁𣾴</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ep"/>
+        <insert>
+          <candidates>泥混添沁沱泯漶漉沘洩涊懣濾灑汦沎泚淴淰惉溒潓澺澸濍濦濨懘瀧瀗</candidates>
+          <candidates>慂滺漗㴓㶏𤃉</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="eq"/>
+        <insert>
+          <candidates>洋津泮洚挲洠浶湋湕滃潾潿潷澥漽澾</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="er"/>
+        <insert>
+          <candidates>活治河減洞沿洁溶渦沾淌浩涪沽涸潞洛洽浴沼洄洳浯涫溏漪澹滄呇泂</candidates>
+          <candidates>泃泀泇沰洺洉涒浻涺淍涻湉渽湁渃渮湱渹硰滒碆漚澔瀯沯浛渏溚濶濸</candidates>
+          <candidates>㵆𣸬𣺈𣽊𣾏𤀺𤀽𤅟</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="es"/>
+        <insert>
+          <candidates>污渤沪沔泐滂湧氻汸洰泑洿洘涄淓澇汚泎𣵛</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="et"/>
+        <insert>
+          <candidates>温溫盜濫泣泄澄溢洫湓溘漭澧盪瀘汧汫洴浢渀盓渰濜濭瀊灃灆灩泋涖</candidates>
+          <candidates>溋㳑𣸭𣸹</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="eu"/>
+        <insert>
+          <candidates>流況沉洗泪泡溉澆港淹淘汕沈湘汜沅沌洎浼浣淝湄氾洸浥滬澠濬沋沇</candidates>
+          <candidates>泏洈浘涗涀涴淈淲淣毲渻湸湚滉滵漞瀙灀灚灠滛滝潖灔灧㴲㵌𣳈𣷣𣸰</candidates>
+          <candidates>𣸱𣻻𣻼𣿰𤀹</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ev"/>
+        <insert>
+          <candidates>派浪滚滾濃婆漲渴淒汝湛漤娑裟澴汒泧洝浽渨滖滍漊瀁瀤瀼瀴灢泿浱</candidates>
+          <candidates>涱涹㳖𣺹𤂑</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ew"/>
+        <insert>
+          <candidates>油酒洒溜潘淄瀋瀾沺浀涷湢渵滀濇澢灡畓㵢㵽𣶻𣺋</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ex"/>
+        <insert>
+          <candidates>濟滔瀟淊潚㳫𤄙</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ey"/>
+        <insert>
+          <candidates>海淤汴泝洀灖渄</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fa"/>
+        <insert>
+          <candidates>糟嘗粕熠糌熾燴焟粨熸糬焝焻熷𣆤𣆥𤇢𤏸𦒉</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fb"/>
+        <insert>
+          <candidates>常精糊幣肖脊炳糯烯煳煲熵糈燸帣烠烳焆焨煇煪熇熁膋熥燏燆糒燤爚</candidates>
+          <candidates>糲焩焫焴㷌㷍𤉶𤎜</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fc"/>
+        <insert>
+          <candidates>類兴煩賞糞烘炽烡熐熉頖熿熼燲顃鎣爌纇顲熑燫爀粸㷷𤊄𤋺𤎽𤓎𧹍</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fd"/>
+        <insert>
+          <candidates>学米炼煤榮燦燥爍籽棠桊烀糅灺炑烰焞溳滐熂粿燊爃栄檾炧烌秌㮡㶿</candidates>
+          <candidates>𡦃𣏦𤊕𤌴𤒇</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fe"/>
+        <insert>
+          <candidates>爆叛糠燮煅熳煆煖燬粄焌敥滎燰夑糉糭𣳾𤆣𤊥𤎖𥹉</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ff"/>
+        <insert>
+          <candidates>黨火燃煉炎糕燎尜焱粽熒縈燻鶯鱉絭煂熛禜燋燚爊鶺鷩爣炋炏燝爎爕</candidates>
+          <candidates>駦鮝㷧𤐄𤑛𤒈𥼚𦂗</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fg"/>
+        <insert>
+          <candidates>煙糧堂耀雀煌灶瑩炷塋炄烓烇粈烶煁煡粴觠熞燿爅爟粧烾焳熣燑糚𤌍</candidates>
+          <candidates>𤍢𤍣𤎌𤓓𤾗</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fh"/>
+        <insert>
+          <candidates>少粉炒券煬糝灱粅焍烿牚爩焬粆糃</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fi"/>
+        <insert>
+          <candidates>燭螢灼炫爝糍糨糰炂炩籿燖燇糔糐燨蟞燽爞蠽烐烵籾飊𤋉𤑚𥺁</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fj"/>
+        <insert>
+          <candidates>料輝焊粹烽焯炓籵籸粁粖焠溤溮煣粺熚燂燀燁燡煵熢爗㒯㶥㷆㷨𤉖𤍤</candidates>
+          <candidates>𤒹</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fk"/>
+        <insert>
+          <candidates>类烟尖敞敝粳炔煸燠敉糇糗煥燉糢炆炴粀焲獘燘炦烄䊔</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fl"/>
+        <insert>
+          <candidates>鄰郯炘粌炠</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fm"/>
+        <insert>
+          <candidates>粗煽煊灴炟炡烜烒烴烻焢糑翷爧爏甞䉺𤆥𤯵𥺼𥻗</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fn"/>
+        <insert>
+          <candidates>灯判削炕剡彆弮籺烆瑐瓽熪甇糋甐劏炥㶴𤆤</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fo"/>
+        <insert>
+          <candidates>炊豢燧蹩尐烑烗烼欻焮熯煫煶熌粎𤐶𥽋</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fp"/>
+        <insert>
+          <candidates>熄憋斃焜燜烢熝熜燱麊灹焾煾熴爖粃㷓䊌𥺃</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fq"/>
+        <insert>
+          <candidates>半掌拳烊犖燐牶揱溿煒韏燵粦</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fr"/>
+        <insert>
+          <candidates>營糖尚炯粘熔糙焙烙炻焐焓炤烔烚焗焀粡溡煠煢煻熗熰謍炣烱焅煱熺</candidates>
+          <candidates>糦㷽𤉙𤉸𤌚𤐵𥺂𥺦</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fs"/>
+        <insert>
+          <candidates>勞炉炸烤劣炬粔爔劵勌㶭𤏪</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ft"/>
+        <insert>
+          <candidates>燈爐粒弊煜燼烅粣焺熅熆熤爁糮灷𤋊𤍈</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fu"/>
+        <insert>
+          <candidates>党光省燒炮卷灿瞥眷烷氅炖籼粑炾烍粍焥亃溗粯熀熩覢罃覮虩鄨齤爦</candidates>
+          <candidates>焵煀煷煼熎鼈䙺𤆵𤈛𤊓𤏲</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fv"/>
+        <insert>
+          <candidates>粮裳煨煺粼籹烺嫈滊嫳粻熡褮爙燶爉糂飬𡠺𤇼𥻘</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fw"/>
+        <insert>
+          <candidates>當爛熘燔粞煔醟糷煏爤畑粬</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fx"/>
+        <insert>
+          <candidates>焰熽爓熖𤑳</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="fy"/>
+        <insert>
+          <candidates>炵烞烸㸆</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ga"/>
+        <insert>
+          <candidates>增堵馨赭堷韾堦𣊁</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gb"/>
+        <insert>
+          <candidates>幫壩埔冉墒堋埽塥墉堉趙埇埥堣堶塉塙墆塴墑壖趫毊墧壻㘵㙟</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gc"/>
+        <insert>
+          <candidates>賣填墳赤赫鏊頡壙贅埧塓塤趛鋆赬贄壝趪鏧顤趲垻趩頳㙉㙺𡌶</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gd"/>
+        <insert>
+          <candidates>地垛圩堞墚垀垺埻堔堁埩埰塛趎趓槷趜壈趮垜堢槖㘾𡏭𡑕</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ge"/>
+        <insert>
+          <candidates>報鼓趣坡殼圾坂埭墁彀觳赧穀轂夌埐堎埱嗀嗀榖漀瞉敼縠赮豰皾鷇埈</candidates>
+          <candidates>瑴皷糓𡐓𢿣</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gf"/>
+        <insert>
+          <candidates>熱坏熬塬熹塢壎燾埮堜墂燅縶鴶趭鵱驁騺鰲鷙趂鷔㷫𡐤𡓽𪇟</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gg"/>
+        <insert>
+          <candidates>土堆埋墊圭垤埕堙臺坴垚埆堐堹堭墔趖墥趡趯鼞𡋣𡐖𡓨</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gh"/>
+        <insert>
+          <candidates>声場趁彭埸坋赻趀墋刧圽埗塲䞶</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gi"/>
+        <insert>
+          <candidates>去塊封執壽寺坛坶埒堍螯螫塒圴坽埶堸尌赨塼墫壿螜壔蟄鼜刼坿墵壜</candidates>
+          <candidates>蟚蠧𡊨𡊩𡌺𡭄</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gj"/>
+        <insert>
+          <candidates>聲赶趕幸埠坪埤鼙聱毐垶埣墇墠趠墿鞤圲垾埄塳墰𡌄𡎎𡎜𡐿</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gk"/>
+        <insert>
+          <candidates>块坟墩埃敖埂赦垴堠獒塽坱垘赽堧塻墽墺壧坆坺𡎘𡑒</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gl"/>
+        <insert>
+          <candidates>却郝坤圳圻赳邽邿垹墎鼘圿堺𡏆𨚫</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gm"/>
+        <insert>
+          <candidates>均域坦壺塌翹坯址墟垣坩坻埏埴趄壇壢坵埡赹堩埵塕堽壼趐墐翿塇𧰒</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gn"/>
+        <insert>
+          <candidates>壳坑圪甏趔圢坅刲坲垿埁堬趍墘刦坾赺㓤䞘</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="go"/>
+        <insert>
+          <candidates>走款堤壕坎垓瑗趑塚垗欯趒墣壉歖趧埞塜㙇</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gp"/>
+        <insert>
+          <candidates>志坨坭埝懿恚坁垞塨塶愨慹垊堒壠慤憙㦤𢡱</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gq"/>
+        <insert>
+          <candidates>墀摯坢垟垏埲煓摮摰墶</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gr"/>
+        <insert>
+          <candidates>喜超培趟塘塔吉垢嘉坷坫垌垧磬謦堝嗇坰垥埼堌堿塎趌趏墡赯謷謺嚭</candidates>
+          <candidates>鼛囍喆嚞坧趦䞦𡄻𡌃𡏾</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gs"/>
+        <insert>
+          <candidates>城勢垮坊劫圬坳塄劼赲堮塝墈壾㘭</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gt"/>
+        <insert>
+          <candidates>垃壹盍塭壴塏墱壏壒盩壚壣垪塀塩</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gu"/>
+        <insert>
+          <candidates>起境趨圮圯垸埯堀瞽罄堯鼇圠坉垝垙赸埢堈堄堳趉亄赩覟墝鼁鼀趬覿</candidates>
+          <candidates>坃垍埦売嶅㙈㚁𡉏𧡘</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gv"/>
+        <insert>
+          <candidates>越壞壤堪喪堰袁垠垵埌堨塿朅鼚㙎𡒶𡤜</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gw"/>
+        <insert>
+          <candidates>墙墦埬堛塯趥墻壋𡊰</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gx"/>
+        <insert>
+          <candidates>埳壛</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="gy"/>
+        <insert>
+          <candidates>赴坍卦坼鼕</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ha"/>
+        <insert>
+          <candidates>白簡香昏籍舶箔稽徇昝氆皙箸簪艚筍昋稓皛徻濌簎氌穭馫稭䅧𥟠</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hb"/>
+        <insert>
+          <candidates>師稱策肩篇稍歸稿稀篱篩帥帛篙箍犏犒筲箐篝艄魈魑魎籥帠舑幋稐筩</candidates>
+          <candidates>犕稰稨皜艑犞篟穚艜簥犡簼簻鶳鼱黐帋徧箒篐籂䄲𥡲𥮉𥰆𥱊𥴰</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hc"/>
+        <insert>
+          <candidates>與質須積興顧贊貿輿簧箕犋秫稹頹颶簣犢簾籟黌籲舼稘頎篊頧篔篢鴥</candidates>
+          <candidates>穔簀顊顅簨魌穨馦鶀穬籅鼰贕鼸籫軉穥籄貭鋫鍫鎜頟馪魐𦧺𩗗</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hd"/>
+        <insert>
+          <candidates>學条乎季躲朵徐孵竽梨禾朱稃稞篥臬魅牠釆梟槃箏築篠牸秝棨犉稌稕</candidates>
+          <candidates>稛筡艀艅箖箘箷艓篨馞鵌皪栞棃犔秄竾筂躶躹㹀䲷𤽜𤾚𥣈𥱥𪆫</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="he"/>
+        <insert>
+          <candidates>反般段役毁毀彼泉黎艘簸凤黍殷叟後夂殳稷馥皈笈舨毬復稜穫颼籐彶</candidates>
+          <candidates>笝笯徦稄煰稯箙鬾艐毈毇澩鵔犦忁籙齂艭犪鸔灥叐斅稪穅籰艔鸌㴝㿭</candidates>
+          <candidates>䉶𢓭𣪧𣲛𤛔𥟇𥲑𥴠𦨭</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hf"/>
+        <insert>
+          <candidates>系鳥秋烏毯鵝熏鳳纂爨舄綮黧禦篤鵠鱟衃徖扊舕熧穄篜縏鴔鴩鴟燢穛</candidates>
+          <candidates>篻鴸鴰鵅鵃鴭簝鵖鵚爂犥鯬鵳鶂鵯鵹皫穮鶞鶣鶖飉魒鷎鶹鷌鷍鷑鷮鷭</candidates>
+          <candidates>鷽鸄鸒徱毜熈緜颷飃飈鴌鴴鵞鷉䉀𤆬𤾸𥟡𥡗𥸎𦧲𩿞</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hg"/>
+        <insert>
+          <candidates>種重往程皇筐雇艇凰稚籬牡籮壬徨筌篁衄艟雒垕垼牷秷觕筀稑筳艎壆</candidates>
+          <candidates>犝篞篧穜簊魋鵻籉籊觷鼮籗籦忂㿥𡈼𡉼𡒊</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hh"/>
+        <insert>
+          <candidates>物身第彻秘秒竹穆彡秭笫笏鼢穋穢颺釁舠牬秎牻稊颩颬馝篎穇篸簜飂</candidates>
+          <candidates>飋笌𨈘</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hi"/>
+        <insert>
+          <candidates>的我么得等風特待射鬼丟凡私卵符蚕舟魄簿篡筏魏舷禹睾夙璺螽篾箋</candidates>
+          <candidates>籌彴彸牣彾瓝牳皊笭舲皒蛗箹蝵斶穖篿簙艤颾鼭衊皭穱籛魕艬瓥鸃秢</candidates>
+          <candidates>簒舦舩艥螌衂䑺𤿂𥫩𥯆𥳀𦦵𩴾𪀔</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hj"/>
+        <insert>
+          <candidates>科千筑釋聳竿拜篷秤卑秆稈稗阜皋魁戽秣簟鼾箄簞夆皁毧斞衈煐筸艂</candidates>
+          <candidates>箤皞篳簰簳鞶轝籜鼲皐皡皥稺篺臯軃辠䅿䇯𢔛𢕔𣁽𤙴𥭴𩲭</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hk"/>
+        <insert>
+          <candidates>笑风微徹牧臭秧啟筷囱囪簇黴奥徽笋夭囟徵徼敫戾皎筻筱篌魃鼷奧鴃</candidates>
+          <candidates>笅筊徯煟徶瞂氁箯敿徾簆鼤鼣皦簢鼥籔鰴鼵鼳鷻斆筃飇馛齅㼎䈣䉠𠘰</candidates>
+          <candidates>𥰡𩖰𩡗</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hl"/>
+        <insert>
+          <candidates>种所節斤印鼻御郵秉卯卿邸邾郜郫鄱筇箅舯卹卬郋郈笚舺郳笻鄅鄔鄋</candidates>
+          <candidates>鄎鄡鬿鄮篽篰酇籪卽斵簛魀䘏𠒒𥡝𥤃𨛘</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hm"/>
+        <insert>
+          <candidates>生翻征鸟牲垂甜徑租笨扇舋翱氐徂竺笪笙筵筠箝箜舡翩齄牴箠篛錕籤</candidates>
+          <candidates>彽笁迣甡秠秪笉牼犆煘稙稢艖鬳簅篲簂魊鼪魖齇徃籖翺躰㽓䇛䎗𤚗𥮳</candidates>
+          <candidates>𥰁𥲤𥳁𥳾𦤎𦩒𨊛</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hn"/>
+        <insert>
+          <candidates>行几制利衛街移剩航刮箭衡躬衙銜鳧衍剁劓衢鼽彿術劉衝衎笐笒笰衒</candidates>
+          <candidates>衖衕鳦瑏筣甀甂甃箌劄甈箾衚颲簃齀籈劗籯凢刋毺秔筕箣籝衏衞衠䘕</candidates>
+          <candidates>䘗𠂊𠒣𠜎𠜱𠠬𢖍𤭮𧗠𧗤𧗽𧗾</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ho"/>
+        <insert>
+          <candidates>從八失徒瓜稼乏簽欣秩爪篆彳徙歃瓞笊筮簌臾艨徠歟徥筄臮筴歍歋箑</candidates>
+          <candidates>箛箂篋篴簁簐穟艞籇躗籧笟篏衆辵颴飜䠷䶑𤔅𦩂𦩑</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hp"/>
+        <insert>
+          <candidates>怎息穩悉乘德愁氏籠皂穗乖舔惩懲舵乇忝牝愆憩秕稔舐篦簏舭慇慫鴕</candidates>
+          <candidates>秅秖秜笓皉秺笢毸馜颸徿犤怣悤惣憇笩籭鼧㦛𠤣𢜛𤜆𥯨𦨮𨈚𨉼𪈳</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hq"/>
+        <insert>
+          <candidates>舉律筆牛衅犁掣肇徉毪毽甪牪徫舽揫煋搫稦徲篫犩夅徤擧牜犂犇穉颹</candidates>
+          <candidates>䭰𢔓𥣡𥯤𦤑𩗴</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hr"/>
+        <insert>
+          <candidates>和后向各告管船答躺艙舌筒譽黏吞毡徊軀稠秸咎磐徜牯牾牿犄扃稆皓</candidates>
+          <candidates>笸笱笥笤笳笞筘箬箴舸鼯喬箇颱颳簷扂秮徛徟笴笘毰筈筎稒筥筶犗箈</candidates>
+          <candidates>颭簉礐簭鼫鼩礜簬齁嚳譥讆秱秴穃篬簵舚鼦䅮䇹䈑䫿䭲𠿟𤘘𦨴𨸏</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hs"/>
+        <insert>
+          <candidates>動房务戶犧秀筋舅甥乍彷笮舫舴徬粵勳牞劮竻勂秬舿筰勫篣艕簩艣軂</candidates>
+          <candidates>籩劤筬筯簕𩖸</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ht"/>
+        <insert>
+          <candidates>算血升盤籃扁艦盥笄笠簋簦舁艋皚盉皏笲筭篕艗簠馧鵿籚艫笧笹䀉䅬</candidates>
+          <candidates>𥵃</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hu"/>
+        <insert>
+          <candidates>看自兒先覺毛爬笔盾島箱兜循稅笆禿牦皖卮岙徭毳扈眚嵇筅筢箢篪篼</candidates>
+          <candidates>舢艉艏秈筧範癿戺峊秏毨瓟笎舥虒笵笣兟犈犅筦覛犓穊箎颮皝箵艒覣</candidates>
+          <candidates>嶨嶴篹篘臲穘馣鷈鼶齆嵆巵徺旣爮箲躭鶃䚀䬙䭯龜𠒇𠒎𠒑𡷊𢔰𣭚𤙥𤾂</candidates>
+          <candidates>𤾆𥝲𩖞</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hv"/>
+        <insert>
+          <candidates>很委鼠稂穰魍鼹裊製簑簍穠鼴笀扆媝媻筤嬃魆褩躽艛犣忀齃齈齉籑躼</candidates>
+          <candidates>馤䬐𦤦𧘇</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hw"/>
+        <insert>
+          <candidates>备留番笛釉皤籀舳舾鼬穡籣徆牰毢秞稫簹艡籓飀畠艢䉪</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hx"/>
+        <insert>
+          <candidates>稻簫臼臿穧艩𦥑</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="hy"/>
+        <insert>
+          <candidates>处靠冬斥徘扉篚箊馡鼨𤘪𥮴</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ia"/>
+        <insert>
+          <candidates>间询昶庴廜廥禬禇麘黁𥚕</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ib"/>
+        <insert>
+          <candidates>席朗廟甫庸膺禸凊廗禘禰禲禴庽禑禙𢉼𥛣</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ic"/>
+        <insert>
+          <candidates>資朮廣麻廉祺麒鏖貳禎賡凎剢貣貵廎廙禛顑顣黂禷禶凟禩貟𥜝𥜥</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="id"/>
+        <insert>
+          <candidates>床糜庥粢麇麋凜祂枲凈庨栥祩秶楶祼禖廩穈麜凃凓祙麕㮾𠘙𣘼𪊽</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ie"/>
+        <insert>
+          <candidates>度设求永冰廢康慶廈凌庋皴廄祿祋庪庱祲廋禐黀麚氷祾禝𠗕𪊴</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="if"/>
+        <insert>
+          <candidates>為凉戚熊鷹凛庶炱礻祢禚縻馮鳶鷓絫廌緳廡禡麃凞鴘鴾鵏鶊鶶鷛爢烕</candidates>
+          <candidates>麖𠘑𠘕𤇍𤒼𩾷𪇵𪈠</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ig"/>
+        <insert>
+          <candidates>社准座庄庭塵廛麈庢凐隿凗塱塺禋觱廱垐禥𡏅𤨣𥚃𪊶</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ih"/>
+        <insert>
+          <candidates>参參廖戊祕尨庌庬禓冴㣑𠖳𢒋𢦓</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ii"/>
+        <insert>
+          <candidates>麼冷府魔廚戈戍凇祛麽麝禱戔礿庤尃祔廆廕螚禨螷飆蠯広庒㕙䄉𠗟𤦂</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ij"/>
+        <insert>
+          <candidates>庫戎庳禪軬祽禈廦禫麛禆麞𪋟</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ik"/>
+        <insert>
+          <candidates>义决廠救凑庆敷犬矣廒祆祓禊犮冹祅猋麌䄃䄄𠗃𠗫𪊓</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="il"/>
+        <insert>
+          <candidates>神冲州廓廊郎祈祁邰丬臧鄘廝庍祌祄郕郙鄬凘鄜鄺廍</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="im"/>
+        <insert>
+          <candidates>或底式祖叁戌冫冱甙廑祉祗彧祤禢禤麆麠冮弌弍弎禃𠗊𥘵𪊟</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="in"/>
+        <insert>
+          <candidates>划序瓷廁冽麂庈剆瓵剫剼劘凴剗戹𠙖</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="io"/>
+        <insert>
+          <candidates>之次凝腐庚庹庾祧蹙庂庣欴祑庲欸禔禒廞禭</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ip"/>
+        <insert>
+          <candidates>能應感態憑龙廳龐惑鹿庇怠弋忒庀恣祇慼庛怷麀廘禗慦廲麤叅</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="iq"/>
+        <insert>
+          <candidates>祥摩牟庠廨麟禕犘廯冸𠘚𦘦</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ir"/>
+        <insert>
+          <candidates>台店减磨冶启禍咸凋唐咨祜祠禧祐冾凅祏祒祫凔祰禂麔麙啓禟譍麐麢</candidates>
+          <candidates>麿㓈䄎𠗐𢈈𥛶𪊲𪊺𪎩</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="is"/>
+        <insert>
+          <candidates>成门户祚礽祊</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="it"/>
+        <insert>
+          <candidates>禮盛盞戒弁廬庰盚祴廅凒盙𠗠</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="iu"/>
+        <insert>
+          <candidates>况视視礼尤允祝廂冼庖庵祀麾庉祪祹毿禠麍麑廐祱麅𠬍𥙑</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="iv"/>
+        <insert>
+          <candidates>装良威姿凄讠禳裘戉祣祳廔餈麎廮飡</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="iw"/>
+        <insert>
+          <candidates>福凍庙畚庮廇廧</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ix"/>
+        <insert>
+          <candidates>麡𪗆</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="iy"/>
+        <insert character="38753"/>
+      </rule>
+      <rule>
+        <keyseq keys="ja"/>
+        <insert>
+          <candidates>者暫宿耆窨𣇸</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="jb"/>
+        <insert>
+          <candidates>朝輪胡輛帘竊宵輔轎寓宥巿窉軜寎輎輤輣輲麶寗轜麱㝢㝯𡩅𡩋𨌯</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="jc"/>
+        <insert>
+          <candidates>實真寶戴賽額顛賓穴寅賁鏨竇寊軹寘輁頍窴賨頞顁轒鑋寳賔賫賷䥅𩓐</candidates>
+          <candidates>𩓧</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="jd"/>
+        <insert>
+          <candidates>字未案宇栽寐宋孝寨孛橐窠麴榦穻寀窏窙孷槧輠窱輮寱檕轃轈櫜轏轢</candidates>
+          <candidates>窼軤𠏉𥧌</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="je"/>
+        <insert>
+          <candidates>支寂寇嘏寢輟軗寑寖毄漦輘輹鼖輙麬䆲𨌘</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="jf"/>
+        <insert>
+          <candidates>寫察索灾窯煮宗寮鴣繫騫寪輬鳷窵鴳鵓轑鵷鶈鶟鶘鶦鶷鷏鶾鶱鷒鸋烖</candidates>
+          <candidates>煑竂鵼䴐𪃭𪃾𪄳</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="jg"/>
+        <insert>
+          <candidates>室塞截窒墼耋輊塹窪釐窐軠臷軴輇漥雗軭</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="jh"/>
+        <insert>
+          <candidates>穿窃寡寥宓軫剺轇輰麨</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ji"/>
+        <insert>
+          <candidates>轉專宝守寬麥博蜜宏戟穸蠹軔軓蛓軵軨戭輚攳螒麮蟗蟿轙轛宖寃尅軚</candidates>
+          <candidates>転𡧛𡨭𨌆𨍭</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="jj"/>
+        <insert>
+          <candidates>十車南載轟輯宰辜斡廾軒幹軯窣窲轋轚𨐒</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="jk"/>
+        <insert>
+          <candidates>实教較突故窗献丈寞吏輳竅轍宎穾軑窔軷軮窫実耂輭</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="jl"/>
+        <insert>
+          <candidates>都宦斬麵宧窌郣郪輀鄟窷</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="jm"/>
+        <insert>
+          <candidates>直輕空士宣翅宜窿矗翰翥軾軧窢翸轣宐翝翧轊𨌺</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="jn"/>
+        <insert>
+          <candidates>事究输輸窮割軌宁寧乾剜宄穹窬剋穵剚軡軶剸麧亁宂寕甎𡨴𥦬</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="jo"/>
+        <insert>
+          <candidates>家定軟蹇窆窕窳軼麩疌宨窊寁寔胾軱寙輆疐歕寲窾蹔斄轐膥</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="jp"/>
+        <insert>
+          <candidates>老它轮宅憲惠輥寵軝悹惌窸轆轗恵悳愙慙窓窻竉</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="jq"/>
+        <insert>
+          <candidates>车擊牢犛甯搴韓轔麰㹈</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="jr"/>
+        <insert>
+          <candidates>容客害古官窩寄宮豁窖窘哉宕寤謇軎軻轄耇宭軺軥軩輅寣輑輍輖磛輷</candidates>
+          <candidates>耈軲䡱䴴𥥖</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="js"/>
+        <insert>
+          <candidates>考協勃窄窈勀宬寯攰麪麫𥥆</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="jt"/>
+        <insert>
+          <candidates>卉寍軿轀轞轤麷穽䀄𨋢</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ju"/>
+        <insert>
+          <candidates>完七密克窑宪窟轧軋兢宛耄窀軏軛輒輓窺宒窅窋窇軘軞寋軦輐氂輗輴</candidates>
+          <candidates>麭竀竁罊覾窰竃竈覩㟻䡝𨋍</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="jv"/>
+        <insert>
+          <candidates>安妻竄裁宴囊宸褰寰嫠輞輾轅寠窶輵轕轘𡜦𨍥𨍽𨎊</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="jw"/>
+        <insert>
+          <candidates>富宙審軸輻輜酨輶轓轖轠麯𡧳</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="jx"/>
+        <insert>
+          <candidates>窞轁</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="jy"/>
+        <insert>
+          <candidates>寒輈𣚺𪋿</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ka"/>
+        <insert>
+          <candidates>猪猖奢旭旮奭瓡瘏痻瘖獪癐癎𤺧</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="kb"/>
+        <insert>
+          <candidates>有帶布病痛希猜脅獅猾猬癟瘸狷猢肴瘠瘺癘冇狶猏痏猵痡痟尳痭獝獢</candidates>
+          <candidates>獳獮癇獼癵㾓㿜𤟠</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="kc"/>
+        <insert>
+          <candidates>賀狽頰癀痲獷獺癩癲狖疻頄痶獚瘨癪獱㿗䫑𧶘</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="kd"/>
+        <insert>
+          <candidates>东存架狳猓猱橥猙痳痚犑痵𤢂</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ke"/>
+        <insert>
+          <candidates>友殺獲瘦疲疫狻犍瘕瘢癜痠攲敧殽猳猣獌瘝癈獶獿玃猨𤜯</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="kf"/>
+        <insert>
+          <candidates>灰療駕奈鵪痰狄獠獯瘭瘰瘵疢鳩狋煍煚綔獡鴐鴮鵊鵗鵟鵸鷞鷯鸑尞猄</candidates>
+          <candidates>獁癳𤹐</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="kg"/>
+        <insert>
+          <candidates>在雄狂狸奎痊狃狴獾疰痤癍癯玀癱尪狅尰痽獞瘞癰瘇癦㿀</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="kh"/>
+        <insert>
+          <candidates>疹犭痧瘳瘍犽猀痝獩犲</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ki"/>
+        <insert>
+          <candidates>太獨套奪瘋丸痔尥狩痃瘙厹狑痋猦煄瘣𠕇</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="kj"/>
+        <insert>
+          <candidates>耷痺瘁瘴犴狨猝獐癖猈癉奲夲猂</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="kk"/>
+        <insert>
+          <candidates>大猴獄疾爽狡爻瘊瘼瘓癥乂猰瘈獙獥瘯癓玁獏㹴𡘙𤜥𤠒𤠣</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="kl"/>
+        <insert>
+          <candidates>郁痹疥郄郗夼尬狎狆奅狾郟郩奫獑癤玂㽼𤶸</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="km"/>
+        <insert>
+          <candidates>左症猩狙疽猹疳疸瘥癃痙弒瘧狉狚狌疘狟翃狿戫瘽瘂癧𢒰</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="kn"/>
+        <insert>
+          <candidates>九剎疙痢夷刈刳剞犰狒猁疔痍瘌瘉獰犵犺奓疿猘痑瓻痸𡯁𤷫</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ko"/>
+        <insert>
+          <candidates>夾狹狐疚獗瓿欷欹瓠瘃瘐癡狣疺痎猭獛瘚獫瘲閷獴</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="kp"/>
+        <insert>
+          <candidates>疵勰痣瘛癔癒癮疕狔狫疧疪悐猑瘜瘱㤲㥣𢠃</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="kq"/>
+        <insert>
+          <candidates>痒痈獬癬羍癴𤸻</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="kr"/>
+        <insert>
+          <candidates>加右奇狗瘩痴痞哿狺猗猞疴痂痦痼奩瘡狜狤狪訄痁痀痌痐猧犌瑔痯痾</candidates>
+          <candidates>瘑瘔癚狢㚚𤺥</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ks"/>
+        <insert>
+          <candidates>力夸夯痄癆劦疞</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="kt"/>
+        <insert>
+          <candidates>猛奔盔痘瘟尷狦疶獈𤷪𤼎</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ku"/>
+        <insert>
+          <candidates>犯癌疤奄馗匏尢狁狍猊猸獍疝疣疱毠峱虓猇毻牏瓾痷獟猐痜</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="kv"/>
+        <insert>
+          <candidates>猿狠狼獵痕猥痿袈癢奿狘姭猲獦獧癙獽癭瘬瘻癏癑</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="kw"/>
+        <insert>
+          <candidates>奮猫猶瘤癗𡘊𤞏</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="kx"/>
+        <insert>
+          <candidates>癠𡚒</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ky"/>
+        <insert>
+          <candidates>疼痱瘀犿痗</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="la"/>
+        <insert>
+          <candidates>書幟蜡帕褚褶蝽螬蚎衵帾袙蛨袹蝫裮蝔蟙襘蠩襫甴襇𧒄</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="lb"/>
+        <insert>
+          <candidates>背鬧補巾蝴蜻蠕蝙蝟蛹牖胄衲褙褊襦蚋蚺蛸螭冑蠣帩蛃袡蜎蜅裐蜦裲</candidates>
+          <candidates>蝑蝺褅螖螄褯螪螮褵蟜襋襉蠵牗蟎蠄襔𢅺𧑐𧚔𧜵</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="lc"/>
+        <insert>
+          <candidates>費順貴冀螟蜞蟥蠊幀頫鬨牘袕幁幎幊幘幩蝜蝢賮螾蟦蟤蟘蠀蠙襭襩襶</candidates>
+          <candidates>褀頔䪴𢅳</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ld"/>
+        <insert>
+          <candidates>蝶蛛裸牒褓蜍蜉蜾蝣螓衪蚞袘棐袸袾裍蜳蜠蝚褋幧褬蟂蟝蠂襙蠑螩襍</candidates>
+          <candidates>𧊶𧙕𩇫</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="le"/>
+        <insert>
+          <candidates>被複版隶蝦鼗帔幔裰蝮螋蠖蠼沊蚑衱衼蚾蛷蝃蜬蝂裬蝯蝬褑蟃襏襮𧎚</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="lf"/>
+        <insert>
+          <candidates>螞襟螺螈螵鴆鴦朄裧幠幜蟡螐蟅褾蟟蟔蟭鷜鷫袮䗩</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="lg"/>
+        <insert>
+          <candidates>裡蝗蛙蜓蛀幢帷幄衽裎蛭蝰螳蜌蜼蝩螲蟶蠗蠸蠷蠘袵袿𢃇𧊲𧜶𧟌</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="lh"/>
+        <insert>
+          <candidates>初衫暢蚜裼蜴蟛虭蚡衯袗蛖幓蝪蟉襂帉袐𠂔𢄪𣈱</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="li"/>
+        <insert>
+          <candidates>虫襪蟻帆蛾蚣褥衩襁蛉蜚蠛蟲虳帴蚿蚹袨袪牋蛶蜙螝幬幭幮蟳蟣襑蠋</candidates>
+          <candidates>襡襺襼蠾螆蟵鬪㻗𧒆𧖣𧘹𧝞</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="lj"/>
+        <insert>
+          <candidates>蜂輩牌褲蟬袜蟀蚪蝌蚌幛裨蜱蝻蟑虷幝褌褳蟫襌蠌襗蚲襷𦘒</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="lk"/>
+        <insert>
+          <candidates>數史央袄襖袱蚊蟆蜈斐袂蛟帗蚗蚥奜蛂袚蛜裀幙蜧蝡蝧褉螏螇螑襒鬫</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ll"/>
+        <insert>
+          <candidates>中片串邮申蚓川邶蚧蜥螂邥虯蚚衶鄁蝍蜵裫蝒鄪幯螹襣蟖鬭𧊋</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="lm"/>
+        <insert>
+          <candidates>畫晝蚯蛆虹韭袒蜒蚶蜮翡幗蟈蚐袀蚳蚽袛袓蛵蝖螉褟螼蟺襢蠮襳丄袏</candidates>
+          <candidates>𧘲𧝁</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ln"/>
+        <insert>
+          <candidates>弗刂衿虮虼蜊蝓鬥劃褕帄刜虰剕蚢蚙蛦蛚煃蝏㠶</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="lo"/>
+        <insert>
+          <candidates>长兆帙幞蚨蟓蠓蠍蠔蚇衭蛈蛌袟幏蛺蜁裌蜨蝭蝝褆褖幪褷襆襐襚襝歗</candidates>
+          <candidates>襥㠸蜨</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="lp"/>
+        <insert>
+          <candidates>北悲蛇患忠蟋曳蚍螅蟪衹襬虴蚔袉褦螰蟌幰蠬襱襹牕蚭蛯䘆</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="lq"/>
+        <insert>
+          <candidates>聿袢襻蛘蛑羋幃牉袶蝆褘蠏㹃𠤖𧞅</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="lr"/>
+        <insert>
+          <candidates>蜘裕蛤裙蝸蛔帖袷袼裾褡蛄蚵蛞蜩螗蟮蟾裯帢牊蛁蛅蚼袑袧蛣袺袽蜛</candidates>
+          <candidates>幨螛褣蟢襜螥裿𢁾𧊀𧙖𧙗</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ls"/>
+        <insert>
+          <candidates>蚱蚴螃甹蚷袎牓蟧袴𧊅𧘌𧞄</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="lt"/>
+        <insert>
+          <candidates>盡盎盅蜢蟒襤蠱帡蛢裋螘蝹褞蠦衋幈裇</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="lu"/>
+        <insert>
+          <candidates>儿电帽襯蠅袍幌胤艴褫虬蚝蜣蜷蜿蛻蜆覜蟯冘帊帎帨蚖蚆蚅蚘衴蛫裗</candidates>
+          <candidates>裞蜪蜺裷裺氀蝷蝞蝐螔褼襓鬩鬮兠覑靟𢃼𦚯𧋦𧐢</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="lv"/>
+        <insert>
+          <candidates>农帳蠟褐裴褪蝎裉裱虻婁螻褸婓蛝蜋蜄裖蜲蝘蝛褗螁餥蠉襛蠰蠳褤䙛</candidates>
+          <candidates>𤗈</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="lw"/>
+        <insert>
+          <candidates>由袖幅蝠幡蚰蛐蝤蟠襠丳蝀褔蟷蠝襴</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="lx"/>
+        <insert>
+          <candidates>肅幍蜭蠐蠨牐</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ly"/>
+        <insert>
+          <candidates>非补虾褂蚸裶蝳虲蚒袇</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ma"/>
+        <insert>
+          <candidates>百豬醋晋殉厝珀酯晉曆珣朁殙琩皕瑄碏璔醏璯磳霫瑃瑉瑨瓸碈磵醩䂿</candidates>
+          <candidates>䃈𤤿𤦊𤩎𤾩𥕢晉</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="mb"/>
+        <insert>
+          <candidates>两再丽璃厲砸丙霸瑚硝硼瑞霄碲碥醐醑霈玥珮脣礪襾珃珛琄琋獀碃碖</candidates>
+          <candidates>豨酺酳殢璊碻璚磞磭礄瓀醨鬵瓋礝醹瓗琑瑺磮覇霱靕鬴㻚㻞䝎䣺䨝𤦍</candidates>
+          <candidates>𤦎𤦭𤨡𤩝𤪲𩃥</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="mc"/>
+        <insert>
+          <candidates>頭頂礦項碰貢頑頁亚磺頸瑣碘珙琪璜銎賈頊碩磧殯願贗瓚珼厧琠頇殞</candidates>
+          <candidates>瑱殥磏磌豏霟璸璵霣殰礗豶霬礥礩顠礸璌硔磒贋顬㻩䤑𠫍𤥂𤦹𥐙𥖏𧵔</candidates>
+          <candidates>𧶏𨨖𨫣</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="md"/>
+        <insert>
+          <candidates>于厚珠殊碟礫酵醇栗琳霖醚酥粟臻孬琛璨殍磔磉磲酏酴硃玗矷珔琈厤</candidates>
+          <candidates>琤硱硢碄碅碀雽瑧瑮璅瑹醂霂璪磼櫫瓅醾琹瑈臶酑㺭㻌㻑㻡㻢㻧𤦸𤨓</candidates>
+          <candidates>𤨪𤪤𩂯</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="me"/>
+        <insert>
+          <candidates>破球玻夏酸覆憂汞碌厦霞泵瑕殁豉歿豭璦瓊醱砅砐砓砯殏酘殔琡琭猺</candidates>
+          <candidates>瑑碫碬醊醁醙瓁夒鬷靆靉瑖瓈磤霡㻐㻖㻴𤣻𤤯𤦫𤧶𤫑𥀬𩅍</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="mf"/>
+        <insert>
+          <candidates>不原示烈票碼鴉碳鸝礁琼焉琰琮燹礤醮醺瑪璟鵡烎鳱殦鳽鳿鴀鴈磩磥</candidates>
+          <candidates>豲鮤鴯鴷醥鵛鶝礯鷊鷅瓙醼鷣鷢鸍黶炁珎瑓璙祘覊鵄鵐鸘㷳䲮䲰𣎴𤧐</candidates>
+          <candidates>𤨧𤩦𤪌𤪧𤫇𥗕𦤹𩄍𪆒</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="mg"/>
+        <insert>
+          <candidates>理确確至壓班型王厘硅斑霍醛雅雁璀碓酲霆霪霾玨珪堊厔垔砫珵珽臸</candidates>
+          <candidates>雃醀璡磪礭瓘靃厓壐琟瑝璂甅硂礶㕓㻇㼆䃘𡍶𤣩𤣰𤧻𤨩𤩏𤫊𥕛𩅞</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="mh"/>
+        <insert>
+          <candidates>形厂牙珍砂砌酚瑟玢殄砑醪殤厊歾玡厖珌砏耏珶硥雰獂獊覅雺彯碭璆</candidates>
+          <candidates>磣磟璱霦鬺彲珳瓰㻛𤦈𤨤𤪱</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="mi"/>
+        <insert>
+          <candidates>耐零云磁玉殘飄碍蠶厨魂瓦磚融辱玲歹珐矾瑰酞矽酌珏戛戬砝硪礴虺</candidates>
+          <candidates>蛩蜃酎酹琺雲璣磯醜璽魘玊玓玹砡砪砱珴琖硹戩瑵蝁瑼磈醆璕磠霐礒</candidates>
+          <candidates>蟨礡霨礣蠠霵釂玜璹碸磗酧醻㕑㺨㻺㻿𠀾𤤴𤧥𤧹𤩺𥐯𥔵𥖁𩃭𩆜</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="mj"/>
+        <insert>
+          <candidates>平干碎鞏碑醉砰霹珥璋矸覃酐琿玕玤玝厗厙玶硨璉豍殫璭磹磾璻礔醰</candidates>
+          <candidates>鞷醳琒琕琗琸璍瓧砞酙㻫㻼䨵𤣲𤣳𤩧𤪼𥕞𩅛𩆨</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="mk"/>
+        <insert>
+          <candidates>天政更敢致攻硬厭爾玫酗殃玟瑛砜砹硇礅雯霰敔釅奀攷殀玦耎珓珚琝</candidates>
+          <candidates>瑒雵殠碤璈磎磝磢璥豯霙礉璷覈霺瓛礹厫厰碶礮䃟䣭䤆𢽴𣧂𤥿𤧞𤨨𤩸</candidates>
+          <candidates>𤪖𥐰</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ml"/>
+        <insert>
+          <candidates>而面需酬砷邪邢丌鬲亓厮邗邛邴邳郅鄄鄢酃琊斫瑯酈靨邘玔邧玠珅玾</candidates>
+          <candidates>珋砎郖郠郚奡鄏鄑鄠鄾厴霩卭顨㪽㺩㺿𤥶𤦋𤩐𩂋𩅰</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="mm"/>
+        <insert>
+          <candidates>一工三二正五歷雪武互醒靈殖殲歪亞碴磋酣酉丕亘亟瑾殂殛砼砥碹礓</candidates>
+          <candidates>翮豇亙砠甦硿靂厎巠玒矼玵珇珝砵厜殌硜犐瑋碔雸瑳硾殣殭翲醝靋厪</candidates>
+          <candidates>歴珷琙畺㠭㻰𠁆𤥻𤦌𤦩𤫩𥑬𥔱𦒘𩃀</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="mn"/>
+        <insert>
+          <candidates>到副列刑琴刊丁甄亍剽劂玎珩瑜砩硎酊琍刓瓨矻剄砨琌豟獉碠霒霠厠</candidates>
+          <candidates>玪矴霛㔆㻳𢏗𤤌𤤖𤤾𤥀𤦷𤧟𤩑𤪥𥐥𩃬</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="mo"/>
+        <insert>
+          <candidates>兩礎歌砍礙页琢瓢玖巫仄厥珧璇璞璩砭碇礞醍醭醵豕跫殮豖砆豗殎琁</candidates>
+          <candidates>珿覂硤歅猻豥豩雿瑽璲豵霥玞珡琔琜瑅璴硋硺礆蹷酜醶靀䨏䬠𠪴𤤳𤥵</candidates>
+          <candidates>𤦧𤨎𤨢𤪦𤴓𥖄𨀂</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="mp"/>
+        <insert>
+          <candidates>死愿麗惡恐瓏憨砒琵玳珉琨璁忑恧砣酡醌玭矺玼麉醷靇釃慐珯璤硓磇</candidates>
+          <candidates>礲龎𢘫𢟍𢢭𢥧𢦀𤤗𤥴𤦏𤦬𤧚𤨒𤨾𤪳𤫟𩂈</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="mq"/>
+        <insert>
+          <candidates>甭磷璘肂珜珒硉琫揅猼擪砽㧬㹕㼀𤧣𤩥𤪕𩄐</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="mr"/>
+        <insert>
+          <candidates>可石哥露否唇碧酷碱磊殆碉酪酮吾砧噩珂玷珈珞琦琚瑭璐硐硌碚酤酩</candidates>
+          <candidates>醅醣琯霑玿珆珨砢砳珸琀珺硈殕琱琣硞酟酠犎碕厬瑢瑲碢磍磄霅礂霘</candidates>
+          <candidates>霝磿醧醽唘珦琂磓磰礳覉醎䣳𠻸𤥁𤥢𤦺𤨥𤨦𤩅𤪔𤫢𥑆𥑮𥕝𥕥𩂰𩃤</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ms"/>
+        <insert>
+          <candidates>动万功勁巧勵霧磅丐砟酢雩丏厏琇臹雱磡醡勡玏珕珹磱霶𠡳𤤁𤧭𤨕𤩂</candidates>
+          <candidates>𥗠</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="mt"/>
+        <insert>
+          <candidates>研弄豆磕珊盂殪砬磴醢醯醴盃醞幵玴殈豜殟磑璒醓豱醠璶瓂礛豷霯瑥</candidates>
+          <candidates>瓐硑硦雴㻂𠫂𤣿𤤙𤧅𤧸</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="mu"/>
+        <insert>
+          <candidates>現无電元配碗玩霜硫厢雹豌厄厩琉霓琶瑶兀琥琬瑁砘酰砲硯瑤醃靦璿</candidates>
+          <candidates>兀旡厒矹卼珫玸珖珗殑硊豝酖酕殗巰瑊碙覝覡磃醄殧虣磽黿礵霿両玌</candidates>
+          <candidates>玘玧珤琷瓱瓲砈硄磘覔覼酼霃㻊𠀡𤣱𤤀𤥣𤦔𤦤𤦻𤩊𤩷𤪓𤪻𥕜𥜆𧢝𨠄</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="mv"/>
+        <insert>
+          <candidates>要環震裂耍碾霎釀辰琅匚硭碣餮瓖瓔饜靄姴硍硠豤碪碨霋嬮霢醲霮匸</candidates>
+          <candidates>孁珢瓌飱䂻𠩐𤥃𤧷𥕦𥘅𩂱</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="mw"/>
+        <insert>
+          <candidates>西画雷硒瑙霤璠璫磻礌礑瓃礧瑇瑠瓓碯覀靁㼄䨤𤪺</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="mx"/>
+        <insert>
+          <candidates>霽璾瑫璛𥔿</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="my"/>
+        <insert>
+          <candidates>下雨霉酶碡霏玬砃厞珘琲珻釄㺪䂨䃺𩂓𩄼</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="na"/>
+        <insert>
+          <candidates>階阳陌魯鯧鰭陼矠觰鮨鰆鰼鰽鱠鱨孴廹𣄽</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="nb"/>
+        <insert>
+          <candidates>随隨隔彌孺隋隅鬻胥鮪鯖陃陏弰脀弸陯魶隬鯆鮹鯞鰅鰗鰝鰤鱊鱎觿鱱</candidates>
+          <candidates>鯩鯿鱅𡦀𡦖𨺲𩱳𩼣</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="nc"/>
+        <insert>
+          <candidates>小負預夤鍪隕隒彉隤頠頲顄鯕鐆鰜鰿鱮孭彍鱝𡥼</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="nd"/>
+        <insert>
+          <candidates>子争除柔弛孕桀穌孖阤陎陱楘鮇檃鮢鮽鯙鯚鰈鰇觻鰷鱢鱳孨朶陁𨹦</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ne"/>
+        <insert>
+          <candidates>發及陵函骏阪陂陬鰥觼鰻夃氶弢癹觙觩觨敻魬鯄鯪鯫鰒彏鱍氹陖鮍鰕</candidates>
+          <candidates>𠃮𡕷𢎽𢿌𩵼𩹨𩻸弢</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="nf"/>
+        <insert>
+          <candidates>际際魚鯨隙尔弥孫煞灸隰尕燄鴛鯀騖鰍鶸鰾烝孮弶鳵駌鮛鵵騭鶔鶩鰶</candidates>
+          <candidates>觾鷸隖鰊鱻鵮㷇𤉋𩻃</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ng"/>
+        <insert>
+          <candidates>角陸丑墜鯉陛廷隍陞墮鮭堥隉隀觟墬鯥鰉鰹鱹陻𡍵𢌥𨿅𩵚</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="nh"/>
+        <insert>
+          <candidates>陽矛陟觴魛魦魵鮅鯓魩鰺𢞵𨹥</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ni"/>
+        <insert>
+          <candidates>多强強蛋附陰触觸兔夕弦弘虱蟹隗玺戤蝥蟊蝨毚弣阹戣蜑魡魼鮒螴鰣</candidates>
+          <candidates>瓕鱄鱒鱘鱴矝魿鯴鰠鰦䧧䲁𠓗𢏐𣫮</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="nj"/>
+        <insert>
+          <candidates>陣彈障阡陴弭斛鰱阠彃鞪觶鱆卂鮃鱏鱓𨸶</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="nk"/>
+        <insert>
+          <candidates>又癸孜廴觖奐鮫陾隞敶魰隩鯁鯸鰬夊矦鮁䰻𩸭</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="nl"/>
+        <insert>
+          <candidates>引鼐阝觫弔鄧鯽觓陑郔鄈魻鮞酁疎𡖖𨜏𨺬</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="nm"/>
+        <insert>
+          <candidates>马鱼险弱阻延隆疆丞陲彐孑陘彊阯弤阺弳孲翗觝觛隓隡魟魱魾魽鰨鱈</candidates>
+          <candidates>鱋鱣疍鮏鰯䱛䱭𨸹</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="nn"/>
+        <insert>
+          <candidates>了凳粥予弓弼矜阬阣陊隃劀魧甔劖亇刴阸鯏鰂㣃𢏺</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="no"/>
+        <insert>
+          <candidates>象隊孩飞飛久險承孤欠豫陡隧弧陔孓疋觚陝隄鱖陜欿鮂鮡鯠鯷鱁鱌癶</candidates>
+          <candidates>𠄘𡘓𧢲𨺗</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="np"/>
+        <insert>
+          <candidates>急隱怨陀恿隳隴鰓阰愻魠魤鮀鯤鯰鱺麁㲋䧥𢝵𩼰</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="nq"/>
+        <insert>
+          <candidates>解建降鮮舛犟甬鱗丮觲鰎觧隣𢩦𧣈</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="nr"/>
+        <insert>
+          <candidates>夠名阿陪鱷詹阽鯛鱔弨陭矞觡彄觭鮐魺鮕鮈鮚鮦鮥鮯謽鯃鮶鯦鰔鰫鱵</candidates>
+          <candidates>叾廻鮎鮰鯝㢠䱽𡥄𡥪𢌡𧥧𩶛𩺬</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ns"/>
+        <insert>
+          <candidates>務防勇勉乃阼勐觔阞陓魴鮓鰳鰐鰟𧤤𨺳勇</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="nt"/>
+        <insert>
+          <candidates>登隘孟盈阱鱸盄隑孻鱧盌隥鯭鰛𩶘</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="nu"/>
+        <insert>
+          <candidates>色院危免孔乙陶疏龟龜阮阢孢眢瞀觥魷鮑夗弝阨阭巹觤嶞觬隢魨氄郺</candidates>
+          <candidates>鮠鯇鮿鮵鮸鯢鰩鱙鱦亀発鯱㝃䰾𠙶𨻙𩸆</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="nv"/>
+        <insert>
+          <candidates>張限陋隈飧饣婺妴隇彋鯜鰋鱞婱隁鮟鱲㜈𡛺𩷶</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="nw"/>
+        <insert>
+          <candidates>陳鯔鰡鱕乪廸廼鮋鰌䲤𨻧</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="nx"/>
+        <insert>
+          <candidates>陷卍隮鱐鱭䧟</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ny"/>
+        <insert>
+          <candidates>外陫鯡鮗</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="oa"/>
+        <insert>
+          <candidates>會借伯智倡儲佰僧偕僭偺儈侚偣偆傮僣矰韽龤偖僴氜𠐔</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ob"/>
+        <insert>
+          <candidates>內備倆偏偶飾佩俏禽氰儒侑佾俑倩龠佈倫脩傭僑僩餚矯伂仴氝俙倗偝</candidates>
+          <candidates>偁偊偳傋傰僪舖餔餬侢俌偦傐傦帒餙㒖𠉴𣫺</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="oc"/>
+        <insert>
+          <candidates>領兵價貨供镇傾偵債貪俱償貸賃僎頜儐頷仈伿倛倎偩傔傎僋僨僓儥鎥</candidates>
+          <candidates>饙饌饋儹顩饡僙賲顦龥𠍿𩓥</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="od"/>
+        <insert>
+          <candidates>他氣條保集余休仔俘傈僳侏倮籴榘罅傑餘柋栠偞偨僝餑橆餼饓龢佅餜</candidates>
+          <candidates>㐵𠇲𠍇𠎀𢻯𣱣</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="oe"/>
+        <insert>
+          <candidates>复飯雙侵優假傻饅叙傣伎俊氯俅氽汆伋隻餿倰俶夎敆僈僾餕餟儤瀪矱</candidates>
+          <candidates>仮傁儍敍𩜲</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="of"/>
+        <insert>
+          <candidates>你無伙繁焦僚偽氮鴿傺僬佘黛係絛鴒鯈鶴儻尒伓倞倓倷倧烋缹偢焂傃</candidates>
+          <candidates>傌傿僄傶溣儰僸鳹儑餤鴙儦鵂鵀儵鵨鶬儽鷡鷦鸙尓緐餻鰵鶽㷛䳡𠌥𠎠</candidates>
+          <candidates>𠎧𠏵𠐟𩟔𪄴</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="og"/>
+        <insert>
+          <candidates>全住任坐催罐僱堡佳仕侄俚僮垡矬雉隹佺飪儸侳俇侹倠偓偅偟傕雂僿</candidates>
+          <candidates>雓儓雔餭饈儺糴讎雥垈㑌㑽𠐓𠓾𡌅</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="oh"/>
+        <insert>
+          <candidates>入修傷份乒氛伢僇佖飶儩餳饖俤氱𠆫𠊠𢒑𦉘</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="oi"/>
+        <insert>
+          <candidates>会每傳令傅餓儀铃付蝕伐乓俯侍伶俄饞傀仫仞儔餞餽儳饑伀伝佉伭俬</candidates>
+          <candidates>俴倯偫偑僔戧餺僟罇罎飠㑀㺱㺸𠆩𠑥𦉡</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="oj"/>
+        <insert>
+          <candidates>什午斜傘华僻仟仵佴倬俾隼倖餌罈伻倅偮傇傽僆僤鞗餫俥儎飦𠓼</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ok"/>
+        <insert>
+          <candidates>使做候便钢缺仗仪伏傲敏敘伊餃侯矢攸佼俟倏儆氤攵倣傚斂儼佒俁矨</candidates>
+          <candidates>偰偀傒敜飫傸餀儌餪餱饃仸伩劔餸饊䬬𠊷𠍁</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ol"/>
+        <insert>
+          <candidates>个命价钟伸介仰邻卸侨邱仲氕氘氚矧郃偭伄伒侕氠鄇鄃飹鄦餗鄶倻缷</candidates>
+          <candidates>𠇁𠈄</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="om"/>
+        <insert>
+          <candidates>但体低僅值企伍丘缸僵氫仁佐仨倥仝俎翎翕缽氬饉仜仩伾俓倵倕傞傝</candidates>
+          <candidates>翛儃韱儮饘亼伨伹佂俹餷𠊙𠊿𦒈</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="on"/>
+        <insert>
+          <candidates>們气今倒停創例佛偷亿舒凭側劍仇飢侈氟俐乞俞劁仃仉仡佤伉瓴佇劊</candidates>
+          <candidates>仱刉侀侇侺剉倳飣儜儚甒餰伃䬷𠍅𠍆</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="oo"/>
+        <insert>
+          <candidates>人从众似铁肉像促飲锭儉氦佚佻歙伕俠傢僕伬侅佽肏倢欱偍傱僉歈僛</candidates>
+          <candidates>跾儊儗餩歛餯饛俽倈傼儫罀𠈌𠉵𠎵𡦈</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="op"/>
+        <insert>
+          <candidates>化代您念億愈悠佬仳佗伲偬恁傯憊餛儷伈侘佌侂忥怹怤倱屔偲悆飥僁</candidates>
+          <candidates>僽儢儱矲龕僡恷慜𠊞𠏋𢜒𢜔</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="oq"/>
+        <insert>
+          <candidates>年件拿偉舞健氧伴佯佣侔俸牮僯犨搻罉㒓</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="or"/>
+        <insert>
+          <candidates>個知合信何含館倍铜售估舍俗倉倘飼倚伺佑侗佝伽佶偌倜倌倨僖儋佔</candidates>
+          <candidates>侶侷傖飴餉佁佪佸侞佫佮俉俖啎傛缿傴餂餇樖饇饎佋佲侰俈俰倃偘僐</candidates>
+          <candidates>舘讐餎餹饍饝㑾𠏼𩜠</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="os"/>
+        <insert>
+          <candidates>作仍仿傍矩氖仂侉俜隽飭雋佢僗侽俲働儁飵㑺𠉛𠋀</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ot"/>
+        <insert>
+          <candidates>位短盒餅併侖氳儘伳侐弇偋缾餖盦饁饐罏倴僼饂㒥𠈔𥂝</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ou"/>
+        <insert>
+          <candidates>优俺飽倦饒仙倔倪岳毓侃僦岱毹氙氪缶飩僥覦仚屳伔伅佡佹侁俋俔侻</candidates>
+          <candidates>俛倇俷峹偗傜傂僊嵞僶儭侊罁㑳𠇔𠋥𥅽𧇍𧈛</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ov"/>
+        <insert>
+          <candidates>食依银袋矮氨偎佞倭偃偈儇钅衾倀偯儂餒餵佷侒姇俍侲俀俵偡偠僂餧</candidates>
+          <candidates>儠餲儴饟侫兪饢𠍾</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ow"/>
+        <insert>
+          <candidates>佃儡畲儅餾氥偪偤畣酓畬僠伷㑤𤲞</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ox"/>
+        <insert>
+          <candidates>餡儕偛饀</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="oy"/>
+        <insert>
+          <candidates>侮仆佧佟俳氡侜</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="pa"/>
+        <insert>
+          <candidates>怕惜旬皆憎旨恂曶恉惛愔慒慴憯惽懀𢡠</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="pb"/>
+        <insert>
+          <candidates>情悄怖惰懦匍惴慵怲悀悁悕惀惼愶愲慲憰憪憡憍憜</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="pc"/>
+        <insert>
+          <candidates>頓憤慣慎懶頃惧穎怵慊怬惍貰慏愩憒潁熲顈懭懫懻眞頴㥍𩓙</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="pd"/>
+        <insert>
+          <candidates>也悸悖悃惇慄愾懍匊恘悇粊惏惈惵惸憟懆橤㦡𢙨𢛵</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="pe"/>
+        <insert>
+          <candidates>慢皺慷忮悛愎忣怓惙惾愋愯懮懪戄懓</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="pf"/>
+        <insert>
+          <candidates>惊怀恢憬愀愫憔憮炰悰惔慓駂憭鴇鴝繠鵴鶛鶵戃慽𪃸</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="pg"/>
+        <insert>
+          <candidates>怪懂惟懼惶憧忸悝雊雛坒恇恮悜慳慛墯懽觺𠣕𢣷𢤦</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ph"/>
+        <insert>
+          <candidates>必切惨慘惕毖勿忉悌怭愓憀憉慯</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="pi"/>
+        <insert>
+          <candidates>怜勾愧怯勺恃忖忪惤慅慱憳懤懱乸忛愽㤔𢞁</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="pj"/>
+        <insert>
+          <candidates>怦悼悍忏忤悻悴憚懾匉惲愅慞憛懌㦀㦊</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="pk"/>
+        <insert>
+          <candidates>快匆懊匈怏憫忕忷恔恟悷慀慔慡憿懨匁忟悞愌慠</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="pl"/>
+        <insert>
+          <candidates>慚忻郇忡悚鄒邲斪愐邨</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="pm"/>
+        <insert>
+          <candidates>性恒恆勻怔惺怛懺怚怌悾愃慬慖</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="pn"/>
+        <insert>
+          <candidates>够愉刨乜刎怫惻勼忔忴恞恀匑懧懰悧𢖯𢖾</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="po"/>
+        <insert>
+          <candidates>疑憷愜忺怢恌欨惿懅憸懥懞惞欵</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="pp"/>
+        <insert>
+          <candidates>心比忽憶憾惚怩忯怋恅悿惃惢憓怱惗愢憁懚㤈㦙𢙺𢞴𢣁</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="pq"/>
+        <insert>
+          <candidates>憐懈肄怑甮愇</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="pr"/>
+        <insert>
+          <candidates>句恰悟惦恫恬訇怙怊怡恪惝惆愴怗怐恛恄恦悎悺匒愘慥慪憺憘㤧㦒𢘜</candidates>
+          <candidates>𢚘𢜪𢥏</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ps"/>
+        <insert>
+          <candidates>愣愕劬怍慟怮勓勩恊懏</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="pt"/>
+        <insert>
+          <candidates>世恤慍愷恲憕懢㦉𢛴</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="pu"/>
+        <insert>
+          <candidates>包慌慨恍悅惋忱屯悒懵芻忨忳匋怳怉毞匎悗惓覕愮憱憢憴愰㤿𢜟</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="pv"/>
+        <insert>
+          <candidates>忙懷恨惘悽悵愒怴悢袃愖愝愄慺懁懩懹恾憹懐</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="pw"/>
+        <insert>
+          <candidates>甸惱匐怞恓愊慉</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="px"/>
+        <insert>
+          <candidates>慆懠</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="py"/>
+        <insert>
+          <candidates>悔忭悱𢘛</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qa"/>
+        <insert>
+          <candidates>指替春拍措揩揞摺抇晢揝搘搢摍撦摿耤擼撍𢫦𢰦𢵄𢵧</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qb"/>
+        <insert>
+          <candidates>青帮搞掃捕摘捎攜捐揣掄擒捅掮搠耦耩揹搆撾抈抪抩拺掯掤掅揥揟揙</candidates>
+          <candidates>搹搰搚摛撊撟撱擩擿抐抦鬹㧜㩦𢬢𢯎𢶠</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qc"/>
+        <insert>
+          <candidates>責擴損拱扒攢撰搛擷捇掽捵掑摃搷摜撗撌銴頛擯揁賛鋬</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qd"/>
+        <insert>
+          <candidates>靜拖探操捆揉掙搽秦掬揲搡耒耔採扜扡拵挬捊捈栔捰揓搮摷槼擛擽攗</candidates>
+          <candidates>搸靝㨃㨆㩞䆐𢰧𢱌</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qe"/>
+        <insert>
+          <candidates>技投麦搬援授披撥搜擾扳撮掇攫泰擭扱捄捘洯掫捸摋耰揼摱耯㩧𢫕𢲈</candidates>
+          <candidates>𢲩𢸶𢹸</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qf"/>
+        <insert>
+          <candidates>素擦揀掠揪撩撫攥捺摞摭纛撚抔拻掞焎撝絜搣摀搎摽摵鳺攃鶄攩熭紥</candidates>
+          <candidates>㩒𢱢𢴒𢶕𪂹</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qg"/>
+        <insert>
+          <candidates>推握挂挺擁撞扭攤摧拴挫拄捱擢攉挃拰捔捚揘揰搉觢撋攡抂摚摼擓擡</candidates>
+          <candidates>攞㨩</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qh"/>
+        <insert>
+          <candidates>揚抄扮拐耖摻抮捗摎摥挮挱𩇕</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qi"/>
+        <insert>
+          <candidates>找持毒攙搏寿搔拇蠢拎耘拊捋撙耨蜇扠扚抎抾蛪摶撠撏擉擣攭扨抅捬</candidates>
+          <candidates>𢯊𢴇𢷮𢺳𦔒</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qj"/>
+        <insert>
+          <candidates>掉揮丰摔攝抖擇抹捍攆抨扦揖捭擀擗撢輦扞挕捙捀捽揇搟摓摙撣丯撶</candidates>
+          <candidates>繛𢫨𢱕𢳂</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qk"/>
+        <insert>
+          <candidates>換摸拔挨撤撒奏揍抉撇契掖捩揆撖抆擻扙扷抰挍挭捑揳擏撽擙擫撴㧢</candidates>
+          <candidates>𢲷𢳆</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ql"/>
+        <insert>
+          <candidates>折撕抑押擲邦挪抻揶擤扴邞挋揤郬摲擳鄻挷𢲲</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qm"/>
+        <insert>
+          <candidates>担控抵扯捏扛搓捶拭擅拯揸揎搦彗摑拑抯挳掝掗挻揯搨搧攕掋揑攊耝</candidates>
+          <candidates>靑㨁𢬎𢴈𢶍𢶣</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qn"/>
+        <insert>
+          <candidates>打抗挖擰捌拂抒拶揄捫扢扲拸捯揨揃攍剨揦㧸㨴</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qo"/>
+        <insert>
+          <candidates>提據抓夫挑撲捉扶掀撿拟擬捷撅挾靛掾踅撳扻抶抸掟摦摐擨攓搲㧻㨗</candidates>
+          <candidates>𢱑𢲛𢵌</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qp"/>
+        <insert>
+          <candidates>批擺托攏慧撼抿捻拽掭摁恝扺抳挓悊掍揌惷摝摠憃攄攇攦拕㧾𢶤</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qq"/>
+        <insert>
+          <candidates>手拥捧拌撑奉撐掰挈搿撻掱揵摨攑𢲡𢶷</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qr"/>
+        <insert>
+          <candidates>据抬擔哲招括搶搭扣拾擱誓捂拘搪撂掂拈拓拮捃掎掊砉耜耠耥耱捨挏</candidates>
+          <candidates>挌挶捁耞耛揈硩搳搥摳撘揢𢰸</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qs"/>
+        <insert>
+          <candidates>护扔撈拒拋携挎拷耪韦拗勣搾擄扐拹耟搒耡摴抝拃挘耮㩗𢹂</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qt"/>
+        <insert>
+          <candidates>拉拼耕拚摒抴揜搤搕搵撜攎挵捹掹揾擝㩜𢬿𢭃</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qu"/>
+        <insert>
+          <candidates>把規搖抱掏扎耗掩挽攪扰搗掘耙扼撬拙挹搋捲撓齧攬扤扥抌抏抁扽抭</candidates>
+          <candidates>捖挩挸捥掜摡揗搊摬摫靘靚捤撯靗㧥㨘㨪𢫏𢭪</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qv"/>
+        <insert>
+          <candidates>表接按揭振摟攘揠搌擐攮拫挀挔挼捼掁揕揋裚嫢擖擃耬擸攁攐攌攖攛</candidates>
+          <candidates>捿揻搇㛃𢸍</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qw"/>
+        <insert>
+          <candidates>抽播擋攔描搐擂揊揂攟</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qx"/>
+        <insert>
+          <candidates>擠插掐舂搯㩋</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="qy"/>
+        <insert>
+          <candidates>排掛扑拆抃挴攠</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ra"/>
+        <insert>
+          <candidates>唱踏啪躇蹭嘈嗜喈喑噌嚐嚕咰唶喒暋噆踖噲踳噾蹜蹧躤啫㕷𠴲</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="rb"/>
+        <insert>
+          <candidates>吶嘴喘吊哨蹦嘲咂啃蹄哺嘀啼踊唏唷喁喟嗝嗍嗵嘣噙嚆嚅踹踽蹁蹣肙</candidates>
+          <candidates>呥咘啢嗃嗋踃噊嘺踚蹐蹢蹛蹻躎嗗跀㗅㗻𠹹𠺶𠻗𠿫𠿭𡁜𡁻𡂖𡃴𨂃𨃴𨚼</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="rc"/>
+        <insert>
+          <candidates>只員嘛噸嚇噴跡趴哧哄叭唄巽嗔嘖踫蹟顎躓呬唭嗛嗊嗩嗿噀嘳嘪踑蹎</candidates>
+          <candidates>嚝蹞嚬蹪嚽囋躦唫躀䪸𠯿𠿪𡂝𡃤𡅅</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="rd"/>
+        <insert>
+          <candidates>呼味呆踩嗓躁吁跺哮噪咻哚咪啉喋嗪踝蹀蹂跦囌吇咮哱唋趶啍啋喿喍</candidates>
+          <candidates>嗏嘄踍踘躒吔哋嘑嚹槑踭㕲㖥㗎㗱𠲜𠵈𠹳𠺪𠼝𠾍𨀤</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="re"/>
+        <insert>
+          <candidates>吸踱跛唆咏吱呶啵啜嗖嗄嘬趿躞噯唚跂喥敯踆踙踧踜嚄嚃嚘嚗蹳躩躨</candidates>
+          <candidates>叚嚟㗇𠱁𠳖𠵿𠼦𠿬𡃀𡆇𨂽</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="rf"/>
+        <insert>
+          <candidates>嗎嘿鳴啾嗦鵑踪嗚咴啖嗉嘌嘁嘹噍噤嚓嚥鷺吙吥噅喣嘕嘸踿鴞蹠鶚鷕</candidates>
+          <candidates>鷤呩喺嗻噝蹨駡鴖㗝𠼮𠼱𠾶𡁵𡁸𡃉𡄽𤏩</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="rg"/>
+        <insert>
+          <candidates>雖唯哩躍喔哇吐呈哐唑喱喹噻嚯跬踵躔囉躪吜咥唃啀喤跓跮跧嗺踛踓</candidates>
+          <candidates>噰嚁嚜蹚囃嚾躣嘡嚡囖蹱𠰍𠶖𠹺𠻘𠼻𡁶𡃏𡃵𡋾</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="rh"/>
+        <insert>
+          <candidates>呀吵踢吩吻叨嘭嘐咇唦哤喭跈踄噦踼𠳕𠴕𠻝𠻻𡃶𨅝</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ri"/>
+        <insert>
+          <candidates>戰踐哦蹲咐喲吆囑躊嚼嘎呔呤嗤戢趵跗躅吋嘰囀囈吰呿呣哷嗕跱噂噚</candidates>
+          <candidates>噣蹡嚵囆躕呍唥啲嗞嘠嚉嚋嚒嚱蟁䟕𠯫𠲍𠸖𠹷𠺌𠽤𡁯𡁷𧿹𨅏𨆼吆</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="rj"/>
+        <insert>
+          <candidates>單叶嘩喃啤啐嗥噼踔嗶蹕囁躡吘呯咡咠哻啅啈斝嘝嗹嘽嘾踤噿蹥唓唞</candidates>
+          <candidates>嘷䠋𠯢𠸊𠹶𠺫𡀞𡂴𡃈𡆀𢁅𨂾𨄮𨅯</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="rk"/>
+        <insert>
+          <candidates>嚴哭哎咬跃噢喚咽喉獸嗅哽唉跋吠吴咿唳嗷嗾跤蹊吳喫吷呅哅敃趹嗼</candidates>
+          <candidates>噉噳噭躈吚咲嗘蹾㕭㖡㗛㘚𠸄𠸍𠹻𠼰𨁈</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="rl"/>
+        <insert>
+          <candidates>叫听哪嘶鄙呻鄂郢叩吖吲呷哳唧啷嘟啣躑吤郘喌喕鄖斲鄲鄳鄵卾喐噺</candidates>
+          <candidates>嚊㖄㖿㘉𠱸𠵴</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="rm"/>
+        <insert>
+          <candidates>嗡呸叼咀唾啞蹋噓喧喳趾嗟蹉呁咁呾呠呧咺唌跙嘒嘓蹅嚦躖咗唨噏踁</candidates>
+          <candidates>㗲𠰋𠳏𠵆𠵌𠻺𠼭𠽌𠾐𠾵𨀣𨃩</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="rn"/>
+        <insert>
+          <candidates>別吃哼咧咦叮唰哆喇吟咒嚀吭喻嗲刡咑咈唎趷跠跢嘜劋踰咓嘢㖗𠮩𠵉</candidates>
+          <candidates>𠵯𠶜𠸐𠸑𨀉</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ro"/>
+        <insert>
+          <candidates>跳足吹嘆咳跌嗽啄蹤嚎噬嚏呋呱啶喙噘噗噱趺蹶蹼呎咷唗哫唊啑唻跿</candidates>
+          <candidates>踀踕噞噷踶蹝躆嘥踨𠸝𠺖𠺢𡁏𡂈𡂿𨂐𨆯</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="rp"/>
+        <insert>
+          <candidates>民呢嗯嚨叱吒吡吣呲咤唣唿噫愍跎跽唸吪呡咾跜跐跩噁踗蹗躘咜喼躧</candidates>
+          <candidates>㖭㗾𠰺𠳓𠹌𠻹𡀝𡄯</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="rq"/>
+        <insert>
+          <candidates>咩哞唪踺躂吽哖喡跘噠蹸躌嗱噒嚤𠷈𠸎𠾴𡅈𤰉𨀞</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="rr"/>
+        <insert>
+          <candidates>路口啊品响器喊呵哈啥嘻咕嗐嗬咖踮踞喀咯嗣唁咭唔喏啁嗒跖跏跆踟</candidates>
+          <candidates>踣呂嗆嘔跼囂呫呴咍哃咶唅哠喎跍跕跲嘂碞踦蹌嚚唂啝啱啹嗰噐噡跔</candidates>
+          <candidates>踎㗊㗳䠀𠰴𠱷𠳝𠴨𠴱𠵇𠵎𠶧𠸉𠸏𠹭𠺝𡀔</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="rs"/>
+        <insert>
+          <candidates>另号距跨咋叻呦嘞勛嘮踴呺咢嗙㗁䟭𠮨𠯋𠯻𠰠𠱂𠱼𠲵𠲸𠳔咢</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="rt"/>
+        <insert>
+          <candidates>啦蹬噎嗑嗌噔趼跚呏哢啽跇嗢跰嚍嚂嚧呭咞哣㕸𠱥𠵼𡃇𡅏</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ru"/>
+        <insert>
+          <candidates>吧跑咱號吨兄吼跪咆唬呃吮巳邑咄咣啕嘧跣蹴黾踡蹺唈唴唵啒唲跁喨</candidates>
+          <candidates>喦嵒嗈嗂黽睯踂噈嘵踠氉嚙嚫躚囓鼉呪哯唍啳嗁嘅蹏㕰𠮿𠱃𠱓𠳭𠳿𠶲</candidates>
+          <candidates>𠺬𠾼𡃁𨈇𪚩</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="rv"/>
+        <insert>
+          <candidates>跟喝喂嚷哏嘍噶哌唼囔踉躐饕噥嚶哸喓啿踥踒噮踸蹍辴囅躟躥咹喩喰</candidates>
+          <candidates>喴蹆㖘㗒䟴𠯆𠲖𠵱𠹵𠹸𠺘𠾭</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="rw"/>
+        <insert>
+          <candidates>哂喵蹯噹唒跴踾蹓躝噃𠵾𡃓𨆉</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="rx"/>
+        <insert>
+          <candidates>嘯蹈啗躋喢嚌蹖嚪嚿㗖</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ry"/>
+        <insert>
+          <candidates>吓嗨啡卟咔咚唹跅踇啩𠰻</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="sa"/>
+        <insert>
+          <candidates>習層職屠馹鬊鬐騽驓鬙鬠䮖䰇</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="sb"/>
+        <insert>
+          <candidates>属騙臂驕匾帚屑臀匝聃髯腎鬍屌幦翯駽髾屩鬅鬌鬗驈驨䮎𦑊𩧃</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="sc"/>
+        <insert>
+          <candidates>匹鑒翼咫鐾匱賢駟頤鬚鬢驥屄頨鋻頵聵賾贀騏顟鬒鬑屭驞顳刅屓贒鍳</candidates>
+          <candidates>頣鬂䦉䰎𢁉𩧉</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="sd"/>
+        <insert>
+          <candidates>馳屎孱檗髹屘匜棸屧駼騍糪騥驏驧驜髢𦏸</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="se"/>
+        <insert>
+          <candidates>取殿尿履屐馭毆駿翍馺敺翪髲駸騄騢騣騪鬘臤騡鬉㞗</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="sf"/>
+        <insert>
+          <candidates>緊馬灵騾鷗耿熙鬃熨鬏騵驃焄焣鳭翞鳲鴄燛繄翵屪鵋鵘繴镽鶋鶌鶠鷚</candidates>
+          <candidates>鷖鷵黳鷿鸐驠驫綤騌驣鸊㞠䮽𠥹𤋮𤍥𦖠</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="sg"/>
+        <insert>
+          <candidates>屋堅壁匯屆駐聖翟匡朢壂駤駩髽騅雡騜匷驖驩埾𠥔𤩹𩣱𩬎</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="sh"/>
+        <insert>
+          <candidates>刀劈髟匢翂翏駜駗髳駹鬄驂鬖髿䭻</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="si"/>
+        <insert>
+          <candidates>屬尋戳戮刃尉璧聆駙鬆騷耾馰蜸駖瑿螶颿飁騩匤螱镸駄㷉𤧬𤩱𦐂𩢤</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="sj"/>
+        <insert>
+          <candidates>耳辟翠聶驛屖聑馯匰翬駍駬駥髶翴騂駻髼騲驆騿驔驊驒聛鬔䏁䮓䮗䮝</candidates>
+          <candidates>䯀𦑩𩥪</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="sk"/>
+        <insert>
+          <candidates>改联医駛馱駁尹髮翇镺駃駇翭聧駮駰騃騤騱鬕驐馼駚騻䭾𣀳𦐐</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="sl"/>
+        <insert>
+          <candidates>那匠聊臣郡邵匣耶卩郾鄹馴邔卲翀郰聏臦鄝馽鄩臩駷斸馸駠䣝𠁨</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="sm"/>
+        <insert>
+          <candidates>耻羽刁翳羾聇聝聜駓駔髬聬騸騹驉驙耼𡲥𦒄𩣪𩤃</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="sn"/>
+        <insert>
+          <candidates>刷尻甓耵甌匟刵耹剭匭聤鬁騚鬋鬎聹刟剹劚匬騟髠髴䎺𦖭</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="so"/>
+        <insert>
+          <candidates>驗尺聚臥驟歐屣駭翐镻翜翨駣毉騋騛騠躄匧匳聢駅𡱰𨃨</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="sp"/>
+        <insert>
+          <candidates>聽忍駝聰慰屁恥忌尼慝髭屍驪馲憵騉騬驄聡聦騐騦騼䮾䰄𢛶𦏵𩥝</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="sq"/>
+        <insert>
+          <candidates>群犀肆羼擘掔犚騝驎擥羣</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="sr"/>
+        <insert>
+          <candidates>區局司召臨居騎駱譬君驅駒匿叵屙聒髫髻匼翑聐硻駉駘駋駧髺駶騇騆</candidates>
+          <candidates>聸騧騞匲䛐䮐𡰪𡲢𦕲𦖿𩤅</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ss"/>
+        <insert>
+          <candidates>巨尸聘劭劻騁聈髣駏勠騯</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="st"/>
+        <insert>
+          <candidates>聯异監鹽驢豎屉屜屏翌羿駢翋馵匴駴盬竪𦐒𩥈𩥉𩦝</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="su"/>
+        <insert>
+          <candidates>己已尾覽屈耽凹髦兕髡鬈驍耴毦毣覗馻髧翫镼髱駪駾騊騶鼊驦聣覧㔾</candidates>
+          <candidates>𡲬𨛦𩯕</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="sv"/>
+        <insert>
+          <candidates>長展娶嬖襞鬟鬣屢屨褽妀匽婜媐嫛翣褧駺騕騔騴鬞驤鬤𩣑𩥇</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="sw"/>
+        <insert>
+          <candidates>醫届屇駎髷騮</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="sx"/>
+        <insert>
+          <candidates>驌駵</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="sy"/>
+        <insert>
+          <candidates>匪卧屝騑𩬅</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ta"/>
+        <insert>
+          <candidates>著普薯曹藉暮昔荀菖蒈蓍蓿藷萻萶萫薈鞜藸蘵萅萡蓸蕌蕳藠㬫𦮂𦴥𦻖</candidates>
+          <candidates>𧅥</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="tb"/>
+        <insert>
+          <candidates>萬期幕葡葫蒂萌藕莆蒲鞘朔芾芮苒菁蒿蒴薷黹黼鞲鞴蓆苪冓茦莔莃莦</candidates>
+          <candidates>菕菺萭萹蒚蒱蓇蒨蔏蔕蓪蓨蕅蕀蕑蕱蕎鞙薃薖薾藡羺蘛蘥蘬朞芇萠蒒</candidates>
+          <candidates>蓢蔐蔳鞽𦱀𦲸𦽴𧀎</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="tc"/>
+        <insert>
+          <candidates>业其共黄黃典蘋兼鑿苏萁蒹蓥蕻並菳萯蓂蔩頩蕡蕆蕢蕦薕薠薋蕷羵藇</candidates>
+          <candidates>藚藬顜藾顢蘱韇顴葓蒖蕒藖蘏蘔𧅤𨮝</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="td"/>
+        <insert>
+          <candidates>業藥菜葉某茶菌荣蘇鞠荐菊孽芋藻茱荸荼莩葆蓁蕖藁蘖孳槊檠鞣棻蘗</candidates>
+          <candidates>芓茠莯菋菻葹葇蒤蒢鞂蔝蓧蔾鞢蘪蘜孶棊糳糵苸苿荢菓葈蒣蒾蔴蘂鞟</candidates>
+          <candidates>䔉䔧𦳀𦳑𦵴𦷰𦹂𧂈𧂮</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="te"/>
+        <insert>
+          <candidates>叢藤菠菱蔓夔芨芰芟菽菔菡葭蔻蕞藜羧蔆苃羖羕莍荾莈菆菣菉皵萲葰</candidates>
+          <candidates>葠葮靸蓌蒰蒑鞁蔎蔱蔋蕧蕔薣蕸薆薐藙藑蘉羻韄葲蓡蓤蕟蘐䓩䔖䕕𡖂</candidates>
+          <candidates>𦷜𦻑𧁒𧃍𧄦䕫</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="tf"/>
+        <insert>
+          <candidates>驚蒸燕鵲煎蕉羔蘸蔗蒜蔡蔫荻萘萦薰蘩羰綦芣蓀蕪薦鞦驀韉鸛苂苶菼</candidates>
+          <candidates>蒍萰萩蒝蓔蔈蔒蔂蔦羱蕮蕠蕬鵧鴱藀藄蘤薸爇藨鯗蘌鶜鶿鶧鶼鷁鷋蘻</candidates>
+          <candidates>韅鷷鷰鷬鷨虆鸏藮蘨虅韀鴹鶓鷀㷼䔝䔳䕷䳍𦶣𩤯𪃳𪅐𪆴</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="tg"/>
+        <insert>
+          <candidates>基難莊鞋塑蘿墓莹茬董羞芏茌莛荏荃萑蕹薹藿藺茥荎莝莥雈葟蒮蓷蓶</candidates>
+          <candidates>蕫蕥薙黈藋薶雚蘣蘳蘲蘺虇塟鞺䒰𦍌𦯀𦸀𦻓𦻗</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="th"/>
+        <insert>
+          <candidates>蕩剪芽茂茅芬莎芴蓼芀苾羒莏菞蒶蔘蕛黺薚薉虋尠羏苐茘蓚豑䓪䔋𦯷</candidates>
+          <candidates>𦹮</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ti"/>
+        <insert>
+          <candidates>對義藝药薄尊萤茧繭蔑羚芍蔚兹芄芸苻苓莪菘菟葑蓐蕺薅戡蠲茲蒐蔭</candidates>
+          <candidates>蔣丼芃刱芶苰苺茷菂蛬靮葯蒬蒪蒔鞃蓻蓺蓴蓾蕓蕁薎蕶薵薱蟴藱蠆蟼</candidates>
+          <candidates>蠤鞿蘶飌剙羗荗葤蔃靭䓎䔿䕃𦍑𦲂𦵑𦶥𦶮𦻒𧂭𧕴</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="tj"/>
+        <insert>
+          <candidates>革草苹華蓬茸萍薛斟卅芊茉莘萆萃葺蕈薜葷蓮茙茿莗羢靬葞萳輂斠蓒</candidates>
+          <candidates>靺蔊蓽斢蕇鞞藫蘀莑鞸鞾䒠䓬䕜䕪𦭛𦱾𦻐𧅵</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="tk"/>
+        <insert>
+          <candidates>美英散敬蔽鞭莫奠葵艾羹茵茇茯茭莜菝葜蒺蔟薇猷黻鞅藪芠芛芵芺荍</candidates>
+          <candidates>葖葔蒛蓛蔜薁薂藈藢蘞敟靱鞇䓴䔻𡙡𦱿𦴤𦻔𦾡𧃸</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="tl"/>
+        <insert>
+          <candidates>斯薪鄭邯芥靳芹鄞鄯茚茆菥鄴郱茞荋斮鄀靷鄚斳蔀蔪蓹薌薡鄸酀鄿蘄</candidates>
+          <candidates>鞹酄茝茽䒢䓅䔮䣐𣂷𣂼𦬕𦰡𦳃𦶦𦺄</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="tm"/>
+        <insert>
+          <candidates>差甘薩韁莖翔苯酋馘芷苷苤苴茳堇菹萱蓊蕤薤羝翦靼薑羶芢荁荺莚菧</candidates>
+          <candidates>菫萓羥葅菙葒蒫蒻蒩靻蔧蓳蔖蔮鞚藶蘙虀虃苼茋蕋蕯韈韮䔃䕢䖅𦭒𦮳</candidates>
+          <candidates>𧄍</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="tn"/>
+        <insert>
+          <candidates>前艺夢瓶莉蒯劐艽芎芩荑荇葶甍蘅苧荊薊艼苀芧芞茀剒茢茤羜羛荶靪</candidates>
+          <candidates>羠莿菿菛葥萷萴靲羭蕍薴薽藅藭藰蘮剳萮葕𦭑𦶢𦸇</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="to"/>
+        <insert>
+          <candidates>歡蒙欺羡羨歉芝茨芙芡苡莰萸菰蔌蓰蕨蘧莢萊歎躉羑苬苵荄荴莁萣萐</candidates>
+          <candidates>菮歁蓏蓗蓫蓯蔙薟藃藂薿鞮羷藗躠臡羮苽鞉㒼䍮𦬨𦮖𦲽𦴧𧄌</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="tp"/>
+        <insert>
+          <candidates>花惹慕慈芯靴葱蔥蓖恭蕊芘芪苠茈葸蒽蕙薨薏恙芅苨荖莣荵惎菎菾葾</candidates>
+          <candidates>愬蒠蔍蕄懃憼薧懟藘藣藯蘢蘟戁菍藼䓤𦲁𦴢𦴪𦹲𦻕𦽳𦿞𧁋𧄉慈</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="tq"/>
+        <insert>
+          <candidates>羊葦摹擎荦蘚韃拲荈菶葎蒘靽蕣蕼薢薘藆鞬藦羴𢺋𦍋𦎾𦭵𦺙</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="tr"/>
+        <insert>
+          <candidates>苦落善警若荷蒼菩菇蘑茄苟菏苛蓉茹苫苔苘苕莒茼茴茗萜菪菅蓓鞫萵</candidates>
+          <candidates>茍茖茩荅莕莙菬萿葀葴葋蒟蓎蒧鞀羬蓲諅鞊鞈蕗薝鞝藲藞鞳蘁蘦虈碁</candidates>
+          <candidates>苢菭萔虂鞛韂黇䒷䓀䓟䓫䕒𦬅𦲀𦴦𦴨𦴩𦶡𦸒𦹃𦹄𦹷𦿟</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ts"/>
+        <insert>
+          <candidates>藏勸勤芦荔勘勒芳募艿苣莠萼蒡羲苲苭荂莋荿莇莮菃葧葝葃葂葄靿勱</candidates>
+          <candidates>蓩艻芿蕂蕚蘍</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="tt"/>
+        <insert>
+          <candidates>并益盖蓋井藍蘆蘊廿葬莽莅蒞卌苙荓荳菈萛蓱葐豊靾薀鞡藎鞥蘴莾萾</candidates>
+          <candidates>葊葢蒀蕰蘯䓝𦭓𦲷𦼦𦾟𧂯𧄧</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="tu"/>
+        <insert>
+          <candidates>着觀首范荒萄巷蔬茁芭靶苞藐羌苑芑芫苊芤苜茺莞菀葙葩蔸瞢鞔莧菴</candidates>
+          <candidates>覲韆芚芼茪莐莌艵萒菤萉菢靰羦蔇萺蓅鞄蔤蔨蔰蕘蕝薍覯氋藽齹虌羓</candidates>
+          <candidates>艶苮莬萖葿蒓蒭覥黆䔄𦬊𦬓𦶤𦹅𦾾𨠫</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="tv"/>
+        <insert>
+          <candidates>甚農養艱茫芒藹姜鞍葛蓑萎茛荽莨萋葚葳蒎蒗羯萇荌菨菵蒆葽葌葨蔉</candidates>
+          <candidates>蔞鞎蕵薞薳藒鞨鞻蘘蘡蘹蘾蔅薗䔽䕑𦮗𦮝𦲤𦴣𦶠𦶧𦷪𦸅𧁓</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="tw"/>
+        <insert>
+          <candidates>曲苗蓄藩蕾茜蕃蔔薔蘭苖莤菑菄菗蒏葍蔯蕕羳藟蘠葘</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="tx"/>
+        <insert>
+          <candidates>舊萏蕭薺蓞鞱</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ty"/>
+        <insert>
+          <candidates>菲苄莓菸蘼芐苳蔠䒟𦭐𦷫</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ua"/>
+        <insert>
+          <candidates>峋岶崏嶆嶍嶒嶜𡼏𡾡</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ub"/>
+        <insert>
+          <candidates>崩峭崤嵩嵴崙峟峬崝嵎崹嵽嶠巂雟巋崘巁𡶺</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="uc"/>
+        <insert>
+          <candidates>嶺嶼顓巔岤崟崸嵿顗巑崯嵰𡸷</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ud"/>
+        <insert>
+          <candidates>粜峥崞崢嶸崺嵥嵲嶪櫱糱孼嶫𡻈</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ue"/>
+        <insert>
+          <candidates>峻凼岌岐岋岥崚嵕凾岅嵈嵻</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="uf"/>
+        <insert>
+          <candidates>炭崇祟嵨嶕嶚嶋㟲𡻕</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ug"/>
+        <insert>
+          <candidates>崖糶崔峌峚崲嵀嶊嶉巏峑崕𡺉</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="uh"/>
+        <insert>
+          <candidates>匕岈岉嵃崵嵺嵾嵗</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ui"/>
+        <insert>
+          <candidates>岭蚩峨巍幽峙崧嵬嵫嵐巉屻崶嶈嵹嶟嶬嶯巀颽巇蠥岺峩峵嶎嶹𡺤</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="uj"/>
+        <insert>
+          <candidates>岸峰嶂峷崋崥崒嵙輋嶧嶭峯辥㟸㠏</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="uk"/>
+        <insert>
+          <candidates>凶岚嶽巖岆岟敳獃巘嶶巗𡽪𣁋𪑛</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ul"/>
+        <insert>
+          <candidates>嶄酆岬峁屮耑岓岕峏酅屮</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="um"/>
+        <insert>
+          <candidates>崆嵯岯岨峘嵼嵖𡸜𡸽</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="un"/>
+        <insert>
+          <candidates>屹岑嵛凱剴岒岪峛峓剬崳崱嵉剻</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="uo"/>
+        <insert>
+          <candidates>峽嵌豳嶷崁嶔峐崨崍崼歂嵷嶡嶮㠙𡷑</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="up"/>
+        <insert>
+          <candidates>崽鬯岷嵊崑岮峔巃崐㞾</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="uq"/>
+        <insert>
+          <candidates>嶙嵂嶰𡶶𡺨</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ur"/>
+        <insert>
+          <candidates>岩崎嶇峪岵岢岣峒崮岧峉峇峈峆峿峮崌嵅嵱嵣嵢巆㞹𡶐</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="us"/>
+        <insert>
+          <candidates>屴岠岝岰峸崿嶀嶗嶲岞𡷫𡼕𡾞芳</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ut"/>
+        <insert>
+          <candidates>豈岍嶝豐豔岦㠠</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="uu"/>
+        <insert>
+          <candidates>出山崗艷屺岜崦崛嵋兇峴覬屼屾艸岏峗峞芔茻嶢嶤𡵆𡷹</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="uv"/>
+        <insert>
+          <candidates>崾崴峖峎崀崣嵁嵑嶁嶱嶩巕</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="uw"/>
+        <insert>
+          <candidates>岫崠崰崷嵧嶓崬</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="uy"/>
+        <insert>
+          <candidates>嶵峂</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="va"/>
+        <insert>
+          <candidates>響織縮緒婚繪絢娼縉繒媎媋絔嬂緡曫姰緍㛥𡢃</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vb"/>
+        <insert>
+          <candidates>婦編綸納絹綿繃嬌締嫡娟婿帑婧媾嫦縞妠姌姷姵帤婂媦媥媩媏絺綃嫞</candidates>
+          <candidates>綪緉嫷縃縎嬭嬬縭繘繑繻孈纗嫺姉娋婨媂媠綳㛓㛵𡛦𡝭𡠪𡠹𡢠𡤃𦄂</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vc"/>
+        <insert>
+          <candidates>织續績嫌縑縝嬪縯繽鑾娸婰媜嫇嫹嬇嬚縜繢嬾纊纈纘娂嫃綨緽銺㛝㜥</candidates>
+          <candidates>㜺𡣑𡤐𡤧𨥬𨫥</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vd"/>
+        <insert>
+          <candidates>好她樂妹巢槳媒姝孥紆彙綑綵嫻繅孿姀婐婇絁媟媬媃絑嫀綍綒嫭綧綝</candidates>
+          <candidates>嬠縔縥繰欒婅婙嫲嬫桇牀緤緥縧㚥㛦㜰䊢䋴𡜻𡡢𡡣𡤄𢑥</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ve"/>
+        <insert>
+          <candidates>发級線嫂綠緩奴漿綴緞妓媛綾綬縵彔娵婈婌婽絿綅嫚嫝緅緮嬡繌繓孇</candidates>
+          <candidates>纋娽緵㛖𡛀𡛻𡝯𡟺𡡷𡤕𦀩𦂥</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vf"/>
+        <insert>
+          <candidates>媽練絲災綜絮嫣嫖嫘糸妳嫵駑縲縹繚鷥鸞紑婃婒婛焋媯嫄嫊嫬緂綡嫽</candidates>
+          <candidates>嫶縓縤鴢縩鴽嬿繺鶅纁鶨鶭妚媡糹㜣𡞫𡡅𡡡𡢾𡤻𢇃𤓖𦇝𪆓</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vg"/>
+        <insert>
+          <candidates>維壯娃纏紐妊妞娌姪絰妵姾娗紝婬娾紸媓絓絟綎墏緟嬞嬥嬯繀雝纆纙</candidates>
+          <candidates>姙媑絍緾纒㛇𡠠𡠩𡤢𤕸</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vh"/>
+        <insert>
+          <candidates>紛妙紗姊娣緲繆縿妢妼娏紾婸綈絼嫪緆𡛁𡛧𡝱𡠨𦆲</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vi"/>
+        <insert>
+          <candidates>幾將約繼縛姆娥厶戕妁媸幺蠡紂紉紜絃嬤繈纔蠻妘妐妶姈紈紘娹紶紨</candidates>
+          <candidates>媿媷嫥縟嬦縳螿繜蠁孎蠿嬟綋綫繧𡚸𡚺𡛕𡛼𡜐𡝬𡞰𡟶𡡤𡢅𥿢𦅛</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vj"/>
+        <insert>
+          <candidates>纤縫絨奸婢嫜綽嬋緝緙繹奷妦妺娀紏婞婥婩婻媶綷綼嫴嬅緷縡繂縪縺</candidates>
+          <candidates>繟姸媈嬕㛁㛅㛔䊹䋻𡞴</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vk"/>
+        <insert>
+          <candidates>變收狀獎紋嫩姻繳娛嫉妖奘姣嫫紱絞緻妏姎紁奊娭紎紻媄絪媺綆綟緛</candidates>
+          <candidates>緶緱嬓縸繖嬽奱孍媆媖嬍緓㜜𡘾𡛂𡞳𡞵𡟹𡟻𡢄𡢢𢑱𦅙𦆮</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vl"/>
+        <insert>
+          <candidates>斷鄉糾綁紳姬娜凵緬妎妡妽斨紃娕紖紒媔絒綀鄛姫婣嫏㚹𡜼𡡒</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vm"/>
+        <insert>
+          <candidates>经經組紅姐姓纖爿妲嬗纟綞丱妅姏姃姮娙婭紺絊娷媗嫋緎綖嫿緪嬔縒</candidates>
+          <candidates>繣繵孅娫娬嫤彑絚縇繮纎㚬㚰㚱㜁䊼𡝮𡟙𡟸𡠭𦁈</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vn"/>
+        <insert>
+          <candidates>剝彎姨剿弩妗妤婷紇紼糽姼娳紓紟紵媮媊絎緰嬣嬼劙奵妔㜲䊵𦂃𦅜𦆭</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vo"/>
+        <insert>
+          <candidates>以緣嫁縱姚彖姒婕胬綻緹娖婝紩媞絘絯絩嫙嫨緁嬐疀縼繉縰繸纀臠妷</candidates>
+          <candidates>婡媫嫰𡝳𡟇𡟼𡢟𡣘</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vp"/>
+        <insert>
+          <candidates>總紙怒媳戀姥妮恕彘妣姹媲紕奼婖紽絏嫕緄緦嬨繐繶孋纚姄娡婫嫓嬑</candidates>
+          <candidates>総𡟟𡟯𡣺𥿡𦁤</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vq"/>
+        <insert>
+          <candidates>緯姅絆絳縴攣姩拏挐牂繗繲繨媁嫾𡛾𡡞𡢡𡤒𢳉</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vr"/>
+        <insert>
+          <candidates>給如結始姑紹絡綢婀嬉媧嫗綰綺緘嚮繕轡姁妱姡姞姶姤姛姳姠牁娮砮</candidates>
+          <candidates>婠婟婤婄婍絅絇紿婼絧嫆綌絽嫟牄綹嫸緺縋縖繾妬妸娪婮綗緔繥㘘㜃</candidates>
+          <candidates>㜍㜬𡜺𡝗𡟵𡠻𡣗</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vs"/>
+        <insert>
+          <candidates>努奶纺紡幼幻纬妨妒娉勦姖姱嫮縍妰娍娚嫎糼絝綉㛈㛢𡞲𦄡</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vt"/>
+        <insert>
+          <candidates>彝妍姘姍紲媼縊媕絣盝嬁縕嬧盭纑彜繿䋼𡝰𡟚𡟛𥁒𦂤</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vu"/>
+        <insert>
+          <candidates>统統紀絕純繩綱繞巒缆媚娩婉妃娓孀邕絀嬈縐纜奾妧姺姽娊紞紌婘婗</candidates>
+          <candidates>媢絖媱媰絻綄綣綯綩緗縌矕妉姯娧㚪㛡䌫𡜍𡝴𡟃𡡀𡡻𡤅𩠐</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vv"/>
+        <insert>
+          <candidates>女裝娘網縷娠婊巛妝姦綏嬝孃饗纓奻姲娞婑媴緀緌嬛縗繷繯孌纕娤婹</candidates>
+          <candidates>婾媙孆㛄㜊㜢㜳𡛟𡞱𡟜𡢞𡢿𡣖</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vw"/>
+        <insert>
+          <candidates>細牆嬸醬妯畿甾緇繙紬媌媹嬏緧嬙孄孏繬㚼㜭𡤑</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vx"/>
+        <insert>
+          <candidates>繡嫍縚𡣙</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="vy"/>
+        <insert>
+          <candidates>終緋娒婔孊㚵𡛓𡛨</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wa"/>
+        <insert>
+          <candidates>署黯罾圕</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wb"/>
+        <insert>
+          <candidates>胃圃囿圊囧圇圌罥羃朙㘣𤲟</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wc"/>
+        <insert>
+          <candidates>四買顆圓異貫黷圚顒黰顋𨯔貫</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wd"/>
+        <insert>
+          <candidates>果困囝囷罦罧罺櫐圞畭㝀𡇙𡥘</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="we"/>
+        <insert>
+          <candidates>畈黢畟敤畯瑆畷罬斀</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wf"/>
+        <insert>
+          <candidates>黑罵累鴨罘黥羈羆纍鷝鷶羉鸅鸀鸓圝䴉</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wg"/>
+        <insert>
+          <candidates>里墨壘畦墅疃罹羅罜罣畽罿黫壨囯𪐴</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wh"/>
+        <insert>
+          <candidates>团囫畛罞黲</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wi"/>
+        <insert>
+          <candidates>国團母蜀禺囹疇畤罻罸𤴆</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wj"/>
+        <insert>
+          <candidates>畢罩毋圉罱睪毌圛罼</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wk"/>
+        <insert>
+          <candidates>因默畎畋斁奰</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wl"/>
+        <insert>
+          <candidates>界甲畀甽畍罒</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wm"/>
+        <insert>
+          <candidates>國置疊罡畇罝罭黚翾㽣</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wn"/>
+        <insert>
+          <candidates>野罰黔夥町黟囥罽㓻㽘𠝹</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wo"/>
+        <insert>
+          <candidates>眾囚歜圂欭罛畂𤳉</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wp"/>
+        <insert>
+          <candidates>罷思愚恩毗囮毘罠慁罳黓</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wq"/>
+        <insert>
+          <candidates>圍畔疄</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wr"/>
+        <insert>
+          <candidates>點回略固畸圄罟詈黠圁礨羇黵畧</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ws"/>
+        <insert>
+          <candidates>男嬲黝圀</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wt"/>
+        <insert>
+          <candidates>圔黭畊黸</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wu"/>
+        <insert>
+          <candidates>园圈囤畹罨黜瑂黕黖黤黦罍㽙𤳙</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wv"/>
+        <insert>
+          <candidates>園畏囡圜甿褁瞏黮睘</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ww"/>
+        <insert>
+          <candidates>圖田畾罶畕𦌵</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="wy"/>
+        <insert>
+          <candidates>罪罫畮</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="xb"/>
+        <insert>
+          <candidates>冂冖爫</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="xc"/>
+        <insert character="20023"/>
+      </rule>
+      <rule>
+        <keyseq keys="xe"/>
+        <insert>
+          <candidates>氵氺</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="xf"/>
+        <insert character="28780"/>
+      </rule>
+      <rule>
+        <keyseq keys="xh"/>
+        <insert character="131206"/>
+      </rule>
+      <rule>
+        <keyseq keys="xi"/>
+        <insert>
+          <candidates>广丶</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="xj"/>
+        <insert character="23424"/>
+      </rule>
+      <rule>
+        <keyseq keys="xk"/>
+        <insert>
+          <candidates>疒𠂇</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="xl"/>
+        <insert>
+          <candidates>丨丿肀衤</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="xn"/>
+        <insert>
+          <candidates>乛亅</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="xo"/>
+        <insert character="20155"/>
+      </rule>
+      <rule>
+        <keyseq keys="xp"/>
+        <insert>
+          <candidates>勹忄㣺</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="xq"/>
+        <insert character="25164"/>
+      </rule>
+      <rule>
+        <keyseq keys="xs"/>
+        <insert character="131276"/>
+      </rule>
+      <rule>
+        <keyseq keys="xt"/>
+        <insert>
+          <candidates>艹卝</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="xu"/>
+        <insert character="20058"/>
+      </rule>
+      <rule>
+        <keyseq keys="xy"/>
+        <insert>
+          <candidates>亠辶</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ya"/>
+        <insert>
+          <candidates>識音迫遭詢諸詣諧諳譜迿誻諙謵譇旝譖齰誯𧪽𧬘𨑨</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yb"/>
+        <insert>
+          <candidates>論通講离市帝請育適遍肯遇端謂膚邁膏誦靖逋逍遄遘肓膂旆帟訥誚誧</candidates>
+          <candidates>諦謫邇譎齲迶斒旓詴歶遰諝諞諯遹骿謞謪謧譋譑齵斾謿讁迊迌逳遡𢂚</candidates>
+          <candidates>𥜽𧬺</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yc"/>
+        <insert>
+          <candidates>六讀選旗顏述遺迹顫頻亦謙銮貞貲韻龔贛顱讚訹賌遉頏虡鈭諆頝頦錖</candidates>
+          <candidates>謓謮譔贇旟譧齞齎顪贙齻亷讃贑頕顇鹻𣄃𨘀𩐠𩐳𩑈𪙊</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yd"/>
+        <insert>
+          <candidates>課桌施途柴迷謀享棄迂迤栾粲杗迆訏訑稟誅遊諄諍諜謎譟斿虖竫誄誖</candidates>
+          <candidates>諃謋謼齫斈椉槀歯稾訸㰍䇏䜓𧨾𧩹𨔼𨘋</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ye"/>
+        <insert>
+          <candidates>变設護叔敲返毅逮竣歧逑逡逯遐攴詠詖遝諼敁殶敊毃諏諔叡皻謖謢謏</candidates>
+          <candidates>皽謾竷譭邍讂頀齱詉誜㕡㪗㪫䛵𠮏𣫛𧬋</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yf"/>
+        <insert>
+          <candidates>点談熟遮紫諒遼鶉遜京烹紊禀逖詼諫齋譙讜祡鳪鳼鴗旚謜鮆鵁謶謤齌</candidates>
+          <candidates>譕鶁鵫鶙鶐龒鷟讌鷲鷾鸇鸆虪鸕鸗誴譌遤鵉𧪾𩐿</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yg"/>
+        <insert>
+          <candidates>主進望誰離雜童壟邏雌逛逞雍塾壅壑逵遑暹觜註詮誑韹齷迋誆詿遳諲</candidates>
+          <candidates>諻讙堃墪誔㘹𡑔𣁦𨑳𨗴</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yh"/>
+        <insert>
+          <candidates>步歲递訝診謬彪彰迓彥諺玅虙訬逤逿虨齖齴彣竧訜謭辺逷㣌𧧝</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yi"/>
+        <insert>
+          <candidates>導运議討戲謝詩遵齡訟譏諷孰玄逸玆鹵颯讒竑歭訒旍竤詅戠誸諓虥譐</candidates>
+          <candidates>譸蠪歺畆竛蝱蠭誐讛迏齢㦸㱔䇊𠧧𤫀</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yj"/>
+        <insert>
+          <candidates>許斗運辦連計評章率迅避辯訊辛譯辮逢辨瓣迁卓卒迕訐誶譁譚聾顰逴</candidates>
+          <candidates>諀遧諢諵諿韸謘謰譂嚲讘竏辧辻遖𣁾𥪮𧧽</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yk"/>
+        <insert>
+          <candidates>头放文敵送夜族交达誤效獻邀誒敦卤虞奕遨虔訣詨謨迖迗訞敨詙敹遫</candidates>
+          <candidates>謑韺譈譀龑讞竢訩詾齩䜘</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yl"/>
+        <insert>
+          <candidates>部新近速齐迎訓逝郊辣郭斋邙邡鄣竦訢鄗邟旂詶鄐齗齘亣迚𠨑𥪕𨚪𨜓</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ym"/>
+        <insert>
+          <candidates>上產些与証止試虛誕誼謹斌虐韵遢旌翊訌逕詛詆齟讖詌亶瑎甝詡誙諠</candidates>
+          <candidates>謔諈韰謆邅謯翽譠譅鹺亹譾斖讈齏斉竩譃辷韲𦐑𦒍𧥺𧩙𧫴𨒂𪘲</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yn"/>
+        <insert>
+          <candidates>處刻訂劇劑亭剖亨亢迄逾嬴蠃羸訖剷諭甕贏斻迒瓬迾迻瑀誃劌甋謻齕</candidates>
+          <candidates>甗臝鸁剠竚諪驘䇄𣃚𥪜𧭈𨔁</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yo"/>
+        <insert>
+          <candidates>該逐逃旋畝齿齒豪鹼誣迭亥瓤遂脔遽邃歆諛齪欬欳旐胔詄誂豦歊歑諑</candidates>
+          <candidates>誺遯歔諟遾斔螤旞譣譹譺歒諚譢蹵込遬䢭𠀅</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yp"/>
+        <insert>
+          <candidates>意認此忘慮龍詫氓亳旎忐憝虍託訛誌齜邐忞迡惄詑訿誋諗諰齔謥譓齥</candidates>
+          <candidates>譿讔戇龘訫譩㡣䛏𢅛𢥫𧩓</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yq"/>
+        <insert>
+          <candidates>達違遲牽詳逄遴邂諱詊撉旔𣁄𨗨</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yr"/>
+        <insert>
+          <candidates>這過高話造站調商适占言追語詞遣譴吝韶迢裔啻迥迦迨逅逭旖砦訾迴</candidates>
+          <candidates>詁詔訶週詰詬詻誥諮諾譆譫鹹齣齬呰迠竘迵迼逜詀詗詒詷詺逽諴謒謳</candidates>
+          <candidates>譗齠齝礱讋齮讟咅啇旑訽誩謌逈䢛䶜𧪄𧬆𧬸𨔽𨘥𩐝𪘁𪙛</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="ys"/>
+        <insert>
+          <candidates>方边邊旁透訪虧誠虜誘卣劾迮詐誇謗迉勍逌詎詏勯諤勴謣勷齶効辸遌</candidates>
+          <candidates>齚𧨊</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yt"/>
+        <insert>
+          <candidates>立逗誡迸弈盧謐證衁衧詍誁竮諡邆謚髜齍齛齸竝𧬹𨑬</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yu"/>
+        <insert>
+          <candidates>就說道親記亮竟充毫虎遞競督盲遷遙謊氈謠詭遁逆乩兖邈旄旒睿兗訕</candidates>
+          <candidates>巟辿迍眥訰訧覘詘詵覤諕誽氃虤遶遻謅謕罋覷譊譝齙齯齺齾竓竜齓𥈠</candidates>
+          <candidates>𥪯𧦠𧨎𨕬</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yv"/>
+        <insert>
+          <candidates>還遠讓衣退旅亡哀妄裹襲餐竭衰巡褒遏襄衷衮袤裒逶邋妾饔袞諉謁諶</candidates>
+          <candidates>褻齦玈袬袌袲裛裻誫誏褎諘飺褭褱褢謱譪譨裏袠裦裵襃譞𧜏𨘻𪗋</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yw"/>
+        <insert>
+          <candidates>逼畜迪遒遛迺斕諨旛譒讄讅讕䢮</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yx"/>
+        <insert>
+          <candidates>齊諂謟</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="yy"/>
+        <insert>
+          <candidates>訴卡卜卞於旃訃誨誹𠁎</candidates>
+        </insert>
+      </rule>
+    </map>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="cjk-util.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:map)"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="zh-util.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:map)"/>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-starter">
+        <show-candidates/>
+        <pushback-n-events n="1"/>
+        <shift-to id="state-main"/>
+      </branch>
+      <branch branch-selecting-map="map-enter-fullwidth-mode">
+        <shift-to id="state-fullwidth-mode"/>
+      </branch>
+      <branch branch-selecting-map="map-enter-single-fullwidth-mode">
+        <shift-to id="state-single-fullwidth-mode"/>
+      </branch>
+    </state>
+    <state id="state-main">
+      <branch branch-selecting-map="map-map">
+        <shift-to id="state-select"/>
+      </branch>
+      <catch-all-branch>
+        <hide-candidates/>
+        <shift-to id="state-check-undo"/>
+      </catch-all-branch>
+    </state>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="cjk-util.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:state)"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="zh-util.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:state)"/>
+  </state-list>
+</input-method>

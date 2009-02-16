@@ -1,0 +1,199 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>kk</language>
+    <name>arabic</name>
+  </tags>
+  <description>Kazakh (with Arabic script) input method by transliteration.
+  1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  a   A   b   v   g   R   d   e   j   z   y   k   q   l   m   n   N
+
+ 18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33
+  o   O   p   r   s   t   w   u   U   f   H   h   c   S   I   i</description>
+  <title>قا</title>
+  <map-list>
+    <map id="map-generic">
+      <rule>
+        <keyseq keys="a"/>
+        <insert string="ا"/>
+      </rule>
+      <rule>
+        <keyseq keys="A"/>
+        <insert string="ٵ"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <insert string="ب"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <insert string="ۆ"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+        <insert string="گ"/>
+      </rule>
+      <rule>
+        <keyseq keys="R"/>
+        <insert string="ع"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <insert string="د"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert string="ە"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+        <insert string="ج"/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+        <insert string="ز"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <insert string="ي"/>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+        <insert string="ك"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+        <insert string="ق"/>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+        <insert string="ل"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+        <insert string="م"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <insert string="ن"/>
+      </rule>
+      <rule>
+        <keyseq keys="N"/>
+        <insert string="ڭ"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert string="و"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <insert string="ٶ"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+        <insert string="پ"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+        <insert string="ر"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+        <insert string="س"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+        <insert string="ت"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+        <insert string="ۋ"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert string="ۇ"/>
+      </rule>
+      <rule>
+        <keyseq keys="U"/>
+        <insert string="ٷ"/>
+      </rule>
+      <rule>
+        <keyseq keys="f"/>
+        <insert string="ف"/>
+      </rule>
+      <rule>
+        <keyseq keys="H"/>
+        <insert string="ح"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+        <insert string="ه"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <insert string="چ"/>
+      </rule>
+      <rule>
+        <keyseq keys="S"/>
+        <insert string="ش"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+        <insert string="ى"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert string="ٸ"/>
+      </rule>
+      <rule>
+        <keyseq keys=";"/>
+        <insert string="؛"/>
+      </rule>
+      <rule>
+        <keyseq keys=","/>
+        <insert string="،"/>
+      </rule>
+      <rule>
+        <keyseq keys="?"/>
+        <insert string="؟"/>
+      </rule>
+      <rule>
+        <keyseq keys="&lt;"/>
+        <insert string="&gt;"/>
+      </rule>
+      <rule>
+        <keyseq keys="&gt;"/>
+        <insert string="&lt;"/>
+      </rule>
+      <rule>
+        <keyseq keys="("/>
+        <insert string=")"/>
+      </rule>
+      <rule>
+        <keyseq keys=")"/>
+        <insert string="("/>
+      </rule>
+      <rule>
+        <keyseq keys="["/>
+        <insert string="]"/>
+      </rule>
+      <rule>
+        <keyseq keys="]"/>
+        <insert string="["/>
+      </rule>
+      <rule>
+        <keyseq keys="{"/>
+        <insert string="}"/>
+      </rule>
+      <rule>
+        <keyseq keys="}"/>
+        <insert string="{"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-generic"/>
+    </state>
+  </state-list>
+</input-method>

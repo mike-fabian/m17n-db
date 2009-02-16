@@ -1,0 +1,252 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>ug</language>
+    <name>kbd</name>
+  </tags>
+  <description>Uyghur input method simulating an Uyghur keyboard layout.
+Based on &lt;http://tarim.yulghun.com/docs/src/uyghur.xkb&gt;
+</description>
+  <title>ئۇ</title>
+  <map-list>
+    <map id="map-map">
+      <rule>
+        <keyseq keys="q"/>
+        <insert character="0x0686"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+        <insert character="0x06CB"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert character="0x06D0"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+        <insert character="0x0631"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+        <insert character="0x062A"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <insert character="0x064A"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert character="0x06C7"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert character="0x06AD"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert character="0x0648"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+        <insert character="0x067E"/>
+      </rule>
+      <rule>
+        <keyseq keys="a"/>
+        <insert character="0x06BE"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+        <insert character="0x0633"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <insert character="0x062F"/>
+      </rule>
+      <rule>
+        <keyseq keys="f"/>
+        <insert character="0x0627"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+        <insert character="0x06D5"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+        <insert character="0x0649"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+        <insert character="0x0642"/>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+        <insert character="0x0643"/>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+        <insert character="0x0644"/>
+      </rule>
+      <rule>
+        <keyseq keys=";"/>
+        <insert character="0x061B"/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+        <insert character="0x0632"/>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+        <insert character="0x0634"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <insert character="0x063A"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <insert character="0x06C8"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <insert character="0x0628"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <insert character="0x0646"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+        <insert character="0x0645"/>
+      </rule>
+      <rule>
+        <keyseq keys=","/>
+        <insert character="0x060C"/>
+      </rule>
+      <rule>
+        <keyseq keys="/"/>
+        <insert character="0x0626"/>
+      </rule>
+      <rule>
+        <keyseq keys="Q"/>
+        <insert character="0x0686"/>
+      </rule>
+      <rule>
+        <keyseq keys="W"/>
+        <insert character="0x06CB"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+        <insert character="0x06D0"/>
+      </rule>
+      <rule>
+        <keyseq keys="R"/>
+        <insert character="0x0631"/>
+      </rule>
+      <rule>
+        <keyseq keys="T"/>
+        <insert character="0x062A"/>
+      </rule>
+      <rule>
+        <keyseq keys="Y"/>
+        <insert character="0x064A"/>
+      </rule>
+      <rule>
+        <keyseq keys="U"/>
+        <insert character="0x06C7"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+        <insert character="0x06AD"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <insert character="0x0648"/>
+      </rule>
+      <rule>
+        <keyseq keys="P"/>
+        <insert character="0x067E"/>
+      </rule>
+      <rule>
+        <keyseq keys="{"/>
+        <insert character="0x00AB"/>
+      </rule>
+      <rule>
+        <keyseq keys="}"/>
+        <insert character="0x00BB"/>
+      </rule>
+      <rule>
+        <keyseq keys="A"/>
+        <insert character="0x06BE"/>
+      </rule>
+      <rule>
+        <keyseq keys="S"/>
+        <insert character="0x0633"/>
+      </rule>
+      <rule>
+        <keyseq keys="D"/>
+        <insert character="0x0698"/>
+      </rule>
+      <rule>
+        <keyseq keys="F"/>
+        <insert character="0x0641"/>
+      </rule>
+      <rule>
+        <keyseq keys="G"/>
+        <insert character="0x06AF"/>
+      </rule>
+      <rule>
+        <keyseq keys="H"/>
+        <insert character="0x062E"/>
+      </rule>
+      <rule>
+        <keyseq keys="J"/>
+        <insert character="0x062C"/>
+      </rule>
+      <rule>
+        <keyseq keys="K"/>
+        <insert character="0x06C6"/>
+      </rule>
+      <rule>
+        <keyseq keys="L"/>
+        <insert character="0x0644"/>
+      </rule>
+      <rule>
+        <keyseq keys="Z"/>
+        <insert character="0x0632"/>
+      </rule>
+      <rule>
+        <keyseq keys="X"/>
+        <insert character="0x0634"/>
+      </rule>
+      <rule>
+        <keyseq keys="C"/>
+        <insert character="0x063A"/>
+      </rule>
+      <rule>
+        <keyseq keys="V"/>
+        <insert character="0x06C8"/>
+      </rule>
+      <rule>
+        <keyseq keys="B"/>
+        <insert character="0x0628"/>
+      </rule>
+      <rule>
+        <keyseq keys="N"/>
+        <insert character="0x0646"/>
+      </rule>
+      <rule>
+        <keyseq keys="M"/>
+        <insert character="0x0645"/>
+      </rule>
+      <rule>
+        <keyseq keys="?"/>
+        <insert character="0x061F"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-map"/>
+    </state>
+  </state-list>
+</input-method>

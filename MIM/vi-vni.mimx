@@ -1,0 +1,504 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>vi</language>
+    <name>vni</name>
+  </tags>
+  <description>
+    <get-text>Vietnames input method using the VNI key sequence.
+Typing Backslash ('\') toggles the normal mode and English mode.
+The following variables are customizable:
+  tone-mark-on-last: control tone mark position in equivocal cases
+  backspace-is-undo: control the action of Backspace key (delete or undo)</get-text>
+  </description>
+  <title>Ắ(VNI)</title>
+  <variable-list>
+    <variable id="tone-mark-on-last">
+      <description>
+        <get-text>Flag to control tone mark position in equivocal cases.
+If this variable is 0 (the default), put tone mark on the first vowel
+in such equivocal cases as "oa", "oe", "uy".
+Otherwise, put tone mark on the last vowel.</get-text>
+      </description>
+      <value type="integer">0</value>
+      <variable-value-candidate>
+        <c-value type="integer">0</c-value>
+        <c-value type="integer">1</c-value>
+      </variable-value-candidate>
+    </variable>
+    <variable id="backspace-is-undo">
+      <description>
+        <get-text>Flag to control the action of Backspace key (delete or undo).
+If this variable is 0 (the default), Backspace key deletes the previous
+character (e.g. "q u a i s BS" =&gt; "quá").
+If the value is 1, Backspace key undoes the previous key
+(e.g. "q u a i s BS" =&gt; "quai").</get-text>
+      </description>
+      <value type="integer">0</value>
+      <variable-value-candidate>
+        <c-value type="integer">0</c-value>
+        <c-value type="integer">1</c-value>
+      </variable-value-candidate>
+    </variable>
+  </variable-list>
+  <macro-list>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="vi-base.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:macro)"/>
+  </macro-list>
+  <map-list>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="vi-base.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:map)"/>
+    <map id="map-vowel-ext">
+      <rule>
+        <keyseq keys="a6"/>
+        <insert>
+          <candidates>âấầẩẫậ</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="A6"/>
+        <insert>
+          <candidates>ÂẤẦẨẪẬ</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="a8"/>
+        <insert>
+          <candidates>ăắằẳẵặ</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="A8"/>
+        <insert>
+          <candidates>ĂẮẰẲẴẶ</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="e6"/>
+        <insert>
+          <candidates>êếềểễệ</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="E6"/>
+        <insert>
+          <candidates>ÊẾỀỂỄỆ</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="o6"/>
+        <insert>
+          <candidates>ôốồổỗộ</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="O6"/>
+        <insert>
+          <candidates>ÔỐỒỔỖỘ</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="o7"/>
+        <insert>
+          <candidates>ơớờởỡợ</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="O7"/>
+        <insert>
+          <candidates>ƠỚỜỞỠỢ</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="u7"/>
+        <insert>
+          <candidates>ưứừửữự</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="U7"/>
+        <insert>
+          <candidates>ƯỨỪỬỮỰ</candidates>
+        </insert>
+      </rule>
+    </map>
+    <map id="map-consonant-ext">
+      <rule>
+        <keyseq keys="d9"/>
+        <insert character="273"/>
+      </rule>
+      <rule>
+        <keyseq keys="D9"/>
+        <insert character="272"/>
+      </rule>
+    </map>
+    <map id="map-tone-mark">
+      <rule>
+        <keyseq keys="0"/>
+        <set id="SELECT">
+          <int-val>0</int-val>
+        </set>
+        <insert character="48"/>
+      </rule>
+      <rule>
+        <keyseq keys="1"/>
+        <set id="SELECT">
+          <int-val>1</int-val>
+        </set>
+        <insert character="49"/>
+      </rule>
+      <rule>
+        <keyseq keys="2"/>
+        <set id="SELECT">
+          <int-val>2</int-val>
+        </set>
+        <insert character="50"/>
+      </rule>
+      <rule>
+        <keyseq keys="3"/>
+        <set id="SELECT">
+          <int-val>3</int-val>
+        </set>
+        <insert character="51"/>
+      </rule>
+      <rule>
+        <keyseq keys="4"/>
+        <set id="SELECT">
+          <int-val>4</int-val>
+        </set>
+        <insert character="52"/>
+      </rule>
+      <rule>
+        <keyseq keys="5"/>
+        <set id="SELECT">
+          <int-val>5</int-val>
+        </set>
+        <insert character="53"/>
+      </rule>
+    </map>
+    <map id="map-temporary-escape">
+      <rule>
+        <keyseq keys="a66"/>
+        <insert string="a6"/>
+      </rule>
+      <rule>
+        <keyseq keys="A66"/>
+        <insert string="A6"/>
+      </rule>
+      <rule>
+        <keyseq keys="a88"/>
+        <insert string="a8"/>
+      </rule>
+      <rule>
+        <keyseq keys="A88"/>
+        <insert string="A8"/>
+      </rule>
+      <rule>
+        <keyseq keys="e66"/>
+        <insert string="e6"/>
+      </rule>
+      <rule>
+        <keyseq keys="E66"/>
+        <insert string="E6"/>
+      </rule>
+      <rule>
+        <keyseq keys="o66"/>
+        <insert string="o6"/>
+      </rule>
+      <rule>
+        <keyseq keys="O66"/>
+        <insert string="O6"/>
+      </rule>
+      <rule>
+        <keyseq keys="o77"/>
+        <insert string="o7"/>
+      </rule>
+      <rule>
+        <keyseq keys="O77"/>
+        <insert string="O7"/>
+      </rule>
+      <rule>
+        <keyseq keys="u77"/>
+        <insert string="u7"/>
+      </rule>
+      <rule>
+        <keyseq keys="U77"/>
+        <insert string="U7"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <state-hook>
+        <set id="C">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <set id="V-1">
+          <int-val>0</int-val>
+        </set>
+        <set id="V-2">
+          <int-val>0</int-val>
+        </set>
+        <set id="V-3">
+          <int-val>0</int-val>
+        </set>
+        <set id="C-AFTER-V">
+          <int-val>0</int-val>
+        </set>
+        <set id="SELECT">
+          <int-val>0</int-val>
+        </set>
+      </state-hook>
+      <branch branch-selecting-map="map-consonant">
+        <set id="C">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+      </branch>
+      <branch branch-selecting-map="map-consonant-ext">
+        <set id="C">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+      </branch>
+      <branch branch-selecting-map="map-vowel">
+        <mark-current-position markerID="M"/>
+        <set id="V-2">
+          <variable-reference id="V-1"/>
+        </set>
+        <set id="V-1">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <shift-to id="state-after-v"/>
+      </branch>
+      <branch branch-selecting-map="map-vowel-ext">
+        <mark-current-position markerID="M"/>
+        <set id="V-2">
+          <variable-reference id="V-1"/>
+        </set>
+        <set id="V-1">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <shift-to id="state-after-v"/>
+      </branch>
+      <branch branch-selecting-map="map-temporary-escape">
+        <shift-to id="state-temporary-escape"/>
+      </branch>
+      <branch branch-selecting-map="map-permanent-escape">
+        <shift-to id="state-escape-in-normal-mode"/>
+      </branch>
+    </state>
+    <state id="state-after-v">
+      <branch branch-selecting-map="map-consonant">
+        <shift-to id="state-after-vc"/>
+      </branch>
+      <branch branch-selecting-map="map-consonant-ext">
+        <shift-to id="state-after-vc"/>
+      </branch>
+      <branch branch-selecting-map="map-vowel">
+        <mark-current-position markerID="M"/>
+        <set id="V-3">
+          <variable-reference id="V-2"/>
+        </set>
+        <set id="V-2">
+          <variable-reference id="V-1"/>
+        </set>
+        <set id="V-1">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <move-to-marker markerID="T"/>
+        <select index="0"/>
+        <macro-reference id="macro-handle-mark"/>
+        <move-to-marker markerID="M"/>
+      </branch>
+      <branch branch-selecting-map="map-vowel-ext">
+        <mark-current-position markerID="M"/>
+        <set id="V-3">
+          <variable-reference id="V-2"/>
+        </set>
+        <set id="V-2">
+          <variable-reference id="V-1"/>
+        </set>
+        <set id="V-1">
+          <predefined-nth-previous-or-following-character position="-1"/>
+        </set>
+        <move-to-marker markerID="T"/>
+        <select index="0"/>
+        <macro-reference id="macro-handle-mark"/>
+        <move-to-marker markerID="M"/>
+      </branch>
+      <branch branch-selecting-map="map-tone-mark">
+        <delete-to-marker position="@previous"/>
+        <pushback-n-events n="1"/>
+        <shift-to id="state-after-t"/>
+      </branch>
+      <branch branch-selecting-map="map-backspace">
+        <delete-to-marker position="@previous"/>
+        <conditional>
+          <case>
+            <variable-reference id="V-3"/>
+            <set id="V-1">
+              <variable-reference id="V-2"/>
+            </set>
+            <set id="V-2">
+              <variable-reference id="V-3"/>
+            </set>
+            <set id="V-3">
+              <int-val>0</int-val>
+            </set>
+            <conditional>
+              <case>
+                <expr operator="&gt;">
+                  <variable-reference id="TPLACE"/>
+                  <int-val>2</int-val>
+                </expr>
+                <set id="SELECT">
+                  <int-val>0</int-val>
+                </set>
+              </case>
+            </conditional>
+          </case>
+          <case>
+            <variable-reference id="V-2"/>
+            <set id="V-1">
+              <variable-reference id="V-2"/>
+            </set>
+            <set id="V-2">
+              <int-val>0</int-val>
+            </set>
+            <conditional>
+              <case>
+                <expr operator="&gt;">
+                  <variable-reference id="TPLACE"/>
+                  <int-val>1</int-val>
+                </expr>
+                <set id="SELECT">
+                  <int-val>0</int-val>
+                </set>
+              </case>
+            </conditional>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <shift-to id="state-init"/>
+          </case>
+        </conditional>
+      </branch>
+    </state>
+    <state id="state-after-vc">
+      <state-hook>
+        <set id="C-AFTER-V">
+          <int-val>1</int-val>
+        </set>
+      </state-hook>
+      <branch branch-selecting-map="map-consonant">
+        <add id="C-AFTER-V">
+          <int-val>1</int-val>
+        </add>
+      </branch>
+      <branch branch-selecting-map="map-consonant-ext">
+        <add id="C-AFTER-V">
+          <int-val>1</int-val>
+        </add>
+      </branch>
+      <branch branch-selecting-map="map-tone-mark">
+        <delete-to-marker position="@previous"/>
+        <pushback-n-events n="1"/>
+        <shift-to id="state-after-t"/>
+      </branch>
+      <branch branch-selecting-map="map-backspace">
+        <delete-to-marker position="@previous"/>
+        <sub id="C-AFTER-V">
+          <int-val>1</int-val>
+        </sub>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <variable-reference id="C-AFTER-V"/>
+              <int-val>0</int-val>
+            </expr>
+            <shift-to id="state-after-v"/>
+          </case>
+        </conditional>
+      </branch>
+    </state>
+    <state id="state-after-t">
+      <state-hook>
+        <set id="CURRENT-SELECT">
+          <int-val>-1</int-val>
+        </set>
+      </state-hook>
+      <branch branch-selecting-map="map-tone-mark">
+        <conditional>
+          <case>
+            <expr operator="=">
+              <variable-reference id="CURRENT-SELECT"/>
+              <variable-reference id="SELECT"/>
+            </expr>
+            <move-to-marker markerID="T"/>
+            <select index="0"/>
+            <move-to-marker position="@last"/>
+            <shift-to id="state-temporary-escape"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <delete-to-marker position="@previous"/>
+            <macro-reference id="macro-handle-mark"/>
+            <set id="CURRENT-SELECT">
+              <variable-reference id="SELECT"/>
+            </set>
+          </case>
+        </conditional>
+      </branch>
+      <catch-all-branch>
+        <conditional>
+          <case>
+            <variable-reference id="C-AFTER-V"/>
+            <shift-to id="state-after-vc"/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <shift-to id="state-after-v"/>
+          </case>
+        </conditional>
+      </catch-all-branch>
+    </state>
+    <state id="state-temporary-escape">
+      <state-title-text>en</state-title-text>
+      <state-hook>
+        <commit/>
+      </state-hook>
+      <branch branch-selecting-map="map-alnum">
+        <commit/>
+      </branch>
+    </state>
+    <state id="state-escape-in-normal-mode">
+      <state-title-text>EN</state-title-text>
+      <branch branch-selecting-map="map-permanent-escape">
+        <insert string="\"/>
+        <shift-to id="state-init"/>
+      </branch>
+      <catch-all-branch>
+        <shift-to id="state-permanent-escape"/>
+      </catch-all-branch>
+    </state>
+    <state id="state-permanent-escape">
+      <state-title-text>EN</state-title-text>
+      <state-hook>
+        <set id="ESCAPE">
+          <int-val>1</int-val>
+        </set>
+      </state-hook>
+      <branch branch-selecting-map="map-permanent-escape">
+        <shift-to id="state-escape-in-permanent-escape"/>
+      </branch>
+      <catch-all-branch>
+        <unhandle/>
+      </catch-all-branch>
+    </state>
+    <state id="state-escape-in-permanent-escape">
+      <state-title-text>Ắ</state-title-text>
+      <branch branch-selecting-map="map-permanent-escape">
+        <insert string="\"/>
+        <commit/>
+        <shift-to id="state-permanent-escape"/>
+      </branch>
+    </state>
+  </state-list>
+</input-method>

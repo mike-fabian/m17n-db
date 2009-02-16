@@ -1,0 +1,840 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>te</language>
+    <name>itrans</name>
+  </tags>
+  <description>Telugu input method by ITRANS transliteration.
+For the detail of ITRANS, see the page:
+  &lt;http://www.aczoom.com/itrans/&gt;
+</description>
+  <title>క</title>
+  <map-list>
+    <map id="map-starter">
+      <rule>
+        <keyseq keys="."/>
+      </rule>
+      <rule>
+        <keyseq keys="~"/>
+      </rule>
+      <rule>
+        <keyseq keys="#"/>
+      </rule>
+      <rule>
+        <keyseq keys="$"/>
+      </rule>
+      <rule>
+        <keyseq keys="^"/>
+      </rule>
+      <rule>
+        <keyseq keys="*"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>S- </key-event>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>C-@</key-event>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq keys="0"/>
+      </rule>
+      <rule>
+        <keyseq keys="1"/>
+      </rule>
+      <rule>
+        <keyseq keys="2"/>
+      </rule>
+      <rule>
+        <keyseq keys="3"/>
+      </rule>
+      <rule>
+        <keyseq keys="4"/>
+      </rule>
+      <rule>
+        <keyseq keys="5"/>
+      </rule>
+      <rule>
+        <keyseq keys="6"/>
+      </rule>
+      <rule>
+        <keyseq keys="7"/>
+      </rule>
+      <rule>
+        <keyseq keys="8"/>
+      </rule>
+      <rule>
+        <keyseq keys="9"/>
+      </rule>
+      <rule>
+        <keyseq keys="A"/>
+      </rule>
+      <rule>
+        <keyseq keys="C"/>
+      </rule>
+      <rule>
+        <keyseq keys="D"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+      </rule>
+      <rule>
+        <keyseq keys="G"/>
+      </rule>
+      <rule>
+        <keyseq keys="H"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+      </rule>
+      <rule>
+        <keyseq keys="J"/>
+      </rule>
+      <rule>
+        <keyseq keys="K"/>
+      </rule>
+      <rule>
+        <keyseq keys="L"/>
+      </rule>
+      <rule>
+        <keyseq keys="M"/>
+      </rule>
+      <rule>
+        <keyseq keys="N"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+      </rule>
+      <rule>
+        <keyseq keys="R"/>
+      </rule>
+      <rule>
+        <keyseq keys="S"/>
+      </rule>
+      <rule>
+        <keyseq keys="T"/>
+      </rule>
+      <rule>
+        <keyseq keys="U"/>
+      </rule>
+      <rule>
+        <keyseq keys="Y"/>
+      </rule>
+      <rule>
+        <keyseq keys="a"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+      </rule>
+      <rule>
+        <keyseq keys="f"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>KP_1</key-event>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>KP_2</key-event>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>KP_3</key-event>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>KP_4</key-event>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>KP_5</key-event>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>KP_6</key-event>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>KP_7</key-event>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>KP_8</key-event>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>KP_9</key-event>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>KP_0</key-event>
+        </keyseq>
+      </rule>
+    </map>
+    <map id="map-consonant">
+      <rule>
+        <keyseq keys="k"/>
+        <insert string="క్"/>
+      </rule>
+      <rule>
+        <keyseq keys="kh"/>
+        <insert string="ఖ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+        <insert string="గ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="gh"/>
+        <insert string="ఘ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="~N"/>
+        <insert string="ఙ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="N^"/>
+        <insert string="ఙ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="ch"/>
+        <insert string="చ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ch"/>
+        <insert string="ఛ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="chh"/>
+        <insert string="ఛ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+        <insert string="జ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="jh"/>
+        <insert string="ఝ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="~n"/>
+        <insert string="ఞ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="JN"/>
+        <insert string="ఞ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="T"/>
+        <insert string="ట్"/>
+      </rule>
+      <rule>
+        <keyseq keys="Th"/>
+        <insert string="ఠ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="D"/>
+        <insert string="డ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="Dh"/>
+        <insert string="ఢ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="N"/>
+        <insert string="ణ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+        <insert string="త్"/>
+      </rule>
+      <rule>
+        <keyseq keys="th"/>
+        <insert string="థ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <insert string="ద్"/>
+      </rule>
+      <rule>
+        <keyseq keys="dh"/>
+        <insert string="ధ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <insert string="న్"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+        <insert string="ప్"/>
+      </rule>
+      <rule>
+        <keyseq keys="ph"/>
+        <insert string="ఫ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <insert string="బ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="bh"/>
+        <insert string="భ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+        <insert string="మ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <insert string="య్"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+        <insert string="ర్"/>
+      </rule>
+      <rule>
+        <keyseq keys="R"/>
+        <insert string="ఱ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="rh"/>
+        <insert string="ఱ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+        <insert string="ల్"/>
+      </rule>
+      <rule>
+        <keyseq keys="L"/>
+        <insert string="ళ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="ld"/>
+        <insert string="ళ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <insert string="వ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+        <insert string="వ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="sh"/>
+        <insert string="శ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="Sh"/>
+        <insert string="ష్"/>
+      </rule>
+      <rule>
+        <keyseq keys="shh"/>
+        <insert string="ష్"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+        <insert string="స్"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+        <insert string="హ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="GY"/>
+        <insert string="జ్ఞ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="dny"/>
+        <insert string="జ్ఞ్"/>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+        <insert string="క్ష్"/>
+      </rule>
+    </map>
+    <map id="map-independent">
+      <rule>
+        <keyseq keys="a"/>
+        <insert string="అ"/>
+      </rule>
+      <rule>
+        <keyseq keys="aa"/>
+        <insert string="ఆ"/>
+      </rule>
+      <rule>
+        <keyseq keys="A"/>
+        <insert string="ఆ"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert string="ఇ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ii"/>
+        <insert string="ఈ"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+        <insert string="ఈ"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert string="ఉ"/>
+      </rule>
+      <rule>
+        <keyseq keys="uu"/>
+        <insert string="ఊ"/>
+      </rule>
+      <rule>
+        <keyseq keys="U"/>
+        <insert string="ఊ"/>
+      </rule>
+      <rule>
+        <keyseq keys="RRi"/>
+        <insert string="ఋ"/>
+      </rule>
+      <rule>
+        <keyseq keys="R^i"/>
+        <insert string="ఋ"/>
+      </rule>
+      <rule>
+        <keyseq keys="LLi"/>
+        <insert string="ఌ"/>
+      </rule>
+      <rule>
+        <keyseq keys="L^i"/>
+        <insert string="ఌ"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert string="ఎ"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+        <insert string="ఏ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ee"/>
+        <insert string="ఏ"/>
+      </rule>
+      <rule>
+        <keyseq keys="ai"/>
+        <insert string="ఐ"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert string="ఒ"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <insert string="ఓ"/>
+      </rule>
+      <rule>
+        <keyseq keys="oo"/>
+        <insert string="ఓ"/>
+      </rule>
+      <rule>
+        <keyseq keys="au"/>
+        <insert string="ఔ"/>
+      </rule>
+      <rule>
+        <keyseq keys="RRI"/>
+        <insert string="ౠ"/>
+      </rule>
+      <rule>
+        <keyseq keys="R^I"/>
+        <insert string="ౠ"/>
+      </rule>
+      <rule>
+        <keyseq keys="LLI"/>
+        <insert string="ౡ"/>
+      </rule>
+      <rule>
+        <keyseq keys="L^I"/>
+        <insert string="ౡ"/>
+      </rule>
+      <rule>
+        <keyseq keys=".N"/>
+        <insert string="ఁ"/>
+      </rule>
+      <rule>
+        <keyseq keys=".n"/>
+        <insert string="ం"/>
+      </rule>
+      <rule>
+        <keyseq keys="M"/>
+        <insert string="ం"/>
+      </rule>
+      <rule>
+        <keyseq keys="H"/>
+        <insert string="ః"/>
+      </rule>
+      <rule>
+        <keyseq keys=".h"/>
+        <insert string="్"/>
+      </rule>
+      <rule>
+        <keyseq keys="0"/>
+        <insert string="౦"/>
+      </rule>
+      <rule>
+        <keyseq keys="1"/>
+        <insert string="౧"/>
+      </rule>
+      <rule>
+        <keyseq keys="2"/>
+        <insert string="౨"/>
+      </rule>
+      <rule>
+        <keyseq keys="3"/>
+        <insert string="౩"/>
+      </rule>
+      <rule>
+        <keyseq keys="4"/>
+        <insert string="౪"/>
+      </rule>
+      <rule>
+        <keyseq keys="5"/>
+        <insert string="౫"/>
+      </rule>
+      <rule>
+        <keyseq keys="6"/>
+        <insert string="౬"/>
+      </rule>
+      <rule>
+        <keyseq keys="7"/>
+        <insert string="౭"/>
+      </rule>
+      <rule>
+        <keyseq keys="8"/>
+        <insert string="౮"/>
+      </rule>
+      <rule>
+        <keyseq keys="9"/>
+        <insert string="౯"/>
+      </rule>
+      <rule>
+        <keyseq keys="#"/>
+        <insert string="్ర"/>
+      </rule>
+      <rule>
+        <keyseq keys="$"/>
+        <insert string="ర్"/>
+      </rule>
+      <rule>
+        <keyseq keys="^"/>
+        <insert string="త్ర"/>
+      </rule>
+      <rule>
+        <keyseq keys="*"/>
+        <insert string="శ్ర"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>KP_1</key-event>
+        </keyseq>
+        <insert string="౧"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>KP_2</key-event>
+        </keyseq>
+        <insert string="౨"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>KP_3</key-event>
+        </keyseq>
+        <insert string="౩"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>KP_4</key-event>
+        </keyseq>
+        <insert string="౪"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>KP_5</key-event>
+        </keyseq>
+        <insert string="౫"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>KP_6</key-event>
+        </keyseq>
+        <insert string="౬"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>KP_7</key-event>
+        </keyseq>
+        <insert string="౭"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>KP_8</key-event>
+        </keyseq>
+        <insert string="౮"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>KP_9</key-event>
+        </keyseq>
+        <insert string="౯"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>KP_0</key-event>
+        </keyseq>
+        <insert string="౦"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>S- </key-event>
+        </keyseq>
+        <insert string="‌"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>C-@</key-event>
+        </keyseq>
+        <insert string="‍"/>
+      </rule>
+    </map>
+    <map id="map-dependent">
+      <rule>
+        <keyseq keys="a"/>
+        <delete-to-marker position="@previous"/>
+        <insert string=""/>
+      </rule>
+      <rule>
+        <keyseq keys="aa"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ా"/>
+      </rule>
+      <rule>
+        <keyseq keys="A"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ా"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ి"/>
+      </rule>
+      <rule>
+        <keyseq keys="ii"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ీ"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ీ"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ు"/>
+      </rule>
+      <rule>
+        <keyseq keys="uu"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ూ"/>
+      </rule>
+      <rule>
+        <keyseq keys="U"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ూ"/>
+      </rule>
+      <rule>
+        <keyseq keys="RRi"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ృ"/>
+      </rule>
+      <rule>
+        <keyseq keys="R^i"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ృ"/>
+      </rule>
+      <rule>
+        <keyseq keys="RRI"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ౄ"/>
+      </rule>
+      <rule>
+        <keyseq keys="R^I"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ౄ"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ె"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ే"/>
+      </rule>
+      <rule>
+        <keyseq keys="ee"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ే"/>
+      </rule>
+      <rule>
+        <keyseq keys="ai"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ై"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ొ"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ో"/>
+      </rule>
+      <rule>
+        <keyseq keys="oo"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ో"/>
+      </rule>
+      <rule>
+        <keyseq keys="au"/>
+        <delete-to-marker position="@previous"/>
+        <insert string="ౌ"/>
+      </rule>
+    </map>
+    <map id="map-return">
+      <rule>
+        <keyseq>
+          <key-event>Return</key-event>
+        </keyseq>
+      </rule>
+    </map>
+    <map id="map-backspace">
+      <rule>
+        <keyseq>
+          <key-event>BackSpace</key-event>
+        </keyseq>
+        <undo/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-starter">
+        <pushback-n-events n="1"/>
+        <shift-to id="state-intermediate"/>
+      </branch>
+    </state>
+    <state id="state-intermediate">
+      <branch branch-selecting-map="map-consonant">
+        <shift-to id="state-second"/>
+      </branch>
+      <branch branch-selecting-map="map-independent">
+        <shift-to id="state-init"/>
+      </branch>
+      <branch branch-selecting-map="map-backspace"/>
+      <branch branch-selecting-map="map-return">
+        <shift-to id="state-init"/>
+      </branch>
+    </state>
+    <state id="state-second">
+      <branch branch-selecting-map="map-consonant"/>
+      <branch branch-selecting-map="map-dependent">
+        <shift-to id="state-init"/>
+      </branch>
+      <branch branch-selecting-map="map-backspace"/>
+      <branch branch-selecting-map="map-return">
+        <shift-to id="state-init"/>
+      </branch>
+    </state>
+  </state-list>
+</input-method>

@@ -21,63 +21,63 @@
 # Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 # Boston, MA 02110-1301, USA.
 
-pkgdata_DATA = ${INPUT_METHOD}
+pkgdata_DATA = ${INPUT_METHOD} mim.rng
 
-EXTRA_DIST = ${INPUT_METHOD}
+EXTRA_DIST = ${INPUT_METHOD} mim.rng
 
 INPUT_METHOD = \
-	am-sera.mim \
-	ar-kbd.mim \
-	as-itrans.mim \
-	bn-itrans.mim \
-	bn-unijoy.mim \
-	bo-ewts.mim bo-tcrc.mim bo-wylie.mim \
-	cmc-kbd.mim \
-	da-post.mim \
-	dv-phonetic.mim \
-	el-kbd.mim \
-	fa-isiri.mim \
-	fr-azerty.mim \
-	grc-mizuochi.mim \
-	gu-itrans.mim \
-	he-kbd.mim \
-	hi-itrans.mim hi-typewriter.mim \
-	hr-kbd.mim \
-	hy-kbd.mim \
-	ja-anthy.mim ja-tcode.mim ja-trycode.mim \
-	ka-kbd.mim \
-	kk-kbd.mim kk-arabic.mim \
-	km-yannis.mim \
-	kn-itrans.mim \
-	ko-han2.mim ko-romaja.mim \
-	lo-kbd.mim lo-lrt.mim \
-	ml-itrans.mim \
-	my-kbd.mim \
-	or-itrans.mim \
-	pa-itrans.mim \
-	ru-kbd.mim ru-yawerty.mim ru-phonetic.mim \
-	sa-harvard-kyoto.mim \
-	si-samanala.mim si-wijesekera.mim \
-	si-wijesekera-preedit-alt.mim si-wijesekera-preedit.mim \
-	sk-kbd.mim \
-	sr-kbd.mim \
-	sv-post.mim \
-	ta-itrans.mim ta-lk-renganathan.mim \
-	te-itrans.mim \
-	th-kesmanee.mim \
-	th-pattachote.mim \
-	th-tis820.mim \
-	ug-kbd.mim \
-	vi-base.mim vi-viqr.mim vi-telex.mim vi-vni.mim vi-tcvn.mim \
-	zh-py.mim zh-py-gb.mim zh-py-b5.mim \
-	zh-tonepy.mim zh-tonepy-gb.mim zh-tonepy-b5.mim \
-	zh-cangjie.mim zh-quick.mim \
-	zh-pinyin.mim \
-	latn-post.mim latn-pre.mim \
-	syrc-phonetic.mim \
-	zh-bopomofo.mim \
-	unicode.mim rfc1345.mim \
-	ispell.mim \
-	global.mim cjk-util.mim zh-util.mim
+	am-sera.mimx \
+	ar-kbd.mimx \
+	as-itrans.mimx \
+	bn-itrans.mimx \
+	bn-unijoy.mimx \
+	bo-ewts.mimx bo-tcrc.mimx bo-wylie.mimx \
+	cmc-kbd.mimx \
+	da-post.mimx \
+	dv-phonetic.mimx \
+	el-kbd.mimx \
+	fa-isiri.mimx \
+	fr-azerty.mimx \
+	grc-mizuochi.mimx \
+	gu-itrans.mimx \
+	he-kbd.mimx \
+	hi-itrans.mimx hi-typewriter.mimx \
+	hr-kbd.mimx \
+	hy-kbd.mimx \
+	ja-anthy.mimx ja-tcode.mimx ja-trycode.mimx \
+	ka-kbd.mimx \
+	kk-kbd.mimx kk-arabic.mimx \
+	km-yannis.mimx \
+	kn-itrans.mimx \
+	ko-han2.mimx ko-romaja.mimx \
+	lo-kbd.mimx lo-lrt.mimx \
+	ml-itrans.mimx \
+	my-kbd.mimx \
+	or-itrans.mimx \
+	pa-itrans.mimx \
+	ru-kbd.mimx ru-yawerty.mimx ru-phonetic.mimx \
+	sa-harvard-kyoto.mimx \
+	si-samanala.mimx si-wijesekera.mimx \
+	si-wijesekera-preedit-alt.mimx si-wijesekera-preedit.mimx \
+	sk-kbd.mimx \
+	sr-kbd.mimx \
+	sv-post.mimx \
+	ta-itrans.mimx ta-lk-renganathan.mimx \
+	te-itrans.mimx \
+	th-kesmanee.mimx \
+	th-pattachote.mimx \
+	th-tis820.mimx \
+	ug-kbd.mimx \
+	vi-base.mimx vi-viqr.mimx vi-telex.mimx vi-vni.mimx vi-tcvn.mimx \
+	zh-py.mimx zh-py-gb.mimx zh-py-b5.mimx \
+	zh-tonepy.mimx zh-tonepy-gb.mimx zh-tonepy-b5.mimx \
+	zh-cangjie.mimx zh-quick.mimx \
+	zh-pinyin.mimx \
+	latn-post.mimx latn-pre.mimx \
+	syrc-phonetic.mimx \
+	zh-bopomofo.mimx \
+	unicode.mimx rfc1345.mimx \
+	ispell.mimx \
+	global.mimx cjk-util.mimx zh-util.mimx
 
 pkgdatadir=$(datadir)/m17n

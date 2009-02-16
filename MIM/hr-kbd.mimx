@@ -1,0 +1,191 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>hr</language>
+    <name>kbd</name>
+  </tags>
+  <description>Croatian input method simulating the Croatian Latin keyboard.
+    1!  2"  3#  4$  5%  6&amp;  7/  8(  9)  0=  '?  +*  ¸¨
+     qQ  wW  rR  eE  tT  zZ  uU  iI  oO  pP  šŠ  đĐ
+      aA  sS  dD  fF  gG  hH  jJ  kK  lL  čČ  ćĆ  žŽ
+        yY  xX  cC  vV  bB  nN  mM  ,;  .:  -_
+</description>
+  <title>HR</title>
+  <map-list>
+    <map id="map-map">
+      <rule>
+        <keyseq keys="@"/>
+        <insert character="34"/>
+      </rule>
+      <rule>
+        <keyseq keys="^"/>
+        <insert character="38"/>
+      </rule>
+      <rule>
+        <keyseq keys="&amp;"/>
+        <insert character="47"/>
+      </rule>
+      <rule>
+        <keyseq keys="*"/>
+        <insert character="40"/>
+      </rule>
+      <rule>
+        <keyseq keys="("/>
+        <insert character="41"/>
+      </rule>
+      <rule>
+        <keyseq keys=")"/>
+        <insert character="61"/>
+      </rule>
+      <rule>
+        <keyseq keys="-"/>
+        <insert character="39"/>
+      </rule>
+      <rule>
+        <keyseq keys="_"/>
+        <insert character="63"/>
+      </rule>
+      <rule>
+        <keyseq keys="="/>
+        <insert character="43"/>
+      </rule>
+      <rule>
+        <keyseq keys="+"/>
+        <insert character="42"/>
+      </rule>
+      <rule>
+        <keyseq keys="`"/>
+        <insert character="184"/>
+      </rule>
+      <rule>
+        <keyseq keys="~"/>
+        <insert character="168"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <insert character="122"/>
+      </rule>
+      <rule>
+        <keyseq keys="Y"/>
+        <insert character="90"/>
+      </rule>
+      <rule>
+        <keyseq keys="["/>
+        <insert character="353"/>
+      </rule>
+      <rule>
+        <keyseq keys="{"/>
+        <insert character="352"/>
+      </rule>
+      <rule>
+        <keyseq keys="]"/>
+        <insert character="273"/>
+      </rule>
+      <rule>
+        <keyseq keys="}"/>
+        <insert character="272"/>
+      </rule>
+      <rule>
+        <keyseq keys=";"/>
+        <insert character="269"/>
+      </rule>
+      <rule>
+        <keyseq keys=":"/>
+        <insert character="268"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;"/>
+        <insert character="263"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;"/>
+        <insert character="262"/>
+      </rule>
+      <rule>
+        <keyseq keys="\"/>
+        <insert character="382"/>
+      </rule>
+      <rule>
+        <keyseq keys="|"/>
+        <insert character="381"/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+        <insert character="121"/>
+      </rule>
+      <rule>
+        <keyseq keys="Z"/>
+        <insert character="89"/>
+      </rule>
+      <rule>
+        <keyseq keys="&lt;"/>
+        <insert character="59"/>
+      </rule>
+      <rule>
+        <keyseq keys="&gt;"/>
+        <insert character="58"/>
+      </rule>
+      <rule>
+        <keyseq keys="/"/>
+        <insert character="45"/>
+      </rule>
+      <rule>
+        <keyseq keys="?"/>
+        <insert character="95"/>
+      </rule>
+      <rule>
+        <keyseq keys="`c"/>
+        <insert character="231"/>
+      </rule>
+      <rule>
+        <keyseq keys="`C"/>
+        <insert character="199"/>
+      </rule>
+      <rule>
+        <keyseq keys="`s"/>
+        <insert character="351"/>
+      </rule>
+      <rule>
+        <keyseq keys="`S"/>
+        <insert character="350"/>
+      </rule>
+      <rule>
+        <keyseq keys="~a"/>
+        <insert character="228"/>
+      </rule>
+      <rule>
+        <keyseq keys="~A"/>
+        <insert character="196"/>
+      </rule>
+      <rule>
+        <keyseq keys="~e"/>
+        <insert character="235"/>
+      </rule>
+      <rule>
+        <keyseq keys="~E"/>
+        <insert character="203"/>
+      </rule>
+      <rule>
+        <keyseq keys="~o"/>
+        <insert character="246"/>
+      </rule>
+      <rule>
+        <keyseq keys="~O"/>
+        <insert character="214"/>
+      </rule>
+      <rule>
+        <keyseq keys="~u"/>
+        <insert character="252"/>
+      </rule>
+      <rule>
+        <keyseq keys="~U"/>
+        <insert character="220"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-map"/>
+    </state>
+  </state-list>
+</input-method>

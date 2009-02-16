@@ -1,0 +1,203 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>t</language>
+    <name>nil</name>
+    <extra-id>zh-util</extra-id>
+  </tags>
+  <description>Provide utilities for Chinese input methods.
+This is acutually not a standalone input method, but is expected
+to be included in the other Chinese input method (e.g. zh-py).
+</description>
+  <map-list>
+    <map id="map-choose">
+      <rule>
+        <keyseq keys="1"/>
+        <select index="0"/>
+      </rule>
+      <rule>
+        <keyseq keys="2"/>
+        <select index="1"/>
+      </rule>
+      <rule>
+        <keyseq keys="3"/>
+        <select index="2"/>
+      </rule>
+      <rule>
+        <keyseq keys="4"/>
+        <select index="3"/>
+      </rule>
+      <rule>
+        <keyseq keys="5"/>
+        <select index="4"/>
+      </rule>
+      <rule>
+        <keyseq keys="6"/>
+        <select index="5"/>
+      </rule>
+      <rule>
+        <keyseq keys="7"/>
+        <select index="6"/>
+      </rule>
+      <rule>
+        <keyseq keys="8"/>
+        <select index="7"/>
+      </rule>
+      <rule>
+        <keyseq keys="9"/>
+        <select index="8"/>
+      </rule>
+      <rule>
+        <keyseq keys="0"/>
+        <select index="9"/>
+      </rule>
+    </map>
+    <map id="map-change-candidate">
+      <rule>
+        <keyseq>
+          <key-event>Left</key-event>
+        </keyseq>
+        <select selector="@previous"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>C-b</key-event>
+        </keyseq>
+        <select selector="@previous"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>Right</key-event>
+        </keyseq>
+        <select selector="@next"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>C-f</key-event>
+        </keyseq>
+        <select selector="@next"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>Up</key-event>
+        </keyseq>
+        <select selector="@previous_candidate_list"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>C-p</key-event>
+        </keyseq>
+        <select selector="@previous_candidate_list"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>Down</key-event>
+        </keyseq>
+        <select selector="@next_candidate_list"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>C-n</key-event>
+        </keyseq>
+        <select selector="@next_candidate_list"/>
+      </rule>
+    </map>
+    <map id="map-focus-move">
+      <rule>
+        <keyseq>
+          <key-event>input-focus-move</key-event>
+        </keyseq>
+      </rule>
+    </map>
+    <map id="map-focus-change">
+      <rule>
+        <keyseq>
+          <key-event>input-focus-out</key-event>
+        </keyseq>
+        <set id="KK">
+          <variable-reference id="handled-keys"/>
+        </set>
+        <sub id="KK">
+          <int-val>1</int-val>
+        </sub>
+        <undo>
+          <variable-reference id="KK"/>
+        </undo>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>input-focus-in</key-event>
+        </keyseq>
+        <set id="KK">
+          <variable-reference id="handled-keys"/>
+        </set>
+        <sub id="KK">
+          <int-val>1</int-val>
+        </sub>
+        <undo>
+          <variable-reference id="KK"/>
+        </undo>
+      </rule>
+    </map>
+    <map id="map-backspace">
+      <rule>
+        <keyseq>
+          <key-event>BackSpace</key-event>
+        </keyseq>
+      </rule>
+    </map>
+    <map id="map-commit-preedit">
+      <rule>
+        <keyseq>
+          <key-event>S- </key-event>
+        </keyseq>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-check-undo">
+      <branch branch-selecting-map="map-backspace">
+        <undo/>
+      </branch>
+      <branch branch-selecting-map="map-focus-move">
+        <shift-to id="state-init"/>
+      </branch>
+      <branch branch-selecting-map="map-focus-change"/>
+      <catch-all-branch>
+        <hide-candidates/>
+        <shift-to id="state-init"/>
+      </catch-all-branch>
+    </state>
+    <state id="state-select">
+      <state-hook>
+        <set id="K">
+          <variable-reference id="handled-keys"/>
+        </set>
+        <sub id="K">
+          <int-val>1</int-val>
+        </sub>
+      </state-hook>
+      <branch branch-selecting-map="map-focus-move">
+        <shift-to id="state-init"/>
+      </branch>
+      <branch branch-selecting-map="map-focus-change"/>
+      <branch branch-selecting-map="map-choose">
+        <hide-candidates/>
+        <shift-to id="state-init"/>
+      </branch>
+      <branch branch-selecting-map="map-change-candidate"/>
+      <branch branch-selecting-map="map-backspace">
+        <undo>
+          <variable-reference id="K"/>
+        </undo>
+      </branch>
+      <branch branch-selecting-map="map-commit-preedit">
+        <shift-to id="state-init"/>
+      </branch>
+      <catch-all-branch>
+        <hide-candidates/>
+        <shift-to id="state-init"/>
+      </catch-all-branch>
+    </state>
+  </state-list>
+</input-method>

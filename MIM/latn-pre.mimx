@@ -1,0 +1,722 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>t</language>
+    <name>latn-pre</name>
+  </tags>
+  <description>Latin script input method using prefix modifiers.
+;; | mark       | prefix | examples
+;; |------------+--------+----------
+;; | acute      |   '    | 'a -&gt; á, '' -&gt; ´
+;; | grave      |   `    | `a -&gt; à  `` -&gt; `
+;; | circumflex |   ^    | ^a -&gt; â  ^^ -&gt; ^
+;; | diaeresis  |   "    | "a -&gt; ä  "" -&gt; ¨
+;; | tilde      |   ~    | ~a -&gt; ã
+;; | breve      |   ~    | ~g -&gt; ğ  ~` -&gt; ˘
+;; | cedilla    |   ~    | ~c -&gt; ç  ~s -&gt; ş  ~~ -&gt; ¸
+;; | caron      |   ~    | ~z -&gt; ž  ~ss -&gt; š
+;; | dot above  |  . /   | .g -&gt; ġ  /g -&gt; ġ
+;; | misc       |   /    | /a -&gt; å  /e -&gt; æ  /h -&gt; ħ  /o -&gt; ø  /oe -&gt; œ
+;; | misc       | " ~ /  | "s -&gt; ß  ~d -&gt; ð  ~t -&gt; þ  /a -&gt; å  /e -&gt; æ  /o -&gt; ø
+;; | symbol     |   ~    | ~&gt; -&gt; »  ~&lt; -&gt; «  ~! -&gt; ¡  ~? -&gt; ¿  ~~ -&gt; ¸  ~$ -&gt; £
+;; | symbol     |   ~    | ~- -&gt; ­  ~. -&gt; ·  ~= -&gt; ¯  ~| -&gt; ¦  ~sss -&gt; §
+;; | symbol     |   _    | _+ -&gt; ±  _: -&gt; ÷  _o -&gt; º  _a -&gt; ª  _y -&gt; ¥
+;; | symbol     |   ^    | ^1 -&gt; ¹  ^2 -&gt; ²  ^3 -&gt; ³  ^r -&gt; ®  ^cc -&gt; ©
+;; | symbol     |   /    | /2 -&gt; ½  /3 -&gt; ¾  /4 -&gt; ¼  /= -&gt; ?¬
+;; | symbol     |   /    | /# -&gt; £  /$ -&gt; ¤  /c -&gt; ¢  /. -&gt; ˙  // -&gt; °  /\ -&gt; ×
+</description>
+  <title>Latin-pre</title>
+  <map-list>
+    <map id="map-trans">
+      <rule>
+        <keyseq keys="&apos;&apos;"/>
+        <insert character="180"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;A"/>
+        <insert character="193"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;E"/>
+        <insert character="201"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;I"/>
+        <insert character="205"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;O"/>
+        <insert character="211"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;U"/>
+        <insert character="218"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;W"/>
+        <insert character="7810"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;Y"/>
+        <insert character="221"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;a"/>
+        <insert character="225"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;e"/>
+        <insert character="233"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;i"/>
+        <insert character="237"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;o"/>
+        <insert character="243"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;u"/>
+        <insert character="250"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;w"/>
+        <insert character="7811"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;y"/>
+        <insert character="253"/>
+      </rule>
+      <rule>
+        <keyseq keys=".B"/>
+        <insert character="7682"/>
+      </rule>
+      <rule>
+        <keyseq keys=".C"/>
+        <insert character="266"/>
+      </rule>
+      <rule>
+        <keyseq keys=".D"/>
+        <insert character="7690"/>
+      </rule>
+      <rule>
+        <keyseq keys=".F"/>
+        <insert character="7710"/>
+      </rule>
+      <rule>
+        <keyseq keys=".G"/>
+        <insert character="288"/>
+      </rule>
+      <rule>
+        <keyseq keys=".I"/>
+        <insert character="304"/>
+      </rule>
+      <rule>
+        <keyseq keys=".M"/>
+        <insert character="7744"/>
+      </rule>
+      <rule>
+        <keyseq keys=".P"/>
+        <insert character="7766"/>
+      </rule>
+      <rule>
+        <keyseq keys=".S"/>
+        <insert character="7776"/>
+      </rule>
+      <rule>
+        <keyseq keys=".T"/>
+        <insert character="7786"/>
+      </rule>
+      <rule>
+        <keyseq keys=".Z"/>
+        <insert character="379"/>
+      </rule>
+      <rule>
+        <keyseq keys=".b"/>
+        <insert character="7683"/>
+      </rule>
+      <rule>
+        <keyseq keys=".c"/>
+        <insert character="267"/>
+      </rule>
+      <rule>
+        <keyseq keys=".d"/>
+        <insert character="7691"/>
+      </rule>
+      <rule>
+        <keyseq keys=".f"/>
+        <insert character="7711"/>
+      </rule>
+      <rule>
+        <keyseq keys=".g"/>
+        <insert character="289"/>
+      </rule>
+      <rule>
+        <keyseq keys=".m"/>
+        <insert character="7745"/>
+      </rule>
+      <rule>
+        <keyseq keys=".p"/>
+        <insert character="7767"/>
+      </rule>
+      <rule>
+        <keyseq keys=".s"/>
+        <insert character="7777"/>
+      </rule>
+      <rule>
+        <keyseq keys=".t"/>
+        <insert character="7787"/>
+      </rule>
+      <rule>
+        <keyseq keys=".z"/>
+        <insert character="380"/>
+      </rule>
+      <rule>
+        <keyseq keys="/ "/>
+        <insert character="47"/>
+      </rule>
+      <rule>
+        <keyseq keys="/#"/>
+        <insert character="163"/>
+      </rule>
+      <rule>
+        <keyseq keys="/$"/>
+        <insert character="164"/>
+      </rule>
+      <rule>
+        <keyseq keys="/."/>
+        <insert character="729"/>
+      </rule>
+      <rule>
+        <keyseq keys="//"/>
+        <insert character="176"/>
+      </rule>
+      <rule>
+        <keyseq keys="/2"/>
+        <insert character="189"/>
+      </rule>
+      <rule>
+        <keyseq keys="/3"/>
+        <insert character="190"/>
+      </rule>
+      <rule>
+        <keyseq keys="/4"/>
+        <insert character="188"/>
+      </rule>
+      <rule>
+        <keyseq keys="/="/>
+        <insert character="172"/>
+      </rule>
+      <rule>
+        <keyseq keys="/A"/>
+        <insert character="197"/>
+      </rule>
+      <rule>
+        <keyseq keys="/E"/>
+        <insert character="198"/>
+      </rule>
+      <rule>
+        <keyseq keys="/G"/>
+        <insert character="288"/>
+      </rule>
+      <rule>
+        <keyseq keys="/H"/>
+        <insert character="294"/>
+      </rule>
+      <rule>
+        <keyseq keys="/I"/>
+        <insert character="304"/>
+      </rule>
+      <rule>
+        <keyseq keys="/O"/>
+        <insert character="216"/>
+      </rule>
+      <rule>
+        <keyseq keys="/OE"/>
+        <insert character="338"/>
+      </rule>
+      <rule>
+        <keyseq keys="/Z"/>
+        <insert character="379"/>
+      </rule>
+      <rule>
+        <keyseq keys="/\"/>
+        <insert character="215"/>
+      </rule>
+      <rule>
+        <keyseq keys="/a"/>
+        <insert character="229"/>
+      </rule>
+      <rule>
+        <keyseq keys="/c"/>
+        <insert character="162"/>
+      </rule>
+      <rule>
+        <keyseq keys="/e"/>
+        <insert character="230"/>
+      </rule>
+      <rule>
+        <keyseq keys="/g"/>
+        <insert character="289"/>
+      </rule>
+      <rule>
+        <keyseq keys="/h"/>
+        <insert character="295"/>
+      </rule>
+      <rule>
+        <keyseq keys="/i"/>
+        <insert character="305"/>
+      </rule>
+      <rule>
+        <keyseq keys="/o"/>
+        <insert character="248"/>
+      </rule>
+      <rule>
+        <keyseq keys="/oe"/>
+        <insert character="339"/>
+      </rule>
+      <rule>
+        <keyseq keys="/z"/>
+        <insert character="380"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot; "/>
+        <insert character="34"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;A"/>
+        <insert character="196"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;E"/>
+        <insert character="203"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;I"/>
+        <insert character="207"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;O"/>
+        <insert character="214"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;U"/>
+        <insert character="220"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;W"/>
+        <insert character="7812"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;Y"/>
+        <insert character="376"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;&quot;"/>
+        <insert character="168"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;a"/>
+        <insert character="228"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;e"/>
+        <insert character="235"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;i"/>
+        <insert character="239"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;o"/>
+        <insert character="246"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;s"/>
+        <insert character="223"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;u"/>
+        <insert character="252"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;w"/>
+        <insert character="7813"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;y"/>
+        <insert character="255"/>
+      </rule>
+      <rule>
+        <keyseq keys="^ "/>
+        <insert character="94"/>
+      </rule>
+      <rule>
+        <keyseq keys="^1"/>
+        <insert character="185"/>
+      </rule>
+      <rule>
+        <keyseq keys="^2"/>
+        <insert character="178"/>
+      </rule>
+      <rule>
+        <keyseq keys="^3"/>
+        <insert character="179"/>
+      </rule>
+      <rule>
+        <keyseq keys="^A"/>
+        <insert character="194"/>
+      </rule>
+      <rule>
+        <keyseq keys="^C"/>
+        <insert character="264"/>
+      </rule>
+      <rule>
+        <keyseq keys="^E"/>
+        <insert character="202"/>
+      </rule>
+      <rule>
+        <keyseq keys="^G"/>
+        <insert character="284"/>
+      </rule>
+      <rule>
+        <keyseq keys="^H"/>
+        <insert character="292"/>
+      </rule>
+      <rule>
+        <keyseq keys="^I"/>
+        <insert character="206"/>
+      </rule>
+      <rule>
+        <keyseq keys="^J"/>
+        <insert character="308"/>
+      </rule>
+      <rule>
+        <keyseq keys="^O"/>
+        <insert character="212"/>
+      </rule>
+      <rule>
+        <keyseq keys="^S"/>
+        <insert character="348"/>
+      </rule>
+      <rule>
+        <keyseq keys="^U"/>
+        <insert character="219"/>
+      </rule>
+      <rule>
+        <keyseq keys="^W"/>
+        <insert character="372"/>
+      </rule>
+      <rule>
+        <keyseq keys="^Y"/>
+        <insert character="374"/>
+      </rule>
+      <rule>
+        <keyseq keys="^^"/>
+        <insert character="94"/>
+      </rule>
+      <rule>
+        <keyseq keys="^a"/>
+        <insert character="226"/>
+      </rule>
+      <rule>
+        <keyseq keys="^c"/>
+        <insert character="265"/>
+      </rule>
+      <rule>
+        <keyseq keys="^cc"/>
+        <insert character="169"/>
+      </rule>
+      <rule>
+        <keyseq keys="^e"/>
+        <insert character="234"/>
+      </rule>
+      <rule>
+        <keyseq keys="^g"/>
+        <insert character="285"/>
+      </rule>
+      <rule>
+        <keyseq keys="^h"/>
+        <insert character="293"/>
+      </rule>
+      <rule>
+        <keyseq keys="^i"/>
+        <insert character="238"/>
+      </rule>
+      <rule>
+        <keyseq keys="^j"/>
+        <insert character="309"/>
+      </rule>
+      <rule>
+        <keyseq keys="^o"/>
+        <insert character="244"/>
+      </rule>
+      <rule>
+        <keyseq keys="^r"/>
+        <insert character="174"/>
+      </rule>
+      <rule>
+        <keyseq keys="^s"/>
+        <insert character="349"/>
+      </rule>
+      <rule>
+        <keyseq keys="^u"/>
+        <insert character="251"/>
+      </rule>
+      <rule>
+        <keyseq keys="^w"/>
+        <insert character="373"/>
+      </rule>
+      <rule>
+        <keyseq keys="^y"/>
+        <insert character="375"/>
+      </rule>
+      <rule>
+        <keyseq keys="_+"/>
+        <insert character="177"/>
+      </rule>
+      <rule>
+        <keyseq keys="_:"/>
+        <insert character="247"/>
+      </rule>
+      <rule>
+        <keyseq keys="_a"/>
+        <insert character="170"/>
+      </rule>
+      <rule>
+        <keyseq keys="_o"/>
+        <insert character="186"/>
+      </rule>
+      <rule>
+        <keyseq keys="_y"/>
+        <insert character="165"/>
+      </rule>
+      <rule>
+        <keyseq keys="__"/>
+        <insert character="95"/>
+      </rule>
+      <rule>
+        <keyseq keys="`A"/>
+        <insert character="192"/>
+      </rule>
+      <rule>
+        <keyseq keys="`E"/>
+        <insert character="200"/>
+      </rule>
+      <rule>
+        <keyseq keys="`I"/>
+        <insert character="204"/>
+      </rule>
+      <rule>
+        <keyseq keys="`O"/>
+        <insert character="210"/>
+      </rule>
+      <rule>
+        <keyseq keys="`U"/>
+        <insert character="217"/>
+      </rule>
+      <rule>
+        <keyseq keys="`W"/>
+        <insert character="7808"/>
+      </rule>
+      <rule>
+        <keyseq keys="`Y"/>
+        <insert character="7922"/>
+      </rule>
+      <rule>
+        <keyseq keys="``"/>
+        <insert character="96"/>
+      </rule>
+      <rule>
+        <keyseq keys="`a"/>
+        <insert character="224"/>
+      </rule>
+      <rule>
+        <keyseq keys="`e"/>
+        <insert character="232"/>
+      </rule>
+      <rule>
+        <keyseq keys="`i"/>
+        <insert character="236"/>
+      </rule>
+      <rule>
+        <keyseq keys="`o"/>
+        <insert character="242"/>
+      </rule>
+      <rule>
+        <keyseq keys="`u"/>
+        <insert character="249"/>
+      </rule>
+      <rule>
+        <keyseq keys="`w"/>
+        <insert character="7809"/>
+      </rule>
+      <rule>
+        <keyseq keys="`y"/>
+        <insert character="7923"/>
+      </rule>
+      <rule>
+        <keyseq keys="~ "/>
+        <insert character="126"/>
+      </rule>
+      <rule>
+        <keyseq keys="~!"/>
+        <insert character="161"/>
+      </rule>
+      <rule>
+        <keyseq keys="~$"/>
+        <insert character="163"/>
+      </rule>
+      <rule>
+        <keyseq keys="~-"/>
+        <insert character="173"/>
+      </rule>
+      <rule>
+        <keyseq keys="~."/>
+        <insert character="183"/>
+      </rule>
+      <rule>
+        <keyseq keys="~&lt;"/>
+        <insert character="171"/>
+      </rule>
+      <rule>
+        <keyseq keys="~="/>
+        <insert character="175"/>
+      </rule>
+      <rule>
+        <keyseq keys="~&gt;"/>
+        <insert character="187"/>
+      </rule>
+      <rule>
+        <keyseq keys="~?"/>
+        <insert character="191"/>
+      </rule>
+      <rule>
+        <keyseq keys="~A"/>
+        <insert character="195"/>
+      </rule>
+      <rule>
+        <keyseq keys="~C"/>
+        <insert character="199"/>
+      </rule>
+      <rule>
+        <keyseq keys="~D"/>
+        <insert character="208"/>
+      </rule>
+      <rule>
+        <keyseq keys="~G"/>
+        <insert character="286"/>
+      </rule>
+      <rule>
+        <keyseq keys="~N"/>
+        <insert character="209"/>
+      </rule>
+      <rule>
+        <keyseq keys="~O"/>
+        <insert character="213"/>
+      </rule>
+      <rule>
+        <keyseq keys="~S"/>
+        <insert character="350"/>
+      </rule>
+      <rule>
+        <keyseq keys="~SS"/>
+        <insert character="352"/>
+      </rule>
+      <rule>
+        <keyseq keys="~T"/>
+        <insert character="222"/>
+      </rule>
+      <rule>
+        <keyseq keys="~U"/>
+        <insert character="364"/>
+      </rule>
+      <rule>
+        <keyseq keys="~Z"/>
+        <insert character="381"/>
+      </rule>
+      <rule>
+        <keyseq keys="~`"/>
+        <insert character="728"/>
+      </rule>
+      <rule>
+        <keyseq keys="~a"/>
+        <insert character="227"/>
+      </rule>
+      <rule>
+        <keyseq keys="~c"/>
+        <insert character="231"/>
+      </rule>
+      <rule>
+        <keyseq keys="~d"/>
+        <insert character="240"/>
+      </rule>
+      <rule>
+        <keyseq keys="~e"/>
+        <insert character="8364"/>
+      </rule>
+      <rule>
+        <keyseq keys="~g"/>
+        <insert character="287"/>
+      </rule>
+      <rule>
+        <keyseq keys="~n"/>
+        <insert character="241"/>
+      </rule>
+      <rule>
+        <keyseq keys="~o"/>
+        <insert character="245"/>
+      </rule>
+      <rule>
+        <keyseq keys="~p"/>
+        <insert character="182"/>
+      </rule>
+      <rule>
+        <keyseq keys="~s"/>
+        <insert character="351"/>
+      </rule>
+      <rule>
+        <keyseq keys="~ss"/>
+        <insert character="353"/>
+      </rule>
+      <rule>
+        <keyseq keys="~sss"/>
+        <insert character="167"/>
+      </rule>
+      <rule>
+        <keyseq keys="~t"/>
+        <insert character="254"/>
+      </rule>
+      <rule>
+        <keyseq keys="~u"/>
+        <insert character="365"/>
+      </rule>
+      <rule>
+        <keyseq keys="~uu"/>
+        <insert character="181"/>
+      </rule>
+      <rule>
+        <keyseq keys="~x"/>
+        <insert character="164"/>
+      </rule>
+      <rule>
+        <keyseq keys="~z"/>
+        <insert character="382"/>
+      </rule>
+      <rule>
+        <keyseq keys="~|"/>
+        <insert character="166"/>
+      </rule>
+      <rule>
+        <keyseq keys="~~"/>
+        <insert character="184"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-trans"/>
+    </state>
+  </state-list>
+</input-method>

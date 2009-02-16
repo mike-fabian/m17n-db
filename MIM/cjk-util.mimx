@@ -1,0 +1,477 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>t</language>
+    <name>nil</name>
+    <extra-id>cjk-util</extra-id>
+  </tags>
+  <description>Provide utilities for CJK input methods.
+This is acutually not a standalone input method, but is expected
+to be included in the other input method (e.g. zh-py).
+
+The fullwidth mode is turned on by typing "&gt;&gt;", and turned off
+by typing "&lt;&lt;".
+
+The single fullwidth mode is turned on by typing "Z".  In this
+mode, any key typed is converted to the fullwidth character and
+is inserted, then the mode is turned off.
+</description>
+  <map-list>
+    <map id="map-fullwidth">
+      <rule>
+        <keyseq keys=" "/>
+        <insert character="12288"/>
+      </rule>
+      <rule>
+        <keyseq keys="!"/>
+        <insert character="65281"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;"/>
+        <insert character="65282"/>
+      </rule>
+      <rule>
+        <keyseq keys="#"/>
+        <insert character="65283"/>
+      </rule>
+      <rule>
+        <keyseq keys="$"/>
+        <insert>
+          <candidates>＄￠￡￥￦</candidates>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq keys="%"/>
+        <insert character="65285"/>
+      </rule>
+      <rule>
+        <keyseq keys="&amp;"/>
+        <insert character="65286"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;"/>
+        <insert character="65287"/>
+      </rule>
+      <rule>
+        <keyseq keys="("/>
+        <insert character="65288"/>
+      </rule>
+      <rule>
+        <keyseq keys=")"/>
+        <insert character="65289"/>
+      </rule>
+      <rule>
+        <keyseq keys="*"/>
+        <insert character="65290"/>
+      </rule>
+      <rule>
+        <keyseq keys="+"/>
+        <insert character="65291"/>
+      </rule>
+      <rule>
+        <keyseq keys=","/>
+        <insert character="65292"/>
+      </rule>
+      <rule>
+        <keyseq keys="-"/>
+        <insert character="65293"/>
+      </rule>
+      <rule>
+        <keyseq keys="."/>
+        <insert character="65294"/>
+      </rule>
+      <rule>
+        <keyseq keys="/"/>
+        <insert character="65295"/>
+      </rule>
+      <rule>
+        <keyseq keys="0"/>
+        <insert character="65296"/>
+      </rule>
+      <rule>
+        <keyseq keys="1"/>
+        <insert character="65297"/>
+      </rule>
+      <rule>
+        <keyseq keys="2"/>
+        <insert character="65298"/>
+      </rule>
+      <rule>
+        <keyseq keys="3"/>
+        <insert character="65299"/>
+      </rule>
+      <rule>
+        <keyseq keys="4"/>
+        <insert character="65300"/>
+      </rule>
+      <rule>
+        <keyseq keys="5"/>
+        <insert character="65301"/>
+      </rule>
+      <rule>
+        <keyseq keys="6"/>
+        <insert character="65302"/>
+      </rule>
+      <rule>
+        <keyseq keys="7"/>
+        <insert character="65303"/>
+      </rule>
+      <rule>
+        <keyseq keys="8"/>
+        <insert character="65304"/>
+      </rule>
+      <rule>
+        <keyseq keys="9"/>
+        <insert character="65305"/>
+      </rule>
+      <rule>
+        <keyseq keys=":"/>
+        <insert character="65306"/>
+      </rule>
+      <rule>
+        <keyseq keys=";"/>
+        <insert character="65307"/>
+      </rule>
+      <rule>
+        <keyseq keys="&lt;"/>
+        <insert character="65308"/>
+      </rule>
+      <rule>
+        <keyseq keys="="/>
+        <insert character="65309"/>
+      </rule>
+      <rule>
+        <keyseq keys="&gt;"/>
+        <insert character="65310"/>
+      </rule>
+      <rule>
+        <keyseq keys="?"/>
+        <insert character="65311"/>
+      </rule>
+      <rule>
+        <keyseq keys="@"/>
+        <insert character="65312"/>
+      </rule>
+      <rule>
+        <keyseq keys="A"/>
+        <insert character="65313"/>
+      </rule>
+      <rule>
+        <keyseq keys="B"/>
+        <insert character="65314"/>
+      </rule>
+      <rule>
+        <keyseq keys="C"/>
+        <insert character="65315"/>
+      </rule>
+      <rule>
+        <keyseq keys="D"/>
+        <insert character="65316"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+        <insert character="65317"/>
+      </rule>
+      <rule>
+        <keyseq keys="F"/>
+        <insert character="65318"/>
+      </rule>
+      <rule>
+        <keyseq keys="G"/>
+        <insert character="65319"/>
+      </rule>
+      <rule>
+        <keyseq keys="H"/>
+        <insert character="65320"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+        <insert character="65321"/>
+      </rule>
+      <rule>
+        <keyseq keys="J"/>
+        <insert character="65322"/>
+      </rule>
+      <rule>
+        <keyseq keys="K"/>
+        <insert character="65323"/>
+      </rule>
+      <rule>
+        <keyseq keys="L"/>
+        <insert character="65324"/>
+      </rule>
+      <rule>
+        <keyseq keys="M"/>
+        <insert character="65325"/>
+      </rule>
+      <rule>
+        <keyseq keys="N"/>
+        <insert character="65326"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <insert character="65327"/>
+      </rule>
+      <rule>
+        <keyseq keys="P"/>
+        <insert character="65328"/>
+      </rule>
+      <rule>
+        <keyseq keys="Q"/>
+        <insert character="65329"/>
+      </rule>
+      <rule>
+        <keyseq keys="R"/>
+        <insert character="65330"/>
+      </rule>
+      <rule>
+        <keyseq keys="S"/>
+        <insert character="65331"/>
+      </rule>
+      <rule>
+        <keyseq keys="T"/>
+        <insert character="65332"/>
+      </rule>
+      <rule>
+        <keyseq keys="U"/>
+        <insert character="65333"/>
+      </rule>
+      <rule>
+        <keyseq keys="V"/>
+        <insert character="65334"/>
+      </rule>
+      <rule>
+        <keyseq keys="W"/>
+        <insert character="65335"/>
+      </rule>
+      <rule>
+        <keyseq keys="X"/>
+        <insert character="65336"/>
+      </rule>
+      <rule>
+        <keyseq keys="Y"/>
+        <insert character="65337"/>
+      </rule>
+      <rule>
+        <keyseq keys="Z"/>
+        <insert character="65338"/>
+      </rule>
+      <rule>
+        <keyseq keys="["/>
+        <insert character="65339"/>
+      </rule>
+      <rule>
+        <keyseq keys="\"/>
+        <insert character="65340"/>
+      </rule>
+      <rule>
+        <keyseq keys="]"/>
+        <insert character="65341"/>
+      </rule>
+      <rule>
+        <keyseq keys="^"/>
+        <insert character="65342"/>
+      </rule>
+      <rule>
+        <keyseq keys="_"/>
+        <insert character="65343"/>
+      </rule>
+      <rule>
+        <keyseq keys="`"/>
+        <insert character="65344"/>
+      </rule>
+      <rule>
+        <keyseq keys="a"/>
+        <insert character="65345"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <insert character="65346"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <insert character="65347"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <insert character="65348"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert character="65349"/>
+      </rule>
+      <rule>
+        <keyseq keys="f"/>
+        <insert character="65350"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+        <insert character="65351"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+        <insert character="65352"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert character="65353"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+        <insert character="65354"/>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+        <insert character="65355"/>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+        <insert character="65356"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+        <insert character="65357"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <insert character="65358"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert character="65359"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+        <insert character="65360"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+        <insert character="65361"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+        <insert character="65362"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+        <insert character="65363"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+        <insert character="65364"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert character="65365"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <insert character="65366"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+        <insert character="65367"/>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+        <insert character="65368"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <insert character="65369"/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+        <insert character="65370"/>
+      </rule>
+      <rule>
+        <keyseq keys="{"/>
+        <insert character="65371"/>
+      </rule>
+      <rule>
+        <keyseq keys="|"/>
+        <insert character="65372"/>
+      </rule>
+      <rule>
+        <keyseq keys="}"/>
+        <insert character="65373"/>
+      </rule>
+      <rule>
+        <keyseq keys="~"/>
+        <insert character="65374"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>cent</key-event>
+        </keyseq>
+        <insert character="65504"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>sterling</key-event>
+        </keyseq>
+        <insert character="65505"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>notsign</key-event>
+        </keyseq>
+        <insert character="65506"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>brokenbar</key-event>
+        </keyseq>
+        <insert character="65508"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>yen</key-event>
+        </keyseq>
+        <insert character="65509"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <key-event>Korean_Won</key-event>
+        </keyseq>
+        <insert character="65510"/>
+      </rule>
+    </map>
+    <map id="map-enter-fullwidth-mode">
+      <rule>
+        <keyseq keys="&gt;&gt;"/>
+      </rule>
+    </map>
+    <map id="map-exit-fullwidth-mode">
+      <rule>
+        <keyseq keys="&lt;&lt;"/>
+      </rule>
+    </map>
+    <map id="map-enter-single-fullwidth-mode">
+      <rule>
+        <keyseq keys="Z"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-fullwidth-mode">
+      <state-title-text>Ａ</state-title-text>
+      <branch branch-selecting-map="map-fullwidth">
+        <commit/>
+      </branch>
+      <branch branch-selecting-map="map-exit-fullwidth-mode">
+        <shift-to id="state-t"/>
+      </branch>
+      <catch-all-branch>
+        <unhandle/>
+      </catch-all-branch>
+    </state>
+    <state id="state-single-fullwidth-mode">
+      <state-title-text>Ａ</state-title-text>
+      <branch branch-selecting-map="map-fullwidth">
+        <commit/>
+        <shift-to id="state-t"/>
+      </branch>
+    </state>
+  </state-list>
+</input-method>

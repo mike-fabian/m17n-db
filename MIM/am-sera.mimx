@@ -1,0 +1,2649 @@
+<?xml version='1.0'?>
+
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>am</language>
+    <name>sera</name>
+  </tags>
+  <description>Amharic input method with SERA.
+For more information, see the page http://www.geez.org/IM/.
+</description>
+  <title>ፊደል</title>
+  <map-list>
+    <map id="map-map">
+      <rule>
+        <keyseq keys="he"/>
+        <insert character="4608"/>
+      </rule>
+      <rule>
+        <keyseq keys="hu"/>
+        <insert character="4609"/>
+      </rule>
+      <rule>
+        <keyseq keys="hi"/>
+        <insert character="4610"/>
+      </rule>
+      <rule>
+        <keyseq keys="ha"/>
+        <insert character="4611"/>
+      </rule>
+      <rule>
+        <keyseq keys="hE"/>
+        <insert character="4612"/>
+      </rule>
+      <rule>
+        <keyseq keys="hee"/>
+        <insert character="4612"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+        <insert character="4613"/>
+      </rule>
+      <rule>
+        <keyseq keys="ho"/>
+        <insert character="4614"/>
+      </rule>
+      <rule>
+        <keyseq keys="hW"/>
+        <insert character="4747"/>
+      </rule>
+      <rule>
+        <keyseq keys="hWa"/>
+        <insert character="4747"/>
+      </rule>
+      <rule>
+        <keyseq keys="hWe"/>
+        <insert character="4744"/>
+      </rule>
+      <rule>
+        <keyseq keys="hWu"/>
+        <insert character="4749"/>
+      </rule>
+      <rule>
+        <keyseq keys="hWi"/>
+        <insert character="4746"/>
+      </rule>
+      <rule>
+        <keyseq keys="hWE"/>
+        <insert character="4748"/>
+      </rule>
+      <rule>
+        <keyseq keys="hW&apos;"/>
+        <insert character="4749"/>
+      </rule>
+      <rule>
+        <keyseq keys="le"/>
+        <insert character="4616"/>
+      </rule>
+      <rule>
+        <keyseq keys="lu"/>
+        <insert character="4617"/>
+      </rule>
+      <rule>
+        <keyseq keys="li"/>
+        <insert character="4618"/>
+      </rule>
+      <rule>
+        <keyseq keys="la"/>
+        <insert character="4619"/>
+      </rule>
+      <rule>
+        <keyseq keys="lE"/>
+        <insert character="4620"/>
+      </rule>
+      <rule>
+        <keyseq keys="lee"/>
+        <insert character="4620"/>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+        <insert character="4621"/>
+      </rule>
+      <rule>
+        <keyseq keys="lo"/>
+        <insert character="4622"/>
+      </rule>
+      <rule>
+        <keyseq keys="lW"/>
+        <insert character="4623"/>
+      </rule>
+      <rule>
+        <keyseq keys="lWa"/>
+        <insert character="4623"/>
+      </rule>
+      <rule>
+        <keyseq keys="Le"/>
+        <insert character="4616"/>
+      </rule>
+      <rule>
+        <keyseq keys="Lu"/>
+        <insert character="4617"/>
+      </rule>
+      <rule>
+        <keyseq keys="Li"/>
+        <insert character="4618"/>
+      </rule>
+      <rule>
+        <keyseq keys="La"/>
+        <insert character="4619"/>
+      </rule>
+      <rule>
+        <keyseq keys="LE"/>
+        <insert character="4620"/>
+      </rule>
+      <rule>
+        <keyseq keys="Lee"/>
+        <insert character="4620"/>
+      </rule>
+      <rule>
+        <keyseq keys="L"/>
+        <insert character="4621"/>
+      </rule>
+      <rule>
+        <keyseq keys="Lo"/>
+        <insert character="4622"/>
+      </rule>
+      <rule>
+        <keyseq keys="LW"/>
+        <insert character="4623"/>
+      </rule>
+      <rule>
+        <keyseq keys="LWa"/>
+        <insert character="4623"/>
+      </rule>
+      <rule>
+        <keyseq keys="He"/>
+        <insert character="4624"/>
+      </rule>
+      <rule>
+        <keyseq keys="Hu"/>
+        <insert character="4625"/>
+      </rule>
+      <rule>
+        <keyseq keys="Hi"/>
+        <insert character="4626"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ha"/>
+        <insert character="4627"/>
+      </rule>
+      <rule>
+        <keyseq keys="HE"/>
+        <insert character="4628"/>
+      </rule>
+      <rule>
+        <keyseq keys="Hee"/>
+        <insert character="4628"/>
+      </rule>
+      <rule>
+        <keyseq keys="H"/>
+        <insert character="4629"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ho"/>
+        <insert character="4630"/>
+      </rule>
+      <rule>
+        <keyseq keys="HW"/>
+        <insert character="4631"/>
+      </rule>
+      <rule>
+        <keyseq keys="HWa"/>
+        <insert character="4631"/>
+      </rule>
+      <rule>
+        <keyseq keys="me"/>
+        <insert character="4632"/>
+      </rule>
+      <rule>
+        <keyseq keys="mu"/>
+        <insert character="4633"/>
+      </rule>
+      <rule>
+        <keyseq keys="mi"/>
+        <insert character="4634"/>
+      </rule>
+      <rule>
+        <keyseq keys="ma"/>
+        <insert character="4635"/>
+      </rule>
+      <rule>
+        <keyseq keys="mE"/>
+        <insert character="4636"/>
+      </rule>
+      <rule>
+        <keyseq keys="mee"/>
+        <insert character="4636"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+        <insert character="4637"/>
+      </rule>
+      <rule>
+        <keyseq keys="mo"/>
+        <insert character="4638"/>
+      </rule>
+      <rule>
+        <keyseq keys="mW"/>
+        <insert character="4639"/>
+      </rule>
+      <rule>
+        <keyseq keys="mWa"/>
+        <insert character="4639"/>
+      </rule>
+      <rule>
+        <keyseq keys="mY"/>
+        <insert character="4952"/>
+      </rule>
+      <rule>
+        <keyseq keys="mYa"/>
+        <insert character="4952"/>
+      </rule>
+      <rule>
+        <keyseq keys="Me"/>
+        <insert character="4632"/>
+      </rule>
+      <rule>
+        <keyseq keys="Mu"/>
+        <insert character="4633"/>
+      </rule>
+      <rule>
+        <keyseq keys="Mi"/>
+        <insert character="4634"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ma"/>
+        <insert character="4635"/>
+      </rule>
+      <rule>
+        <keyseq keys="ME"/>
+        <insert character="4636"/>
+      </rule>
+      <rule>
+        <keyseq keys="Mee"/>
+        <insert character="4636"/>
+      </rule>
+      <rule>
+        <keyseq keys="M"/>
+        <insert character="4637"/>
+      </rule>
+      <rule>
+        <keyseq keys="Mo"/>
+        <insert character="4638"/>
+      </rule>
+      <rule>
+        <keyseq keys="MW"/>
+        <insert character="4639"/>
+      </rule>
+      <rule>
+        <keyseq keys="MWa"/>
+        <insert character="4639"/>
+      </rule>
+      <rule>
+        <keyseq keys="MY"/>
+        <insert character="4952"/>
+      </rule>
+      <rule>
+        <keyseq keys="MYa"/>
+        <insert character="4952"/>
+      </rule>
+      <rule>
+        <keyseq keys="`se"/>
+        <insert character="4640"/>
+      </rule>
+      <rule>
+        <keyseq keys="`su"/>
+        <insert character="4641"/>
+      </rule>
+      <rule>
+        <keyseq keys="`si"/>
+        <insert character="4642"/>
+      </rule>
+      <rule>
+        <keyseq keys="`sa"/>
+        <insert character="4643"/>
+      </rule>
+      <rule>
+        <keyseq keys="`sE"/>
+        <insert character="4644"/>
+      </rule>
+      <rule>
+        <keyseq keys="`see"/>
+        <insert character="4644"/>
+      </rule>
+      <rule>
+        <keyseq keys="`s"/>
+        <insert character="4645"/>
+      </rule>
+      <rule>
+        <keyseq keys="`so"/>
+        <insert character="4646"/>
+      </rule>
+      <rule>
+        <keyseq keys="`sW"/>
+        <insert character="4647"/>
+      </rule>
+      <rule>
+        <keyseq keys="`sWa"/>
+        <insert character="4647"/>
+      </rule>
+      <rule>
+        <keyseq keys="s2e"/>
+        <insert character="4640"/>
+      </rule>
+      <rule>
+        <keyseq keys="s2u"/>
+        <insert character="4641"/>
+      </rule>
+      <rule>
+        <keyseq keys="s2i"/>
+        <insert character="4642"/>
+      </rule>
+      <rule>
+        <keyseq keys="s2a"/>
+        <insert character="4643"/>
+      </rule>
+      <rule>
+        <keyseq keys="s2E"/>
+        <insert character="4644"/>
+      </rule>
+      <rule>
+        <keyseq keys="s2ee"/>
+        <insert character="4644"/>
+      </rule>
+      <rule>
+        <keyseq keys="s2"/>
+        <insert character="4645"/>
+      </rule>
+      <rule>
+        <keyseq keys="s2o"/>
+        <insert character="4646"/>
+      </rule>
+      <rule>
+        <keyseq keys="s2W"/>
+        <insert character="4647"/>
+      </rule>
+      <rule>
+        <keyseq keys="s2Wa"/>
+        <insert character="4647"/>
+      </rule>
+      <rule>
+        <keyseq keys="sse"/>
+        <insert character="4640"/>
+      </rule>
+      <rule>
+        <keyseq keys="ssu"/>
+        <insert character="4641"/>
+      </rule>
+      <rule>
+        <keyseq keys="ssi"/>
+        <insert character="4642"/>
+      </rule>
+      <rule>
+        <keyseq keys="ssa"/>
+        <insert character="4643"/>
+      </rule>
+      <rule>
+        <keyseq keys="ssE"/>
+        <insert character="4644"/>
+      </rule>
+      <rule>
+        <keyseq keys="ssee"/>
+        <insert character="4644"/>
+      </rule>
+      <rule>
+        <keyseq keys="ss"/>
+        <insert character="4645"/>
+      </rule>
+      <rule>
+        <keyseq keys="sso"/>
+        <insert character="4646"/>
+      </rule>
+      <rule>
+        <keyseq keys="ssW"/>
+        <insert character="4647"/>
+      </rule>
+      <rule>
+        <keyseq keys="ssWa"/>
+        <insert character="4647"/>
+      </rule>
+      <rule>
+        <keyseq keys="re"/>
+        <insert character="4648"/>
+      </rule>
+      <rule>
+        <keyseq keys="ru"/>
+        <insert character="4649"/>
+      </rule>
+      <rule>
+        <keyseq keys="ri"/>
+        <insert character="4650"/>
+      </rule>
+      <rule>
+        <keyseq keys="ra"/>
+        <insert character="4651"/>
+      </rule>
+      <rule>
+        <keyseq keys="rE"/>
+        <insert character="4652"/>
+      </rule>
+      <rule>
+        <keyseq keys="ree"/>
+        <insert character="4652"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+        <insert character="4653"/>
+      </rule>
+      <rule>
+        <keyseq keys="ro"/>
+        <insert character="4654"/>
+      </rule>
+      <rule>
+        <keyseq keys="rW"/>
+        <insert character="4655"/>
+      </rule>
+      <rule>
+        <keyseq keys="rWa"/>
+        <insert character="4655"/>
+      </rule>
+      <rule>
+        <keyseq keys="rY"/>
+        <insert character="4953"/>
+      </rule>
+      <rule>
+        <keyseq keys="rYa"/>
+        <insert character="4953"/>
+      </rule>
+      <rule>
+        <keyseq keys="Re"/>
+        <insert character="4648"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ru"/>
+        <insert character="4649"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ri"/>
+        <insert character="4650"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ra"/>
+        <insert character="4651"/>
+      </rule>
+      <rule>
+        <keyseq keys="RE"/>
+        <insert character="4652"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ree"/>
+        <insert character="4652"/>
+      </rule>
+      <rule>
+        <keyseq keys="R"/>
+        <insert character="4653"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ro"/>
+        <insert character="4654"/>
+      </rule>
+      <rule>
+        <keyseq keys="RW"/>
+        <insert character="4655"/>
+      </rule>
+      <rule>
+        <keyseq keys="RWa"/>
+        <insert character="4655"/>
+      </rule>
+      <rule>
+        <keyseq keys="RYa"/>
+        <insert character="4953"/>
+      </rule>
+      <rule>
+        <keyseq keys="se"/>
+        <insert character="4656"/>
+      </rule>
+      <rule>
+        <keyseq keys="su"/>
+        <insert character="4657"/>
+      </rule>
+      <rule>
+        <keyseq keys="si"/>
+        <insert character="4658"/>
+      </rule>
+      <rule>
+        <keyseq keys="sa"/>
+        <insert character="4659"/>
+      </rule>
+      <rule>
+        <keyseq keys="sE"/>
+        <insert character="4660"/>
+      </rule>
+      <rule>
+        <keyseq keys="see"/>
+        <insert character="4660"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+        <insert character="4661"/>
+      </rule>
+      <rule>
+        <keyseq keys="so"/>
+        <insert character="4662"/>
+      </rule>
+      <rule>
+        <keyseq keys="sW"/>
+        <insert character="4663"/>
+      </rule>
+      <rule>
+        <keyseq keys="sWa"/>
+        <insert character="4663"/>
+      </rule>
+      <rule>
+        <keyseq keys="xe"/>
+        <insert character="4664"/>
+      </rule>
+      <rule>
+        <keyseq keys="xu"/>
+        <insert character="4665"/>
+      </rule>
+      <rule>
+        <keyseq keys="xi"/>
+        <insert character="4666"/>
+      </rule>
+      <rule>
+        <keyseq keys="xa"/>
+        <insert character="4667"/>
+      </rule>
+      <rule>
+        <keyseq keys="xE"/>
+        <insert character="4668"/>
+      </rule>
+      <rule>
+        <keyseq keys="xee"/>
+        <insert character="4668"/>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+        <insert character="4669"/>
+      </rule>
+      <rule>
+        <keyseq keys="xo"/>
+        <insert character="4670"/>
+      </rule>
+      <rule>
+        <keyseq keys="xW"/>
+        <insert character="4671"/>
+      </rule>
+      <rule>
+        <keyseq keys="xWa"/>
+        <insert character="4671"/>
+      </rule>
+      <rule>
+        <keyseq keys="qe"/>
+        <insert character="4672"/>
+      </rule>
+      <rule>
+        <keyseq keys="qu"/>
+        <insert character="4673"/>
+      </rule>
+      <rule>
+        <keyseq keys="qi"/>
+        <insert character="4674"/>
+      </rule>
+      <rule>
+        <keyseq keys="qa"/>
+        <insert character="4675"/>
+      </rule>
+      <rule>
+        <keyseq keys="qE"/>
+        <insert character="4676"/>
+      </rule>
+      <rule>
+        <keyseq keys="qee"/>
+        <insert character="4676"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+        <insert character="4677"/>
+      </rule>
+      <rule>
+        <keyseq keys="qo"/>
+        <insert character="4678"/>
+      </rule>
+      <rule>
+        <keyseq keys="qWe"/>
+        <insert character="4680"/>
+      </rule>
+      <rule>
+        <keyseq keys="qWu"/>
+        <insert character="4685"/>
+      </rule>
+      <rule>
+        <keyseq keys="qWi"/>
+        <insert character="4682"/>
+      </rule>
+      <rule>
+        <keyseq keys="qW"/>
+        <insert character="4683"/>
+      </rule>
+      <rule>
+        <keyseq keys="qWa"/>
+        <insert character="4683"/>
+      </rule>
+      <rule>
+        <keyseq keys="qWE"/>
+        <insert character="4684"/>
+      </rule>
+      <rule>
+        <keyseq keys="qWee"/>
+        <insert character="4684"/>
+      </rule>
+      <rule>
+        <keyseq keys="qW&apos;"/>
+        <insert character="4685"/>
+      </rule>
+      <rule>
+        <keyseq keys="Qe"/>
+        <insert character="4688"/>
+      </rule>
+      <rule>
+        <keyseq keys="Qu"/>
+        <insert character="4689"/>
+      </rule>
+      <rule>
+        <keyseq keys="Qi"/>
+        <insert character="4690"/>
+      </rule>
+      <rule>
+        <keyseq keys="Qa"/>
+        <insert character="4691"/>
+      </rule>
+      <rule>
+        <keyseq keys="QE"/>
+        <insert character="4692"/>
+      </rule>
+      <rule>
+        <keyseq keys="Qee"/>
+        <insert character="4692"/>
+      </rule>
+      <rule>
+        <keyseq keys="Q"/>
+        <insert character="4693"/>
+      </rule>
+      <rule>
+        <keyseq keys="Qo"/>
+        <insert character="4694"/>
+      </rule>
+      <rule>
+        <keyseq keys="QWe"/>
+        <insert character="4696"/>
+      </rule>
+      <rule>
+        <keyseq keys="QWu"/>
+        <insert character="4701"/>
+      </rule>
+      <rule>
+        <keyseq keys="QWi"/>
+        <insert character="4698"/>
+      </rule>
+      <rule>
+        <keyseq keys="QW"/>
+        <insert character="4699"/>
+      </rule>
+      <rule>
+        <keyseq keys="QWa"/>
+        <insert character="4699"/>
+      </rule>
+      <rule>
+        <keyseq keys="QWE"/>
+        <insert character="4700"/>
+      </rule>
+      <rule>
+        <keyseq keys="QWee"/>
+        <insert character="4700"/>
+      </rule>
+      <rule>
+        <keyseq keys="QW&apos;"/>
+        <insert character="4701"/>
+      </rule>
+      <rule>
+        <keyseq keys="be"/>
+        <insert character="4704"/>
+      </rule>
+      <rule>
+        <keyseq keys="bu"/>
+        <insert character="4705"/>
+      </rule>
+      <rule>
+        <keyseq keys="bi"/>
+        <insert character="4706"/>
+      </rule>
+      <rule>
+        <keyseq keys="ba"/>
+        <insert character="4707"/>
+      </rule>
+      <rule>
+        <keyseq keys="bE"/>
+        <insert character="4708"/>
+      </rule>
+      <rule>
+        <keyseq keys="bee"/>
+        <insert character="4708"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <insert character="4709"/>
+      </rule>
+      <rule>
+        <keyseq keys="bo"/>
+        <insert character="4710"/>
+      </rule>
+      <rule>
+        <keyseq keys="bW"/>
+        <insert character="4711"/>
+      </rule>
+      <rule>
+        <keyseq keys="bWa"/>
+        <insert character="4711"/>
+      </rule>
+      <rule>
+        <keyseq keys="Be"/>
+        <insert character="4704"/>
+      </rule>
+      <rule>
+        <keyseq keys="Bu"/>
+        <insert character="4705"/>
+      </rule>
+      <rule>
+        <keyseq keys="Bi"/>
+        <insert character="4706"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ba"/>
+        <insert character="4707"/>
+      </rule>
+      <rule>
+        <keyseq keys="BE"/>
+        <insert character="4708"/>
+      </rule>
+      <rule>
+        <keyseq keys="Bee"/>
+        <insert character="4708"/>
+      </rule>
+      <rule>
+        <keyseq keys="B"/>
+        <insert character="4709"/>
+      </rule>
+      <rule>
+        <keyseq keys="Bo"/>
+        <insert character="4710"/>
+      </rule>
+      <rule>
+        <keyseq keys="BW"/>
+        <insert character="4711"/>
+      </rule>
+      <rule>
+        <keyseq keys="BWa"/>
+        <insert character="4711"/>
+      </rule>
+      <rule>
+        <keyseq keys="ve"/>
+        <insert character="4712"/>
+      </rule>
+      <rule>
+        <keyseq keys="vu"/>
+        <insert character="4713"/>
+      </rule>
+      <rule>
+        <keyseq keys="vi"/>
+        <insert character="4714"/>
+      </rule>
+      <rule>
+        <keyseq keys="va"/>
+        <insert character="4715"/>
+      </rule>
+      <rule>
+        <keyseq keys="vE"/>
+        <insert character="4716"/>
+      </rule>
+      <rule>
+        <keyseq keys="vee"/>
+        <insert character="4716"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <insert character="4717"/>
+      </rule>
+      <rule>
+        <keyseq keys="vo"/>
+        <insert character="4718"/>
+      </rule>
+      <rule>
+        <keyseq keys="vW"/>
+        <insert character="4719"/>
+      </rule>
+      <rule>
+        <keyseq keys="vWa"/>
+        <insert character="4719"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ve"/>
+        <insert character="4712"/>
+      </rule>
+      <rule>
+        <keyseq keys="Vu"/>
+        <insert character="4713"/>
+      </rule>
+      <rule>
+        <keyseq keys="Vi"/>
+        <insert character="4714"/>
+      </rule>
+      <rule>
+        <keyseq keys="Va"/>
+        <insert character="4715"/>
+      </rule>
+      <rule>
+        <keyseq keys="VE"/>
+        <insert character="4716"/>
+      </rule>
+      <rule>
+        <keyseq keys="Vee"/>
+        <insert character="4716"/>
+      </rule>
+      <rule>
+        <keyseq keys="V"/>
+        <insert character="4717"/>
+      </rule>
+      <rule>
+        <keyseq keys="Vo"/>
+        <insert character="4718"/>
+      </rule>
+      <rule>
+        <keyseq keys="VW"/>
+        <insert character="4719"/>
+      </rule>
+      <rule>
+        <keyseq keys="VWa"/>
+        <insert character="4719"/>
+      </rule>
+      <rule>
+        <keyseq keys="te"/>
+        <insert character="4720"/>
+      </rule>
+      <rule>
+        <keyseq keys="tu"/>
+        <insert character="4721"/>
+      </rule>
+      <rule>
+        <keyseq keys="ti"/>
+        <insert character="4722"/>
+      </rule>
+      <rule>
+        <keyseq keys="ta"/>
+        <insert character="4723"/>
+      </rule>
+      <rule>
+        <keyseq keys="tE"/>
+        <insert character="4724"/>
+      </rule>
+      <rule>
+        <keyseq keys="tee"/>
+        <insert character="4724"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+        <insert character="4725"/>
+      </rule>
+      <rule>
+        <keyseq keys="to"/>
+        <insert character="4726"/>
+      </rule>
+      <rule>
+        <keyseq keys="tW"/>
+        <insert character="4727"/>
+      </rule>
+      <rule>
+        <keyseq keys="tWa"/>
+        <insert character="4727"/>
+      </rule>
+      <rule>
+        <keyseq keys="ce"/>
+        <insert character="4728"/>
+      </rule>
+      <rule>
+        <keyseq keys="cu"/>
+        <insert character="4729"/>
+      </rule>
+      <rule>
+        <keyseq keys="ci"/>
+        <insert character="4730"/>
+      </rule>
+      <rule>
+        <keyseq keys="ca"/>
+        <insert character="4731"/>
+      </rule>
+      <rule>
+        <keyseq keys="cE"/>
+        <insert character="4732"/>
+      </rule>
+      <rule>
+        <keyseq keys="cee"/>
+        <insert character="4732"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <insert character="4733"/>
+      </rule>
+      <rule>
+        <keyseq keys="co"/>
+        <insert character="4734"/>
+      </rule>
+      <rule>
+        <keyseq keys="cW"/>
+        <insert character="4735"/>
+      </rule>
+      <rule>
+        <keyseq keys="cWa"/>
+        <insert character="4735"/>
+      </rule>
+      <rule>
+        <keyseq keys="`he"/>
+        <insert character="4736"/>
+      </rule>
+      <rule>
+        <keyseq keys="`hu"/>
+        <insert character="4737"/>
+      </rule>
+      <rule>
+        <keyseq keys="`hi"/>
+        <insert character="4738"/>
+      </rule>
+      <rule>
+        <keyseq keys="`ha"/>
+        <insert character="4739"/>
+      </rule>
+      <rule>
+        <keyseq keys="`hE"/>
+        <insert character="4740"/>
+      </rule>
+      <rule>
+        <keyseq keys="`hee"/>
+        <insert character="4740"/>
+      </rule>
+      <rule>
+        <keyseq keys="`h"/>
+        <insert character="4741"/>
+      </rule>
+      <rule>
+        <keyseq keys="`ho"/>
+        <insert character="4742"/>
+      </rule>
+      <rule>
+        <keyseq keys="`hWe"/>
+        <insert character="4744"/>
+      </rule>
+      <rule>
+        <keyseq keys="`hWu"/>
+        <insert character="4749"/>
+      </rule>
+      <rule>
+        <keyseq keys="`hWi"/>
+        <insert character="4746"/>
+      </rule>
+      <rule>
+        <keyseq keys="`hW"/>
+        <insert character="4747"/>
+      </rule>
+      <rule>
+        <keyseq keys="`hWa"/>
+        <insert character="4747"/>
+      </rule>
+      <rule>
+        <keyseq keys="`hWE"/>
+        <insert character="4748"/>
+      </rule>
+      <rule>
+        <keyseq keys="`hWee"/>
+        <insert character="4748"/>
+      </rule>
+      <rule>
+        <keyseq keys="`hW&apos;"/>
+        <insert character="4749"/>
+      </rule>
+      <rule>
+        <keyseq keys="h2e"/>
+        <insert character="4736"/>
+      </rule>
+      <rule>
+        <keyseq keys="h2u"/>
+        <insert character="4737"/>
+      </rule>
+      <rule>
+        <keyseq keys="h2i"/>
+        <insert character="4738"/>
+      </rule>
+      <rule>
+        <keyseq keys="h2a"/>
+        <insert character="4739"/>
+      </rule>
+      <rule>
+        <keyseq keys="h2E"/>
+        <insert character="4740"/>
+      </rule>
+      <rule>
+        <keyseq keys="h2ee"/>
+        <insert character="4740"/>
+      </rule>
+      <rule>
+        <keyseq keys="h2"/>
+        <insert character="4741"/>
+      </rule>
+      <rule>
+        <keyseq keys="h2o"/>
+        <insert character="4742"/>
+      </rule>
+      <rule>
+        <keyseq keys="h2We"/>
+        <insert character="4744"/>
+      </rule>
+      <rule>
+        <keyseq keys="h2Wu"/>
+        <insert character="4749"/>
+      </rule>
+      <rule>
+        <keyseq keys="h2Wi"/>
+        <insert character="4746"/>
+      </rule>
+      <rule>
+        <keyseq keys="h2W"/>
+        <insert character="4747"/>
+      </rule>
+      <rule>
+        <keyseq keys="h2Wa"/>
+        <insert character="4747"/>
+      </rule>
+      <rule>
+        <keyseq keys="h2WE"/>
+        <insert character="4748"/>
+      </rule>
+      <rule>
+        <keyseq keys="h2Wee"/>
+        <insert character="4748"/>
+      </rule>
+      <rule>
+        <keyseq keys="h2W&apos;"/>
+        <insert character="4749"/>
+      </rule>
+      <rule>
+        <keyseq keys="hhe"/>
+        <insert character="4736"/>
+      </rule>
+      <rule>
+        <keyseq keys="hhu"/>
+        <insert character="4737"/>
+      </rule>
+      <rule>
+        <keyseq keys="hhi"/>
+        <insert character="4738"/>
+      </rule>
+      <rule>
+        <keyseq keys="hha"/>
+        <insert character="4739"/>
+      </rule>
+      <rule>
+        <keyseq keys="hhE"/>
+        <insert character="4740"/>
+      </rule>
+      <rule>
+        <keyseq keys="hhee"/>
+        <insert character="4740"/>
+      </rule>
+      <rule>
+        <keyseq keys="hh"/>
+        <insert character="4741"/>
+      </rule>
+      <rule>
+        <keyseq keys="hho"/>
+        <insert character="4742"/>
+      </rule>
+      <rule>
+        <keyseq keys="hhWe"/>
+        <insert character="4744"/>
+      </rule>
+      <rule>
+        <keyseq keys="hhWu"/>
+        <insert character="4749"/>
+      </rule>
+      <rule>
+        <keyseq keys="hhWi"/>
+        <insert character="4746"/>
+      </rule>
+      <rule>
+        <keyseq keys="hhW"/>
+        <insert character="4747"/>
+      </rule>
+      <rule>
+        <keyseq keys="hhWa"/>
+        <insert character="4747"/>
+      </rule>
+      <rule>
+        <keyseq keys="hhWE"/>
+        <insert character="4748"/>
+      </rule>
+      <rule>
+        <keyseq keys="hhWee"/>
+        <insert character="4748"/>
+      </rule>
+      <rule>
+        <keyseq keys="hhW&apos;"/>
+        <insert character="4749"/>
+      </rule>
+      <rule>
+        <keyseq keys="ne"/>
+        <insert character="4752"/>
+      </rule>
+      <rule>
+        <keyseq keys="nu"/>
+        <insert character="4753"/>
+      </rule>
+      <rule>
+        <keyseq keys="ni"/>
+        <insert character="4754"/>
+      </rule>
+      <rule>
+        <keyseq keys="na"/>
+        <insert character="4755"/>
+      </rule>
+      <rule>
+        <keyseq keys="nE"/>
+        <insert character="4756"/>
+      </rule>
+      <rule>
+        <keyseq keys="nee"/>
+        <insert character="4756"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <insert character="4757"/>
+      </rule>
+      <rule>
+        <keyseq keys="no"/>
+        <insert character="4758"/>
+      </rule>
+      <rule>
+        <keyseq keys="nW"/>
+        <insert character="4759"/>
+      </rule>
+      <rule>
+        <keyseq keys="nWa"/>
+        <insert character="4759"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ne"/>
+        <insert character="4760"/>
+      </rule>
+      <rule>
+        <keyseq keys="Nu"/>
+        <insert character="4761"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ni"/>
+        <insert character="4762"/>
+      </rule>
+      <rule>
+        <keyseq keys="Na"/>
+        <insert character="4763"/>
+      </rule>
+      <rule>
+        <keyseq keys="NE"/>
+        <insert character="4764"/>
+      </rule>
+      <rule>
+        <keyseq keys="Nee"/>
+        <insert character="4764"/>
+      </rule>
+      <rule>
+        <keyseq keys="N"/>
+        <insert character="4765"/>
+      </rule>
+      <rule>
+        <keyseq keys="No"/>
+        <insert character="4766"/>
+      </rule>
+      <rule>
+        <keyseq keys="NW"/>
+        <insert character="4767"/>
+      </rule>
+      <rule>
+        <keyseq keys="NWa"/>
+        <insert character="4767"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <insert character="4769"/>
+      </rule>
+      <rule>
+        <keyseq keys="U"/>
+        <insert character="4769"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <insert character="4770"/>
+      </rule>
+      <rule>
+        <keyseq keys="a"/>
+        <insert character="4771"/>
+      </rule>
+      <rule>
+        <keyseq keys="A"/>
+        <insert character="4771"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+        <insert character="4772"/>
+      </rule>
+      <rule>
+        <keyseq keys="I"/>
+        <insert character="4773"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <insert character="4773"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <insert character="4774"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <insert character="4774"/>
+      </rule>
+      <rule>
+        <keyseq keys="ea"/>
+        <insert character="4775"/>
+      </rule>
+      <rule>
+        <keyseq keys="ke"/>
+        <insert character="4776"/>
+      </rule>
+      <rule>
+        <keyseq keys="ku"/>
+        <insert character="4777"/>
+      </rule>
+      <rule>
+        <keyseq keys="ki"/>
+        <insert character="4778"/>
+      </rule>
+      <rule>
+        <keyseq keys="ka"/>
+        <insert character="4779"/>
+      </rule>
+      <rule>
+        <keyseq keys="kE"/>
+        <insert character="4780"/>
+      </rule>
+      <rule>
+        <keyseq keys="kee"/>
+        <insert character="4780"/>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+        <insert character="4781"/>
+      </rule>
+      <rule>
+        <keyseq keys="ko"/>
+        <insert character="4782"/>
+      </rule>
+      <rule>
+        <keyseq keys="kWe"/>
+        <insert character="4784"/>
+      </rule>
+      <rule>
+        <keyseq keys="kWu"/>
+        <insert character="4789"/>
+      </rule>
+      <rule>
+        <keyseq keys="kWi"/>
+        <insert character="4786"/>
+      </rule>
+      <rule>
+        <keyseq keys="kW"/>
+        <insert character="4787"/>
+      </rule>
+      <rule>
+        <keyseq keys="kWa"/>
+        <insert character="4787"/>
+      </rule>
+      <rule>
+        <keyseq keys="kWE"/>
+        <insert character="4788"/>
+      </rule>
+      <rule>
+        <keyseq keys="kWee"/>
+        <insert character="4788"/>
+      </rule>
+      <rule>
+        <keyseq keys="kW&apos;"/>
+        <insert character="4789"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ke"/>
+        <insert character="4792"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ku"/>
+        <insert character="4793"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ki"/>
+        <insert character="4794"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ka"/>
+        <insert character="4795"/>
+      </rule>
+      <rule>
+        <keyseq keys="KE"/>
+        <insert character="4796"/>
+      </rule>
+      <rule>
+        <keyseq keys="Kee"/>
+        <insert character="4796"/>
+      </rule>
+      <rule>
+        <keyseq keys="K"/>
+        <insert character="4797"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ko"/>
+        <insert character="4798"/>
+      </rule>
+      <rule>
+        <keyseq keys="KWe"/>
+        <insert character="4800"/>
+      </rule>
+      <rule>
+        <keyseq keys="KWu"/>
+        <insert character="4805"/>
+      </rule>
+      <rule>
+        <keyseq keys="KWi"/>
+        <insert character="4802"/>
+      </rule>
+      <rule>
+        <keyseq keys="KW"/>
+        <insert character="4803"/>
+      </rule>
+      <rule>
+        <keyseq keys="KWa"/>
+        <insert character="4803"/>
+      </rule>
+      <rule>
+        <keyseq keys="KWE"/>
+        <insert character="4804"/>
+      </rule>
+      <rule>
+        <keyseq keys="KWee"/>
+        <insert character="4804"/>
+      </rule>
+      <rule>
+        <keyseq keys="KW&apos;"/>
+        <insert character="4805"/>
+      </rule>
+      <rule>
+        <keyseq keys="we"/>
+        <insert character="4808"/>
+      </rule>
+      <rule>
+        <keyseq keys="wu"/>
+        <insert character="4809"/>
+      </rule>
+      <rule>
+        <keyseq keys="wi"/>
+        <insert character="4810"/>
+      </rule>
+      <rule>
+        <keyseq keys="wa"/>
+        <insert character="4811"/>
+      </rule>
+      <rule>
+        <keyseq keys="wE"/>
+        <insert character="4812"/>
+      </rule>
+      <rule>
+        <keyseq keys="wee"/>
+        <insert character="4812"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+        <insert character="4813"/>
+      </rule>
+      <rule>
+        <keyseq keys="wo"/>
+        <insert character="4814"/>
+      </rule>
+      <rule>
+        <keyseq keys="`e"/>
+        <insert character="4816"/>
+      </rule>
+      <rule>
+        <keyseq keys="`u"/>
+        <insert character="4817"/>
+      </rule>
+      <rule>
+        <keyseq keys="`U"/>
+        <insert character="4817"/>
+      </rule>
+      <rule>
+        <keyseq keys="`i"/>
+        <insert character="4818"/>
+      </rule>
+      <rule>
+        <keyseq keys="`a"/>
+        <insert character="4819"/>
+      </rule>
+      <rule>
+        <keyseq keys="`A"/>
+        <insert character="4819"/>
+      </rule>
+      <rule>
+        <keyseq keys="`E"/>
+        <insert character="4820"/>
+      </rule>
+      <rule>
+        <keyseq keys="`ee"/>
+        <insert character="4820"/>
+      </rule>
+      <rule>
+        <keyseq keys="`I"/>
+        <insert character="4821"/>
+      </rule>
+      <rule>
+        <keyseq keys="`o"/>
+        <insert character="4822"/>
+      </rule>
+      <rule>
+        <keyseq keys="`O"/>
+        <insert character="4822"/>
+      </rule>
+      <rule>
+        <keyseq keys="e2"/>
+        <insert character="4816"/>
+      </rule>
+      <rule>
+        <keyseq keys="u2"/>
+        <insert character="4817"/>
+      </rule>
+      <rule>
+        <keyseq keys="U2"/>
+        <insert character="4817"/>
+      </rule>
+      <rule>
+        <keyseq keys="i2"/>
+        <insert character="4818"/>
+      </rule>
+      <rule>
+        <keyseq keys="a2"/>
+        <insert character="4819"/>
+      </rule>
+      <rule>
+        <keyseq keys="A2"/>
+        <insert character="4819"/>
+      </rule>
+      <rule>
+        <keyseq keys="E2"/>
+        <insert character="4820"/>
+      </rule>
+      <rule>
+        <keyseq keys="ee2"/>
+        <insert character="4820"/>
+      </rule>
+      <rule>
+        <keyseq keys="I2"/>
+        <insert character="4821"/>
+      </rule>
+      <rule>
+        <keyseq keys="o2"/>
+        <insert character="4822"/>
+      </rule>
+      <rule>
+        <keyseq keys="O2"/>
+        <insert character="4822"/>
+      </rule>
+      <rule>
+        <keyseq keys="ae"/>
+        <insert character="4816"/>
+      </rule>
+      <rule>
+        <keyseq keys="aaa"/>
+        <insert character="4816"/>
+      </rule>
+      <rule>
+        <keyseq keys="uu"/>
+        <insert character="4817"/>
+      </rule>
+      <rule>
+        <keyseq keys="UU"/>
+        <insert character="4817"/>
+      </rule>
+      <rule>
+        <keyseq keys="ii"/>
+        <insert character="4818"/>
+      </rule>
+      <rule>
+        <keyseq keys="aa"/>
+        <insert character="4819"/>
+      </rule>
+      <rule>
+        <keyseq keys="AA"/>
+        <insert character="4819"/>
+      </rule>
+      <rule>
+        <keyseq keys="EE"/>
+        <insert character="4820"/>
+      </rule>
+      <rule>
+        <keyseq keys="II"/>
+        <insert character="4821"/>
+      </rule>
+      <rule>
+        <keyseq keys="ee"/>
+        <insert character="4821"/>
+      </rule>
+      <rule>
+        <keyseq keys="oo"/>
+        <insert character="4822"/>
+      </rule>
+      <rule>
+        <keyseq keys="OO"/>
+        <insert character="4822"/>
+      </rule>
+      <rule>
+        <keyseq keys="ze"/>
+        <insert character="4824"/>
+      </rule>
+      <rule>
+        <keyseq keys="zu"/>
+        <insert character="4825"/>
+      </rule>
+      <rule>
+        <keyseq keys="zi"/>
+        <insert character="4826"/>
+      </rule>
+      <rule>
+        <keyseq keys="za"/>
+        <insert character="4827"/>
+      </rule>
+      <rule>
+        <keyseq keys="zE"/>
+        <insert character="4828"/>
+      </rule>
+      <rule>
+        <keyseq keys="zee"/>
+        <insert character="4828"/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+        <insert character="4829"/>
+      </rule>
+      <rule>
+        <keyseq keys="zo"/>
+        <insert character="4830"/>
+      </rule>
+      <rule>
+        <keyseq keys="zW"/>
+        <insert character="4831"/>
+      </rule>
+      <rule>
+        <keyseq keys="zWa"/>
+        <insert character="4831"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ze"/>
+        <insert character="4832"/>
+      </rule>
+      <rule>
+        <keyseq keys="Zu"/>
+        <insert character="4833"/>
+      </rule>
+      <rule>
+        <keyseq keys="Zi"/>
+        <insert character="4834"/>
+      </rule>
+      <rule>
+        <keyseq keys="Za"/>
+        <insert character="4835"/>
+      </rule>
+      <rule>
+        <keyseq keys="ZE"/>
+        <insert character="4836"/>
+      </rule>
+      <rule>
+        <keyseq keys="Zee"/>
+        <insert character="4836"/>
+      </rule>
+      <rule>
+        <keyseq keys="Z"/>
+        <insert character="4837"/>
+      </rule>
+      <rule>
+        <keyseq keys="Zo"/>
+        <insert character="4838"/>
+      </rule>
+      <rule>
+        <keyseq keys="ZW"/>
+        <insert character="4839"/>
+      </rule>
+      <rule>
+        <keyseq keys="ZWa"/>
+        <insert character="4839"/>
+      </rule>
+      <rule>
+        <keyseq keys="ye"/>
+        <insert character="4840"/>
+      </rule>
+      <rule>
+        <keyseq keys="yu"/>
+        <insert character="4841"/>
+      </rule>
+      <rule>
+        <keyseq keys="yi"/>
+        <insert character="4842"/>
+      </rule>
+      <rule>
+        <keyseq keys="ya"/>
+        <insert character="4843"/>
+      </rule>
+      <rule>
+        <keyseq keys="yE"/>
+        <insert character="4844"/>
+      </rule>
+      <rule>
+        <keyseq keys="yee"/>
+        <insert character="4844"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <insert character="4845"/>
+      </rule>
+      <rule>
+        <keyseq keys="yo"/>
+        <insert character="4846"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ye"/>
+        <insert character="4840"/>
+      </rule>
+      <rule>
+        <keyseq keys="Yu"/>
+        <insert character="4841"/>
+      </rule>
+      <rule>
+        <keyseq keys="Yi"/>
+        <insert character="4842"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ya"/>
+        <insert character="4843"/>
+      </rule>
+      <rule>
+        <keyseq keys="YE"/>
+        <insert character="4844"/>
+      </rule>
+      <rule>
+        <keyseq keys="Yee"/>
+        <insert character="4844"/>
+      </rule>
+      <rule>
+        <keyseq keys="Y"/>
+        <insert character="4845"/>
+      </rule>
+      <rule>
+        <keyseq keys="Yo"/>
+        <insert character="4846"/>
+      </rule>
+      <rule>
+        <keyseq keys="de"/>
+        <insert character="4848"/>
+      </rule>
+      <rule>
+        <keyseq keys="du"/>
+        <insert character="4849"/>
+      </rule>
+      <rule>
+        <keyseq keys="di"/>
+        <insert character="4850"/>
+      </rule>
+      <rule>
+        <keyseq keys="da"/>
+        <insert character="4851"/>
+      </rule>
+      <rule>
+        <keyseq keys="dE"/>
+        <insert character="4852"/>
+      </rule>
+      <rule>
+        <keyseq keys="dee"/>
+        <insert character="4852"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <insert character="4853"/>
+      </rule>
+      <rule>
+        <keyseq keys="do"/>
+        <insert character="4854"/>
+      </rule>
+      <rule>
+        <keyseq keys="dW"/>
+        <insert character="4855"/>
+      </rule>
+      <rule>
+        <keyseq keys="dWa"/>
+        <insert character="4855"/>
+      </rule>
+      <rule>
+        <keyseq keys="De"/>
+        <insert character="4856"/>
+      </rule>
+      <rule>
+        <keyseq keys="Du"/>
+        <insert character="4857"/>
+      </rule>
+      <rule>
+        <keyseq keys="Di"/>
+        <insert character="4858"/>
+      </rule>
+      <rule>
+        <keyseq keys="Da"/>
+        <insert character="4859"/>
+      </rule>
+      <rule>
+        <keyseq keys="DE"/>
+        <insert character="4860"/>
+      </rule>
+      <rule>
+        <keyseq keys="Dee"/>
+        <insert character="4860"/>
+      </rule>
+      <rule>
+        <keyseq keys="D"/>
+        <insert character="4861"/>
+      </rule>
+      <rule>
+        <keyseq keys="Do"/>
+        <insert character="4862"/>
+      </rule>
+      <rule>
+        <keyseq keys="DW"/>
+        <insert character="4863"/>
+      </rule>
+      <rule>
+        <keyseq keys="DWa"/>
+        <insert character="4863"/>
+      </rule>
+      <rule>
+        <keyseq keys="je"/>
+        <insert character="4864"/>
+      </rule>
+      <rule>
+        <keyseq keys="ju"/>
+        <insert character="4865"/>
+      </rule>
+      <rule>
+        <keyseq keys="ji"/>
+        <insert character="4866"/>
+      </rule>
+      <rule>
+        <keyseq keys="ja"/>
+        <insert character="4867"/>
+      </rule>
+      <rule>
+        <keyseq keys="jE"/>
+        <insert character="4868"/>
+      </rule>
+      <rule>
+        <keyseq keys="jee"/>
+        <insert character="4868"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+        <insert character="4869"/>
+      </rule>
+      <rule>
+        <keyseq keys="jo"/>
+        <insert character="4870"/>
+      </rule>
+      <rule>
+        <keyseq keys="jW"/>
+        <insert character="4871"/>
+      </rule>
+      <rule>
+        <keyseq keys="jWa"/>
+        <insert character="4871"/>
+      </rule>
+      <rule>
+        <keyseq keys="Je"/>
+        <insert character="4864"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ju"/>
+        <insert character="4865"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ji"/>
+        <insert character="4866"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ja"/>
+        <insert character="4867"/>
+      </rule>
+      <rule>
+        <keyseq keys="JE"/>
+        <insert character="4868"/>
+      </rule>
+      <rule>
+        <keyseq keys="Jee"/>
+        <insert character="4868"/>
+      </rule>
+      <rule>
+        <keyseq keys="J"/>
+        <insert character="4869"/>
+      </rule>
+      <rule>
+        <keyseq keys="Jo"/>
+        <insert character="4870"/>
+      </rule>
+      <rule>
+        <keyseq keys="JW"/>
+        <insert character="4871"/>
+      </rule>
+      <rule>
+        <keyseq keys="JWa"/>
+        <insert character="4871"/>
+      </rule>
+      <rule>
+        <keyseq keys="ge"/>
+        <insert character="4872"/>
+      </rule>
+      <rule>
+        <keyseq keys="gu"/>
+        <insert character="4873"/>
+      </rule>
+      <rule>
+        <keyseq keys="gi"/>
+        <insert character="4874"/>
+      </rule>
+      <rule>
+        <keyseq keys="ga"/>
+        <insert character="4875"/>
+      </rule>
+      <rule>
+        <keyseq keys="gE"/>
+        <insert character="4876"/>
+      </rule>
+      <rule>
+        <keyseq keys="gee"/>
+        <insert character="4876"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+        <insert character="4877"/>
+      </rule>
+      <rule>
+        <keyseq keys="go"/>
+        <insert character="4878"/>
+      </rule>
+      <rule>
+        <keyseq keys="gWe"/>
+        <insert character="4880"/>
+      </rule>
+      <rule>
+        <keyseq keys="gWu"/>
+        <insert character="4885"/>
+      </rule>
+      <rule>
+        <keyseq keys="gWi"/>
+        <insert character="4882"/>
+      </rule>
+      <rule>
+        <keyseq keys="gW"/>
+        <insert character="4883"/>
+      </rule>
+      <rule>
+        <keyseq keys="gWa"/>
+        <insert character="4883"/>
+      </rule>
+      <rule>
+        <keyseq keys="gWE"/>
+        <insert character="4884"/>
+      </rule>
+      <rule>
+        <keyseq keys="gWee"/>
+        <insert character="4884"/>
+      </rule>
+      <rule>
+        <keyseq keys="gW&apos;"/>
+        <insert character="4885"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ge"/>
+        <insert character="4888"/>
+      </rule>
+      <rule>
+        <keyseq keys="Gu"/>
+        <insert character="4889"/>
+      </rule>
+      <rule>
+        <keyseq keys="Gi"/>
+        <insert character="4890"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ga"/>
+        <insert character="4891"/>
+      </rule>
+      <rule>
+        <keyseq keys="GE"/>
+        <insert character="4892"/>
+      </rule>
+      <rule>
+        <keyseq keys="Gee"/>
+        <insert character="4892"/>
+      </rule>
+      <rule>
+        <keyseq keys="G"/>
+        <insert character="4893"/>
+      </rule>
+      <rule>
+        <keyseq keys="Go"/>
+        <insert character="4894"/>
+      </rule>
+      <rule>
+        <keyseq keys="Te"/>
+        <insert character="4896"/>
+      </rule>
+      <rule>
+        <keyseq keys="Tu"/>
+        <insert character="4897"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ti"/>
+        <insert character="4898"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ta"/>
+        <insert character="4899"/>
+      </rule>
+      <rule>
+        <keyseq keys="TE"/>
+        <insert character="4900"/>
+      </rule>
+      <rule>
+        <keyseq keys="Tee"/>
+        <insert character="4900"/>
+      </rule>
+      <rule>
+        <keyseq keys="T"/>
+        <insert character="4901"/>
+      </rule>
+      <rule>
+        <keyseq keys="To"/>
+        <insert character="4902"/>
+      </rule>
+      <rule>
+        <keyseq keys="TW"/>
+        <insert character="4903"/>
+      </rule>
+      <rule>
+        <keyseq keys="TWa"/>
+        <insert character="4903"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ce"/>
+        <insert character="4904"/>
+      </rule>
+      <rule>
+        <keyseq keys="Cu"/>
+        <insert character="4905"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ci"/>
+        <insert character="4906"/>
+      </rule>
+      <rule>
+        <keyseq keys="Ca"/>
+        <insert character="4907"/>
+      </rule>
+      <rule>
+        <keyseq keys="CE"/>
+        <insert character="4908"/>
+      </rule>
+      <rule>
+        <keyseq keys="Cee"/>
+        <insert character="4908"/>
+      </rule>
+      <rule>
+        <keyseq keys="C"/>
+        <insert character="4909"/>
+      </rule>
+      <rule>
+        <keyseq keys="Co"/>
+        <insert character="4910"/>
+      </rule>
+      <rule>
+        <keyseq keys="CW"/>
+        <insert character="4911"/>
+      </rule>
+      <rule>
+        <keyseq keys="CWa"/>
+        <insert character="4911"/>
+      </rule>
+      <rule>
+        <keyseq keys="Pe"/>
+        <insert character="4912"/>
+      </rule>
+      <rule>
+        <keyseq keys="Pu"/>
+        <insert character="4913"/>
+      </rule>
+      <rule>
+        <keyseq keys="Pi"/>
+        <insert character="4914"/>
+      </rule>
+      <rule>
+        <keyseq keys="Pa"/>
+        <insert character="4915"/>
+      </rule>
+      <rule>
+        <keyseq keys="PE"/>
+        <insert character="4916"/>
+      </rule>
+      <rule>
+        <keyseq keys="Pee"/>
+        <insert character="4916"/>
+      </rule>
+      <rule>
+        <keyseq keys="P"/>
+        <insert character="4917"/>
+      </rule>
+      <rule>
+        <keyseq keys="Po"/>
+        <insert character="4918"/>
+      </rule>
+      <rule>
+        <keyseq keys="PW"/>
+        <insert character="4919"/>
+      </rule>
+      <rule>
+        <keyseq keys="PWa"/>
+        <insert character="4919"/>
+      </rule>
+      <rule>
+        <keyseq keys="Se"/>
+        <insert character="4920"/>
+      </rule>
+      <rule>
+        <keyseq keys="Su"/>
+        <insert character="4921"/>
+      </rule>
+      <rule>
+        <keyseq keys="Si"/>
+        <insert character="4922"/>
+      </rule>
+      <rule>
+        <keyseq keys="Sa"/>
+        <insert character="4923"/>
+      </rule>
+      <rule>
+        <keyseq keys="SE"/>
+        <insert character="4924"/>
+      </rule>
+      <rule>
+        <keyseq keys="See"/>
+        <insert character="4924"/>
+      </rule>
+      <rule>
+        <keyseq keys="S"/>
+        <insert character="4925"/>
+      </rule>
+      <rule>
+        <keyseq keys="So"/>
+        <insert character="4926"/>
+      </rule>
+      <rule>
+        <keyseq keys="SW"/>
+        <insert character="4927"/>
+      </rule>
+      <rule>
+        <keyseq keys="SWa"/>
+        <insert character="4927"/>
+      </rule>
+      <rule>
+        <keyseq keys="`Se"/>
+        <insert character="4928"/>
+      </rule>
+      <rule>
+        <keyseq keys="`Su"/>
+        <insert character="4929"/>
+      </rule>
+      <rule>
+        <keyseq keys="`Si"/>
+        <insert character="4930"/>
+      </rule>
+      <rule>
+        <keyseq keys="`Sa"/>
+        <insert character="4931"/>
+      </rule>
+      <rule>
+        <keyseq keys="`SE"/>
+        <insert character="4932"/>
+      </rule>
+      <rule>
+        <keyseq keys="`See"/>
+        <insert character="4932"/>
+      </rule>
+      <rule>
+        <keyseq keys="`S"/>
+        <insert character="4933"/>
+      </rule>
+      <rule>
+        <keyseq keys="`So"/>
+        <insert character="4934"/>
+      </rule>
+      <rule>
+        <keyseq keys="`SW"/>
+        <insert character="4927"/>
+      </rule>
+      <rule>
+        <keyseq keys="`SWa"/>
+        <insert character="4927"/>
+      </rule>
+      <rule>
+        <keyseq keys="S2e"/>
+        <insert character="4928"/>
+      </rule>
+      <rule>
+        <keyseq keys="S2u"/>
+        <insert character="4929"/>
+      </rule>
+      <rule>
+        <keyseq keys="S2i"/>
+        <insert character="4930"/>
+      </rule>
+      <rule>
+        <keyseq keys="S2a"/>
+        <insert character="4931"/>
+      </rule>
+      <rule>
+        <keyseq keys="S2E"/>
+        <insert character="4932"/>
+      </rule>
+      <rule>
+        <keyseq keys="S2ee"/>
+        <insert character="4932"/>
+      </rule>
+      <rule>
+        <keyseq keys="S2"/>
+        <insert character="4933"/>
+      </rule>
+      <rule>
+        <keyseq keys="S2o"/>
+        <insert character="4934"/>
+      </rule>
+      <rule>
+        <keyseq keys="S2W"/>
+        <insert character="4927"/>
+      </rule>
+      <rule>
+        <keyseq keys="S2Wa"/>
+        <insert character="4927"/>
+      </rule>
+      <rule>
+        <keyseq keys="SSe"/>
+        <insert character="4928"/>
+      </rule>
+      <rule>
+        <keyseq keys="SSu"/>
+        <insert character="4929"/>
+      </rule>
+      <rule>
+        <keyseq keys="SSi"/>
+        <insert character="4930"/>
+      </rule>
+      <rule>
+        <keyseq keys="SSa"/>
+        <insert character="4931"/>
+      </rule>
+      <rule>
+        <keyseq keys="SSE"/>
+        <insert character="4932"/>
+      </rule>
+      <rule>
+        <keyseq keys="SSee"/>
+        <insert character="4932"/>
+      </rule>
+      <rule>
+        <keyseq keys="SS"/>
+        <insert character="4933"/>
+      </rule>
+      <rule>
+        <keyseq keys="SSo"/>
+        <insert character="4934"/>
+      </rule>
+      <rule>
+        <keyseq keys="SSW"/>
+        <insert character="4927"/>
+      </rule>
+      <rule>
+        <keyseq keys="SSWa"/>
+        <insert character="4927"/>
+      </rule>
+      <rule>
+        <keyseq keys="fe"/>
+        <insert character="4936"/>
+      </rule>
+      <rule>
+        <keyseq keys="fu"/>
+        <insert character="4937"/>
+      </rule>
+      <rule>
+        <keyseq keys="fi"/>
+        <insert character="4938"/>
+      </rule>
+      <rule>
+        <keyseq keys="fa"/>
+        <insert character="4939"/>
+      </rule>
+      <rule>
+        <keyseq keys="fE"/>
+        <insert character="4940"/>
+      </rule>
+      <rule>
+        <keyseq keys="fee"/>
+        <insert character="4940"/>
+      </rule>
+      <rule>
+        <keyseq keys="f"/>
+        <insert character="4941"/>
+      </rule>
+      <rule>
+        <keyseq keys="fo"/>
+        <insert character="4942"/>
+      </rule>
+      <rule>
+        <keyseq keys="fW"/>
+        <insert character="4943"/>
+      </rule>
+      <rule>
+        <keyseq keys="fWa"/>
+        <insert character="4943"/>
+      </rule>
+      <rule>
+        <keyseq keys="fY"/>
+        <insert character="4954"/>
+      </rule>
+      <rule>
+        <keyseq keys="fYa"/>
+        <insert character="4954"/>
+      </rule>
+      <rule>
+        <keyseq keys="Fe"/>
+        <insert character="4936"/>
+      </rule>
+      <rule>
+        <keyseq keys="Fu"/>
+        <insert character="4937"/>
+      </rule>
+      <rule>
+        <keyseq keys="Fi"/>
+        <insert character="4938"/>
+      </rule>
+      <rule>
+        <keyseq keys="Fa"/>
+        <insert character="4939"/>
+      </rule>
+      <rule>
+        <keyseq keys="FE"/>
+        <insert character="4940"/>
+      </rule>
+      <rule>
+        <keyseq keys="Fee"/>
+        <insert character="4940"/>
+      </rule>
+      <rule>
+        <keyseq keys="F"/>
+        <insert character="4941"/>
+      </rule>
+      <rule>
+        <keyseq keys="Fo"/>
+        <insert character="4942"/>
+      </rule>
+      <rule>
+        <keyseq keys="FW"/>
+        <insert character="4943"/>
+      </rule>
+      <rule>
+        <keyseq keys="FWa"/>
+        <insert character="4943"/>
+      </rule>
+      <rule>
+        <keyseq keys="FY"/>
+        <insert character="4954"/>
+      </rule>
+      <rule>
+        <keyseq keys="FYa"/>
+        <insert character="4954"/>
+      </rule>
+      <rule>
+        <keyseq keys="pe"/>
+        <insert character="4944"/>
+      </rule>
+      <rule>
+        <keyseq keys="pu"/>
+        <insert character="4945"/>
+      </rule>
+      <rule>
+        <keyseq keys="pi"/>
+        <insert character="4946"/>
+      </rule>
+      <rule>
+        <keyseq keys="pa"/>
+        <insert character="4947"/>
+      </rule>
+      <rule>
+        <keyseq keys="pE"/>
+        <insert character="4948"/>
+      </rule>
+      <rule>
+        <keyseq keys="pee"/>
+        <insert character="4948"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+        <insert character="4949"/>
+      </rule>
+      <rule>
+        <keyseq keys="po"/>
+        <insert character="4950"/>
+      </rule>
+      <rule>
+        <keyseq keys="pW"/>
+        <insert character="4951"/>
+      </rule>
+      <rule>
+        <keyseq keys="pWa"/>
+        <insert character="4951"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;"/>
+        <insert string=""/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;&apos;"/>
+        <insert character="39"/>
+      </rule>
+      <rule>
+        <keyseq keys=":"/>
+        <insert character="4961"/>
+      </rule>
+      <rule>
+        <keyseq keys="::"/>
+        <insert character="4962"/>
+      </rule>
+      <rule>
+        <keyseq keys=":::"/>
+        <insert character="58"/>
+      </rule>
+      <rule>
+        <keyseq keys="."/>
+        <insert character="4962"/>
+      </rule>
+      <rule>
+        <keyseq keys="..."/>
+        <insert character="46"/>
+      </rule>
+      <rule>
+        <keyseq keys=","/>
+        <insert character="4963"/>
+      </rule>
+      <rule>
+        <keyseq keys=",,"/>
+        <insert character="44"/>
+      </rule>
+      <rule>
+        <keyseq keys=";"/>
+        <insert character="4964"/>
+      </rule>
+      <rule>
+        <keyseq keys=";;"/>
+        <insert character="59"/>
+      </rule>
+      <rule>
+        <keyseq keys="-:"/>
+        <insert character="4965"/>
+      </rule>
+      <rule>
+        <keyseq keys=":-"/>
+        <insert character="4966"/>
+      </rule>
+      <rule>
+        <keyseq keys="*"/>
+        <insert character="42"/>
+      </rule>
+      <rule>
+        <keyseq keys="**"/>
+        <insert character="4968"/>
+      </rule>
+      <rule>
+        <keyseq keys=":|:"/>
+        <insert character="4968"/>
+      </rule>
+      <rule>
+        <keyseq keys="??"/>
+        <insert character="4967"/>
+      </rule>
+      <rule>
+        <keyseq keys="`?"/>
+        <insert character="4967"/>
+      </rule>
+      <rule>
+        <keyseq keys="???"/>
+        <insert character="63"/>
+      </rule>
+      <rule>
+        <keyseq keys="`1"/>
+        <insert character="4969"/>
+      </rule>
+      <rule>
+        <keyseq keys="`2"/>
+        <insert character="4970"/>
+      </rule>
+      <rule>
+        <keyseq keys="`3"/>
+        <insert character="4971"/>
+      </rule>
+      <rule>
+        <keyseq keys="`4"/>
+        <insert character="4972"/>
+      </rule>
+      <rule>
+        <keyseq keys="`5"/>
+        <insert character="4973"/>
+      </rule>
+      <rule>
+        <keyseq keys="`6"/>
+        <insert character="4974"/>
+      </rule>
+      <rule>
+        <keyseq keys="`7"/>
+        <insert character="4975"/>
+      </rule>
+      <rule>
+        <keyseq keys="`8"/>
+        <insert character="4976"/>
+      </rule>
+      <rule>
+        <keyseq keys="`9"/>
+        <insert character="4977"/>
+      </rule>
+      <rule>
+        <keyseq keys="`10"/>
+        <insert character="4978"/>
+      </rule>
+      <rule>
+        <keyseq keys="`20"/>
+        <insert character="4979"/>
+      </rule>
+      <rule>
+        <keyseq keys="`30"/>
+        <insert character="4980"/>
+      </rule>
+      <rule>
+        <keyseq keys="`40"/>
+        <insert character="4981"/>
+      </rule>
+      <rule>
+        <keyseq keys="`50"/>
+        <insert character="4982"/>
+      </rule>
+      <rule>
+        <keyseq keys="`60"/>
+        <insert character="4983"/>
+      </rule>
+      <rule>
+        <keyseq keys="`70"/>
+        <insert character="4984"/>
+      </rule>
+      <rule>
+        <keyseq keys="`80"/>
+        <insert character="4985"/>
+      </rule>
+      <rule>
+        <keyseq keys="`90"/>
+        <insert character="4986"/>
+      </rule>
+      <rule>
+        <keyseq keys="`100"/>
+        <insert character="4987"/>
+      </rule>
+      <rule>
+        <keyseq keys="`1000"/>
+        <insert string="፲፻"/>
+      </rule>
+      <rule>
+        <keyseq keys="`2000"/>
+        <insert string="፳፻"/>
+      </rule>
+      <rule>
+        <keyseq keys="`3000"/>
+        <insert string="፴፻"/>
+      </rule>
+      <rule>
+        <keyseq keys="`4000"/>
+        <insert string="፵፻"/>
+      </rule>
+      <rule>
+        <keyseq keys="`5000"/>
+        <insert string="፶፻"/>
+      </rule>
+      <rule>
+        <keyseq keys="`6000"/>
+        <insert string="፷፻"/>
+      </rule>
+      <rule>
+        <keyseq keys="`7000"/>
+        <insert string="፸፻"/>
+      </rule>
+      <rule>
+        <keyseq keys="`8000"/>
+        <insert string="፹፻"/>
+      </rule>
+      <rule>
+        <keyseq keys="`9000"/>
+        <insert string="፺፻"/>
+      </rule>
+      <rule>
+        <keyseq keys="`10000"/>
+        <insert character="4988"/>
+      </rule>
+      <rule>
+        <keyseq keys="`20000"/>
+        <insert string="፪፼"/>
+      </rule>
+      <rule>
+        <keyseq keys="`30000"/>
+        <insert string="፫፼"/>
+      </rule>
+      <rule>
+        <keyseq keys="`40000"/>
+        <insert string="፬፼"/>
+      </rule>
+      <rule>
+        <keyseq keys="`50000"/>
+        <insert string="፭፼"/>
+      </rule>
+      <rule>
+        <keyseq keys="`60000"/>
+        <insert string="፮፼"/>
+      </rule>
+      <rule>
+        <keyseq keys="`70000"/>
+        <insert string="፯፼"/>
+      </rule>
+      <rule>
+        <keyseq keys="`80000"/>
+        <insert string="፰፼"/>
+      </rule>
+      <rule>
+        <keyseq keys="`90000"/>
+        <insert string="፱፼"/>
+      </rule>
+      <rule>
+        <keyseq keys="`100000"/>
+        <insert string="፲፼"/>
+      </rule>
+      <rule>
+        <keyseq keys="`200000"/>
+        <insert string="፳፼"/>
+      </rule>
+      <rule>
+        <keyseq keys="`300000"/>
+        <insert string="፴፼"/>
+      </rule>
+      <rule>
+        <keyseq keys="`400000"/>
+        <insert string="፵፼"/>
+      </rule>
+      <rule>
+        <keyseq keys="`500000"/>
+        <insert string="፶፼"/>
+      </rule>
+      <rule>
+        <keyseq keys="`600000"/>
+        <insert string="፷፼"/>
+      </rule>
+      <rule>
+        <keyseq keys="`700000"/>
+        <insert string="፸፼"/>
+      </rule>
+      <rule>
+        <keyseq keys="`800000"/>
+        <insert string="፹፼"/>
+      </rule>
+      <rule>
+        <keyseq keys="`900000"/>
+        <insert string="፺፼"/>
+      </rule>
+      <rule>
+        <keyseq keys="`1000000"/>
+        <insert string="፻፼"/>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-map"/>
+    </state>
+  </state-list>
+</input-method>

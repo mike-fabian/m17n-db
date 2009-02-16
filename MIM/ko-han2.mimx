@@ -1,0 +1,1998 @@
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>ko</language>
+    <name>han2</name>
+  </tags>
+  <description>Hangul input method with 2벌식.
+This input method uses this keyboard layout:
+  KEY:	r R s e E f a q Q t T d w W c z x v g k i j p P u h y n b m l o O
+  한글:ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎㅏㅑㅓㅔㅖㅕㅗㅛㅜㅠㅡㅣㅐㅒ
+</description>
+  <title>한2</title>
+  <macro-list>
+    <macro id="macro-compose">
+      <if condition="&gt;">
+        <variable-reference id="L"/>
+        <int-val>0</int-val>
+        <if-true-action-list>
+          <set id="LIndex">
+            <variable-reference id="L"/>
+          </set>
+          <sub id="LIndex">
+            <int-val>0x1100</int-val>
+          </sub>
+          <set id="VIndex">
+            <variable-reference id="V"/>
+          </set>
+          <sub id="VIndex">
+            <int-val>0x1161</int-val>
+          </sub>
+          <set id="TIndex">
+            <variable-reference id="T"/>
+          </set>
+          <sub id="TIndex">
+            <int-val>0x11A7</int-val>
+          </sub>
+          <set id="S">
+            <variable-reference id="LIndex"/>
+          </set>
+          <mul id="S">
+            <int-val>21</int-val>
+          </mul>
+          <add id="S">
+            <variable-reference id="VIndex"/>
+          </add>
+          <mul id="S">
+            <int-val>28</int-val>
+          </mul>
+          <add id="S">
+            <variable-reference id="TIndex"/>
+          </add>
+          <add id="S">
+            <int-val>0xAC00</int-val>
+          </add>
+          <delete-to-marker position="@first"/>
+          <insert character-or-string="variable">
+            <variable-reference id="S"/>
+          </insert>
+        </if-true-action-list>
+      </if>
+    </macro>
+  </macro-list>
+  <map-list>
+    <map id="map-L-or-T-head">
+      <rule>
+        <keyseq keys="q"/>
+      </rule>
+      <rule>
+        <keyseq keys="Q"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+      </rule>
+      <rule>
+        <keyseq keys="W"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+      </rule>
+      <rule>
+        <keyseq keys="E"/>
+      </rule>
+      <rule>
+        <keyseq keys="r"/>
+      </rule>
+      <rule>
+        <keyseq keys="R"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+      </rule>
+      <rule>
+        <keyseq keys="T"/>
+      </rule>
+      <rule>
+        <keyseq keys="a"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+      </rule>
+      <rule>
+        <keyseq keys="S"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+      </rule>
+      <rule>
+        <keyseq keys="D"/>
+      </rule>
+      <rule>
+        <keyseq keys="f"/>
+      </rule>
+      <rule>
+        <keyseq keys="F"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+      </rule>
+      <rule>
+        <keyseq keys="G"/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+      </rule>
+      <rule>
+        <keyseq keys="C"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+      </rule>
+    </map>
+    <map id="map-L-or-T">
+      <rule>
+        <keyseq keys="r"/>
+        <set id="L1">
+          <int-val>4352</int-val>
+        </set>
+        <set id="T">
+          <int-val>4520</int-val>
+        </set>
+        <insert character="12593"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="R"/>
+        <set id="L1">
+          <int-val>4353</int-val>
+        </set>
+        <set id="T">
+          <int-val>4521</int-val>
+        </set>
+        <insert character="12594"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="s"/>
+        <set id="L1">
+          <int-val>4354</int-val>
+        </set>
+        <set id="T">
+          <int-val>4523</int-val>
+        </set>
+        <insert character="12596"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="e"/>
+        <set id="L1">
+          <int-val>4355</int-val>
+        </set>
+        <set id="T">
+          <int-val>4526</int-val>
+        </set>
+        <insert character="12599"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="f"/>
+        <set id="L1">
+          <int-val>4357</int-val>
+        </set>
+        <set id="T">
+          <int-val>4527</int-val>
+        </set>
+        <insert character="12601"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="a"/>
+        <set id="L1">
+          <int-val>4358</int-val>
+        </set>
+        <set id="T">
+          <int-val>4535</int-val>
+        </set>
+        <insert character="12609"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="q"/>
+        <set id="L1">
+          <int-val>4359</int-val>
+        </set>
+        <set id="T">
+          <int-val>4536</int-val>
+        </set>
+        <insert character="12610"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="t"/>
+        <set id="L1">
+          <int-val>4361</int-val>
+        </set>
+        <set id="T">
+          <int-val>4538</int-val>
+        </set>
+        <insert character="12613"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="T"/>
+        <set id="L1">
+          <int-val>4362</int-val>
+        </set>
+        <set id="T">
+          <int-val>4539</int-val>
+        </set>
+        <insert character="12614"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="d"/>
+        <set id="L1">
+          <int-val>4363</int-val>
+        </set>
+        <set id="T">
+          <int-val>4540</int-val>
+        </set>
+        <insert character="12615"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="w"/>
+        <set id="L1">
+          <int-val>4364</int-val>
+        </set>
+        <set id="T">
+          <int-val>4541</int-val>
+        </set>
+        <insert character="12616"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="c"/>
+        <set id="L1">
+          <int-val>4366</int-val>
+        </set>
+        <set id="T">
+          <int-val>4542</int-val>
+        </set>
+        <insert character="12618"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="z"/>
+        <set id="L1">
+          <int-val>4367</int-val>
+        </set>
+        <set id="T">
+          <int-val>4543</int-val>
+        </set>
+        <insert character="12619"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="x"/>
+        <set id="L1">
+          <int-val>4368</int-val>
+        </set>
+        <set id="T">
+          <int-val>4544</int-val>
+        </set>
+        <insert character="12620"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="v"/>
+        <set id="L1">
+          <int-val>4369</int-val>
+        </set>
+        <set id="T">
+          <int-val>4545</int-val>
+        </set>
+        <insert character="12621"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="g"/>
+        <set id="L1">
+          <int-val>4370</int-val>
+        </set>
+        <set id="T">
+          <int-val>4546</int-val>
+        </set>
+        <insert character="12622"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="sr"/>
+        <set id="L1">
+          <int-val>4371</int-val>
+        </set>
+        <set id="T">
+          <int-val>4549</int-val>
+        </set>
+        <insert character="4371"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="se"/>
+        <set id="L1">
+          <int-val>4373</int-val>
+        </set>
+        <set id="T">
+          <int-val>4550</int-val>
+        </set>
+        <insert character="12646"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="er"/>
+        <set id="L1">
+          <int-val>4375</int-val>
+        </set>
+        <set id="T">
+          <int-val>4554</int-val>
+        </set>
+        <insert character="4375"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="fs"/>
+        <set id="L1">
+          <int-val>4376</int-val>
+        </set>
+        <set id="T">
+          <int-val>4557</int-val>
+        </set>
+        <insert character="4376"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="F"/>
+        <set id="L1">
+          <int-val>4377</int-val>
+        </set>
+        <set id="T">
+          <int-val>4560</int-val>
+        </set>
+        <insert character="4377"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="fg"/>
+        <set id="L1">
+          <int-val>4378</int-val>
+        </set>
+        <set id="T">
+          <int-val>4534</int-val>
+        </set>
+        <insert character="12608"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="aq"/>
+        <set id="L1">
+          <int-val>4380</int-val>
+        </set>
+        <set id="T">
+          <int-val>4572</int-val>
+        </set>
+        <insert character="12654"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="ad"/>
+        <set id="L1">
+          <int-val>4381</int-val>
+        </set>
+        <set id="T">
+          <int-val>4578</int-val>
+        </set>
+        <insert character="12657"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="qt"/>
+        <set id="L1">
+          <int-val>4385</int-val>
+        </set>
+        <set id="T">
+          <int-val>4537</int-val>
+        </set>
+        <insert character="12612"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="qv"/>
+        <set id="L1">
+          <int-val>4394</int-val>
+        </set>
+        <set id="T">
+          <int-val>4580</int-val>
+        </set>
+        <insert character="4394"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="qd"/>
+        <set id="L1">
+          <int-val>4395</int-val>
+        </set>
+        <set id="T">
+          <int-val>4582</int-val>
+        </set>
+        <insert character="12664"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="tr"/>
+        <set id="L1">
+          <int-val>4397</int-val>
+        </set>
+        <set id="T">
+          <int-val>4583</int-val>
+        </set>
+        <insert character="12666"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="te"/>
+        <set id="L1">
+          <int-val>4399</int-val>
+        </set>
+        <set id="T">
+          <int-val>4584</int-val>
+        </set>
+        <insert character="12668"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="tf"/>
+        <set id="L1">
+          <int-val>4400</int-val>
+        </set>
+        <set id="T">
+          <int-val>4585</int-val>
+        </set>
+        <insert character="4400"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="tq"/>
+        <set id="L1">
+          <int-val>4402</int-val>
+        </set>
+        <set id="T">
+          <int-val>4586</int-val>
+        </set>
+        <insert character="12669"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="t/"/>
+        <set id="L1">
+          <int-val>4416</int-val>
+        </set>
+        <set id="T">
+          <int-val>4587</int-val>
+        </set>
+        <insert character="12671"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="dr"/>
+        <set id="L1">
+          <int-val>4417</int-val>
+        </set>
+        <set id="T">
+          <int-val>4588</int-val>
+        </set>
+        <insert character="4417"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="dt"/>
+        <set id="L1">
+          <int-val>4421</int-val>
+        </set>
+        <set id="T">
+          <int-val>4593</int-val>
+        </set>
+        <insert character="12674"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="dt/"/>
+        <set id="L1">
+          <int-val>4422</int-val>
+        </set>
+        <set id="T">
+          <int-val>4594</int-val>
+        </set>
+        <insert character="12675"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="d/"/>
+        <set id="L1">
+          <int-val>4428</int-val>
+        </set>
+        <set id="T">
+          <int-val>4592</int-val>
+        </set>
+        <insert character="12673"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="vq"/>
+        <set id="L1">
+          <int-val>4438</int-val>
+        </set>
+        <set id="T">
+          <int-val>4595</int-val>
+        </set>
+        <insert character="4438"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="vd"/>
+        <set id="L1">
+          <int-val>4439</int-val>
+        </set>
+        <set id="T">
+          <int-val>4596</int-val>
+        </set>
+        <insert character="12676"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="g/"/>
+        <set id="L1">
+          <int-val>4441</int-val>
+        </set>
+        <set id="T">
+          <int-val>4601</int-val>
+        </set>
+        <insert character="12678"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+    </map>
+    <map id="map-L">
+      <rule>
+        <keyseq keys="E"/>
+        <set id="L">
+          <int-val>4356</int-val>
+        </set>
+        <insert character="12600"/>
+      </rule>
+      <rule>
+        <keyseq keys="Q"/>
+        <set id="L">
+          <int-val>4360</int-val>
+        </set>
+        <insert character="12611"/>
+      </rule>
+      <rule>
+        <keyseq keys="W"/>
+        <set id="L">
+          <int-val>4365</int-val>
+        </set>
+        <insert character="12617"/>
+      </rule>
+      <rule>
+        <keyseq keys="S"/>
+        <set id="L">
+          <int-val>4372</int-val>
+        </set>
+        <insert character="12645"/>
+      </rule>
+      <rule>
+        <keyseq keys="sq"/>
+        <set id="L">
+          <int-val>4374</int-val>
+        </set>
+        <insert character="4374"/>
+      </rule>
+      <rule>
+        <keyseq keys="fd"/>
+        <set id="L">
+          <int-val>4379</int-val>
+        </set>
+        <insert character="4379"/>
+      </rule>
+      <rule>
+        <keyseq keys="qr"/>
+        <set id="L">
+          <int-val>4382</int-val>
+        </set>
+        <insert character="12658"/>
+      </rule>
+      <rule>
+        <keyseq keys="qs"/>
+        <set id="L">
+          <int-val>4383</int-val>
+        </set>
+        <insert character="4383"/>
+      </rule>
+      <rule>
+        <keyseq keys="qe"/>
+        <set id="L">
+          <int-val>4384</int-val>
+        </set>
+        <insert character="12659"/>
+      </rule>
+      <rule>
+        <keyseq keys="qtr"/>
+        <set id="L">
+          <int-val>4386</int-val>
+        </set>
+        <insert character="12660"/>
+      </rule>
+      <rule>
+        <keyseq keys="qte"/>
+        <set id="L">
+          <int-val>4387</int-val>
+        </set>
+        <insert character="12661"/>
+      </rule>
+      <rule>
+        <keyseq keys="qtq"/>
+        <set id="L">
+          <int-val>4388</int-val>
+        </set>
+        <insert character="4388"/>
+      </rule>
+      <rule>
+        <keyseq keys="qtt"/>
+        <set id="L">
+          <int-val>4389</int-val>
+        </set>
+        <insert character="4389"/>
+      </rule>
+      <rule>
+        <keyseq keys="qtw"/>
+        <set id="L">
+          <int-val>4390</int-val>
+        </set>
+        <insert character="4390"/>
+      </rule>
+      <rule>
+        <keyseq keys="qw"/>
+        <set id="L">
+          <int-val>4391</int-val>
+        </set>
+        <insert character="12662"/>
+      </rule>
+      <rule>
+        <keyseq keys="qc"/>
+        <set id="L">
+          <int-val>4392</int-val>
+        </set>
+        <insert character="4392"/>
+      </rule>
+      <rule>
+        <keyseq keys="qx"/>
+        <set id="L">
+          <int-val>4393</int-val>
+        </set>
+        <insert character="12663"/>
+      </rule>
+      <rule>
+        <keyseq keys="Qd"/>
+        <set id="L">
+          <int-val>4396</int-val>
+        </set>
+        <insert character="12665"/>
+      </rule>
+      <rule>
+        <keyseq keys="ts"/>
+        <set id="L">
+          <int-val>4398</int-val>
+        </set>
+        <insert character="12667"/>
+      </rule>
+      <rule>
+        <keyseq keys="ta"/>
+        <set id="L">
+          <int-val>4401</int-val>
+        </set>
+        <insert character="4401"/>
+      </rule>
+      <rule>
+        <keyseq keys="tqr"/>
+        <set id="L">
+          <int-val>4403</int-val>
+        </set>
+        <insert character="4403"/>
+      </rule>
+      <rule>
+        <keyseq keys="tT"/>
+        <set id="L">
+          <int-val>4404</int-val>
+        </set>
+        <insert character="4404"/>
+      </rule>
+      <rule>
+        <keyseq keys="td"/>
+        <set id="L">
+          <int-val>4405</int-val>
+        </set>
+        <insert character="4405"/>
+      </rule>
+      <rule>
+        <keyseq keys="tw"/>
+        <set id="L">
+          <int-val>4406</int-val>
+        </set>
+        <insert character="12670"/>
+      </rule>
+      <rule>
+        <keyseq keys="tc"/>
+        <set id="L">
+          <int-val>4407</int-val>
+        </set>
+        <insert character="4407"/>
+      </rule>
+      <rule>
+        <keyseq keys="tz"/>
+        <set id="L">
+          <int-val>4408</int-val>
+        </set>
+        <insert character="4408"/>
+      </rule>
+      <rule>
+        <keyseq keys="tx"/>
+        <set id="L">
+          <int-val>4409</int-val>
+        </set>
+        <insert character="4409"/>
+      </rule>
+      <rule>
+        <keyseq keys="tv"/>
+        <set id="L">
+          <int-val>4410</int-val>
+        </set>
+        <insert character="4410"/>
+      </rule>
+      <rule>
+        <keyseq keys="tg"/>
+        <set id="L">
+          <int-val>4411</int-val>
+        </set>
+        <insert character="4411"/>
+      </rule>
+      <rule>
+        <keyseq keys="tt"/>
+        <set id="L">
+          <int-val>4412</int-val>
+        </set>
+        <insert character="4412"/>
+      </rule>
+      <rule>
+        <keyseq keys="TT"/>
+        <set id="L">
+          <int-val>4413</int-val>
+        </set>
+        <insert character="4413"/>
+      </rule>
+      <rule>
+        <keyseq keys="tt/"/>
+        <set id="L">
+          <int-val>4414</int-val>
+        </set>
+        <insert character="4414"/>
+      </rule>
+      <rule>
+        <keyseq keys="TT/&apos;"/>
+        <set id="L">
+          <int-val>4415</int-val>
+        </set>
+        <insert character="4415"/>
+      </rule>
+      <rule>
+        <keyseq keys="ds"/>
+        <set id="L">
+          <int-val>4418</int-val>
+        </set>
+        <insert character="4418"/>
+      </rule>
+      <rule>
+        <keyseq keys="da"/>
+        <set id="L">
+          <int-val>4419</int-val>
+        </set>
+        <insert character="4419"/>
+      </rule>
+      <rule>
+        <keyseq keys="dq"/>
+        <set id="L">
+          <int-val>4420</int-val>
+        </set>
+        <insert character="4420"/>
+      </rule>
+      <rule>
+        <keyseq keys="D"/>
+        <set id="L">
+          <int-val>4423</int-val>
+        </set>
+        <insert character="12672"/>
+      </rule>
+      <rule>
+        <keyseq keys="dw"/>
+        <set id="L">
+          <int-val>4424</int-val>
+        </set>
+        <insert character="4424"/>
+      </rule>
+      <rule>
+        <keyseq keys="dc"/>
+        <set id="L">
+          <int-val>4425</int-val>
+        </set>
+        <insert character="4425"/>
+      </rule>
+      <rule>
+        <keyseq keys="dx"/>
+        <set id="L">
+          <int-val>4426</int-val>
+        </set>
+        <insert character="4426"/>
+      </rule>
+      <rule>
+        <keyseq keys="dv"/>
+        <set id="L">
+          <int-val>4427</int-val>
+        </set>
+        <insert character="4427"/>
+      </rule>
+      <rule>
+        <keyseq keys="wd"/>
+        <set id="L">
+          <int-val>4429</int-val>
+        </set>
+        <insert character="4429"/>
+      </rule>
+      <rule>
+        <keyseq keys="ww"/>
+        <set id="L">
+          <int-val>4430</int-val>
+        </set>
+        <insert character="4430"/>
+      </rule>
+      <rule>
+        <keyseq keys="WW"/>
+        <set id="L">
+          <int-val>4431</int-val>
+        </set>
+        <insert character="4431"/>
+      </rule>
+      <rule>
+        <keyseq keys="ww/"/>
+        <set id="L">
+          <int-val>4432</int-val>
+        </set>
+        <insert character="4432"/>
+      </rule>
+      <rule>
+        <keyseq keys="WW/"/>
+        <set id="L">
+          <int-val>4433</int-val>
+        </set>
+        <insert character="4433"/>
+      </rule>
+      <rule>
+        <keyseq keys="cz"/>
+        <set id="L">
+          <int-val>4434</int-val>
+        </set>
+        <insert character="4434"/>
+      </rule>
+      <rule>
+        <keyseq keys="cg"/>
+        <set id="L">
+          <int-val>4435</int-val>
+        </set>
+        <insert character="4435"/>
+      </rule>
+      <rule>
+        <keyseq keys="cc"/>
+        <set id="L">
+          <int-val>4436</int-val>
+        </set>
+        <insert character="4436"/>
+      </rule>
+      <rule>
+        <keyseq keys="cc/"/>
+        <set id="L">
+          <int-val>4437</int-val>
+        </set>
+        <insert character="4437"/>
+      </rule>
+      <rule>
+        <keyseq keys="G"/>
+        <set id="L">
+          <int-val>4440</int-val>
+        </set>
+        <insert character="12677"/>
+      </rule>
+      <rule>
+        <keyseq keys="C"/>
+        <set id="L">
+          <int-val>4447</int-val>
+        </set>
+        <insert character="4447"/>
+      </rule>
+    </map>
+    <map id="map-V-head">
+      <rule>
+        <keyseq keys="y"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+      </rule>
+      <rule>
+        <keyseq keys="P"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+      </rule>
+      <rule>
+        <keyseq keys="k"/>
+      </rule>
+      <rule>
+        <keyseq keys="K"/>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+      </rule>
+    </map>
+    <map id="map-V">
+      <rule>
+        <keyseq keys="k"/>
+        <set id="V">
+          <int-val>4449</int-val>
+        </set>
+        <insert character="12623"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="o"/>
+        <set id="V">
+          <int-val>4450</int-val>
+        </set>
+        <insert character="12624"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="i"/>
+        <set id="V">
+          <int-val>4451</int-val>
+        </set>
+        <insert character="12625"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="O"/>
+        <set id="V">
+          <int-val>4452</int-val>
+        </set>
+        <insert character="12626"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="j"/>
+        <set id="V">
+          <int-val>4453</int-val>
+        </set>
+        <insert character="12627"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="p"/>
+        <set id="V">
+          <int-val>4454</int-val>
+        </set>
+        <insert character="12628"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="u"/>
+        <set id="V">
+          <int-val>4455</int-val>
+        </set>
+        <insert character="12629"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="P"/>
+        <set id="V">
+          <int-val>4456</int-val>
+        </set>
+        <insert character="12630"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="h"/>
+        <set id="V">
+          <int-val>4457</int-val>
+        </set>
+        <insert character="12631"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="hk"/>
+        <set id="V">
+          <int-val>4458</int-val>
+        </set>
+        <insert character="12632"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="ho"/>
+        <set id="V">
+          <int-val>4459</int-val>
+        </set>
+        <insert character="12633"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="hl"/>
+        <set id="V">
+          <int-val>4460</int-val>
+        </set>
+        <insert character="12634"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="y"/>
+        <set id="V">
+          <int-val>4461</int-val>
+        </set>
+        <insert character="12635"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="n"/>
+        <set id="V">
+          <int-val>4462</int-val>
+        </set>
+        <insert character="12636"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="nj"/>
+        <set id="V">
+          <int-val>4463</int-val>
+        </set>
+        <insert character="12637"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="np"/>
+        <set id="V">
+          <int-val>4464</int-val>
+        </set>
+        <insert character="12638"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="nl"/>
+        <set id="V">
+          <int-val>4465</int-val>
+        </set>
+        <insert character="12639"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="b"/>
+        <set id="V">
+          <int-val>4466</int-val>
+        </set>
+        <insert character="12640"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="m"/>
+        <set id="V">
+          <int-val>4467</int-val>
+        </set>
+        <insert character="12641"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="ml"/>
+        <set id="V">
+          <int-val>4468</int-val>
+        </set>
+        <insert character="12642"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="l"/>
+        <set id="V">
+          <int-val>4469</int-val>
+        </set>
+        <insert character="12643"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="kh"/>
+        <set id="V">
+          <int-val>4470</int-val>
+        </set>
+        <insert character="4470"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="kn"/>
+        <set id="V">
+          <int-val>4471</int-val>
+        </set>
+        <insert character="4471"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="ih"/>
+        <set id="V">
+          <int-val>4472</int-val>
+        </set>
+        <insert character="4472"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="iy"/>
+        <set id="V">
+          <int-val>4473</int-val>
+        </set>
+        <insert character="4473"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="jh"/>
+        <set id="V">
+          <int-val>4474</int-val>
+        </set>
+        <insert character="4474"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="jn"/>
+        <set id="V">
+          <int-val>4475</int-val>
+        </set>
+        <insert character="4475"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="jm"/>
+        <set id="V">
+          <int-val>4476</int-val>
+        </set>
+        <insert character="4476"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="uh"/>
+        <set id="V">
+          <int-val>4477</int-val>
+        </set>
+        <insert character="4477"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="un"/>
+        <set id="V">
+          <int-val>4478</int-val>
+        </set>
+        <insert character="4478"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="hj"/>
+        <set id="V">
+          <int-val>4479</int-val>
+        </set>
+        <insert character="4479"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="hp"/>
+        <set id="V">
+          <int-val>4480</int-val>
+        </set>
+        <insert character="4480"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="hP"/>
+        <set id="V">
+          <int-val>4481</int-val>
+        </set>
+        <insert character="4481"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="hh"/>
+        <set id="V">
+          <int-val>4482</int-val>
+        </set>
+        <insert character="4482"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="hn"/>
+        <set id="V">
+          <int-val>4483</int-val>
+        </set>
+        <insert character="4483"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="yi"/>
+        <set id="V">
+          <int-val>4484</int-val>
+        </set>
+        <insert character="12679"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="yO"/>
+        <set id="V">
+          <int-val>4485</int-val>
+        </set>
+        <insert character="12680"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="yu"/>
+        <set id="V">
+          <int-val>4486</int-val>
+        </set>
+        <insert character="4486"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="yh"/>
+        <set id="V">
+          <int-val>4487</int-val>
+        </set>
+        <insert character="4487"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="yl"/>
+        <set id="V">
+          <int-val>4488</int-val>
+        </set>
+        <insert character="12681"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="nk"/>
+        <set id="V">
+          <int-val>4489</int-val>
+        </set>
+        <insert character="4489"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="no"/>
+        <set id="V">
+          <int-val>4490</int-val>
+        </set>
+        <insert character="4490"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="njm"/>
+        <set id="V">
+          <int-val>4491</int-val>
+        </set>
+        <insert character="4491"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="nu"/>
+        <set id="V">
+          <int-val>4492</int-val>
+        </set>
+        <insert character="4492"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="nn"/>
+        <set id="V">
+          <int-val>4493</int-val>
+        </set>
+        <insert character="4493"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="bk"/>
+        <set id="V">
+          <int-val>4494</int-val>
+        </set>
+        <insert character="4494"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="bj"/>
+        <set id="V">
+          <int-val>4495</int-val>
+        </set>
+        <insert character="4495"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="bp"/>
+        <set id="V">
+          <int-val>4496</int-val>
+        </set>
+        <insert character="4496"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="bu"/>
+        <set id="V">
+          <int-val>4497</int-val>
+        </set>
+        <insert character="12682"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="bP"/>
+        <set id="V">
+          <int-val>4498</int-val>
+        </set>
+        <insert character="12683"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="bn"/>
+        <set id="V">
+          <int-val>4499</int-val>
+        </set>
+        <insert character="4499"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="bl"/>
+        <set id="V">
+          <int-val>4500</int-val>
+        </set>
+        <insert character="12684"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="mn"/>
+        <set id="V">
+          <int-val>4501</int-val>
+        </set>
+        <insert character="4501"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="mm"/>
+        <set id="V">
+          <int-val>4502</int-val>
+        </set>
+        <insert character="4502"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="mln"/>
+        <set id="V">
+          <int-val>4503</int-val>
+        </set>
+        <insert character="4503"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="lk"/>
+        <set id="V">
+          <int-val>4504</int-val>
+        </set>
+        <insert character="4504"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="li"/>
+        <set id="V">
+          <int-val>4505</int-val>
+        </set>
+        <insert character="4505"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="lh"/>
+        <set id="V">
+          <int-val>4506</int-val>
+        </set>
+        <insert character="4506"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="ln"/>
+        <set id="V">
+          <int-val>4507</int-val>
+        </set>
+        <insert character="4507"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="lm"/>
+        <set id="V">
+          <int-val>4508</int-val>
+        </set>
+        <insert character="4508"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="lK"/>
+        <set id="V">
+          <int-val>4509</int-val>
+        </set>
+        <insert character="4509"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="K"/>
+        <set id="V">
+          <int-val>4510</int-val>
+        </set>
+        <insert character="4510"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="Kj"/>
+        <set id="V">
+          <int-val>4511</int-val>
+        </set>
+        <insert character="4511"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="Kn"/>
+        <set id="V">
+          <int-val>4512</int-val>
+        </set>
+        <insert character="4512"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="Kl"/>
+        <set id="V">
+          <int-val>4513</int-val>
+        </set>
+        <insert character="4513"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="KK"/>
+        <set id="V">
+          <int-val>4514</int-val>
+        </set>
+        <insert character="4514"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+    </map>
+    <map id="map-T">
+      <rule>
+        <keyseq keys="rt"/>
+        <set id="T">
+          <int-val>4522</int-val>
+        </set>
+        <insert character="12595"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="sw"/>
+        <set id="T">
+          <int-val>4524</int-val>
+        </set>
+        <insert character="4524"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="sg"/>
+        <set id="T">
+          <int-val>4525</int-val>
+        </set>
+        <insert character="4525"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="fr"/>
+        <set id="T">
+          <int-val>4528</int-val>
+        </set>
+        <insert character="12602"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="fa"/>
+        <set id="T">
+          <int-val>4529</int-val>
+        </set>
+        <insert character="12603"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="fq"/>
+        <set id="T">
+          <int-val>4530</int-val>
+        </set>
+        <insert character="12604"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="ft"/>
+        <set id="T">
+          <int-val>4531</int-val>
+        </set>
+        <insert character="12605"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="fx"/>
+        <set id="T">
+          <int-val>4532</int-val>
+        </set>
+        <insert character="12606"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="fv"/>
+        <set id="T">
+          <int-val>4533</int-val>
+        </set>
+        <insert character="12607"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="rf"/>
+        <set id="T">
+          <int-val>4547</int-val>
+        </set>
+        <insert character="4547"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="rtr"/>
+        <set id="T">
+          <int-val>4548</int-val>
+        </set>
+        <insert character="4548"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="st"/>
+        <set id="T">
+          <int-val>4551</int-val>
+        </set>
+        <insert character="12647"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="st/"/>
+        <set id="T">
+          <int-val>4552</int-val>
+        </set>
+        <insert character="12648"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="sx"/>
+        <set id="T">
+          <int-val>4553</int-val>
+        </set>
+        <insert character="4553"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="ef"/>
+        <set id="T">
+          <int-val>4555</int-val>
+        </set>
+        <insert character="4555"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="frt"/>
+        <set id="T">
+          <int-val>4556</int-val>
+        </set>
+        <insert character="4556"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="fe"/>
+        <set id="T">
+          <int-val>4558</int-val>
+        </set>
+        <insert character="12650"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="feg"/>
+        <set id="T">
+          <int-val>4559</int-val>
+        </set>
+        <insert character="4559"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="far"/>
+        <set id="T">
+          <int-val>4561</int-val>
+        </set>
+        <insert character="4561"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="fat"/>
+        <set id="T">
+          <int-val>4562</int-val>
+        </set>
+        <insert character="4562"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="fqt"/>
+        <set id="T">
+          <int-val>4563</int-val>
+        </set>
+        <insert character="12651"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="fqg"/>
+        <set id="T">
+          <int-val>4564</int-val>
+        </set>
+        <insert character="4564"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="fqd"/>
+        <set id="T">
+          <int-val>4565</int-val>
+        </set>
+        <insert character="4565"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="ftt"/>
+        <set id="T">
+          <int-val>4566</int-val>
+        </set>
+        <insert character="4566"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="ft/"/>
+        <set id="T">
+          <int-val>4567</int-val>
+        </set>
+        <insert character="12652"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="fz"/>
+        <set id="T">
+          <int-val>4568</int-val>
+        </set>
+        <insert character="4568"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="fMd"/>
+        <set id="T">
+          <int-val>4569</int-val>
+        </set>
+        <insert character="12653"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="ar"/>
+        <set id="T">
+          <int-val>4570</int-val>
+        </set>
+        <insert character="4570"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="af"/>
+        <set id="T">
+          <int-val>4571</int-val>
+        </set>
+        <insert character="4571"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="at"/>
+        <set id="T">
+          <int-val>4573</int-val>
+        </set>
+        <insert character="12655"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="aT"/>
+        <set id="T">
+          <int-val>4574</int-val>
+        </set>
+        <insert character="4574"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="at/"/>
+        <set id="T">
+          <int-val>4575</int-val>
+        </set>
+        <insert character="12656"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="ac"/>
+        <set id="T">
+          <int-val>4576</int-val>
+        </set>
+        <insert character="4576"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="ag"/>
+        <set id="T">
+          <int-val>4577</int-val>
+        </set>
+        <insert character="4577"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="qf"/>
+        <set id="T">
+          <int-val>4579</int-val>
+        </set>
+        <insert character="4579"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="qg"/>
+        <set id="T">
+          <int-val>4581</int-val>
+        </set>
+        <insert character="4581"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="dR"/>
+        <set id="T">
+          <int-val>4589</int-val>
+        </set>
+        <insert character="4589"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="dt/"/>
+        <set id="T">
+          <int-val>4590</int-val>
+        </set>
+        <insert character="12675"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="dz"/>
+        <set id="T">
+          <int-val>4591</int-val>
+        </set>
+        <insert character="4591"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="gs"/>
+        <set id="T">
+          <int-val>4597</int-val>
+        </set>
+        <insert character="4597"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="gf"/>
+        <set id="T">
+          <int-val>4598</int-val>
+        </set>
+        <insert character="4598"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="ga"/>
+        <set id="T">
+          <int-val>4599</int-val>
+        </set>
+        <insert character="4599"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq keys="gq"/>
+        <set id="T">
+          <int-val>4600</int-val>
+        </set>
+        <insert character="4600"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+    </map>
+    <map id="map-special">
+      <rule>
+        <keyseq keys="J"/>
+        <set id="V">
+          <int-val>4448</int-val>
+        </set>
+        <insert character="4448"/>
+        <macro-reference id="macro-compose"/>
+      </rule>
+    </map>
+    <map id="map-backspace">
+      <rule>
+        <keyseq>
+          <key-event>BackSpace</key-event>
+        </keyseq>
+        <conditional>
+          <case>
+            <expr operator="&gt;">
+              <variable-reference id="handled-keys"/>
+              <int-val>1</int-val>
+            </expr>
+            <undo/>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <unhandle/>
+          </case>
+        </conditional>
+      </rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <state-hook>
+        <set id="L">
+          <int-val>0</int-val>
+        </set>
+      </state-hook>
+      <branch branch-selecting-map="map-L-or-T">
+        <set id="L">
+          <variable-reference id="L1"/>
+        </set>
+        <set id="T">
+          <int-val>0x11A7</int-val>
+        </set>
+        <shift-to id="state-state-L"/>
+      </branch>
+      <branch branch-selecting-map="map-L">
+        <set id="T">
+          <int-val>0x11A7</int-val>
+        </set>
+        <shift-to id="state-state-L"/>
+      </branch>
+      <branch branch-selecting-map="map-V"/>
+      <branch branch-selecting-map="map-T"/>
+      <branch branch-selecting-map="map-special"/>
+      <branch branch-selecting-map="map-backspace"/>
+    </state>
+    <state id="state-state-L">
+      <branch branch-selecting-map="map-V">
+        <shift-to id="state-state-LV"/>
+      </branch>
+      <branch branch-selecting-map="map-backspace"/>
+    </state>
+    <state id="state-state-LV">
+      <branch branch-selecting-map="map-L-or-T">
+        <shift-to id="state-state-LVL-or-LVT"/>
+      </branch>
+      <branch branch-selecting-map="map-T"/>
+      <branch branch-selecting-map="map-backspace"/>
+    </state>
+    <state id="state-state-LVL-or-LVT">
+      <branch branch-selecting-map="map-L-or-T-head">
+        <delete-to-marker position="@first"/>
+        <pushback-n-events n="0"/>
+        <set id="L">
+          <int-val>0</int-val>
+        </set>
+        <shift-to id="state-state-fix-LVT"/>
+      </branch>
+      <branch branch-selecting-map="map-V-head">
+        <delete-to-marker position="@first"/>
+        <pushback-n-events n="0"/>
+        <set id="L">
+          <int-val>0</int-val>
+        </set>
+        <shift-to id="state-state-fix-LV"/>
+      </branch>
+      <branch branch-selecting-map="map-backspace"/>
+    </state>
+    <state id="state-state-fix-LVT">
+      <branch branch-selecting-map="map-L-or-T">
+        <set id="L">
+          <variable-reference id="L1"/>
+        </set>
+        <set id="T">
+          <int-val>0x11A7</int-val>
+        </set>
+        <shift-to id="state-state-fix-LVT-2"/>
+      </branch>
+      <branch branch-selecting-map="map-L">
+        <set id="T">
+          <int-val>0x11A7</int-val>
+        </set>
+        <shift-to id="state-state-fix-LVT-2"/>
+      </branch>
+    </state>
+    <state id="state-state-fix-LVT-2">
+      <branch branch-selecting-map="map-V">
+        <shift-to id="state-state-fix-LVT-3"/>
+      </branch>
+    </state>
+    <state id="state-state-fix-LVT-3">
+      <branch branch-selecting-map="map-L-or-T">
+        <shift-to id="state-init"/>
+      </branch>
+    </state>
+    <state id="state-state-fix-LV">
+      <branch branch-selecting-map="map-L-or-T">
+        <set id="L">
+          <variable-reference id="L1"/>
+        </set>
+        <set id="T">
+          <int-val>0x11A7</int-val>
+        </set>
+        <shift-to id="state-state-fix-LV-2"/>
+      </branch>
+      <branch branch-selecting-map="map-L">
+        <set id="T">
+          <int-val>0x11A7</int-val>
+        </set>
+        <shift-to id="state-state-fix-LV-2"/>
+      </branch>
+    </state>
+    <state id="state-state-fix-LV-2">
+      <branch branch-selecting-map="map-V">
+        <shift-to id="state-init"/>
+      </branch>
+    </state>
+  </state-list>
+</input-method>

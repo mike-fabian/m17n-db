@@ -31,8 +31,7 @@
 ;; This file must contain only ASCII characters. -->
 <doxygen>
   <page id="m17nDBData">
-    <brief>
-    Data provided by the m17n database</brief>
+    <brief> Data provided by the m17n database</brief>
     <section id="charprop">
       <brief>Character Property</brief>
     </section>

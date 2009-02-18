@@ -8,13 +8,15 @@
           <attribute name="id">
             <data type="token"/>
           </attribute>
-          <text/>
+	  <element name="brief"><text/></element>
+	  <optional><text/></optional>
           <zeroOrMore>
             <element name="section">
               <attribute name="id">
                 <data type="ID"/>
               </attribute>
-              <text/>
+	      <element name="brief"><text/></element>
+	      <optional><text/></optional>
             </element>
           </zeroOrMore>
         </element>
@@ -90,9 +92,7 @@
                           <value>schematron</value>
                         </choice>
                       </attribute>
-                      <element name="schema-filename">
-                        <data type="string"/>
-                      </element>
+		      <data type="string"/>
                     </element>
                   </group>
                 </choice>

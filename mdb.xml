@@ -31,24 +31,25 @@
 ;; This file must contain only ASCII characters. -->
 <doxygen>
   <page id="m17nDBData">
-    Data provided by the m17n database
+    <brief>
+    Data provided by the m17n database</brief>
     <section id="charprop">
-      Character Property
+      <brief>Character Property</brief>
     </section>
     <section id="mim">
-      Input method 
+      <brief>Input method </brief>
       See @ref mdbIM for the format of these files.
     </section>
     <section id="flt">
-      Font Layout Table
+      <brief>Font Layout Table</brief>
       See @ref mdbFLT for the format of these files.
     </section>
     <section id="fontset">
-      Fontset
+      <brief>Fontset</brief>
       See @ref mdbFontset for the format of these files.
     </section>
     <section id="misc">
-      The other data
+    <brief>The other data</brief>
     </section>
   </page>
 </doxygen>
@@ -130,9 +131,7 @@
   <source>
     <filename>*.mimx</filename>
     <format>xml</format>
-    <schema type="relaxng">
-      <schema-filename>mim.rng</schema-filename>
-    </schema>
+    <schema type="relaxng">mim.rng</schema>
   </source>
 </item>
 

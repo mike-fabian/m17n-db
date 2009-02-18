@@ -8,15 +8,19 @@
           <attribute name="id">
             <data type="token"/>
           </attribute>
-	  <element name="brief"><text/></element>
-	  <optional><text/></optional>
+	  <mixed>
+	    <optional><text/></optional>
+	    <element name="brief"><text/></element>
+	  </mixed>
           <zeroOrMore>
             <element name="section">
               <attribute name="id">
                 <data type="ID"/>
               </attribute>
-	      <element name="brief"><text/></element>
-	      <optional><text/></optional>
+	      <mixed>
+		<optional><text/></optional>
+		<element name="brief"><text/></element>
+	      </mixed>
             </element>
           </zeroOrMore>
         </element>

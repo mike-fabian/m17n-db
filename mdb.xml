@@ -36,16 +36,16 @@
       <brief>Character Property</brief>
     </section>
     <section id="mim">
-      <brief>Input method </brief>
       See @ref mdbIM for the format of these files.
+      <brief>Input method </brief>
     </section>
     <section id="flt">
-      <brief>Font Layout Table</brief>
       See @ref mdbFLT for the format of these files.
+      <brief>Font Layout Table</brief>
     </section>
     <section id="fontset">
-      <brief>Fontset</brief>
       See @ref mdbFontset for the format of these files.
+      <brief>Fontset</brief>
     </section>
     <section id="misc">
     <brief>The other data</brief>
@@ -56,70 +56,57 @@
 <!-- charprop -->
 
 <item  key0="char-table" key1="symbol" key2="category" sectionid="charprop">
-  <description>Unicode general category for each character that is available as
-  #Mcategory property.</description>
+  <description>Unicode general category for each character that is available as #Mcategory property.</description>
   <source><filename>CATEGORY.tab</filename></source>
 </item>
 
 <item key0="char-table" key1="integer" key2="combining-class" sectionid="charprop">
-  <description>Unicode combining class for each character that is available as
-  #Mcombining_class property.</description>
+  <description>Unicode combining class for each character that is available as #Mcombining_class property.</description>
   <source><filename>COMBINE.tab</filename></source>
 </item>
 
 <item key0="char-table" key1="symbol" key2="bidirectional-category" sectionid="charprop">
-  <description>Unicode BIDI category for each character that is available as
-  #Mbidi_category property.</description>
+  <description>Unicode BIDI category for each character that is available as #Mbidi_category property.</description>
   <source><filename>BIDI.tab</filename></source>
 </item>
 
 <item key0="char-table" key1="integer" key2="simple-case-folding" sectionid="charprop">
-  <description>Unicode case-folding mapping of each character that is available as
-  #Msimple_case_folding property.</description>
+  <description>Unicode case-folding mapping of each character that is available as #Msimple_case_folding property.</description>
   <source><filename>CASE-S.tab</filename></source>
 </item>
 
 <item key0="char-table" key1="mtext" key2="complicated-case-folding" sectionid="charprop">
-  <description>Unicode complicated case-folding mapping of each character that is
-  available as #Mcomplicated_case_folding property.</description>
+  <description>Unicode complicated case-folding mapping of each character that is available as #Mcomplicated_case_folding property.</description>
   <source><filename>CASE-C.tab</filename></source>
 </item>
 
 <item key0="char-table" key1="string" key2="name" sectionid="charprop">
-  <description>Unicode character name for each character that is available as
-  #Mname property.</description>
+  <description>Unicode character name for each character that is available as #Mname property.</description>
   <source><filename>NAME.tab</filename></source>
 </item>
 
 <item key0="char-table" key1="symbol" key2="script" sectionid="charprop">
-  <description>Unicode script name for each character that is available as
-  #Mscript property.</description>
+  <description>Unicode script name for each character that is available as #Mscript property.</description>
   <source><filename>SCRIPT.tab</filename></source>
 </item>
 
 <item key0="char-table" key1="integer" key2="cased" sectionid="charprop">
-  <description>Unicode properties for case operations.  Integer value 1 means
-  cased (D47, Unicode 4.0, p.89), 2 means case-ignorable (D47a,
-  Unicode 4.1.0), and 3 means both.  Available as #Mcased property.</description>
+  <description>Unicode properties for case operations.  Integer value 1 means  cased (D47, Unicode 4.0, p.89), 2 means case-ignorable (D47a,  Unicode 4.1.0), and 3 means both.  Available as #Mcased property.</description>
   <source><filename>CASED.tab</filename></source>
 </item>
 
 <item key0="char-table" key1="symbol" key2="soft-dotted" sectionid="charprop"> 
-  <description>Unicode property for case operations.  Available as #Msoft_dotted
-  property.</description>
+  <description>Unicode property for case operations.  Available as #Msoft_dotted property.</description>
   <source><filename>SOFT-DOTTED.tab</filename></source>
 </item>
 
 <item key0="char-table" key1="plist" key2="case-mapping" sectionid="charprop">
-  <description>Unicode case mapping of each character that is available as
-  #Mcase_mapping property. </description>
+  <description>Unicode case mapping of each character that is available as #Mcase_mapping property. </description>
   <source><filename>CASE-MAPPING.tab</filename></source>
 </item>
 
 <item key0="char-table" key1="symbol" key2="block" sectionid="charprop">
-  <description>Unicode fallback script name for each character that is available
-  as #Mblock property.  Generated manually by referring UCD
-  Blocks.txt.</description>
+  <description>Unicode fallback script name for each character that is available  as #Mblock property.  Generated manually by referring UCD Blocks.txt.</description>
   <source><filename>BLOCK.tab</filename></source>
 </item>
 

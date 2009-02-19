@@ -113,7 +113,7 @@
 <!-- mim -->
 
 <item key0="input-method" key1="*" sectionid="mim">
-  <description>The actual tags and filename are defined in each file with extension "mim". </description>
+  <description>The actual tags are defined in each file with extension "mimx". </description>
   <source>
     <filename>*.mimx</filename>
     <format>xml</format>
@@ -123,7 +123,7 @@
 
 <!-- flt -->
 <item key0="font" key1="layouter" key2="*" sectionid="flt">
-  <description>The actual tags and filename are defined in each file with extension "flt".</description>
+  <description>The actual tags are defined in each file with extension "flt".</description>
   <source><filename>*.flt</filename><format>plist</format></source>
 </item>
 
@@ -170,6 +170,8 @@
 </item>
 
 <item key0="language" key1="name" key2="*" sectionid="misc">
+  <description>Names of languages in a certain language.  
+  The actual tags are defined in each file with extension "mim". </description>
   <source><filename>*.lnm</filename><format>plist</format></source>
 </item>
 

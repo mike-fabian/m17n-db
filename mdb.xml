@@ -171,7 +171,7 @@
 
 <item key0="language" key1="name" key2="*" sectionid="misc">
   <description>Names of languages in a certain language.  
-  The actual tags are defined in each file with extension "mim". </description>
+  The actual tags are defined in each file with extension "lnm". </description>
   <source><filename>*.lnm</filename><format>plist</format></source>
 </item>
 

@@ -1,5 +1,11 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
+<!--
+Input method for Croatian.				   
+Simulating Croatian Latin keyboard on American keyboard.	   
+@image html hr-kbd.png "Keyboard Layout"			   
+@image latex hr-kbd.eps "Keyboard Layout" width=\narrowwidth
+-->
   <tags>
     <language>hr</language>
     <name>kbd</name>

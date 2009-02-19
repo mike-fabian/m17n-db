@@ -1,5 +1,10 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
+<!--
+Input method for Bopomofo.
+@image html bopo-kbd.png "Keyboard Layout"
+@image latex bopo-kbd.eps "Keyboard Layout" width=\narrowwidth
+-->
   <tags>
     <language>zh</language>
     <name>bopomofo</name>

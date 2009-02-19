@@ -1,5 +1,15 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
+<!--
+Input method for Russian simulating the keyboard layout based on
+Roman transcription by phonetic resemblance.
+@image html ru-yawerty.png "Keyboard Layout"
+@image latex ru-yawerty.eps "Keyboard Layout" width=\narrowwidth
+When preceded by a '/', the second and the third rows (number key
+row) change as follows.
+@image html ru-yawerty2.png
+@image latex ru-yawerty2.eps "Extra Keys" width=\narrowwidth
+-->
   <tags>
     <language>ru</language>
     <name>yawerty</name>

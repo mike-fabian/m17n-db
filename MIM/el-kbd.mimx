@@ -1,5 +1,10 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
+<!--
+Input method for Greek simulating Greek keyboard.
+@image html el-kbd.png "Keyboard Layout"
+@image latex el-kbd.eps "Keyboard Layout" width=\narrowwidth
+-->
   <tags>
     <language>el</language>
     <name>kbd</name>

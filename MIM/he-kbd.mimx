@@ -1,5 +1,10 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
+<!--
+Input method for Hebrew simulating Hebrew keyboard.	   
+@image html he-kbd.png "Keyboard Layout"			   
+@image latex he-kbd.eps "Keyboard Layout" width=\narrowwidth
+-->
   <tags>
     <language>he</language>
     <name>kbd</name>

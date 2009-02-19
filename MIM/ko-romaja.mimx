@@ -1,5 +1,10 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
+<!--
+Input method for Korean Hangul using Romaja keys.  The
+roman-transliteration rules follows that of IIIMF shown in this
+page: http://www3.sympatico.ca/d.moser/hangul.html
+-->
   <tags>
     <language>ko</language>
     <name>romaja</name>

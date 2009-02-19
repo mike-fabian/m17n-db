@@ -1,5 +1,10 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
+<!--
+Input method for Latin script with prefix modifiers.
+@image html latn-pre.png
+@image latex latn-pre.eps "Examples" width=\narrowwidth
+-->
   <tags>
     <language>t</language>
     <name>latn-pre</name>

@@ -1,5 +1,11 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
+<!--
+Input method for Armenian.				   
+Simulating Eastern Armenian keyboard on American keyboard.  
+@image html hy-kbd.png "Keyboard Layout"			   
+@image latex hy-kbd.eps "Keyboard Layout" width=\narrowwidth
+-->
   <tags>
     <language>hy</language>
     <name>kbd</name>

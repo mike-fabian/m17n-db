@@ -1,5 +1,11 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
+<!--
+Input method for Russian by simulating the Russian keyboard.
+
+@image html ru-kbd.png "Keyboard Layout"
+@image latex ru-kbd.eps "Keyboard Layout" width=\narrowwidth
+-->
   <tags>
     <language>ru</language>
     <name>kbd</name>

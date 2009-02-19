@@ -1,5 +1,10 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
+<!--
+Input method for Latin script with postfix modifiers.
+@image html latn-post.png
+@image latex latn-post.eps "Examples" width=\narrowwidth
+-->
   <tags>
     <language>t</language>
     <name>latn-post</name>

@@ -1,5 +1,11 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
+<!--
+Input method for Serbian.
+Simulating Serbian Cyrillic keyboard on American keyboard.
+@image html sr-kbd.png "Keyboard Layout"
+@image latex sr-kbd.eps "Keyboard Layout" width=\narrowwidth
+-->
   <tags>
     <language>sr</language>
     <name>kbd</name>

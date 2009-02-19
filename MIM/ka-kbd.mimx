@@ -1,5 +1,15 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
+<!--
+Input method for Georgian simulating Georgian keyboard.
+
+@image html ka-kbd.png "Keyboard Layout"
+@image latex ka-kbd.eps "Keyboard Layout" width=\narrowwidth
+You can also input more characters by the following key sequences:
+key char  [type a key sequence to insert the corresponding character]
+@image html ka-kbd2.png
+@image latex ka-kbd2.eps "Extra Keys" width=\narrowwidth
+-->
   <tags>
     <language>ka</language>
     <name>kbd</name>

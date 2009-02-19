@@ -1,5 +1,12 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
+<!--
+Input method for Kazakh written in the Cyrillic script.
+Simulating Kazakh keyboard.
+
+@image html kk-kbd.png "Keyboard Layout"
+@image latex kk-kbd.eps "Keyboard Layout" width=\narrowwidth
+-->
   <tags>
     <language>kk</language>
     <name>kbd</name>

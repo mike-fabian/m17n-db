@@ -1,5 +1,11 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
+<!--
+Input method for Russian simulating the keyboard layout based on
+Roman transcription by phonetic resemblance.
+@image html ru-phonetic.png "Keyboard Layout"
+@image latex ru-phonetic.eps "Keyboard Layout" width=\narrowwidth
+-->
   <tags>
     <language>ru</language>
     <name>phonetic</name>

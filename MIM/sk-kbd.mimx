@@ -1,5 +1,13 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
+<!--
+Input method for Slovak simulating the standard Slovak keyboard.
+@image html sk-kbd.png "Keyboard Layout"
+@image latex sk-kbd.eps "Keyboard Layout" width=\narrowwidth
+You can also input more characters by the following key sequences:
+@image html sk-kbd2.png
+@image latex sk-kbd2.eps "Extra Keys" width=\narrowwidth
+-->
   <tags>
     <language>sk</language>
     <name>kbd</name>

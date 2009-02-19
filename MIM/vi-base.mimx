@@ -1,5 +1,17 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
+<!--
+Usage of variables:
+M (mark): point after the last vowel
+T (mark): point after the tone-mark-attached vowel
+TPLACE: On which vowel a tone is attached (0:none, 1:1st, 2:2nd, or 3:3rd)
+C: The initial consonant
+V-1: The last vowel
+V-2: The second from the last vowel (or 0 if there aren't two vowels)
+V-3: The third from the last vowel (or 0 if there aren't three vowels)
+C-AFTER-V: Number of the final consonants
+SELECT: Which tone is selected
+-->
   <tags>
     <language>t</language>
     <name>nil</name>

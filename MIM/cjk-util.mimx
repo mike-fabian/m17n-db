@@ -460,7 +460,7 @@ is inserted, then the mode is turned off.
         <commit/>
       </branch>
       <branch branch-selecting-map="map-exit-fullwidth-mode">
-        <shift-to id="state-t"/>
+        <shift-back/>
       </branch>
       <catch-all-branch>
         <unhandle/>
@@ -470,7 +470,7 @@ is inserted, then the mode is turned off.
       <state-title-text>Ａ</state-title-text>
       <branch branch-selecting-map="map-fullwidth">
         <commit/>
-        <shift-to id="state-t"/>
+        <shift-back/>
       </branch>
     </state>
   </state-list>

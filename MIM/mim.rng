@@ -271,6 +271,7 @@
 <define name="saction">
   <choice>
     <ref name="shift"/>
+    <element name="shift-back"><empty/></element>
     <ref name="action"/>
   </choice>
 </define>

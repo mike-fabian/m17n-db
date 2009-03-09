@@ -446,7 +446,10 @@
 </define>
 
 <define name="shift">
-  <element name="shift-to"><attribute name="id"/></element>
+  <element name="shift-to">
+    <attribute name="id"><data type="IDREF"/>
+    </attribute>
+  </element>
 </define>
 
 <define name="call">

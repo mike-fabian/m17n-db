@@ -270,7 +270,10 @@
 
 <define name="saction">
   <choice>
-    <ref name="shift"/>
+    <element name="shift-to">
+      <attribute name="id"><data type="IDREF"/>
+      </attribute>
+    </element>
     <element name="shift-back"><empty/></element>
     <ref name="action"/>
   </choice>
@@ -442,13 +445,6 @@
 	<ref name="variable-reference"/>
       </choice>
     </optional>
-  </element>
-</define>
-
-<define name="shift">
-  <element name="shift-to">
-    <attribute name="id"><data type="IDREF"/>
-    </attribute>
   </element>
 </define>
 

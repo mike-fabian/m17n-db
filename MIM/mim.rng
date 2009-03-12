@@ -33,7 +33,7 @@
     <element name="language">
       <choice>
 	<value>t</value>
-	<data type="string"><param name="pattern">.{2,3}</param></data>
+	<data type="string"><param name="pattern">[a-z]{2,3}</param></data>
       </choice>
     </element>
   <choice>

@@ -17,8 +17,8 @@ If 0, generate only decomposed characters (e.g. "ྲྀ" (U+0FB2 U+0F80).</get-t
       </description>
       <value type="integer">0</value>
       <variable-value-candidate>
-        <c-value valuetype="integer">0</c-value>
-        <c-value valuetype="integer">1</c-value>
+        <c-value type="integer">0</c-value>
+        <c-value type="integer">1</c-value>
       </variable-value-candidate>
     </variable>
   </variable-list>

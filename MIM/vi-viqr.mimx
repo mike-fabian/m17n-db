@@ -22,8 +22,8 @@ Otherwise, put tone mark on the last vowel.</get-text>
       </description>
       <value type="integer">0</value>
       <variable-value-candidate>
-        <c-value valuetype="integer">0</c-value>
-        <c-value valuetype="integer">1</c-value>
+        <c-value type="integer">0</c-value>
+        <c-value type="integer">1</c-value>
       </variable-value-candidate>
     </variable>
     <variable id="backspace-is-undo">
@@ -36,8 +36,8 @@ If the value is 1, Backspace key undoes the previous key
       </description>
       <value type="integer">0</value>
       <variable-value-candidate>
-        <c-value valuetype="integer">0</c-value>
-        <c-value valuetype="integer">1</c-value>
+        <c-value type="integer">0</c-value>
+        <c-value type="integer">1</c-value>
       </variable-value-candidate>
     </variable>
   </variable-list>

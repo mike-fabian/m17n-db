@@ -20,9 +20,9 @@ The level of character sequence acceptance defined in WTT 2.0.
       </description>
       <value type="integer">1</value>
       <variable-value-candidate>
-        <c-value valuetype="integer">0</c-value>
-        <c-value valuetype="integer">1</c-value>
-        <c-value valuetype="integer">2</c-value>
+        <c-value type="integer">0</c-value>
+        <c-value type="integer">1</c-value>
+        <c-value type="integer">2</c-value>
       </variable-value-candidate>
     </variable>
   </variable-list>

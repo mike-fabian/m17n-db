@@ -292,7 +292,6 @@
 
 <define name="predefined-marker">
     <!-- predefined markers start with @ -->
-    <choice>
       <attribute name="position">
 	<choice>
 	  <data type="string"><param name="pattern">@[0-9]</param></data>
@@ -305,13 +304,6 @@
 	  <value>@next_candidate_list</value>
 	</choice>
       </attribute>
-<!--      <attribute name="relative-position">
-	<choice>
-	  <value>-1</value>
-	  <value>+1</value>
-	</choice>
-      </attribute>-->
-    </choice>
 </define>
 
 <define name="user-defined-marker">
@@ -357,7 +349,7 @@
     <choice>
       <value>handled-keys</value>
       <value>predefined-surround-text-flag</value>
-<!--      <data type="string"><param name="pattern">@.+</param></data> -->
+      <data type="string"><param name="pattern">@.+</param></data>
     </choice>
   </attribute>
 </define>
@@ -506,8 +498,7 @@
 <define name="variable-reference">
   <element name="variable-reference">
     <choice>
-      <attribute name="id">
-      </attribute>
+      <attribute name="id"/>
       <ref name="predefined-variable"/>
     </choice>
   </element>

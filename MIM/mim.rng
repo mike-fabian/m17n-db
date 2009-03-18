@@ -462,8 +462,8 @@
 	    </choice>
 	  </group>
 	  <group>
-	    <attribute name="type"><value>plist</value></attribute>
-	    <ref name="pList"/>
+	    <attribute name="type"><value>plistt</value></attribute>
+	    <ref name="plistObject"/>
 	  </group>
 	  <group>
 	    <attribute name="type"><value>symbol</value></attribute>
@@ -604,12 +604,6 @@
 	</choice>
       </group>
     </choice>
-    </element>
-  </define>
-
-  <define name="pList">
-    <element name="pList">
-      <ref name="plistObject"/>
     </element>
   </define>
 

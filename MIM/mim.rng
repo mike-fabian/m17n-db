@@ -462,7 +462,7 @@
 	    </choice>
 	  </group>
 	  <group>
-	    <attribute name="type"><value>plistt</value></attribute>
+	    <attribute name="type"><value>plist</value></attribute>
 	    <ref name="plistObject"/>
 	  </group>
 	  <group>

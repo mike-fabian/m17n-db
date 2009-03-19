@@ -42,11 +42,13 @@
       <element name="extra-id"><data type="ID"/></element>
     </group>
     <group>
-      <choice>
-	<element name="name"><data type="string"><param name="pattern">[^n][^i][^l]</param></data></element>
-	<element name="name"><data type="string"><param name="pattern">.{1,2}</param></data></element>
-	<element name="name"><data type="string"><param name="pattern">....+</param></data></element>
-      </choice>
+      <element name="name">
+	<choice>
+	  <data type="string"><param name="pattern">[^n][^i][^l]</param></data>
+	  <data type="string"><param name="pattern">.{1,2}</param></data>
+	  <data type="string"><param name="pattern">....+</param></data>
+	</choice>
+      </element>
       <optional><element name="extra-id"><data type="ID"/></element></optional>
     </group>
   </choice>

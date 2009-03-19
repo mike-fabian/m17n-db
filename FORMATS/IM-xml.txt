@@ -1,0 +1,1311 @@
+/* Copyright (C) 2003, 2004, 2005
+     National Institute of Advanced Industrial Science and Technology (AIST)
+     Registration Number H15PRO112
+   See the end for copying conditions.  */
+
+/***en
+
+@page mdbIM Input Method
+
+@section im-description DESCRIPTION
+
+The m17n library provides a driver for input methods that are
+dynamically loadable from the m17n database (see @ref m17nInputMethod
+@latexonly (P.\pageref{group__m17nInputMethod}) @endlatexonly).
+
+This section describes the data format that defines those input
+methods.
+
+@section im-format SYNTAX and SEMANTICS
+
+The following defines a schema for an input method, written in RelaxNG.  
+The driver loads a definition from a file, a stream, etc.  The definition
+is converted into the form of plist in the driver.
+
+@verbatim
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<grammar 
+	 datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+         xmlns:xi="http://www.w3.org/1999/XML/xinclude"
+	 xmlns="http://relaxng.org/ns/structure/1.0"
+	 ns="http://www.m17n.org/MIM">
+ 
+
+<start>
+  <element name="input-method">
+    <!-- The top-level node of an input method has a <input-method> tag. -->
+    <ref name="im-declaration"/>
+
+    <optional>
+	<element name="description">
+	  <!-- The element <description> can appear in <input-method>, <variable> or <command>, 
+and specifies the description text of  its parent.  -->
+	  <choice>
+	    <text/>
+	    <element name="get-text">
+	      <!-- The content of the element <get-text> is translated
+according to the current locale by "gettext" (if the translation is provided). -->
+	      <text/>
+	    </element>
+	  </choice>
+	</element>
+    </optional>
+
+    <optional><element name="title">
+<!-- The element <title> contains a string that is displayed on the
+screen when this input method is active. -->
+    <data type="string"/></element></optional>
+
+    <optional>
+      <ref name="variable-list"/>
+      <!-- <variable-list> declares variables used in this input method.-->
+    </optional>
+
+    <optional><ref name="command-list"/>
+      <!-- <command-list> declares commands used in this input method.-->
+    </optional>
+
+    <optional><ref name="module-list"/>
+    <!-- <module-list> declares external modules used in this input method.-->
+    </optional>
+
+    <optional><ref name="macro-list"/>
+    <!-- <macro-list> declares macros used in this input method.-->
+    </optional>
+
+    <optional><ref name="map-list"/>
+    <!--  <map-list> declares maps used in this input method.
+	 
+When an input method is never standalone and always included in
+another method, the element <map-list> can be omitted. -->
+    </optional>
+
+    <optional><ref name="state-list"/>
+    <!-- <state-list> declares states used in this input method.
+
+When an input system is never standalone and always included in
+another system, the element <state-list> can be omitted.-->
+    </optional>
+  </element>
+</start>
+
+<define name="im-declaration">
+  <element name="tags">
+    <!-- The element <tags> specifies for which language the input method is,
+and the name of the input method. 
+There is one special input method file "global.mimx" that declares
+common variables and commands.  The input method driver always loads
+this file and other input methods can inherit its variables and commands.  -->
+
+    <element name="language">
+<!-- The input method is for this language.  When the element <language>
+ has "t" as its content, the use of the input method is not limited to one language. --> 
+      <choice>
+	<value>t</value>
+	<data type="string"><param name="pattern">[a-z]{2,3}</param>
+<!-- ISO639-1, two-character code or ISO639-2, three charcter code for the names of languages -->
+	</data>
+      </choice>
+    </element>
+
+    <choice>
+      <group>
+<!-- When the  element <name> has "nil" as its content, the input method is not standalone,
+but is expected to be used in other input methods.  In such cases, the
+element <extra-id> is required to identify the input method. -->
+	<element name="name"><value>nil</value></element>
+	<element name="extra-id"><data type="ID"/></element>
+      </group>
+      <group>
+<!-- When the  element <name> has content other than "nil", the element <extra-id> is optional. -->
+	<element name="name">
+	  <choice>
+	    <data type="string"><param name="pattern">[^n][^i][^l]</param></data>
+	    <data type="string"><param name="pattern">.{1,2}</param></data>
+	    <data type="string"><param name="pattern">....+</param></data>
+	  </choice>
+	</element>
+      <optional>
+       <element name="extra-id"><data type="ID"/></element>
+     </optional>
+   </group>
+  </choice>
+  </element>
+  <optional>
+    <element name="m17n-version">
+<!-- The element <m17n-version> specifies the required minimum version
+number of the m17n library.  The format is "X.Y.Z" where X is a major
+version number, Y is a minor version number, and Z is a patch level.-->
+      <data type="string"><param name="pattern">[0-9]+\.[0-9]+\.[0-9]+</param></data>
+    </element>
+  </optional>
+</define>
+
+<!-- setups -->
+
+<define name="variable-list">
+  <element name="variable-list">
+
+<!--  <variable-list>  declares variables used in this input method.
+If a variable must be initialized to the default value, or is to be
+customized by a user, it must be declared here.  The declaration can
+be used in two ways.  One is to introduce a new variable.  In that
+case, the <value> element in <variable>  must not be omitted.  
+Another is to inherit the variable from what declared in "global.mim", 
+and to give the different default value and/or to make the variable customizable 
+specially for the current input method.  In the latter case, <value> can be omitted.  -->
+
+      <zeroOrMore>
+      <element name="variable">
+<!-- Each <variable> declares one variable -->
+	<attribute name="id"/>
+<!-- <variable> is referred with the attribute "id" -->
+	<optional>
+	  <element name="description">
+	    <choice>
+	      <text/>
+	      <element name="get-text"><text/></element>
+	    </choice>
+	  </element>
+	</optional>
+	<optional>
+	  <element name="value">		    
+<!--    <value> of a <variable> can be an integer, a symbol, or an M-text value. 
+All variables are implicitly initialized to the integer value zero.  -->
+	    <choice>
+ 	      <group>
+<!--  The M-text (string) <value> can be referred by the <insert> action.  -->
+		<attribute name="type"><value>string</value></attribute>
+		<data type="string"/>
+	      </group>
+	      <group>
+<!-- The symbol <value> can not be referred directly, but is used the library
+implicitly (e.g. candidates-charset).  -->
+		<attribute name="type"><value>symbol</value></attribute>
+		<data type="string"/>
+	      </group>
+	      <group>
+<!--  The integer <value> can be set, modified and referred by the <set>, <add>, <sub>, 
+<mul>, and <div>  action.  It can be referred by the the <insert>, <select>, <undo>, 
+<if>, and <cond> actions. -->
+	      <attribute name="type"><value>integer</value></attribute>
+	      <data type="integer"/>
+	      </group>
+	    </choice>
+	  </element>
+	</optional>
+	<optional>
+	  <element name="variable-value-candidate">
+<!-- <variable-value-candidate> lists the possible values of the variable. -->
+	    <oneOrMore>
+	      <choice>
+		<element name="c-value">		    
+ <!-- <c-value> specifies one of the possible value of the variable.
+ It can be a M-text (string), a symbol or an integer. -->
+		  <choice>
+		    <group>
+		      <attribute name="type"><value>string</value></attribute>
+		      <data type="string"/>
+		    </group>
+		    <group>
+		      <attribute name="type"><value>symbol</value></attribute>
+		      <data type="string"/>
+		    </group>
+		    <group>
+		      <attribute name="type"><value>integer</value></attribute>
+		      <data type="integer"/>
+		    </group>
+		  </choice>
+		</element>
+		<element name="c-range">
+<!-- <c-range> specifies a range of integers that the variable 
+can have as its value.  It can be used mixed with <c-value>.-->
+		  <attribute name="from">
+		    <!-- The minimum integer value that a variable can take.-->
+		    <data type="integer"/>
+		  </attribute>
+		  <attribute name="to">
+		    <!-- The maximum integer value that a variable can take.-->
+		    <data type="integer"/>
+		  </attribute>
+		</element>
+	      </choice>
+	    </oneOrMore>
+	  </element>
+	</optional>
+      </element>
+    </zeroOrMore>
+  </element>
+</define>
+
+<define name="command-list">
+  <element name="command-list">
+<!-- <command-list> declares a command used in the input method.  If a
+command must be bound to the default key sequence, or is to be
+customized by a user, it must be declared here.  Like <variable-list>,
+the declaration can be used in two ways.  One is to introduce a new
+command.  In that case, the <keyseq> element must appear in <command>.
+Another is to inherit the command from what declared in "global.mim",
+and to give the different key binding and/or to make the
+command customizable specially for the current input method.  In the
+latter case, <keyseq> can be omitted.-->
+    <zeroOrMore>
+      <element name="command">
+<!-- Each <command> declares one command -->
+	<attribute name="id">
+<!-- <command> is referred with the attribute "id" -->
+	  <data type="ID"><param name="pattern">command-.*</param></data></attribute>
+	<optional>
+	  <element name="description">
+	    <choice><text/><element name="get-text"><text/></element></choice>
+	  </element>
+	</optional>
+	<zeroOrMore><ref name="keyseq"/></zeroOrMore>
+      </element>
+    </zeroOrMore>
+  </element>
+</define>
+
+<define name="module-list">
+  <element name="module-list">
+    <zeroOrMore>
+      <element name="module">
+<!-- Each <module> element declares an external module (i.e. dynamic library).  --> 
+	<attribute name="id">
+	  <!-- The value of "id" attribute gives the name of the module -->
+	  <data type="ID"><param name="pattern">module-.*</param></data>
+	</attribute>
+	<zeroOrMore>
+	  <element name="function">
+ <!-- <function> elements specify function names exported by the module.
+If the "id" attribute has the value "function-init", it is called with
+only the default arguments (see <call>) when an input context is created 
+for the input method.  If the "id" attribute has the  value "function-fini", 
+it is called with only the default arguments  when the input context is destroyed. -->
+	    <attribute name="id">
+		<data type="ID">
+		<param name="pattern">function-.*</param></data>
+	    </attribute>
+	  </element>
+	</zeroOrMore>
+      </element>
+    </zeroOrMore>
+  </element>
+</define>
+
+<define name="macro-list">
+  <element name="macro-list" ns="http://www.m17n.org/MIM">
+    <zeroOrMore>
+      <element name="macro">
+	<!-- The elemnt <macro> bundles and names a set of <action>s.-->
+	<attribute name="id">
+ <!-- The attribute "id" gives the name of a <macro>.
+<macro> is referred with this attribute. -->
+	  <data type="ID"><param name="pattern">macro-.*</param></data>
+	</attribute>
+	<zeroOrMore><ref name="action"/></zeroOrMore>
+      </element>
+    </zeroOrMore>
+  </element>
+</define>
+
+<!-- the real work -->
+
+<define name="map-list">
+  <element name="map-list">
+  <zeroOrMore>
+    <element name="map">
+<!-- THe element <map> bundles and names a set of groups similar <rule>s,
+so that <state> transitions can be clearly defined.
+-->
+      <attribute name="id">
+<!-- The attribute "id" gives the name of a <map>-->
+	<data type="ID"><param name="pattern">map-.*</param></data>
+      </attribute>
+      <zeroOrMore>
+	<element name="rule">
+<!-- The element <rule> defines the mapping of an input <keyseq> (or <command>) and
+<action>s the input method driver should take.  When the <action> is to <insert>
+an appropriate character, for example, the <rule> defines the mapping between
+the input key on the keyboad and the character to appear on the screen. -->
+	  <choice>
+	    <ref name="keyseq"/>
+	    <ref name="command-reference"/>
+	  </choice>
+	  <zeroOrMore><ref name="action"/></zeroOrMore>
+	</element>
+      </zeroOrMore>
+    </element>
+  </zeroOrMore>
+  </element>
+</define>
+
+<define name="keyseq">
+  <element name="keyseq">
+    <choice>
+      <attribute name="keys"><data type="string"/></attribute>
+<!-- The value of the attribute "keys" of <keyseq> element consists of characters that
+can be generated by a keyboard.  Therefore it usually contains
+only ASCII characters.  However, if the input method is intended to be
+used, for instance, with a West European keyboard, the value may
+contain Latin-1 characters. -->
+      <oneOrMore>
+	<choice>
+	  <element name="key-event"><data type="string"/></element>
+<!-- The content of the element <key-event> must be the return value of
+the minput_event_to_key () function.  Under the X window system, you
+can quickly check the value using the xev command.  For example,
+the return key, the backspace key, and the 0 key on the keypad are
+represented as Return, BackSpace, KP_0 respectively.  
+If the shift, control, meta, alt, super, and hyper modifiers are used, 
+they are represented by the S- , C- , M- , A- , s-, and H- prefixes respectively
+in this order.  Thus, "return with shift with meta with hyper" is S-M-H-Return.
+Note that "a with shift" .. "z with shift" are represented simply as A .. Z . 
+Thus "a with shift with meta with hyper" is M-H-A.
+-->
+	  <element name="character-code">
+	    <!-- content of the element <character-code> must be a valid character code. -->
+	    <choice>
+	      <data type="nonNegativeInteger"><param name="pattern">[0-9]{1,7}</param></data>
+	      <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
+	      <data type="string"><param name="pattern">\?.</param></data>
+	    </choice>
+	  </element>
+	</choice>
+      </oneOrMore>
+    </choice>
+  </element>
+</define>
+
+<define name="command-reference">
+  <element name="command-reference">
+<!-- The element <command-reference> has the same effect that
+the <keyseq> in the referred <command> would have, if appeared in its place. -->
+      <attribute name="id"><data type="IDREF"/></attribute>
+  </element>
+</define>
+
+<define name="action">
+<!-- actions used in <rule>s -->
+  <choice>
+    <ref name="insert"/>
+    <ref name="delete"/>
+    <ref name="select"/>
+
+    <element name="show-candidates">
+<!-- The element <show-candidates> instructs the input method 
+driver to display a candidate list associated with the string
+before the current position. -->
+    <empty/></element>
+
+    <element name="hide-candidates">
+<!-- The element <hide-candidates> instructs the input method 
+driver to hide the currently displayed candidate list.      -->
+    <empty/></element>
+
+    <ref name="move"/>
+    <ref name="mark"/>
+    <ref name="pushback"/>
+
+    <element name="pop">
+ <!-- The element <pop> pops the first key event that is not yet handled from the
+ event queue.-->
+    <empty/></element>
+    <ref name="undo"/>
+    <element name="commit">
+      <!-- The element <commit> commits the current preedit. -->
+    <empty/></element>
+    <element name="unhandle">
+<!-- The element <unhandle> commits the current preedit and returns the last key as
+unhandled. -->
+    <empty/></element>
+
+    <ref name="call"/>
+
+    <element name="set">
+      <!-- The element <set> sets the value of the variable. -->
+      <ref name="set-val"/></element>
+    <element name="add">
+      <!-- The element <add> increments the value of the variable. -->
+    <ref name="set-val"/></element>
+    <element name="sub">
+      <!-- The element <sub> decrements the value of the variable. -->
+    <ref name="set-val"/></element>
+    <element name="mul">
+      <!-- The element <mul> multiplies the value of the variable. -->
+    <ref name="set-val"/></element>
+    <element name="div">
+      <!-- The element <div> divides the value of the variable. -->
+    <ref name="set-val"/></element>
+
+    <ref name="if"/>
+    <ref name="conditional"/>
+
+    <element name="macro-reference">
+<!-- The element <macro-reference> has the same effect that
+the <action>s in the referred <macro> would have, if appeared in its place. -->
+      <attribute name="id">
+	<data type="IDREF"/>
+      </attribute>
+    </element>
+  </choice>
+</define>
+
+<define name="set-val">
+<!-- The value of the variable specified by the attribute "id"
+is set to, or added, subtracted, multiplied or divided by the value of <expr>. -->
+    <attribute name="id"/>
+    <ref name="expr"/>
+</define>
+
+
+<define name="saction">
+<!-- <saction>s (state-actions) are <action>s and state transitions. -->
+  <choice>
+    <element name="shift-to">
+<!-- The element <shift-to> the current state specified by the value of
+the attribute "id".   The value must appear in <state-list>. -->
+	   <attribute name="id"><data type="IDREF"/></attribute>
+    </element>
+    <element name="shift-back">
+<!-- The element <shift-back> shifts the current state to the previous one. -->
+    <empty/></element>
+    <ref name="action"/>
+  </choice>
+</define>
+
+<define name="marker">
+<!-- A marker is a symbol indicating a character position in the preediting
+text.  The element <mark> assigns a position to a marker.  The
+position of a marker is referred by the elements <move-to-marker> and <delete-to-marker>.
+-->
+  <choice>
+    <ref name="predefined-marker"/>
+    <ref name="user-defined-marker"/>
+  </choice>
+</define>
+
+<define name="predefined-marker">
+    <!-- predefined markers start with @ -->
+    <attribute name="position">
+      <choice>
+	<data type="string"><param name="pattern">@[0-9]</param>
+	<!-- The 0th, 1st, 2nd,... 9th position respetively -->
+	</data>
+	<value>@first</value>
+	<value>@current</value>
+	<value>@last</value>
+	<value>@previous</value>
+	<value>@next</value>
+	<value>@previous_candidate_list<!-- The previous position where a candidate list changes.--></value>
+	<value>@next_candidate_list<!-- The next position where a candidate list changes.--></value>
+      </choice>
+    </attribute>
+</define>
+
+<define name="user-defined-marker">
+<!--  user-defined markers do not start with @ -->
+      <attribute name="markerID">
+	<data type="string"><param  name="pattern">[^@].*</param></data>
+      </attribute>
+</define>
+
+
+<define name="predefined-nth-previous-or-following-character">
+<!--  a character inside or outside of the preedit buffer -->
+  <element name="predefined-nth-previous-or-following-character">
+    <attribute name="position">
+      <choice>
+	<data type="negativeInteger">
+<!-- When the value of the attribute "position" is -N (N is a positive integer),
+the element <predefined-nth-previous-or-following-character> means
+the Nth previous character in the preedit buffer.  
+If there are only M (M<N) previous characters in it, the value is the 
+(N-M)th previous character from the inputting spot. 
+         -->
+	 </data>
+	<data type="positiveInteger">
+<!-- When the value of the attribute "position" is N (N is a positive integer),
+the element <predefined-nth-previous-or-following-character> means
+the Nth following character in the preedit buffer.  
+If there are only M (M<N) following characters in it, the value is 
+the (N-M)th following character from the inputting spot.  	   -->
+        </data>
+      </choice>
+    </attribute>
+  </element>
+</define>
+
+<define name="predefined-selector">
+<!-- Predefined-selectors specify positions in a candidate list.
+They are used in the element <select>. -->
+      <choice>
+	<data type="string"><param name="pattern">@[0-9]</param>
+	  <!-- The 0th, 1st, 2nd,... 9th position respetively -->
+	</data>
+	<value>@first</value>
+	<value>@current</value>
+	<value>@last</value>
+	<value>@previous<!-- If the current candidate is the first one in the current candidate group, 
+this value means the last candidate in the previous candidate group. --></value>
+	<value>@next<!-- If the current candidate is the last one in the current candidate group, 
+this value means the first candidate in the next candidate group. --></value>
+	<value>@previous_candidate_list<!-- The candidate in the previous candidate group having 
+the same candidate index as the current one. --></value>
+	<value>@next_candidate_list<!-- The candidate in the  next candidate group having the same
+candidate index as the current one. --></value>
+      </choice>
+</define>
+
+<!-- var -->
+
+<define name="predefined-variable">
+  <attribute name="type"><value>predefined</value></attribute>
+  <attribute name="id">
+    <choice>
+      <value>handled-keys<!-- Number of handled keys at that moment.--></value>
+      <value>predefined-surround-text-flag<!-- -1 if surrounding text is supported, -2 if not. --></value>
+      <data type="string"><param name="pattern">@.+</param></data>
+    </choice>
+  </attribute>
+</define>
+
+<define name="insert">  
+    <element name="insert">
+<!-- The element <insert> inserts the specified character or string before the current position.
+The marker positions affected by the insertion are automatically relocated.-->
+      <choice>
+	<attribute name="string"><data type="string"/>
+	<!-- inserts a MTEXT string -->
+	</attribute>
+<!--	<attribute name="character"><data type="integer"/></attribute>-->
+	<attribute name="character">
+	<!-- inserts a character that the character code represents-->
+	  <choice>
+	    <data type="string"><param name="pattern">\?.</param></data>
+	    <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
+	    <data type="nonNegativeInteger"><param name="pattern">[0-9]{1,7}</param></data>
+	  </choice>
+	</attribute>
+	<group>
+	  <attribute name="character-or-string"><value>variable</value></attribute>
+<!-- inserts the value of the specified variable, if it is a valid character code or a M-text  -->
+	  <ref name="variable-reference"/>
+	</group>
+	<oneOrMore>
+	  <element name="candidates">
+<!-- Each character in the content of the element <candidtes> is a candidate to be inserted. 
+<insert> inserts the first candidate before the current position.
+ The inserted character is associated with the list of candidates and
+ the information indicating the currently selected candidate. -->
+		 <data type="string"/>
+	       </element>
+	</oneOrMore> 
+        <oneOrMore>
+	  <element name="list-of-candidates">
+	    <list>
+<!-- Each item in this list is a candidate to be inserted.
+<insert> insert the first candidate before the current position.
+The inserted string is associated with the list of candidates and
+the information indicating the currently selected candidate.-->
+		 <zeroOrMore><data type="NMTOKEN"/></zeroOrMore></list>
+	         </element></oneOrMore>
+      </choice>
+    </element>
+</define>
+
+<define name="delete">  
+<!-- The marker positions affected by the elements <delete-??> are automatically relocated.-->
+    <choice>
+      <element name="delete-to-marker">
+<!-- The element <delet-to-marker> deletes characters between 
+the current position and the marker position. -->
+	<ref name="marker"/></element>
+      <element name="delete-to-character-position"><data type="integer"/></element>
+<!-- The element <delete-to-character-position> treats its content as a character position, 
+and deletes characters between the current position and the character position.-->
+      <element name="delete-n-characters">
+      <attribute name="n"><data type="integer"/></attribute>
+<!-- The element <delete-n-characters> treats the value of the attribute "n" 
+as the number of characters to be deleted,  and executes the deletion. 
+If the value N is negative, the preceding N characters from the current position are deleted.
+If positive, folliwing N characters are deleted. -->
+      </element>
+    </choice>
+</define>
+
+<define name="select">  
+  <element name="select">
+<!-- The element <select> first checks if the character just before the current position
+belongs to a string that is associated with a candidate list.  If it is, 
+the action replaces that string with a candidate specified by the attribute. -->
+    <choice>
+      <attribute name="selector">
+<!-- The value of the attribute "selector" is a predefined-selector that
+specifies a new candidate in the candidate list. -->
+	<ref name="predefined-selector"/>
+      </attribute>
+      <attribute name="index">
+<!-- The value of the attribute "index" specifies a position in the candidate list,
+and the candidate at the position is selected. -->
+      <data type="integer"/>
+      </attribute>
+      <group>
+	<attribute name="index"><value>variable</value></attribute>
+	<ref name="variable-reference"/>
+<!-- The variable referred must have an integer value and the value 
+specifies the position of the new candidate in the candidate list. -->
+      </group>
+    </choice>
+  </element>
+</define>
+
+<define name="move">
+<!-- The elements <move-??> change the marker positions. -->
+    <choice>
+      <element name="move-to-marker">
+<!-- The element <move-to-marker> makes the marker position to be the new current position. -->
+	<ref name="marker"/></element>
+      <element name="move-to-character-position">
+<!-- The element <move-to-character-position> treats its content integer value 
+as a character position, and makes that position to be the new current position. -->
+      <data type="integer"/></element>
+    </choice>
+</define>
+
+<define name="mark">  
+      <element name="mark-current-position">
+<!-- The element <mark-current-position> sets the position of the specified marker
+to the current position -->
+	<ref name="user-defined-marker"/>
+      </element>
+</define>
+
+<define name="pushback">
+<!-- The elements <pushback-??> pushes back key events to the event queue. -->
+    <choice>
+      <element name="pushback-n-events">
+<!-- The element <pushback-n-events> pushes back the latest key events.
+If the value of the attribute "n" is positive integer, it specifies how many key events 
+should be  pushed back.  If the value is zero, all key events are pushed back.-->
+	<attribute name="n"><data type="nonNegativeInteger"/></attribute></element>
+      <element name="pushback-keyseq">
+<!-- The element <pushback-keyseq> pushes back keys specified by <keyseq> -->
+	<ref name="keyseq"/>
+      </element>
+   </choice>
+</define>
+
+<define name="undo">
+  <element name="undo">
+<!-- The element <undo> cancels the last two key events (i.e. the one 
+that invoked this command, and the previous one) when no argument is given. -->
+    <optional>
+      <choice>
+	<attribute name="target-of-undo">
+	  <choice>
+	    <data type="positiveInteger">
+<!-- If the value of the attribute "target-of-undo" is positive integer NUM, 
+from the NUMth to the last events are canceled. -->
+	    </data>
+	    <data type="negativeInteger">
+<!-- If the value of the attribute "target-of-undo" is negative integer NUM,
+the last (- NUM) events are canceled. -->
+	    </data>
+	  </choice>
+	</attribute>
+	<ref name="variable-reference">
+<!-- The variable must be resolved to an nonzero integer and the integer is treated as above. -->
+	</ref>
+      </choice>
+    </optional>
+  </element>
+</define>
+
+<define name="call">
+  <element name="call">
+<!-- The element <call> calls a function of an external module.
+ The function must return NULL or a value of the type (#MPlist *) that
+ represents a list of actions to take. -->
+    <attribute name="id">
+<!-- The value of the attribute "id" specifies an external module.
+It must appear in the elemenet <module-list>. -->
+    <data type="IDREF"/></attribute>
+    <element name="function-reference">
+<!-- The element <function-reference> specifies a function to be called.
+It must appear in the elemenet <module-list>. -->
+      <attribute name="id"><data type="IDREF"/></attribute>
+    </element>
+    <zeroOrMore>
+      <element name="argument">
+<!--The function can be called with an argument of the type (#MPlist
+*).  The key of the first element of the list is #Mt and its value is 
+a pointer to an object of the type #MInputContext.  The key of the second
+element of the list is #Msymbol and its value is the current state name.  
+The element <argument> specifies the value of the third element or later.
+Their keys are determined automatically; if the value of the attribute "type"
+is "integer",  the corresponding key is #Minteger; if it is a symbol, the
+corresponding key is #Msymbol, etc. -->
+	<choice>
+	  <group>
+	    <attribute name="type"><value>string</value></attribute>
+	    <data type="string"/>
+	  </group>
+	  <group>
+	    <attribute name="type"><value>integer</value></attribute>
+	    <choice>
+	      <data type="string"><param name="pattern">\?.</param></data>
+	      <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
+	      <data type="nonNegativeInteger"><param name="pattern">[0-9]{1,7}</param></data>
+	    </choice>
+	  </group>
+	  <group>
+	    <attribute name="type"><value>plist</value></attribute>
+	    <ref name="plistObject"/>
+	  </group>
+	  <group>
+	    <attribute name="type"><value>symbol</value></attribute>
+	    <ref name="variable-reference"/>
+	  </group>
+	</choice>
+      </element>
+    </zeroOrMore>
+  </element>
+</define>
+
+<define name="expr">
+    <choice>
+      <group>
+	<element name="expr">
+<!-- An <expr>ession can be a zero or more <expr>essions conbined with an operator. -->
+          <attribute name="operator"><ref name="operator"/></attribute>
+	  <zeroOrMore><ref name="expr"/></zeroOrMore>
+	</element>
+      </group>
+      <element name="int-val">
+<!-- An <expr>ession can be an integer value. --> 
+	<choice>
+	  <data type="integer"/>
+	  <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
+	  <data type="string"><param name="pattern">\?.</param></data>
+	</choice>
+      </element>
+      <ref name="predefined-nth-previous-or-following-character">     
+<!-- An <expr>ession can be a character at a specified position. -->
+      </ref>	 
+      <ref name="variable-reference">
+<!-- An <expr>ession can also be a variable.  -->
+      </ref>
+    </choice>
+</define>
+
+<define name="variable-reference">
+  <element name="variable-reference">
+<!-- The element <variable-reference> has the same effect that
+the value of the referred <variable>> would have, if appeared in its place. -->
+    <choice>
+      <attribute name="id">
+      </attribute>
+      <ref name="predefined-variable"/>
+    </choice>
+  </element>
+</define>
+
+<define name="operator">
+  <choice>
+      <!-- Operators used in <expr>s. -->
+      <value>+<!-- add --></value> 
+      <value>-<!-- subtract --></value>
+      <value>*<!-- multiply --></value>
+      <value>/<!-- divide --></value>
+      <value>|<!-- or --></value>
+      <value>&amp;<!-- and --></value>
+      <value>!<!-- not --></value>
+      <value>=<!-- equal to --></value>
+      <value>&lt;<!-- less than --></value>
+      <value>&gt;<!-- greater than --></value>
+      <value>&lt;=<!-- less than or equal to --></value>
+      <value>&gt;=<!-- greater than or equal to --></value>
+  </choice>
+</define>
+
+<define name="if">
+  <element name="if">
+<!-- The element <if> performs actions in <if-true-action-list> 
+if the relation between its two <expr>essions meets the attribute "condition".
+If not, <if> performs actions in the element <if-not-true-action-list> (if it exists.)-->
+    <attribute name="condition">
+      <choice>
+      <value>=<!-- equal to --></value>
+      <value>&lt;<!-- less than --></value>
+      <value>&gt;<!-- greater than --></value>
+      <value>&lt;=<!-- less than or equal to --></value>
+      <value>&gt;=<!-- greater than or equal to --></value>
+    </choice></attribute>
+    <ref name="expr"/>
+    <ref name="expr"/>
+    <element name="if-true-action-list">
+    <zeroOrMore><ref name="saction"/></zeroOrMore></element>
+    <optional><element name="if-not-true-action-list">
+    <zeroOrMore><ref name="saction"/></zeroOrMore></element></optional>
+  </element>
+</define>
+
+<define name="conditional">
+  <element name="conditional">
+<!-- The element <conditional> checks the <expr>s in the <case>s one by one,
+and performs <saction>s in the first <case> whose <expr> has a nonzero value. -->
+    <zeroOrMore>
+      <group>
+	<element name="case">
+	<ref name="expr"/>
+	<zeroOrMore><ref name="saction"/></zeroOrMore>
+	</element>
+      </group>
+    </zeroOrMore>
+  </element>
+</define>
+      
+<define name="state-list">
+  <element name="state-list">
+<!--  The input method driver is always in one of the <state>s of an <input-method>
+and may transit to another <state> when processing an input.  The same input sequence
+can trigger different <saction>s and produce different results in different <state>s.
+When an input context is created, i.e. the input method is invoked, it is in the first
+<state> of the <state-list>.
+ -->
+    <zeroOrMore>
+      <element name="state">
+<!-- The element <state> defines <sactions> the input method driver should take, in responce to
+the input sequence, including transitions to another <state>. 
+ -->
+	<attribute name="id">
+<!-- The attribute "id" gives the name of a <state>-->
+	  <data type="ID"><param name="pattern">state-.*</param></data>
+	</attribute>
+	<optional><element name="state-title-text"><data type="string"/></element></optional>
+<!-- The element <state-title-text> specifies a title text displayed on
+the screen when the input method is in this state.  When this element
+is omitted, the content of the <title> element is used instead. -->
+	<interleave>
+	<optional>
+	  <element name="state-hook"><oneOrMore><ref name="saction"/></oneOrMore></element>
+<!-- When the input method driver is shifted to the current <state>,  
+<saction>s are executed.  Remember that when an input context of the input method
+is created, the input method is "shifted" to the first <state> in the <state-list> element, 
+and the  <saction>s in the <state-hook> of the first <state> will be executed.  -->
+	</optional>
+	<optional>
+	  <element name="catch-all-branch">
+<!-- When an input sequence does not match with any of the <branch>s in the current <state>,
+   1. If the <catch-all-branch> element exists,
+      <saction>s in the <catch-all-branch> is executed.
+   2  If the <catch-all-branch> is omitted,
+     the input method transits to the initial state.
+ -->
+		 <zeroOrMore><ref name="saction"/></zeroOrMore>
+	  </element>
+	</optional>
+	<zeroOrMore>
+	  <element name="branch">
+<!-- Each branch defines <saction>s triggered by input sequences in one <map> element. 
+The value of the attribute "branch-selecting-map" specifies a <map>'s "id" value.
+If an input sequence matches one of the <keyseq> of a <rule> of the <map>, <saction>s are executed. -->
+	    <attribute name="branch-selecting-map">
+		<data type="IDREF"/>
+	    </attribute>
+	    <zeroOrMore><ref name="saction"/></zeroOrMore>
+	  </element>
+	</zeroOrMore>
+	</interleave>
+      </element>
+    </zeroOrMore>
+  </element>
+</define>
+
+
+<!-- plist -->
+
+  <define name="plistObject">
+    <element name="pListObject">
+    <choice>
+      <ref name="array"/>
+      <ref name="dict"/>
+      <group>
+	<attribute name="type"><value>string</value></attribute>
+	<data type="string"/>
+      </group>
+      <group>
+	<attribute name="type"><value>symbol</value></attribute>
+	<ref name="variable-reference"/>
+      </group>
+      <group>
+	<attribute name="type"><value>integer</value></attribute>
+	<choice>
+	  <data type="string"><param name="pattern">\?.</param></data>
+	  <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
+	  <data type="nonNegativeInteger"><param name="pattern">[0-9]{1,7}</param></data>
+	</choice>
+      </group>
+    </choice>
+    </element>
+  </define>
+
+
+  <!-- Collections -->
+  <define name="array">
+    <element name="array">
+      <zeroOrMore>
+        <ref name="plistObject"/>
+      </zeroOrMore>
+    </element>
+  </define>
+
+  <define name="dict">
+    <element name="dict">
+      <zeroOrMore>
+	<element name="dict-item">
+	  <attribute name="key"/>
+	  <ref name="plistObject"/>
+	</element>
+      </zeroOrMore>
+    </element>
+  </define>
+
+</grammar>
+
+@endverbatim
+
+@ifnot FOR-MAN
+
+@section im-example1 EXAMPLE 1
+
+This is a very simple example for inputting Latin characters with
+diacritical marks (acute and cedilla).  For instance, when you type:
+@verbatim
+    Comme'die-Franc,aise, chic,,
+@endverbatim
+you will get this:
+@if FOR-HTML
+@verbatim
+    Commédie-Française, chic,
+@endverbatim
+@endif
+@if FOR-LATEX
+@latexonly
+\hskip5mm\texttt{\footnotesize Comm\'{e}die-Fran\c{c}aise, chic,}
+@endlatexonly
+@endif
+
+The definition of the input method is very simple as below, and it is
+quite straight forward to extend it to cover all Latin characters.
+
+@if FOR-HTML
+@verbatim
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>t</language>
+    <name>latn-post</name>
+  </tags>
+  <title>latin-postfix</title>
+  <map-list>
+    <map id="map-trans">
+      <rule><keyseq keys="A&apos;"/><insert string="Á"/></rule>
+      <rule><keyseq keys="a&apos;"/><insert string="á"/></rule>
+      <rule><keyseq keys="A&apos;&apos;"/><insert string="A&apos;"/></rule>
+      <rule><keyseq keys="a&apos;&apos;"/><insert string="a&apos;"/></rule>
+      <rule><keyseq keys="C,"/><insert string="Ç"/></rule>
+      <rule><keyseq keys="c,"/><insert string="ç"/></rule>
+      <rule><keyseq keys="C,,"/><insert string="C,"/></rule>
+      <rule><keyseq keys="c,,"/><insert string="c,"/></rule>
+      <rule><keyseq keys="E&apos;"/><insert string="É"/></rule>
+      <rule><keyseq keys="e&apos;"/><insert string="é"/></rule>
+      <rule><keyseq keys="E&apos;&apos;"/><insert string="E&apos;"/></rule>
+      <rule><keyseq keys="e&apos;&apos;"/><insert string="e&apos;"/></rule>
+      <rule><keyseq keys="I&apos;"/><insert string="Í"/></rule>
+      <rule><keyseq keys="i&apos;"/><insert string="í"/></rule>
+      <rule><keyseq keys="I&apos;&apos;"/><insert string="I&apos;"/></rule>
+      <rule><keyseq keys="i&apos;&apos;"/><insert string="i&apos;"/></rule>
+      <rule><keyseq keys="O&apos;"/><insert string="Ó"/></rule>
+      <rule><keyseq keys="o&apos;"/><insert string="ó"/></rule>
+      <rule><keyseq keys="O&apos;&apos;"/><insert string="O&apos;"/></rule>
+      <rule><keyseq keys="o&apos;&apos;"/><insert string="o&apos;"/></rule>
+      <rule><keyseq keys="U&apos;"/><insert string="Ú"/></rule>
+      <rule><keyseq keys="u&apos;"/><insert string="ú"/></rule>
+      <rule><keyseq keys="U&apos;&apos;"/><insert string="U&apos;"/></rule>
+      <rule><keyseq keys="u&apos;&apos;"/><insert string="u&apos;"/></rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-trans"/>
+    </state>
+  </state-list>
+</input-method>
+@endverbatim
+@endif
+@if FOR-LATEX
+@latexonly
+\texttt{\footnotesize
+\hskip2mm(title "latin-postfix")\\
+\hskip2mm(map\\
+\hskip4mm (trans\\
+\hskip6mm  ("a'" ?\'{a}) ("e'" ?\'{e}) ("i'" ?\'{i}) ("o'" ?\'{o})
+("u'" ?\'{u}) ("c," ?\c{c})\\
+\hskip6mm  ("A'" ?\'{A}) ("E'" ?\'{E}) ("I'" ?\'{I}) ("O'" ?\'{O})
+("U'" ?\'{U}) ("C," ?\c{C})\\
+\hskip6mm  ("a''" "a'") ("e''" "e'") ("i''" "i'") ("o''" "o'") ("u''" "u'")\\
+\hskip6mm  ("c,," "c,")\\
+\hskip6mm  ("A''" "A'") ("E''" "E'") ("I''" "I'") ("O''" "O'") ("U''" "U'")\\
+\hskip6mm  ("C,," "C,")))\\
+\hskip2mm(state\\
+\hskip4mm (init\\
+\hskip6mm  (trans)))}
+@endlatexonly
+@endif
+
+@section im-example2 EXAMPLE 2
+
+This example is for inputting Unicode characters by typing C-u
+(Control-u) followed by four hexadecimal digits.  For instance, when
+you type ("^u" means Control-u):
+@verbatim
+    ^u2190^u2191^u2192^u2193
+@endverbatim
+you will get this (Unicode arrow symbols):
+@if FOR-LATEX
+@verbatim
+    $\leftarrow \uparrow \rightarrow \downarrow
+@endverbatim
+@endif
+@if FOR-HTML
+@verbatim
+    ←↑→↓
+@endverbatim
+@endif
+
+The definition utilizes <set> and <conditional> as below:
+@verbatim
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>t</language>
+    <name>unicode</name>
+  </tags>
+  <title>UNICODE</title>
+  <map-list>
+    <map id="map-starter">
+      <rule><keyseq><key-event>C-U</key-event></keyseq><insert string="U+"/></rule>
+    </map>
+    <map id="map-hex">
+      <rule><keyseq keys="0"/><insert string="0"/></rule>
+      <rule><keyseq keys="1"/><insert string="1"/></rule>
+                   :                            :
+      <rule><keyseq keys="9"/><insert string="9"/></rule>
+      <rule><keyseq keys="A"/><insert string="A"/></rule>
+      <rule><keyseq keys="B"/><insert string="B"/></rule>
+                   :                             :
+      <rule><keyseq keys="f"/><insert string="F"/></rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-starter">
+        <set id="code"><int-val>0</int-val></set>
+        <set id="count"><int-val>0</int-val></set>
+        <shift-to id="state-uni-hex"/>
+      </branch>
+    </state>
+    <state id="state-uni-hex">
+      <branch branch-selecting-map="map-hex">
+        <set id="this"><predefined-nth-previous-or-following-character position="-1"/></set>
+        <conditional>
+          <case>
+            <expr operator="&lt;">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>65</int-val> <!-- ?A -->
+            </expr>
+            <sub id="this"><int-val>48</int-val></sub>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <sub id="this"><int-val>55</int-val></sub>
+          </case>
+        </conditional>
+        <set id="code">
+          <expr operator="+">
+            <expr operator="*">
+              <variable-reference id="code"/>
+p              <int-val>16</int-val>
+            </expr>
+            <variable-reference id="this"/>
+          </expr>
+        </set>
+        <set id="count">
+          <expr operator="+">
+            <variable-reference id="count"/>
+            <int-val>1</int-val>
+          </expr>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <variable-reference id="count"/>
+              <int-val>4</int-val>
+            </expr>
+            <delete-to-marker position="@first"/>
+            <insert character-or-string="variable">
+              <variable-reference id="code"/>
+            </insert>
+            <shift-to id="state-init"/>
+          </case>
+        </conditional>
+      </branch>
+    </state>
+  </state-list>
+</input-method>
+
+@endverbatim
+
+@section im-example3 EXAMPLE 3
+
+This example is for inputting Chinese characters by typing PinYin key
+sequence.
+@if FOR-HTML
+For instance, when you type:
+@verbatim
+    nihaobei2jing2
+@endverbatim
+you will get:
+@verbatim
+    你好北京
+@endverbatim
+
+The definition utilizes <candidate> and <select> as below.
+Note that this is just an example, and it ignores such important key
+as Backspace.
+
+@verbatim
+<input-method> <tags>..</tags>
+<title>"拼"</title>
+
+<map-list>
+  <map id="map-starter"> 
+<!-- The initial character of Pinyin.-->
+     <rule><keyseq keys="a"/></rule>
+     <rule><keyseq keys="b"/></rule>
+          :                 :
+     <rule><keyseq keys="z"/></rule>
+  </map>
+  <map id="map-pinyon">
+<!-- Big table of Pinyin vs the corresponding Chinese characters.-->
+     <rule><keyseq keys="bei"/>
+           <insert><candidates>被北备背悲辈杯倍贝碑... </candidates>...</insert></rule>	
+     <rule><keyseq keys="hao"/>
+           <insert><candidates>好号毫豪浩耗皓嚎昊郝... </candidates>...</insert></rule>	
+     <rule><keyseq keys="jing"/>
+           <insert><candidates>经京精境警竟静惊景敬... </candidates>...</insert></rule>	
+     <rule><keyseq keys="ni"/>
+           <insert><candidates>你呢尼泥逆倪匿拟腻妮... </candidates>...</insert></rule>
+  </map>
+  <map id="map-choose">
+<!-- Typing 1, 2, ..., 0 selects the 0th, 1st, ..., 9th candidate.-->
+      <rule><keyseq keys="1"/><select index="0"/></rule>
+      <rule><keyseq keys="2"/><select index="1"/></rule>
+           :                     :
+      <rule><keyseq keys="9"/><select index="8"/></rule>
+      <rule><keyseq keys="0"/><select index="9"/></rule>
+  </map>
+</map-list>
+
+<state-list>
+   <state id="state-init">
+<!--  When an initial character of Pinyin is typed, re-handle it in 
+     "state-main" state.  Anything else is just produced as is. -->
+     <branch branch-selecting-map="map-starter">
+        <show-candidates/>
+        <pushback-n-events n="1"/>
+        <shift-to id="state-main"/>
+     </branch>
+   </state>
+
+   <state id="state-main">
+<!--   When a complete Pinyin sequence is typed, shift to "state-select" state
+       to allow users to select one from the candidates.   -->
+      <branch branch-selecting-map="map-pinyin">
+        <shift-to id="state-select"/>
+      </branch>
+<!--   When anything else is typed, produce the current candidate (if
+       any), and re-handle the last input in "state-init" state. -->
+      <catch-all-branch>
+        <hide-candidates/>
+        <shift-to id="state-init"/>
+      </catch-all-branch>
+   </state>
+
+   <state id="state-select">
+<!-- When a number is typed, select the corresponding canidate,
+     produce it, and shift to "init" state. -->
+       <branch branch-selectiong-map="map-choose">
+        <hide-candidates/>
+        <shift-to id="state-init"/>
+       </branch>
+
+<!-- When anything else is typed, produce the current candidate,
+     and re-handle the last input in "init" state. -->
+      <catch-all-branch>
+        <hide-candidates/>
+        <shift-to id="state-init"/>
+      </catch-all-branch>
+   </state>
+ </state-list>
+</input-method>
+
+@endverbatim
+
+@elseif FOR-LATEX
+@latexonly
+\begin{center}
+\fbox{This example is readable only in the documentation of HTML version.}
+\end{center}
+@endlatexonly
+@endif
+
+@endif
+
+@section im-seealso SEE ALSO
+
+@ref mim-list "Input Methods provided by the m17n database",
+@ref mdbGeneral "mdbGeneral(5)"
+*/
+
+/* 
+Copyright (C) 2003, 2004, 2005
+  National Institute of Advanced Industrial Science and Technology (AIST)
+  Registration Number H15PRO112
+
+This file is part of the m17n database; a sub-part of the m17n
+library.
+
+The m17n library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1 of
+the License, or (at your option) any later version.
+
+The m17n library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with the m17n library; if not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+Boston, MA 02110-1301, USA.
+*/
+
+/* Local Variables: */
+/* coding: utf-8 */
+/* End: */

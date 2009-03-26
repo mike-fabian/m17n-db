@@ -1770,7 +1770,7 @@ Select Hiragana or Katakana</description>
       <state-title-text>漢</state-title-text>
       <state-hook>
         <set id="K">
-          <variable-reference id="handled-keys"/>
+          <variable-reference id="handled-keys" type="predefined"/>
         </set>
         <sub id="K">
           <int-val>1</int-val>

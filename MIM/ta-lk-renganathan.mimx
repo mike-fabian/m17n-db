@@ -1148,7 +1148,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</get-text>
                 <int-val>1</int-val>
               </expr>
               <expr operator="=">
-                <variable-reference id="predefined-surround-text-flag"/>
+                <variable-reference id="predefined-surround-text-flag" type="predefined"/>
                 <int-val>-1</int-val>
               </expr>
             </expr>

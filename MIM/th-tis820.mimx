@@ -608,7 +608,7 @@ The level of character sequence acceptance defined in WTT 2.0.
         <conditional>
           <case>
             <expr operator="&gt;">
-              <variable-reference id="predefined-surround-text-flag"/>
+              <variable-reference id="predefined-surround-text-flag" type="predefined"/>
               <int-val>-2</int-val>
             </expr>
             <commit/>

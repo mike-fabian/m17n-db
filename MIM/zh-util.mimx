@@ -115,7 +115,7 @@ to be included in the other Chinese input method (e.g. zh-py).
           <key-event>input-focus-out</key-event>
         </keyseq>
         <set id="KK">
-          <variable-reference id="handled-keys"/>
+          <variable-reference id="handled-keys" type="predefined"/>
         </set>
         <sub id="KK">
           <int-val>1</int-val>
@@ -129,7 +129,7 @@ to be included in the other Chinese input method (e.g. zh-py).
           <key-event>input-focus-in</key-event>
         </keyseq>
         <set id="KK">
-          <variable-reference id="handled-keys"/>
+          <variable-reference id="handled-keys" type="predefined"/>
         </set>
         <sub id="KK">
           <int-val>1</int-val>
@@ -171,7 +171,7 @@ to be included in the other Chinese input method (e.g. zh-py).
     <state id="state-select">
       <state-hook>
         <set id="K">
-          <variable-reference id="handled-keys"/>
+          <variable-reference id="handled-keys" type="predefined"/>
         </set>
         <sub id="K">
           <int-val>1</int-val>

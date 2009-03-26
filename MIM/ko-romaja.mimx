@@ -1059,7 +1059,7 @@ Special:
           <key-event>BackSpace</key-event>
         </keyseq>
         <if condition="&gt;">
-          <variable-reference id="handled-keys"/>
+          <variable-reference id="handled-keys" type="predefined"/>
           <int-val>1</int-val>
           <if-true-action-list>
             <undo/>

@@ -31,95 +31,85 @@ is converted into the form of plist in the driver.
          xmlns:xi="http://www.w3.org/1999/XML/xinclude"
 	 xmlns="http://relaxng.org/ns/structure/1.0"
 	 ns="http://www.m17n.org/MIM">
- 
 
 <start>
   <element name="input-method">
-    <!-- The top-level node of an input method has a <input-method> tag. -->
     <ref name="im-declaration"/>
 
     <optional>
 	<element name="description">
-	  <!-- The element <description> can appear in <input-method>, <variable> or <command>, 
-and specifies the description text of  its parent.  -->
 	  <choice>
 	    <text/>
-	    <element name="get-text">
-	      <!-- The content of the element <get-text> is translated
-according to the current locale by "gettext" (if the translation is provided). -->
-	      <text/>
-	    </element>
+	    <element name="get-text"><text/> </element>
 	  </choice>
 	</element>
     </optional>
 
-    <optional><element name="title">
-<!-- The element <title> contains a string that is displayed on the
-screen when this input method is active. -->
-    <data type="string"/></element></optional>
-
-    <optional>
-      <ref name="variable-list"/>
-      <!-- <variable-list> declares variables used in this input method.-->
-    </optional>
-
-    <optional><ref name="command-list"/>
-      <!-- <command-list> declares commands used in this input method.-->
-    </optional>
-
-    <optional><ref name="module-list"/>
-    <!-- <module-list> declares external modules used in this input method.-->
-    </optional>
-
-    <optional><ref name="macro-list"/>
-    <!-- <macro-list> declares macros used in this input method.-->
-    </optional>
-
-    <optional><ref name="map-list"/>
-    <!--  <map-list> declares maps used in this input method.
-	 
-When an input method is never standalone and always included in
-another method, the element <map-list> can be omitted. -->
-    </optional>
-
-    <optional><ref name="state-list"/>
-    <!-- <state-list> declares states used in this input method.
-
-When an input system is never standalone and always included in
-another system, the element <state-list> can be omitted.-->
-    </optional>
+    <optional><element name="title"><data type="string"/></element></optional>
+    <optional><ref name="variable-list"/></optional>
+    <optional><ref name="command-list"/></optional>
+    <optional><ref name="module-list"/></optional>
+    <optional><ref name="macro-list"/></optional>
+    <optional><ref name="map-list"/></optional>
+    <optional><ref name="state-list"/></optional>
   </element>
 </start>
 
-<define name="im-declaration">
-  <element name="tags">
-    <!-- The element <tags> specifies for which language the input method is,
-and the name of the input method. 
-There is one special input method file "global.mimx" that declares
-common variables and commands.  The input method driver always loads
-this file and other input methods can inherit its variables and commands.  -->
+@endverbatim
 
+The top-level node of an input method has a &lt;input-method&gt; tag.
+
+The element &lt;description&gt; can appear in &lt;input-method&gt;, &lt;variable&gt; or
+&lt;command&gt;, and specifies the description text of its parent. The
+content of the element &lt;get-text&gt; is translated according to the
+current locale by "gettext" (if the translation is provided).
+
+The element &lt;title&gt; contains a string that is displayed on the screen
+when this input method is active.
+
+#if EXAMPLE_CODE
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>bo</language>
+    <name>ewts</name>
+  </tags>
+  <description>Tibetan input method based on EWTS.
+This implementation is based on THDL Extended Wylie Transliteration Scheme
+Version 2.0 &lt;http://www.thdl.org/collections/langling/ewts/ewts.php&gt;.</description>
+  <title>ཀ</title>
+      :       :
+#endif
+
+&lt;variable-list&gt; declares variables used in this input method.
+&lt;command-list&gt; declares commands used in this input method.
+&lt;module-list&gt; declares external modules used in this input method.
+&lt;macro-list&gt; declares macros used in this input method.  &lt;map-list&gt;
+declares maps used in this input method.  When an input method is
+never standalone and always included in another method, the element
+&lt;map-list&gt; can be omitted.  &lt;state-list&gt; declares states used in this
+input method.  When an input system is never standalone and always included in
+another system, the element &lt;state-list&gt; can be omitted.
+    
+@subsection im-declarations Input Method Declaration
+
+@verbatim
+
+<define name="im-declaration">
+
+  <element name="tags">
     <element name="language">
-<!-- The input method is for this language.  When the element <language>
- has "t" as its content, the use of the input method is not limited to one language. --> 
       <choice>
 	<value>t</value>
 	<data type="string"><param name="pattern">[a-z]{2,3}</param>
-<!-- ISO639-1, two-character code or ISO639-2, three charcter code for the names of languages -->
 	</data>
       </choice>
     </element>
-
     <choice>
       <group>
-<!-- When the  element <name> has "nil" as its content, the input method is not standalone,
-but is expected to be used in other input methods.  In such cases, the
-element <extra-id> is required to identify the input method. -->
 	<element name="name"><value>nil</value></element>
 	<element name="extra-id"><data type="ID"/></element>
       </group>
       <group>
-<!-- When the  element <name> has content other than "nil", the element <extra-id> is optional. -->
 	<element name="name">
 	  <choice>
 	    <data type="string"><param name="pattern">[^n][^i][^l]</param></data>
@@ -133,35 +123,62 @@ element <extra-id> is required to identify the input method. -->
    </group>
   </choice>
   </element>
+
   <optional>
     <element name="m17n-version">
-<!-- The element <m17n-version> specifies the required minimum version
-number of the m17n library.  The format is "X.Y.Z" where X is a major
-version number, Y is a minor version number, and Z is a patch level.-->
       <data type="string"><param name="pattern">[0-9]+\.[0-9]+\.[0-9]+</param></data>
     </element>
   </optional>
 </define>
 
-<!-- setups -->
+@endverbatim
+
+The element &lt;tags&gt; specifies for which language the input method is,
+and the name of the input method. There is one special input method
+file "global.mimx" that declares common variables and commands.  The
+input method driver always loads this file and other input methods can
+inherit its variables and commands. 
+
+When the element &lt;language&gt; has "t" as its content, the use of the
+input method is not limited to one language.  When the content is
+other than "t", it must be a valid code in ISO639-1, two-character
+code or ISO639-2, three charcter code for the names of languages.
+
+When the element &lt;name&gt; has "nil" as its content, the input method is
+not standalone, but is expected to be used in other input methods.  In
+such cases, the element &lt;extra-id&gt; is required to identify the input
+method.  When the element &lt;name&gt; has content other than "nil", the
+element &lt;extra-id&gt; is optional.
+
+#if EXAMPLE_CODE
+  <tags>
+    <language>bo</language>
+    <name>ewts</name>
+  </tags>
+#endif
+
+#if EXAMPLE_CODE
+  <tags>
+    <language>t</language>
+    <name>nil</name>
+    <extra-id>zh-util</extra-id>
+  </tags>
+#endif
+
+The optional element &lt;m17n-version&gt; specifies the required minimum
+version number of the m17n library.  The format is "X.Y.Z" where X is
+a major version number, Y is a minor version number, and Z is a patch
+level.
+
+@subsection im-setups Input Method Setups
+
+@verbatim
 
 <define name="variable-list">
   <element name="variable-list">
-
-<!--  <variable-list>  declares variables used in this input method.
-If a variable must be initialized to the default value, or is to be
-customized by a user, it must be declared here.  The declaration can
-be used in two ways.  One is to introduce a new variable.  In that
-case, the <value> element in <variable>  must not be omitted.  
-Another is to inherit the variable from what declared in "global.mim", 
-and to give the different default value and/or to make the variable customizable 
-specially for the current input method.  In the latter case, <value> can be omitted.  -->
-
       <zeroOrMore>
       <element name="variable">
-<!-- Each <variable> declares one variable -->
 	<attribute name="id"/>
-<!-- <variable> is referred with the attribute "id" -->
 	<optional>
 	  <element name="description">
 	    <choice>
@@ -172,38 +189,28 @@ specially for the current input method.  In the latter case, <value> can be omit
 	</optional>
 	<optional>
 	  <element name="value">		    
-<!--    <value> of a <variable> can be an integer, a symbol, or an M-text value. 
-All variables are implicitly initialized to the integer value zero.  -->
 	    <choice>
  	      <group>
-<!--  The M-text (string) <value> can be referred by the <insert> action.  -->
 		<attribute name="type"><value>string</value></attribute>
 		<data type="string"/>
 	      </group>
 	      <group>
-<!-- The symbol <value> can not be referred directly, but is used the library
-implicitly (e.g. candidates-charset).  -->
 		<attribute name="type"><value>symbol</value></attribute>
 		<data type="string"/>
 	      </group>
 	      <group>
-<!--  The integer <value> can be set, modified and referred by the <set>, <add>, <sub>, 
-<mul>, and <div>  action.  It can be referred by the the <insert>, <select>, <undo>, 
-<if>, and <cond> actions. -->
 	      <attribute name="type"><value>integer</value></attribute>
 	      <data type="integer"/>
 	      </group>
 	    </choice>
 	  </element>
 	</optional>
+
 	<optional>
 	  <element name="variable-value-candidate">
-<!-- <variable-value-candidate> lists the possible values of the variable. -->
 	    <oneOrMore>
 	      <choice>
 		<element name="c-value">		    
- <!-- <c-value> specifies one of the possible value of the variable.
- It can be a M-text (string), a symbol or an integer. -->
 		  <choice>
 		    <group>
 		      <attribute name="type"><value>string</value></attribute>
@@ -220,42 +227,104 @@ implicitly (e.g. candidates-charset).  -->
 		  </choice>
 		</element>
 		<element name="c-range">
-<!-- <c-range> specifies a range of integers that the variable 
-can have as its value.  It can be used mixed with <c-value>.-->
-		  <attribute name="from">
-		    <!-- The minimum integer value that a variable can take.-->
-		    <data type="integer"/>
-		  </attribute>
-		  <attribute name="to">
-		    <!-- The maximum integer value that a variable can take.-->
-		    <data type="integer"/>
-		  </attribute>
+		  <attribute name="from"><data type="integer"/></attribute>
+		  <attribute name="to"><data type="integer"/></attribute>
 		</element>
-	      </choice>
-	    </oneOrMore>
-	  </element>
-	</optional>
-      </element>
+	      </choice></oneOrMore></element>
+         </optional>
+       </element>
     </zeroOrMore>
   </element>
 </define>
 
+@endverbatim
+
+&lt;variable-list&gt; declares variables used in this input method.  If a
+variable must be initialized to the default value, or is to be
+customized by a user, it must be declared here.  The declaration can
+be used in two ways.  One is to introduce a new variable.  In that
+case, the &lt;value&gt; element in &lt;variable&gt; must not be omitted.  Another
+is to inherit the variable from what declared in "global.mim", and to
+give the different default value and/or to make the variable
+customizable specially for the current input method.  In the latter
+case, &lt;value&gt; can be omitted.
+
+Each &lt;variable&gt; declares one variable, and a variable is referred with
+the attribute "id".  &lt;value&gt; of a &lt;variable&gt; can be an integer, a
+symbol, or an M-text value.  All variables are implicitly initialized
+to the integer value zero.
+
+The M-text (string) &lt;value&gt; can be referred by the &lt;insert&gt; action.
+The symbol &lt;value&gt; can not be referred directly, but is used the
+library implicitly (e.g. candidates-charset).  The integer &lt;value&gt; can
+be set, modified and referred by the &lt;set&gt;, &lt;add&gt;, &lt;sub&gt;, &lt;mul&gt;, and
+&lt;div&gt; action.  It can be referred by the the &lt;insert&gt;, &lt;select&gt;,
+&lt;undo&gt;, &lt;if&gt;, and &lt;cond&gt; actions.
+
+&lt;variable-value-candidate&gt; lists the possible values of the variable.
+&lt;c-value&gt; specifies one of the possible value of the variable.  It can
+be a M-text (string), a symbol or an integer.
+
+&lt;c-range&gt; specifies a range of integers that the variable can have as
+its value.  It can be used mixed with &lt;c-value&gt;.  The attribute "from
+is the minimum integer value that a variable can take, and the
+attribute "to" is the maximum.
+
+#if EXAMPLE_CODE
+  <variable-list>
+    <variable id="precomposed">
+      <description>
+        <get-text>Flag to tell whether or not to generate precomposed characters.
+                  If 1, generate precomposed characters if available (e.g. "ྲྀ"(U+0F76).
+                  If 0, generate only decomposed characters (e.g. "ྲྀ" (U+0FB2 U+0F80).</get-text>
+      </description>
+      <value type="integer">0</value>
+      <variable-value-candidate>
+        <c-value type="integer">0</c-value>
+        <c-value type="integer">1</c-value>
+      </variable-value-candidate>
+    </variable>
+  </variable-list>
+#endif
+
+This code declares one variable "precomposed" whose value can be 0 or
+1 and is initially set to 0.
+
+@verbatim
+
+<define name="predefined-variable">
+  <attribute name="type"><value>predefined</value></attribute>
+  <attribute name="id">
+    <choice>
+      <value>handled-keys</value>
+      <value>predefined-surround-text-flag
+      <data type="string"><param name="pattern">@.+</param></data>
+    </choice>
+  </attribute>
+</define>
+
+@endverbatim
+
+Predefined-variables are variables whose "type" attribute has the
+value "predefiend".  When "id" sttribute has the value "handled-keys",
+the value of the variable is the number of handled keys at that
+moment.  If the "id" attrubyte has the value
+"predefined-surround-text-flag", the value of the variable is -1
+if surrounding text is supported, and -2 if not.
+
+#if EXAMPLE_CODE
+<variable-reference id="handled-keys" type="predefined"/>
+#endif
+
+This code referes to a predefined varialbe "handled-keys".
+
+@verbatim
+
 <define name="command-list">
   <element name="command-list">
-<!-- <command-list> declares a command used in the input method.  If a
-command must be bound to the default key sequence, or is to be
-customized by a user, it must be declared here.  Like <variable-list>,
-the declaration can be used in two ways.  One is to introduce a new
-command.  In that case, the <keyseq> element must appear in <command>.
-Another is to inherit the command from what declared in "global.mim",
-and to give the different key binding and/or to make the
-command customizable specially for the current input method.  In the
-latter case, <keyseq> can be omitted.-->
     <zeroOrMore>
       <element name="command">
-<!-- Each <command> declares one command -->
 	<attribute name="id">
-<!-- <command> is referred with the attribute "id" -->
 	  <data type="ID"><param name="pattern">command-.*</param></data></attribute>
 	<optional>
 	  <element name="description">
@@ -268,22 +337,45 @@ latter case, <keyseq> can be omitted.-->
   </element>
 </define>
 
+@endverbatim
+
+&lt;command-list&gt; declares a command used in the input method.  If a
+command must be bound to the default key sequence, or is to be
+customized by a user, it must be declared here.  Like &lt;variable-list&gt;,
+the declaration can be used in two ways.  One is to introduce a new
+command.  In that case, the &lt;keyseq&gt; element must appear in &lt;command&gt;.
+Another is to inherit the command from what declared in "global.mim",
+and to give the different key binding and/or to make the command
+customizable specially for the current input method.  In the latter
+case, &lt;keyseq&gt; can be omitted.
+
+Each &lt;command&gt; declares one command and a command &lt;command&gt; is
+referred with the attribute "id".
+
+#if EXAMPLE_CODE
+  <command-list>
+    <command id="command-commit">
+      <description>
+        <get-text>Commit
+                  Commit the preedit text</get-text>
+      </description>
+      <keyseq><key-event>Return</key-event></keyseq>
+      <keyseq><key-event>Linefeed</key-event></keyseq>
+    </command>
+  </command-list>
+#endif
+
+@verbatim
+
 <define name="module-list">
   <element name="module-list">
     <zeroOrMore>
       <element name="module">
-<!-- Each <module> element declares an external module (i.e. dynamic library).  --> 
 	<attribute name="id">
-	  <!-- The value of "id" attribute gives the name of the module -->
 	  <data type="ID"><param name="pattern">module-.*</param></data>
 	</attribute>
 	<zeroOrMore>
 	  <element name="function">
- <!-- <function> elements specify function names exported by the module.
-If the "id" attribute has the value "function-init", it is called with
-only the default arguments (see <call>) when an input context is created 
-for the input method.  If the "id" attribute has the  value "function-fini", 
-it is called with only the default arguments  when the input context is destroyed. -->
 	    <attribute name="id">
 		<data type="ID">
 		<param name="pattern">function-.*</param></data>
@@ -295,14 +387,40 @@ it is called with only the default arguments  when the input context is destroye
   </element>
 </define>
 
+@endverbatim
+
+Each &lt;module&gt; element declares an external module (i.e. dynamic
+library).  The value of "id" attribute gives the name of the module
+
+&lt;function&gt; elements specify function names exported by the module.  If
+the "id" attribute has the value "function-init", it is called with
+only the default arguments (see &lt;call&gt;) when an input context is
+created for the input method.  If the "id" attribute has the value
+"function-fini", it is called with only the default arguments when the
+input context is destroyed. 
+
+#if EXAMPLE_CODE
+  <module-list>
+    <module id="module-libmimx-anthy">
+      <function id="function-convert"/>
+      <function id="function-resize"/>
+      <function id="function-change"/>
+      <function id="function-commit"/>
+      <function id="function-init"/>
+      <function id="function-fini"/>
+    </module>
+  </module-list>
+#endif
+
+This code declares a module "module-libmimx-anthy" who export six functions.
+
+@verbatim
+
 <define name="macro-list">
   <element name="macro-list" ns="http://www.m17n.org/MIM">
     <zeroOrMore>
       <element name="macro">
-	<!-- The elemnt <macro> bundles and names a set of <action>s.-->
 	<attribute name="id">
- <!-- The attribute "id" gives the name of a <macro>.
-<macro> is referred with this attribute. -->
 	  <data type="ID"><param name="pattern">macro-.*</param></data>
 	</attribute>
 	<zeroOrMore><ref name="action"/></zeroOrMore>
@@ -311,25 +429,178 @@ it is called with only the default arguments  when the input context is destroye
   </element>
 </define>
 
-<!-- the real work -->
+@endverbatim
 
+The elemnt &lt;macro&gt; bundles and names a set of &lt;action&gt;s.  The
+attribute "id" gives the name of a &lt;macro&gt;, and a macro is referred
+with this attribute.
+
+#if EXAMPLE_CODE
+  <macro-list>
+    <macro id="macro-forward">
+      <set id="cc3">
+        <predefined-nth-previous-or-following-character position="+3"/>
+      </set>
+      <conditional>
+                 :              :     ;; more <action>s
+    </macro>
+  </macro-list>
+#endif
+
+This code declares one macro "macro-forward".
+
+@verbatim
+
+<define name="marker">
+  <choice>
+    <ref name="predefined-marker"/>
+    <ref name="user-defined-marker"/>
+  </choice>
+</define>
+
+@endverbatim
+
+A marker is a symbol indicating a character position in the preediting
+text.  The element &lt;mark-current-position&gt; assigns a position to
+a marker.  The position of a marker is referred by the elements
+&lt;move-to-marker&gt; and &lt;delete-to-marker&gt;.
+
+@verbatim
+
+<define name="predefined-marker">
+    <attribute name="position">
+      <choice>
+	<data type="string"><param name="pattern">@[0-9]</param>
+	</data>
+	<value>@first</value>
+	<value>@current</value>
+	<value>@last</value>
+	<value>@previous</value>
+	<value>@next</value>
+	<value>@previous_candidate_list
+	<value>@next_candidate_list
+      </choice>
+    </attribute>
+</define>
+
+@endverbatim
+
+Predefined markers start with @@.  @@0, @@1, ... , @@9 mark the 0th, 1st,
+2nd,... 9th position respetively. @@previous_candidate_list mark the
+previous position where a candidate list changes.
+@@next_candidate_list mark the next position where a candidate list
+changes.
+
+#if EXAMPLE_CODE
+ <delete-to-marker position="@first"/>
+#endif
+
+This code deletes character between the first position and the current
+position in the buffer.
+
+@verbatim
+
+<define name="user-defined-marker">
+      <attribute name="markerID">
+	<data type="string"><param  name="pattern">[^@].*</param></data>
+      </attribute>
+</define>
+
+@endverbatim
+
+User-defined markers may not start with @@.
+
+#if EXAMPLE_CODE
+ <move-to-marker position="T"/>
+#endif
+
+This code moves the marker to the usr defined position T.
+
+@verbatim
+
+<define name="predefined-nth-previous-or-following-character">
+  <element name="predefined-nth-previous-or-following-character">
+    <attribute name="position">
+      <choice>
+	<data type="negativeInteger"/>
+	<data type="positiveInteger"/>
+      </choice>
+    </attribute>
+  </element>
+</define>
+
+@endverbatim
+
+The element &lt;predefined-nth-previous-or-following-character&gt; specifies
+a character inside or outside of the preedit buffer.
+
+When the value of the attribute "position" is a negative integer -N,
+the element &lt;predefined-nth-previous-or-following-character&gt; means the
+Nth previous character in the preedit buffer.  If there are only M
+(M&lt;N) previous characters in it, the value is the (N-M)th previous
+character from the inputting spot.
+
+When the value of the attribute "position" is a positive integer N,
+the element &lt;predefined-nth-previous-or-following-character&gt; means the
+Nth following character in the preedit buffer.  If there are only M
+(M&lt;N) following characters in it, the value is the (N-M)th following
+character from the inputting spot. 
+
+#if EXAMPLE_CODE
+<predefined-nth-previous-or-following-character position="-1"/>
+#endif
+
+This code refers to the previous character.
+
+@verbatim
+<define name="predefined-selector">
+      <choice>
+	<data type="string"><param name="pattern">@[0-9]</param></data>
+	<value>@first</value>
+	<value>@current</value>
+	<value>@last</value>
+	<value>@previous</value>
+	<value>@next</value>
+	<value>@previous_candidate_list</value>
+	<value>@next_candidate_list</value>
+      </choice>
+</define>
+
+@endverbatim
+
+Predefined-selectors specify positions in a candidate list. They are
+used in the element &lt;select&gt;.  
+
+@@0, @@1, ... , @@9 specify the 0th, 1st, ... 9th position
+respetively.  @@previous means the previous position, and if the
+current candidate is the first one in the current candidate group,
+this value means the last candidate in the previous candidate
+group. @@next means the next position, and if the current candidate is
+the last one in the current candidate group, this value means the
+first candidate in the next candidate group.
+@@previous_candidate_list specifies the candidate in the previous
+candidate group having the same candidate index as the current one,
+and @@next_candidate_list specifies the candidate in the next
+candidate group having the same candidate index as the current one.
+
+#if EXAMPLE_CODE
+<select selector="@previous"/>
+#endif
+
+This code selects the previous candidate.
+
+@subsection immap Input Method Maps and Rules
+
+@verbatim
 <define name="map-list">
   <element name="map-list">
   <zeroOrMore>
     <element name="map">
-<!-- THe element <map> bundles and names a set of groups similar <rule>s,
-so that <state> transitions can be clearly defined.
--->
       <attribute name="id">
-<!-- The attribute "id" gives the name of a <map>-->
 	<data type="ID"><param name="pattern">map-.*</param></data>
       </attribute>
       <zeroOrMore>
 	<element name="rule">
-<!-- The element <rule> defines the mapping of an input <keyseq> (or <command>) and
-<action>s the input method driver should take.  When the <action> is to <insert>
-an appropriate character, for example, the <rule> defines the mapping between
-the input key on the keyboad and the character to appear on the screen. -->
 	  <choice>
 	    <ref name="keyseq"/>
 	    <ref name="command-reference"/>
@@ -342,31 +613,44 @@ the input key on the keyboad and the character to appear on the screen. -->
   </element>
 </define>
 
+@endverbatim
+
+The element &lt;map&gt; bundles and names a set of groups similar &lt;rule&gt;s,
+so that &lt;state&gt; transitions can be clearly defined.  The attribute
+"id" gives the name of a &lt;map&gt;.
+
+The element &lt;rule&gt; defines the mapping of an input key sequence
+&lt;keyseq&gt; (or &lt;command&gt;) and &lt;action&gt;s the input
+method driver should take.  When the &lt;action&gt; is to
+&lt;insert&gt; an appropriate character, for example, the &lt;rule&gt;
+defines the mapping between the input key on the keyboad and the
+character to appear on the screen.
+
+#if EXAMPLE_CODE
+  <map-list>
+    <map id="map-consonant">
+      <rule><keyseq keys="k"/><insert string="ཀ"/></rule>
+      <rule><keyseq keys="kh"/><insert string="ཁ"/></rule>
+          :         :
+      <rule><keyseq keys="a"/><insert string="ཨ"/></rule>
+    </map>
+    <map id="map-standard-stack">
+           :         :
+    </map>
+           :         :
+  </map-list>
+#endif
+
+@verbatim
+
 <define name="keyseq">
   <element name="keyseq">
     <choice>
       <attribute name="keys"><data type="string"/></attribute>
-<!-- The value of the attribute "keys" of <keyseq> element consists of characters that
-can be generated by a keyboard.  Therefore it usually contains
-only ASCII characters.  However, if the input method is intended to be
-used, for instance, with a West European keyboard, the value may
-contain Latin-1 characters. -->
       <oneOrMore>
 	<choice>
 	  <element name="key-event"><data type="string"/></element>
-<!-- The content of the element <key-event> must be the return value of
-the minput_event_to_key () function.  Under the X window system, you
-can quickly check the value using the xev command.  For example,
-the return key, the backspace key, and the 0 key on the keypad are
-represented as Return, BackSpace, KP_0 respectively.  
-If the shift, control, meta, alt, super, and hyper modifiers are used, 
-they are represented by the S- , C- , M- , A- , s-, and H- prefixes respectively
-in this order.  Thus, "return with shift with meta with hyper" is S-M-H-Return.
-Note that "a with shift" .. "z with shift" are represented simply as A .. Z . 
-Thus "a with shift with meta with hyper" is M-H-A.
--->
 	  <element name="character-code">
-	    <!-- content of the element <character-code> must be a valid character code. -->
 	    <choice>
 	      <data type="nonNegativeInteger"><param name="pattern">[0-9]{1,7}</param></data>
 	      <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
@@ -379,73 +663,92 @@ Thus "a with shift with meta with hyper" is M-H-A.
   </element>
 </define>
 
+@endverbatim
+
+The value of the attribute "keys" of &lt;keyseq&gt; element consists of
+characters that can be generated by a keyboard.  Therefore it usually
+contains only ASCII characters.  However, if the input method is
+intended to be used, for instance, with a West European keyboard, the
+value may contain Latin-1 characters.
+
+The content of the element &lt;key-event&gt; must be the return value of the
+minput_event_to_key () function.  Under the X window system, you can
+quickly check the value using the xev command.  For example, the
+return key, the backspace key, and the 0 key on the keypad are
+represented as Return, BackSpace, KP_0 respectively.  If the shift,
+control, meta, alt, super, and hyper modifiers are used, they are
+represented by the S- , C- , M- , A- , s-, and H- prefixes
+respectively in this order.  Thus, "return with shift with meta with
+hyper" is S-M-H-Return.  Note that "a with shift" .. "z with shift"
+are represented simply as A .. Z .  Thus "a with shift with meta with
+hyper" is M-H-A.  
+
+The content of the element &lt;character-code&gt; must be a valid character code. 
+
+#if EXAMPLE_CODE
+<keyseq>
+   <character-code>0x6F</character-code>
+   <key-event>A-z</key-event>
+</keyseq>
+
+<keyseq keys="k"/>
+#endif
+
+These are both valid key sequences.
+
+@verbatim
+
 <define name="command-reference">
   <element name="command-reference">
-<!-- The element <command-reference> has the same effect that
-the <keyseq> in the referred <command> would have, if appeared in its place. -->
-      <attribute name="id"><data type="IDREF"/></attribute>
+     <attribute name="id"><data type="IDREF"/></attribute>
   </element>
 </define>
 
+@endverbatim
+
+The element &lt;command-reference&gt; has the same effect that the &lt;keyseq&gt;
+in the referred &lt;command&gt; would have, if appeared in its place.
+
+#if EXAMPLE_CODE
+<command-reference id="command-start"/>
+#endif
+
+This code calls command "commad-start".
+
+@verbatim
+
 <define name="action">
-<!-- actions used in <rule>s -->
   <choice>
     <ref name="insert"/>
     <ref name="delete"/>
     <ref name="select"/>
 
-    <element name="show-candidates">
-<!-- The element <show-candidates> instructs the input method 
-driver to display a candidate list associated with the string
-before the current position. -->
-    <empty/></element>
-
-    <element name="hide-candidates">
-<!-- The element <hide-candidates> instructs the input method 
-driver to hide the currently displayed candidate list.      -->
-    <empty/></element>
+    <element name="show-candidates"><empty/></element>
+    <element name="hide-candidates"><empty/></element>
 
     <ref name="move"/>
     <ref name="mark"/>
     <ref name="pushback"/>
 
-    <element name="pop">
- <!-- The element <pop> pops the first key event that is not yet handled from the
- event queue.-->
-    <empty/></element>
+    <element name="pop"><empty/></element>
+
     <ref name="undo"/>
-    <element name="commit">
-      <!-- The element <commit> commits the current preedit. -->
-    <empty/></element>
-    <element name="unhandle">
-<!-- The element <unhandle> commits the current preedit and returns the last key as
-unhandled. -->
-    <empty/></element>
+
+    <element name="commit"> <empty/></element>
+    <element name="unhandle"><empty/></element>
 
     <ref name="call"/>
 
-    <element name="set">
-      <!-- The element <set> sets the value of the variable. -->
-      <ref name="set-val"/></element>
-    <element name="add">
-      <!-- The element <add> increments the value of the variable. -->
-    <ref name="set-val"/></element>
-    <element name="sub">
-      <!-- The element <sub> decrements the value of the variable. -->
-    <ref name="set-val"/></element>
-    <element name="mul">
-      <!-- The element <mul> multiplies the value of the variable. -->
-    <ref name="set-val"/></element>
-    <element name="div">
-      <!-- The element <div> divides the value of the variable. -->
-    <ref name="set-val"/></element>
+    <element name="set"><ref name="set-val"/></element>
+    <element name="add"><ref name="set-val"/></element>
+    <element name="sub"><ref name="set-val"/></element>
+    <element name="mul"><ref name="set-val"/></element>
+    <element name="div"><ref name="set-val"/></element>
 
     <ref name="if"/>
     <ref name="conditional"/>
 
     <element name="macro-reference">
-<!-- The element <macro-reference> has the same effect that
-the <action>s in the referred <macro> would have, if appeared in its place. -->
       <attribute name="id">
 	<data type="IDREF"/>
       </attribute>
@@ -453,136 +756,68 @@ the <action>s in the referred <macro> would have, if appeared in its place. -->
   </choice>
 </define>
 
+@endverbatim
+
+The element &lt;action&gt;s appear in &lt;rule&gt;s.
+
+The element &lt;show-candidates&gt; instructs the input method driver to
+display a candidate list associated with the string before the current
+position. 
+
+The element &lt;hide-candidates&gt; instructs the input method driver to
+hide the currently displayed candidate list.
+
+The element &lt;pop&gt; pops the first key event that is not yet handled
+from the event queue.
+
+The element &lt;commit&gt; commits the current preedit.
+
+The element &lt;unhandle&gt; commits the current preedit and returns the last key as
+unhandled. 
+
+The element &lt;set&gt;, &lt;add&gt;, &lt;sub&gt;, &lt;mul&gt; and
+&lt;div&gt; sets, increments, decrements, multiplies and divides the
+value of the variable respecrively.
+
+#if EXAMPLE_CODE
+<set id="MAX-COUNT">
+  <int-val>4</int-val>
+</set>
+#endif
+
+This code sets @c MAX-COUNT to 4.
+
+#if EXAMPLE_CODE
+<add id="C-AFTER-V">
+  <int-val>1</int-val>
+</add>
+#endif
+
+This code increments @c C-AFTER-V by 1.
+
+The element &lt;macro-reference&gt; has the same effect that the &lt;action&gt;s
+in the referred &lt;macro&gt; would have, if appeared in its place.
+
+@verbatim
+
 <define name="set-val">
-<!-- The value of the variable specified by the attribute "id"
-is set to, or added, subtracted, multiplied or divided by the value of <expr>. -->
     <attribute name="id"/>
     <ref name="expr"/>
 </define>
 
+@endverbatim
 
-<define name="saction">
-<!-- <saction>s (state-actions) are <action>s and state transitions. -->
-  <choice>
-    <element name="shift-to">
-<!-- The element <shift-to> the current state specified by the value of
-the attribute "id".   The value must appear in <state-list>. -->
-	   <attribute name="id"><data type="IDREF"/></attribute>
-    </element>
-    <element name="shift-back">
-<!-- The element <shift-back> shifts the current state to the previous one. -->
-    <empty/></element>
-    <ref name="action"/>
-  </choice>
-</define>
+The value of the variable specified by the attribute "id" is set to,
+or added, subtracted, multiplied or divided by the value of
+&lt;expr&gt;.
 
-<define name="marker">
-<!-- A marker is a symbol indicating a character position in the preediting
-text.  The element <mark> assigns a position to a marker.  The
-position of a marker is referred by the elements <move-to-marker> and <delete-to-marker>.
--->
-  <choice>
-    <ref name="predefined-marker"/>
-    <ref name="user-defined-marker"/>
-  </choice>
-</define>
-
-<define name="predefined-marker">
-    <!-- predefined markers start with @ -->
-    <attribute name="position">
-      <choice>
-	<data type="string"><param name="pattern">@[0-9]</param>
-	<!-- The 0th, 1st, 2nd,... 9th position respetively -->
-	</data>
-	<value>@first</value>
-	<value>@current</value>
-	<value>@last</value>
-	<value>@previous</value>
-	<value>@next</value>
-	<value>@previous_candidate_list<!-- The previous position where a candidate list changes.--></value>
-	<value>@next_candidate_list<!-- The next position where a candidate list changes.--></value>
-      </choice>
-    </attribute>
-</define>
-
-<define name="user-defined-marker">
-<!--  user-defined markers do not start with @ -->
-      <attribute name="markerID">
-	<data type="string"><param  name="pattern">[^@].*</param></data>
-      </attribute>
-</define>
-
-
-<define name="predefined-nth-previous-or-following-character">
-<!--  a character inside or outside of the preedit buffer -->
-  <element name="predefined-nth-previous-or-following-character">
-    <attribute name="position">
-      <choice>
-	<data type="negativeInteger">
-<!-- When the value of the attribute "position" is -N (N is a positive integer),
-the element <predefined-nth-previous-or-following-character> means
-the Nth previous character in the preedit buffer.  
-If there are only M (M<N) previous characters in it, the value is the 
-(N-M)th previous character from the inputting spot. 
-         -->
-	 </data>
-	<data type="positiveInteger">
-<!-- When the value of the attribute "position" is N (N is a positive integer),
-the element <predefined-nth-previous-or-following-character> means
-the Nth following character in the preedit buffer.  
-If there are only M (M<N) following characters in it, the value is 
-the (N-M)th following character from the inputting spot.  	   -->
-        </data>
-      </choice>
-    </attribute>
-  </element>
-</define>
-
-<define name="predefined-selector">
-<!-- Predefined-selectors specify positions in a candidate list.
-They are used in the element <select>. -->
-      <choice>
-	<data type="string"><param name="pattern">@[0-9]</param>
-	  <!-- The 0th, 1st, 2nd,... 9th position respetively -->
-	</data>
-	<value>@first</value>
-	<value>@current</value>
-	<value>@last</value>
-	<value>@previous<!-- If the current candidate is the first one in the current candidate group, 
-this value means the last candidate in the previous candidate group. --></value>
-	<value>@next<!-- If the current candidate is the last one in the current candidate group, 
-this value means the first candidate in the next candidate group. --></value>
-	<value>@previous_candidate_list<!-- The candidate in the previous candidate group having 
-the same candidate index as the current one. --></value>
-	<value>@next_candidate_list<!-- The candidate in the  next candidate group having the same
-candidate index as the current one. --></value>
-      </choice>
-</define>
-
-<!-- var -->
-
-<define name="predefined-variable">
-  <attribute name="type"><value>predefined</value></attribute>
-  <attribute name="id">
-    <choice>
-      <value>handled-keys<!-- Number of handled keys at that moment.--></value>
-      <value>predefined-surround-text-flag<!-- -1 if surrounding text is supported, -2 if not. --></value>
-      <data type="string"><param name="pattern">@.+</param></data>
-    </choice>
-  </attribute>
-</define>
+@verbatim
 
 <define name="insert">  
     <element name="insert">
-<!-- The element <insert> inserts the specified character or string before the current position.
-The marker positions affected by the insertion are automatically relocated.-->
       <choice>
-	<attribute name="string"><data type="string"/>
-	<!-- inserts a MTEXT string -->
-	</attribute>
-<!--	<attribute name="character"><data type="integer"/></attribute>-->
+	<attribute name="string"><data type="string"/></attribute>
 	<attribute name="character">
-	<!-- inserts a character that the character code represents-->
 	  <choice>
 	    <data type="string"><param name="pattern">\?.</param></data>
 	    <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
@@ -591,163 +826,265 @@ The marker positions affected by the insertion are automatically relocated.-->
 	</attribute>
 	<group>
 	  <attribute name="character-or-string"><value>variable</value></attribute>
-<!-- inserts the value of the specified variable, if it is a valid character code or a M-text  -->
 	  <ref name="variable-reference"/>
 	</group>
+
 	<oneOrMore>
 	  <element name="candidates">
-<!-- Each character in the content of the element <candidtes> is a candidate to be inserted. 
-<insert> inserts the first candidate before the current position.
- The inserted character is associated with the list of candidates and
- the information indicating the currently selected candidate. -->
 		 <data type="string"/>
 	       </element>
 	</oneOrMore> 
         <oneOrMore>
 	  <element name="list-of-candidates">
 	    <list>
-<!-- Each item in this list is a candidate to be inserted.
-<insert> insert the first candidate before the current position.
-The inserted string is associated with the list of candidates and
-the information indicating the currently selected candidate.-->
 		 <zeroOrMore><data type="NMTOKEN"/></zeroOrMore></list>
 	         </element></oneOrMore>
       </choice>
     </element>
 </define>
 
+@endverbatim
+
+The element &lt;insert&gt; inserts a character or a M-text specified by its
+attribute, before the current position.  The marker positions affected
+by the insertion are automatically relocated.
+
+The attribute "string" specifies a M-text to be inserted.  The
+attriubute "character" specifies the code of a character to be
+inserted.  The attribute "character-or-string" must have a variable as
+its value and &lt;insert&gt; inserts the value of the specified variable, if
+it is a valid character code or a M-text.
+
+#if EXAMPLE_CODE
+<insert string="á"/>
+<insert character="225"/>
+<insert character="0x00E1"/>
+#endif
+
+These codes insert the same character "á".
+
+When the element &lt;candidates&gt; is given, each character in the content
+of the element &lt;candidtes&gt; is a candidate to be inserted.  &lt;insert&gt;
+inserts the first candidate before the current position.  The inserted
+character is associated with the list of candidates and the
+information indicating the currently selected candidate. 
+
+When the element &lt;list-of-candidates&gt; is given, each item in this list
+is a candidate to be inserted.  &lt;insert&gt; inserts the first candidate
+before the current position.  The inserted string is associated with
+the list of candidates and the information indicating the currently
+selected candidate.
+
+#if EXAMPLE_CODE
+<insert>
+    <candidates>＄￠￡￥￦</candidates>
+</insert>
+
+<insert>
+     <list-of-candidates>a ā á ǎ à</list-of-candidates>
+</insert>
+#endif
+
+These codes insert ＄, and a respectively and associate the whole list
+with it.
+
+@verbatim
+
 <define name="delete">  
-<!-- The marker positions affected by the elements <delete-??> are automatically relocated.-->
     <choice>
-      <element name="delete-to-marker">
-<!-- The element <delet-to-marker> deletes characters between 
-the current position and the marker position. -->
-	<ref name="marker"/></element>
+      <element name="delete-to-marker"><ref name="marker"/></element>
       <element name="delete-to-character-position"><data type="integer"/></element>
-<!-- The element <delete-to-character-position> treats its content as a character position, 
-and deletes characters between the current position and the character position.-->
       <element name="delete-n-characters">
-      <attribute name="n"><data type="integer"/></attribute>
-<!-- The element <delete-n-characters> treats the value of the attribute "n" 
-as the number of characters to be deleted,  and executes the deletion. 
-If the value N is negative, the preceding N characters from the current position are deleted.
-If positive, folliwing N characters are deleted. -->
+          <attribute name="n"><data type="integer"/></attribute>
       </element>
     </choice>
 </define>
 
+@endverbatim
+
+There are three &lt;action&gt;s for deleting characters.  The marker
+positions affected by these &lt;action&gt;s are automatically relocated.
+
+The element &lt;delet-to-marker&gt; deletes characters between the current
+position and the marker position.  
+
+#if EXAMPLE_CODE
+<delete-to-marker position="@first"/>
+#endif
+
+This code deletes character between the first position and the current
+position in the buffer.
+
+The element &lt;delete-to-character-position&gt; treats its content as a
+character position, and deletes characters between the current
+position and the character position.
+
+#if EXAMPLE_CODE
+<delete-to-character-position>-3</delete-to-character-position>
+#endif
+
+This code deletes 3 characters before the current position in the buffer.
+
+The element &lt;delete-n-characters&gt; treats the value of the attribute
+"n" as the number of characters to be deleted, and executes the
+deletion.  If the value N is negative, the preceding N characters from
+the current position are deleted.  If positive, folliwing N characters
+are deleted. 
+
+#if EXAMPLE_CODE
+<delete-n-characters n="+1"/>
+#endif
+
+This code deletes one following character.
+
+@verbatim
+
 <define name="select">  
   <element name="select">
-<!-- The element <select> first checks if the character just before the current position
-belongs to a string that is associated with a candidate list.  If it is, 
-the action replaces that string with a candidate specified by the attribute. -->
     <choice>
       <attribute name="selector">
-<!-- The value of the attribute "selector" is a predefined-selector that
-specifies a new candidate in the candidate list. -->
 	<ref name="predefined-selector"/>
       </attribute>
       <attribute name="index">
-<!-- The value of the attribute "index" specifies a position in the candidate list,
-and the candidate at the position is selected. -->
       <data type="integer"/>
       </attribute>
       <group>
 	<attribute name="index"><value>variable</value></attribute>
 	<ref name="variable-reference"/>
-<!-- The variable referred must have an integer value and the value 
-specifies the position of the new candidate in the candidate list. -->
       </group>
     </choice>
   </element>
 </define>
 
-<define name="move">
-<!-- The elements <move-??> change the marker positions. -->
-    <choice>
-      <element name="move-to-marker">
-<!-- The element <move-to-marker> makes the marker position to be the new current position. -->
-	<ref name="marker"/></element>
-      <element name="move-to-character-position">
-<!-- The element <move-to-character-position> treats its content integer value 
-as a character position, and makes that position to be the new current position. -->
-      <data type="integer"/></element>
-    </choice>
+@endverbatim
+
+The element &lt;select&gt; first checks if the character just before the
+current position belongs to a string that is associated with a
+candidate list.  If it is, the action replaces that string with a
+candidate specified by the attribute.  The value of the attribute
+"selector" is a predefined-selector that specifies a new candidate in
+the candidate list.  The value of the attribute "index" specifies a
+position in the candidate list, and the candidate at the position is
+selected.  When the value is "variable", the variable referred must
+have an integer value that specifies the position in the candidate
+list.
+
+#if EXAMPLE_CODE
+<select selector="@previous"/>
+<select index="0"/>
+#endif
+
+These code selects the previous or the first candidate respectively.
+
+@verbatim
+
+<define name="move"> 
+  <choice> 
+     <element name="move-to-marker"> <ref name="marker"/></element> 
+     <element name="move-to-character-position"> <data type="integer"/></element> 
+  </choice>
 </define>
+
+@endverbatim
+
+These two &lt;action&gt;s moves marker positions.  The element
+&lt;move-to-marker&gt; makes the marker position to be the new current
+position.  The element &lt;move-to-character-position&gt; treats its
+content integer value as a character position, and makes that position
+to be the new current position.
+
+#if EXAMPLE_CODE
+<move-to-marker position="@previous"/>
+<move-to-character-position>0</move-to-character-position>
+#endif
+
+@verbatim
 
 <define name="mark">  
       <element name="mark-current-position">
-<!-- The element <mark-current-position> sets the position of the specified marker
-to the current position -->
 	<ref name="user-defined-marker"/>
       </element>
 </define>
 
+@endverbatim
+
+The element &lt;mark-current-position&gt; sets the position of the specified marker
+to the current position.
+
+#if EXAMPLE_CODE
+<mark-current-position markerID="M"/>
+#endif
+
+This code sets the marker "M" to the current position.
+
+@verbatim
+
 <define name="pushback">
-<!-- The elements <pushback-??> pushes back key events to the event queue. -->
     <choice>
       <element name="pushback-n-events">
-<!-- The element <pushback-n-events> pushes back the latest key events.
-If the value of the attribute "n" is positive integer, it specifies how many key events 
-should be  pushed back.  If the value is zero, all key events are pushed back.-->
-	<attribute name="n"><data type="nonNegativeInteger"/></attribute></element>
-      <element name="pushback-keyseq">
-<!-- The element <pushback-keyseq> pushes back keys specified by <keyseq> -->
-	<ref name="keyseq"/>
+	<attribute name="n"><data type="nonNegativeInteger"/></attribute>
       </element>
+      <element name="pushback-keyseq"><ref name="keyseq"/></element>
    </choice>
 </define>
 
+@endverbatim
+
+These two &lt;action&gt;s pushes back key events to the event queue.  The
+element &lt;pushback-n-events&gt; pushes back the latest key events.  If the
+value of the attribute "n" is positive integer, it specifies how many
+key events should be pushed back.  If the value is zero, all key
+events are pushed back.  The element &lt;pushback-keyseq&gt; pushes back
+keys specified by &lt;keyseq;gt;.
+
+#if EXAMPLE_CODE
+<pushback-keyseq><keyseq keys="b"/></pushback-keyseq>
+#endif
+
+This code pushes back a "b".
+
+@verbatim
+
 <define name="undo">
   <element name="undo">
-<!-- The element <undo> cancels the last two key events (i.e. the one 
-that invoked this command, and the previous one) when no argument is given. -->
     <optional>
       <choice>
 	<attribute name="target-of-undo">
 	  <choice>
-	    <data type="positiveInteger">
-<!-- If the value of the attribute "target-of-undo" is positive integer NUM, 
-from the NUMth to the last events are canceled. -->
-	    </data>
-	    <data type="negativeInteger">
-<!-- If the value of the attribute "target-of-undo" is negative integer NUM,
-the last (- NUM) events are canceled. -->
-	    </data>
+	    <data type="positiveInteger"/>
+	    <data type="negativeInteger"/>
 	  </choice>
 	</attribute>
-	<ref name="variable-reference">
-<!-- The variable must be resolved to an nonzero integer and the integer is treated as above. -->
-	</ref>
+	<ref name="variable-reference"/>
       </choice>
     </optional>
   </element>
 </define>
 
+@endverbatim
+
+The element &lt;undo&gt; cancels the last two key events (i.e. the one that
+invoked this command, and the previous one) when no attirubute is
+given.  If the value of the attribute "target-of-undo" is a positive
+integer NUM, from the NUMth to the last events are canceled.  If it is
+a negative integer NUM, the last (- NUM) events are canceled.  When a
+variable appears, it must be resolved to an nonzero integer and the
+integer is treated as above. 
+
+#if EXAMPLE_CODE
+<undo target-of-undo="-1"/>
+#endif
+
+@verbatim
+
 <define name="call">
   <element name="call">
-<!-- The element <call> calls a function of an external module.
- The function must return NULL or a value of the type (#MPlist *) that
- represents a list of actions to take. -->
-    <attribute name="id">
-<!-- The value of the attribute "id" specifies an external module.
-It must appear in the elemenet <module-list>. -->
-    <data type="IDREF"/></attribute>
+    <attribute name="id"><data type="IDREF"/></attribute>
     <element name="function-reference">
-<!-- The element <function-reference> specifies a function to be called.
-It must appear in the elemenet <module-list>. -->
       <attribute name="id"><data type="IDREF"/></attribute>
     </element>
     <zeroOrMore>
       <element name="argument">
-<!--The function can be called with an argument of the type (#MPlist
-*).  The key of the first element of the list is #Mt and its value is 
-a pointer to an object of the type #MInputContext.  The key of the second
-element of the list is #Msymbol and its value is the current state name.  
-The element <argument> specifies the value of the third element or later.
-Their keys are determined automatically; if the value of the attribute "type"
-is "integer",  the corresponding key is #Minteger; if it is a symbol, the
-corresponding key is #Msymbol, etc. -->
 	<choice>
 	  <group>
 	    <attribute name="type"><value>string</value></attribute>
@@ -775,17 +1112,49 @@ corresponding key is #Msymbol, etc. -->
   </element>
 </define>
 
+@endverbatim
+
+The element &lt;call&gt; calls a function of an external module.  The
+function must return NULL or a value of the type (#MPlist *) that
+represents a list of actions to take. 
+
+The value of the attribute "id" specifies an external module.  It must
+appear in the elemenet &lt;module-list&gt;. The element
+&lt;function-reference&gt; specifies a function to be called.  It must
+appear in the elemenet &lt;module-list&gt;.
+
+The function can be called with an argument of the type (#MPlist
+*).  The key of the first element of the list is #Mt and its value is 
+a pointer to an object of the type #MInputContext.  The key of the second
+element of the list is #Msymbol and its value is the current state name.  
+The element &lt;argument&gt; specifies the value of the third element or later.
+Their keys are determined automatically; if the value of the attribute "type"
+is "integer",  the corresponding key is #Minteger; if it is a symbol, the
+corresponding key is #Msymbol, etc. 
+
+#if EXAMPLE_CODE
+<call id="module-libmimx-anthy">
+  <function-reference id="function-resize"/>
+    <argument type="symbol">
+      <variable-reference id="t"/>
+    </argument>
+</call>
+#endif
+
+This code calls the function function-resize of the module
+module-libmimx-anthy with a symbol argument whose value is "t".
+
+@verbatim
+
 <define name="expr">
     <choice>
       <group>
 	<element name="expr">
-<!-- An <expr>ession can be a zero or more <expr>essions conbined with an operator. -->
           <attribute name="operator"><ref name="operator"/></attribute>
 	  <zeroOrMore><ref name="expr"/></zeroOrMore>
 	</element>
       </group>
       <element name="int-val">
-<!-- An <expr>ession can be an integer value. --> 
 	<choice>
 	  <data type="integer"/>
 	  <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
@@ -793,56 +1162,88 @@ corresponding key is #Msymbol, etc. -->
 	</choice>
       </element>
       <ref name="predefined-nth-previous-or-following-character">     
-<!-- An <expr>ession can be a character at a specified position. -->
       </ref>	 
       <ref name="variable-reference">
-<!-- An <expr>ession can also be a variable.  -->
       </ref>
     </choice>
 </define>
 
+@endverbatim
+
+An &lt;expr&gt;ession can be 
+ @li a zero or more &lt;expr&gt;essions conbined with an operator,
+ @li an integer value. 
+ @li a character at a specified position. 
+ @li a variable.  
+
+#if EXAMPLE_CODE
+<expr operator="=">
+   <predefined-nth-previous-or-following-character position="-1"/>
+   <int-val>0x0D91</int-val>
+</expr>
+#endif
+
+This code is an expression as a whole, and it contains two (the second
+and the third line) expressions.
+
+@verbatim
+
 <define name="variable-reference">
   <element name="variable-reference">
-<!-- The element <variable-reference> has the same effect that
-the value of the referred <variable>> would have, if appeared in its place. -->
     <choice>
-      <attribute name="id">
-      </attribute>
+      <attribute name="id"/>
       <ref name="predefined-variable"/>
     </choice>
   </element>
 </define>
 
+@endverbatim
+
+The element &lt;variable-reference&gt; has the same effect that the value of
+the referred &lt;variable&gt; would have, if appeared in its place.
+
+#if EXAMPLE_CODE
+<variable-reference id="handled-keys" type="predefined"/> 
+<variable-reference id="KK"/>
+#endif
+
+@verbatim
+
 <define name="operator">
   <choice>
-      <!-- Operators used in <expr>s. -->
-      <value>+<!-- add --></value> 
-      <value>-<!-- subtract --></value>
-      <value>*<!-- multiply --></value>
-      <value>/<!-- divide --></value>
-      <value>|<!-- or --></value>
-      <value>&amp;<!-- and --></value>
-      <value>!<!-- not --></value>
-      <value>=<!-- equal to --></value>
-      <value>&lt;<!-- less than --></value>
-      <value>&gt;<!-- greater than --></value>
-      <value>&lt;=<!-- less than or equal to --></value>
-      <value>&gt;=<!-- greater than or equal to --></value>
+      <value>+</value> 
+      <value>-</value>
+      <value>*</value>
+      <value>/</value>
+      <value>|</value>
+      <value>&</value>
+      <value>!</value>
+      <value>=</value>
+      <value><</value>
+      <value>></value>
+      <value><=</value>
+      <value>>=</value>
   </choice>
 </define>
 
+@endverbatim
+
+These are the operatiors that can appear in &lt;expr&gt;essions.  The
+operators @c +, @c -, @c *, @c / does arithmetics.  @c |, @c &amp;, @c
+! are OR, AND, NOT operators.  The operators @c =, @c &lt;, @c &gt;,
+@c &lt;=, @c &gt;= take two arguments and compare them.
+
+@verbatim
+
 <define name="if">
   <element name="if">
-<!-- The element <if> performs actions in <if-true-action-list> 
-if the relation between its two <expr>essions meets the attribute "condition".
-If not, <if> performs actions in the element <if-not-true-action-list> (if it exists.)-->
     <attribute name="condition">
       <choice>
-      <value>=<!-- equal to --></value>
-      <value>&lt;<!-- less than --></value>
-      <value>&gt;<!-- greater than --></value>
-      <value>&lt;=<!-- less than or equal to --></value>
-      <value>&gt;=<!-- greater than or equal to --></value>
+      <value>=</value>
+      <value><</value>
+      <value>></value>
+      <value><=</value>
+      <value>>=</value>
     </choice></attribute>
     <ref name="expr"/>
     <ref name="expr"/>
@@ -853,10 +1254,26 @@ If not, <if> performs actions in the element <if-not-true-action-list> (if it ex
   </element>
 </define>
 
+@endverbatim
+
+The element &lt;if&gt; performs actions in &lt;if-true-action-list&gt; if the
+relation between its two &lt;expr>essions meets the attribute
+"condition".  If not, &lt;if&gt; performs actions in the element
+&lt;if-not-true-action-list&gt; (if it exists.)
+
+#if EXAMPLE_CODE
+<if condition="<">
+  <variable-reference id="C"/><int-val>0</int-val>
+  <if-true-action-list><shift-to id="state-init"/></if-true-action-list>
+</if>
+#endif
+
+This code performs the &lt;shift-to&gt; action if the variable @c C is negative.
+
+@verbatim
+
 <define name="conditional">
   <element name="conditional">
-<!-- The element <conditional> checks the <expr>s in the <case>s one by one,
-and performs <saction>s in the first <case> whose <expr> has a nonzero value. -->
     <zeroOrMore>
       <group>
 	<element name="case">
@@ -867,52 +1284,56 @@ and performs <saction>s in the first <case> whose <expr> has a nonzero value. --
     </zeroOrMore>
   </element>
 </define>
+
+@endverbatim
+
+The element &lt;conditional&gt; checks the &lt;expr&gt;s in the &lt;case&gt;s one by one,
+and performs &lt;saction&gt;s in the first &lt;case&gt; whose &lt;expr&gt; has a nonzero value. 
+
+#if EXAMPLE_CODE
+
+<conditional>
+  <case>
+    <expr operator="=">
+      <predefined-nth-previous-or-following-character position="-2"/>
+      <int-val>0x0E24</int-val>
+    </expr>
+  </case>
+  <case>
+    <int-val>1</int-val>
+    <delete-n-characters n="-1"/>
+        :            :
+  </case>
+</conditional>
+#endif
+
+This code performs the &lt;delete-n-characters n="-1"/&gt; and
+following actions unless the second previous character is Thai
+character RU (whose character code is 0x0E24).
+
+@subsection imstate Input Method States
+
+@verbatim
       
 <define name="state-list">
   <element name="state-list">
-<!--  The input method driver is always in one of the <state>s of an <input-method>
-and may transit to another <state> when processing an input.  The same input sequence
-can trigger different <saction>s and produce different results in different <state>s.
-When an input context is created, i.e. the input method is invoked, it is in the first
-<state> of the <state-list>.
- -->
     <zeroOrMore>
       <element name="state">
-<!-- The element <state> defines <sactions> the input method driver should take, in responce to
-the input sequence, including transitions to another <state>. 
- -->
 	<attribute name="id">
-<!-- The attribute "id" gives the name of a <state>-->
 	  <data type="ID"><param name="pattern">state-.*</param></data>
 	</attribute>
 	<optional><element name="state-title-text"><data type="string"/></element></optional>
-<!-- The element <state-title-text> specifies a title text displayed on
-the screen when the input method is in this state.  When this element
-is omitted, the content of the <title> element is used instead. -->
 	<interleave>
 	<optional>
 	  <element name="state-hook"><oneOrMore><ref name="saction"/></oneOrMore></element>
-<!-- When the input method driver is shifted to the current <state>,  
-<saction>s are executed.  Remember that when an input context of the input method
-is created, the input method is "shifted" to the first <state> in the <state-list> element, 
-and the  <saction>s in the <state-hook> of the first <state> will be executed.  -->
 	</optional>
 	<optional>
 	  <element name="catch-all-branch">
-<!-- When an input sequence does not match with any of the <branch>s in the current <state>,
-   1. If the <catch-all-branch> element exists,
-      <saction>s in the <catch-all-branch> is executed.
-   2  If the <catch-all-branch> is omitted,
-     the input method transits to the initial state.
- -->
 		 <zeroOrMore><ref name="saction"/></zeroOrMore>
 	  </element>
 	</optional>
 	<zeroOrMore>
 	  <element name="branch">
-<!-- Each branch defines <saction>s triggered by input sequences in one <map> element. 
-The value of the attribute "branch-selecting-map" specifies a <map>'s "id" value.
-If an input sequence matches one of the <keyseq> of a <rule> of the <map>, <saction>s are executed. -->
 	    <attribute name="branch-selecting-map">
 		<data type="IDREF"/>
 	    </attribute>
@@ -925,8 +1346,104 @@ If an input sequence matches one of the <keyseq> of a <rule> of the <map>, <sact
   </element>
 </define>
 
+@endverbatim
 
-<!-- plist -->
+The input method driver is always in one of the &lt;state&gt;s of an
+&lt;input-method&gt; and may transit to another &lt;state&gt; when
+processing an input.  The same input sequence can trigger different
+&lt;saction&gt;s and produce different results in different
+&lt;state&gt;s.  When an input context is created, i.e. the input
+method is invoked, it is in the first &lt;state&gt; of the
+&lt;state-list&gt;.
+
+The attribute "id" gives the name of a &lt;state&gt;.  The element
+&lt;state-title-text&gt; specifies a title text displayed on the
+screen when the input method is in this state.  When this element is
+omitted, the content of the &lt;title&gt; element is used instead.
+
+Each &lt;state&gt; has zero or more &lt;branch&gt;es.  Each
+&lt;branch&gt; corresponds to a &lt;map&gt; in a &lt;map-list&gt;.
+The value of the attribute "branch-selecting-map" specifies a
+&lt;map&gt;'s "id" value.  When the input sequence matches one of the
+&lt;keyseq&gt; (or &lt;command-reference&gt;) of a &lt;rule&gt; of the
+&lt;map&gt;, the corresponding &lt;branch&gt; is selected,
+&lt;action&gt;s in the &lt;rule&gt; are executed, and &lt;saction&gt;s
+in that &lt;branch&gt; are executed.
+
+Optional element &lt;state-hook&gt; specifies &lt;sactions&gt;
+executed when the input method driver is shifted to the current
+&lt;state&gt;.  Remember that when an input context of the input
+method is created, the input method is "shifted" to the first
+&lt;state&gt; in the &lt;state-list&gt; element, and the
+&lt;saction&gt;s in the &lt;state-hook&gt; of the first &lt;state&gt;
+will be executed.
+
+When an input sequence does not match with any of the &lt;branch&gt;s in the current &lt;state&gt;,
+   @li If the &lt;catch-all-branch&gt; element exists,
+      &lt;saction&gt;s in the &lt;catch-all-branch&gt; is executed.
+   @li If the &lt;catch-all-branch&gt; is omitted,
+     the input method transits to the initial state.
+
+#if EXAMPLE_CODE
+
+<state-list>
+  <state id="state-init">
+    <branch branch-selecting-map="map-consonant">
+      <move-to-marker position="@first"/>
+              :             :
+    </branch>
+    <branch branch-selecting-map="map-misc"/>
+    <branch branch-selecting-map="map-join">
+      <shift-to id="state-join"/>
+    </branch>
+  </state>
+  <state id="state-join">
+    <branch branch-selecting-map="map-consonant">
+      <move-to-marker position="@first"/>
+              :             :
+      <shift-to id="state-init"/>
+    </branch>
+    <catch-all-branch>
+      <shift-to id="state-init"/>
+    </catch-all-branch>
+  </state>
+</state-list>
+#endif
+
+This code defines state transitions in an input method.  It has two
+states "state-init" and "state-join".  The state "state-init" has
+three branches.  When an input sequence belonging to "map-consonant",
+"map-misc" and "map-join" is given, the corresponding branch is
+selected and its &lt;saction&gt;s are executed.  When "map-join" is
+selected, the state is shift to "state-join".  The state "state-join"
+has one branch for input sequences from "map-consonant" and one
+catch-all-branch for everything else, both shiting the state to
+"state-init".
+
+@verbatim
+
+<define name="saction">
+  <choice>
+    <element name="shift-to"><attribute name="id"><data type="IDREF"/></attribute></element>
+    <element name="shift-back"><empty/></element>
+    <ref name="action"/>
+  </choice>
+</define>
+
+@endverbatim
+
+&lt;saction&gt;s (state-actions) are &lt;action&gt;s and state transitions. 
+
+The element &lt;shift-to&gt; shifts the current state to the one specified
+by the value of the attribute "id".  The value must appear in
+&lt;state-list&gt;.  The element &lt;shift-back&gt; shifts the current state to
+the previous one.
+
+@subsection implist Plist
+
+plistObject used in the element &lt;call&gt; is defined as below.
+
+@verbatim
 
   <define name="plistObject">
     <element name="pListObject">
@@ -973,10 +1490,13 @@ If an input sequence matches one of the <keyseq> of a <rule> of the <map>, <sact
       </zeroOrMore>
     </element>
   </define>
-
-</grammar>
-
 @endverbatim
+
+@verbatim
+</grammar>
+@endverbatim
+
+The RelaxNG schema for a input method closes with &lt;/grammar&gt;.
 
 @ifnot FOR-MAN
 
@@ -1002,7 +1522,6 @@ you will get this:
 The definition of the input method is very simple as below, and it is
 quite straight forward to extend it to cover all Latin characters.
 
-@if FOR-HTML
 @verbatim
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
@@ -1013,30 +1532,30 @@ quite straight forward to extend it to cover all Latin characters.
   <title>latin-postfix</title>
   <map-list>
     <map id="map-trans">
-      <rule><keyseq keys="A&apos;"/><insert string="Á"/></rule>
-      <rule><keyseq keys="a&apos;"/><insert string="á"/></rule>
-      <rule><keyseq keys="A&apos;&apos;"/><insert string="A&apos;"/></rule>
-      <rule><keyseq keys="a&apos;&apos;"/><insert string="a&apos;"/></rule>
+      <rule><keyseq keys="A'"/><insert string="Á"/></rule>
+      <rule><keyseq keys="a'"/><insert string="á"/></rule>
+      <rule><keyseq keys="A''"/><insert string="A'"/></rule>
+      <rule><keyseq keys="a''"/><insert string="a'"/></rule>
       <rule><keyseq keys="C,"/><insert string="Ç"/></rule>
       <rule><keyseq keys="c,"/><insert string="ç"/></rule>
       <rule><keyseq keys="C,,"/><insert string="C,"/></rule>
       <rule><keyseq keys="c,,"/><insert string="c,"/></rule>
-      <rule><keyseq keys="E&apos;"/><insert string="É"/></rule>
-      <rule><keyseq keys="e&apos;"/><insert string="é"/></rule>
-      <rule><keyseq keys="E&apos;&apos;"/><insert string="E&apos;"/></rule>
-      <rule><keyseq keys="e&apos;&apos;"/><insert string="e&apos;"/></rule>
-      <rule><keyseq keys="I&apos;"/><insert string="Í"/></rule>
-      <rule><keyseq keys="i&apos;"/><insert string="í"/></rule>
-      <rule><keyseq keys="I&apos;&apos;"/><insert string="I&apos;"/></rule>
-      <rule><keyseq keys="i&apos;&apos;"/><insert string="i&apos;"/></rule>
-      <rule><keyseq keys="O&apos;"/><insert string="Ó"/></rule>
-      <rule><keyseq keys="o&apos;"/><insert string="ó"/></rule>
-      <rule><keyseq keys="O&apos;&apos;"/><insert string="O&apos;"/></rule>
-      <rule><keyseq keys="o&apos;&apos;"/><insert string="o&apos;"/></rule>
-      <rule><keyseq keys="U&apos;"/><insert string="Ú"/></rule>
-      <rule><keyseq keys="u&apos;"/><insert string="ú"/></rule>
-      <rule><keyseq keys="U&apos;&apos;"/><insert string="U&apos;"/></rule>
-      <rule><keyseq keys="u&apos;&apos;"/><insert string="u&apos;"/></rule>
+      <rule><keyseq keys="E'"/><insert string="É"/></rule>
+      <rule><keyseq keys="e'"/><insert string="é"/></rule>
+      <rule><keyseq keys="E''"/><insert string="E'"/></rule>
+      <rule><keyseq keys="e''"/><insert string="e'"/></rule>
+      <rule><keyseq keys="I'"/><insert string="Í"/></rule>
+      <rule><keyseq keys="i'"/><insert string="í"/></rule>
+      <rule><keyseq keys="I''"/><insert string="I'"/></rule>
+      <rule><keyseq keys="i''"/><insert string="i'"/></rule>
+      <rule><keyseq keys="O'"/><insert string="Ó"/></rule>
+      <rule><keyseq keys="o'"/><insert string="ó"/></rule>
+      <rule><keyseq keys="O''"/><insert string="O'"/></rule>
+      <rule><keyseq keys="o''"/><insert string="o'"/></rule>
+      <rule><keyseq keys="U'"/><insert string="Ú"/></rule>
+      <rule><keyseq keys="u'"/><insert string="ú"/></rule>
+      <rule><keyseq keys="U''"/><insert string="U'"/></rule>
+      <rule><keyseq keys="u''"/><insert string="u'"/></rule>
     </map>
   </map-list>
   <state-list>
@@ -1046,26 +1565,7 @@ quite straight forward to extend it to cover all Latin characters.
   </state-list>
 </input-method>
 @endverbatim
-@endif
-@if FOR-LATEX
-@latexonly
-\texttt{\footnotesize
-\hskip2mm(title "latin-postfix")\\
-\hskip2mm(map\\
-\hskip4mm (trans\\
-\hskip6mm  ("a'" ?\'{a}) ("e'" ?\'{e}) ("i'" ?\'{i}) ("o'" ?\'{o})
-("u'" ?\'{u}) ("c," ?\c{c})\\
-\hskip6mm  ("A'" ?\'{A}) ("E'" ?\'{E}) ("I'" ?\'{I}) ("O'" ?\'{O})
-("U'" ?\'{U}) ("C," ?\c{C})\\
-\hskip6mm  ("a''" "a'") ("e''" "e'") ("i''" "i'") ("o''" "o'") ("u''" "u'")\\
-\hskip6mm  ("c,," "c,")\\
-\hskip6mm  ("A''" "A'") ("E''" "E'") ("I''" "I'") ("O''" "O'") ("U''" "U'")\\
-\hskip6mm  ("C,," "C,")))\\
-\hskip2mm(state\\
-\hskip4mm (init\\
-\hskip6mm  (trans)))}
-@endlatexonly
-@endif
+
 
 @section im-example2 EXAMPLE 2
 
@@ -1124,7 +1624,7 @@ The definition utilizes <set> and <conditional> as below:
         <set id="this"><predefined-nth-previous-or-following-character position="-1"/></set>
         <conditional>
           <case>
-            <expr operator="&lt;">
+            <expr operator="<">
               <predefined-nth-previous-or-following-character position="-1"/>
               <int-val>65</int-val> <!-- ?A -->
             </expr>
@@ -1139,7 +1639,7 @@ The definition utilizes <set> and <conditional> as below:
           <expr operator="+">
             <expr operator="*">
               <variable-reference id="code"/>
-p              <int-val>16</int-val>
+               <int-val>16</int-val>
             </expr>
             <variable-reference id="this"/>
           </expr>

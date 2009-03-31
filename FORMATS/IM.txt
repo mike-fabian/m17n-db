@@ -317,7 +317,7 @@ if surrounding text is supported, and -2 if not.
 <variable-reference id="handled-keys" type="predefined"/>
 #endif
 
-This code refers to a predefined variable "handled-keys".
+This code refers to the number of handled keys at that moment.
 
 @verbatim
 

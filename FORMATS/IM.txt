@@ -486,9 +486,9 @@ a marker.  The position of a marker is referred by the elements
 
 @endverbatim
 
-Predefined markers start with @@.  @@0, @@1, ... , @@9 mark the 0th, 1st,
-2nd,... 9th position respectively. @@previous_candidate_list mark the
-previous position where a candidate list changes.
+Predefined markers start with @@.  @@0, @@1, ... , @@9 mark the
+0th, 1st, 2nd,... 9th position respectively. @@previous_candidate_list
+mark the previous position where a candidate list changes.
 @@next_candidate_list mark the next position where a candidate list
 changes.
 

@@ -616,7 +616,7 @@ This code selects the previous candidate.
 
 @endverbatim
 
-The element &lt;map&gt; bundles and names a set of groups similar &lt;rule&gt;s,
+The element &lt;map&gt; bundles and names a set of similar &lt;rule&gt;s,
 so that &lt;state&gt; transitions can be clearly defined.  The attribute
 "id" gives the name of a &lt;map&gt;.
 

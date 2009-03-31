@@ -143,7 +143,7 @@ inherit its variables and commands.
 When the element &lt;language&gt; has "t" as its content, the use of the
 input method is not limited to one language.  When the content is
 other than "t", it must be a valid code in ISO639-1, two-character
-code or ISO639-2, three charcter code for the names of languages.
+code or ISO639-2, three character code for the names of languages.
 
 When the element &lt;name&gt; has "nil" as its content, the input method is
 not standalone, but is expected to be used in other input methods.  In
@@ -245,7 +245,7 @@ variable must be initialized to the default value, or is to be
 customized by a user, it must be declared here.  The declaration can
 be used in two ways.  One is to introduce a new variable.  In that
 case, the &lt;value&gt; element in &lt;variable&gt; must not be omitted.  Another
-is to inherit the variable from what declared in "global.mim", and to
+is to inherit the variable from what declared in "global.mimx", and to
 give the different default value and/or to make the variable
 customizable specially for the current input method.  In the latter
 case, &lt;value&gt; can be omitted.
@@ -307,9 +307,9 @@ This code declares one variable "precomposed" whose value can be 0 or
 @endverbatim
 
 Predefined-variables are variables whose "type" attribute has the
-value "predefiend".  When "id" sttribute has the value "handled-keys",
+value "predefined".  When "id" attribute has the value "handled-keys",
 the value of the variable is the number of handled keys at that
-moment.  If the "id" attrubyte has the value
+moment.  If the "id" attribute has the value
 "predefined-surround-text-flag", the value of the variable is -1
 if surrounding text is supported, and -2 if not.
 
@@ -317,7 +317,7 @@ if surrounding text is supported, and -2 if not.
 <variable-reference id="handled-keys" type="predefined"/>
 #endif
 
-This code referes to a predefined varialbe "handled-keys".
+This code refers to a predefined variable "handled-keys".
 
 @verbatim
 
@@ -345,7 +345,7 @@ command must be bound to the default key sequence, or is to be
 customized by a user, it must be declared here.  Like &lt;variable-list&gt;,
 the declaration can be used in two ways.  One is to introduce a new
 command.  In that case, the &lt;keyseq&gt; element must appear in &lt;command&gt;.
-Another is to inherit the command from what declared in "global.mim",
+Another is to inherit the command from what declared in "global.mimx",
 and to give the different key binding and/or to make the command
 customizable specially for the current input method.  In the latter
 case, &lt;keyseq&gt; can be omitted.
@@ -432,7 +432,7 @@ This code declares a module "module-libmimx-anthy" who export six functions.
 
 @endverbatim
 
-The elemnt &lt;macro&gt; bundles and names a set of &lt;action&gt;s.  The
+The element &lt;macro&gt; bundles and names a set of &lt;action&gt;s.  The
 attribute "id" gives the name of a &lt;macro&gt;, and a macro is referred
 with this attribute.
 
@@ -487,7 +487,7 @@ a marker.  The position of a marker is referred by the elements
 @endverbatim
 
 Predefined markers start with @@.  @@0, @@1, ... , @@9 mark the 0th, 1st,
-2nd,... 9th position respetively. @@previous_candidate_list mark the
+2nd,... 9th position respectively. @@previous_candidate_list mark the
 previous position where a candidate list changes.
 @@next_candidate_list mark the next position where a candidate list
 changes.
@@ -515,7 +515,7 @@ User-defined markers may not start with @@.
  <move-to-marker position="T"/>
 #endif
 
-This code moves the marker to the usr defined position T.
+This code moves the marker to the user defined position T.
 
 @verbatim
 
@@ -573,7 +573,7 @@ Predefined-selectors specify positions in a candidate list. They are
 used in the element &lt;select&gt;.  
 
 @@0, @@1, ... , @@9 specify the 0th, 1st, ... 9th position
-respetively.  @@previous means the previous position, and if the
+respectively.  @@previous means the previous position, and if the
 current candidate is the first one in the current candidate group,
 this value means the last candidate in the previous candidate
 group. @@next means the next position, and if the current candidate is
@@ -624,7 +624,7 @@ The element &lt;rule&gt; defines the mapping of an input key sequence
 &lt;keyseq&gt; (or &lt;command&gt;) and &lt;action&gt;s the input
 method driver should take.  When the &lt;action&gt; is to
 &lt;insert&gt; an appropriate character, for example, the &lt;rule&gt;
-defines the mapping between the input key on the keyboad and the
+defines the mapping between the input key on the keyboard and the
 character to appear on the screen.
 
 #if EXAMPLE_CODE
@@ -714,7 +714,7 @@ in the referred &lt;command&gt; would have, if appeared in its place.
 <command-reference id="command-start"/>
 #endif
 
-This code calls command "commad-start".
+This code calls command "command-start".
 
 @verbatim
 
@@ -778,7 +778,7 @@ unhandled.
 
 The element &lt;set&gt;, &lt;add&gt;, &lt;sub&gt;, &lt;mul&gt; and
 &lt;div&gt; sets, increments, decrements, multiplies and divides the
-value of the variable respecrively.
+value of the variable respectively.
 
 #if EXAMPLE_CODE
 <set id="MAX-COUNT">
@@ -851,7 +851,7 @@ attribute, before the current position.  The marker positions affected
 by the insertion are automatically relocated.
 
 The attribute "string" specifies a M-text to be inserted.  The
-attriubute "character" specifies the code of a character to be
+attribute "character" specifies the code of a character to be
 inserted.  The attribute "character-or-string" must have a variable as
 its value and &lt;insert&gt; inserts the value of the specified variable, if
 it is a valid character code or a M-text.
@@ -865,7 +865,7 @@ it is a valid character code or a M-text.
 These codes insert the same character "á".
 
 When the element &lt;candidates&gt; is given, each character in the content
-of the element &lt;candidtes&gt; is a candidate to be inserted.  &lt;insert&gt;
+of the element &lt;candidates&gt; is a candidate to be inserted.  &lt;insert&gt;
 inserts the first candidate before the current position.  The inserted
 character is associated with the list of candidates and the
 information indicating the currently selected candidate. 
@@ -906,7 +906,7 @@ with it.
 There are three &lt;action&gt;s for deleting characters.  The marker
 positions affected by these &lt;action&gt;s are automatically relocated.
 
-The element &lt;delet-to-marker&gt; deletes characters between the current
+The element &lt;delete-to-marker&gt; deletes characters between the current
 position and the marker position.  
 
 #if EXAMPLE_CODE
@@ -929,7 +929,7 @@ This code deletes 3 characters before the current position in the buffer.
 The element &lt;delete-n-characters&gt; treats the value of the attribute
 "n" as the number of characters to be deleted, and executes the
 deletion.  If the value N is negative, the preceding N characters from
-the current position are deleted.  If positive, folliwing N characters
+the current position are deleted.  If positive, following N characters
 are deleted. 
 
 #if EXAMPLE_CODE
@@ -1120,9 +1120,9 @@ function must return NULL or a value of the type (#MPlist *) that
 represents a list of actions to take. 
 
 The value of the attribute "id" specifies an external module.  It must
-appear in the elemenet &lt;module-list&gt;. The element
+appear in the element &lt;module-list&gt;. The element
 &lt;function-reference&gt; specifies a function to be called.  It must
-appear in the elemenet &lt;module-list&gt;.
+appear in the element &lt;module-list&gt;.
 
 The function can be called with an argument of the type (#MPlist
 *).  The key of the first element of the list is #Mt and its value is 
@@ -1172,7 +1172,7 @@ module-libmimx-anthy with a symbol argument whose value is "t".
 @endverbatim
 
 An &lt;expr&gt;ession can be 
- @li a zero or more &lt;expr&gt;essions conbined with an operator,
+ @li a zero or more &lt;expr&gt;essions combined with an operator,
  @li an integer value. 
  @li a character at a specified position. 
  @li a variable.  
@@ -1229,7 +1229,7 @@ the referred &lt;variable&gt; would have, if appeared in its place.
 
 @endverbatim
 
-These are the operatiors that can appear in &lt;expr&gt;essions.  The
+These are the operators that can appear in &lt;expr&gt;essions.  The
 operators @c +, @c -, @c *, @c / does arithmetics.  @c |, @c &amp;, @c
 ! are OR, AND, NOT operators.  The operators @c =, @c &lt;, @c &gt;,
 @c &lt;=, @c &gt;= take two arguments and compare them.
@@ -1418,7 +1418,7 @@ three branches.  When an input sequence belonging to "map-consonant",
 selected and its &lt;saction&gt;s are executed.  When "map-join" is
 selected, the state is shift to "state-join".  The state "state-join"
 has one branch for input sequences from "map-consonant" and one
-catch-all-branch for everything else, both shiting the state to
+catch-all-branch for everything else, both shifting the state to
 "state-init".
 
 @verbatim

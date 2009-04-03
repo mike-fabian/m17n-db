@@ -674,15 +674,15 @@ value may contain Latin-1 characters.
 
 The content of the element &lt;key-event&gt; must be the return value of the
 minput_event_to_key () function.  Under the X window system, you can
-quickly check the value using the xev command.  For example, the
+quickly check the value using the @c xev command.  For example, the
 return key, the backspace key, and the 0 key on the keypad are
-represented as Return, BackSpace, KP_0 respectively.  If the shift,
+represented as @c Return, @c BackSpace, @c KP_0 respectively.  If the shift,
 control, meta, alt, super, and hyper modifiers are used, they are
 represented by the S- , C- , M- , A- , s-, and H- prefixes
 respectively in this order.  Thus, "return with shift with meta with
-hyper" is S-M-H-Return.  Note that "a with shift" .. "z with shift"
+hyper" is @c S-M-H-Return.  Note that "a with shift" .. "z with shift"
 are represented simply as A .. Z .  Thus "a with shift with meta with
-hyper" is M-H-A.  
+hyper" is @c M-H-A.  
 
 The content of the element &lt;character-code&gt; must be a valid character code. 
 
@@ -759,7 +759,7 @@ This code calls command "command-start".
 
 @endverbatim
 
-The element &lt;action&gt;s appear in &lt;rule&gt;s.
+&lt;action&gt;s appear in &lt;rule&gt;s.
 
 The element &lt;show-candidates&gt; instructs the input method driver to
 display a candidate list associated with the string before the current
@@ -924,7 +924,7 @@ position and the character position.
 <delete-to-character-position>-3</delete-to-character-position>
 #endif
 
-This code deletes 3 characters before the current position in the buffer.
+This code deletes 3 characters before the current position.
 
 The element &lt;delete-n-characters&gt; treats the value of the attribute
 "n" as the number of characters to be deleted, and executes the
@@ -947,7 +947,7 @@ This code deletes one following character.
 	<ref name="predefined-selector"/>
       </attribute>
       <attribute name="index">
-      <data type="integer"/>
+        <data type="integer"/>
       </attribute>
       <group>
 	<attribute name="index"><value>variable</value></attribute>
@@ -988,16 +988,19 @@ These code selects the previous or the first candidate respectively.
 
 @endverbatim
 
-These two &lt;action&gt;s moves marker positions.  The element
-&lt;move-to-marker&gt; makes the marker position to be the new current
-position.  The element &lt;move-to-character-position&gt; treats its
-content integer value as a character position, and makes that position
-to be the new current position.
+These two &lt;action&gt;s move the current position.  The element
+&lt;move-to-marker&gt; moves the current position to the position of
+the specified marker.  The element &lt;move-to-character-position&gt;
+treats its content integer value as a character position, and moves
+the current position there.
 
 #if EXAMPLE_CODE
 <move-to-marker position="@previous"/>
 <move-to-character-position>0</move-to-character-position>
 #endif
+
+These codes moves the current position to the previous position and
+the first position in the buffer respectively.
 
 @verbatim
 
@@ -1124,14 +1127,14 @@ appear in the element &lt;module-list&gt;. The element
 &lt;function-reference&gt; specifies a function to be called.  It must
 appear in the element &lt;module-list&gt;.
 
-The function can be called with an argument of the type (#MPlist
-*).  The key of the first element of the list is #Mt and its value is 
-a pointer to an object of the type #MInputContext.  The key of the second
-element of the list is #Msymbol and its value is the current state name.  
-The element &lt;argument&gt; specifies the value of the third element or later.
-Their keys are determined automatically; if the value of the attribute "type"
-is "integer",  the corresponding key is #Minteger; if it is a symbol, the
-corresponding key is #Msymbol, etc. 
+The function can be called with an argument of the type (#MPlist *).
+The key of the first element of the list is #Mt and its value is a
+pointer to an object of the type #MInputContext.  The key of the
+second element of the list is #Msymbol and its value is the current
+state name.  The element &lt;argument&gt; specifies the value of the
+third element or later.  Their keys are determined by the "type"
+argument; if its value is "integer", the corresponding key is
+#Minteger; if it is "symbol", the corresponding key is #Msymbol, etc.
 
 #if EXAMPLE_CODE
 <call id="module-libmimx-anthy">
@@ -1258,7 +1261,7 @@ operators @c +, @c -, @c *, @c / does arithmetics.  @c |, @c &amp;, @c
 @endverbatim
 
 The element &lt;if&gt; performs actions in &lt;if-true-action-list&gt; if the
-relation between its two &lt;expr>essions meets the attribute
+relation between its two &lt;expr&gt;essions meets the attribute
 "condition".  If not, &lt;if&gt; performs actions in the element
 &lt;if-not-true-action-list&gt; (if it exists.)
 
@@ -1308,9 +1311,9 @@ and performs &lt;saction&gt;s in the first &lt;case&gt; whose &lt;expr&gt; has a
 </conditional>
 #endif
 
-This code performs the &lt;delete-n-characters n="-1"/&gt; and
-following actions unless the second previous character is Thai
-character RU (whose character code is 0x0E24).
+This code performs the actions in the second &lt;case&gt; unless the
+second previous character is Thai character RU (whose character code
+is 0x0E24).
 
 @subsection imstate Input Method States
 
@@ -1354,8 +1357,8 @@ The input method driver is always in one of the &lt;state&gt;s of an
 processing an input.  The same input sequence can trigger different
 &lt;saction&gt;s and produce different results in different
 &lt;state&gt;s.  When an input context is created, i.e. the input
-method is invoked, it is in the first &lt;state&gt; of the
-&lt;state-list&gt;.
+method is invoked, the input method driver is in the first
+&lt;state&gt; of the &lt;state-list&gt;.
 
 The attribute "id" gives the name of a &lt;state&gt;.  The element
 &lt;state-title-text&gt; specifies a title text displayed on the
@@ -1382,7 +1385,7 @@ will be executed.
 When an input sequence does not match with any of the &lt;branch&gt;s in the current &lt;state&gt;,
    @li If the &lt;catch-all-branch&gt; element exists,
       &lt;saction&gt;s in the &lt;catch-all-branch&gt; is executed.
-   @li If the &lt;catch-all-branch&gt; is omitted,
+   @li If &lt;catch-all-branch&gt; is omitted,
      the input method transits to the initial state.
 
 #if EXAMPLE_CODE
@@ -1415,7 +1418,7 @@ This code defines state transitions in an input method.  It has two
 states "state-init" and "state-join".  The state "state-init" has
 three branches.  When an input sequence belonging to "map-consonant",
 "map-misc" and "map-join" is given, the corresponding branch is
-selected and its &lt;saction&gt;s are executed.  When "map-join" is
+selected and its &lt;saction&gt;s are executed.  When the branch with "map-join" is
 selected, the state is shift to "state-join".  The state "state-join"
 has one branch for input sequences from "map-consonant" and one
 catch-all-branch for everything else, both shifting the state to

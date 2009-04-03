@@ -1,552 +1,1751 @@
-/* Copyright (C) 2003, 2004, 2005
+/* Copyright (C) 2003, 2004, 2005, 2009
      National Institute of Advanced Industrial Science and Technology (AIST)
      Registration Number H15PRO112
    See the end for copying conditions.  */
 
-/* sections for example found in English vesion omitted */
+/***en
 
-/***ja
+@page mdbIM インプットメソッド
 
-@page mdbIM ����ץåȥ᥽�å�
+@section im-description 説明
 
-@section im-description ����
-
-m17n �饤�֥��ϡ�m17n �ǡ����١�������ưŪ�˥����ɤǤ������ϥ᥽�å�
-�ɥ饤�Ф��󶡤��Ƥ��롣(@ref m17nInputMethod ���ȡ� @latexonly
+m17n ライブラリは、m17n データベースから動的にロードできる入力メソッド
+ドライバを提供している。(@ref m17nInputMethod 参照。 @latexonly
 (P.\pageref{group__m17nInputMethod}) @endlatexonly).
 
-�����Ǥ����ϥ᥽�å�����Υǡ����ե����ޥåȤ��������롣
+ここでは入力メソッド定義のデータフォーマットを説明する。
 
-@section im-format ʸˡ�Ȱ�̣
+@section im-format 文法と意味
 
-�ʲ��Υǡ����ե����ޥåȤˤ�ä����ϥ᥽�åɤ��������롣�ɥ饤�Фϥե�
-����䥹�ȥ꡼�फ�����������ɤ����ץ��ѥƥ��ꥹ�Ȥη������Ѵ����롣
-
-@verbatim
-INPUT-METHOD ::=
-    IM-DECLARATION ? DESCRIPTION ? TITLE ?
-     VARIABLE-LIST ? COMMAND-LIST ?  MODULE-LIST ?
-     MACRO-LIST ? MAP-LIST ? STATE-LIST ?
-
-IM-DECLARATION ::= '(' 'input-method' LANGUAGE NAME EXTRA-ID ? VERSION ? ')'
-VERSION ::= '(' 'version' VERSION-NUMBER ')'
-DESCRIPTION ::= '(' 'description' [ MTEXT-OR-GETTEXT | nil] ')'
-VARIABLE-LIST ::= '(' 'variable' VARIABLE-DECLARATION * ')'
-COMMAND-LIST ::= '(' 'command' COMMAND-DECLARATION * ')'
-TITLE ::= '(' 'title' TITLE-TEXT ')'
-
-VARIABLE-DECLARATION ::=
-    '(' VAR-NAME [ MTEXT-OR-GETTEXT | nil ] VALUE VALUE-CANDIDATE * ')'
-
-COMMAND-DECLARATION ::=
-    '(' CMD-NAME [ MTEXT-OR-GETTEXT | nil ] KEYSEQ * ')'
-
-MTEXT-OR-GETTEXT ::=
-    [ MTEXT | '(' '_' MTEXT ')']
-
-LANGUAGE ::= SYMBOL
-NAME ::= SYMBOL
-EXTRA-ID ::= SYMBOL
-VERSION ::= MTEXT
-IM-DESCRIPTION ::= MTEXT
-VAR-NAME ::= SYMBOL
-VAR-DESCRIPTION ::= MTEXT
-VALUE ::= MTEXT | SYMBOL | INTEGER
-VALUE-CANDIDATE ::= VALUE | '(' RANGE-FROM RANGE-TO ')'
-RANGE-FROM ::= INTEGER
-RANGE-TO ::= INTEGER
-CMD-NAME ::= SYMBOL
-CMD-DESCRIPTION ::= MTEXT
-TITLE-TEXT ::= MTEXT
-@endverbatim
-
-@c IM-DECLARATION �Ϥ������ϥ᥽�åɤθ����̾������ꤹ�롣
-
-@c LANGUAGE �� @c t �ξ�硢�������ϥ᥽�åɤ�ʣ���θ�������Ѥ���롣
-
-@c NAME �� @c nil �ξ�硢�������ϥ᥽�åɤ�ñ�Ȥ��Ѥ������ΤǤϤ�
-����¾�����ϥ᥽�åɤ������Ѥ��뤳�Ȥ����ꤷ�Ƥ��롣���ξ�硢���ϥ�
-���åɤ����ꤹ�뤿��� @c EXTRA-ID ��ɬ�פǤ��롣
-
-@c VERSION �Ϥ������ϥ᥽�åɤ�ɬ�פȤ��� m17n �饤�֥��κǾ��С�����
-�����ꤹ�롣�ե����ޥåȤ� "XX.YY.ZZ" �Ǥ��ꡢXX �ϥ᥸�㡼�С�����
-�� YY �ϥޥ��ʡ��С������ZZ �ϥѥå���٥��ɽ����
-
-@c DESCRIPTION �Ϥ������ϥ᥽�åɤ������� @c MTEXT-OR-GETTEXT �ǻ��ꤹ
-�롣�⤷���줬�����ܤη������äƤ���С� @c MTEXT �ϸ��ߤΥ��������
-���ä� "gettext" �ˤ�ä���������������ʸ���󶡤���Ƥ�����ˡ�
-
-@c TITLE-TEXT �Ϥ������ϥ᥽�åɤ�ͭ���ʻ��������꡼����ɽ��������
-�����ȤǤ��롣
-
-"global.mim" �Ȥ������̤ʥե����뤬���ꡢ���̤����ѿ��䥳�ޥ�ɤ������
-��Ƥ��롣���ϥ᥽�åɥɥ饤�Ф���󤳤Υե����������ɤ���¾�����ϥ�
-���åɤϤ�����������줿�ѿ��䥳�ޥ�ɤ�Ѿ��Ǥ��롣
-
-@c VARIABLE-DECLARATION �Ϥ������ϥ᥽�åɤǻ��Ѥ�����ѿ���������롣
-�ѿ���ǥե�����ͤ˽���������ꡢ�桼�����������ޥ��������ꤹ�����
-�ϡ��������������ʤ��ƤϤʤ�ʤ���������������̤�����Ѥ���롣���
-��Ͽ������ѿ���Ƴ�����뤿��Ǥ��ꡢ���ξ�� @c VALUE �Ͼ�ά�Ǥ��ʤ���
-�⤦��Ĥ� "global.mim" ��������줿�ѿ���Ѿ�������ä��ǥե�����ͤ�
-���ꤷ���ꡢ�������ϥ᥽�å��Ѥ˥������ޥ�����ǽ�ˤ����ꤹ�뤿��Ǥ��롣
-���ξ��ˤ� @c VALUE �Ͼ�ά�Ǥ��롣
-
-@c COMMAND-DECLARATION �Ϥ������ϥ᥽�åɤǻ��Ѥ���륳�ޥ�ɤ�������롣
-���ޥ�ɤ�ǥե���ȥ����������󥹤˳�����Ƥ��ꡢ�桼�����������ޥ���
-�����ꤹ����ˤϡ��������������ʤ��ƤϤʤ�ʤ���@c
-VARIABLE-DECLARATION Ʊ�͡�������������̤�����Ѥ���롣��Ĥ�Ͽ�����
-���ޥ�ɤ�Ƴ�����뤿��Ǥ��ꡢ���ξ�� @c KEYSEQ �Ͼ�ά�Ǥ��ʤ����⤦��
-�Ĥ� "global.mim" ��������줿���ޥ�ɤ�Ѿ�������ä������Х���ǥ���
-������ꤷ���ꡢ�������ϥ᥽�å��Ѥ˥������ޥ�����ǽ�ˤ����ꤹ�뤿���
-���롣���ξ��ˤ� @c KEYSEQ �Ͼ�ά�Ǥ��롣
+以下に RelaxNG で書かれた入力メソッド定義用スキーマを示す。（このスキー
+マファイルは m17n-db-xml/MIM/mim.rng にある。） ドライバはファイルやス
+トリームから定義をロードし、プロパティリストの形式に変換する。
 
 @verbatim
-MODULE-LIST ::= '(' 'module' MODULE * ')'
 
-MODULE ::= '(' MODULE-NAME FUNCTION * ')'
+<?xml version="1.0" encoding="utf-8"?>
 
-MODULE-NAME ::= SYMBOL
+<grammar 
+	 datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+         xmlns:xi="http://www.w3.org/1999/XML/xinclude"
+	 xmlns="http://relaxng.org/ns/structure/1.0"
+	 ns="http://www.m17n.org/MIM">
 
-FUNCTION ::= SYMBOL
-@endverbatim
+<start>
+  <element name="input-method">
+    <ref name="im-declaration"/>
 
-�� @c MODULE �ϳ����⥸�塼�� (ưŪ�饤�֥��) ��̾���Ȥ��Υ⥸�塼�뤬
-�������Ƥ���ؿ�̾��������롣@c FUNCTION �� "init" �Ȥ���̾���Ǥ���С�
-�������ϥ᥽�å��Ѥ����ϥ���ƥ����Ȥ����������ݤˡ��ǥե���Ȥΰ���
-(@c CALL ���Ỳ��) �ΤߤȤȤ�˸ƤФ�롣 @c FUNCTION �� "fini" �Ȥ���
-̾������Ƥ�, ���ϥ���ƥ����Ȥ��˲������ݤˡ��ǥե���Ȥΰ����Τߤ�
-�Ȥ�˸ƤФ�롣
+    <optional>
+	<element name="description">
+	  <choice>
+	    <text/>
+	    <element name="get-text"><text/> </element>
+	  </choice>
+	</element>
+    </optional>
 
-@verbatim
-MACRO-LIST ::=  MACRO-INCLUSION ? '(' 'macro' MACRO * ')' MACRO-INCLUSION ?
-
-MACRO ::= '(' MACRO-NAME MACRO-ACTION * ')'
-
-MACRO-NAME ::= SYMBOL
-
-MACRO-ACTION ::= ACTION
-
-TAGS ::= `(` LANGUAGE NAME EXTRA-ID ? `)`
-
-MACRO-INCLUSION ::= '(' 'include' TAGS 'macro' MACRO-NAME ? ')'
+    <optional><element name="title"><data type="string"/></element></optional>
+    <optional><ref name="variable-list"/></optional>
+    <optional><ref name="command-list"/></optional>
+    <optional><ref name="module-list"/></optional>
+    <optional><ref name="macro-list"/></optional>
+    <optional><ref name="map-list"/></optional>
+    <optional><ref name="state-list"/></optional>
+  </element>
+</start>
 
 @endverbatim
 
-@c MACRO-INCLUSION �ϡ�@c TAGS �ǻ��ꤵ���¾�����ϥ᥽�åɤ���ޥ�����
-�ɤ߹��ࡣ@c MACRO-NAME ��Ϳ�����Ƥ��ʤ���С����ƤΥޥ������ɤࡣ
+入力メソッドのトップレベルノードは &lt;input-method&gt; というタグを持つ。
+
+&lt;description&gt; エレメントは、&lt;input-method&gt;,
+&lt;variable&gt;, &lt;command&gt; 中に現れることができ、その内容は親要
+素を説明するテキストである。&lt;get-text&gt; エレメントの内容は、現在の
+ロケールに従って "gettext" によって翻訳される（翻訳文が提供されている場
+合）。
+
+&lt;title&gt; エレメントの内容は、この入力メソッドが有効な時スクリーン
+上に表示されるテキストである。
+
+#if EXAMPLE_CODE
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>bo</language>
+    <name>ewts</name>
+  </tags>
+  <description>Tibetan input method based on EWTS.
+This implementation is based on THDL Extended Wylie Transliteration Scheme
+Version 2.0 &lt;http://www.thdl.org/collections/langling/ewts/ewts.php&gt;.</description>
+  <title>ཀ</title>
+      :       :
+#endif
+
+&lt;variable-list&gt; はこの入力メソッドで使用される変数を宣言する。
+&lt;command-list&gt; はこの入力メソッドで使用されるコマンドを宣言する。
+&lt;module-list&gt; はこの入力メソッドで使用される外部モジュールを宣言
+する。&lt;macro-list&gt; はこの入力メソッドで使用されるマクロを宣言する。
+&lt;map-list&gt; はこの入力メソッドで使用されるマップを宣言する。 入力
+メソッドがそれ単体で利用されることがなく常に他の入力メソッドに読み込ま
+れて用いられる場合には省略できる。&lt;state-list&gt; はこの入力メソッド
+で使用されるステートを宣言する。 入力メソッドがそれ単体で利用されること
+がなく常に他の入力メソッドに読み込まれて用いられる場合には省略できる。
+    
+@subsection im-declarations 入力メソッドの宣言
 
 @verbatim
-MAP-LIST ::= MAP-INCLUSION ? '(' 'map' MAP * ')' MAP-INCLUSION ?
 
-MAP ::= '(' MAP-NAME RULE * ')'
+<define name="im-declaration">
 
-MAP-NAME ::= SYMBOL
+  <element name="tags">
+    <element name="language">
+      <choice>
+	<value>t</value>
+	<data type="string"><param name="pattern">[a-z]{2,3}</param>
+	</data>
+      </choice>
+    </element>
+    <choice>
+      <group>
+	<element name="name"><value>nil</value></element>
+	<element name="extra-id"><data type="ID"/></element>
+      </group>
+      <group>
+	<element name="name">
+	  <choice>
+	    <data type="string"><param name="pattern">[^n][^i][^l]</param></data>
+	    <data type="string"><param name="pattern">.{1,2}</param></data>
+	    <data type="string"><param name="pattern">....+</param></data>
+	  </choice>
+	</element>
+      <optional>
+       <element name="extra-id"><data type="ID"/></element>
+     </optional>
+   </group>
+  </choice>
+  </element>
 
-RULE ::= '(' KEYSEQ MAP-ACTION * ')'
-
-KEYSEQ ::= MTEXT | '(' [ SYMBOL | INTEGER ] * ')'
-
-MAP-INCLUSION ::= '(' 'include' TAGS 'map' MAP-NAME ? ')'
+  <optional>
+    <element name="m17n-version">
+      <data type="string"><param name="pattern">[0-9]+\.[0-9]+\.[0-9]+</param></data>
+    </element>
+  </optional>
+</define>
 
 @endverbatim
 
-���ϥ᥽�åɤ�����ñ�Τ����Ѥ���뤳�Ȥ��ʤ����¾�����ϥ᥽�åɤ���
-�߹��ޤ���Ѥ�������ˤϡ�@c MAP-LIST �Ͼ�ά�Ǥ��롣
+&lt;tags&gt; エレメントは、この入力メソッドが対象とする言語や入力メソッ
+ド自体の名称を指定する。"global.mimx" という特別なファイルがあり、共通
+の変数やコマンドが定義されている。入力メソッドドライバは毎回このファイ
+ルをロードし、他の入力メソッドはここで定義された変数やコマンドを継承で
+きる。
 
-@c MAP-NAME ������ @c SYMBOL �ϡ� @c t ���뤤�� @c nil �Ǥ��äƤϤ�
-��ʤ���
+&lt;language&gt; エレメントの内容が @c t である場合、この入力メソッドは
+複数の言語で利用される。それ以外の場合には、エレメントの内容はISO639-1
+あるいは ISO639-2 に規定された言語の名称を表す２または３文字のコードで
+なくてはならない。
 
-@c KEYSEQ ������ @c MTEXT �ϡ������ܡ��ɤ��������Ǥ���ʸ���ǹ�������
-�롣���ʤ�� @c MTEXT ���̾� ASCII ʸ���Τߤ�ޤࡣ�����������ϥ᥽�å�
-�����Ȥ������衼���å��ѥ����ܡ��ɤ�Ȥ����Ȥ����ꤷ����ΤǤ���С�@c
-MTEXT �� Latin-1 ʸ����ޤ�Ǥ�褤��
+&lt;name&gt; エレメントの内容が @c nil である場合、この入力メソッドは単
+独で用いられるものではなく、他の入力メソッドから利用することを想定して
+いる。この場合、入力メソッドを特定するために &lt;extra-id&gt; エレメン
+トが必須である。&lt;name&gt; エレメントの内容が @c nil でない場合、
+&lt;extra-id&gt; エレメントは任意(optional)である。
 
-@c KEYSEQ ������ @c SYMBOL �ϡ��ؿ� minput_event_to_key () ������ͤ�
-�ʤ��ƤϤʤ�ʤ���X ������ɥ������ƥ�θ��Ǥϡ� @c xev ���ޥ�ɤ��Ѥ�
-���ͤ��ñ�˥����å��Ǥ��롣���Ȥ��С� �꥿���󥭡����Хå����ڡ���������
-�����ѥåɤ�0�Υ����ʤɤϡ����줾��@c (Return) , @c (BackSpace) , @c
-(KP_0) �Ȥ��Ƥ���蘆��롣���եȡ�����ȥ����롢�᥿������ȡ������ѡ���
-�ϥ��ѡ��ⲡ����Ƥ�����ˤϡ����줾��S- , C- , M- , A- , s- , H- ��
-���ˤ��ν���֤���롣�������ä� "�꥿���󥭡��򥷥եȤ��ƥ᥿���ƥϥ�
-�ѡ��������" ��@c (S-M-H-Return) �Ǥ��롣"a �򥷥ե�" ���� "z �򥷥ե�
-" �ޤǤϡ�ñ�� A ���� Z �Ȥ���ɽ����뤳�Ȥ����ա��������äơ� "a ��
-�եȤ��ƥ᥿���ƥϥ��ѡ��������" �� @c (M-H-A) �Ȥʤ롣
+#if EXAMPLE_CODE
+  <tags>
+    <language>bo</language>
+    <name>ewts</name>
+  </tags>
+#endif
 
-@c KEYSEQ ������ @c INTEGER �ϡ�ͭ����ʸ�������ɤǤʤ��ƤϤʤ�ʤ���
+#if EXAMPLE_CODE
+  <tags>
+    <language>t</language>
+    <name>nil</name>
+    <extra-id>zh-util</extra-id>
+  </tags>
+#endif
 
-@c MAP-INCLUSION �ϡ�@c TAGS �ǻ��ꤵ���¾�����ϥ᥽�åɤ���ޥåפ���
-�߹��ࡣ@c MAP-NAME ��Ϳ�����Ƥ��ʤ���С����ƤΥޥåפ��ɤࡣ
+&lt;m17n-version&gt; エレメント（任意）は、この入力メソッドが必要とする
+m17n ライブラリの最小バージョンを指定する。フォーマットは "X.Y.Z" であ
+り、X はメジャーバージョン、 Y はマイナーバージョン、Z はパッチレベルを
+表す。
 
-@verbatim
-MAP-ACTION ::= ACTION
-
-ACTION ::= INSERT | DELETE | SELECT | MOVE | MARK
-           | SHOW | HIDE | PUSHBACK | POP | UNDO 
-	   | COMMIT | UNHANDLE | SHIFT | CALL
-	   | SET | IF | COND | '(' MACRO-NAME ')'
-
-PREDEFINED-SYMBOL ::=
-    '@0' | '@1' | '@2' | '@3' | '@4'
-    | '@5' | '@6' | '@7' | '@8' | '@9'
-    | '@<' | '@=' | '@>' | '@-' | '@+' | '@[' | '@]'
-    | '@@'
-    | '@-0' | '@-N' | '@+N'
-@endverbatim
+@subsection im-setups 入力メソッドの設定
 
 @verbatim
-STATE-LIST ::= STATE-INCUSION ? '(' 'state' STATE * ')'  STATE-INCUSION ?
 
-STATE ::= '(' STATE-NAME [ STATE-TITLE-TEXT ] BRANCH * ')'
-
-STATE-NAME ::= SYMBOL
-
-STATE-TITLE-TEXT ::= MTEXT
-
-BRANCH ::= '(' MAP-NAME BRANCH-ACTION * ')'
-	   | '(' nil BRANCH-ACTION * ')'
-	   | '(' t BRANCH-ACTION * ')'
-
-STATE-INCLUSION ::= '(' 'include' TAGS 'state' STATE-NAME ? ')'
-@endverbatim
-
-���ϥ᥽�åɤ�����ñ�Τ����Ѥ���뤳�Ȥ��ʤ����¾�����ϥ᥽�åɤ���
-�߹��ޤ���Ѥ�������ˤϡ�@c STATE-LIST �Ͼ�ά�Ǥ��롣
-
-@c STATE-INCLUSION �ϡ�@c TAGS �ǻ��ꤵ���¾�����ϥ᥽�åɤ��饹�ơ���
-���ɤ߹��ࡣ@c STATE--NAME ��Ϳ�����Ƥ��ʤ���С����٤ƤΥ��ơ��Ȥ���
-�ࡣ
-
-@c STATE-TITLE-TEXT �ϡ��⤷���ꤵ��Ƥ���С����ϥ᥽�åɤ�����
-���֤ˤ���������꡼����ɽ�������ƥ����ȤǤ��롣��ά���줿���ˤ�
-@c TITLE-TEXT ���Ѥ����롣
-
-@c BRANCH �����η����Ǥϡ�@c MAP-NAME �� @c MAP �˸������ΤǤʤ�
-�ƤϤʤ�ʤ������ξ�硢@c MAP-NAME �� @c KEYSEQ �ΰ�Ĥ˹��פ��륭����
-�������פ����С� @c BRANCH-ACTION ���¹Ԥ���롣
-
-@c BRANCH ������η����Ǥϡ����λ����ξ��֤Τ������ @c BRANCH �ˤ����
-���ʤ������󤬥����פ����С�@c BRANCH-ACTION���¹Ԥ���롣
-
-@c nil �ǻϤޤ� @c BRANCH ���ʤ������Ϥ��줿�����󤬤��λ����ǤΤ������
-@c BRANCH �ˤ���פ��ʤ����ˤϡ����ϥ᥽�åɤϽ�����֤����ܤ��롣
-
-@c BRANCH ���軰�η����Ǥϡ����ξ��֤˰�ư���������� @c BRANCH-ACTION
-���¹Ԥ���롣�⤷������֤Ǥ���С����ϥ᥽�åɤ����ϥ���ƥ����Ȥ���
-������������ @c BRANCH-ACTION ��¹Ԥ��롣
-
-@verbatim
-BRANCH-ACTION ::= ACTION
-@endverbatim
-
-���ϥ᥽�åɤϥ���ܥ�Υꥹ�Ȥ���Ļ��ġ�
-
-<ul>
-<li> �ޡ����ꥹ��
-
-�ޡ����� preediting �ƥ�������Ǥ�ʸ�����֤򼨤�����ܥ�Ǥ��롣@c
-MARK ���������ϥޡ���������ΰ��֤����ꤹ�롣@c MOVE �� @c DELETE ��
-�������ϥޡ����ΰ��֤򻲾Ȥ��롣
-
-<li> �ѿ��ꥹ��
-
-�ѿ����������ͤ���ĥ���ܥ�Ǥ��롣�ͤ�@c SET ���������ˤ�ä����ꤵ
-�졢@c SET, @c INSERT, @c IF �˻��Ȥ���롣���٤Ƥ��ѿ��ν���ͤϡʰ���
-�ˡ� 0 �Ǥ��롣
-
-</ul>
-
-�� @c PREDEFINED-SYMBOL �ϥޡ����Ȥ����Ѥ���줿������̤ʰ�̣����ġ�
-
-<ul>
-<li> @c @@0, @c @@1, @c @@2, @c @@3, @c @@4, @c @@5, @c @@6, @c @@7, @c @@8, @c @@9
-
-���줾�� 0 ���ܤ��� 9 ���ܤΰ���
-
-<li> @c @@<, @c @@=, @c @@>
-
-�ǽ�Ρ����Ρ��Ǹ�ΰ���
-
-<li> @c @@-, @c @@+
-
-���Ρ����ΰ���
-
-<li> @c @@[, @c @@]
-
-����ꥹ�Ȥ��Ѳ�����ݤ����ȼ��ΰ���
-</ul>
-
-@c PREDEFINED-SYMBOL �Τ����Ĥ��ϡ� @c SELECT �����������Ǹ���Υ���
-�ǥå����Ȥ����Ѥ���줿�����̤ʰ�̣����ġ�
-
-<ul>
-<li> @c @@<, @c @@=, @c @@>
-
-���ߤθ��䥰�롼����Ǥκǽ�Ρ����Ρ��Ǹ�θ���
-
-<li> @c @@-
-
-�����䡣���θ��䤬���θ��䥰�롼����Ǥκǽ�Τ�ΤǤ���С����θ��䥰
-�롼�פκǸ�θ��䡣
-
-<li> @c @@+
-
-�����䡣���θ��䤬���θ��䥰�롼����ǤκǸ�Τ�ΤǤ���С����θ��䥰
-�롼�פκǽ�θ��䡣
-
-<li> @c @@[, @c @@]
-
-���줾�����ȸ�θ��䥰�롼����ǡ����θ����Ʊ�����䥤��ǥå��������
-��Ρ�
-</ul>
-
-�ޤ�����������̤ʰ�̣����ġ�
-
-<ul>
-<li> @c @@@
-
-���λ����ǽ�������Ƥ��륭���ο���
-
-</ul>
-
-�ʲ��ϥ��饦��ɥƥ����Ƚ������Ѥ����롣
-
-<ul>
-<li> @c @@-0
-
-���饦��ɥƥ����Ȥ����ݡ��Ȥ���Ƥ���� -1 �������Ǥʤ���� -2 ��
-
-<li> @c @@-N
-
-������ @c N �����������Ǥ��롣�����ѿ����ͤϡ��ץꥨ�ǥå���θ��ߤΰ�
-�֤��� @c N ʸ������ʸ���Ǥ��롣�⤷�ץꥨ�ǥ��å������Ԥ���ʸ����M
-(M<N) ʸ�������ʤ���С������ͤ����ϥ��ݥåȤ�������� (N-M) ʸ������ʸ
-���Ȥʤ롣@c delete ���������ΰ����Ȥ����Ѥ���줿��硢�����ѿ��Ϻ�
-������ʸ��������ꤹ�롣
-
-<li> @c @@+N
-
-������ @c N �����������Ǥ��롣�����ѿ����ͤϡ��ץꥨ�ǥå���θ��ߤΰ�
-�֤��� @c N ʸ�����ʸ���Ǥ��롣�⤷�ץꥨ�ǥ��å���Ǹ�³����ʸ����M
-(M<N) ʸ�������ʤ���С������ͤ����ϥ��ݥåȤ�������� (N-M) ʸ�����ʸ
-���Ȥʤ롣@c delete ���������ΰ����Ȥ����Ѥ���줿��硢�����ѿ��Ϻ�
-������ʸ��������ꤹ�롣
-
-</ul>
-
-�ƥ��������ΰ����ȿ��񤤤ϰʲ����̤ꡣ
-
-@verbatim
-INSERT ::= '(' 'insert' MTEXT ')'
-           | MTEXT
-	   | INTEGER
-           | '(' 'insert' SYMBOL ')'
-           | '(' 'insert' '(' CANDIDATES * ')' ')'
-           | '(' CANDIDATES * ')' 
-
-CANDIDATES ::= MTEXT | '(' MTEXT * ')'
-@endverbatim
-
-��졢����η����� @c MTEXT �򸽺ߤΰ��֤������������롣
-
-�軰�η����ϡ�ʸ�� @c INTEGER �򸽺ߤΰ��֤������������롣
-
-��ͤη����ϡ�@c SYMBOL ���ѿ��Ȥ��ư����������ͤ�������ʸ�������ɤǤ�
-��и��ߤΰ��֤������������롣
-
-��ޡ���ϻ�η����Ǥϡ�@c CANDIDATES �ϸ��䥰�롼�פ�ɽ����@c
-CANDIDATES �γ����Ǥ������ɽ�����Ĥޤ�@c CANDIDATES �� M-text �Ǥ���С�
-����Ϥ���M-text ���ʸ���Ǥ��ꡢ@c CANDIDATES �� M-text �Υꥹ�ȤǤ���
-�С�����Ϥ����� M-text �Ǥ��롣
-
-�����η����ϸ��ߤΰ��֤�ľ���˺ǽ�θ�����������롣�������줿ʸ����
-�ˤϡ�����Υꥹ�Ȥȸ������򤵤�Ƥ�������ؤ������ղä���Ƥ��롣
-
-�����ˤ�äƥޡ����ΰ��֤ϼ�ưŪ���ѹ�����롣
-
-@verbatim
-DELETE ::= '(' 'delete' SYMBOL ')'
-           | '(' 'delete' INTEGER ')'
-@endverbatim
-
-���η����� @c SYMBOL ��ޡ����Ȥ��ơ��ޡ����ȸ��ߤΰ��֤δ֤�ʸ����
-������롣
-
-����η����� @c INTEGER ��ʸ�����֤Ȥ��ơ�����ʸ�����֤ȸ��ߤΰ��֤δ�
-��ʸ���������롣
-
-����ˤ�äƥޡ����ΰ��֤ϼ�ưŪ���ѹ�����롣
-
-@verbatim
-SELECT ::= '(' 'select' PREDEFINED-SYMBOL ')'
-           | '(' 'select' INTEGER ')'
-	   | '(' 'select' SYMBOL ')'
-@endverbatim
-
-���Υ��������Ϥޤ������ߤΰ��֤�ľ����ʸ����������ꥹ�Ȥ��ղä����
-����ʸ�����°�����ɤ�����Ĵ�٤롣�����Ǥ���С�����ʸ���������ˤ��
-�ƻ��ꤵ�줿��������촹���롣
-
-���η����Ǥ� @c PREDEFINED-SYMBOL �����Ҥθ��䥤��ǥå����Ȥ��ư�����
-����ˤ�äƸ���ꥹ����ο��������䤬���ꤵ��롣
-
-����η����Ǥ� @c INTEGER �ϸ��䥤��ǥå����Ǥ��ꡢ����ꥹ����ο���
-���������ꤹ�롣
-
-�軰�η����Ǥ� @c SYMBOL ���������ͤ�����ʤ���Фʤ餺�������ͤ����䥤
-��ǥå����Ȥ��Ƽ�갷���롣
-
-@verbatim
-SHOW ::= '(show)'
-@endverbatim
-
-���Υ��������ϡ����ϥ᥽�åɥɥ饤�Ф˸��ߤΰ��֤����ˤ���ʸ�������
-�ä���Ƥ������ꥹ�Ȥ򼨤��褦�˻ؼ����롣
-
-@verbatim
-HIDE ::= '(hide)'
-@endverbatim
-
-���Υ��������ϡ����ϥ᥽�åɥɥ饤�Ф˸��߼�����Ƥ������ꥹ�Ȥ�
-���褦�˻ؼ����롣
-
-@verbatim
-MOVE ::= '(' 'move' SYMBOL ')'
-         | '(' 'move' INTEGER ')'
-@endverbatim
-
-���η����� @c SYMBOL ��ޡ����Ȥ��ơ�����򿷤������ߤΰ��֤Ȥ��롣
-
-����η����� @c INTEGER ��ʸ�����֤Ȥ��ơ����ΰ��֤򿷤������ߤΰ��֤�
-���롣
-
-@verbatim
-MARK ::= '(' 'mark' SYMBOL ')'
-@endverbatim
-
-���Υ��������� @c SYMBOL ��ޡ����Ȥ��ơ�����򸽺ߤΰ��֤����ꤹ�롣
-@c SYMBOL �� @c PREDEFINED-SYMBOL �Ǥ��äƤϤʤ�ʤ���
-
-@verbatim
-PUSHBACK :: = '(' 'pushback' INTEGER ')'
-              | '(' 'pushback' KEYSEQ ')'
-@endverbatim
-
-���η����ϡ�@c INTEGER ���ͤ����ʤ�кǿ��� @c INTEGER �ĤΥ������٥�
-�Ȥ򥤥٥�ȥ��塼�˺����᤹��0 �ʤ�Ф��٤ƤΥ������٥�Ȥ򺹤��᤹��
-
-����η����ϡ�@c KEYSEQ ��Υ����򥤥٥�ȥ��塼�˺����᤹��
-
-@verbatim
-POP ::= '(' 'pop' ')'
-@endverbatim
-
-���Υ��������Ϥޤ���������Ƥ��ʤ��ǽ�Υ��٥�Ȥ򥤥٥�ȥ��塼����
-���Ф��˴����롣
-
-@verbatim
-UNDO :: = '(' 'undo' [ INTEGER | SYMBOL ] ')'
-@endverbatim
-
-������̵����硢���Υ��������Ϻǿ�����ĤΥ������٥�ȡ����ʤ������
-���ޥ�ɤˤ�äư����������줿��ΤȤ���ľ���Τ�Ρ��򥭥�󥻥뤹�롣
-
-�����ͤΰ��� NUM �������硢�����������Ǥ��� 0 �Ǥ��äƤϤʤ�ʤ���
-���ʤ�кǿ��Τ�Τ�������� NUM ���ܤΥ��٥�Ȥ򥭥�󥻥뤹�롣��ʤ�
-�кǿ���(- NUM) �ĤΥ��٥�Ȥ򥭥�󥻥뤹�롣
-
-����ܥ�ΰ����������硢����������˵��夵��ʤ��ƤϤʤ餺�������ͤ�
-�嵭�������Ͱ����ξ���Ʊ�ͤ˼�갷���롣
-
-@verbatim
-COMMIT :: = '(commit)'
-@endverbatim
-
-���Υ��������ϸ��ߤ� preediting �ƥ����Ȥ򥳥ߥåȤ��롣
-
-@verbatim
-UNHANDLE :: = '(unhandle)'
-@endverbatim
-
-���Υ��������ϸ��ߤ� preediting �ƥ����Ȥ򥳥ߥåȤ����ǿ��Υ�����̤
-�����Ȥ����֤���
-
-@verbatim
-SHIFT :: = '(' 'shift' STATE-NAME ')'
-@endverbatim
-
-@c STATE-NAME �� @c t �ʤ�С����Υ��������ϸ��ߤξ��֤������ξ���
-�����ܤ����롣�����Ǥʤ���� @c STATE-NAME ��ɽ�������֤����ܤ����롣
-��Ԥξ��ˤϡ�@c STATE-NAME �� @c STATE-LIST �˸������ΤǤʤ��Ƥ�
-�ʤ�ʤ���
-
-@verbatim
-CALL ::= '(' 'call' MODULE-NAME FUNCTION ARG * ')'
-
-ARG ::= INTEGER | SYMBOL | MTEXT | PLIST
-@endverbatim
-
-���Υ��������ϳ����⥸�塼�� @c MODULE-NAME �δؿ� @c FUNCTION ���
-�֡�@c MODULE-NAME �� @c FUNCTION �� @c MODULE-LIST �˸������ΤǤ�
-���ƤϤʤ�ʤ���
-
-�ؿ��� (#MPlist *) ���ΰ����ȤȤ�˸ƤФ�롣�ǽ�����ǤΥ����� #Mt ��
-���ꡢ�����ͤ�#MInputContext ���Υ��֥������ȤؤΥݥ��󥿤Ǥ��롣����
-�����ǤΥ�����#Msymbol �Ǥ��ꡢ�ͤϸ��ߤξ���̾�Ǥ��롣 @c ARGs �ϻ���
-�ܰʹߤ����Ǥ��ͤȤ����Ѥ����롣���������ǤΥ����ϼ�ưŪ�˷��ꤵ��
-�롣@c ARG �������ͤʤ���б����륭���� #Minteger �Ǥ��ꡢ@c ARG ����
-��ܥ�ʤ�С��б����륭���� #Msymbol���ʤɤΤ褦�ˡ�
-
-�ؿ��� NULL ���֤������ޤ��ϹԤ��٤����������Υꥹ�Ȥ�ɽ�� (#MPlist
-*) �����ͤ��֤��ʤ��ƤϤʤ�ʤ���
-
-@verbatim
-SET ::= '(' CMD SYMBOL1 EXPRESSION ')'
-
-CMD ::= 'set' | 'add' | 'sub' | 'mul' | 'div'
-
-EXPRESSION ::= INTEGER | SYMBOL2 | '(' OPERAND EXPRESSION * ')'
-
-OPERAND ::= '+' | '-' | '*' | '/' | '|' | '&' | '!'
-            | '=' | '<' | '>' | '<=' | '>='
+<define name="variable-list">
+  <element name="variable-list">
+      <zeroOrMore>
+      <element name="variable">
+	<attribute name="id"/>
+	<optional>
+	  <element name="description">
+	    <choice>
+	      <text/>
+	      <element name="get-text"><text/></element>
+	    </choice>
+	  </element>
+	</optional>
+	<optional>
+	  <element name="value">		    
+	    <choice>
+ 	      <group>
+		<attribute name="type"><value>string</value></attribute>
+		<data type="string"/>
+	      </group>
+	      <group>
+		<attribute name="type"><value>symbol</value></attribute>
+		<data type="string"/>
+	      </group>
+	      <group>
+	      <attribute name="type"><value>integer</value></attribute>
+	      <data type="integer"/>
+	      </group>
+	    </choice>
+	  </element>
+	</optional>
+
+	<optional>
+	  <element name="variable-value-candidate">
+	    <oneOrMore>
+	      <choice>
+		<element name="c-value">		    
+		  <choice>
+		    <group>
+		      <attribute name="type"><value>string</value></attribute>
+		      <data type="string"/>
+		    </group>
+		    <group>
+		      <attribute name="type"><value>symbol</value></attribute>
+		      <data type="string"/>
+		    </group>
+		    <group>
+		      <attribute name="type"><value>integer</value></attribute>
+		      <data type="integer"/>
+		    </group>
+		  </choice>
+		</element>
+		<element name="c-range">
+		  <attribute name="from"><data type="integer"/></attribute>
+		  <attribute name="to"><data type="integer"/></attribute>
+		</element>
+	      </choice></oneOrMore></element>
+         </optional>
+       </element>
+    </zeroOrMore>
+  </element>
+</define>
 
 @endverbatim
 
-���Υ��������� @c SYMBOL1 �� @c SYMBOL2 ���ѿ��Ȥ��ơ�@c SYMBOL1 ��
-�ͤ�ʲ��Τ褦�����ꤹ�롣
+&lt;variable-list&gt; はこの入力メソッドで使用される変数を宣言する。
 
-@c CMD �� 'set' �ʤ�С�@c SYMBOL1 ���ͤ� @c EXPRESSION ���ͤ����ꤹ�롣
+変数をデフォルト値に初期化したり、ユーザがカスタマイズしたりする場合に
+は、ここで宣言されなくてはならない。この宣言は二通りに利用される。一つ
+めは新しい変数を導入するためであり、この場合 &lt;variable&gt; 中の
+&lt;value&gt; エレメントは省略できない。もう一つは "global.mimx" で宣言
+された変数を継承し、違ったデフォルト値を指定したり、この入力メソッド用
+にカスタマイズ可能にしたりするためである。この場合には &lt;value&gt; は
+省略できる。
 
-@c CMD �� 'add' �ʤ�С�@c SYMBOL1 ���ͤ� @c EXPRESSION ���ͤ������䤹��
+各 &lt;variable&gt; は一つの変数を宣言し、変数は属性 "id" によって参照
+される。すべての変数は暗黙のうちに整数値０に初期化されている。
+&lt;insert&gt; アクションは M-text である &lt;value&gt; を参照する。シ
+ンボルである &lt;value&gt; は直接参照されず、ライブラリが暗黙的に使用す
+る。(e.g. candidates-charset).  整数値である &lt;value&gt; は、
+&lt;set&gt;, &lt;add&gt;, &lt;sub&gt;, &lt;mul&gt;, &lt;div&gt; アクショ
+ンによって設定、変更、参照され、&lt;insert&gt;, &lt;select&gt;,
+&lt;undo&gt;, &lt;if&gt;, &lt;cond&gt; アクションに参照される。
 
-@c CMD �� 'sub' �ʤ�С�@c SYMBOL1 ���ͤ� @c EXPRESSION ���ͤ������餹��
+&lt;variable-value-candidate&gt; は変数が取り得る値のリストである。
+&lt;c-value&gt; は可能な値の一つを表しており、M-text かシンボルか整数値
+である。
 
-@c CMD �� 'mul' �ʤ�С�@c SYMBOL1 ���ͤ� @c EXPRESSION ���ͤ�ݤ�����
-�Τˤ��롣
+&lt;c-range&gt; は変数が取り得る整数値の範囲を示すものであり、
+&lt;c-value&gt; と併用できる。属性 "from" は変数のとる最小値を、"to" が
+最大値を示す。
 
-@c CMD �� 'div' �ʤ�С�@c SYMBOL1 ���ͤ� @c EXPRESSION ���ͤǳ�ä���
-�Τˤ��롣
+#if EXAMPLE_CODE
+  <variable-list>
+    <variable id="precomposed">
+      <description>
+        <get-text>Flag to tell whether or not to generate precomposed characters.
+                  If 1, generate precomposed characters if available (e.g. "ྲྀ"(U+0F76).
+                  If 0, generate only decomposed characters (e.g. "ྲྀ" (U+0FB2 U+0F80).</get-text>
+      </description>
+      <value type="integer">0</value>
+      <variable-value-candidate>
+        <c-value type="integer">0</c-value>
+        <c-value type="integer">1</c-value>
+      </variable-value-candidate>
+    </variable>
+  </variable-list>
+#endif
+
+このコードは、変数 "precomposed" を宣言している。取り得る値は 0 か1 で
+あり、初期値は 0 である。
 
 @verbatim
-IF ::= '(' CONDITION ACTION-LIST1 ACTION-LIST2 ? ')'
 
-CONDITION ::= [ '=' | '<' | '>' | '<=' | '>=' ] EXPRESSION1 EXPRESSION2
+<define name="predefined-variable">
+  <attribute name="type"><value>predefined</value></attribute>
+  <attribute name="id">
+    <choice>
+      <value>handled-keys</value>
+      <value>predefined-surround-text-flag
+      <data type="string"><param name="pattern">@.+</param></data>
+    </choice>
+  </attribute>
+</define>
 
-ACTION-LIST1 ::= '(' ACTION * ')'
-
-ACTION-LIST2 ::= '(' ACTION * ')'
 @endverbatim
 
-���Υ��������ϡ� @c CONDITION �����Ǥ���� @c ACTION-LIST1 ��¹Ԥ���
-�����Ǥʤ���� @c ACTION-LIST2 �� (�⤷�����) �¹Ԥ��롣
+Predefined-variable は属性 "type" の値が "predefiend" である変数である。
+属性 "id" の値が "handled-keys" であるとき、変数の値はその時点で処理さ
+れているキーの数である。属性 "id" の値が
+"predefined-surround-text-flag" であるとき、変数の値はサラウンドテキス
+トがサポートされていれば -1 、そうでなければ -2 である。
 
-@c SYMBOL1 �� @c SYMBOL2 ���ѿ��Ȥ��ư����롣
+
+#if EXAMPLE_CODE
+<variable-reference id="handled-keys" type="predefined"/>
+#endif
+
+このコードはその時点で処理されているキーの数を参照する。
+@verbatim
+
+<define name="command-list">
+  <element name="command-list">
+    <zeroOrMore>
+      <element name="command">
+	<attribute name="id">
+	  <data type="ID"><param name="pattern">command-.*</param></data></attribute>
+	<optional>
+	  <element name="description">
+	    <choice><text/><element name="get-text"><text/></element></choice>
+	  </element>
+	</optional>
+	<zeroOrMore><ref name="keyseq"/></zeroOrMore>
+      </element>
+    </zeroOrMore>
+  </element>
+</define>
+
+@endverbatim
+
+&lt;command-list&gt; は、この入力メソッドで使用されるコマンドを宣言する。
+コマンドをデフォルトキーシーケンスに割り当てたり、ユーザがカスタマイズ
+したりする場合には、ここで宣言されなくてはならない。@c
+&lt;variable-list&gt;, 同様、この宣言は二通りに利用される。一つめは新し
+いコマンドを導入するためであり、この場合 &lt;command&gt; 中の
+&lt;keyseq&gt; エレメントは省略できない。もう一つは "global.mimx" で宣
+言されたコマンドを継承し、違ったキーバインディングを指定したり、この入
+力メソッド用にカスタマイズ可能にしたりするためである。この場合には
+&lt;keyseq&gt; は省略可能である。
+
+各 &lt;command&gt; は一つのコマンドを宣言し、コマンドは属性 "id" によっ
+て参照される。
+
+#if EXAMPLE_CODE
+  <command-list>
+    <command id="command-commit">
+      <description>
+        <get-text>Commit
+                  Commit the preedit text</get-text>
+      </description>
+      <keyseq><key-event>Return</key-event></keyseq>
+      <keyseq><key-event>Linefeed</key-event></keyseq>
+    </command>
+  </command-list>
+#endif
 
 @verbatim
-COND ::= '(' 'cond' [ '(' EXPRESSION ACTION * ') ] * ')'
+
+<define name="module-list">
+  <element name="module-list">
+    <zeroOrMore>
+      <element name="module">
+	<attribute name="id">
+	  <data type="ID"><param name="pattern">module-.*</param></data>
+	</attribute>
+	<zeroOrMore>
+	  <element name="function">
+	    <attribute name="id">
+		<data type="ID">
+		<param name="pattern">function-.*</param></data>
+	    </attribute>
+	  </element>
+	</zeroOrMore>
+      </element>
+    </zeroOrMore>
+  </element>
+</define>
+
 @endverbatim
 
-���Υ����������б����� @c EXPRESSION �� 0 �Ǥʤ��ͤ�Ȥ�ǽ�Υ�������
-�� @c ACTION ��¹Ԥ��롣
+各 &lt;command&gt; エレメントは一つの外部モジュール (動的ライブラリ)を
+宣言し、属性 "id" は外部モジュールの名前を表す。
+
+&lt;function&gt; エレメントはモジュールによってエクスポートされている関
+数名を示す。
+
+属性 "id" の値が "function-init" であれば、その関数はこの入力メソッド用
+の入力コンテクストが生成される際に、デフォルトの引数 (&lt;call&gt; の節
+参照) のみとともに呼ばれる。 "function-fini" であれば、 入力コンテクス
+トが破壊される際に、デフォルトの引数のみとともに呼ばれる。
+
+#if EXAMPLE_CODE
+  <module-list>
+    <module id="module-libmimx-anthy">
+      <function id="function-convert"/>
+      <function id="function-resize"/>
+      <function id="function-change"/>
+      <function id="function-commit"/>
+      <function id="function-init"/>
+      <function id="function-fini"/>
+    </module>
+  </module-list>
+#endif
+
+このコードは外部モジュール "module-libmimx-anthy" を宣言する。この外部
+モジュール は６つの関数をエクスポートしている。
+
+@verbatim
+
+<define name="macro-list">
+  <element name="macro-list" ns="http://www.m17n.org/MIM">
+    <zeroOrMore>
+      <element name="macro">
+	<attribute name="id">
+	  <data type="ID"><param name="pattern">macro-.*</param></data>
+	</attribute>
+	<zeroOrMore><ref name="action"/></zeroOrMore>
+      </element>
+    </zeroOrMore>
+  </element>
+</define>
+
+@endverbatim
+
+&lt;macro-list&gt; はこの入力メソッドで使用されるマクロを宣言する。
+&lt;macro&gt; エレメントは複数の &lt;action&gt; をまとめてそれに名前を付ける。
+属性 "id" が &lt;macro&gt; の名前であり、この属性によってマクロを参照する。
+
+#if EXAMPLE_CODE
+  <macro-list>
+    <macro id="macro-forward">
+      <set id="cc3">
+        <predefined-nth-previous-or-following-character position="+3"/>
+      </set>
+      <conditional>
+                 :              :     ;; more <action>s
+    </macro>
+  </macro-list>
+#endif
+
+このコードはマクロ "macro-forward" を宣言する。
+
+@verbatim
+
+<define name="marker">
+  <choice>
+    <ref name="predefined-marker"/>
+    <ref name="user-defined-marker"/>
+  </choice>
+</define>
+
+@endverbatim
+
+マーカは preediting テキスト中での文字位置を示すシンボルである。
+&lt;mark-current-position&gt; はマーカを特定の位置に設定する。
+&lt;move-to-marker&gt; と &lt;delete-to-marker&gt; はマーカの位置を参照
+する。
+
+@verbatim
+
+<define name="predefined-marker">
+    <attribute name="position">
+      <choice>
+	<data type="string"><param name="pattern">@[0-9]</param>
+	</data>
+	<value>@first</value>
+	<value>@current</value>
+	<value>@last</value>
+	<value>@previous</value>
+	<value>@next</value>
+	<value>@previous_candidate_list
+	<value>@next_candidate_list
+      </choice>
+    </attribute>
+</define>
+
+@endverbatim
+
+predefined-marker は @@ で始まるマーカである。 @@0, @@1, ... , @@9は、
+それぞれ 0番目, 1番目, ... , 9番目の位置を示す。
+@@previous_candidate_list 候補リストが変化する前の位置、
+@@next_candidate_list は候補リストが変化する際の次の位置を示す。
+
+#if EXAMPLE_CODE
+ <delete-to-marker position="@first"/>
+#endif
+
+このコードは、バッファの最初の位置と現在の位置の間の文字を削除する。
+
+@verbatim
+
+<define name="user-defined-marker">
+      <attribute name="markerID">
+	<data type="string"><param  name="pattern">[^@].*</param></data>
+      </attribute>
+</define>
+
+@endverbatim
+
+User-defined-marker は @@ で始まってはならない。
+
+#if EXAMPLE_CODE
+ <move-to-marker position="T"/>
+#endif
+
+このコードは、マーカをユーザ定義の位置 T へ移動する。
+
+@verbatim
+
+<define name="predefined-nth-previous-or-following-character">
+  <element name="predefined-nth-previous-or-following-character">
+    <attribute name="position">
+      <choice>
+	<data type="negativeInteger"/>
+	<data type="positiveInteger"/>
+      </choice>
+    </attribute>
+  </element>
+</define>
+
+@endverbatim
+
+&lt;predefined-nth-previous-or-following-character&gt; エレメントは、プ
+リエデットバッファ中の１文字を指定する。
+
+属性 "position" の値が負の整数 @c -N である場合、
+&lt;predefined-nth-previous-or-following-character&gt; エレメントは、プ
+リエデット中の現在の位置から @c N 文字前の文字である。もしプリエディッ
+ト中で先行する文字がM (M<N) 文字しかなければ、その値は入力スポットから
+数えて (N-M) 文字前の文字となる。
+
+属性 "position" の値が正の整数 @c N である場合、この変数の値は、プリエ
+デット中の現在の位置から @c N 文字後の文字である。もしプリエディット中
+で後続する文字がM (M<N) 文字しかなければ、その値は入力スポットから数え
+て (N-M) 文字後の文字となる。
+
+#if EXAMPLE_CODE
+<predefined-nth-previous-or-following-character position="-1"/>
+#endif
+
+このコードは直前の文字を意味する。
+
+@verbatim
+<define name="predefined-selector">
+      <choice>
+	<data type="string"><param name="pattern">@[0-9]</param></data>
+	<value>@first</value>
+	<value>@current</value>
+	<value>@last</value>
+	<value>@previous</value>
+	<value>@next</value>
+	<value>@previous_candidate_list</value>
+	<value>@next_candidate_list</value>
+      </choice>
+</define>
+
+@endverbatim
+
+Predefined-selector は候補グループ中での位置を示し、&lt;select&gt; エレ
+メント中で用いられる。@@0, @@1, ... , @@9は、それぞれ 0番目, 1番目,
+... , 9番目の位置を指す。@@previous は前の候補を指す。もし今の候補が今
+の候補グループ中での最初のものであれば、前の候補グループの最後の候補を
+指す。@@next は次の候補を指す。もし今の候補が今の候補グループ中での最後
+のものであれば、次の候補グループの最初の候補を指す。
+@@previous_candidate_list と@@next_candidate_list は、それぞれ前と後の
+候補グループ中で、今の候補と同じ候補インデックスを持つものを指す。
+
+#if EXAMPLE_CODE
+<select selector="@previous"/>
+#endif
+
+このコードは前の候補を選択する。
+
+@subsection immap 入力メソッドのマップとルール
+
+@verbatim
+<define name="map-list">
+  <element name="map-list">
+  <zeroOrMore>
+    <element name="map">
+      <attribute name="id">
+	<data type="ID"><param name="pattern">map-.*</param></data>
+      </attribute>
+      <zeroOrMore>
+	<element name="rule">
+	  <choice>
+	    <ref name="keyseq"/>
+	    <ref name="command-reference"/>
+	  </choice>
+	  <zeroOrMore><ref name="action"/></zeroOrMore>
+	</element>
+      </zeroOrMore>
+    </element>
+  </zeroOrMore>
+  </element>
+</define>
+
+@endverbatim
+
+&lt;map-list&gt; はこの入力メソッドで使用されるマップを宣言する。
+&lt;map&gt; エレメントは類似のルールをまとめて名付け、入力メソッドの状
+態遷移を記述を容易にする。属性"id" が &lt;map&gt; の名前を示す。
+&lt;rule&gt; エレメントによって、入力シークエンス&lt;keyseq&gt; (または
+&lt;command&gt;) と入力メソッドドライバが実行する &lt;action&gt; との対
+応付けを記述する。たとえば&lt;action&gt; が適当な文字を挿入する
+&lt;insert&gt; である場合、&lt;rule&gt; がキーボード上の入力キーとスク
+リーンに現れる文字の対応付けを行う。
+
+
+#if EXAMPLE_CODE
+  <map-list>
+    <map id="map-consonant">
+      <rule><keyseq keys="k"/><insert string="ཀ"/></rule>
+      <rule><keyseq keys="kh"/><insert string="ཁ"/></rule>
+          :         :
+      <rule><keyseq keys="a"/><insert string="ཨ"/></rule>
+    </map>
+    <map id="map-standard-stack">
+           :         :
+    </map>
+           :         :
+  </map-list>
+#endif
+
+@verbatim
+
+<define name="keyseq">
+  <element name="keyseq">
+    <choice>
+      <attribute name="keys"><data type="string"/></attribute>
+      <oneOrMore>
+	<choice>
+	  <element name="key-event"><data type="string"/></element>
+	  <element name="character-code">
+	    <choice>
+	      <data type="nonNegativeInteger"><param name="pattern">[0-9]{1,7}</param></data>
+	      <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
+	      <data type="string"><param name="pattern">\?.</param></data>
+	    </choice>
+	  </element>
+	</choice>
+      </oneOrMore>
+    </choice>
+  </element>
+</define>
+
+@endverbatim
+
+&lt;keyseq&gt; エレメント中の属性 "keys" の値は、キーボードから生成でき
+る文字で構成される。すなわち通常 ASCII 文字のみを含む。しかし、入力メソッ
+ドがたとえば西ヨーロッパ用キーボードを使うことを想定したものであれば、
+Latin-1 文字を含んでもよい。
+
+&lt;keyseq&gt; エレメントの内容は、関数 minput_event_to_key () の戻り値
+でなくてはならない。X ウィンドウシステムの元では、 @c xev コマンドを用
+いて値を簡単にチェックできる。たとえば、 リターンキー、バックスペース
+キー、キーパッドの0のキーなどは、それぞれ@c Return , @c BackSpace , @c
+KP_0 としてあらわされる。シフト、コントロール、メタ、アルト、スーパー、
+ハイパーも押されている場合には、それぞれS- , C- , M- , A- , s- , H- が
+前にこの順に置かれる。したがって "リターンキーをシフトしてメタしてハイ
+パーしたもの" は@c (S-M-H-Return) である。"a をシフト" から "z をシフト
+" までは、単に A から Z として表されることに注意。したがって、 "a をシ
+フトしてメタしてハイパーしたもの" は @c M-H-A となる。
+
+&lt;character-code&gt; エレメントの内容は、有効な文字コードでなくてはな
+らない。
+
+#if EXAMPLE_CODE
+<keyseq>
+   <character-code>0x6F</character-code>
+   <key-event>A-z</key-event>
+</keyseq>
+
+<keyseq keys="k"/>
+#endif
+
+これらは二つとも正しい入力シークエンスである。
+
+@verbatim
+
+<define name="command-reference">
+  <element name="command-reference">
+     <attribute name="id"><data type="IDREF"/></attribute>
+  </element>
+</define>
+
+@endverbatim
+
+&lt;command-reference&gt; エレメントは、参照された &lt;command&gt; 中の
+&lt;keyseq&gt; がその位置に現れた場合と同じ効果を持つ。
+
+#if EXAMPLE_CODE
+<command-reference id="command-start"/>
+#endif
+
+このコードはコマンド "commad-start" を呼ぶ。
+
+@verbatim
+
+<define name="action">
+  <choice>
+    <ref name="insert"/>
+    <ref name="delete"/>
+    <ref name="select"/>
+
+    <element name="show-candidates"><empty/></element>
+    <element name="hide-candidates"><empty/></element>
+
+    <ref name="move"/>
+    <ref name="mark"/>
+    <ref name="pushback"/>
+
+    <element name="pop"><empty/></element>
+
+    <ref name="undo"/>
+
+    <element name="commit"> <empty/></element>
+    <element name="unhandle"><empty/></element>
+
+    <ref name="call"/>
+
+    <element name="set"><ref name="set-val"/></element>
+    <element name="add"><ref name="set-val"/></element>
+    <element name="sub"><ref name="set-val"/></element>
+    <element name="mul"><ref name="set-val"/></element>
+    <element name="div"><ref name="set-val"/></element>
+
+    <ref name="if"/>
+    <ref name="conditional"/>
+
+    <element name="macro-reference">
+      <attribute name="id">
+	<data type="IDREF"/>
+      </attribute>
+    </element>
+  </choice>
+</define>
+
+@endverbatim
+
+&lt;action&gt;s は &lt;rule&gt;s 中に現れる。
+
+エレメント &lt;show-candidates&gt; は、入力メソッドドライバに現在の位置
+の前にある文字列に付加されている候補リストを示すように指示する。
+
+エレメント &lt;hide-candidates&gt; は、入力メソッドドライバに現在示され
+ている候補リストを隠すように指示する。
+
+エレメント &lt;pop&gt; はまだ処理されていない最初のイベントをイベント
+キューから取り出し破棄する。
+
+エレメント &lt;commit&gt; は現在の preediting テキストをコミットする。
+
+エレメント &lt;unhandle&gt; は現在の preediting テキストをコミットし、
+最新のキーを未処理として返す。
+
+エレメント &lt;set&gt;, &lt;add&gt;, &lt;sub&gt;, &lt;mul&gt;,
+&lt;div&gt; は変数の値をそれぞれ設定し、加減乗除する。
+
+#if EXAMPLE_CODE
+<set id="MAX-COUNT">
+  <int-val>4</int-val>
+</set>
+#endif
+
+このコードは変数 @c MAX-COUNT の値を 4 に設定する。
+
+#if EXAMPLE_CODE
+<add id="C-AFTER-V">
+  <int-val>1</int-val>
+</add>
+#endif
+
+このコードは変数 @c C-AFTER-V の値を１増やす。
+
+&lt;macro-reference&gt; エレメントは、参照された &lt;macro&gt; 中の
+&lt;action&gt; がその位置に現れた場合と同じ効果を持つ。
+
+@verbatim
+
+<define name="set-val">
+    <attribute name="id"/>
+    <ref name="expr"/>
+</define>
+
+@endverbatim
+
+属性 "id" の値として指定された変数の値を&lt;expr&gt;に設定し、&lt;expr&gt;の値だけ加減乗除する。
+
+@verbatim
+
+<define name="insert">  
+    <element name="insert">
+      <choice>
+	<attribute name="string"><data type="string"/></attribute>
+	<attribute name="character">
+	  <choice>
+	    <data type="string"><param name="pattern">\?.</param></data>
+	    <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
+	    <data type="nonNegativeInteger"><param name="pattern">[0-9]{1,7}</param></data>
+	  </choice>
+	</attribute>
+	<group>
+	  <attribute name="character-or-string"><value>variable</value></attribute>
+	  <ref name="variable-reference"/>
+	</group>
+
+	<oneOrMore>
+	  <element name="candidates">
+		 <data type="string"/>
+	       </element>
+	</oneOrMore> 
+        <oneOrMore>
+	  <element name="list-of-candidates">
+	    <list>
+		 <zeroOrMore><data type="NMTOKEN"/></zeroOrMore></list>
+	         </element></oneOrMore>
+      </choice>
+    </element>
+</define>
+
+@endverbatim
+
+&lt;insert&gt; エレメントは、属性によって指定された文字または M-text を
+現在の位置の前に挿入する。挿入によってマーカの位置は自動的に変更される。
+
+属性 "string" は挿入する M-text を指定する。属性 "character" は挿入する
+文字のコードを指定する。属性 "character-or-string" の値は変数でなくては
+ならず、その値が正しい文字コードあるいはM-textであれば挿入する。
+
+#if EXAMPLE_CODE
+<insert string="á"/>
+<insert character="225"/>
+<insert character="0x00E1"/>
+#endif
+
+これらのコードは同じ文字 "á" を挿入する。
+
+&lt;candidates&gt; エレメントが与えられた時には、その内容中の文字それぞ
+れが挿入される候補である。&lt;insert&gt; は現在の位置の直前に最初の候補
+を挿入する。挿入された文字列には、候補のリストと現在選択されている候補
+を指す情報が付加されている。
+
+&lt;list-of-candidates&gt; エレメントが与えられた時には、そのリスト中の
+項目それぞれが挿入される候補である。&lt;insert&gt; は現在の位置の直前に
+最初の候補を挿入する。挿入された文字列には、候補のリストと現在選択され
+ている候補を指す情報が付加されている。
+
+#if EXAMPLE_CODE
+<insert>
+    <candidates>＄￠￡￥￦</candidates>
+</insert>
+
+<insert>
+     <list-of-candidates>a ā á ǎ à</list-of-candidates>
+</insert>
+#endif
+
+これらのコードはそれぞれ ＄ と a を挿入し、それに全体のリストを関係づける。
+
+@verbatim
+
+<define name="delete">  
+    <choice>
+      <element name="delete-to-marker"><ref name="marker"/></element>
+      <element name="delete-to-character-position"><data type="integer"/></element>
+      <element name="delete-n-characters">
+          <attribute name="n"><data type="integer"/></attribute>
+      </element>
+    </choice>
+</define>
+
+@endverbatim
+
+文字の削除のためには、３種類の &lt;action&gt; のどれかを用いることがで
+きる。削除によってマーカの位置は自動的に変更される。
+
+&lt;delet-to-marker&gt; エレメントは、現在の位置と指定のマーカの間の文
+字を削除する。
+
+#if EXAMPLE_CODE
+<delete-to-marker position="@first"/>
+#endif
+
+このコードはバッファの最初から現在の位置までの文字を削除する。
+
+&lt;delete-to-character-position&gt; エレメントはその内容を文字位置とし
+て、その文字位置と現在の位置の間の文字を削除する。
+
+#if EXAMPLE_CODE
+<delete-to-character-position>-3</delete-to-character-position>
+#endif
+
+このコードは３つ前から現在の位置までの文字を削除する。
+
+&lt;delete-n-characters&gt; エレメントは、属性"n" の値だけの数の文字を
+削除する。値 N が負であれば、現在の位置より前の N 文字を、正であれば後
+の N 文字を削除する。
+
+#if EXAMPLE_CODE
+<delete-n-characters n="+1"/>
+#endif
+
+このコードは後の文字１つを削除する。
+
+@verbatim
+
+<define name="select">  
+  <element name="select">
+    <choice>
+      <attribute name="selector">
+	<ref name="predefined-selector"/>
+      </attribute>
+      <attribute name="index">
+        <data type="integer"/>
+      </attribute>
+      <group>
+	<attribute name="index"><value>variable</value></attribute>
+	<ref name="variable-reference"/>
+      </group>
+    </choice>
+  </element>
+</define>
+
+@endverbatim
+
+&lt;select&gt; エレメントはまず、現在の位置の直前の文字が、候補リストが
+付加されている文字列に属すかどうかを調べる。そうであれば、その文字列を
+属性によって指定された候補に入れ換える。属性"selector" の値はいずれかの
+predefined-selector であり、候補リスト中の新しい候補を指定する。属性
+"index" の値はリスト中の順番を示し、その順番の候補が選ばれる。値が
+"variable" であった場合には、参照される変数は整数の値を持たなければなら
+ず、その値の順番の候補が選ばれる。
+
+#if EXAMPLE_CODE
+<select selector="@previous"/>
+<select index="0"/>
+#endif
+
+これらのコードはそれぞれ前の候補と最初の候補を選択する。
+
+@verbatim
+
+<define name="move"> 
+  <choice> 
+     <element name="move-to-marker"> <ref name="marker"/></element> 
+     <element name="move-to-character-position"> <data type="integer"/></element> 
+  </choice>
+</define>
+
+@endverbatim
+
+この２つの &lt;action&gt;s は現在の位置を移動する。
+&lt;move-to-marker&gt; エレメントは指定されたマーカの位置に現在の位置を
+移動する。&lt;move-to-character-position&gt; エレメントはその内容である
+整数値を文字位置として扱い、そこへ現在の位置を移動する。
+
+#if EXAMPLE_CODE
+<move-to-marker position="@previous"/>
+<move-to-character-position>0</move-to-character-position>
+#endif
+
+これらのコードはそれぞれ直前、最初の位置へ現在の位置を移動する。
+
+@verbatim
+
+<define name="mark">  
+      <element name="mark-current-position">
+	<ref name="user-defined-marker"/>
+      </element>
+</define>
+
+@endverbatim
+
+&lt;mark-current-position&gt; エレメントは、指定のマーカを現在の位置に
+設定する。
+
+#if EXAMPLE_CODE
+<mark-current-position markerID="M"/>
+#endif
+
+このコードは現在の位置にマーカ "M" を置く。
+@verbatim
+
+<define name="pushback">
+    <choice>
+      <element name="pushback-n-events">
+	<attribute name="n"><data type="nonNegativeInteger"/></attribute>
+      </element>
+      <element name="pushback-keyseq"><ref name="keyseq"/></element>
+   </choice>
+</define>
+
+@endverbatim
+
+この２つの &lt;action&gt; はキーイベントをイベントキューに差し戻す。
+&lt;pushback-n-events&gt; エレメントは最新のキーイベントを差し戻す。属
+性"n" の値が正の整数ならば差し戻すイベントの数を示す。０ならばすべて差
+し戻す。&lt;pushback-keyseq&gt; エレメントは、&lt;keyseq;gt; で指定され
+たキーイベントを差し戻す。
+
+#if EXAMPLE_CODE
+<pushback-keyseq><keyseq keys="b"/></pushback-keyseq>
+#endif
+
+このコードはキー "b" を戻す。
+
+@verbatim
+
+<define name="undo">
+  <element name="undo">
+    <optional>
+      <choice>
+	<attribute name="target-of-undo">
+	  <choice>
+	    <data type="positiveInteger"/>
+	    <data type="negativeInteger"/>
+	  </choice>
+	</attribute>
+	<ref name="variable-reference"/>
+      </choice>
+    </optional>
+  </element>
+</define>
+
+@endverbatim
+
+&lt;undo&gt; エレメントは、属性が無いばあいには、最新の二つのキーイベン
+ト、すなわちこのコマンドによって引き起こされたものとその直前のもの、を
+キャンセルする。
+
+属性 "target-of-undo" が正の整数 NUM ならば、NUM個めから最新のものまで
+を キャンセルする。負の整数ならば最新の(- NUM) 個のイベントをキャンセル
+する。変数参照である場合には、それは０でない整数に帰着されなくてはなら
+ず、その値が上記の場合と同様に取り扱われる。
+
+#if EXAMPLE_CODE
+<undo target-of-undo="-1"/>
+#endif
+
+このコードは最新のイベントのみをキャンセルする。
+
+@verbatim
+
+<define name="call">
+  <element name="call">
+    <attribute name="id"><data type="IDREF"/></attribute>
+    <element name="function-reference">
+      <attribute name="id"><data type="IDREF"/></attribute>
+    </element>
+    <zeroOrMore>
+      <element name="argument">
+	<choice>
+	  <group>
+	    <attribute name="type"><value>string</value></attribute>
+	    <data type="string"/>
+	  </group>
+	  <group>
+	    <attribute name="type"><value>integer</value></attribute>
+	    <choice>
+	      <data type="string"><param name="pattern">\?.</param></data>
+	      <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
+	      <data type="nonNegativeInteger"><param name="pattern">[0-9]{1,7}</param></data>
+	    </choice>
+	  </group>
+	  <group>
+	    <attribute name="type"><value>plist</value></attribute>
+	    <ref name="plistObject"/>
+	  </group>
+	  <group>
+	    <attribute name="type"><value>symbol</value></attribute>
+	    <ref name="variable-reference"/>
+	  </group>
+	</choice>
+      </element>
+    </zeroOrMore>
+  </element>
+</define>
+
+@endverbatim
+
+&lt;call&gt; エレメントは外部モジュールの関数を呼ぶ。 関数は NULL を返
+すか、または行うべきアクションのリストを表す (#MPlist *) 型の値を返さな
+くてはならない。
+
+属性 "id" の値が外部モジュールを指定する。この値は&lt;module-list&gt;
+エレメント中に現われるものでなくてはならない。.
+&lt;function-reference&gt; エレメントが呼ぶ関数を指定する。これもまた、
+&lt;module-list&gt; エレメント中に現われるものでなくてはならない。.
+
+関数は (#MPlist *) 型の引数とともに呼ばれる。最初の要素のキーは #Mt で
+あり、その値は#MInputContext 型のオブジェクトへのポインタである。第二の
+要素のキーは#Msymbol であり、値は現在の状態名である。&lt;argument&gt;
+エレメントの内容は三つ目以降の要素の値として用いられる。それらの要素の
+キーは属性 "type" の値によって決定する。integer ならば対応するキーは
+#Minteger であり、symbol ならば、対応するキーは #Msymbol、などのように。
+
+#if EXAMPLE_CODE
+<call id="module-libmimx-anthy">
+  <function-reference id="function-resize"/>
+    <argument type="symbol">
+      <variable-reference id="t"/>
+    </argument>
+</call>
+#endif
+
+このコードは外部モジュール module-libmimx-anthy の関数 function-resize
+をシンボルである引数 "t" と共に呼ぶ。
+
+@verbatim
+
+<define name="expr">
+    <choice>
+      <group>
+	<element name="expr">
+          <attribute name="operator"><ref name="operator"/></attribute>
+	  <zeroOrMore><ref name="expr"/></zeroOrMore>
+	</element>
+      </group>
+      <element name="int-val">
+	<choice>
+	  <data type="integer"/>
+	  <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
+	  <data type="string"><param name="pattern">\?.</param></data>
+	</choice>
+      </element>
+      <ref name="predefined-nth-previous-or-following-character">     
+      </ref>	 
+      <ref name="variable-reference">
+      </ref>
+    </choice>
+</define>
+
+@endverbatim
+
+&lt;expr&gt;ession とは、
+ @li 演算子で結ばれた０個以上の &lt;expr&gt;essions 
+ @li 整数値
+ @li 特定の位置の文字
+ @li 変数
+である。
+
+#if EXAMPLE_CODE
+<expr operator="=">
+   <predefined-nth-previous-or-following-character position="-1"/>
+   <int-val>0x0D91</int-val>
+</expr>
+#endif
+
+このコード全体が expression であり、２つのexpression （２行目と３行目）
+を含んでいる。
+
+@verbatim
+
+<define name="variable-reference">
+  <element name="variable-reference">
+    <choice>
+      <attribute name="id"/>
+      <ref name="predefined-variable"/>
+    </choice>
+  </element>
+</define>
+
+@endverbatim
+
+&lt;variable-reference&gt; エレメントは、参照された &lt;variable&gt; が
+その位置に現れた場合と同じ効果を持つ。
+
+#if EXAMPLE_CODE
+<variable-reference id="handled-keys" type="predefined"/> 
+<variable-reference id="KK"/>
+#endif
+
+@verbatim
+
+<define name="operator">
+  <choice>
+      <value>+</value> 
+      <value>-</value>
+      <value>*</value>
+      <value>/</value>
+      <value>|</value>
+      <value>&</value>
+      <value>!</value>
+      <value>=</value>
+      <value><</value>
+      <value>></value>
+      <value><=</value>
+      <value>>=</value>
+  </choice>
+</define>
+
+@endverbatim
+
+これらは &lt;expr&gt;ession 中に現れ得る演算子である。演算子
+@c +, @c -, @c *, @c / は加減乗除を行う。@c |, @c &amp;, @c 
+! はそれぞれ OR, AND, NOT 演算子である。@c =, @c &lt;, @c &gt;,
+@c &lt;=, @c &gt;= は引数を二つとりそれらを比較する。
+
+@verbatim
+
+<define name="if">
+  <element name="if">
+    <attribute name="condition">
+      <choice>
+      <value>=</value>
+      <value><</value>
+      <value>></value>
+      <value><=</value>
+      <value>>=</value>
+    </choice></attribute>
+    <ref name="expr"/>
+    <ref name="expr"/>
+    <element name="if-true-action-list">
+    <zeroOrMore><ref name="saction"/></zeroOrMore></element>
+    <optional><element name="if-not-true-action-list">
+    <zeroOrMore><ref name="saction"/></zeroOrMore></element></optional>
+  </element>
+</define>
+
+@endverbatim
+
+&lt;if&gt; エレメントは、２つの&lt;expr&gt; 間の関係が属性 "condition"
+を満たす場合 &lt;if-true-action-list&gt; の内容である &lt;action&gt; を
+実行する。そうでなければ、&lt;if-not-true-action-list&gt; があればその
+内容を実行する。
+
+
+#if EXAMPLE_CODE
+<if condition="<">
+  <variable-reference id="C"/><int-val>0</int-val>
+  <if-true-action-list><shift-to id="state-init"/></if-true-action-list>
+</if>
+#endif
+
+このコードは変数@c C が負の時、&lt;shift-to&gt; を実行する。
+
+@verbatim
+
+<define name="conditional">
+  <element name="conditional">
+    <zeroOrMore>
+      <group>
+	<element name="case">
+	<ref name="expr"/>
+	<zeroOrMore><ref name="saction"/></zeroOrMore>
+	</element>
+      </group>
+    </zeroOrMore>
+  </element>
+</define>
+
+@endverbatim
+
+&lt;conditional&gt; エレメントは、各&lt;case&gt;中の&lt;expr&gt;を一つ
+づつ調べ、それが0 でない値をとる最初の&lt;case&gt;中の&lt;saction&gt;を
+実行する。
+
+#if EXAMPLE_CODE
+
+<conditional>
+  <case>
+    <expr operator="=">
+      <predefined-nth-previous-or-following-character position="-2"/>
+      <int-val>0x0E24</int-val>
+    </expr>
+  </case>
+  <case>
+    <int-val>1</int-val>
+    <delete-n-characters n="-1"/>
+        :            :
+  </case>
+</conditional>
+#endif
+
+このコードは、２つ前の文字の文字コードが0x0E24 (Thai character RU)でな
+い限り、二番めの&lt;case&gt; 中のactionを実行する。
+
+
+@subsection imstate 入力メソッドの状態
+
+@verbatim
+      
+<define name="state-list">
+  <element name="state-list">
+    <zeroOrMore>
+      <element name="state">
+	<attribute name="id">
+	  <data type="ID"><param name="pattern">state-.*</param></data>
+	</attribute>
+	<optional><element name="state-title-text"><data type="string"/></element></optional>
+	<interleave>
+	<optional>
+	  <element name="state-hook"><oneOrMore><ref name="saction"/></oneOrMore></element>
+	</optional>
+	<optional>
+	  <element name="catch-all-branch">
+		 <zeroOrMore><ref name="saction"/></zeroOrMore>
+	  </element>
+	</optional>
+	<zeroOrMore>
+	  <element name="branch">
+	    <attribute name="branch-selecting-map">
+		<data type="IDREF"/>
+	    </attribute>
+	    <zeroOrMore><ref name="saction"/></zeroOrMore>
+	  </element>
+	</zeroOrMore>
+	</interleave>
+      </element>
+    </zeroOrMore>
+  </element>
+</define>
+
+@endverbatim
+
+入力メソッドドライバは常に一つの &lt;state&gt; にあり、入力を処理するこ
+とによって別の &lt;state&gt; に遷移することがある。異なる
+&lt;state&gt; では、同じ入力でも異なる&lt;saction&gt; を引き起こし、異
+なる結果を得ることがある。入力コンテクストが生成される、すなわち入力メ
+ソッドが起動された時点では入力メソッドドライバは&lt;state-list&gt; エレ
+メント中の最初の &lt;state&gt; にある。
+
+属性 "id" が &lt;state&gt; の名前を示す。&lt;state-title-text&gt; エレ
+メントの内容は、入力メソッドがこの状態にある時スクリーン上に表示される
+テキストである。省略されている場合には &lt;title&gt; エレメントの内容が
+用いられる。
+
+各 &lt;state&gt; は０以上の &lt;branch&gt;を持つ。各&lt;branch&gt; は
+&lt;map-list&gt; 中の各 &lt;map&gt に対応する。 属性
+"branch-selecting-map" の値が&lt;map&gt; の属性 "id" の値を示す。入力シー
+クエンスがある&lt;map&gt; 中の &lt;rule&gt; の &lt;keyseq&gt; (or
+&lt;command-reference&gt;) 部分に合致すると、対応する &lt;branch&gt; が
+選ばれ、その &lt;rule&gt; の &lt;action&gt; に続いてその
+&lt;branch&gt; の&lt;saction&gt; が実行される。
+
+&lt;state-hook&gt; エレメント (省略可能) は、入力メソッドドライバがこの
+&lt;state&gt; に遷移した時点で実行される&lt;sactions&gt; を指定する。
+
+入力メソッドの入力コンテクストを生成した時点で、入力メソッドは
+&lt;state-list&gt; の最初の &lt;state&gt; に遷移するため、その
+&lt;state&gt; の &lt;state-hook&gt; 中の &lt;saction&gt; が実行される。
+
+入力シークエンスが、その時点の &lt;state&gt; のいずれの &lt;branch&gt;
+にも合致しない場合には、
+
+   @li &lt;catch-all-branch&gt; エレメントが存在すれば、
+      &lt;catch-all-branch&gt;中の&lt;saction&gt;を実行する。
+   @li &lt;catch-all-branch&gt; がなければ、
+       入力メソッドは初期状態に遷移する。     
+
+#if EXAMPLE_CODE
+
+<state-list>
+  <state id="state-init">
+    <branch branch-selecting-map="map-consonant">
+      <move-to-marker position="@first"/>
+              :             :
+    </branch>
+    <branch branch-selecting-map="map-misc"/>
+    <branch branch-selecting-map="map-join">
+      <shift-to id="state-join"/>
+    </branch>
+  </state>
+  <state id="state-join">
+    <branch branch-selecting-map="map-consonant">
+      <move-to-marker position="@first"/>
+              :             :
+      <shift-to id="state-init"/>
+    </branch>
+    <catch-all-branch>
+      <shift-to id="state-init"/>
+    </catch-all-branch>
+  </state>
+</state-list>
+#endif
+
+このコードはある入力メソッドでの状態遷移を定義している。&lt;state&gt;
+は"state-init" と "state-join" の２つがある。"state-init" には３つの
+&lt;branche&gt;がある。"map-consonant", "map-misc" and "map-join" に属
+す入力シークエンスが与えられれば、対応する &lt;branche&gt;が選択され、
+その&lt;saction&gt;が実行される。"map-join" の&lt;branche&gt;が選ばれた
+場合には "state-join" への状態遷移が起こる。"state-join" には、
+"map-consonant" に属す入力シークエンス用の &lt;branche&gt;と、それ以外
+全ての入力用の&lt;catch-all-branch&gt; があり、双方とも"state-init" へ
+遷移させる。
+
+@verbatim
+
+<define name="saction">
+  <choice>
+    <element name="shift-to"><attribute name="id"><data type="IDREF"/></attribute></element>
+    <element name="shift-back"><empty/></element>
+    <ref name="action"/>
+  </choice>
+</define>
+
+@endverbatim
+
+&lt;saction&gt; (state-action) は &lt;action&gt; であるか状態遷移である。
+
+&lt;shift-to&gt; エレメントは現在の状態を属性 "id" の値で指示されたもの
+に遷移させる。属性の値は&lt;state-list&gt; に現れるものでなくてはならな
+い。&lt;shift-back&gt; エレメントは、現在の状態を一つまえのものに遷移さ
+せる。
+
+@subsection implist Plist
+
+&lt;call&gt; エレメントで用いられる plistObject は以下のように定義されている。
+
+@verbatim
+
+  <define name="plistObject">
+    <element name="pListObject">
+    <choice>
+      <ref name="array"/>
+      <ref name="dict"/>
+      <group>
+	<attribute name="type"><value>string</value></attribute>
+	<data type="string"/>
+      </group>
+      <group>
+	<attribute name="type"><value>symbol</value></attribute>
+	<ref name="variable-reference"/>
+      </group>
+      <group>
+	<attribute name="type"><value>integer</value></attribute>
+	<choice>
+	  <data type="string"><param name="pattern">\?.</param></data>
+	  <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
+	  <data type="nonNegativeInteger"><param name="pattern">[0-9]{1,7}</param></data>
+	</choice>
+      </group>
+    </choice>
+    </element>
+  </define>
+
+
+  <!-- Collections -->
+  <define name="array">
+    <element name="array">
+      <zeroOrMore>
+        <ref name="plistObject"/>
+      </zeroOrMore>
+    </element>
+  </define>
+
+  <define name="dict">
+    <element name="dict">
+      <zeroOrMore>
+	<element name="dict-item">
+	  <attribute name="key"/>
+	  <ref name="plistObject"/>
+	</element>
+      </zeroOrMore>
+    </element>
+  </define>
+@endverbatim
+
+@verbatim
+</grammar>
+@endverbatim
+
+入力メソッド定義用の RelaxNG スキーマは、&lt;/grammar&gt; で終わる。
+
+@ifnot FOR-MAN
+
+@section im-example1 EXAMPLE 1
+
+This is a very simple example for inputting Latin characters with
+diacritical marks (acute and cedilla).  For instance, when you type:
+@verbatim
+    Comme'die-Franc,aise, chic,,
+@endverbatim
+you will get this:
+@if FOR-HTML
+@verbatim
+    Commédie-Française, chic,
+@endverbatim
+@endif
+@if FOR-LATEX
+@latexonly
+\hskip5mm\texttt{\footnotesize Comm\'{e}die-Fran\c{c}aise, chic,}
+@endlatexonly
+@endif
+
+The definition of the input method is very simple as below, and it is
+quite straight forward to extend it to cover all Latin characters.
+
+@verbatim
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>t</language>
+    <name>latn-post</name>
+  </tags>
+  <title>latin-postfix</title>
+  <map-list>
+    <map id="map-trans">
+      <rule><keyseq keys="A'"/><insert string="Á"/></rule>
+      <rule><keyseq keys="a'"/><insert string="á"/></rule>
+      <rule><keyseq keys="A''"/><insert string="A'"/></rule>
+      <rule><keyseq keys="a''"/><insert string="a'"/></rule>
+      <rule><keyseq keys="C,"/><insert string="Ç"/></rule>
+      <rule><keyseq keys="c,"/><insert string="ç"/></rule>
+      <rule><keyseq keys="C,,"/><insert string="C,"/></rule>
+      <rule><keyseq keys="c,,"/><insert string="c,"/></rule>
+      <rule><keyseq keys="E'"/><insert string="É"/></rule>
+      <rule><keyseq keys="e'"/><insert string="é"/></rule>
+      <rule><keyseq keys="E''"/><insert string="E'"/></rule>
+      <rule><keyseq keys="e''"/><insert string="e'"/></rule>
+      <rule><keyseq keys="I'"/><insert string="Í"/></rule>
+      <rule><keyseq keys="i'"/><insert string="í"/></rule>
+      <rule><keyseq keys="I''"/><insert string="I'"/></rule>
+      <rule><keyseq keys="i''"/><insert string="i'"/></rule>
+      <rule><keyseq keys="O'"/><insert string="Ó"/></rule>
+      <rule><keyseq keys="o'"/><insert string="ó"/></rule>
+      <rule><keyseq keys="O''"/><insert string="O'"/></rule>
+      <rule><keyseq keys="o''"/><insert string="o'"/></rule>
+      <rule><keyseq keys="U'"/><insert string="Ú"/></rule>
+      <rule><keyseq keys="u'"/><insert string="ú"/></rule>
+      <rule><keyseq keys="U''"/><insert string="U'"/></rule>
+      <rule><keyseq keys="u''"/><insert string="u'"/></rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-trans"/>
+    </state>
+  </state-list>
+</input-method>
+@endverbatim
+
+
+@section im-example2 EXAMPLE 2
+
+This example is for inputting Unicode characters by typing C-u
+(Control-u) followed by four hexadecimal digits.  For instance, when
+you type ("^u" means Control-u):
+@verbatim
+    ^u2190^u2191^u2192^u2193
+@endverbatim
+you will get this (Unicode arrow symbols):
+@if FOR-LATEX
+@verbatim
+    $\leftarrow \uparrow \rightarrow \downarrow
+@endverbatim
+@endif
+@if FOR-HTML
+@verbatim
+    ←↑→↓
+@endverbatim
+@endif
+
+The definition utilizes <set> and <conditional> as below:
+@verbatim
+<?xml version='1.0'?>
+<input-method xmlns="http://www.m17n.org/MIM">
+  <tags>
+    <language>t</language>
+    <name>unicode</name>
+  </tags>
+  <title>UNICODE</title>
+  <map-list>
+    <map id="map-starter">
+      <rule><keyseq><key-event>C-U</key-event></keyseq><insert string="U+"/></rule>
+    </map>
+    <map id="map-hex">
+      <rule><keyseq keys="0"/><insert string="0"/></rule>
+      <rule><keyseq keys="1"/><insert string="1"/></rule>
+                   :                            :
+      <rule><keyseq keys="9"/><insert string="9"/></rule>
+      <rule><keyseq keys="A"/><insert string="A"/></rule>
+      <rule><keyseq keys="B"/><insert string="B"/></rule>
+                   :                             :
+      <rule><keyseq keys="f"/><insert string="F"/></rule>
+    </map>
+  </map-list>
+  <state-list>
+    <state id="state-init">
+      <branch branch-selecting-map="map-starter">
+        <set id="code"><int-val>0</int-val></set>
+        <set id="count"><int-val>0</int-val></set>
+        <shift-to id="state-uni-hex"/>
+      </branch>
+    </state>
+    <state id="state-uni-hex">
+      <branch branch-selecting-map="map-hex">
+        <set id="this"><predefined-nth-previous-or-following-character position="-1"/></set>
+        <conditional>
+          <case>
+            <expr operator="<">
+              <predefined-nth-previous-or-following-character position="-1"/>
+              <int-val>65</int-val> <!-- ?A -->
+            </expr>
+            <sub id="this"><int-val>48</int-val></sub>
+          </case>
+          <case>
+            <int-val>1</int-val>
+            <sub id="this"><int-val>55</int-val></sub>
+          </case>
+        </conditional>
+        <set id="code">
+          <expr operator="+">
+            <expr operator="*">
+              <variable-reference id="code"/>
+               <int-val>16</int-val>
+            </expr>
+            <variable-reference id="this"/>
+          </expr>
+        </set>
+        <set id="count">
+          <expr operator="+">
+            <variable-reference id="count"/>
+            <int-val>1</int-val>
+          </expr>
+        </set>
+        <conditional>
+          <case>
+            <expr operator="=">
+              <variable-reference id="count"/>
+              <int-val>4</int-val>
+            </expr>
+            <delete-to-marker position="@first"/>
+            <insert character-or-string="variable">
+              <variable-reference id="code"/>
+            </insert>
+            <shift-to id="state-init"/>
+          </case>
+        </conditional>
+      </branch>
+    </state>
+  </state-list>
+</input-method>
+
+@endverbatim
+
+@section im-example3 EXAMPLE 3
+
+This example is for inputting Chinese characters by typing PinYin key
+sequence.
+@if FOR-HTML
+For instance, when you type:
+@verbatim
+    nihaobei2jing2
+@endverbatim
+you will get:
+@verbatim
+    你好北京
+@endverbatim
+
+The definition utilizes <candidate> and <select> as below.
+Note that this is just an example, and it ignores such important key
+as Backspace.
+
+@verbatim
+<input-method> <tags>..</tags>
+<title>"拼"</title>
+
+<map-list>
+  <map id="map-starter"> 
+<!-- The initial character of Pinyin.-->
+     <rule><keyseq keys="a"/></rule>
+     <rule><keyseq keys="b"/></rule>
+          :                 :
+     <rule><keyseq keys="z"/></rule>
+  </map>
+  <map id="map-pinyon">
+<!-- Big table of Pinyin vs the corresponding Chinese characters.-->
+     <rule><keyseq keys="bei"/>
+           <insert><candidates>被北备背悲辈杯倍贝碑... </candidates>...</insert></rule>	
+     <rule><keyseq keys="hao"/>
+           <insert><candidates>好号毫豪浩耗皓嚎昊郝... </candidates>...</insert></rule>	
+     <rule><keyseq keys="jing"/>
+           <insert><candidates>经京精境警竟静惊景敬... </candidates>...</insert></rule>	
+     <rule><keyseq keys="ni"/>
+           <insert><candidates>你呢尼泥逆倪匿拟腻妮... </candidates>...</insert></rule>
+  </map>
+  <map id="map-choose">
+<!-- Typing 1, 2, ..., 0 selects the 0th, 1st, ..., 9th candidate.-->
+      <rule><keyseq keys="1"/><select index="0"/></rule>
+      <rule><keyseq keys="2"/><select index="1"/></rule>
+           :                     :
+      <rule><keyseq keys="9"/><select index="8"/></rule>
+      <rule><keyseq keys="0"/><select index="9"/></rule>
+  </map>
+</map-list>
+
+<state-list>
+   <state id="state-init">
+<!--  When an initial character of Pinyin is typed, re-handle it in 
+     "state-main" state.  Anything else is just produced as is. -->
+     <branch branch-selecting-map="map-starter">
+        <show-candidates/>
+        <pushback-n-events n="1"/>
+        <shift-to id="state-main"/>
+     </branch>
+   </state>
+
+   <state id="state-main">
+<!--   When a complete Pinyin sequence is typed, shift to "state-select" state
+       to allow users to select one from the candidates.   -->
+      <branch branch-selecting-map="map-pinyin">
+        <shift-to id="state-select"/>
+      </branch>
+<!--   When anything else is typed, produce the current candidate (if
+       any), and re-handle the last input in "state-init" state. -->
+      <catch-all-branch>
+        <hide-candidates/>
+        <shift-to id="state-init"/>
+      </catch-all-branch>
+   </state>
+
+   <state id="state-select">
+<!-- When a number is typed, select the corresponding canidate,
+     produce it, and shift to "init" state. -->
+       <branch branch-selectiong-map="map-choose">
+        <hide-candidates/>
+        <shift-to id="state-init"/>
+       </branch>
+
+<!-- When anything else is typed, produce the current candidate,
+     and re-handle the last input in "init" state. -->
+      <catch-all-branch>
+        <hide-candidates/>
+        <shift-to id="state-init"/>
+      </catch-all-branch>
+   </state>
+ </state-list>
+</input-method>
+
+@endverbatim
+
+@elseif FOR-LATEX
+@latexonly
+\begin{center}
+\fbox{This example is readable only in the documentation of HTML version.}
+\end{center}
+@endlatexonly
+@endif
+
+@endif
 
 @section im-seealso SEE ALSO
 
@@ -579,5 +1778,5 @@ Boston, MA 02110-1301, USA.
 */
 
 /* Local Variables: */
-/* coding: euc-jp */
+/* coding: utf-8 */
 /* End: */

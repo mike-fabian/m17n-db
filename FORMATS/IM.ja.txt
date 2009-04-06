@@ -139,15 +139,15 @@ Version 2.0 &lt;http://www.thdl.org/collections/langling/ewts/ewts.php&gt;.</des
 ルをロードし、他の入力メソッドはここで定義された変数やコマンドを継承で
 きる。
 
-&lt;language&gt; エレメントの内容が @c t である場合、この入力メソッドは
+&lt;language&gt; エレメントの内容が "t" である場合、この入力メソッドは
 複数の言語で利用される。それ以外の場合には、エレメントの内容はISO639-1
 あるいは ISO639-2 に規定された言語の名称を表す２または３文字のコードで
 なくてはならない。
 
-&lt;name&gt; エレメントの内容が @c nil である場合、この入力メソッドは単
+&lt;name&gt; エレメントの内容が "nil" である場合、この入力メソッドは単
 独で用いられるものではなく、他の入力メソッドから利用することを想定して
 いる。この場合、入力メソッドを特定するために &lt;extra-id&gt; エレメン
-トが必須である。&lt;name&gt; エレメントの内容が @c nil でない場合、
+トが必須である。&lt;name&gt; エレメントの内容が "nil" でない場合、
 &lt;extra-id&gt; エレメントは任意(optional)である。
 
 #if EXAMPLE_CODE
@@ -251,12 +251,13 @@ m17n ライブラリの最小バージョンを指定する。フォーマット
 
 各 &lt;variable&gt; は一つの変数を宣言し、変数は属性 "id" によって参照
 される。すべての変数は暗黙のうちに整数値０に初期化されている。
-&lt;insert&gt; アクションは M-text である &lt;value&gt; を参照する。シ
-ンボルである &lt;value&gt; は直接参照されず、ライブラリが暗黙的に使用す
-る。(e.g. candidates-charset).  整数値である &lt;value&gt; は、
-&lt;set&gt;, &lt;add&gt;, &lt;sub&gt;, &lt;mul&gt;, &lt;div&gt; アクショ
-ンによって設定、変更、参照され、&lt;insert&gt;, &lt;select&gt;,
-&lt;undo&gt;, &lt;if&gt;, &lt;cond&gt; アクションに参照される。
+
+M-text である &lt;value&gt; は、&lt;insert&gt; が参照する。シンボルであ
+る &lt;value&gt; は直接参照されず、ライブラリが暗黙的に使用する。
+(e.g. candidates-charset).  整数値である &lt;value&gt; は、
+&lt;set&gt;, &lt;add&gt;, &lt;sub&gt;, &lt;mul&gt;, &lt;div&gt; によっ
+て設定、変更、参照され、&lt;insert&gt;, &lt;select&gt;, &lt;undo&gt;,
+&lt;if&gt;, &lt;cond&gt; に参照される。
 
 &lt;variable-value-candidate&gt; は変数が取り得る値のリストである。
 &lt;c-value&gt; は可能な値の一つを表しており、M-text かシンボルか整数値
@@ -304,9 +305,8 @@ m17n ライブラリの最小バージョンを指定する。フォーマット
 Predefined-variable は属性 "type" の値が "predefiend" である変数である。
 属性 "id" の値が "handled-keys" であるとき、変数の値はその時点で処理さ
 れているキーの数である。属性 "id" の値が
-"predefined-surround-text-flag" であるとき、変数の値はサラウンドテキス
-トがサポートされていれば -1 、そうでなければ -2 である。
-
+"predefined-surround-text-flag" であるとき、変数の値は -1 か -2 であり、
+それぞれサラウンドテキストがサポートしていること、そうでないことを示す。
 
 #if EXAMPLE_CODE
 <variable-reference id="handled-keys" type="predefined"/>
@@ -336,8 +336,8 @@ Predefined-variable は属性 "type" の値が "predefiend" である変数で�
 
 &lt;command-list&gt; は、この入力メソッドで使用されるコマンドを宣言する。
 コマンドをデフォルトキーシーケンスに割り当てたり、ユーザがカスタマイズ
-したりする場合には、ここで宣言されなくてはならない。@c
-&lt;variable-list&gt;, 同様、この宣言は二通りに利用される。一つめは新し
+したりする場合には、ここで宣言されなくてはならない。
+&lt;variable-list&gt; 同様、この宣言は二通りに利用される。一つめは新し
 いコマンドを導入するためであり、この場合 &lt;command&gt; 中の
 &lt;keyseq&gt; エレメントは省略できない。もう一つは "global.mimx" で宣
 言されたコマンドを継承し、違ったキーバインディングを指定したり、この入
@@ -384,8 +384,8 @@ Predefined-variable は属性 "type" の値が "predefiend" である変数で�
 
 @endverbatim
 
-各 &lt;command&gt; エレメントは一つの外部モジュール (動的ライブラリ)を
-宣言し、属性 "id" は外部モジュールの名前を表す。
+各 &lt;module&gt; エレメントは一つの外部モジュール (動的ライブラリ)を宣
+言し、属性 "id" は外部モジュールの名前を表す。
 
 &lt;function&gt; エレメントはモジュールによってエクスポートされている関
 数名を示す。
@@ -483,8 +483,9 @@ Predefined-variable は属性 "type" の値が "predefiend" である変数で�
 @endverbatim
 
 predefined-marker は @@ で始まるマーカである。 @@0, @@1, ... , @@9は、
-それぞれ 0番目, 1番目, ... , 9番目の位置を示す。
-@@previous_candidate_list 候補リストが変化する前の位置、
+それぞれ 0番目, 1番目, ... , 9番目の位置を示す。@@first, @@current,
+@@last, @@previous, @@next はそれぞれ最初の、現在の、最後の、直前の、直
+後の位置を示す。@@previous_candidate_list 候補リストが変化する前の位置、
 @@next_candidate_list は候補リストが変化する際の次の位置を示す。
 
 #if EXAMPLE_CODE
@@ -529,22 +530,22 @@ User-defined-marker は @@ で始まってはならない。
 &lt;predefined-nth-previous-or-following-character&gt; エレメントは、プ
 リエデットバッファ中の１文字を指定する。
 
-属性 "position" の値が負の整数 @c -N である場合、
+属性 "position" の値が負の整数 -N である場合、
 &lt;predefined-nth-previous-or-following-character&gt; エレメントは、プ
-リエデット中の現在の位置から @c N 文字前の文字である。もしプリエディッ
-ト中で先行する文字がM (M<N) 文字しかなければ、その値は入力スポットから
-数えて (N-M) 文字前の文字となる。
+リエデット中の現在の位置から N 文字前の文字である。もしプリエディット中
+で先行する文字がM (M<N) 文字しかなければ、その値は入力スポットから数え
+て (N-M) 文字前の文字となる。
 
-属性 "position" の値が正の整数 @c N である場合、この変数の値は、プリエ
-デット中の現在の位置から @c N 文字後の文字である。もしプリエディット中
-で後続する文字がM (M<N) 文字しかなければ、その値は入力スポットから数え
-て (N-M) 文字後の文字となる。
+属性 "position" の値が正の整数 N である場合、この変数の値は、プリエデッ
+ト中の現在の位置から N 文字後の文字である。もしプリエディット中で後続す
+る文字がM (M<N) 文字しかなければ、その値は入力スポットから数えて (N-M)
+文字後の文字となる。
 
 #if EXAMPLE_CODE
 <predefined-nth-previous-or-following-character position="-1"/>
 #endif
 
-このコードは直前の文字を意味する。
+このコードは直前の文字を参照する。
 
 @verbatim
 <define name="predefined-selector">
@@ -564,7 +565,8 @@ User-defined-marker は @@ で始まってはならない。
 
 Predefined-selector は候補グループ中での位置を示し、&lt;select&gt; エレ
 メント中で用いられる。@@0, @@1, ... , @@9は、それぞれ 0番目, 1番目,
-... , 9番目の位置を指す。@@previous は前の候補を指す。もし今の候補が今
+... , 9番目の位置を指す。@@first, @@current, @@last はそれぞれ、最初の、
+現在の、最後の候補である。@@previous は前の候補を指す。もし今の候補が今
 の候補グループ中での最初のものであれば、前の候補グループの最後の候補を
 指す。@@next は次の候補を指す。もし今の候補が今の候補グループ中での最後
 のものであれば、次の候補グループの最初の候補を指す。
@@ -606,12 +608,10 @@ Predefined-selector は候補グループ中での位置を示し、&lt;select&g
 &lt;map-list&gt; はこの入力メソッドで使用されるマップを宣言する。
 &lt;map&gt; エレメントは類似のルールをまとめて名付け、入力メソッドの状
 態遷移を記述を容易にする。属性"id" が &lt;map&gt; の名前を示す。
-&lt;rule&gt; エレメントによって、入力シークエンス&lt;keyseq&gt; (または
-&lt;command&gt;) と入力メソッドドライバが実行する &lt;action&gt; との対
-応付けを記述する。たとえば&lt;action&gt; が適当な文字を挿入する
-&lt;insert&gt; である場合、&lt;rule&gt; がキーボード上の入力キーとスク
-リーンに現れる文字の対応付けを行う。
 
+&lt;rule&gt; エレメントが、入力シークエンス&lt;keyseq&gt; (または
+&lt;command&gt;) と入力メソッドドライバが実行する &lt;action&gt;、たと
+えば適当な文字を挿入する&lt;insert&gt; との対応を定義する。
 
 #if EXAMPLE_CODE
   <map-list>
@@ -657,9 +657,9 @@ Predefined-selector は候補グループ中での位置を示し、&lt;select&g
 ドがたとえば西ヨーロッパ用キーボードを使うことを想定したものであれば、
 Latin-1 文字を含んでもよい。
 
-&lt;keyseq&gt; エレメントの内容は、関数 minput_event_to_key () の戻り値
-でなくてはならない。X ウィンドウシステムの元では、 @c xev コマンドを用
-いて値を簡単にチェックできる。たとえば、 リターンキー、バックスペース
+&lt;keyevent&gt; エレメントの内容は、関数 minput_event_to_key () の戻り
+値でなくてはならない。X ウィンドウシステムの元では、 @c xev コマンドを
+用いて値を簡単にチェックできる。たとえば、 リターンキー、バックスペース
 キー、キーパッドの0のキーなどは、それぞれ@c Return , @c BackSpace , @c
 KP_0 としてあらわされる。シフト、コントロール、メタ、アルト、スーパー、
 ハイパーも押されている場合には、それぞれS- , C- , M- , A- , s- , H- が
@@ -761,7 +761,7 @@ KP_0 としてあらわされる。シフト、コントロール、メタ、ア
 最新のキーを未処理として返す。
 
 エレメント &lt;set&gt;, &lt;add&gt;, &lt;sub&gt;, &lt;mul&gt;,
-&lt;div&gt; は変数の値をそれぞれ設定し、加減乗除する。
+&lt;div&gt; は変数の値をそれぞれ設定したり、加減乗除したりする。
 
 #if EXAMPLE_CODE
 <set id="MAX-COUNT">
@@ -888,7 +888,8 @@ KP_0 としてあらわされる。シフト、コントロール、メタ、ア
 <delete-to-marker position="@first"/>
 #endif
 
-このコードはバッファの最初から現在の位置までの文字を削除する。
+このコードは属性 "position" で指定されたバッファの最初から現在の位置ま
+での文字を削除する。
 
 &lt;delete-to-character-position&gt; エレメントはその内容を文字位置とし
 て、その文字位置と現在の位置の間の文字を削除する。
@@ -1001,9 +1002,9 @@ predefined-selector であり、候補リスト中の新しい候補を指定す
 
 この２つの &lt;action&gt; はキーイベントをイベントキューに差し戻す。
 &lt;pushback-n-events&gt; エレメントは最新のキーイベントを差し戻す。属
-性"n" の値が正の整数ならば差し戻すイベントの数を示す。０ならばすべて差
-し戻す。&lt;pushback-keyseq&gt; エレメントは、&lt;keyseq;gt; で指定され
-たキーイベントを差し戻す。
+性"n" の値が正の整数ならばそれは差し戻すイベントの数である。０ならばす
+べて差し戻す。&lt;pushback-keyseq&gt; エレメントは、&lt;keyseq;gt; で指
+定されたキーイベントを差し戻す。
 
 #if EXAMPLE_CODE
 <pushback-keyseq><keyseq keys="b"/></pushback-keyseq>
@@ -1283,7 +1284,7 @@ predefined-selector であり、候補リスト中の新しい候補を指定す
 い限り、二番めの&lt;case&gt; 中のactionを実行する。
 
 
-@subsection imstate 入力メソッドの状態
+@subsection imstate 入力メソッドの状態と遷移
 
 @verbatim
       
@@ -1332,7 +1333,7 @@ predefined-selector であり、候補リスト中の新しい候補を指定す
 テキストである。省略されている場合には &lt;title&gt; エレメントの内容が
 用いられる。
 
-各 &lt;state&gt; は０以上の &lt;branch&gt;を持つ。各&lt;branch&gt; は
+各 &lt;state&gt; は0以上の &lt;branch&gt;を持つ。各&lt;branch&gt; は
 &lt;map-list&gt; 中の各 &lt;map&gt に対応する。 属性
 "branch-selecting-map" の値が&lt;map&gt; の属性 "id" の値を示す。入力シー
 クエンスがある&lt;map&gt; 中の &lt;rule&gt; の &lt;keyseq&gt; (or
@@ -1381,15 +1382,16 @@ predefined-selector であり、候補リスト中の新しい候補を指定す
 </state-list>
 #endif
 
-このコードはある入力メソッドでの状態遷移を定義している。&lt;state&gt;
-は"state-init" と "state-join" の２つがある。"state-init" には３つの
-&lt;branche&gt;がある。"map-consonant", "map-misc" and "map-join" に属
-す入力シークエンスが与えられれば、対応する &lt;branche&gt;が選択され、
-その&lt;saction&gt;が実行される。"map-join" の&lt;branche&gt;が選ばれた
-場合には "state-join" への状態遷移が起こる。"state-join" には、
-"map-consonant" に属す入力シークエンス用の &lt;branche&gt;と、それ以外
-全ての入力用の&lt;catch-all-branch&gt; があり、双方とも"state-init" へ
-遷移させる。
+このコードはある入力メソッドでの状態遷移を定義している。この入力メソッ
+ドでの&lt;state&gt;は、"state-init" と "state-join" の２つである。
+"state-init" には３つの &lt;branch&gt; があり、それぞれ
+"map-consonant", "map-misc", "map-join" に属す入力シークエンスが与えら
+れた場合に選ばれる。"map-join"の &lt;branch&gt; が選ばれた場合には、
+&lt;shift-to&gt; エレメントによって "state-join" への遷移が起こる。
+"state-join"には、"map-consonant" に属す入力シークエンスのための
+&lt;branch&gt; とそれ以外の全ての入力を処理する
+&lt;catch-all-branch&gt;があり、双方とも最後は "state-init" への遷移を
+実行する。
 
 @verbatim
 
@@ -1407,7 +1409,7 @@ predefined-selector であり、候補リスト中の新しい候補を指定す
 
 &lt;shift-to&gt; エレメントは現在の状態を属性 "id" の値で指示されたもの
 に遷移させる。属性の値は&lt;state-list&gt; に現れるものでなくてはならな
-い。&lt;shift-back&gt; エレメントは、現在の状態を一つまえのものに遷移さ
+い。&lt;shift-back&gt; エレメントは、現在の状態を一つ前のものに遷移さ
 せる。
 
 @subsection implist Plist

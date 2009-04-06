@@ -240,15 +240,16 @@ level.
 
 @endverbatim
 
-&lt;variable-list&gt; declares variables used in this input method.  If a
-variable must be initialized to the default value, or is to be
+&lt;variable-list&gt; declares variables used in this input method.  
+
+If a variable is initialized to the default value, or is to be
 customized by a user, it must be declared here.  The declaration can
 be used in two ways.  One is to introduce a new variable.  In that
-case, the &lt;value&gt; element in &lt;variable&gt; must not be omitted.  Another
-is to inherit the variable from what declared in "global.mimx", and to
-give the different default value and/or to make the variable
-customizable specially for the current input method.  In the latter
-case, &lt;value&gt; can be omitted.
+case, the &lt;value&gt; element in &lt;variable&gt; must not be
+omitted.  Another is to inherit the variable from what declared in
+"global.mimx", and to give the different default value and/or to make
+the variable customizable specially for the current input method.  In
+the latter case, &lt;value&gt; can be omitted.
 
 Each &lt;variable&gt; declares one variable, and a variable is referred with
 the attribute "id".  &lt;value&gt; of a &lt;variable&gt; can be an integer, a
@@ -310,8 +311,8 @@ Predefined-variables are variables whose "type" attribute has the
 value "predefined".  When "id" attribute has the value "handled-keys",
 the value of the variable is the number of handled keys at that
 moment.  If the "id" attribute has the value
-"predefined-surround-text-flag", the value of the variable is -1
-if surrounding text is supported, and -2 if not.
+"predefined-surround-text-flag", the value of the variable is -1 if
+surrounding text is supported, and -2 if not.
 
 #if EXAMPLE_CODE
 <variable-reference id="handled-keys" type="predefined"/>
@@ -393,12 +394,13 @@ referred with the attribute "id".
 Each &lt;module&gt; element declares an external module (i.e. dynamic
 library).  The value of "id" attribute gives the name of the module
 
-&lt;function&gt; elements specify function names exported by the module.  If
-the "id" attribute has the value "function-init", it is called with
+&lt;function&gt; elements specify function names exported by the module.  
+
+If the "id" attribute has the value "function-init", it is called with
 only the default arguments (see &lt;call&gt;) when an input context is
-created for the input method.  If the "id" attribute has the value
-"function-fini", it is called with only the default arguments when the
-input context is destroyed. 
+created for the input method.  If it has the value "function-fini", it
+is called with only the default arguments when the input context is
+destroyed.
 
 #if EXAMPLE_CODE
   <module-list>
@@ -432,6 +434,7 @@ This code declares a module "module-libmimx-anthy" who export six functions.
 
 @endverbatim
 
+&lt;macro-list&gt; declares macros used in this input method.  
 The element &lt;macro&gt; bundles and names a set of &lt;action&gt;s.  The
 attribute "id" gives the name of a &lt;macro&gt;, and a macro is referred
 with this attribute.
@@ -462,7 +465,7 @@ This code declares one macro "macro-forward".
 @endverbatim
 
 A marker is a symbol indicating a character position in the preediting
-text.  The element &lt;mark-current-position&gt; assigns a position to
+buffer.  The element &lt;mark-current-position&gt; assigns a position to
 a marker.  The position of a marker is referred by the elements
 &lt;move-to-marker&gt; and &lt;delete-to-marker&gt;.
 
@@ -486,9 +489,12 @@ a marker.  The position of a marker is referred by the elements
 
 @endverbatim
 
-Predefined markers start with @@.  @@0, @@1, ... , @@9 mark the
-0th, 1st, 2nd,... 9th position respectively. @@previous_candidate_list
-mark the previous position where a candidate list changes.
+Predefined markers start with @@.  @@0, @@1, ... , @@9 mark the 0th,
+1st, ... , 9th position respectively. @@first, @@current, @@last,
+@@previous and @@next mark the first, current, last, previous and next
+position in the preediting buffer respectively.
+@@previous_candidate_list mark
+the previous position where a candidate list changes.
 @@next_candidate_list mark the next position where a candidate list
 changes.
 
@@ -535,10 +541,10 @@ This code moves the marker to the user defined position T.
 The element &lt;predefined-nth-previous-or-following-character&gt; specifies
 a character inside or outside of the preedit buffer.
 
-When the value of the attribute "position" is a negative integer -N,
+When the value of the attribute "position" is a negative integer  -N,
 the element &lt;predefined-nth-previous-or-following-character&gt; means the
-Nth previous character in the preedit buffer.  If there are only M
-(M&lt;N) previous characters in it, the value is the (N-M)th previous
+Nth previous character in the preedit buffer.  If there are only  M (M&lt;N)
+previous characters in it, the value is the (N-M)th previous
 character from the inputting spot.
 
 When the value of the attribute "position" is a positive integer N,
@@ -573,16 +579,17 @@ Predefined-selectors specify positions in a candidate list. They are
 used in the element &lt;select&gt;.  
 
 @@0, @@1, ... , @@9 specify the 0th, 1st, ... 9th position
-respectively.  @@previous means the previous position, and if the
-current candidate is the first one in the current candidate group,
-this value means the last candidate in the previous candidate
-group. @@next means the next position, and if the current candidate is
-the last one in the current candidate group, this value means the
-first candidate in the next candidate group.
-@@previous_candidate_list specifies the candidate in the previous
-candidate group having the same candidate index as the current one,
-and @@next_candidate_list specifies the candidate in the next
-candidate group having the same candidate index as the current one.
+respectively.  @first and @last specify the first and last position in
+the list.  @@previous means the previous position, and if the current
+candidate is the first one in the current candidate group, this value
+means the last candidate in the previous candidate group. @@next means
+the next position, and if the current candidate is the last one in the
+current candidate group, this value means the first candidate in the
+next candidate group.  @@previous_candidate_list specifies the
+candidate in the previous candidate group having the same candidate
+index as the current one, and @@next_candidate_list specifies the
+candidate in the next candidate group having the same candidate index
+as the current one.
 
 #if EXAMPLE_CODE
 <select selector="@previous"/>
@@ -616,16 +623,16 @@ This code selects the previous candidate.
 
 @endverbatim
 
-The element &lt;map&gt; bundles and names a set of similar &lt;rule&gt;s,
-so that &lt;state&gt; transitions can be clearly defined.  The attribute
-"id" gives the name of a &lt;map&gt;.
+&lt;map-list&gt; declares maps used in this input method.  The element
+&lt;map&gt; bundles and names a set of similar &lt;rule&gt;s, so that
+&lt;state&gt; transitions can be clearly defined.  The attribute "id"
+gives the name of a &lt;map&gt;.
 
 The element &lt;rule&gt; defines the mapping of an input key sequence
 &lt;keyseq&gt; (or &lt;command&gt;) and &lt;action&gt;s the input
-method driver should take.  When the &lt;action&gt; is to
-&lt;insert&gt; an appropriate character, for example, the &lt;rule&gt;
-defines the mapping between the input key on the keyboard and the
-character to appear on the screen.
+method driver should take, for example, &lt;insert&gt;ing an
+appropriate character.
+
 
 #if EXAMPLE_CODE
   <map-list>
@@ -853,8 +860,8 @@ by the insertion are automatically relocated.
 The attribute "string" specifies a M-text to be inserted.  The
 attribute "character" specifies the code of a character to be
 inserted.  The attribute "character-or-string" must have a variable as
-its value and &lt;insert&gt; inserts the value of the specified variable, if
-it is a valid character code or a M-text.
+its value and &lt;insert&gt; inserts the value of the specified
+variable, if it is a valid character code or a M-text.
 
 #if EXAMPLE_CODE
 <insert string="á"/>
@@ -887,7 +894,7 @@ selected candidate.
 #endif
 
 These codes insert ＄, and a respectively and associate the whole list
-with it.
+of five items with it.
 
 @verbatim
 
@@ -913,8 +920,8 @@ position and the marker position.
 <delete-to-marker position="@first"/>
 #endif
 
-This code deletes character between the first position and the current
-position in the buffer.
+This code deletes character specified with the attribute position (the
+first position) and the current position in the buffer.
 
 The element &lt;delete-to-character-position&gt; treats its content as a
 character position, and deletes characters between the current
@@ -1315,7 +1322,7 @@ This code performs the actions in the second &lt;case&gt; unless the
 second previous character is Thai character RU (whose character code
 is 0x0E24).
 
-@subsection imstate Input Method States
+@subsection imstate Input Method States and Transitions
 
 @verbatim
       
@@ -1416,13 +1423,13 @@ When an input sequence does not match with any of the &lt;branch&gt;s in the cur
 
 This code defines state transitions in an input method.  It has two
 states "state-init" and "state-join".  The state "state-init" has
-three branches.  When an input sequence belonging to "map-consonant",
-"map-misc" and "map-join" is given, the corresponding branch is
-selected and its &lt;saction&gt;s are executed.  When the branch with "map-join" is
-selected, the state is shift to "state-join".  The state "state-join"
-has one branch for input sequences from "map-consonant" and one
-catch-all-branch for everything else, both shifting the state to
-"state-init".
+three &lt;branchglt;s.  When an input sequence belonging to
+"map-consonant", "map-misc" and "map-join" is given, the corresponding
+branch is selected and its &lt;saction&gt;s are executed.  When the
+branch with "map-join" is selected, the state is shift to
+"state-join".  The state "state-join" has one branch for input
+sequences from "map-consonant" and one catch-all-branch for everything
+else, both shifting the state to "state-init".
 
 @verbatim
 

@@ -755,7 +755,9 @@ KP_0 としてあらわされる。シフト、コントロール、メタ、ア
 エレメント &lt;pop&gt; はまだ処理されていない最初のイベントをイベント
 キューから取り出し破棄する。
 
-エレメント &lt;commit&gt; は現在の preediting テキストをコミットする。
+エレメント &lt;commit&gt; は現在の preediting テキストを明示的にコミッ
+トする。現在の preediting テキストは、入力メソッドドライバが最初の
+&lt;state&gt;に遷移するたびにも、コミットされる。(@ref imstate 参照。）
 
 エレメント &lt;unhandle&gt; は現在の preediting テキストをコミットし、
 最新のキーを未処理として返す。
@@ -1324,22 +1326,29 @@ predefined-selector であり、候補リスト中の新しい候補を指定す
 入力メソッドドライバは常に一つの &lt;state&gt; にあり、入力を処理するこ
 とによって別の &lt;state&gt; に遷移することがある。異なる
 &lt;state&gt; では、同じ入力でも異なる&lt;saction&gt; を引き起こし、異
-なる結果を得ることがある。入力コンテクストが生成される、すなわち入力メ
-ソッドが起動された時点では入力メソッドドライバは&lt;state-list&gt; エレ
-メント中の最初の &lt;state&gt; にある。
+なる結果を得ることがある。
 
 属性 "id" が &lt;state&gt; の名前を示す。&lt;state-title-text&gt; エレ
 メントの内容は、入力メソッドがこの状態にある時スクリーン上に表示される
 テキストである。省略されている場合には &lt;title&gt; エレメントの内容が
 用いられる。
 
+入力コンテクストが生成された、すなわち入力メソッドが起動された時点では
+入力メソッドドライバは&lt;state-list&gt; エレメント中の最初の
+&lt;state&gt; にある。
+
 各 &lt;state&gt; は0以上の &lt;branch&gt;を持つ。各&lt;branch&gt; は
 &lt;map-list&gt; 中の各 &lt;map&gt に対応する。 属性
 "branch-selecting-map" の値が&lt;map&gt; の属性 "id" の値を示す。入力シー
 クエンスがある&lt;map&gt; 中の &lt;rule&gt; の &lt;keyseq&gt; (or
-&lt;command-reference&gt;) 部分に合致すると、対応する &lt;branch&gt; が
-選ばれ、その &lt;rule&gt; の &lt;action&gt; に続いてその
-&lt;branch&gt; の&lt;saction&gt; が実行される。
+&lt;command-reference&gt;) 部分に合致すると、対応する &lt;branch&gt; を
+選択し、その &lt;rule&gt; の &lt;action&gt; に続いてその
+&lt;branch&gt; の&lt;saction&gt; を実行し、入力メソッドドライバはその
+&lt;state&gt; の初期状態に戻る。
+
+入力メソッドドライバが最初の &lt;state&gt; の初期状態になる度に、
+preeditバッファ中の全ての文字をコミットし、preeditバッファを空にする。
+（&lt;commit&gt; エレメントが指定されていなくても。）
 
 &lt;state-hook&gt; エレメント (省略可能) は、入力メソッドドライバがこの
 &lt;state&gt; に遷移した時点で実行される&lt;sactions&gt; を指定する。

@@ -778,7 +778,9 @@ hide the currently displayed candidate list.
 The element &lt;pop&gt; pops the first key event that is not yet handled
 from the event queue.
 
-The element &lt;commit&gt; commits the current preedit.
+The element &lt;commit&gt; explicitly commits the current preedit.
+The current preedit is also committed whenever the input method driver
+transits to the intial &lt;state&gt;.  (See @ref imstate.)
 
 The element &lt;unhandle&gt; commits the current preedit and returns the last key as
 unhandled. 
@@ -1363,14 +1365,16 @@ The input method driver is always in one of the &lt;state&gt;s of an
 &lt;input-method&gt; and may transit to another &lt;state&gt; when
 processing an input.  The same input sequence can trigger different
 &lt;saction&gt;s and produce different results in different
-&lt;state&gt;s.  When an input context is created, i.e. the input
-method is invoked, the input method driver is in the first
-&lt;state&gt; of the &lt;state-list&gt;.
+&lt;state&gt;s.  
 
 The attribute "id" gives the name of a &lt;state&gt;.  The element
 &lt;state-title-text&gt; specifies a title text displayed on the
 screen when the input method is in this state.  When this element is
 omitted, the content of the &lt;title&gt; element is used instead.
+
+When an input context is created, i.e. the input method is invoked,
+the input method driver is in the first &lt;state&gt; of the
+&lt;state-list&gt;.
 
 Each &lt;state&gt; has zero or more &lt;branch&gt;es.  Each
 &lt;branch&gt; corresponds to a &lt;map&gt; in a &lt;map-list&gt;.
@@ -1378,8 +1382,13 @@ The value of the attribute "branch-selecting-map" specifies a
 &lt;map&gt;'s "id" value.  When the input sequence matches one of the
 &lt;keyseq&gt; (or &lt;command-reference&gt;) of a &lt;rule&gt; of the
 &lt;map&gt;, the corresponding &lt;branch&gt; is selected,
-&lt;action&gt;s in the &lt;rule&gt; are executed, and &lt;saction&gt;s
-in that &lt;branch&gt; are executed.
+&lt;action&gt;s in the &lt;rule&gt; are executed, &lt;saction&gt;s in
+that &lt;branch&gt; are executed, and the input method driver shifts
+to the initial condition of the current state.
+
+Whenever the input method driver shifts to the initial condition of
+the first &lt;state&gt;, it commits all characters in the preedit
+buffer and clears the preedit buffer, without explicit &lt;commit&gt;.
 
 Optional element &lt;state-hook&gt; specifies &lt;sactions&gt;
 executed when the input method driver is shifted to the current

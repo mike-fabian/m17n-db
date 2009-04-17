@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.m17n.org/MIM" xmlns:mim="http://www.m17n.org/MIM">
+  <xs:element name="input-method">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:group ref="mim:im-declaration"/>
+        <xs:element minOccurs="0" ref="mim:description"/>
+        <xs:element minOccurs="0" ref="mim:title"/>
+        <xs:element minOccurs="0" ref="mim:variable-list"/>
+        <xs:element minOccurs="0" ref="mim:command-list"/>
+        <xs:element minOccurs="0" ref="mim:module-list"/>
+        <xs:element minOccurs="0" ref="mim:macro-list"/>
+        <xs:element minOccurs="0" ref="mim:map-list"/>
+        <xs:element minOccurs="0" ref="mim:state-list"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="description">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="mim:get-text"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get-text" type="xs:string"/>
+  <xs:element name="title" type="xs:string"/>
+  <xs:group name="im-declaration">
+    <xs:sequence>
+      <xs:element ref="mim:tags"/>
+      <xs:element minOccurs="0" ref="mim:m17n-version"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:element name="tags">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="mim:language"/>
+	<xs:element name="name">
+	  <xs:simpleType>
+	    <xs:restriction base="xs:token"/>
+	  </xs:simpleType>
+	</xs:element>
+	<xs:element minOccurs="0" ref="mim:extra-id"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="language">
+    <xs:simpleType>
+      <xs:union>
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="t"/>
+          </xs:restriction>
+        </xs:simpleType>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[a-z]{2,3}"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:union>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="extra-id" type="xs:ID"/>
+  <xs:element name="m17n-version">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="[0-9]+\.[0-9]+\.[0-9]+"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <!-- setups -->
+  <xs:element name="variable-list">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mim:variable"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="variable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="mim:description"/>
+        <xs:element minOccurs="0" ref="mim:value"/>
+        <xs:element minOccurs="0" ref="mim:variable-value-candidate"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="value">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:restriction base="xs:anyType">
+          <xs:simpleType>
+            <xs:union memberTypes="xs:string xs:string xs:integer"/>
+          </xs:simpleType>
+          <xs:attribute name="type" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="string"/>
+                <xs:enumeration value="symbol"/>
+                <xs:enumeration value="integer"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:restriction>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="variable-value-candidate">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="mim:c-value"/>
+        <xs:element ref="mim:c-range"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="c-value">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:restriction base="xs:anyType">
+          <xs:simpleType>
+            <xs:union memberTypes="xs:string xs:string xs:integer"/>
+          </xs:simpleType>
+          <xs:attribute name="type" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="string"/>
+                <xs:enumeration value="symbol"/>
+                <xs:enumeration value="integer"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:restriction>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="c-range">
+    <xs:complexType>
+      <xs:attribute name="from" use="required" type="xs:integer"/>
+      <xs:attribute name="to" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="command-list">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mim:command"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="command">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="mim:description"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mim:keyseq"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:ID">
+            <xs:pattern value="command-.*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="module-list">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mim:module"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="module">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mim:function"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:ID">
+            <xs:pattern value="module-.*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="function">
+    <xs:complexType>
+      <xs:attribute name="id" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:ID">
+            <xs:pattern value="function-.*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="macro-list">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mim:macro"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="macro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mim:action"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:ID">
+            <xs:pattern value="macro-.*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <!-- the real work -->
+  <xs:element name="map-list">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mim:map"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="map">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mim:rule"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:ID">
+            <xs:pattern value="map-.*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice>
+          <xs:element ref="mim:keyseq"/>
+          <xs:element ref="mim:command-reference"/>
+        </xs:choice>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mim:action"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="keyseq">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="mim:key-event"/>
+        <xs:element ref="mim:character-code"/>
+      </xs:choice>
+      <xs:attribute name="keys" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="key-event" type="xs:string"/>
+  <xs:element name="character-code">
+    <xs:simpleType>
+      <xs:union>
+        <xs:simpleType>
+          <xs:restriction base="xs:nonNegativeInteger">
+            <xs:pattern value="[0-9]{1,7}"/>
+          </xs:restriction>
+        </xs:simpleType>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0#]x[0-9A-F]{1,6}"/>
+          </xs:restriction>
+        </xs:simpleType>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\?."/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:union>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="command-reference">
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="xs:IDREF"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- actions used in map rules -->
+  <xs:element name="action" abstract="true" substitutionGroup="mim:saction"/>
+  <xs:element name="show-candidates" substitutionGroup="mim:action">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="hide-candidates" substitutionGroup="mim:action">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="pop" substitutionGroup="mim:action">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="commit" substitutionGroup="mim:action">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="unhandle" substitutionGroup="mim:action">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="set" substitutionGroup="mim:action" type="mim:set-val"/>
+  <xs:element name="add" substitutionGroup="mim:action" type="mim:set-val"/>
+  <xs:element name="sub" substitutionGroup="mim:action" type="mim:set-val"/>
+  <xs:element name="mul" substitutionGroup="mim:action" type="mim:set-val"/>
+  <xs:element name="div" substitutionGroup="mim:action" type="mim:set-val"/>
+  <xs:element name="macro-reference" substitutionGroup="mim:action">
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="xs:IDREF"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="set-val">
+    <xs:group ref="mim:expr"/>
+    <xs:attribute name="id" use="required"/>
+  </xs:complexType>
+  <!-- actions used in states -->
+  <xs:element name="saction" abstract="true"/>
+  <xs:element name="shift-to" substitutionGroup="mim:saction">
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="xs:IDREF"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="shift-back" substitutionGroup="mim:saction">
+    <xs:complexType/>
+  </xs:element>
+  <!-- symbols used in actions -->
+  <!-- markers specify positions in a buffer -->
+  <xs:attributeGroup name="marker">
+    <xs:attribute name="position">
+      <xs:simpleType>
+        <xs:union>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="@[0-9]"/>
+            </xs:restriction>
+          </xs:simpleType>
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="@first"/>
+            </xs:restriction>
+          </xs:simpleType>
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="@current"/>
+            </xs:restriction>
+          </xs:simpleType>
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="@last"/>
+            </xs:restriction>
+          </xs:simpleType>
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="@previous"/>
+            </xs:restriction>
+          </xs:simpleType>
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="@next"/>
+            </xs:restriction>
+          </xs:simpleType>
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="@previous_candidate_list"/>
+            </xs:restriction>
+          </xs:simpleType>
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="@next_candidate_list"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:union>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="markerID">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[^@].*"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="predefined-marker">
+    <xs:attribute name="position" use="required">
+      <xs:simpleType>
+        <xs:union>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="@[0-9]"/>
+            </xs:restriction>
+          </xs:simpleType>
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="@first"/>
+            </xs:restriction>
+          </xs:simpleType>
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="@current"/>
+            </xs:restriction>
+          </xs:simpleType>
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="@last"/>
+            </xs:restriction>
+          </xs:simpleType>
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="@previous"/>
+            </xs:restriction>
+          </xs:simpleType>
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="@next"/>
+            </xs:restriction>
+          </xs:simpleType>
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="@previous_candidate_list"/>
+            </xs:restriction>
+          </xs:simpleType>
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="@next_candidate_list"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:union>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="user-defined-marker">
+    <xs:attribute name="markerID" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[^@].*"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!-- a character inside or outside of the preedit buffer -->
+  <xs:element name="predefined-nth-previous-or-following-character">
+    <xs:complexType>
+      <xs:attribute name="position" use="required">
+        <xs:simpleType>
+          <xs:union memberTypes="xs:negativeInteger xs:positiveInteger"/>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <!-- selectors specify positions in a candidate list -->
+  <xs:simpleType name="predefined-selector">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="@[0-9]"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="@first"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="@current"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="@last"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="@previous"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="@next"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="@previous_candidate_list"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="@next_candidate_list"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <!-- var -->
+  <xs:attributeGroup name="predefined-variable">
+    <xs:attribute name="type" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="predefined"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="id" use="required">
+      <xs:simpleType>
+        <xs:union>
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="handled-keys"/>
+            </xs:restriction>
+          </xs:simpleType>
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="predefined-surround-text-flag"/>
+            </xs:restriction>
+          </xs:simpleType>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="@.+"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:union>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:element name="insert" substitutionGroup="mim:action">
+    <xs:complexType>
+      <xs:choice minOccurs="0">
+        <xs:element ref="mim:variable-reference"/>
+        <xs:element maxOccurs="unbounded" ref="mim:candidates"/>
+        <xs:element maxOccurs="unbounded" ref="mim:list-of-candidates"/>
+      </xs:choice>
+      <xs:attribute name="string" type="xs:string"/>
+      <xs:attribute name="character">
+        <xs:simpleType>
+          <xs:union>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="\?."/>
+              </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="[0#]x[0-9A-F]{1,6}"/>
+              </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+              <xs:restriction base="xs:nonNegativeInteger">
+                <xs:pattern value="[0-9]{1,7}"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:union>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="character-or-string">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="variable"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="candidates" type="xs:string"/>
+  <xs:element name="list-of-candidates">
+    <xs:simpleType>
+      <xs:list itemType="xs:NMTOKEN"/>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="delete" abstract="true" substitutionGroup="mim:action"/>
+  <xs:element name="delete-to-marker" substitutionGroup="mim:delete">
+    <xs:complexType>
+      <xs:attributeGroup ref="mim:marker"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delete-to-character-position" substitutionGroup="mim:delete" type="xs:integer"/>
+  <xs:element name="delete-n-characters" substitutionGroup="mim:delete">
+    <xs:complexType>
+      <xs:attribute name="n" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="select" substitutionGroup="mim:action">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="mim:variable-reference"/>
+      </xs:sequence>
+      <xs:attribute name="index">
+        <xs:simpleType>
+          <xs:union memberTypes="xs:integer">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="variable"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:union>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="selector" type="mim:predefined-selector"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="move" abstract="true" substitutionGroup="mim:action"/>
+  <xs:element name="move-to-marker" substitutionGroup="mim:move">
+    <xs:complexType>
+      <xs:attributeGroup ref="mim:marker"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="move-to-character-position" substitutionGroup="mim:move" type="xs:integer"/>
+  <xs:element name="mark-current-position" substitutionGroup="mim:action">
+    <xs:complexType>
+      <xs:attributeGroup ref="mim:user-defined-marker"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pushback" abstract="true" substitutionGroup="mim:action"/>
+  <xs:element name="pushback-n-events" substitutionGroup="mim:pushback">
+    <xs:complexType>
+      <xs:attribute name="n" use="required" type="xs:nonNegativeInteger"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pushback-keyseq" substitutionGroup="mim:pushback">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="mim:keyseq"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="undo" substitutionGroup="mim:action">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="mim:variable-reference"/>
+      </xs:sequence>
+      <xs:attribute name="target-of-undo">
+        <xs:simpleType>
+          <xs:union memberTypes="xs:positiveInteger xs:negativeInteger"/>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="call" substitutionGroup="mim:action">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="mim:function-reference"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mim:argument"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:IDREF"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="function-reference">
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="xs:IDREF"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="argument">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0">
+        <xs:element ref="mim:pListObject"/>
+        <xs:element ref="mim:variable-reference"/>
+      </xs:choice>
+      <xs:attribute name="type" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="string"/>
+            <xs:enumeration value="integer"/>
+            <xs:enumeration value="plist"/>
+            <xs:enumeration value="symbol"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:group name="expr">
+    <xs:choice>
+      <xs:element ref="mim:expr"/>
+      <xs:element ref="mim:int-val"/>
+      <xs:element ref="mim:predefined-nth-previous-or-following-character"/>
+      <xs:element ref="mim:variable-reference"/>
+    </xs:choice>
+  </xs:group>
+  <xs:element name="expr">
+    <xs:complexType>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="mim:expr"/>
+      <xs:attribute name="operator" use="required" type="mim:operator"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="int-val">
+    <xs:simpleType>
+      <xs:union memberTypes="xs:integer">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0#]x[0-9A-F]{1,6}"/>
+          </xs:restriction>
+        </xs:simpleType>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\?."/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:union>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="variable-reference">
+    <xs:complexType>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="type">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="predefined"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="operator">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="+"/>
+      <xs:enumeration value="-"/>
+      <xs:enumeration value="*"/>
+      <xs:enumeration value="/"/>
+      <xs:enumeration value="|"/>
+      <xs:enumeration value="&amp;"/>
+      <xs:enumeration value="!"/>
+      <xs:enumeration value="="/>
+      <xs:enumeration value="&lt;"/>
+      <xs:enumeration value="&gt;"/>
+      <xs:enumeration value="&lt;="/>
+      <xs:enumeration value="&gt;="/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="if" substitutionGroup="mim:action">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:group ref="mim:expr"/>
+        <xs:group ref="mim:expr"/>
+        <xs:element ref="mim:if-true-action-list"/>
+        <xs:element minOccurs="0" ref="mim:if-not-true-action-list"/>
+      </xs:sequence>
+      <xs:attribute name="condition" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="="/>
+            <xs:enumeration value="&lt;"/>
+            <xs:enumeration value="&gt;"/>
+            <xs:enumeration value="&lt;="/>
+            <xs:enumeration value="&gt;="/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="if-true-action-list">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mim:saction"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="if-not-true-action-list">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mim:saction"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="conditional" substitutionGroup="mim:action">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mim:case"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="case">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:group ref="mim:expr"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mim:saction"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="state-list">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mim:state"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="state">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="mim:state-title-text"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="mim:state-hook"/>
+          <xs:element ref="mim:catch-all-branch"/>
+          <xs:element ref="mim:branch"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attribute name="id" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:ID">
+            <xs:pattern value="state-.*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="state-title-text" type="xs:string"/>
+  <xs:element name="state-hook">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="mim:saction"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="catch-all-branch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mim:saction"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="branch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mim:saction"/>
+      </xs:sequence>
+      <xs:attribute name="branch-selecting-map" use="required" type="xs:IDREF"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- plist -->
+  <xs:element name="pListObject">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0">
+        <xs:element ref="mim:array"/>
+        <xs:element ref="mim:dict"/>
+        <xs:element ref="mim:variable-reference"/>
+      </xs:choice>
+      <xs:attribute name="type">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="string"/>
+            <xs:enumeration value="symbol"/>
+            <xs:enumeration value="integer"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <!-- Collections -->
+  <xs:element name="array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mim:pListObject"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dict">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mim:dict-item"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dict-item">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="mim:pListObject"/>
+      </xs:sequence>
+      <xs:attribute name="key" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

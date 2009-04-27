@@ -293,7 +293,7 @@ driver.  The name has the following syntax.
 
   GPOS-FEATURES ::= '+' FEATURE-LIST ?
 
-  FEATURE-LIST ::= ( SYMBOL ',' ) * [ SYMBOL | '*' ]
+  FEATURE-LIST ::= ( SYMBOL ',' ) * ( SYMBOL | '*' )
 
 @endverbatim
 

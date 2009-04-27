@@ -81,15 +81,16 @@ Version 2.0 &lt;http://www.thdl.org/collections/langling/ewts/ewts.php&gt;.</des
       :       :
 #endif
 
-&lt;variable-list&gt; declares variables used in this input method.
-&lt;command-list&gt; declares commands used in this input method.
-&lt;module-list&gt; declares external modules used in this input method.
-&lt;macro-list&gt; declares macros used in this input method.  &lt;map-list&gt;
-declares maps used in this input method.  When an input method is
-never standalone and always included in another method, the element
-&lt;map-list&gt; can be omitted.  &lt;state-list&gt; declares states used in this
-input method.  When an input system is never standalone and always included in
-another system, the element &lt;state-list&gt; can be omitted.
+&lt;variable-list&gt; declares some of the variables used in this
+input method.  &lt;command-list&gt; declares commands used in this
+input method.  &lt;module-list&gt; declares external modules used in
+this input method.  &lt;macro-list&gt; declares macros used in this
+input method.  &lt;map-list&gt; declares maps used in this input
+method.  When an input method is never standalone and always included
+in another method, the element &lt;map-list&gt; can be omitted.
+&lt;state-list&gt; declares states used in this input method.  When an
+input system is never standalone and always included in another
+system, the element &lt;state-list&gt; can be omitted.
     
 @subsection im-declarations Input Method Declaration
 
@@ -242,26 +243,32 @@ level.
 
 &lt;variable-list&gt; declares variables used in this input method.  
 
-If a variable is initialized to the default value, or is to be
-customized by a user, it must be declared here.  The declaration can
-be used in two ways.  One is to introduce a new variable.  In that
-case, the &lt;value&gt; element in &lt;variable&gt; must not be
-omitted.  Another is to inherit the variable from what declared in
-"global.mimx", and to give the different default value and/or to make
-the variable customizable specially for the current input method.  In
-the latter case, &lt;value&gt; can be omitted.
+If a variable is initialized to the default value, or a common
+variable from "global.mimx" is to be customized by a user, it must be
+declared here.  In other words, a variable can appear without this
+declaration unless it has a default value or its possible values are
+limited.
 
-Each &lt;variable&gt; declares one variable, and a variable is referred with
-the attribute "id".  &lt;value&gt; of a &lt;variable&gt; can be an integer, a
-symbol, or an M-text value.  All variables are implicitly initialized
-to the integer value zero.
+The declaration can be used in two ways.  One is to introduce a new
+variable.  In that case, the &lt;value&gt; element in &lt;variable&gt;
+must not be omitted.  Another is to inherit the variable from what
+declared in "global.mimx", and to give the different default value
+and/or to make the variable customizable specially for the current
+input method.  In the latter case, &lt;value&gt; can be omitted.
 
-The M-text (string) &lt;value&gt; can be referred by the &lt;insert&gt; action.
-The symbol &lt;value&gt; can not be referred directly, but is used the
-library implicitly (e.g. candidates-charset).  The integer &lt;value&gt; can
-be set, modified and referred by the &lt;set&gt;, &lt;add&gt;, &lt;sub&gt;, &lt;mul&gt;, and
-&lt;div&gt; action.  It can be referred by the the &lt;insert&gt;, &lt;select&gt;,
-&lt;undo&gt;, &lt;if&gt;, and &lt;cond&gt; actions.
+Each &lt;variable&gt; declares one variable.  A variable, declared
+here or not, is referred with the attribute "id".  &lt;value&gt; of a
+&lt;variable&gt; can be an integer, a symbol, or an M-text value.  All
+variables are implicitly initialized to the integer value zero.
+
+The M-text (string) &lt;value&gt; can be referred by the
+&lt;insert&gt; action.  The symbol &lt;value&gt; can not be referred
+directly, but is used the library implicitly
+(e.g. candidates-charset).  The integer &lt;value&gt; can be set,
+modified and referred by the &lt;set&gt;, &lt;add&gt;, &lt;sub&gt;,
+&lt;mul&gt;, and &lt;div&gt; action.  It can be referred by the the
+&lt;insert&gt;, &lt;select&gt;, &lt;undo&gt;, &lt;if&gt;, and
+&lt;cond&gt; actions.
 
 &lt;variable-value-candidate&gt; lists the possible values of the variable.
 &lt;c-value&gt; specifies one of the possible value of the variable.  It can
@@ -1300,8 +1307,10 @@ This code performs the &lt;shift-to&gt; action if the variable @c C is negative.
 
 @endverbatim
 
-The element &lt;conditional&gt; checks the &lt;expr&gt;s in the &lt;case&gt;s one by one,
-and performs &lt;saction&gt;s in the first &lt;case&gt; whose &lt;expr&gt; has a nonzero value. 
+The element &lt;conditional&gt; checks the &lt;expr&gt;s in the
+&lt;case&gt;s one by one, and when it finds the first &lt;case&gt;
+whose &lt;expr&gt; has a nonzero value, &lt;saction&gt;s in that
+&lt;case&gt; are performed.
 
 #if EXAMPLE_CODE
 

@@ -28,23 +28,23 @@ An input method is defined in a *.mimx file with this format.
   <map-list>
     <map id="map-1">
       <rule>
-        <keyseq keys="KEYSEQ1"/>
+        <keyseq keys="KEYSEQ11"/>
         ACTIONS1 ...
       </rule>
       <rule>
-        <keyseq keys="KEYSEQ2"/>
+        <keyseq keys="KEYSEQ12"/>
         ACTIONS2 ...
       </rule>
         ...
     </map>
     <map id="map-2">
       <rule>
-        <keyseq keys="KEYSEQ1004"/>
-        ACTIONS1004 ...
+        <keyseq keys="KEYSEQ21"/>
+        ACTIONS21 ...
       </rule>
       <rule>
-        <keyseq keys="KEYSEQ1005"/>
-        ACTIONS1005 ...
+        <keyseq keys="KEYSEQ22"/>
+        ACTIONS22 ...
       </rule>
         ...
     </map>
@@ -65,10 +65,15 @@ An input method is defined in a *.mimx file with this format.
   </state-list>
 @endverbatim
 
+The m17n library input method driver loads an input method and,
+according to the input method, translates input key sequences into
+characters through some actions.
+
 Tags should be written as they are.  Contents and attribute values
 (written with uppercases here) may be restricted to some
-patterns. (See m17n-db-xml/MIM/mim.rng for details.) We will not see
-the variables, commands, external modules and macros in this tutorial.
+patterns. (See m17n-db-xml/MIM/mim.rng for details.)  Every child
+element but <tags> is optional and we will not see the variable-list,
+command-list, module-list and macro-list in this tutorial.
 
 <keyseq> specifies a sequence of keys in one of the following two ways.
 @li one or more <key-event> (the keysym value returned by the xev command) or 
@@ -91,26 +96,43 @@ contain Latin-1 characters.)
 
 These are both valid <keyseq>s.
 
-ACTIONS and S-ACTIONS are a sequence of actions.  Actions may or may
-not have attributes or contents that specify the details of the
-actions.  For example, the action for character insertion takes the
-character to be inserted as the value of its attribute "chracter" and
-the action for calling external function requires the function to be
-called as its content.
+Characters translated from an input sequence is temporarily put into a
+special place @c preedit @c buffer.  The input method driver uses this
+buffer to store, change or re-arrenge characters, and when it is done,
+commit the characters in the buffer to applications.
+
+Actions for the translation are defined in <map>s and <state>s.
+
+ACTIONS and S-ACTIONS are a sequence of actions.  They may or may not
+have attributes or contents that specify its details.  For example,
+the action for character insertion takes the character to be inserted
+as the value of its attribute "character", and the action for calling
+external function requires the function to be called as its content.
 
 The most common action is for inserting fixed characters or strings.
-They are writen as below.
+The input method driver keeps a position called the "current
+position" in the preedit buffer.  The current position exists between
+two characters, at the beginning of the buffer, or at the end of the
+buffer.  The inserting action puts characters before the current
+position.
+
+Inserting actions are written as below.
 
 @verbatim
+      <insert string="tutirial "/>
 
-      <insert string="text"/>
       <insert character="0x0BB3"/>
-
 @endverbatim
 
-@section im-upcase Simple example of capslock
+When your preedit buffer contains "this ^text" ("^" indicates the
+current position), the first example change the buffer to "this
+tutorial ^text".
 
-Here is a simple example of an input method that works as CapsLock.
+The second example inserts a Tamil Letter LAA to the preedit buffer.
+
+@section im-upcase A simple example: Caps lock
+
+Here is a simple example of an input method that works as Caps Lock.
 
 @verbatim
 <input-method xmlns="http:://www.m17n.org/MIM">
@@ -118,7 +140,7 @@ Here is a simple example of an input method that works as CapsLock.
     <language>en</language>
     <name>capslock</name>
   </tags>
-  <description>Upcase all lowercase letters</description>
+  <description>Up-case all lowercase letters</description>
   <title>a->A</title>
   <map-list>
     <map id="map-to-upper">
@@ -136,36 +158,49 @@ Here is a simple example of an input method that works as CapsLock.
   </map-list>
   <state-list>
     <state id="state-init">
-      <branch branch-selecting-map="map-to-uppter">
+      <branch branch-selecting-map="map-to-upper">
       </branch>
     </state>
   </state-list>
 </input-method>
 @endverbatim
 
-When this input method is activated, it is in the initial condition of
-the first <state> in the <state-list>. In this case, it is the only
-state whose id is @c state-init.  In the initial condition, no key is
-being processed and no action is suspended.  When the input method
-receives a key event "a", it searches branches in the current state
-for a rule that matches "a" and finds one in the map whose id is @c
-map-to-upper.  Then it executes ACTIONs (in this case, inserts "A" in
-the preedit buffer).  When all ACTIONs have been executed, the
-input method shifts to the initial condition of the current state.
+When an input method is activated, the input method driver is in the
+initial condition of the first <state> in the <state-list>. In this
+case, it is the state whose @c id is @c state-init.  In the initial
+condition, no key is being processed and no action is suspended.
+
+Each <state> has <branch>es.  <branch> has an attribute @c
+branch-selecting-map and its value appears as the value of @c id
+attribute of one of the <map>s.  This attribute defines the
+correspondence between a <map> and a <branch>.  A <map> has <rule>s,
+and a <rule> has a <keyseq>, so when a key sequence is given, a <map>
+that handles the key sequence is determined, and a <branch> that is
+responsible for the map is determined.
+
+When the input method driver receives a key sequence "a", it searches
+for a <rule> whose <keyseq> part matches with "a", and finds one in
+the <map> whose @c id is @c map-to-upper.  The selected branch is the
+one whose @c branch-selecting-map is @c map-to-upper.
+
+When a given key sequence does not match with any <rule> in any <map>
+that corresponds with a <branch> of the current <state>, that event is
+unhandled and given back to the application program.
+
+The driver then executes ACTIONs of the <rule>. In this case, it
+inserts "A" in the preedit buffer.  Then S-ACTIONs in the <branch>, if
+any, are executed.  When all ACTIONs and S-ACTIONs have been handled,
+the driver shifts to the initial condition of the current state.
 
 The shift to the initial condition of the first state has a special
-meaning; it commits all characters in the preedit buffer then clears
-the preedit buffer, g.
-
-As the result, "A" is given to the application program.
-
-When a key event does not match with any rule in the current state,
-that event is unhandled and given back to the application program.
+meaning; it commits all characters in the preedit buffer and clears
+it.  In this case, as the result, "A" is given to the
+application program.
 
 Turkish users may want to extend the above example for "İ" (U+0130:
-LATIN CAPITAL LETTER I WITH DOT ABOVE).  It seems that assigning the
-key sequence "i" "i" for that character is convenient.  So, the user
-might add this rule in the map "map-to-upper".
+LATIN CAPITAL LETTER I WITH DOT ABOVE).  Assigning the key sequence
+"ii" for that character would be convenient, so and the user might add
+this rule in the @c map-to-upper map.
 
 @verbatim
       <rule><keyseq keys="ii"/><insert string="İ"/></rule>
@@ -177,58 +212,61 @@ However, we already have the following rule:
       <rule><keyseq keys="i"/><insert string="I"/></rule>
 @endverbatim
 
-What will happen when a key event "i" is sent to the input method?
+Will these rules conflict?  What will happen when a key sequence "i" is
+entered?  
 
-No problem.  When the input method receives "i", it inserts "I" in the
-preedit buffer.  It knows that there is another rule that may match
-the additional key event "i".  So, after inserting "I", it suspends
-the normal behavior of shifting to the initial condition, and waits
-for another key.  Thus, the user sees "I" with underline, which
-indicates it is not yet committed.
+The input method driver takes care of these kind of overlapping rules.
+When the driver receives a "i", it inserts "I" in the preedit buffer.
+As it knows that there is another rule that may match the additional
+key event "i", after inserting "I", it suspends the normal behavior of
+shifting to the initial condition, and waits for another key. The user
+will see "I" with underline, which indicates the rule for this
+translation is not deterministic and the "I" is not yet committed.
 
-When the input method receives the next "i", it cancels the effects
-done by the rule for the previous "i" (in this case, the preedit
-buffer is cleared), and executes ACTIONs of the rule for "ii".  So,
-"İ" is inserted in the preedit buffer.  This time, as there are no
-other rules that match with an additional key, it shifts to the
-initial condition of the current state, which leads to commit "İ".
+When the input method driver receives the next "i", it cancels all the
+effects of the rule for the previous "i".  In this case, the preedit
+buffer is cleared.  Then it executes ACTIONs of the rule for "ii",
+that is, inserts an "İ" to the preedit buffer.  This time, there is no
+rule that matches with "ii" and an additional key, so the character is
+determined, the driver shifts to the initial condition of the current
+state, and the "İ" is committed.
 
-Then, what will happen when the next key event is not "i", but "a" ?
+What will happen when the next key event is not "i", but "a" ?  The
+input method has no rule that matches with the "i" "a" key sequence.
 
-No problem, either.
+When the driver receives an "a" after "i", it executes the suspended
+behavior, i.e. shifting to the initial condition, which leads to
+commit "I".  Then it tries to handle "a" in the current state, which
+leads to commit "A".
 
-The input method knows that there are no rules that match the "i" "a"
-key sequence.  So, when it receives the next "a", it executes the
-suspended behavior (i.e. shifting to the initial condition), which
-leads to commit "I".  Then the input method tries to handle "a" in the
-current state, which leads to commit "A".
+@section im-state-action Use of state example: Capitalizing 
 
-So far, we have explained ACTION, but not S-ACTION.  The format of
-S-ACTION is the same as that of ACTION.  It is executed only after a
-matching rule has been determined and the corresponding ACTIONs have
+We have so far explained ACTIONs, but not S-ACTIONs.  The format of a
+S-ACTION is the same as that of an ACTION.  It is executed only after
+a matching rule has been determined and the corresponding ACTIONs have
 been executed.  A typical use of S-ACTION is to shift to a different
 state.
 
-To see this effect, let us modify the current input method to upcase
-only such letters that start a word (i.e. to capitalize).  For this
-purpose, the "state-init" state should be modified as below.
+In order to see how S-ACTIONs are used, let us modify the current
+input method to upcase only such letters that start a word (i.e. to
+capitalize).  For this purpose, the "state-init" state should be
+modified as below.
 
 @verbatim
     <state id="state-init">
-      <branch branch-selecting-map="map-to-uppter">
+      <branch branch-selecting-map="map-to-upper">
       </branch>
       <shift-to id="state-non-upcase"/>
     </state>
 @endverbatim
 
-Here &lt;shift-to&gt; element shifts the input method driver to a new
-state whose id is "state-non-upcase".  
+The S-ACTION here is &lt;shift-to&gt; that shifts the input method
+driver to another state whose id is @c state-non-upcase.
 
-We now need to define the "state-non-upcase" state.  The state has one branch
-and one catchall.
+We now need to define the state.  It has one branch and one catchall.
 
 @verbatim
-    <state id="non-upcase">
+    <state id="state-non-upcase">
       <branch branch-selecting-map="map-lower"/>
       <catch-all-branch><shift-to id="state-init"/></catch-all-branch>
     </state>
@@ -241,17 +279,15 @@ id "map-lower" that inserts lowercase letters as they are.
     <map id="map-lower">
       <rule><keyseq keys="a"/><insert string="a"/></rule>
       <rule><keyseq keys="b"/><insert string="b"/></rule>
-      <rule><keyseq keys="c"/><insert string="c"/></rule>
-      <rule><keyseq keys="d"/><insert string="dD"/></rule>
                  :                          :
-      <rule><keyseq keys="x"/><insert string="x"/></rule>
       <rule><keyseq keys="y"/><insert string="y"/></rule>
       <rule><keyseq keys="z"/><insert string="z"/></rule>
 @endverbatim
 
 The catchall branch matches with any key event that does not match any
-rules in the other maps in the current state.  In addition, it does
-not consume any key event.  
+rules in the other maps in the current state.  In this case, it
+matches with characters other than [a-z].  A catchall branch does not
+consume any key event.
 
 We will show the full code of the new input method before explaining
 how it works.
@@ -282,7 +318,7 @@ how it works.
   </map-list>
   <state-list>
     <state id="state-init">
-      <branch branch-selecting-map="map-to-uppter">
+      <branch branch-selecting-map="map-to-upper">
         <shift-to id="state-non-upcase"/>
       </branch>
     </state>
@@ -295,23 +331,24 @@ how it works.
 @endverbatim
 
 Let us see what happens when a user types the key sequence "a" "b" "
-".  Upon "a", "A" is committed and the state shifts to @c
-state-non-upcase, that is, the next "b" is handled in @c
-state-non-upcase.  
+".  The driver, as usual, starts at the state @c state-init.  Upon
+"a", a rule in the map @c map-to-upper matches, "A" is inserted to the
+preedit buffer and the driver shifts to the state @c state-non-upcase.
 
-The "b" matches the keyseq of the second rule in the map @c map-lower,
-so it should be handled by the &lt;branch&gt; whose
-branch-selectin-map is @c map-lower.  By the rule in the map, "b" is
-&lt;inserted in the preedit buffer and it is committed explicitly by
-the &lt;commit&gt; in &lt;brach&gt;.
+The next "b" is handled in @c state-non-upcase.  It matches the
+&lt;keyseq&gt; of the second &lt;rule&gt; in the map @c map-lower, so
+it is handled by the &lt;branch&gt; whose @c branch-selecting-map is @c
+map-lower.  By the rule in the map, "b" is &lt;inserted in the preedit
+buffer and it is committed explicitly by the &lt;commit&gt; in
+&lt;branch&gt;.
 
 At this point, the input method is still in @c state-non-upcase, where
 the next " " key is handled.  This time, however, the only branch in
-this state has no rule for the key and &lt;catch-all-brach&gt; is
+this state has no rule for the key and &lt;catch-all-branch&gt; is
 selected. S-action in this branch is to the shift to @c state-init.
 
 Note that the key " " is not yet handled because
-&lt;catch-all-brach&gt; does not consume any key event.  The input
+&lt;catch-all-branch&gt; does not consume any key event.  The input
 method driver tries to handle it in @c state-init, but no rule matches
 it.  Therefore, that event is given back to the application program,
 which usually inserts a space for that.
@@ -319,15 +356,15 @@ which usually inserts a space for that.
 When you type "a quick blown fox" with this input method, you get "A
 Quick Blown Fox".  OK, you find a typo in "blown", which should be
 "brown".  To correct it, you probably move the cursor after "l" and
-type the Backspace key and "r".  However, if the current input method
-is still active, a capital "R" is inserted.  It is not a sophisticated
-behavior.
+type the Backspace key and the "r".  However, if the current input
+method is still active, a capital "R" is inserted.  This is not a very
+refined behavior.
 
-@section im-surrounding-text Example of utilizing surrounding text support
+@section im-surrounding-text Surrounding text support example: Capitalizing Revised
 
-To make the input method work well also in such cases, we need
-"surrounding text support" which checks and changes characters around
-the inputting spot.  This facility is available only with Gtk+
+We need "surrounding text support" to make the input method work well
+with such cases.  It checks and changes characters around the
+inputting spot.  This facility is available only with Gtk+
 applications and Qt applications, and cannot be used with applications
 that utilizes XIM to communicate with an input method.
 
@@ -335,21 +372,22 @@ Before "surrounding text support", we explain a few features of the
 input method; variables, arithmetic operations and comparisons, and
 conditional actions.
 
-Some actions takes the attribute or the content that specifies the
-target of the action, and some attribute or content may contain a
-variable as its value.
+As we have already seen in &lt;insert&gt; action, some actions takes
+the attribute or the content that specifies the target of the action,
+and some attribute or content may contain a variable as its value.
 
 For instance, the actions
 
 @verbatim
   <set id="X"><int-val>32</int-val></set>
-  <insert character-or-string="variable"><variabe-reference id="X"/></insert>
+  <insert character-or-string="variable"><variable-reference id="X"/></insert>
 @endverbatim
 
 set the variable @c X to integer value 32, then insert a character
 whose Unicode character code is 32 (i.e. SPACE).
 
-The variable value can be set with an expression of this form:
+The variable value can be set to an integer value, another variable,
+or an expression of this form:
 
 @verbatim
   <expr operator="OPERATOR">
@@ -359,7 +397,7 @@ The variable value can be set with an expression of this form:
 @endverbatim
 
 EXPRESSION1 and EXPRESSION2 can also be an expression.  For example,
-the action below sets the value of the varialble @c X to @c Y*32+Z.
+the action below sets the value of the variable @c X to @c Y*32+Z.
 
 @verbatim
   <set id="X">
@@ -375,7 +413,7 @@ the action below sets the value of the varialble @c X to @c Y*32+Z.
 The operators that appear in expressions are divided into the
 following three groups.
 
-@li Arithmatic and bitwise operators that requires two arguments.
+@li Arithmetic and bitwise operators that requires two arguments.
 
 @verbatim
   + - * / & |
@@ -393,8 +431,8 @@ following three groups.
   !
 @endverbatim
 
-The input method can control the processing flow with <conditional>
-that has the following form.
+The input method can control the processing flow with
+&lt;conditional&gt; that has the following form.
 
 @verbatim
   <conditional>
@@ -411,14 +449,12 @@ that has the following form.
 @endverbatim
 
 <conditional> checks the value of EXPRESSION in <case>s one by one,
-and when the first <case> whose EXPRESSION has a nonzero value is
-encountered ACTIONs in that <case> are performed.
+and when the <case> whose EXPRESSION has a nonzero value is
+encountered, ACTIONs in that <case> are performed.
 
-
-Now let us return to something about surrounding text support.  Some
-variables are predefined and among them are
-"predefined-surround-text-flag" and
-"predefined-nth-previous-or-following-character" whose values are
+Now let us return to surrounding text support.  Some variables are
+predefined and among them are @c predefined-surround-text-flag and @c
+predefined-nth-previous-or-following-character whose values are
 defined as below and can not be altered.
 
 <ul>
@@ -426,18 +462,18 @@ defined as below and can not be altered.
 
 -1 if surrounding text is supported, -2 if not.
 
-<li> "predefined-nth-previous-or-following-character"
+<li> predefined-nth-previous-or-following-character
 
-This variable takes an attribute "position" whose value must be an
-positive or negative integer.  If the "position" value is negative,
-the value of the "predefined-nth-previous-or-following-character" is
+This variable takes an attribute @c position whose value must be an
+positive or negative integer.  If the @c position value is negative,
+the value of the @c predefined-nth-previous-or-following-character is
 the Nth previous character in the preedit buffer.  If there are only M
 (M<N) previous characters in it, the value is the (N-M)th previous
-character from the inputting spot.  If positive, the value of the
-"predefined-nth-previous-or-following-character" is the Nth following
+character from the inputting spot.  If positive, the value of the @c
+predefined-nth-previous-or-following-character is the Nth following
 character in the preedit buffer.  If there are only M (M<N) following
 characters in it, the value is the (N-M)th following character from
-the inputting spot.
+the inputting spot.  
 </ul>
 
 When you have the context below, where "def" is in the preedit buffer
@@ -447,8 +483,8 @@ and your current position in the preedit buffer is between "d" and "e":
   ABCdefGHI
 @endverbatim
 
-The predefined-nth-previous-or-following-character has the following
-values.
+The @c predefined-nth-previous-or-following-character has the
+following values.
 
 @verbatim
   <predefined-nth-previous-or-following-character position="-3"/>  --> ?B
@@ -473,26 +509,23 @@ Now you are ready to write a new version of the input method "Titlecase".
     <map id="map-to-upper">
       <rule><keyseq keys="a"/><insert string="A"/></rule>
       <rule><keyseq keys="b"/><insert string="B"/></rule>
-      <rule><keyseq keys="c"/><insert string="C"/></rule>
-      <rule><keyseq keys="d"/><insert string="D"/></rule>
                  :                          :
-      <rule><keyseq keys="i"/><insert string="I"/></rule>
-                 :                          :
-      <rule><keyseq keys="x"/><insert string="X"/></rule>
       <rule><keyseq keys="y"/><insert string="Y"/></rule>
       <rule><keyseq keys="z"/><insert string="Z"/></rule>
+      <rule><keyseq keys="ii"/><insert string="İ"/></rule>
     </map>
   </map-list>
   <state-list>
     <state id="state-init">
-      <branch branch-selecting-map="map-to-uppter">
+      <branch branch-selecting-map="map-to-upper">
+
      <!-- Now that we have exactly one uppercase character in the
           preedit buffer, the element
           predefined-nth-previous-or-following-character with the
           attribute value -2 refers to the character just before the
           inputting spot. -->
-      <conditional>
 
+      <conditional>
          <case>
            <expr operator="|">
 
@@ -551,91 +584,51 @@ Now you are ready to write a new version of the input method "Titlecase".
 
 @endverbatim
 
-The above example contains the new action "delete-to-marker", and we
-need to explain more about the preedit buffer.  The preedit buffer is
-a temporary place to store a sequence of characters.  In this buffer,
-the input method keeps a position called the "current position".  The
-current position exists between two characters, at the beginning of
-the buffer, or at the end of the buffer.  The "insert" action inserts
-characters before the current position.  For instance, when your
-preedit buffer contains "ab.c" ("." indicates the current position),
+The above example contains the new action &lt;delete-to-marker&gt;,
+Several markers are predefined to represent (or mark) a specific
+position in the preedit buffer.
 
-@verbatim
-  <insert string="xyz"/>
-@endverbatim
-
-will change the buffer to "abxyz.c".
-
-Several markers are predefined to reperesent (or mark) a specific
-position in the preedit buffer, which include:
-
-<ul> 
-<li> @@first, @@current, @@last
-
-The first, current, and last positions.
-
-<li> @@previous, @@next
-
-The previous and the next positions.
-</ul>
-
-"delete-to-marker" action takes the position attribute and its value
-must specify a position.
-
-@verbatim
-  <delete-to-marker position="POS"/>
-@endverbatim
-
-The above action deletes the characters between POS (which is a
-predefined or usr-defined marker) and the current position.
-Therefore, @c <delete-to-marker @c position="@@previous"/> deletes one
-character before the current position.  The other examples of
+&lt;delete-to-marker&gt; action takes the attribute named @c position
+and its value must be a marker.  It deletes the characters between
+that position and the current position.  The examples of
 delete-to-marker are:
 
 @verbatim
+  <delete-to-marker position="@@previous"/> ; delete the previous character
   <delete-to-marker position="@next"/>  ; delete the next character
   <delete-to-marker position="@first"/> ; delete all the preceding characters in the buffer
   <delete-to-marker position="@last"/>  ; delete all the following characters in the buffer
 @endverbatim
 
-The current position can be changed with the @c <move-to-marker>
-action or the @c <move-to-character-position> action.  Positional
-markers in @c <move-to-marker> work similarly, as shown below.
-
-@verbatim
-  <move-to-marker position="@previous"/>
-            ; move the current position to the position before the previous character
-  <move-to-marker position="@first/>
-            ; move to the first position
-@endverbatim
-
 Let us see how our new example works.  Whatever a key event is, the
-input method is in its only state, "state-init".  Since an event of a
-lower letter key falls into the "map-to-upper" <branch> and handled by
-<rule>s in that <map>, the key is changed into the corresponding
-uppercase and <insert>ed into the preedit buffer.  Now this uppercase
-character can be accessed with position="@previous".
+input method is in its only state, @c state-init.  Since an event of a
+lower letter key falls into the branch whose @c branch-selecting-map
+is @c map-to-upper and handled by &lt;rule&gt;s in that &lt;map&gt;,
+the key is changed into the corresponding uppercase character and
+inserted into the preedit buffer.  Now this uppercase character can be
+accessed with @c position="@previous".
 
 How can we tell whether the new character should be left as an
 uppercase or changed back to a lowercase?  We need to check the
 character before.  That character can be accessed by
-<predefined-nth-previous-or-following-character position="-2"/>.
+&lt;predefined-nth-previous-or-following-character position="-2"/&gt;.
 
-The @c EXPRESSION part of the <case> in the first <conditional> of the
-"map-to-upper" branch checks the character. It is the disjunction of
-three <expr>s; each becomes true when the character is between A to Z,
-between a to z, or İ.
+The character is checked by the @c EXPRESSION part of the &lt;case&gt;
+in the first &lt;conditional&gt; of the branch for @c map-to-upper. It
+is the disjunction of three <expr>s; each becomes true when the
+character is between A to Z, between a to z, or İ.
 
 When the character is not one of the above, the @c EXPRESSION does not
-have a nonzero value and @c ACTIONs in this <case> will not be
-executed. As there is no more <case> in this <conditional>, nothing is
-done to the new character in the preedit.
+have a nonzero value and @c ACTIONs in this &lt;case&gt; will not be
+executed.  As there is no more &lt;case&gt; in this
+&lt;conditional&gt;, nothing is done to the new character in the
+preedit.
 
 When the @c EXPRESSION becomes true, the new character must be changed
-into a lowercase.  @c ACTIONs part in <case> does the work.
+into a lowercase.  @c ACTIONs part in &lt;case&gt; does the work.
 
 Since the uppercase character is already in the preedit buffer, we
-retrieve and remember it in the variable "X" by
+retrieve and remember it in the variable "X" with
 
 @verbatim
   <set id="X">                
@@ -643,7 +636,7 @@ retrieve and remember it in the variable "X" by
   </set>
 @endverbatim
 
-and then delete it by
+and then delete it with
 
 @verbatim
      <delete-to-marker position="@first/>
@@ -651,7 +644,7 @@ and then delete it by
 
 The preedit buffer is now empty, and we re-insert the character in its
 lowercase form.  The problem here is that "İ" must be changed into
-"i", so we need another nested conditional.  With the first <case>,
+"i", so we need another nested conditional.  Its first &lt;case&gt;
 
 @verbatim
     <case>             
@@ -660,15 +653,15 @@ lowercase form.  The problem here is that "İ" must be changed into
     </case>
 @endverbatim
 
-'i' is inserted" if the character remembered as "X" is 'İ'. 
+insert "i" if the value of the variable @c X is "İ". 
 
-In the second <case>, its @c EXPRESSION part is 
+The @c EXPRESSION part of the second &lt;case&gt; is 
 
 @verbatim
     <int-val>1</int-val> 
 @endverbatim
 
-which is always resolved into nonzero,  so this <case> is a catchall.
+which is always resolved into nonzero, so this is the catchall.
 
 Its @c ACTIONs part
 
@@ -683,11 +676,11 @@ it changes A...Z into a...z respectively and inserts the lowercase
 character into the preedit buffer.  
 
 Now the input method reaches the end of the S-ACTIONs, the character
-in the preedit buffer is commited.
+in the preedit buffer is committed.
 
 This new input method always checks the character before the current
 position, so "A Quick Blown Fox" will be successfully fixed to "A
-Quick Brown Fox" by the key sequence \<BackSpace>> \<r>>.
+Quick Brown Fox" by the key sequence of a BackSpace and a "r".
 
 
 */

@@ -9,149 +9,212 @@
 
 @section flt-description DESCRIPTION
 
-For simple scripts, the rendering engine converts character codes into glyph
-codes one by one by consulting the encoding of each selected font.
-But, to render text that requires complicated layout (e.g. Thai and
-Indic scripts), one to one conversion is not sufficient.  A sequence
-of characters may have to be drawn as a single ligature.  Some
-glyphs may have to be drawn at 2-dimensionally shifted positions.
+For simple scripts, the rendering engine converts character codes into
+glyph codes one by one by consulting the encoding of each selected
+font.  In order to render text that requires complicated layout
+(e.g. Thai and Indic scripts), however, one to one conversion is not
+sufficient.  A sequence of characters may have to be drawn as a single
+ligature.  Some glyphs may have to be drawn at 2-dimensionally shifted
+positions.
 
-To handle those complicated scripts, the m17n library uses Font Layout
-Tables (FLTs for short).  The FLT driver interprets an FLT and
+The m17n library uses Font Layout Tables (FLTs for short) to handle
+those complicated scripts.  The layout engine interprets an FLT and
 converts a character sequence into a glyph sequence that is ready to
 be passed to the rendering engine.
 
-An FLT can contain information to extract a grapheme cluster from a
+An FLT supplies information to extract a grapheme cluster from a
 character sequence and to reorder the characters in the cluster, in
 addition to information found in OpenType Layout Tables (CMAP, GSUB,
 and GPOS).
 
-An FLT is a cascade of one or more conversion stages.  In each stage, a
-sequence is converted into another sequence to be read in the
-next stage.  The length of sequences may differ from stage to
-stage.  Each element in a sequence has the following integer attributes.
+An FLT is a cascade of one or more conversion stages.  In each stage,
+a sequence of characters or intermediate code is converted into
+another sequence to be read in the next stage.  The length of
+sequences may differ from stage to stage.
+
+When the m17n layout engine draws text, it first determines a font and
+an FLT for each character in the text.  The layout engine divides the
+text into subsequences of characters that use the same font and FLT,
+and it handles each subsequence, one by one, by passing it to the
+first stage of the FLT determined.
+
+The subsequence currently under conversion is called @e the @e current
+@e run.
+
+Each element in a subsequence has the following integer
+specifications.
 
 <ul>
 <li> code
 
-In the first conversion stage, this is the character code in the
+In the first conversion stage, @c code is the character code in the
 original character sequence.  In the last stage, it is the glyph code
 passed to the rendering engine.  In other cases, it is an intermediate
 glyph code.
 
 <li> category
 
-The category code defined in the @c CATEGORY-TABLE of the current
-stage, or defined in the one of the former stages and not overwritten
-by later stages.
+Character/intermediate glyph codes that require similar handling in a
+stage are grouped into a category.  @c category is a category code
+defined in the @c &lt;category-table&gt; of the current stage, or
+defined in the one of the former stages and not overwritten by later
+stages.
 
 <li> combining-spec
 
-If nonzero, it specifies how to combine this (intermediate) glyph
-with the previous one.
+In the first conversion stage, the value is zero. If nonzero, it
+specifies how to combine this (intermediate) glyph with the previous
+one. 
 
 <li> left-padding-flag
 
-If nonzero, it instructs the rendering function to insert a padding
-space before this (intermediate) glyph so that the glyph does not
-overlap with the previous one.
+In the first conversion stage, the value is zero.  If nonzero, it
+instructs the rendering function to insert a padding space before this
+(intermediate) glyph so that the glyph does not overlap with the
+previous one.
 
 <li> right-padding-flag
 
-If nonzero, it instructs the rendering function to insert a padding
-space after this (intermediate) glyph so that the glyph does not
-overlap with the next one.
+In the first conversion stage, the value is zero.  If nonzero, it
+instructs the rendering function to insert a padding space after this
+(intermediate) glyph so that the glyph does not overlap with the next
+one.
 
 </ul>
 
-When the layout engine draws text, it at first determines a font and
-an FLT for each character in the text.  For each subsequence of
-characters that use the same font and FLT, the layout engine generates
-a corresponding intermediate glyph sequence.  The code attribute of
-each element in the intermediate glyph sequence is its character code,
-and all other attributes are zeros.  This sequence is processed in the
-first stage of FLT as the current @e run (substring).
+When a @e run is passed to a stage, if the stage has a @c
+category-table, the category of each glyph in the current run is
+updated.  If there is a glyph that has no category, the current run
+ends before that glyph.  Then, the default values of code-offset,
+combining-spec, and left-padding-flag of this stage are initialized to
+zero.  After these setups, the initial conversion action of the stage
+is applied to the current run and a new (intermediate) glyph sequence
+is produced.  The new current run is then passed to the next stage or
+the rendering engine.
 
-Each stage works as follows.
 
-At first, if the stage has a @c CATEGORY-TABLE, the category of each
-glyph in the current run is updated.  If there is a glyph that has no
-category, the current run ends before that glyph.
+@section flt-syntax FLT STAGES and CATEGORIES
 
-Then, the default values of code-offset, combining-spec, and
-left-padding-flag of this stage are initialized to zero.
-
-Next, the initial conversion rule of the stage is applied to the
-current run.
-
-Lastly, the current run is replaced with the newly produced
-(intermediate) glyph sequence.
-
-@section flt-syntax SYNTAX and SEMANTICS
-
-The m17n library loads an FLT from the m17n database using the tag
-\<font, layouter, FLT-NAME\>.  The date format of an FLT is as follows:
+The following defines a schema for a FLT, written in RelaxNG.  (This
+schema file can be found at m17n-db-xml/FLT/flt.rng.) 
 
 @verbatim
-FONT-LAYOUT-TABLE ::= FLT-DECLARATION ? STAGE0 STAGE *
+<?xml version="1.0" encoding="utf-8"?>
 
-FLT-DECLARATION ::= '(' 'font' 'layouter' NAME nil PROP * ')'
-NAME ::= SYMBOL
-PROP :: = VERSION | FONT
-VERSION ::= '(' 'version' MTEXT ')'
-FONT ::= '(' 'font' FONT-SPEC ')'
-FONT-SPEC ::=
-     '(' [[ FOUNDRY FAMILY
-           [ WEIGHT [ STYLE [ STRETCH [ ADSTYLE ]]]]]
-         REGISTRY ]
-	 [ OTF-SPEC ] [ LANG-SPEC ] ')'
+<grammar 
+	 datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+         xmlns:xi="http://www.w3.org/1999/XML/xinclude"
+	 xmlns="http://relaxng.org/ns/structure/1.0"
+	 ns="http://www.m17n.org/FLT">
+<start>
+  <element name="font-layouter">
+    <attribute name="key0"><data type="string"/></attribute>
+    <attribute name="key1"><data type="string"/></attribute>
+    <optional><ref name="font"/></optional>
+    <optional>
+      <element name="m17n-version">
+	<data type="string"><param name="pattern">[0-9]+\.[0-9]+\.[0-9]+</param></data>
+      </element>
+    </optional>
+    <ref name="first-stage"/>
+    <zeroOrMore><ref name="stage"/></zeroOrMore>
+  </element>
+</start>
 
-STAGE0 ::= CATEGORY-TABLE GENERATOR
+<define name="first-stage">
+  <element name="first-stage">
+    <ref name="category-table"/>
+    <ref name="generator"/>
+  </element>
+</define>
 
-STAGE ::= CATEGORY-TABLE ? GENERATOR
+<define name="stage">
+  <element name="stage">
+    <optional><ref name="category-table"/></optional>
+    <ref name="generator"/>
+  </element>
+</define>
 
-CATEGORY-TABLE ::= '(' 'category' CATEGORY-SPEC + ')'
-
-CATEGORY-SPEC ::= '(' CODE CATEGORY ')'
-                  | '(' CODE CODE CATEGORY ')'
-
-CODE ::= INTEGER
-
-CATEGORY ::= INTEGER
 @endverbatim
 
-In the definition of @c CATEGORY-SPEC, @c CODE is a glyph code, and @c
-CATEGORY is ASCII code of an upper or lower letter, i.e. one of 'A',
-... 'Z', 'a', .. 'z'.
-
-The first form of @c CATEGORY-SPEC assigns @c CATEGORY to a glyph
-whose code @c CODE.  The second form assigns @c CATEGORY to glyphs
-whose code falls between the two @c CODEs.
+The attributes "key0" and "key1" are used to find an FLT from the m17n
+database.  The element &lt;first-stage&gt; must have a
+&lt;category-table&gt;.  An FLT can convert characters defined in the
+&lt;category-table&gt; of its &lt;first-stage&gt;.
 
 @verbatim
-GENERATOR ::= '(' 'generator' RULE MACRO-DEF * ')'
 
-RULE ::= REGEXP-BLOCK | MATCH-BLOCK | SUBST-BLOCK | COND-BLOCK
-         FONT-FACILITY-BLOCK | DIRECT-CODE | COMBINING-SPEC | OTF-SPEC
-         | PREDEFINED-RULE | MACRO-NAME
+<define name="category-table">
+  <element name="category-table">
+    <oneOrMore>
+      <element name="category">
+	<choice>
+	  <attribute name="code"><ref name="glyph-code"/></attribute>
+	  <group><attribute name="from-code"><ref name="glyph-code"/></attribute>
+	         <attribute name="to-code"><ref name="glyph-code"/></attribute>
+	  </group>
+	</choice>
+	<attribute name="category-value">
+	  <data type="string"><param name="pattern">[a-zA-Z]</param></data>
+	</attribute>
+      </element>
+    </oneOrMore>
+  </element>
+</define>
 
-MACOR-DEF ::= '(' MACRO-NAME RULE + ')'
+<define name="glyph-code">
+  <choice>
+    <data type="string"><param name="pattern">[0#]x[0-9a-fA-F]{1,6}</param></data>
+    <data type="string"><param name="pattern">\?.</param></data>
+  </choice>
+</define>
+
 @endverbatim
 
-Each @c RULE specifies glyphs to be consumed and glyphs to be
-produced.  When some glyphs are consumed, they are taken away from the
-current run.  A rule may fail in some condition.  If not described
-explicitly to fail, it should be regarded that the rule succeeds.
+The element &lt;category-table&gt; declares cageories of characters
+that can be handled in a stage.  Each &lt;category&gt; element assigns
+the value of the attribute "category-value" to a glyph whose code is
+the value of the attribute "code", or a range of glyphs whose code 
+falls betwee the value of the attribute "from-code" and that of "to-code".
+
 
 @verbatim
-DIRECT-CODE ::= INTEGER
+<define name="generator">
+  <element name="generator">
+    <ref name="action"/>
+    <zeroOrMore>
+      <element name="macro-definition">
+	<attribute name="macro-ID"><data type="ID"></data></attribute>
+	<oneOrMore><ref name="action"/></oneOrMore>
+      </element>
+    </zeroOrMore>
+  </element>
+</define>
 @endverbatim
 
-This rule consumes no glyph and produces a glyph which has the
-following attributes:
+The element &lt;generator&gt; specifies the action applied to
+character/intermediate glyph code sequence passed to the stage.  The
+&lt;macro-definition&gt; define macros used in the action.  A macro is
+exapanded to the sequence of the correponding actions.
+
+@section flt-action FLT ACTIONS
+
+This section describes &lt;action&gt;s.  Each &lt;action&gt; specifies
+glyphs to be consumed and glyphs to be produced.  When some glyphs are
+consumed, they are taken away from the current run.  An action may
+fail in some explicitly described condition.
+
+@verbatim
+    <element name="direct-code">
+      <attribute name="glyph-code"><ref name="glyph-code"/></attribute>
+    </element>
+@endverbatim
+
+The element &lt;direct-code&gt; consumes no glyph and produces a glyph
+that has the following specifications:
 
 <ul>
-<li> code : @c INTEGER plus the default code-offset
+<li> code : @c glyph-code plus the default code-offset
 <li> combining-spec : default value
 <li> left-padding-flag : default value
 <li> right-padding-flag : zero
@@ -161,254 +224,395 @@ After having produced the glyph, the default code-offset,
 combining-spec, and left-padding-flag are all reset to zero.
 
 @verbatim
-PREDEFINED-RULE ::= '=' | '*' | '<' | '>' | '|' | '[' | ']'
+    <element name="copy-glyph"><empty/></element>
 @endverbatim
 
-They perform actions as follows.
-
-<ul>
-<li> @c =
-
-This rule consumes the first glyph in the current run and produces the
-same glyph.  It fails if the current run is empty.
-
-<li> @c *
-
-This rule repeatedly executes the previous rule.
-If the previous rule fails, this rule does nothing and fails.
-
-<li> @c @<
-
-This rule specifies the start of a grapheme cluster.
-
-<li> @c @>
-
-This rule specifies the end of a grapheme cluster.
-
-<li> @c @[
-
-This rule sets the default left-padding-flag to 1.
-No glyph is consumed.  No glyph is produced.
-
-<li> @c @]
-
-This rule changes the right-padding-flag of the lastly generated glyph
-to 1.  No glyph is consumed.  No glyph is produced.
-
-<li> @c |
-
-This rule consumes no glyph and produces a special glyph whose
-category is ' ' and other attributes are zero.  This is the only rule
-that produces that special glyph.
-
-</ul>
+The element &lt;copy-glyph&gt; consumes the first glyph in the current
+run and produces the same glyph.  It fails if the current run is
+empty.
 
 @verbatim
-REGEXP-BLOCK ::= '(' REGEXP RULE * ')'
-
-REGEXP ::= MTEXT
+    <element name="repeat"><empty/></element>
 @endverbatim
 
-@c MTEXT is a regular expression that should match the sequence of
-categories of the current run.  If a match is found, this rule
-executes @c RULEs temporarily limiting the current run to the matched
-part.  The matched part is consumed by this rule.
-
-Parenthesized subexpressions, if any, are recorded to be used in @c
-MATCH-BLOCK that may appear in one of @c RULEs.
-
-If no match is found, this rule fails.
+The element &lt;repeat&gt; repeatedly executes the previous action.  If
+the previous action fails, this action does nothing and fails.
 
 @verbatim
-MATCH-BLOCK ::= '(' MATCH-INDEX RULE * ')'
-
-MATCH-INDEX ::= INTEGER
+    <element name="start-cluster"><empty/></element>
 @endverbatim
-
-@c MATCH-INDEX is an integer specifying a parenthesized subexpression
-recorded by the previous @c REGEXP-BLOCK.  If such a subexpression was
-found by the previous regular expression matching, this rule executes @c
-RULEs temporarily limiting the current run to the matched part
-of the subexpression.  The matched part is consumed by this rule.
-
-If no match was found, this rule fails.
-
-If this is the first rule of the stage, @c MATCH-INDEX must be 0, and
-it matches the whole current run.
+The element &lt;start-cluster&gt; specifies the start of a grapheme cluster.
 
 @verbatim
-SUBST-BLOCK ::= '(' SOURCE-PATTERN RULE * ')'
-
-SOURCE-PATTERN ::= '(' CODE + ')'
-                   | (' 'range' CODE CODE ')'
+    <element name="end-cluster"><empty/></element>
 @endverbatim
 
-If the sequence of codes of the current run matches @c SOURCE-PATTERN,
-this rule executes @c RULEs temporarily limiting the current run to
-the matched part.  The matched part is consumed.
-
-The first form of @c SOURCE-PATTERN specifies a sequence of glyph codes to be
-matched.  In this case, this rule resets the default code-offset to
-zero.
-
-The second form specifies a range of codes that should match the first
-glyph code of the code sequence.  In this case, this rule sets the
-default code-offset to the first glyph code minus the first @c CODE
-specifying the range.
-
-If no match is found, this rule fails.
+The element &lt;end-cluster&gt; specifies the end of a grapheme cluster.
 
 @verbatim
-FONT-FACILITY-BLOCK ::= '(' FONT-FACILITY RULE * ')'
-FONT-FACILITY = '(' 'font-facility' CODE * ')'
-	      	| '(' 'font-facility' FONT-SPEC ')'
+    <element name="left-padding-flag"><empty/></element>
 @endverbatim
 
-If the current font has glyphs for @c CODEs or matches with @c
-FONT-SPEC, this rule succeeds and @c RULEs are executed.  Otherwise,
-this rule fails.
+The element &lt;left-padding-flag&gt; sets the default
+left-padding-flag to 1.  No glyph is consumed.  No glyph is produced.
 
 @verbatim
-COND-BLOCK ::= '(' 'cond' RULE + ')'
+    <element name="right-padding-flag"><empty/></element>
 @endverbatim
 
-This rule sequentially executes @c RULEs until one succeeds.  If no
-rule succeeds, this rule fails.  Otherwise, it succeeds.
+The element &lt;right-padding-flag&gt; changes the right-padding-flag
+of the lastly generated glyph to 1.  No glyph is consumed.  No glyph
+is produced.
 
 @verbatim
-OTF-SPEC ::= SYMBOL
+    <element name="separator"><empty/></element>
 @endverbatim
 
-@c OTF-SPEC is a symbol whose name specifies an instruction to the OTF
-driver.  The name has the following syntax.
+The element &lt;separator&gt; consumes no glyph and produces a special
+glyph whose category is ' ' and other attributes are zero.  This
+special glyph can be produced by this action only.
 
 @verbatim
-  OTF-SPEC-NAME ::= ':otf' SCRIPT LANGSYS ? GSUB-FEATURES ? GPOS-FEATURES ?
+    <element name="regexp-block">
+      <attribute name="regexp"/>
+      <zeroOrMore><ref name="action"/></zeroOrMore>
+    </element>
+@endverbatim
 
-  SCRIPT ::= SYMBOL
+The value of the attribute "regexp" is a regular expression that
+should match the sequence of categories of the current run.  If a
+match is found, this action executes &lt;action&gt;s temporarily
+limiting the current run to the matched part.  This action consumes the
+matched part.
 
-  LANGSYS ::= '/' SYMBOL
+Parenthesized subexpressions, if any, are recorded to be used in the
+&lt;match-block&gt; element in the &lt;action&gt;s.
 
-  GSUB-FEATURES ::= '=' FEATURE-LIST ?
+If no match is found, this action fails.
 
-  GPOS-FEATURES ::= '+' FEATURE-LIST ?
+@verbatim
 
-  FEATURE-LIST ::= ( SYMBOL ',' ) * ( SYMBOL | '*' )
+    <element name="match-block">
+      <attribute name="match-index"><data type="integer"/></attribute>
+      <zeroOrMore><ref name="action"/></zeroOrMore>
+    </element>      
 
 @endverbatim
 
-Each @c SYMBOL specifies a tag name defined in the OpenType
+The value of the attribute "match-index" is an integer specifying a
+parenthesized subexpression recorded by the previous
+&lt;regexp-bloack&gt; element.  If such a subexpression exists, this
+action executes &lt;action&gt;s temporarily limiting the current run to
+the subsequence that matches with the subexpression.  This action
+consumes the matched subsequence.
+
+If the specified subexpression does not exist, this action fails.
+
+If this is the first action of the stage, the value of the attribute
+"match-index" must be 0, and it matches the whole current run.
+
+@verbatim
+    <element name="subst-block">
+      <choice>
+	<element name="source-pattern">
+	  <list><oneOrMore><ref name="glyph-code"/></oneOrMore></list>
+	</element>
+	<element name="code-range">
+	  <attribute name="from-code"><ref name="glyph-code"/></attribute>
+	  <attribute name="to-code"><ref name="glyph-code"/></attribute>
+	</element>
+      </choice>
+      <zeroOrMore><ref name="action"/></zeroOrMore>
+    </element>
+@endverbatim
+
+If the sequence of codes of the current run matches the element
+&lt;source-pattern&gt; or the element &lt;code-range&gt;, this action
+executes &lt;action&gt;s, temporarily limiting the current run to the
+matched part. This action consumes the matched part.
+
+The element &lt;source-pattern&gt; specifies a sequence of glyph codes
+to be matched.  In this case, this action resets the default
+code-offset to zero.  The element &lt;code-range&gt; specifies a range
+of codes that should match the first glyph code of the code sequence.
+In this case, this action sets the default code-offset to the first
+glyph code minus the value of the "from-code" attribute.
+
+If no match is found, this action fails.  
+
+@verbatim
+    <element name="cond-block">
+      <oneOrMore><ref name="action"></ref></oneOrMore>
+    </element>
+@endverbatim
+
+This action sequentially executes &lt;action&gt;s until one succeeds.
+If no succeeds, this action fails.  Otherwise, it succeeds.
+
+@verbatim
+    <element name="font-facility-block">
+      <choice>
+	<ref name="font"/>
+	<element name="characters">
+	  <list><oneOrMore><ref name="glyph-code"/></oneOrMore></list>
+	</element>
+      </choice>
+      <zeroOrMore><ref name="action"/></zeroOrMore>
+    </element>
+@endverbatim
+
+The element &lt;font&gt;, referred in the line 3, supplies font
+specifications.  If the current font matches with the referred
+specification, or has glyphs for the codes listed in the element
+&lt;characters&gt;, this action succeeds and executes &lt;action&gt;s.
+Otherwise, this action fails.
+
+&lt;font&gt; is defined as follows:
+
+@verbatim
+<define name="font">
+  <element name="font">
+    <optional>
+      <optional>
+	<attribute name="foundry"><data type="token"/></attribute>
+	<attribute name="family"><data type="token"/></attribute>
+	<optional>
+	  <attribute name="weight"><data type="token"/></attribute>
+	  <optional>
+	    <attribute name="style"><data type="token"/></attribute>
+	    <optional>
+	      <attribute name="stretch"><data type="token"/></attribute>
+	      <optional>
+		<attribute name="adstyle"><data type="token"/></attribute>
+	      </optional>
+	    </optional>
+	  </optional>
+	</optional>
+      </optional>
+      <attribute name="registry"><data type="token"/></attribute>
+    </optional>
+    <optional>
+      <ref name="otf-specification"/>
+    </optional>
+    <zeroOrMore>
+      <element name="lang-specification">
+	<data type="token"><param name="minLength">2</param><param name="maxLength">3</param></data>
+      </element>
+    </zeroOrMore>
+  </element>
+</define>
+@endverbatim
+
+The value of the attribute "foundry" is a symbol representing font
+foundry information, e.g. adobe, misc, etc.
+
+The value of the attribute "family" is a symbol representing font
+family information, e.g. times, helvetica, etc.
+
+The value of the attribute "weight" is a symbol representing weight
+information, e.g. normal, bold, etc.
+
+The value of the attribute "style" is a symbol representing slant
+information, e.g. normal, italic, etc.
+
+The value of the attribute "stretch" is a symbol representing width
+information, e.g. normal, semicondensed, etc.
+
+The value of the attribute "adstyle" is a symbol representing abstract
+font family information, e.g. serif, sans-serif, etc.
+
+The value of the attribute "registry" is a symbol representing
+registry information, e.g. iso10646-1, iso8895-1, etc.
+
+@verbatim
+    <ref name="otf-specification"/>
+@endverbatim
+
+&lt;otf-specification&gt; specifies an instruction to the OTF driver.
+It is defined as follows:
+
+<define name="otf-specification">
+  <element name="otf">
+    <attribute name="script"/>
+    <optional><attribute name="langsys"/></optional>
+    <optional>
+      <element name="gsub-features">
+	<choice>
+	  <element name="positive-list">
+	    <zeroOrMore>
+	      <element name="feature">
+		<data type="string"><param name="length">4</param></data>
+	      </element>
+	    </zeroOrMore>
+	  </element>
+	  <element name="negative-list">
+	    <zeroOrMore>
+	      <element name="feature">
+		<data type="string"><param name="length">4</param></data>
+	      </element>
+	    </zeroOrMore>
+	  </element>
+	</choice>
+      </element>
+    </optional>
+    <optional>
+      <element name="gpos-features">
+	<choice>
+	  <element name="positive-list">
+	    <zeroOrMore>
+	      <element name="feature">
+		<data type="string"><param name="length">4</param></data>
+	      </element>
+	    </zeroOrMore>
+	  </element>
+	  <element name="negative-list">
+	    <zeroOrMore>
+	      <element name="feature">
+		<data type="string"><param name="length">4</param></data>
+	      </element>
+	    </zeroOrMore>
+	  </element>
+	</choice>
+      </element>
+    </optional>
+  </element>
+</define>
+
+@endverbatim
+
+Values of the attribute "script", "langsys" and contents of the
+"feature" tags must be tag names defined in the OpenType
 specification.
 
-For @c SCRIPT, @c SYMBOL specifies a Script tag name (e.g. deva for
+The attribute "script" specifies a Script tag name (e.g. deva for
 Devanagari).
 
-For @c LANGSYS, @c SYMBOL specifies a Language System tag name.  If @c
-LANGSYS is omitted, the Default Language System
-table is used.
+The attribute "langsys" specifies a Language System tag name.  If this
+attribute is omitted, the Default Language System table is used.
 
-For @c GSUB-FEATURES, each @c SYMBOL in @c FEATURE-LIST specifies 
-a GSUB Feature tag name to apply.  '*' is allowed as the last item to
-specify all remaining features.  If @c SYMBOL is preceded by '~' and
-the last item is '*', @c SYMBOL is excluded from the features to
-apply.  If no @c SYMBOL is specified, no GSUB feature is applied.  If
-@c GSUB-FEATURES itself is omitted, all GSUB features are applied.
+The element &lt;gsub-features&gt; has either a &lt;positive-list&gt;
+or a &lt;negative-list&gt;.  The &lt;feature&gt; element in each list
+specifies a GSUB Feature tag name (not) to apply.  If the element
+&lt;positive-list&gt; has no &lt;feature&gt; element, no GSUB feature
+is applied.  If the element &lt;negative-list&gt; has no
+&lt;feature&gt; element, all GSUB features are applied.
 
-When @c OTF-SPEC appears in a @c FONT-SPEC, @c FEATURE-LIST specifies
-features that the font must have (or must not have if preceded by
-'~'), and the last'*', even if exists, has no meaning.
+The element &lt;gpos-features&gt; has either a &lt;positive-list&gt;
+or a &lt;negative-list&gt;.  The &lt;feature&gt; element in each list
+specifies a GPOS Feature tag name (not) to apply.  If the element
+&lt;positive-list&gt; has no &lt;feature&gt; element, no GPOS feature
+is applied.  If the element "negative-list&gt; has no &lt;feature&gt;
+element, all GPOS features are applied.
 
-The specification of @c GPOS-FEATURES is analogous to that of @c
-GSUB-FEATURES.
-
-Please note that all the tags above must be 4 ASCII printable characters.
+When the element &lt;otf-specification&gt; appears in a
+&lt;font-facility-block", the &lt;positive-list&gt; or
+&lt;negative-list&gt; element specifies features that the font must
+(not) have.
 
 See the following page for the OpenType specification.\n
     <http://www.microsoft.com/typography/otspec/default.htm>
 
 @verbatim
-COMBINING ::= SYMBOL
+    <element name="combining-specification">
+      <attribute name="v-pos1">
+	<choice><value>t</value><value>c</value><value>b</value><value>B</value></choice>
+      </attribute>
+      <attribute name="v-pos2">
+	<choice><value>t</value><value>c</value><value>b</value><value>B</value></choice>
+      </attribute>
+      <attribute name="h-pos1">
+	<choice><value>l</value><value>c</value><value>r</value></choice>
+      </attribute>
+      <attribute name="h-pos2">
+	<choice><value>l</value><value>c</value><value>r</value></choice>
+      </attribute>
+      <optional>
+	    <attribute name="x-direction"><choice><value>right</value><value>left</value></choice></attribute>
+	    <optional><attribute name="x-amount"><data type="integer"/></attribute></optional>
+      </optional>
+      <optional>
+	    <attribute name="y-direction"><choice><value>up</value><value>down</value></choice></attribute>
+	    <optional><attribute name="y-amount"><data type="integer"/></attribute></optional>
+      </optional>
+    </element>
 @endverbatim
 
-@c COMBINING is a symbol whose name specifies how to combine the next
-glyph with the previous one.  This rule sets the default
-combining-spec to an integer code that is unique to the symbol name.
-The name has the following syntax.
+The element &lt;combining-specification&gt; specifies how to combine
+the next glyph with the previous one, and sets the default combining
+rule to the specification.
+
+The specificaion selects one reference point for each glyph, and
+defines how these reference points are placed with regard to each
+other when glyphs are drawn.
+
+The attribute "v-pos1", "v-pos2" specifies the vertical positions of
+the reference points of the previous and the next glyph, respectively.
+Their possible values "t", "c", "B", "b" means the top, center,
+baseline, and bottom of the bounding box of the glyph.
+
+The attribute "h-pos1", "h-pos2" specifies the horizontal positions of
+the reference points the previous and the next glyph, respectively.
+Their possible values "l", "c", "r" means the left, center, and right
+of the bounding box of the glyph.
+
+The following figure shows the possible reference points.
 
 @verbatim
-  COMBINING-NAME ::= VPOS HPOS OFFSET VPOS HPOS
-
-  VPOS ::= 't' | 'c' | 'b' | 'B'
-
-  HPOS ::= 'l' | 'c' | 'r'
-
-  OFFSET :: = '.' | XOFF | YOFF XOFF ?
-
-  XOFF ::= ('<' | '>') INTEGER ?
-
-  YOFF ::= ('+' | '-') INTEGER ?
+                                      v-pos h-pos
+                                ----- ----  ----
+    0----1----2 <---- top       0     t     l
+    |         |                 1     t     c
+    |         |                 2     t     r
+    |         |                 3     B     l
+    9   10   11 <---- center    4     B     c
+    |         |                 5     B     r
+  --3----4----5-- <-- baseline  6     b     l
+    |         |                 7     b     c
+    6----7----8 <---- bottom    8     b     r
+                                9     c     l
+    |    |    |                10     c     c
+  left center right            11     c     r
 @endverbatim
 
-@c VPOS and @c HPOS specify the vertical and horizontal positions
-as described below.
+The left figure shows 12 reference points (numbers 0 to 11) of a
+glyph.  The rectangle 0-6-8-2 is the bounding box of the glyph.  The
+positions 3, 4, and 5 are on the baseline. 9-11 are on the vertical
+center of the box, 0-2 and 6-8 are on the top and on the bottom
+respectively.  1, 10, 4, and 7 are on the horizontal center of the
+box.
+
+The attribute "x-direction", "x-amount", "y-direction", and "y-amount"
+specifies the relative position of these reference points.  If both
+"x-direction" and "y-direction" are omitted, the reference points are
+on the same position.
+
+The attribute "x-direction" can take "right" or "left" as its value,
+meaning that the X position of the reference point of the next glyph
+should be shifted to the right or left from the reference point of the
+previous glyph.  The attribute "y-direction" can take "up" or "down"
+as its value, meaning that the Y position of the reference point of
+the next glyph should be shifted upward or downward from the reference
+point of the previous glyph.
+
+The attribute "x-amount" or "y-amount" specify amount of the shift,
+measured by a percentage of the font size, i.e., if its value is 10,
+it means 10% (1/10) of the font size.  When the attribute "x-amount"
+or "y-amount" is omitted, the default value 5 is used.
+
+Once the next glyph is combined with the previous one, they are
+treated as a single combined glyph.
 
 @verbatim
-                                POINT VPOS HPOS
-                                ----- ---- ----
-    0----1----2 <---- top       0     t    l
-    |         |                 1     t    c
-    |         |                 2     t    r
-    |         |                 3     B    l
-    9   10   11 <---- center    4     B    c
-    |         |                 5     B    r
-  --3----4----5-- <-- baseline  6     b    l
-    |         |                 7     b    c
-    6----7----8 <---- bottom    8     b    r
-                                9     c    l
-    |    |    |                10     c    c
-  left center right            11     c    r
+    <element name="macro-reference">
+     <attribute name="macro-ID"><data type="IDREF"/></attribute>
+    </element>
+
 @endverbatim
 
-The left figure shows 12 reference points of a glyph by numbers 0 to
-11.  The rectangle 0-6-8-2 is the bounding box of the glyph, the
-positions 3, 4, and 5 are on the baseline, 9 and 11 are on the center
-of the lines 0-6 and 2-8 respectively, 1, 10, 4, and 7 are on the
-center of the lines 1-2, 3-5, 9-11, and 6-8 respectively.
-
-The right table shows how those reference points are specified by a
-pair of @c VPOS and @c HPOS.
-
-The first @c VPOS and @c HPOS in the definition of @c COMBINING-NAME
-specify the
-reference point of the previous glyph, and the second @c VPOS and @c
-HPOS specify that of the next glyph.
-The next glyph is drawn so that these two reference points align.
-
-@c OFFSET specifies the way of alignment in detail.  If it is '.', the
-reference points are on the same position.
-
-@c XOFF specifies how much the X position of the reference point of
-the next glyph should be shifted to the right ('<') or left ('>') from
-the previous reference point.
-
-@c YOFF specifies how much the Y position of the reference point the
-next glyph should be shifted upward ('+') or downward ('-') from the
-previous reference point.
-
-In both cases, @c INTEGER is the amount of shift expressed as a
-percentage of the font size, i.e., if @c INTEGER is 10, it means
-10% (1/10) of the font size.  If @c INTEGER is omitted, it is assumed that
-5 is specified.
-
-Once the next glyph is combined with the previous one, they
-are treated as a single combined glyph.
-
-@verbatim
-MACRO-NAME ::= SYMBOL
-@endverbatim
-
-@c MACRO-NAME is a symbol that appears in one of @c MACRO-DEF.  It is
-exapanded to the sequence of the correponding @c RULEs.
+The element &lt;macro-reference&gt; refers to a macro defined in
+&lt;macro-definition&gt;.  The attribute "macro-ID" specifies a macro
+and this element is exapanded to the sequence of the correponding
+rules.
 
 @section flt-context-dependent CONTEXT DEPENDENT BEHAVIOR
 

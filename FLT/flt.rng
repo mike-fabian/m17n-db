@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<grammar 
+	 datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+         xmlns:xi="http://www.w3.org/1999/XML/xinclude"
+	 xmlns="http://relaxng.org/ns/structure/1.0"
+	 ns="http://www.m17n.org/FLT">
+ 
+<start>
+  <element name="font-layouter">
+    <attribute name="key0"><data type="string"/></attribute>
+    <attribute name="key1"><data type="string"/></attribute>
+    <optional><ref name="font"/></optional>
+    <optional>
+      <element name="m17n-version">
+	<data type="string"><param name="pattern">[0-9]+\.[0-9]+\.[0-9]+</param></data>
+      </element>
+    </optional>
+    <ref name="first-stage"/>
+    <zeroOrMore><ref name="stage"/></zeroOrMore>
+  </element>
+</start>
+
+<define name="first-stage">
+  <element name="first-stage">
+    <ref name="category-table"/>
+    <ref name="generator"/>
+  </element>
+</define>
+
+<define name="stage">
+  <element name="stage">
+    <optional><ref name="category-table"/></optional>
+    <ref name="generator"/>
+  </element>
+</define>
+
+<define name="category-table">
+  <element name="category-table">
+    <oneOrMore>
+      <element name="category">
+	<choice>
+	  <attribute name="code"><ref name="glyph-code"/></attribute>
+	  <group><attribute name="from-code"><ref name="glyph-code"/></attribute>
+	         <attribute name="to-code"><ref name="glyph-code"/></attribute>
+	  </group>
+	</choice>
+	<attribute name="category-value">
+	  <data type="string"><param name="pattern">[a-zA-Z]</param></data>
+	</attribute>
+      </element>
+    </oneOrMore>
+  </element>
+</define>
+
+<define name="glyph-code">
+  <choice>
+    <data type="string"><param name="pattern">[0#]x[0-9a-fA-F]{1,6}</param></data>
+    <data type="string"><param name="pattern">\?.</param></data>
+  </choice>
+</define>
+
+<define name="generator">
+  <element name="generator">
+    <ref name="action"/>
+    <zeroOrMore>
+      <element name="macro-definition">
+	<attribute name="macro-ID"><data type="ID"></data></attribute>
+	<oneOrMore><ref name="action"/></oneOrMore>
+      </element>
+    </zeroOrMore>
+  </element>
+</define>
+
+<!-- rules -->
+<define name="action">
+  <choice>
+    <element name="direct-code">
+      <attribute name="glyph-code"><ref name="glyph-code"/></attribute>
+    </element>
+
+    <element name="copy-glyph"><empty/></element>
+    <element name="repeat"><empty/></element>
+    <element name="start-cluster"><empty/></element>
+    <element name="end-cluster"><empty/></element>
+    <element name="left-padding-flag"><empty/></element>
+    <element name="right-padding-flag"><empty/></element>
+    <element name="separator"><empty/></element>
+
+    <element name="regexp-block">
+      <attribute name="regexp"/>
+      <zeroOrMore><ref name="action"/></zeroOrMore>
+    </element>
+
+    <element name="match-block">
+      <attribute name="match-index"><data type="integer"/></attribute>
+      <zeroOrMore><ref name="action"/></zeroOrMore>
+    </element>      
+
+    <element name="subst-block">
+      <choice>
+	<element name="source-pattern">
+	  <list><oneOrMore><ref name="glyph-code"/></oneOrMore></list>
+	</element>
+	<element name="code-range">
+	  <attribute name="from-code"><ref name="glyph-code"/></attribute>
+	  <attribute name="to-code"><ref name="glyph-code"/></attribute>
+	</element>
+      </choice>
+      <zeroOrMore><ref name="action"/></zeroOrMore>
+    </element>
+
+    <element name="cond-block">
+      <oneOrMore><ref name="action"></ref></oneOrMore>
+    </element>
+
+    <element name="font-facility-block">
+      <choice>
+	<ref name="font"/>
+	<element name="characters">
+	  <list><oneOrMore><ref name="glyph-code"/></oneOrMore></list>
+	</element>
+      </choice>
+      <zeroOrMore><ref name="action"/></zeroOrMore>
+    </element>
+    
+    <ref name="otf-specification"/>
+
+    <element name="combining-specification">
+      <attribute name="v-pos1">
+	<choice><value>t</value><value>c</value><value>b</value><value>B</value></choice>
+      </attribute>
+      <attribute name="v-pos2">
+	<choice><value>t</value><value>c</value><value>b</value><value>B</value></choice>
+      </attribute>
+      <attribute name="h-pos1">
+	<choice><value>l</value><value>c</value><value>r</value></choice>
+      </attribute>
+      <attribute name="h-pos2">
+	<choice><value>l</value><value>c</value><value>r</value></choice>
+      </attribute>
+      <optional>
+	    <attribute name="x-direction"><choice><value>right</value><value>left</value></choice></attribute>
+	    <optional><attribute name="x-amount"><data type="integer"/></attribute></optional>
+      </optional>
+      <optional>
+	    <attribute name="y-direction"><choice><value>up</value><value>down</value></choice></attribute>
+	    <optional><attribute name="y-amount"><data type="integer"/></attribute></optional>
+      </optional>
+    </element>
+
+    <element name="macro-reference">
+     <attribute name="macro-ID"><data type="IDREF"/></attribute>
+    </element>
+
+  </choice>
+</define>
+
+<define name="font">
+  <element name="font">
+    <optional>
+      <optional>
+	<attribute name="foundry"><data type="token"/></attribute>
+	<attribute name="family"><data type="token"/></attribute>
+	<optional>
+	  <attribute name="weight"><data type="token"/></attribute>
+	  <optional>
+	    <attribute name="style"><data type="token"/></attribute>
+	    <optional>
+	      <attribute name="stretch"><data type="token"/></attribute>
+	      <optional>
+		<attribute name="adstyle"><data type="token"/></attribute>
+	      </optional>
+	    </optional>
+	  </optional>
+	</optional>
+      </optional>
+      <attribute name="registry"><data type="token"/></attribute>
+    </optional>
+    <optional>
+      <ref name="otf-specification"/>
+    </optional>
+    <zeroOrMore>
+      <element name="lang-specification">
+	<data type="token"><param name="minLength">2</param><param name="maxLength">3</param></data>
+      </element>
+    </zeroOrMore>
+  </element>
+</define>
+		  
+<define name="otf-specification">
+  <element name="otf-specification">
+    <attribute name="script"/>
+    <optional><attribute name="langsys"/></optional>
+    <optional>
+      <element name="gsub-features">
+	<choice>
+	  <element name="positive-list">
+	    <zeroOrMore>
+	      <element name="feature">
+		<data type="string"><param name="length">4</param></data>
+	      </element>
+	    </zeroOrMore>
+	  </element>
+	  <element name="negative-list">
+	    <zeroOrMore>
+	      <element name="feature">
+		<data type="string"><param name="length">4</param></data>
+	      </element>
+	    </zeroOrMore>
+	  </element>
+	</choice>
+      </element>
+    </optional>
+    <optional>
+      <element name="gpos-features">
+	<choice>
+	  <element name="positive-list">
+	    <zeroOrMore>
+	      <element name="feature">
+		<data type="string"><param name="length">4</param></data>
+	      </element>
+	    </zeroOrMore>
+	  </element>
+	  <element name="negative-list">
+	    <zeroOrMore>
+	      <element name="feature">
+		<data type="string"><param name="length">4</param></data>
+	      </element>
+	    </zeroOrMore>
+	  </element>
+	</choice>
+      </element>
+    </optional>
+  </element>
+</define>
+
+</grammar>
+

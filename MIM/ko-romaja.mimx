@@ -1099,7 +1099,7 @@ Special:
         </keyseq>
       </rule>
     </map>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="cjk-util.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:map)"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="cjk-util.mimx" xpointer="xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:map)"/>
   </map-list>
   <state-list>
     <state id="state-init">
@@ -1240,6 +1240,6 @@ Special:
         <unhandle/>
       </catch-all-branch>
     </state>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="cjk-util.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:state)"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="cjk-util.mimx" xpointer="xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:state)"/>
   </state-list>
 </input-method>

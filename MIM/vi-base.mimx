@@ -1,16 +1,5 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
-<!--Usage of variables:
-M (mark): point after the last vowel 
-T (mark): point after the tone-mark-attached vowel
-TPLACE: On which vowel a tone is attached (0:none, 1:1st, 2:2nd, or 3:3rd)
-C: The initial consonant
-V-1: The last vowel
-V-2: The second from the last vowel (or 0 if there aren't two vowels)
-V-3: The third from the last vowel (or 0 if there aren't three vowels)
-C-AFTER-V: Number of the final consonants
-SELECT: Which tone is selected
--->
   <tags>
     <language>t</language>
     <name>nil</name>
@@ -33,19 +22,19 @@ to be included in the other Vietnamese input method (e.g. vi-telex, vi-vni).
               <expr operator="|">
                 <expr operator="=">
                   <variable-reference id="V-1"/>
-                  <int-val>234</int-val>
+                  <int-val>2282</int-val>
                 </expr>
                 <expr operator="=">
                   <variable-reference id="V-1"/>
-                  <int-val>417</int-val>
+                  <int-val>332001</int-val>
                 </expr>
                 <expr operator="=">
                   <variable-reference id="V-1"/>
-                  <int-val>202</int-val>
+                  <int-val>2250</int-val>
                 </expr>
                 <expr operator="=">
                   <variable-reference id="V-1"/>
-                  <int-val>416</int-val>
+                  <int-val>332000</int-val>
                 </expr>
               </expr>
               <set id="TPLACE">
@@ -776,6 +765,24 @@ to be included in the other Vietnamese input method (e.g. vi-telex, vi-vni).
       <rule>
         <keyseq keys="9"/>
         <insert character="57"/>
+      </rule>
+    </map>
+    <map id="map-smart-quotes">
+      <rule>
+        <keyseq keys="&apos;"/>
+        <insert character="39"/>
+      </rule>
+      <rule>
+        <keyseq keys="&apos;&apos;"/>
+        <insert string="‘’"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;"/>
+        <insert character="34"/>
+      </rule>
+      <rule>
+        <keyseq keys="&quot;&quot;"/>
+        <insert string="“”"/>
       </rule>
     </map>
     <map id="map-permanent-escape">

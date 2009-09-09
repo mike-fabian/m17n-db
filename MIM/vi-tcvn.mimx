@@ -13,39 +13,45 @@ The following variables are customizable:
   </description>
   <title>Ắ(TCVN)</title>
   <variable-list>
-    <variable id="tone-mark-on-last">
-      <description>
-        <get-text>Flag to control tone mark position in equivocal cases.
+    <variable id="tone-mark-on-last"><description>
+      <get-text>Flag to control tone mark position in equivocal cases.
 If this variable is 0 (the default), put tone mark on the first vowel
 in such equivocal cases as "oa", "oe", "uy".
 Otherwise, put tone mark on the last vowel.</get-text>
-      </description>
-      <value type="integer">0</value>
-      <variable-value-candidate>
-        <c-value type="integer">0</c-value>
-        <c-value type="integer">1</c-value>
-      </variable-value-candidate>
-    </variable>
-    <variable id="backspace-is-undo">
-      <description>
-        <get-text>Flag to control the action of Backspace key (delete or undo).
+    </description><value type="integer"/>0<variable-value-candidate>
+      <c-value type="integer">0</c-value>
+      <c-value type="integer">1</c-value>
+    </variable-value-candidate></variable>
+    <variable id="backspace-is-undo"><description>
+      <get-text>Flag to control the action of Backspace key (delete or undo).
 If this variable is 0 (the default), Backspace key deletes the previous
 character (e.g. "q u a i s BS" =&gt; "quá").
 If the value is 1, Backspace key undoes the previous key
 (e.g. "q u a i s BS" =&gt; "quai").</get-text>
-      </description>
-      <value type="integer">0</value>
-      <variable-value-candidate>
-        <c-value type="integer">0</c-value>
-        <c-value type="integer">1</c-value>
-      </variable-value-candidate>
-    </variable>
+    </description><value type="integer"/>0<variable-value-candidate>
+      <c-value type="integer">0</c-value>
+      <c-value type="integer">1</c-value>
+    </variable-value-candidate></variable>
   </variable-list>
   <macro-list>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="vi-base.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:macro)"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="vi-base.mimx" xpointer="xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:macro)">
+      <tags>
+        <language>t</language>
+        <name>nil</name>
+        <extra-id>vi-base</extra-id>
+      </tags>
+      <section>macro</section>
+    </xi:include>
   </macro-list>
   <map-list>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="vi-base.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:map)"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="vi-base.mimx" xpointer="xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:map)">
+      <tags>
+        <language>t</language>
+        <name>nil</name>
+        <extra-id>vi-base</extra-id>
+      </tags>
+      <section>map</section>
+    </xi:include>
     <map id="map-vowel-ext">
       <rule>
         <keyseq keys="2"/>
@@ -123,11 +129,11 @@ If the value is 1, Backspace key undoes the previous key
     <map id="map-consonant-ext">
       <rule>
         <keyseq keys="0"/>
-        <insert character="273"/>
+        <insert character="331825"/>
       </rule>
       <rule>
         <keyseq keys=")"/>
-        <insert character="272"/>
+        <insert character="331824"/>
       </rule>
     </map>
     <map id="map-tone-mark">
@@ -170,7 +176,7 @@ If the value is 1, Backspace key undoes the previous key
     <map id="map-misc">
       <rule>
         <keyseq keys="="/>
-        <insert character="8363"/>
+        <insert character="342603"/>
       </rule>
       <rule>
         <keyseq keys="=="/>
@@ -475,6 +481,7 @@ If the value is 1, Backspace key undoes the previous key
         <shift-to id="state-escape-in-normal-mode"/>
       </branch>
       <branch branch-selecting-map="map-misc"/>
+      <branch branch-selecting-map="map-smart-quotes"/>
     </state>
     <state id="state-after-v">
       <branch branch-selecting-map="map-consonant">

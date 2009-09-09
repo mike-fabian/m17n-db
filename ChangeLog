@@ -1,3 +1,17 @@
+2009-03-19  Mikiko Nisikimi  <nisikimi@m17n.org>
+
+	* FORMATS/IM-xml.txt: New file.
+
+2009-03-18  Mikiko Nisikimi  <nisikimi@m17n.org>
+
+	* MIM/mim.rng: element <plist>removed.
+
+2009-03-17  Mikiko Nisikimi  <nisikimi@m17n.org>
+
+	* MIM/mim.rng:
+	<data type="string"><param name="pattern">@.+</param></data>
+	in <predefeind-variable> is recoverd, for si-wijesekera-preedit.mimx
+
 2009-01-19  TAKAHASHI Naoto  <ntakahas@m17n.org>
 
 	* MIM/bn-itrans.mim: Modify the descrpition string for readability.

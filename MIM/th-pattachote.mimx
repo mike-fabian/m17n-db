@@ -11,23 +11,22 @@ The correction algorithm follows the one shown in the following
 </description>
   <title>ท</title>
   <variable-list>
-    <variable id="level">
-      <description>
-        <get-text>Acceptance level
-The level of character sequence acceptance defined in WTT 2.0.
-0 accepts any key sequence.  2 accepts only orthographic ones.
-1 is somewhere between.</get-text>
-      </description>
-      <value type="integer">1</value>
-      <variable-value-candidate>
-        <c-value type="integer">0</c-value>
-        <c-value type="integer">1</c-value>
-        <c-value type="integer">2</c-value>
-      </variable-value-candidate>
-    </variable>
+    <variable id="level"><description>
+      <get-text>Acceptance level The level of character sequence acceptance defined in WTT 2.0. 0 accepts any key sequence.  2 accepts only orthographic ones. 1 is somewhere between.</get-text>
+    </description><value type="integer"/>1<variable-value-candidate>
+      <c-value type="integer">0</c-value>
+      <c-value type="integer">1</c-value>
+      <c-value type="integer">2</c-value>
+    </variable-value-candidate></variable>
   </variable-list>
   <macro-list>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="th-kesmanee.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:macro)"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="th-kesmanee.mimx" xpointer="xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:macro)">
+      <tags>
+        <language>th</language>
+        <name>kesmanee</name>
+      </tags>
+      <section>macro</section>
+    </xi:include>
   </macro-list>
   <map-list>
     <map id="map-map">
@@ -608,7 +607,7 @@ The level of character sequence acceptance defined in WTT 2.0.
         <conditional>
           <case>
             <expr operator="&gt;">
-              <variable-reference id="predefined-surround-text-flag" type="predefined"/>
+              <variable-reference type="predefined" id="predefined-surround-text-flag"/>
               <int-val>-2</int-val>
             </expr>
             <commit/>

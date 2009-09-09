@@ -9635,8 +9635,22 @@ temporarily by typing "Z".
         </insert>
       </rule>
     </map>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="cjk-util.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:map)"/>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="zh-util.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:map)"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="cjk-util.mimx" xpointer="xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:map)">
+      <tags>
+        <language>t</language>
+        <name>nil</name>
+        <extra-id>cjk-util</extra-id>
+      </tags>
+      <section>map</section>
+    </xi:include>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="zh-util.mimx" xpointer="xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:map)">
+      <tags>
+        <language>t</language>
+        <name>nil</name>
+        <extra-id>zh-util</extra-id>
+      </tags>
+      <section>map</section>
+    </xi:include>
   </map-list>
   <state-list>
     <state id="state-init">
@@ -9661,7 +9675,21 @@ temporarily by typing "Z".
         <shift-to id="state-check-undo"/>
       </catch-all-branch>
     </state>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="cjk-util.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:state)"/>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="zh-util.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:state)"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="cjk-util.mimx" xpointer="xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:state)">
+      <tags>
+        <language>t</language>
+        <name>nil</name>
+        <extra-id>cjk-util</extra-id>
+      </tags>
+      <section>state</section>
+    </xi:include>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="zh-util.mimx" xpointer="xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:state)">
+      <tags>
+        <language>t</language>
+        <name>nil</name>
+        <extra-id>zh-util</extra-id>
+      </tags>
+      <section>state</section>
+    </xi:include>
   </state-list>
 </input-method>

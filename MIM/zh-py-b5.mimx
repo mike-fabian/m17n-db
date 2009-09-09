@@ -12,15 +12,27 @@ temporarily by typing "Z".
 </description>
   <title>拼B5</title>
   <variable-list>
-    <variable id="candidates-group-size"/>
-    <variable id="candidates-charset">
-      <value type="symbol">big5</value>
+    <variable id="candidates-group-size">
+      <value type="symbol">nil</value>
     </variable>
+    <variable id="candidates-charset"><value type="symbol"/>big5</variable>
   </variable-list>
   <map-list>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="zh-py.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:map)"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="zh-py.mimx" xpointer="xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:map)">
+      <tags>
+        <language>zh</language>
+        <name>py</name>
+      </tags>
+      <section>map</section>
+    </xi:include>
   </map-list>
   <state-list>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="zh-py.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:state)"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="zh-py.mimx" xpointer="xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:state)">
+      <tags>
+        <language>zh</language>
+        <name>py</name>
+      </tags>
+      <section>state</section>
+    </xi:include>
   </state-list>
 </input-method>

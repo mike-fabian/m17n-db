@@ -18,9 +18,21 @@ temporarily by typing "Z".
     </variable>
   </variable-list>
   <map-list>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="zh-tonepy.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:map)"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="zh-tonepy.mimx" xpointer="xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:map)">
+      <tags>
+        <language>zh</language>
+        <name>tonepy</name>
+      </tags>
+      <section>map</section>
+    </xi:include>
   </map-list>
   <state-list>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="zh-tonepy.mimx#xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:state)"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="zh-tonepy.mimx" xpointer="xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:state)">
+      <tags>
+        <language>zh</language>
+        <name>tonepy</name>
+      </tags>
+      <section>state</section>
+    </xi:include>
   </state-list>
 </input-method>

@@ -13,7 +13,7 @@ The correction algorithm follows the one shown in the following
   <variable-list>
     <variable id="level"><description>
       <get-text>Acceptance level The level of character sequence acceptance defined in WTT 2.0. 0 accepts any key sequence.  2 accepts only orthographic ones. 1 is somewhere between.</get-text>
-    </description><value type="integer"/>1<variable-value-candidate>
+    </description><value type="integer">1</value><variable-value-candidate>
       <c-value type="integer">0</c-value>
       <c-value type="integer">1</c-value>
       <c-value type="integer">2</c-value>

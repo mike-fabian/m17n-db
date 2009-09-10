@@ -18,7 +18,7 @@ The following variables are customizable:
 If this variable is 0 (the default), put tone mark on the first vowel
 in such equivocal cases as "oa", "oe", "uy".
 Otherwise, put tone mark on the last vowel.</get-text>
-    </description><value type="integer"/>0<variable-value-candidate>
+    </description><value type="integer">0</value><variable-value-candidate>
       <c-value type="integer">0</c-value>
       <c-value type="integer">1</c-value>
     </variable-value-candidate></variable>
@@ -28,7 +28,7 @@ If this variable is 0 (the default), Backspace key deletes the previous
 character (e.g. "q u a i s BS" =&gt; "quá").
 If the value is 1, Backspace key undoes the previous key
 (e.g. "q u a i s BS" =&gt; "quai").</get-text>
-    </description><value type="integer"/>0<variable-value-candidate>
+    </description><value type="integer">0</value><variable-value-candidate>
       <c-value type="integer">0</c-value>
       <c-value type="integer">1</c-value>
     </variable-value-candidate></variable>

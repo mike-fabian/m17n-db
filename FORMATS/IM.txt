@@ -423,7 +423,7 @@ This code moves the marker to the user defined position T.
   <char-at><marker>@-5</marker></char-at>
 #endif
 
-This code refers to the 5th previous character wherever it is.
+This code refers to the 5th preceding character wherever it is.
 
 @verbatim
 <define name="markerterm">

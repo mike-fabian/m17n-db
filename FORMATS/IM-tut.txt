@@ -73,25 +73,25 @@ characters through some actions.
 Tags should be written as they are.  Contents and attribute values
 (written with uppercases here) may be restricted to some
 patterns. (See m17n-db-xml/MIM/mim.rng for details.)  Every child
-element but <tags> is optional. We will not see the variable-list,
+element but &lt;tags&gt; is optional. We will not see the variable-list,
 command-list, module-list and macro-list in this tutorial.
 
-Input sequence is translated into characters according to the <rule>s
-in the <map>s and actions in the <state>s.  The characters are
+Input sequence is translated into characters according to the &lt;rule&gt;s
+in the &lt;map&gt;s and actions in the &lt;state&gt;s.  The characters are
 temporarily put into a special place called @c preedit @c buffer.  The
 input method driver uses this buffer to store, change or re-arrenge
 characters, and when it is done, commit the characters in the buffer
 to applications.
 
-<rule> consists of a <keyseq> that triggers the rule and actions to
+&lt;rule&gt; consists of a &lt;keyseq&gt; that triggers the rule and actions to
 apply to the characters in the preedit buffer.
 
-<keyseq> specifies a sequence of keys in one of the following two
+&lt;keyseq&gt; specifies a sequence of keys in one of the following two
 ways.  
 
-@li a list of <symbol>s or <integer>s.  A variable that refers
-to a <integer>, or a function call that returns a <symbol> or a
-<integer> can also appear as an element of the list.  A symbol
+@li a list of &lt;symbol&gt;s or &lt;integer&gt;s.  A variable that refers
+to a &lt;integer&gt;, or a function call that returns a &lt;symbol&gt; or a
+&lt;integer&gt; can also appear as an element of the list.  A symbol
 specifies a key event (the keysym value returned by the xev command)
 and an integer specifies a character-code.
 
@@ -111,11 +111,11 @@ contain Latin-1 characters.)
 
 @endverbatim
 
-These are both valid <keyseq>s.
+These are both valid &lt;keyseq&gt;s.
 
-Actions for the translation are defined in <map>s and <state>s.
+Actions for the translation are defined in &lt;map&gt;s and &lt;state&gt;s.
 
-Actions are a sequence of <funcall>.  They may or may not have
+Actions are a sequence of &lt;funcall&gt;.  They may or may not have
 contents that specify its details.  For example, the action for
 character insertion takes the character to be inserted as its content,
 the action for calling external function requires the function to be
@@ -178,33 +178,33 @@ Here is a simple example of an input method that works as Caps Lock.
 @endverbatim
 
 When an input method is activated, the input method driver is in the
-initial condition of the first <state> in the <state-list>. In this
+initial condition of the first &lt;state&gt; in the &lt;state-list&gt;. In this
 case, it is the state whose @c mname is @c state-init.  In the initial
 condition, no key is being processed and no action is suspended.
 
-Each <state> has <branch>es.  Each <branch> has an attribute @c mname
-that defines the correspondent <map>.  A <map> has <rule>s, and a
-<rule> has a <keyseq>, so when a key sequence is given, a <rule> for
-the key sequence is determined, a <map> that contains the rule is
-determined, and a <branch> that is responsible for the map is
+Each &lt;state&gt; has &lt;branch&gt;es.  Each &lt;branch&gt; has an attribute @c mname
+that defines the correspondent &lt;map&gt;.  A &lt;map&gt; has &lt;rule&gt;s, and a
+&lt;rule&gt; has a &lt;keyseq&gt;, so when a key sequence is given, a &lt;rule&gt; for
+the key sequence is determined, a &lt;map&gt; that contains the rule is
+determined, and a &lt;branch&gt; that is responsible for the map is
 determined.
 
 When the input method driver receives a key sequence "a", it searches
-for a <rule> whose <keyseq> part matches with "a", and finds one in
-the <map> whose @c mname is @c map-to-upper.  The selected branch is
+for a &lt;rule&gt; whose &lt;keyseq&gt; part matches with "a", and finds one in
+the &lt;map&gt; whose @c mname is @c map-to-upper.  The selected branch is
 the one whose @c mname is @c map-to-upper.
 
-When a given key sequence does not match with any <rule> in any <map>
-that corresponds with a <branch> of the current <state>, that event is
+When a given key sequence does not match with any &lt;rule&gt; in any &lt;map&gt;
+that corresponds with a &lt;branch&gt; of the current &lt;state&gt;, that event is
 unhandled and given back to the application program.
 
-The driver then executes actions of the <rule>. In this case, it
+The driver then executes actions of the &lt;rule&gt;. In this case, it
 is 
 @verbatim
 <insert><string>A</string></insert></rule>
 @endverbatim
 that inserts an "A" in the preedit buffer.  Then actions in the
-<branch>, if any, are executed.  When all actions in the rules and the
+<branch&gt;, if any, are executed.  When all actions in the rules and the
 branch have been handled, the driver shifts to the initial condition
 of the current state.
 
@@ -258,12 +258,12 @@ leads to commit "A".
 
 @section im-state-action Use of state example: Capitalizing 
 
-We have so far explained actions in <rule>s, but not in <branch>s.
-Actions in <branch>s are executed only after a matching rule has been
+We have so far explained actions in &lt;rule&gt;s, but not in &lt;branch&gt;s.
+Actions in &lt;branch&gt;s are executed only after a matching rule has been
 determined its actions have been executed.  A typical use of action in
-a <branch> is to shift to a different state.
+a &lt;branch&gt; is to shift to a different state.
 
-In order to see how actions in a <branch> are used, let us modify the
+In order to see how actions in a &lt;branch&gt; are used, let us modify the
 current input method to upcase only such letters that start a word
 (i.e. to capitalize).  For this purpose, the "state-init" state should
 be modified as below.
@@ -275,7 +275,7 @@ be modified as below.
     </state>
 @endverbatim
 
-The action in <state> here is <shift> that shifts the input method
+The action in &lt;state&gt; here is &lt;shift&gt; that shifts the input method
 driver to another state whose sname is @c state-non-upcase.  Let us
 define the state.  It has one branch and one catchall.
 
@@ -400,7 +400,7 @@ whose Unicode character code is 32 (i.e. SPACE).
 
 The variable value can be set to any term.  Terms contain, in addtion
 to other items, integer values, variable references and function
-calls. (See EXPR.txt for the definition of <term>.)  For example,
+calls. (See EXPR.txt for the definition of &lt;term&gt;.)  For example,
 the action below contains two variable references and two function calls
 and sets the value of the variable @c X to @c Y*32+Z.
 
@@ -413,7 +413,7 @@ and sets the value of the variable @c X to @c Y*32+Z.
   </set>
 @endverbatim
 
-<mul> and <add> here, in addiotn to others, are calls to predefined
+&lt;mul&gt; and &lt;add&gt; here, in addiotn to others, are calls to predefined
 functions.  Predefined functions include arithmetic and bitwise
 operators (add, subtract, etc.) , relational operators (equal to,
 greater than, etc.), logical operators (and, not, etc.), list
@@ -432,20 +432,20 @@ that has the following form.
   </cond>
 @endverbatim
 
-<cond> checks the value of EXPRESSION in <list>s one by one, and when
-the <list> whose EXPRESSION has a nonzero value is encountered,
-ACTIONs in that <list> are performed.
+&lt;cond&gt; checks the value of EXPRESSION in &lt;list&gt;s one by one, and when
+the &lt;list&gt; whose EXPRESSION has a nonzero value is encountered,
+ACTIONs in that &lt;list&gt; are performed.
 
 Now let us return to surrounding text support.  Calls to the
-predefined function <surround-text-flag> returns -1 if surrounding
+predefined function &lt;surround-text-flag&gt; returns -1 if surrounding
 text is supported, and -2 if not.
 
 In order to know what characters surrounds the input spot, we need the
-help of <marker> and <char-at>.  <marker> indicates a position in the
-buffer and the predefined function <char-at> returns the character at
+help of &lt;marker&gt; and &lt;char-at&gt;.  &lt;marker&gt; indicates a position in the
+buffer and the predefined function &lt;char-at&gt; returns the character at
 the specified position.  
 
-<marker>@@+N</marker> and <marker>@@-N<marker> (N is an positive
+&lt;marker&gt;@@+N&lt;/marker&gt; and &lt;marker&gt;@@-N&lt;marker&gt; (N is an positive
 integer) mark the N-th preceding or following position, and are used
 to specify a character inside or outside of the preedit buffer.  If
 the number of preceding or following characters in the preedit buffer
@@ -459,7 +459,7 @@ and your current position in the preedit buffer is between "d" and "e":
   ABCdefGHI
 @endverbatim
 
-The calls to the <char-at> functions return the following values.
+The calls to the &lt;char-at&gt; functions return the following values.
 
 @verbatim
   <char-at><marker>-3</marker></char-at>  --> ?B
@@ -554,8 +554,8 @@ Now we are ready to write a new version of the input method
 
 The above example contains the new action &lt;delete&gt;, Several
 markers are predefined to mark a specific position in the preedit
-buffer.  When the content of <delete> is a marker, a function call to
-the <delete> deletes the characters between the marked position and
+buffer.  When the content of &lt;delete&gt; is a marker, a function call to
+the &lt;delete&gt; deletes the characters between the marked position and
 the current position.  The examples are:
 
 @verbatim
@@ -575,12 +575,12 @@ lower letter key falls into the branch whose @c mname is @c
 map-to-upper and handled by &lt;rule&gt;s in that &lt;map&gt;, the key
 is changed into the corresponding uppercase character and inserted
 into the preedit buffer.  Now this uppercase character can be accessed
-with <char-at><marker>-1</marker></char-at>.
+with &lt;char-at&gt;&lt;marker&gt;-1&lt;/marker&gt;&lt;/char-at&gt;.
 
 How can we tell whether the new character should be left as an
 uppercase or changed back to a lowercase?  We need to check the
 character before.  That character can be accessed by
-<char-at><marker>-2</marker></char-at>.
+&lt;char-at&gt;&lt;marker&gt;-2&lt;/marker&gt;&lt;/char-at&gt;.
 
 The character is checked by the @c EXPRESSION part of the &lt;list&gt;
 in the first &lt;cond&gt; of the branch for @c map-to-upper. It is the

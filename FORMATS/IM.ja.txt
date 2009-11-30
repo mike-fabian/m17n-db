@@ -18,8 +18,8 @@ m17n ライブラリは、m17n データベースから動的にロードでき�
 @section im-format 文法と意味
 
 以下に RelaxNG で書かれた入力メソッド定義用スキーマを示す。（このスキー
-マファイルは m17n-db-xml/MIM/mim.rng にある。） ドライバはファイルやス
-トリームから定義をロードし、プロパティリストの形式に変換する。
+マファイルは m17n-db-xml/MIMNEW/mimnew.rng にあり、
+基本的な表現や項を定義する m17n-db-xml/MIMNEW/mimnew.rng も利用する。） 
 
 @verbatim
 
@@ -31,24 +31,19 @@ m17n ライブラリは、m17n データベースから動的にロードでき�
 	 xmlns="http://relaxng.org/ns/structure/1.0"
 	 ns="http://www.m17n.org/MIM">
 
+<include href="expr.rng"/>
+
 <start>
   <element name="input-method">
     <ref name="im-declaration"/>
-
-    <optional>
-	<element name="description">
-	  <choice>
-	    <text/>
-	    <element name="get-text"><text/> </element>
-	  </choice>
-	</element>
-    </optional>
+    <ref name="description">
 
     <optional><element name="title"><data type="string"/></element></optional>
     <optional><ref name="variable-list"/></optional>
     <optional><ref name="command-list"/></optional>
     <optional><ref name="module-list"/></optional>
     <optional><ref name="macro-list"/></optional>
+
     <optional><ref name="map-list"/></optional>
     <optional><ref name="state-list"/></optional>
   </element>
@@ -58,11 +53,7 @@ m17n ライブラリは、m17n データベースから動的にロードでき�
 
 入力メソッドのトップレベルノードは &lt;input-method&gt; というタグを持つ。
 
-&lt;description&gt; エレメントは、&lt;input-method&gt;,
-&lt;variable&gt;, &lt;command&gt; 中に現れることができ、その内容は親要
-素を説明するテキストである。&lt;get-text&gt; エレメントの内容は、現在の
-ロケールに従って "gettext" によって翻訳される（翻訳文が提供されている場
-合）。
+&lt;description&gt; の詳細については @ref expr を参照。
 
 &lt;title&gt; エレメントの内容は、この入力メソッドが有効な時スクリーン
 上に表示されるテキストである。
@@ -80,10 +71,12 @@ Version 2.0 &lt;http://www.thdl.org/collections/langling/ewts/ewts.php&gt;.</des
       :       :
 #endif
 
-&lt;variable-list&gt; はこの入力メソッドで使用される変数を宣言する。
-&lt;command-list&gt; はこの入力メソッドで使用されるコマンドを宣言する。
-&lt;module-list&gt; はこの入力メソッドで使用される外部モジュールを宣言
-する。&lt;macro-list&gt; はこの入力メソッドで使用されるマクロを宣言する。
+&lt;variable-list&gt;, &lt;command-list&gt;, &lt;module-list&gt;,
+&lt;macro-list&gt; は、それぞれこの入力メソッドで使用される変数、コマン
+ド、外部モジュール、マクロを宣言する。入力メソッドは
+&lt;variable-list&gt; で宣言されていない変数も使うことができるが、必要
+なコマンド、外部モジュール、マクロはここで宣言されなければならない。
+
 &lt;map-list&gt; はこの入力メソッドで使用されるマップを宣言する。 入力
 メソッドがそれ単体で利用されることがなく常に他の入力メソッドに読み込ま
 れて用いられる場合には省略できる。&lt;state-list&gt; はこの入力メソッド
@@ -148,7 +141,7 @@ Version 2.0 &lt;http://www.thdl.org/collections/langling/ewts/ewts.php&gt;.</des
 独で用いられるものではなく、他の入力メソッドから利用することを想定して
 いる。この場合、入力メソッドを特定するために &lt;extra-id&gt; エレメン
 トが必須である。&lt;name&gt; エレメントの内容が "nil" でない場合、
-&lt;extra-id&gt; エレメントは任意(optional)である。
+&lt;extra-id&gt; エレメントは省略可能(optional)である。
 
 #if EXAMPLE_CODE
   <tags>
@@ -165,10 +158,10 @@ Version 2.0 &lt;http://www.thdl.org/collections/langling/ewts/ewts.php&gt;.</des
   </tags>
 #endif
 
-&lt;m17n-version&gt; エレメント（任意）は、この入力メソッドが必要とする
-m17n ライブラリの最小バージョンを指定する。フォーマットは "X.Y.Z" であ
-り、X はメジャーバージョン、 Y はマイナーバージョン、Z はパッチレベルを
-表す。
+省略可能なエレメント &lt;m17n-version&gt; は、この入力メソッドが必要と
+するm17n ライブラリの最小バージョンを指定する。フォーマットは "X.Y.Z"
+であり、X はメジャーバージョン、 Y はマイナーバージョン、Z はパッチレベ
+ルを表す。
 
 @subsection im-setups 入力メソッドの設定
 
@@ -176,115 +169,42 @@ m17n ライブラリの最小バージョンを指定する。フォーマット
 
 <define name="variable-list">
   <element name="variable-list">
-      <zeroOrMore>
-      <element name="variable">
-	<attribute name="id"/>
-	<optional>
-	  <element name="description">
-	    <choice>
-	      <text/>
-	      <element name="get-text"><text/></element>
-	    </choice>
-	  </element>
-	</optional>
-	<optional>
-	  <element name="value">		    
-	    <choice>
- 	      <group>
-		<attribute name="type"><value>string</value></attribute>
-		<data type="string"/>
-	      </group>
-	      <group>
-		<attribute name="type"><value>symbol</value></attribute>
-		<data type="string"/>
-	      </group>
-	      <group>
-	      <attribute name="type"><value>integer</value></attribute>
-	      <data type="integer"/>
-	      </group>
-	    </choice>
-	  </element>
-	</optional>
-
-	<optional>
-	  <element name="variable-value-candidate">
-	    <oneOrMore>
-	      <choice>
-		<element name="c-value">		    
-		  <choice>
-		    <group>
-		      <attribute name="type"><value>string</value></attribute>
-		      <data type="string"/>
-		    </group>
-		    <group>
-		      <attribute name="type"><value>symbol</value></attribute>
-		      <data type="string"/>
-		    </group>
-		    <group>
-		      <attribute name="type"><value>integer</value></attribute>
-		      <data type="integer"/>
-		    </group>
-		  </choice>
-		</element>
-		<element name="c-range">
-		  <attribute name="from"><data type="integer"/></attribute>
-		  <attribute name="to"><data type="integer"/></attribute>
-		</element>
-	      </choice></oneOrMore></element>
-         </optional>
-       </element>
-    </zeroOrMore>
+    <oneOrMore>
+      <ref name="defvar"/>
+    </oneOrMore>
   </element>
 </define>
 
 @endverbatim
 
 &lt;variable-list&gt; はこの入力メソッドで使用される変数を宣言する。
+&lt;defvar&gt; エレメントの詳細については @ref expr を参照。
 
-変数をデフォルト値に初期化したり、ユーザがカスタマイズしたりする場合に
-は、ここで宣言されなくてはならない。言い替えれば、デフォルト値が必要で
-あったり、可能な値が限定されていたりしない変数は、どこにでも宣言なく現
-れることができる。
+変数をデフォルト値に初期化したり、"global.mix" から継承した変数をユーザ
+がカスタマイズしたりする場合には、ここで宣言しなくてはならない。言い替
+えれば、デフォルト値が必要であったり、可能な値が限定されていたりしない
+変数は、どこにでも宣言なく現れることができる。
 
 この宣言は二通りに利用される。一つめは新しい変数を導入するためであり、
-この場合 &lt;variable&gt; 中の &lt;value&gt; エレメントは省略できない。
-もう一つは "global.mimx" で宣言された変数を継承し、違ったデフォルト値を
-指定したり、この入力メソッド用にカスタマイズ可能にしたりするためである。
-この場合には &lt;value&gt; は省略できる。
-
-各 &lt;variable&gt; は一つの変数を宣言する。変数は、宣言されていないも
-のも含め属性 "id" によって参照される。すべての変数は暗黙のうちに整数値
-０に初期化されている。
-
-M-text である &lt;value&gt; は、&lt;insert&gt; が参照する。シンボルであ
-る &lt;value&gt; は直接参照されず、ライブラリが暗黙的に使用する。
-(e.g. candidates-charset).  整数値である &lt;value&gt; は、
-&lt;set&gt;, &lt;add&gt;, &lt;sub&gt;, &lt;mul&gt;, &lt;div&gt; によっ
-て設定、変更、参照され、&lt;insert&gt;, &lt;select&gt;, &lt;undo&gt;,
-&lt;if&gt;, &lt;cond&gt; に参照される。
-
-&lt;variable-value-candidate&gt; は変数が取り得る値のリストである。
-&lt;c-value&gt; は可能な値の一つを表しており、M-text かシンボルか整数値
-である。
-
-&lt;c-range&gt; は変数が取り得る整数値の範囲を示すものであり、
-&lt;c-value&gt; と併用できる。属性 "from" は変数のとる最小値を、"to" が
-最大値を示す。
+この場合 &lt;defvar&gt; 中で値を指定しなければならない。もう一つは
+"global.mimx" で宣言された変数を継承し、違ったデフォルト値を指定したり、
+この入力メソッド用にカスタマイズ可能にしたりするためである。この場合に
+は値は省略できる。
 
 #if EXAMPLE_CODE
   <variable-list>
-    <variable id="precomposed">
+    <defvar id="precomposed">
       <description>
         <get-text>Flag to tell whether or not to generate precomposed characters.
                   If 1, generate precomposed characters if available (e.g. "ྲྀ"(U+0F76).
                   If 0, generate only decomposed characters (e.g. "ྲྀ" (U+0FB2 U+0F80).</get-text>
       </description>
-      <value type="integer">0</value>
-      <variable-value-candidate>
-        <c-value type="integer">0</c-value>
-        <c-value type="integer">1</c-value>
-      </variable-value-candidate>
-    </variable>
+      <integer>0</value>
+      <possible-value>
+        <integer>0</value>
+        <integer>1</value>
+      </possible-value>
+    </defvar>
   </variable-list>
 #endif
 
@@ -293,304 +213,344 @@ M-text である &lt;value&gt; は、&lt;insert&gt; が参照する。シンボ�
 
 @verbatim
 
-<define name="predefined-variable">
-  <attribute name="type"><value>predefined</value></attribute>
-  <attribute name="id">
-    <choice>
-      <value>handled-keys</value>
-      <value>predefined-surround-text-flag
-      <data type="string"><param name="pattern">@.+</param></data>
-    </choice>
-  </attribute>
-</define>
-
-@endverbatim
-
-Predefined-variable は属性 "type" の値が "predefiend" である変数である。
-属性 "id" の値が "handled-keys" であるとき、変数の値はその時点で処理さ
-れているキーの数である。属性 "id" の値が
-"predefined-surround-text-flag" であるとき、変数の値は -1 か -2 であり、
-それぞれサラウンドテキストがサポートしていること、そうでないことを示す。
-
-#if EXAMPLE_CODE
-<variable-reference id="handled-keys" type="predefined"/>
-#endif
-
-このコードはその時点で処理されているキーの数を参照する。
-@verbatim
-
 <define name="command-list">
   <element name="command-list">
-    <zeroOrMore>
-      <element name="command">
-	<attribute name="id">
+    <oneOrMore>
+      <element name="defcmd">
+	<attribute name="cname">
 	  <data type="ID"><param name="pattern">command-.*</param></data></attribute>
 	<optional>
-	  <element name="description">
-	    <choice><text/><element name="get-text"><text/></element></choice>
-	  </element>
+	  <ref name="description"/>
 	</optional>
 	<zeroOrMore><ref name="keyseq"/></zeroOrMore>
       </element>
-    </zeroOrMore>
+    </oneOrMore>
   </element>
 </define>
 
+<define name="keyseq">
+  <element name="keyseq">
+    <oneOrMore>
+      <choice>
+	<ref name="strterm"/>
+	<ref name="listterm"/>
+      </choice>
+      </oneOrMore>
+  </element>
+</define>
 @endverbatim
 
 &lt;command-list&gt; は、この入力メソッドで使用されるコマンドを宣言する。
 コマンドをデフォルトキーシーケンスに割り当てたり、ユーザがカスタマイズ
 したりする場合には、ここで宣言されなくてはならない。
+各 &lt;defcmd&gt; はコマンドを一つ宣言する。コマンドは属性
+"cname" で参照され、その値は "command-" で始まらなくてはならない。
+&lt;keyseq&gt; は１個以上の listerm か stringterm を含む。
+
 &lt;variable-list&gt; 同様、この宣言は二通りに利用される。一つめは新し
-いコマンドを導入するためであり、この場合 &lt;command&gt; 中の
+いコマンドを導入するためであり、この場合 &lt;defcmd&gt; 中の
 &lt;keyseq&gt; エレメントは省略できない。もう一つは "global.mimx" で宣
 言されたコマンドを継承し、違ったキーバインディングを指定したり、この入
 力メソッド用にカスタマイズ可能にしたりするためである。この場合には
 &lt;keyseq&gt; は省略可能である。
 
-各 &lt;command&gt; は一つのコマンドを宣言し、コマンドは属性 "id" によっ
-て参照される。
-
 #if EXAMPLE_CODE
-  <command-list>
-    <command id="command-commit">
+   <command-list>
+    <defcmd cname="command-commit">
       <description>
         <get-text>Commit
-                  Commit the preedit text</get-text>
+Commit the preedit text</get-text>
       </description>
-      <keyseq><key-event>Return</key-event></keyseq>
-      <keyseq><key-event>Linefeed</key-event></keyseq>
-    </command>
-  </command-list>
+      <keyseq><list><symbol>Return</symbol></list></keyseq>
+      <keyseq><list><symbol>Linefeed</symbol></list></keyseq>
+    </defcmd>
+   </command-list>
 #endif
 
 @verbatim
-
 <define name="module-list">
   <element name="module-list">
-    <zeroOrMore>
+    <oneOrMore>
       <element name="module">
-	<attribute name="id">
-	  <data type="ID"><param name="pattern">module-.*</param></data>
-	</attribute>
-	<zeroOrMore>
-	  <element name="function">
-	    <attribute name="id">
-		<data type="ID">
-		<param name="pattern">function-.*</param></data>
+	<attribute name="id"><data type="string"/></attribute>
+	<oneOrMore>
+	  <element name="defun">
+	    <attribute name="fname">
+	      <data type="ID"><param name="pattern">.*-function-.*</param></data>
 	    </attribute>
+	    <empty/>
 	  </element>
-	</zeroOrMore>
+	</oneOrMore>
       </element>
-    </zeroOrMore>
+    </oneOrMore>
   </element>
 </define>
-
-@endverbatim
+@endbatim
 
 各 &lt;module&gt; エレメントは一つの外部モジュール (動的ライブラリ)を宣
 言し、属性 "id" は外部モジュールの名前を表す。
 
-&lt;function&gt; エレメントはモジュールによってエクスポートされている関
-数名を示す。
-
-属性 "id" の値が "function-init" であれば、その関数はこの入力メソッド用
-の入力コンテクストが生成される際に、デフォルトの引数 (&lt;call&gt; の節
-参照) のみとともに呼ばれる。 "function-fini" であれば、 入力コンテクス
-トが破壊される際に、デフォルトの引数のみとともに呼ばれる。
+&lt;defun&gt; エレメントはモジュールによってエクスポートされている関数
+名を示す。属性 "fname" の値は、モジュール名, "-function-", 関数名を繋げ
+たものである。属性 "fname" の値が "-init" で終れば、その関数はこの入力
+メソッド用の入力コンテクストが生成される際に、デフォルトの引数 参照) の
+みとともに呼ばれる。 "-fini" で終れば、 入力コンテクストが破壊される際
+に、デフォルトの引数のみとともに呼ばれる。
 
 #if EXAMPLE_CODE
   <module-list>
-    <module id="module-libmimx-anthy">
-      <function id="function-convert"/>
-      <function id="function-resize"/>
-      <function id="function-change"/>
-      <function id="function-commit"/>
-      <function id="function-init"/>
-      <function id="function-fini"/>
+    <module id="libmimx-anthy">
+      <defun fname="libmimx-anthy-function-convert"/>
+      <defun fname="libmimx-anthy-function-resize"/>
+      <defun fname="libmimx-anthy-function-change"/>
+      <defun fname="libmimx-anthy-function-commit"/>
+      <defun fname="libmimx-anthy-function-init"/>
+      <defun fname="libmimx-anthy-function-fini"/>
     </module>
   </module-list>
 #endif
 
-このコードは外部モジュール "module-libmimx-anthy" を宣言する。この外部
-モジュール は６つの関数をエクスポートしている。
+このコードは外部モジュール "libmimx-anthy" を宣言する。この外部モジュー
+ル は６つの関数をエクスポートしている。
+
+外部モジュールの関数は、&lt;funcall&gt; で呼ぶことができる。関数は、
+NULL かあるいは実行するべき &lt;funcall&gt; を示すリストを返す。
+
+#if EXAMPLE_CODE
+    <funcall fname="libmimx-anthy-function-resize">
+       <symbol>t</symbol>
+    </funcall>
+#endif
+
+このコードはモジュール 'libmimx-anthy' の関数 'resize' を引数
+"t" で呼ぶ。
 
 @verbatim
-
 <define name="macro-list">
-  <element name="macro-list" ns="http://www.m17n.org/MIM">
-    <zeroOrMore>
-      <element name="macro">
-	<attribute name="id">
-	  <data type="ID"><param name="pattern">macro-.*</param></data>
-	</attribute>
-	<zeroOrMore><ref name="action"/></zeroOrMore>
-      </element>
-    </zeroOrMore>
+  <element name="macro-list">
+    <oneOrMore>
+      <ref name="defun"/>
+    </oneOrMore>
   </element>
 </define>
-
-@endverbatim
+@endbatim
 
 &lt;macro-list&gt; はこの入力メソッドで使用されるマクロを宣言する。
-&lt;macro&gt; エレメントは複数の &lt;action&gt; をまとめてそれに名前を付ける。
-属性 "id" が &lt;macro&gt; の名前であり、この属性によってマクロを参照する。
+&lt;defun&gt; エレメントの詳細については @ref expr を参照。
+
 
 #if EXAMPLE_CODE
   <macro-list>
-    <macro id="macro-forward">
-      <set id="cc3">
-        <predefined-nth-previous-or-following-character position="+3"/>
-      </set>
-      <conditional>
-                 :              :     ;; more <action>s
-    </macro>
+    <defun fname="macro-delete-preceding-zw">
+      <cond>
+        <list>
+          <logior>
+            <eq><char-at><marker>@-1</marker></char-at><integer>0x200C</integer></eq>
+            <eq><char-at><marker>@-1</marker></char-at><integer>0x200D</integer></eq>
+          </logior>
+          <delete><marker>@-1</marker></delete>
+          <funcall fname="macro-delete-preceding-zw"/>
+        </list>
+      </cond>
+    </defun>
   </macro-list>
+
 #endif
 
-このコードはマクロ "macro-forward" を宣言する。
+このコードはマクロ "macro-delete-preceding-zw" を宣言する。
+
+
+@subsection im-terms 入力メソッドの項(term)
+
+m17n データベースには、入力メソッドを記述するための特別な項(term)である
+マーカ、セレクタ、キーシークエンスが定義されている。
 
 @verbatim
-
-<define name="marker">
+<define name="term" combine="choice">
   <choice>
-    <ref name="predefined-marker"/>
-    <ref name="user-defined-marker"/>
+    <ref name="keyseq"/>
+    <ref name="marker"/>
+    <ref name="selector"/>
   </choice>
 </define>
-
 @endverbatim
 
-マーカは preediting テキスト中での文字位置を示すシンボルである。
-&lt;mark-current-position&gt; はマーカを特定の位置に設定する。
-&lt;move-to-marker&gt; と &lt;delete-to-marker&gt; はマーカの位置を参照
-する。
+これらの項はmimnew.rngで定義された関数内で用いられる。
 
 @verbatim
-
-<define name="predefined-marker">
-    <attribute name="position">
-      <choice>
-	<data type="string"><param name="pattern">@[0-9]</param>
-	</data>
-	<value>@first</value>
-	<value>@current</value>
-	<value>@last</value>
-	<value>@previous</value>
-	<value>@next</value>
-	<value>@previous_candidate_list
-	<value>@next_candidate_list
-      </choice>
-    </attribute>
+<define name="marker">
+  <element name="marker"><data type="string"/></element>
 </define>
-
 @endverbatim
 
-predefined-marker は @@ で始まるマーカである。 @@0, @@1, ... , @@9は、
-それぞれ 0番目, 1番目, ... , 9番目の位置を示す。@@first, @@current,
-@@last, @@previous, @@next はそれぞれ最初の、現在の、最後の、直前の、直
-後の位置を示す。@@previous_candidate_list 候補リストが変化する前の位置、
-@@next_candidate_list は候補リストが変化する際の次の位置を示す。
+マーカは preediting バッファ中での文字の位置を示すシンボルである。
+&lt;mark&gt; はマーカを特定の位置に設定する。&lt;move&gt;,
+&lt;char-at&gt;, &lt;delete&gt; はマーカの位置を参照する。
+
+@@ で始まるマーカは特別な意味を持つ。@@0, @@1, ... , @@9は、それぞれ
+preediting バッファ中で 0 番目, 1番目, ... , 9番目の位置を示す。
+@@&lt;, @@=, @@&gt;, @@-, @@+はそれぞれ preediting バッファ中で最初の、
+現在の、最後の、直前の、直後の位置を示す。@@[ は候補リストが変化する前
+の位置、@@] は候補リストが変化する際の次の位置を示す。
+
+@@+N と @@-N (N は正の整数) は N個前あるいは後の位置を示し、preediting
+バッファ内外の文字を指し示すために用いる。preediting バッファ中の前ある
+いは後の文字がN個より少なければ、入力スポットから数えて(N-バッファ中の
+前後の文字数)文字前あるいは後の位置を示す。
+
+これら以外のマーカは @@ で始まってはならない。
 
 #if EXAMPLE_CODE
- <delete-to-marker position="@first"/>
+ <delete><marker>@&lt;<marker></delete>
 #endif
 
 このコードは、バッファの最初の位置と現在の位置の間の文字を削除する。
 
-@verbatim
-
-<define name="user-defined-marker">
-      <attribute name="markerID">
-	<data type="string"><param  name="pattern">[^@].*</param></data>
-      </attribute>
-</define>
-
-@endverbatim
-
-User-defined-marker は @@ で始まってはならない。
-
 #if EXAMPLE_CODE
- <move-to-marker position="T"/>
+ <move><marker>T</marker></move>
 #endif
 
 このコードは、マーカをユーザ定義の位置 T へ移動する。
 
-@verbatim
-
-<define name="predefined-nth-previous-or-following-character">
-  <element name="predefined-nth-previous-or-following-character">
-    <attribute name="position">
-      <choice>
-	<data type="negativeInteger"/>
-	<data type="positiveInteger"/>
-      </choice>
-    </attribute>
-  </element>
-</define>
-
-@endverbatim
-
-&lt;predefined-nth-previous-or-following-character&gt; エレメントは、プ
-リエデットバッファ中の１文字を指定する。
-
-属性 "position" の値が負の整数 -N である場合、
-&lt;predefined-nth-previous-or-following-character&gt; エレメントは、プ
-リエデット中の現在の位置から N 文字前の文字である。もしプリエディット中
-で先行する文字がM (M<N) 文字しかなければ、その値は入力スポットから数え
-て (N-M) 文字前の文字となる。
-
-属性 "position" の値が正の整数 N である場合、この変数の値は、プリエデッ
-ト中の現在の位置から N 文字後の文字である。もしプリエディット中で後続す
-る文字がM (M<N) 文字しかなければ、その値は入力スポットから数えて (N-M)
-文字後の文字となる。
-
 #if EXAMPLE_CODE
-<predefined-nth-previous-or-following-character position="-1"/>
+  <char-at><marker>@-5</marker></char-at>
 #endif
 
-このコードは直前の文字を参照する。
+このコードは５文字前の文字を、preediting バッファ中であるかどうかにかか
+わらず、参照する。
 
 @verbatim
-<define name="predefined-selector">
-      <choice>
-	<data type="string"><param name="pattern">@[0-9]</param></data>
+<define name="markerterm">
+  <choice>
+    <ref name="marker"/>
+    <ref name="funcall"/>
+    <ref name="varref"/>
+  </choice>
+</define>
+@endverbatim
+
+&lt;markerterm&gt; は、マーカを値としてもつ項である。すなわち、
+&lt;varref&gt; が &lt;markerterm&gt; として現れれば、その値はマーカでな
+くてはならず、 &lt;funcall&gt; が &lt;markerterm&gt; として現れれば、そ
+れはマーカを返さなくてはならない。
+
+@verbatim
+<define name="selector">
+  <element name="selector">
+    <choice>
 	<value>@first</value>
 	<value>@current</value>
 	<value>@last</value>
 	<value>@previous</value>
 	<value>@next</value>
-	<value>@previous_candidate_list</value>
-	<value>@next_candidate_list</value>
-      </choice>
+	<value>@previous-candidate-change</value>
+	<value>@next-candidate-change</value>
+    </choice>
+  </element>
 </define>
-
 @endverbatim
 
-Predefined-selector は候補グループ中での位置を示し、&lt;select&gt; エレ
-メント中で用いられる。@@0, @@1, ... , @@9は、それぞれ 0番目, 1番目,
-... , 9番目の位置を指す。@@first, @@current, @@last はそれぞれ、最初の、
-現在の、最後の候補である。@@previous は前の候補を指す。もし今の候補が今
-の候補グループ中での最初のものであれば、前の候補グループの最後の候補を
-指す。@@next は次の候補を指す。もし今の候補が今の候補グループ中での最後
-のものであれば、次の候補グループの最初の候補を指す。
-@@previous_candidate_list と@@next_candidate_list は、それぞれ前と後の
-候補グループ中で、今の候補と同じ候補インデックスを持つものを指す。
+セレクタは候補リスト中の位置を示し、&lt;select&gt; エレメント中で用いら
+れる。@@first, @@current, @@last はそれぞれ、最初の、現在の、最後の候補
+を指す。@@previous は前の候補を指す。もし今の候補が今の候補グループ中で
+の最初のものであれば、前の候補グループの最後の候補を指す。@@next は次の
+候補を指す。もし今の候補が今の候補グループ中での最後のものであれば、次
+の候補グループの最初の候補を指す。@@previous_candidate_list と
+@@next_candidate_list は、それぞれ前と後の候補グループ中で、今の候補と
+同じ候補インデックスを持つものを指す。
+
+&lt;select&gt; は内容として整数値をとることもできる。整数 N は、候補リスト中の
+N番目の位置を表す。
 
 #if EXAMPLE_CODE
-<select selector="@previous"/>
+  <select><selector>@previous</selector></select>
 #endif
 
-このコードは前の候補を選択する。
+このコードは直前の候補を選択する。
+
+@verbatim
+<define name="selectorterm">
+  <choice>
+    <ref name="selector"/>
+    <ref name="funcall"/>
+    <ref name="varref"/>
+  </choice>
+</define>
+@endverbatim
+
+&lt;selectorterm&gt; は、セレクタを値としてもつ項である。すなわち、
+&lt;varref&gt; が &lt;selectorterm&gt; として現れれば、その値はセレクタ
+でなくてはならず、 &lt;funcall&gt; が &lt;selectorterm&gt; として現れれ
+ば、それはセレクタを返さなくてはならない。
+
+@verbatim
+<define name="keyseq">
+  <element name="keyseq">
+    <oneOrMore>
+      <choice>
+	<ref name="strterm"/>
+	<ref name="listterm"/>
+      </choice>
+      </oneOrMore>
+  </element>
+</define>
+@endverbatim
+
+&lt;keyseq&gt; エレメント中の &lt;strterm&gt は、キーボードから生成でき
+る文字で構成される。すなわち通常 ASCII 文字のみを含む。しかし、入力メソッ
+ドがたとえば西ヨーロッパ用キーボードを使うことを想定したものであれば、
+Latin-1 文字を含んでもよい。
+
+&lt;keyseq&gt; エレメント中の &lt;listterm&gt の各要素は、有効な文字コー
+ドを値として持つ&lt;intterm&gt; であるか、エレメントの内容は、関数
+minput_event_to_key () の戻り値である&lt;symterm&gt; でなくてはならない。
+X ウィンドウシステムの元では、 @c xev コマンドを用いて値を簡単にチェッ
+クできる。たとえば、 リターンキー、バックスペースキー、キーパッドの0の
+キーなどは、それぞれ@c Return , @c BackSpace , @c KP_0 としてあらわされ
+る。シフト、コントロール、メタ、アルト、スーパー、ハイパーも押されてい
+る場合には、それぞれS- , C- , M- , A- , s- , H- が前にこの順に置かれる。
+したがって "リターンキーをシフトしてメタしてハイパーしたもの" は@c
+(S-M-H-Return) である。"a をシフト" から "z をシフト" までは、単に A か
+ら Z として表されることに注意。したがって、 "a をシフトしてメタしてハイ
+パーしたもの" は @c M-H-A となる。
+
+#if EXAMPLE_CODE
+<keyseq>
+   <list>
+      <integer>0x6F</integer>
+      <symbol>S-@</symbol>
+   </list>
+</keyseq>
+
+<keyseq><string>ma</string></keyseq>
+#endif
+
+これらは二つとも正しい入力シークエンスである。
+
+@verbatim
+<define name="keyseqterm">
+  <choice>
+    <ref name="keyseq"/>
+    <ref name="funcall"/>
+    <ref name="varref"/>
+  </choice>
+</define>
+@endverbatim
+
+&lt;keyseqterm&gt; は、キーシークエンスを値としてもつ項である。すなわち、
+&lt;varref&gt; が &lt;keyseqterm&gt; として現れれば、その値はキーシーク
+エンスでなくてはならず、 &lt;funcall&gt; が &lt;keyseqterm&gt; として現
+れれば、それはキーシークエンスを返さなくてはならない。
+
 
 @subsection immap 入力メソッドのマップとルール
 
 @verbatim
 <define name="map-list">
-  <element name="map-list">
-  <zeroOrMore>
+ <element name="map-list">
+  <oneOrMore>
     <element name="map">
-      <attribute name="id">
+      <attribute name="mname">
 	<data type="ID"><param name="pattern">map-.*</param></data>
       </attribute>
       <zeroOrMore>
@@ -599,33 +559,34 @@ Predefined-selector は候補グループ中での位置を示し、&lt;select&g
 	    <ref name="keyseq"/>
 	    <ref name="command-reference"/>
 	  </choice>
-	  <zeroOrMore><ref name="action"/></zeroOrMore>
+	  <zeroOrMore><ref name="funcall"/></zeroOrMore>
 	</element>
       </zeroOrMore>
     </element>
-  </zeroOrMore>
-  </element>
+  </oneOrMore>
+ </element>
 </define>
 
 @endverbatim
 
 &lt;map-list&gt; はこの入力メソッドで使用されるマップを宣言する。
 &lt;map&gt; エレメントは類似のルールをまとめて名付け、入力メソッドの状
-態遷移を記述を容易にする。属性"id" が &lt;map&gt; の名前を示す。
+態遷移を記述を容易にする。属性"mname" が &lt;map&gt; の名前を示す。
 
 &lt;rule&gt; エレメントが、入力シークエンス&lt;keyseq&gt; (または
-&lt;command&gt;) と入力メソッドドライバが実行する &lt;action&gt;、たと
-えば適当な文字を挿入する&lt;insert&gt; との対応を定義する。
+&lt;command&gt;) と入力メソッドドライバが実行する関数との対応を定義する。
+たとえばあるルールは、特定の入力キーを受け取った際、入力メソッドに適切
+な文字を挿入させる。
 
 #if EXAMPLE_CODE
   <map-list>
-    <map id="map-consonant">
-      <rule><keyseq keys="k"/><insert string="ཀ"/></rule>
-      <rule><keyseq keys="kh"/><insert string="ཁ"/></rule>
+    <map mname="map-consonant">
+      <rule><keyseq><string>k</string></keyseq><insert><string>ཀ</string></insert></rule>
+      <rule><keyseq><string>kh</string></keyseq><insert><string>ཁ</string></insert></rule>
           :         :
-      <rule><keyseq keys="a"/><insert string="ཨ"/></rule>
+      <rule><keyseq><string>a</string></keyseq><insert><string>ཨ</string></insert></rule>
     </map>
-    <map id="map-standard-stack">
+    <map mname="map-standard-stack">
            :         :
     </map>
            :         :
@@ -633,419 +594,185 @@ Predefined-selector は候補グループ中での位置を示し、&lt;select&g
 #endif
 
 @verbatim
-
-<define name="keyseq">
-  <element name="keyseq">
-    <choice>
-      <attribute name="keys"><data type="string"/></attribute>
-      <oneOrMore>
-	<choice>
-	  <element name="key-event"><data type="string"/></element>
-	  <element name="character-code">
-	    <choice>
-	      <data type="nonNegativeInteger"><param name="pattern">[0-9]{1,7}</param></data>
-	      <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
-	      <data type="string"><param name="pattern">\?.</param></data>
-	    </choice>
-	  </element>
-	</choice>
-      </oneOrMore>
-    </choice>
-  </element>
-</define>
-
-@endverbatim
-
-&lt;keyseq&gt; エレメント中の属性 "keys" の値は、キーボードから生成でき
-る文字で構成される。すなわち通常 ASCII 文字のみを含む。しかし、入力メソッ
-ドがたとえば西ヨーロッパ用キーボードを使うことを想定したものであれば、
-Latin-1 文字を含んでもよい。
-
-&lt;keyevent&gt; エレメントの内容は、関数 minput_event_to_key () の戻り
-値でなくてはならない。X ウィンドウシステムの元では、 @c xev コマンドを
-用いて値を簡単にチェックできる。たとえば、 リターンキー、バックスペース
-キー、キーパッドの0のキーなどは、それぞれ@c Return , @c BackSpace , @c
-KP_0 としてあらわされる。シフト、コントロール、メタ、アルト、スーパー、
-ハイパーも押されている場合には、それぞれS- , C- , M- , A- , s- , H- が
-前にこの順に置かれる。したがって "リターンキーをシフトしてメタしてハイ
-パーしたもの" は@c (S-M-H-Return) である。"a をシフト" から "z をシフト
-" までは、単に A から Z として表されることに注意。したがって、 "a をシ
-フトしてメタしてハイパーしたもの" は @c M-H-A となる。
-
-&lt;character-code&gt; エレメントの内容は、有効な文字コードでなくてはな
-らない。
-
-#if EXAMPLE_CODE
-<keyseq>
-   <character-code>0x6F</character-code>
-   <key-event>A-z</key-event>
-</keyseq>
-
-<keyseq keys="k"/>
-#endif
-
-これらは二つとも正しい入力シークエンスである。
-
-@verbatim
-
 <define name="command-reference">
-  <element name="command-reference">
-     <attribute name="id"><data type="IDREF"/></attribute>
+  <element name="command">
+      <attribute name="cname"><data type="IDREF"/></attribute>
   </element>
 </define>
-
 @endverbatim
 
-&lt;command-reference&gt; エレメントは、参照された &lt;command&gt; 中の
-&lt;keyseq&gt; がその位置に現れた場合と同じ効果を持つ。
+&lt;command-reference&gt; エレメントは、同じ"cname"を持つ
+&lt;defcmd&gt; 中の&lt;keyseq&gt; がその位置に現れた場合と同じ効果を持
+つ。
 
 #if EXAMPLE_CODE
-<command-reference id="command-start"/>
+<command-reference cname="command-start"/>
 #endif
 
 このコードはコマンド "commad-start" を呼ぶ。
 
-@verbatim
+@subsection imfuncalls 入力メソッドの関数
 
-<define name="action">
+expr.rng 中で定義されているものに加えて、m17n データベースでは入力メソッ
+ドを記述するためにいくつかの関数を用意している。
+
+@verbatim
+<define name="funcall" combine="choice">
   <choice>
-    <ref name="insert"/>
-    <ref name="delete"/>
-    <ref name="select"/>
+    <element name="insert"><choice><ref name="intterm"/><ref name="strterm"/></choice></element>
+@endverbatim
 
+&lt;insert&gt; エレメントは文字または M-text を現在の位置の前に挿入する。
+&lt;insert&gt; の内容が &lt;strterm&glt;であれば、その値は挿入するべき
+M-text である。&lt;intterm&glt;であれば、その値は挿入するべき文字のコー
+ドである。挿入によってマーカの位置は自動的に変更される。
+
+
+#if EXAMPLE_CODE
+<insert><string>á</string></insert>
+<insert><integer>225</integer></insert>
+<insert><integer>0x00E1</integer></insert>
+#endif
+
+これらのコードはいずれも同じ文字 "á" を挿入する。
+
+@verbatim
+    <element name="insert-candidates">
+      <oneOrMore><choice><ref name="listterm"/><ref name="strterm"/></choice></oneOrMore>
+    </element>
+@endverbatim
+
+&lt;insert-candidates&gt; エレメントは、現在の位置の直前に挿入される文
+字や文字列の候補を指定する。
+
+内容が &lt;listterm&gt; であれば、リストの各要素が挿入の候補となる文字
+列である。&lt;strterm&gt; であれば、その文字列中の各文字が候補である。
+&lt;insert-candidates&gt; は現在の位置の前に最初の候補を挿入する。挿入
+された文字や文字列には、候補リストと現在選択中の候補を表す情報が付加さ
+れている。
+
+#if EXAMPLE_CODE
+<insert><string>＄￠￡￥￦</string></insert>
+
+<insert><list>
+	 <string>a</string>
+	 <string>ā</string>
+	 <string>á</string>
+	 <string>ǎ</string>
+	 <string>à</string>
+</list></insert>
+#endif
+
+これらのコードはそれぞれ文字 ＄ と文字列 a を挿入し、それに全体のリスト
+を関連づける。
+
+@verbatim
+    <element name="delete"><choice><ref name="markerterm"/><ref name="intterm"/></choice></element>
+@endverbatim
+
+&lt;markerterm&gt; が与えられれば、このエレメントは、現在の位置と指定の
+マーカの間の文字を削除する。
+
+#if EXAMPLE_CODE
+<delete><marker>@-</marker></delete>
+#endif
+
+このコードは一つ前の位置から現在の位置までの文字を削除する。
+
+&lt;intterm&gt; が与えられれば、それを文字位置として、その文字位置と現
+在の位置の間の文字を削除する。
+
+削除によってマーカの位置は自動的に変更される。
+
+@verbatim
+    <element name="select"><choice><ref name="selectorterm"/><ref name="intterm"/></choice></element>
+@endverbatim
+
+&lt;select&gt; エレメントはまず、現在の位置の直前の文字列が、候補リスト
+が付加されている文字列に属すかどうかを調べる。そうであれば、その文字列
+を &lt;selectorterm&gt; か &lt;intterm&gt; によって指定された候補に入れ
+換える。&lt;intterm&gt; が与えられた場合、その値はリスト中の順番を示す。
+
+#if EXAMPLE_CODE
+<select><selector>@first</selector></select>
+<select><integer>0</integer></select>
+#endif
+
+これらのコードはいずれもリストの最初の候補を選択する。
+
+@verbatim
     <element name="show-candidates"><empty/></element>
+@endverbatim
+
+&lt;show-candidates&gt; エレメントは、現在の位置の前にある文字列に付加
+されている候補リストを示すよう入力メソッドドライバに指示する。
+
+@verbatim
     <element name="hide-candidates"><empty/></element>
-
-    <ref name="move"/>
-    <ref name="mark"/>
-    <ref name="pushback"/>
-
-    <element name="pop"><empty/></element>
-
-    <ref name="undo"/>
-
-    <element name="commit"> <empty/></element>
-    <element name="unhandle"><empty/></element>
-
-    <ref name="call"/>
-
-    <element name="set"><ref name="set-val"/></element>
-    <element name="add"><ref name="set-val"/></element>
-    <element name="sub"><ref name="set-val"/></element>
-    <element name="mul"><ref name="set-val"/></element>
-    <element name="div"><ref name="set-val"/></element>
-
-    <ref name="if"/>
-    <ref name="conditional"/>
-
-    <element name="macro-reference">
-      <attribute name="id">
-	<data type="IDREF"/>
-      </attribute>
-    </element>
-  </choice>
-</define>
-
 @endverbatim
 
-&lt;action&gt;s は &lt;rule&gt;s 中に現れる。
-
-エレメント &lt;show-candidates&gt; は、入力メソッドドライバに現在の位置
-の前にある文字列に付加されている候補リストを示すように指示する。
-
-エレメント &lt;hide-candidates&gt; は、入力メソッドドライバに現在示され
-ている候補リストを隠すように指示する。
-
-エレメント &lt;pop&gt; はまだ処理されていない最初のイベントをイベント
-キューから取り出し破棄する。
-
-エレメント &lt;commit&gt; は現在の preediting テキストを明示的にコミッ
-トする。現在の preediting テキストは、入力メソッドドライバが最初の
-&lt;state&gt;に遷移するたびにも、コミットされる。(@ref imstate 参照。）
-
-エレメント &lt;unhandle&gt; は現在の preediting テキストをコミットし、
-最新のキーを未処理として返す。
-
-エレメント &lt;set&gt;, &lt;add&gt;, &lt;sub&gt;, &lt;mul&gt;,
-&lt;div&gt; は変数の値をそれぞれ設定したり、加減乗除したりする。
-
-#if EXAMPLE_CODE
-<set id="MAX-COUNT">
-  <int-val>4</int-val>
-</set>
-#endif
-
-このコードは変数 @c MAX-COUNT の値を 4 に設定する。
-
-#if EXAMPLE_CODE
-<add id="C-AFTER-V">
-  <int-val>1</int-val>
-</add>
-#endif
-
-このコードは変数 @c C-AFTER-V の値を１増やす。
-
-&lt;macro-reference&gt; エレメントは、参照された &lt;macro&gt; 中の
-&lt;action&gt; がその位置に現れた場合と同じ効果を持つ。
+&lt;hide-candidates&gt; エレメントは、現在示されている候補リストを隠す
+よう入力メソッドドライバに指示する。
 
 @verbatim
-
-<define name="set-val">
-    <attribute name="id"/>
-    <ref name="expr"/>
-</define>
-
+    <element name="move"><choice><ref name="markerterm"/><ref name="intterm"/></choice></element>
 @endverbatim
 
-属性 "id" の値として指定された変数の値を&lt;expr&gt;に設定し、&lt;expr&gt;の値だけ加減乗除する。
+&lt;move&gt; エレメントは現在の位置を移動する。  &lt;markerterm&gt; が
+与えられれば、その位置に移動する。&lt;intterm&gt; が与えられれば、その
+値を文字位置として扱い、そこへ現在の位置を移動する。
+
+#if EXAMPLE_CODE 
+<move><marker>@@&lt</marker></move>
+<move><integer>0</integer></move> 
+#endif
+
+これらのコードはいずれもバッファの最初の位置へ現在の位置を移動する。
 
 @verbatim
-
-<define name="insert">  
-    <element name="insert">
-      <choice>
-	<attribute name="string"><data type="string"/></attribute>
-	<attribute name="character">
-	  <choice>
-	    <data type="string"><param name="pattern">\?.</param></data>
-	    <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
-	    <data type="nonNegativeInteger"><param name="pattern">[0-9]{1,7}</param></data>
-	  </choice>
-	</attribute>
-	<group>
-	  <attribute name="character-or-string"><value>variable</value></attribute>
-	  <ref name="variable-reference"/>
-	</group>
-
-	<oneOrMore>
-	  <element name="candidates">
-		 <data type="string"/>
-	       </element>
-	</oneOrMore> 
-        <oneOrMore>
-	  <element name="list-of-candidates">
-	    <list>
-		 <zeroOrMore><data type="NMTOKEN"/></zeroOrMore></list>
-	         </element></oneOrMore>
-      </choice>
-    </element>
-</define>
-
+    <element name="mark"><ref name="markerterm"/></element>
 @endverbatim
 
-&lt;insert&gt; エレメントは、属性によって指定された文字または M-text を
-現在の位置の前に挿入する。挿入によってマーカの位置は自動的に変更される。
-
-属性 "string" は挿入する M-text を指定する。属性 "character" は挿入する
-文字のコードを指定する。属性 "character-or-string" の値は変数でなくては
-ならず、その値が正しい文字コードあるいはM-textであれば挿入する。
+&lt;mark&gt; エレメントは、指定のマーカを現在の位置に設定する。
 
 #if EXAMPLE_CODE
-<insert string="á"/>
-<insert character="225"/>
-<insert character="0x00E1"/>
-#endif
-
-これらのコードは同じ文字 "á" を挿入する。
-
-&lt;candidates&gt; エレメントが与えられた時には、その内容中の文字それぞ
-れが挿入される候補である。&lt;insert&gt; は現在の位置の直前に最初の候補
-を挿入する。挿入された文字列には、候補のリストと現在選択されている候補
-を指す情報が付加されている。
-
-&lt;list-of-candidates&gt; エレメントが与えられた時には、そのリスト中の
-項目それぞれが挿入される候補である。&lt;insert&gt; は現在の位置の直前に
-最初の候補を挿入する。挿入された文字列には、候補のリストと現在選択され
-ている候補を指す情報が付加されている。
-
-#if EXAMPLE_CODE
-<insert>
-    <candidates>＄￠￡￥￦</candidates>
-</insert>
-
-<insert>
-     <list-of-candidates>a ā á ǎ à</list-of-candidates>
-</insert>
-#endif
-
-これらのコードはそれぞれ ＄ と a を挿入し、それに全体のリストを関係づける。
-
-@verbatim
-
-<define name="delete">  
-    <choice>
-      <element name="delete-to-marker"><ref name="marker"/></element>
-      <element name="delete-to-character-position"><data type="integer"/></element>
-      <element name="delete-n-characters">
-          <attribute name="n"><data type="integer"/></attribute>
-      </element>
-    </choice>
-</define>
-
-@endverbatim
-
-文字の削除のためには、３種類の &lt;action&gt; のどれかを用いることがで
-きる。削除によってマーカの位置は自動的に変更される。
-
-&lt;delet-to-marker&gt; エレメントは、現在の位置と指定のマーカの間の文
-字を削除する。
-
-#if EXAMPLE_CODE
-<delete-to-marker position="@first"/>
-#endif
-
-このコードは属性 "position" で指定されたバッファの最初から現在の位置ま
-での文字を削除する。
-
-&lt;delete-to-character-position&gt; エレメントはその内容を文字位置とし
-て、その文字位置と現在の位置の間の文字を削除する。
-
-#if EXAMPLE_CODE
-<delete-to-character-position>-3</delete-to-character-position>
-#endif
-
-このコードは３つ前から現在の位置までの文字を削除する。
-
-&lt;delete-n-characters&gt; エレメントは、属性"n" の値だけの数の文字を
-削除する。値 N が負であれば、現在の位置より前の N 文字を、正であれば後
-の N 文字を削除する。
-
-#if EXAMPLE_CODE
-<delete-n-characters n="+1"/>
-#endif
-
-このコードは後の文字１つを削除する。
-
-@verbatim
-
-<define name="select">  
-  <element name="select">
-    <choice>
-      <attribute name="selector">
-	<ref name="predefined-selector"/>
-      </attribute>
-      <attribute name="index">
-        <data type="integer"/>
-      </attribute>
-      <group>
-	<attribute name="index"><value>variable</value></attribute>
-	<ref name="variable-reference"/>
-      </group>
-    </choice>
-  </element>
-</define>
-
-@endverbatim
-
-&lt;select&gt; エレメントはまず、現在の位置の直前の文字が、候補リストが
-付加されている文字列に属すかどうかを調べる。そうであれば、その文字列を
-属性によって指定された候補に入れ換える。属性"selector" の値はいずれかの
-predefined-selector であり、候補リスト中の新しい候補を指定する。属性
-"index" の値はリスト中の順番を示し、その順番の候補が選ばれる。値が
-"variable" であった場合には、参照される変数は整数の値を持たなければなら
-ず、その値の順番の候補が選ばれる。
-
-#if EXAMPLE_CODE
-<select selector="@previous"/>
-<select index="0"/>
-#endif
-
-これらのコードはそれぞれ前の候補と最初の候補を選択する。
-
-@verbatim
-
-<define name="move"> 
-  <choice> 
-     <element name="move-to-marker"> <ref name="marker"/></element> 
-     <element name="move-to-character-position"> <data type="integer"/></element> 
-  </choice>
-</define>
-
-@endverbatim
-
-この２つの &lt;action&gt;s は現在の位置を移動する。
-&lt;move-to-marker&gt; エレメントは指定されたマーカの位置に現在の位置を
-移動する。&lt;move-to-character-position&gt; エレメントはその内容である
-整数値を文字位置として扱い、そこへ現在の位置を移動する。
-
-#if EXAMPLE_CODE
-<move-to-marker position="@previous"/>
-<move-to-character-position>0</move-to-character-position>
-#endif
-
-これらのコードはそれぞれ直前、最初の位置へ現在の位置を移動する。
-
-@verbatim
-
-<define name="mark">  
-      <element name="mark-current-position">
-	<ref name="user-defined-marker"/>
-      </element>
-</define>
-
-@endverbatim
-
-&lt;mark-current-position&gt; エレメントは、指定のマーカを現在の位置に
-設定する。
-
-#if EXAMPLE_CODE
-<mark-current-position markerID="M"/>
+<mark><marker>M</marker></mark>
 #endif
 
 このコードは現在の位置にマーカ "M" を置く。
+
 @verbatim
-
-<define name="pushback">
-    <choice>
-      <element name="pushback-n-events">
-	<attribute name="n"><data type="nonNegativeInteger"/></attribute>
-      </element>
-      <element name="pushback-keyseq"><ref name="keyseq"/></element>
-   </choice>
-</define>
-
+    <element name="pushback"><choice><ref name="keyseqterm"/><ref name="intterm"/></choice></element>
 @endverbatim
 
-この２つの &lt;action&gt; はキーイベントをイベントキューに差し戻す。
-&lt;pushback-n-events&gt; エレメントは最新のキーイベントを差し戻す。属
-性"n" の値が正の整数ならばそれは差し戻すイベントの数である。０ならばす
-べて差し戻す。&lt;pushback-keyseq&gt; エレメントは、&lt;keyseq;gt; で指
-定されたキーイベントを差し戻す。
+&lt;pushback&gt; エレメントはキーイベントをイベントキューに差し戻す。
+&lt;keyseqterm&gt; が与えられれば、指定されたキーイベントを差し戻す。
+&lt;intterm&gt; が与えられる場合にはその値は負であってはならない。正の
+整数 N であれば N 個のイベントを差し戻す。０ならばすべて差し戻す。
 
 #if EXAMPLE_CODE
-<pushback-keyseq><keyseq keys="b"/></pushback-keyseq>
+<pushback><keyseq>b</keyseq></pushback>
 #endif
 
 このコードはキー "b" を戻す。
 
 @verbatim
-
-<define name="undo">
-  <element name="undo">
-    <optional>
-      <choice>
-	<attribute name="target-of-undo">
-	  <choice>
-	    <data type="positiveInteger"/>
-	    <data type="negativeInteger"/>
-	  </choice>
-	</attribute>
-	<ref name="variable-reference"/>
-      </choice>
-    </optional>
-  </element>
-</define>
-
+    <element name="pop"><empty/></element>
 @endverbatim
 
-&lt;undo&gt; エレメントは、属性が無いばあいには、最新の二つのキーイベン
-ト、すなわちこのコマンドによって引き起こされたものとその直前のもの、を
-キャンセルする。
+&lt;pop&gt; エレメントはまだ処理されていない最初のイベントをイベント
+キューから取り出し破棄する。
 
-属性 "target-of-undo" が正の整数 NUM ならば、NUM個めから最新のものまで
-を キャンセルする。負の整数ならば最新の(- NUM) 個のイベントをキャンセル
-する。変数参照である場合には、それは０でない整数に帰着されなくてはなら
-ず、その値が上記の場合と同様に取り扱われる。
+@verbatim
+    <element name="undo"><optional><ref name="intterm"/></optional></element>
+@endverbatim
+
+&lt;undo&gt; エレメントは、&lt;intterm&gt; が無いばあいには最新の二つの
+キーイベント、すなわちこのコマンドによって引き起こされたものとその直前
+のもの、をキャンセルする。&lt;intterm&gt; が与えられる場合には、その値
+は０であってはならない。値が正の整数 N ならば、N個めから最新のものまで
+を キャンセルする。負の整数 -N ならば、最新の N 個のイベントをキャンセ
+ルする。
 
 #if EXAMPLE_CODE
 <undo target-of-undo="-1"/>
@@ -1054,269 +781,88 @@ predefined-selector であり、候補リスト中の新しい候補を指定す
 このコードは最新のイベントのみをキャンセルする。
 
 @verbatim
-
-<define name="call">
-  <element name="call">
-    <attribute name="id"><data type="IDREF"/></attribute>
-    <element name="function-reference">
-      <attribute name="id"><data type="IDREF"/></attribute>
-    </element>
-    <zeroOrMore>
-      <element name="argument">
-	<choice>
-	  <group>
-	    <attribute name="type"><value>string</value></attribute>
-	    <data type="string"/>
-	  </group>
-	  <group>
-	    <attribute name="type"><value>integer</value></attribute>
-	    <choice>
-	      <data type="string"><param name="pattern">\?.</param></data>
-	      <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
-	      <data type="nonNegativeInteger"><param name="pattern">[0-9]{1,7}</param></data>
-	    </choice>
-	  </group>
-	  <group>
-	    <attribute name="type"><value>plist</value></attribute>
-	    <ref name="plistObject"/>
-	  </group>
-	  <group>
-	    <attribute name="type"><value>symbol</value></attribute>
-	    <ref name="variable-reference"/>
-	  </group>
-	</choice>
-      </element>
-    </zeroOrMore>
-  </element>
-</define>
-
+    <element name="commit"><empty/></element>
 @endverbatim
 
-&lt;call&gt; エレメントは外部モジュールの関数を呼ぶ。 関数は NULL を返
-すか、または行うべきアクションのリストを表す (#MPlist *) 型の値を返さな
-くてはならない。
-
-属性 "id" の値が外部モジュールを指定する。この値は&lt;module-list&gt;
-エレメント中に現われるものでなくてはならない。.
-&lt;function-reference&gt; エレメントが呼ぶ関数を指定する。これもまた、
-&lt;module-list&gt; エレメント中に現われるものでなくてはならない。.
-
-関数は (#MPlist *) 型の引数とともに呼ばれる。最初の要素のキーは #Mt で
-あり、その値は#MInputContext 型のオブジェクトへのポインタである。第二の
-要素のキーは#Msymbol であり、値は現在の状態名である。&lt;argument&gt;
-エレメントの内容は三つ目以降の要素の値として用いられる。それらの要素の
-キーは属性 "type" の値によって決定する。integer ならば対応するキーは
-#Minteger であり、symbol ならば、対応するキーは #Msymbol、などのように。
-
-#if EXAMPLE_CODE
-<call id="module-libmimx-anthy">
-  <function-reference id="function-resize"/>
-    <argument type="symbol">
-      <variable-reference id="t"/>
-    </argument>
-</call>
-#endif
-
-このコードは外部モジュール module-libmimx-anthy の関数 function-resize
-をシンボルである引数 "t" と共に呼ぶ。
+&lt;commit&gt; エレメントは現在の preediting テキストを明示的にコミッ
+トする。現在の preediting テキストは、入力メソッドドライバが最初の
+&lt;state&gt;に遷移するたびにも、コミットされる。(@ref imstate 参照。）
 
 @verbatim
-
-<define name="expr">
-    <choice>
-      <group>
-	<element name="expr">
-          <attribute name="operator"><ref name="operator"/></attribute>
-	  <zeroOrMore><ref name="expr"/></zeroOrMore>
-	</element>
-      </group>
-      <element name="int-val">
-	<choice>
-	  <data type="integer"/>
-	  <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
-	  <data type="string"><param name="pattern">\?.</param></data>
-	</choice>
-      </element>
-      <ref name="predefined-nth-previous-or-following-character">     
-      </ref>	 
-      <ref name="variable-reference">
-      </ref>
-    </choice>
-</define>
-
+    <element name="unhandle"><empty/></element>
 @endverbatim
 
-&lt;expr&gt;ession とは、
- @li 演算子で結ばれた０個以上の &lt;expr&gt;essions 
- @li 整数値
- @li 特定の位置の文字
- @li 変数
-である。
+&lt;unhandle&gt; エレメントは現在の preediting テキストをコミットし、
+最新のキーを未処理として返す。
 
-#if EXAMPLE_CODE
-<expr operator="=">
-   <predefined-nth-previous-or-following-character position="-1"/>
-   <int-val>0x0D91</int-val>
-</expr>
-#endif
-
-このコード全体が expression であり、２つのexpression （２行目と３行目）
-を含んでいる。
 
 @verbatim
-
-<define name="variable-reference">
-  <element name="variable-reference">
-    <choice>
-      <attribute name="id"/>
-      <ref name="predefined-variable"/>
-    </choice>
-  </element>
-</define>
-
+    <element name="shift"><ref name="symterm"/></element>
+    <element name="shiftback"><empty/></element>
 @endverbatim
 
-&lt;variable-reference&gt; エレメントは、参照された &lt;variable&gt; が
-その位置に現れた場合と同じ効果を持つ。
-
-#if EXAMPLE_CODE
-<variable-reference id="handled-keys" type="predefined"/> 
-<variable-reference id="KK"/>
-#endif
+&lt;shift&gt; エレメントは現在のステート (@ref imstate 参照) を与えられ
+た &lt;symterm&gt; で指定されたものに遷移させる。&lt;symterm&gt; の値は
+&lt;state-list&gt; に現れるものでなくてはならない。&lt;shiftback&gt; エ
+レメントは現在のステート を直前のものに遷移させる。
 
 @verbatim
+    <element name="char-at"><ref name="markerterm"/></element>
+@endverbatim
 
-<define name="operator">
-  <choice>
-      <value>+</value> 
-      <value>-</value>
-      <value>*</value>
-      <value>/</value>
-      <value>|</value>
-      <value>&</value>
-      <value>!</value>
-      <value>=</value>
-      <value><</value>
-      <value>></value>
-      <value><=</value>
-      <value>>=</value>
+&lt;char-at&gt; エレメントは、与えられた&lt;markerterm&gt;の位置にある
+preediting テキストか surrounding テキスト中の文字の文字コードである整
+数値&lt;integer&gt;C&lt;/integer&gt;を返す。
+
+@verbatim
+    <element name="key-count"><empty/></element>
+@endverbatim
+
+&lt;key-count&gt; エレメントは、現在処理している文字の数を表す整数値
+&lt;integer&gt;N&lt;/integer&gt; を返す。
+
+@verbatim
+    <element name="surrounding-text-flag"><empty/></element>
+
   </choice>
 </define>
-
 @endverbatim
 
-これらは &lt;expr&gt;ession 中に現れ得る演算子である。演算子
-@c +, @c -, @c *, @c / は加減乗除を行う。@c |, @c &amp;, @c 
-! はそれぞれ OR, AND, NOT 演算子である。@c =, @c &lt;, @c &gt;,
-@c &lt;=, @c &gt;= は引数を二つとりそれらを比較する。
-
-@verbatim
-
-<define name="if">
-  <element name="if">
-    <attribute name="condition">
-      <choice>
-      <value>=</value>
-      <value><</value>
-      <value>></value>
-      <value><=</value>
-      <value>>=</value>
-    </choice></attribute>
-    <ref name="expr"/>
-    <ref name="expr"/>
-    <element name="if-true-action-list">
-    <zeroOrMore><ref name="saction"/></zeroOrMore></element>
-    <optional><element name="if-not-true-action-list">
-    <zeroOrMore><ref name="saction"/></zeroOrMore></element></optional>
-  </element>
-</define>
-
-@endverbatim
-
-&lt;if&gt; エレメントは、２つの&lt;expr&gt; 間の関係が属性 "condition"
-を満たす場合 &lt;if-true-action-list&gt; の内容である &lt;action&gt; を
-実行する。そうでなければ、&lt;if-not-true-action-list&gt; があればその
-内容を実行する。
-
-
-#if EXAMPLE_CODE
-<if condition="<">
-  <variable-reference id="C"/><int-val>0</int-val>
-  <if-true-action-list><shift-to id="state-init"/></if-true-action-list>
-</if>
-#endif
-
-このコードは変数@c C が負の時、&lt;shift-to&gt; を実行する。
-
-@verbatim
-
-<define name="conditional">
-  <element name="conditional">
-    <zeroOrMore>
-      <group>
-	<element name="case">
-	<ref name="expr"/>
-	<zeroOrMore><ref name="saction"/></zeroOrMore>
-	</element>
-      </group>
-    </zeroOrMore>
-  </element>
-</define>
-
-@endverbatim
-
-&lt;conditional&gt; エレメントは、各&lt;case&gt;中の&lt;expr&gt;を一つ
-づつ調べ、それが0 でない値をとる最初の&lt;case&gt;中の&lt;saction&gt;を
-実行する。
-
-#if EXAMPLE_CODE
-
-<conditional>
-  <case>
-    <expr operator="=">
-      <predefined-nth-previous-or-following-character position="-2"/>
-      <int-val>0x0E24</int-val>
-    </expr>
-  </case>
-  <case>
-    <int-val>1</int-val>
-    <delete-n-characters n="-1"/>
-        :            :
-  </case>
-</conditional>
-#endif
-
-このコードは、２つ前の文字の文字コードが0x0E24 (Thai character RU)でな
-い限り、二番めの&lt;case&gt; 中のactionを実行する。
-
+&lt;surrounding-text-flag&gt; はsurrounding テキストをサポートしていれ
+ば&lt;integer&gt;1&lt;/integer&gt; を、そうでなければ
+&lt;integer&gt;0&lt;/integer&gt; を返す。
 
 @subsection imstate 入力メソッドの状態と遷移
 
+@verbatim
+      
 @verbatim
       
 <define name="state-list">
   <element name="state-list">
     <zeroOrMore>
       <element name="state">
-	<attribute name="id">
+	<attribute name="sname">
 	  <data type="ID"><param name="pattern">state-.*</param></data>
 	</attribute>
-	<optional><element name="state-title-text"><data type="string"/></element></optional>
+	<optional><element name="title"><data type="string"/></element></optional>
 	<interleave>
 	<optional>
-	  <element name="state-hook"><oneOrMore><ref name="saction"/></oneOrMore></element>
+	  <element name="state-hook">
+	    <oneOrMore><ref name="funcall"/></oneOrMore>
+	  </element>
 	</optional>
 	<optional>
 	  <element name="catch-all-branch">
-		 <zeroOrMore><ref name="saction"/></zeroOrMore>
+	    <zeroOrMore><ref name="funcall"/></zeroOrMore> 
 	  </element>
 	</optional>
 	<zeroOrMore>
 	  <element name="branch">
-	    <attribute name="branch-selecting-map">
+	    <attribute name="mname">
 		<data type="IDREF"/>
 	    </attribute>
-	    <zeroOrMore><ref name="saction"/></zeroOrMore>
+	    <zeroOrMore><ref name="funcall"/></zeroOrMore>
 	  </element>
 	</zeroOrMore>
 	</interleave>
@@ -1327,160 +873,89 @@ predefined-selector であり、候補リスト中の新しい候補を指定す
 
 @endverbatim
 
-入力メソッドドライバは常に一つの &lt;state&gt; にあり、入力を処理するこ
-とによって別の &lt;state&gt; に遷移することがある。異なる
-&lt;state&gt; では、同じ入力でも異なる&lt;saction&gt; を引き起こし、異
-なる結果を得ることがある。
+The input method driver is always in one of the &lt;state&gt;s of an
+&lt;input-method&gt; and may transit to another &lt;state&gt; when
+processing an input.  The same input sequence can trigger different
+&lt;funcall&gt;s and produce different results in different
+&lt;state&gt;s.
 
-属性 "id" が &lt;state&gt; の名前を示す。&lt;state-title-text&gt; エレ
-メントの内容は、入力メソッドがこの状態にある時スクリーン上に表示される
-テキストである。省略されている場合には &lt;title&gt; エレメントの内容が
-用いられる。
+入力メソッドドライバは常に一つの &lt;state&gt; にあり、入力を処理するこ
+とによって別の &lt;state&gt; に遷移することがある。異なる&lt;state&gt;
+では、同じ入力でも異なる&lt;funcall&gt; を呼び、異なる結果を得ることが
+ある。
+
+属性 "sname" が &lt;state&gt; の名前を示す。&lt;state&gt; エレメントの
+子要素である &lt;title&gt;エレメントの内容は、入力メソッドがこの状態に
+ある時スクリーン上に表示されるテキストである。省略されている場合には
+&lt;input-method&gt; の子要素である &lt;title&gt; エレメントの内容が用
+いられる。
 
 入力コンテクストが生成された、すなわち入力メソッドが起動された時点では
 入力メソッドドライバは&lt;state-list&gt; エレメント中の最初の
 &lt;state&gt; にある。
 
 各 &lt;state&gt; は0以上の &lt;branch&gt;を持つ。各&lt;branch&gt; は
-&lt;map-list&gt; 中の各 &lt;map&gt に対応する。 属性
-"branch-selecting-map" の値が&lt;map&gt; の属性 "id" の値を示す。入力シー
-クエンスがある&lt;map&gt; 中の &lt;rule&gt; の &lt;keyseq&gt; (or
-&lt;command-reference&gt;) 部分に合致すると、対応する &lt;branch&gt; を
-選択し、その &lt;rule&gt; の &lt;action&gt; に続いてその
-&lt;branch&gt; の&lt;saction&gt; を実行し、入力メソッドドライバはその
-&lt;state&gt; の初期状態に戻る。
+&lt;map-list&gt; 中の各 &lt;map&gt のうち、属性"mname" の値が
+&lt;branch&gt; の属性 "mname" の値と同じであるものに対応している。入力
+シークエンスがある&lt;map&gt; 中の &lt;rule&gt; の &lt;keyseq&gt; (また
+は&lt;command-reference&gt;) 部分に合致すると、対応する &lt;branch&gt;
+が選択される。入力メソッドドライバはまずその &lt;rule&gt; の
+&lt;funcall&gt; を、次いでその &lt;branch&gt; の &lt;funcall&gt; を実行
+し、その後その &lt;state&gt; の初期状態に戻る。
 
-入力メソッドドライバが最初の &lt;state&gt; の初期状態になる度に、
+入力メソッドドライバは、最初の &lt;state&gt; の初期状態になる度に
 preeditバッファ中の全ての文字をコミットし、preeditバッファを空にする。
 （&lt;commit&gt; エレメントが指定されていなくても。）
 
 &lt;state-hook&gt; エレメント (省略可能) は、入力メソッドドライバがこの
-&lt;state&gt; に遷移した時点で実行される&lt;sactions&gt; を指定する。
+&lt;state&gt; に遷移した時点で実行される&lt;funcall&gt; を指定する。
 
 入力メソッドの入力コンテクストを生成した時点で、入力メソッドは
 &lt;state-list&gt; の最初の &lt;state&gt; に遷移するため、その
-&lt;state&gt; の &lt;state-hook&gt; 中の &lt;saction&gt; が実行される。
+&lt;state&gt; の &lt;state-hook&gt; 中の &lt;funcall&gt; が実行される。
 
 入力シークエンスが、その時点の &lt;state&gt; のいずれの &lt;branch&gt;
 にも合致しない場合には、
 
    @li &lt;catch-all-branch&gt; エレメントが存在すれば、
-      &lt;catch-all-branch&gt;中の&lt;saction&gt;を実行する。
+      &lt;catch-all-branch&gt;中の&lt;funcall&gt;を実行する。
    @li &lt;catch-all-branch&gt; がなければ、
        入力メソッドは初期状態に遷移する。     
 
 #if EXAMPLE_CODE
 
-<state-list>
-  <state id="state-init">
-    <branch branch-selecting-map="map-consonant">
-      <move-to-marker position="@first"/>
-              :             :
-    </branch>
-    <branch branch-selecting-map="map-misc"/>
-    <branch branch-selecting-map="map-join">
-      <shift-to id="state-join"/>
-    </branch>
-  </state>
-  <state id="state-join">
-    <branch branch-selecting-map="map-consonant">
-      <move-to-marker position="@first"/>
-              :             :
-      <shift-to id="state-init"/>
-    </branch>
-    <catch-all-branch>
-      <shift-to id="state-init"/>
-    </catch-all-branch>
-  </state>
-</state-list>
+  <state-list>
+    <state sname="state-init">
+      <branch mname="map-consonant">
+        <shift><symbol>state-second</symbol></shift>
+      </branch>
+      <branch mname="map-independent"/>
+    </state>
+    <state sname="state-second">
+      <branch mname="map-underscore">
+        <shift><symbol>state-init</symbol></shift>
+      </branch>
+      <branch mname="map-dependent">
+        <shift><symbol>state-init</symbol></shift>
+      </branch>
+      <branch mname="map-ry"/>
+    </state>
+  </state-list>
 #endif
 
 このコードはある入力メソッドでの状態遷移を定義している。この入力メソッ
-ドでの&lt;state&gt;は、"state-init" と "state-join" の２つである。
-"state-init" には３つの &lt;branch&gt; があり、それぞれ
-"map-consonant", "map-misc", "map-join" に属す入力シークエンスが与えら
-れた場合に選ばれる。"map-join"の &lt;branch&gt; が選ばれた場合には、
-&lt;shift-to&gt; エレメントによって "state-join" への遷移が起こる。
-"state-join"には、"map-consonant" に属す入力シークエンスのための
-&lt;branch&gt; とそれ以外の全ての入力を処理する
-&lt;catch-all-branch&gt;があり、双方とも最後は "state-init" への遷移を
-実行する。
-
-@verbatim
-
-<define name="saction">
-  <choice>
-    <element name="shift-to"><attribute name="id"><data type="IDREF"/></attribute></element>
-    <element name="shift-back"><empty/></element>
-    <ref name="action"/>
-  </choice>
-</define>
-
-@endverbatim
-
-&lt;saction&gt; (state-action) は &lt;action&gt; であるか状態遷移である。
-
-&lt;shift-to&gt; エレメントは現在の状態を属性 "id" の値で指示されたもの
-に遷移させる。属性の値は&lt;state-list&gt; に現れるものでなくてはならな
-い。&lt;shift-back&gt; エレメントは、現在の状態を一つ前のものに遷移さ
-せる。
-
-@subsection implist Plist
-
-&lt;call&gt; エレメントで用いられる plistObject は以下のように定義されている。
-
-@verbatim
-
-  <define name="plistObject">
-    <element name="pListObject">
-    <choice>
-      <ref name="array"/>
-      <ref name="dict"/>
-      <group>
-	<attribute name="type"><value>string</value></attribute>
-	<data type="string"/>
-      </group>
-      <group>
-	<attribute name="type"><value>symbol</value></attribute>
-	<ref name="variable-reference"/>
-      </group>
-      <group>
-	<attribute name="type"><value>integer</value></attribute>
-	<choice>
-	  <data type="string"><param name="pattern">\?.</param></data>
-	  <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
-	  <data type="nonNegativeInteger"><param name="pattern">[0-9]{1,7}</param></data>
-	</choice>
-      </group>
-    </choice>
-    </element>
-  </define>
-
-
-  <!-- Collections -->
-  <define name="array">
-    <element name="array">
-      <zeroOrMore>
-        <ref name="plistObject"/>
-      </zeroOrMore>
-    </element>
-  </define>
-
-  <define name="dict">
-    <element name="dict">
-      <zeroOrMore>
-	<element name="dict-item">
-	  <attribute name="key"/>
-	  <ref name="plistObject"/>
-	</element>
-      </zeroOrMore>
-    </element>
-  </define>
-@endverbatim
+ドでの&lt;state&gt;は、"state-init" と "state-second" の２つである。
+"state-init" には2つの &lt;branch&gt; があり、それぞれ"map-consonant",
+"map-independent" に対応する。"map-consonant" に属す入力シークエンスが
+与えられると、それに対応する &lt;rule&gt; 中の &lt;funcall&gt;s を実行
+した後"state-second" へ遷移する。"state-second"には、3つの
+&lt;branch&gt; があり、それらのうち2つはとそれ以外の全ての入力を処理す
+る最後に "state-init" への遷移を実行する。
 
 @verbatim
 </grammar>
 @endverbatim
+
 
 入力メソッド定義用の RelaxNG スキーマは、&lt;/grammar&gt; で終わる。
 

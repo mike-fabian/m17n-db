@@ -1,0 +1,724 @@
+/* Copyright (C) 2003, 2004, 2005, 2009
+     National Institute of Advanced Industrial Science and Technology (AIST)
+     Registration Number H15PRO112
+   See the end for copying conditions.  */
+
+/***en
+
+@page pageexpr Expressions used in the m17n database
+@section expr Expressions used in the m17n database
+
+Both Input Methods and Font Layout Tables have common ways to
+represent basic terms and expressions built up with the terms.
+
+The following defines a schema for the terms and expressions, written
+in RelaxNG.  (This schema file can be found at
+m17n-db-xml/MIM/expr.rng and a schema file for Input Method or Font
+Layout Table should include it.)
+
+@verbatim
+<?xml version="1.0" encoding="utf-8"?>
+
+<grammar 
+	 datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+         xmlns:xi="http://www.w3.org/1999/XML/xinclude"
+	 xmlns="http://relaxng.org/ns/structure/1.0"
+	 ns="http://www.m17n.org/MIM">
+
+ 
+<start combine="choice">
+  <ref name="expr"/>
+</start>
+
+<define name="expr">
+      <choice>
+	<ref name="defun"/>
+	<ref name="defmacro"/>
+	<ref name="defvar"/>
+	<ref name="term"/>
+      </choice>
+</define>
+@endverbatim
+
+Expressions in the m17n database are terms, defuns that define
+functions, defmacros that define macros and defvars that define
+variables.
+
+@verbatim
+<define name="term" combine="choice">
+  <choice>
+    <ref name="integer"/>
+    <ref name="string"/>
+    <ref name="symbol"/>
+    <ref name="list"/>
+    <ref name="error"/>
+    <ref name="varref"/>
+    <ref name="funcall"/>
+  </choice>
+</define>
+
+<define name="integer">
+  <element name="integer">
+    <choice>
+      <data type="integer"/>
+      <data type="string"><param name="pattern">\?.</param></data>
+      <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
+    </choice>
+  </element>
+</define>
+
+<define name="string">
+  <element name="string"><data type="string"/></element>
+</define>
+
+<define name="symbol">
+  <element name="symbol"><data type="Name"/></element>
+</define>
+
+<define name="list">
+  <element name="list">
+    <zeroOrMore><ref name="term"/></zeroOrMore>
+  </element>
+</define>
+
+<define name="error">
+  <element name="error">
+    <optional><attribute name="ename"><data type="Name"/></attribute></optional>
+    <ref name="string"/>
+  </element>
+</define>
+@endverbatim
+
+Basic terms in the m17n database are integers, strings, symbols,
+lists, variable references and function calls.  The schema file for
+Input Method or Font Layout Table may define other kind of terms.
+
+Decimal character codes, hexadecimal character codes, and characters
+represented with special syntax (a question mark followed by the
+character) are also integers.
+
+@verbatim
+<define name="varref">
+  <element name="varref">
+   <attribute name="vname"><data type="Name"/></attribute><empty/>
+  </element>
+</define>
+@endverbatim
+
+A &lt;varref&gt; element refers to the variable whose name is
+specified with the "vname" attribute.
+
+#if EXAMPLE_CODE
+<varref vname="handled-keys">
+#endif
+
+This code referes to the variable "handled-keys".
+
+@verbatim
+<define name="defun">
+  <element name="defun">
+    <attribute name="fname"><data type="ID"/></attribute>
+    <optional>
+      <choice><ref name="args"/></choice>
+    </optional>
+    <zeroOrMore><ref name="term"/></zeroOrMore>
+  </element>
+</define>
+@endverbatim
+
+A &lt;defun&gt; element defines a function whose name is specified
+with the "fname" attribute.
+
+@verbatim
+<define name="args">
+  <element name="args">
+    <zeroOrMore>
+      <element name="fixed">
+	<attribute name="vname"><data type="Name"/></attribute>
+      </element>
+    </zeroOrMore>
+    <zeroOrMore>
+      <element name="optional">
+	<attribute name="vname"><data type="Name"/></attribute>
+      </element>
+    </zeroOrMore>
+    <zeroOrMore>
+      <element name="rest">
+	<attribute name="vname"><data type="Name"/></attribute>
+      </element>
+    </zeroOrMore>
+  </element>
+</define>
+@endverbatim
+
+A &lt;args&gt; element appears as a child element of a &lt;defun&gt;
+or a &lt;defmacro&gt;, and defines its fixed, optional and rest
+arguments.
+
+@verbatim
+<define name="defmacro">
+  <element name="defmacro">
+    <attribute name="fname"><data type="ID"/></attribute>
+    <optional>
+      <choice><ref name="args"/></choice>
+    </optional>
+    <zeroOrMore><ref name="term"/></zeroOrMore>
+  </element>
+</define>
+@endverbatim
+
+A &lt;defmacro&gt; element defines a macro whose name is specified
+with the "fname" attribute.  Unlike &lt;defmacro&gt;, &lt;args&gt;
+must be already evaluated when the macro is called.
+
+@verbatim
+<define name="defvar">
+  <element name="defvar">
+    <attribute name="vname"><data type="ID"/></attribute>
+    <optional>
+      <ref name="description"/>
+    </optional>
+    <optional>
+      <choice>
+	<group>
+	  <ref name="integer"/>
+	  <optional>
+	    <element name="possible-value">
+	      <oneOrMore>
+		<choice>
+		  <ref name="integer"/>
+		  <element name="range"><ref name="integer"/><ref name="integer"/></element>
+		</choice>
+	      </oneOrMore>
+	    </element>
+	  </optional>
+	</group>
+	<group>
+	  <ref name="string"/>
+	  <optional>
+	    <element name="possible-value">
+	      <oneOrMore>
+		<ref name="string"/>
+	      </oneOrMore>
+	    </element>
+	    </optional>
+	</group>
+	<group>
+	  <ref name="symbol"/>
+	  <optional>
+	    <element name="possible-value">
+	      <oneOrMore>
+		<ref name="symbol"/>
+	      </oneOrMore>
+	    </element>
+	    </optional>
+	</group>
+      </choice>
+    </optional>
+  </element>
+</define>
+@endverbatim
+
+Each &lt;defvar&gt; declares one variable.  A variable, declared here
+or not, is referred with the attribute "vname".  Two variables with
+the same "vname" attribute value cannot be declared.
+
+A &lt;defvar&gt; may have a &lt;integer&gt; a &lt;string&gt; or a
+&lt;symbol&gt; element that specifies its value.  All variables are
+implicitly initialized to the integer value zero.
+
+When a &lt;defvar&gt; specifies a value, it may have the
+&lt;possible-value&gt; element that lists the possible values of the
+variable.  The type (one of integer, symbol, string) of the possible
+values must be same with that of the specifeid value.
+
+When the type of the specified value is integer,
+&lt;possible-value&gt; may have one or more &lt;range&gt; elements.  A
+&lt;range&gt; element specifies a range of integers that the variable
+can have as its value, and can be used mixed with &lt;integer&gt;
+elements.  A &lt;range&gt; element has two &lt;integer&gt;s; the first
+one defines the minimum integer value that a variable can take, and
+the second the maximum.
+
+@verbatim
+<define name="description">
+  <element name="description">
+    <choice>
+      <element name="gettext"><text/></element>
+      <text/>
+    </choice>
+  </element>
+</define>
+@endverbatim
+
+A &lt;description&gt; element specifies the description text of its
+parent. The content of the element &lt;gettext&gt; is translated
+according to the current locale by "gettext" (if the translation is
+provided).
+
+<define name="funcall">
+  <choice>
+    <element name="funcall">
+      <attribute name="fname">
+	<data type="IDREF"/>
+      </attribute>
+      <zeroOrMore><ref name="term"/></zeroOrMore>
+    </element>
+    <ref name="predefined"/>
+  </choice>
+</define>
+
+A &lt;funcall&gt; element calls a function or a macro specified by the
+"fname" attribute, defined with a &lt;defun&gt; or a &lt;defmacro&gt;.
+The m17n database has some predefined functions, too.
+
+In function definitions, arguments are often restricted to a certain
+type.  For example, arithmetic operations would require integers, not
+strings.  The following four elements are defined to represent such
+restrictions.
+
+@verbatim
+<define name="intterm" combine="choice">
+  <choice>
+    <ref name="varref"/>
+    <ref name="integer"/>
+    <ref name="funcall"/>
+  </choice>
+</define>
+@endverbatim
+
+A &lt;intterm&gt; is a term whose value is an integer.  That is, if a
+&lt;varref&gt; appears as a &lt;intterm&gt;, its value must be an
+integer and if a &lt;funcall&gt; appears as a &lt;intterm&gt;, it must
+return an integer.  The schema file for Input Method or Font Layout
+Table may define other kind of intterms.
+
+@verbatim
+<define name="strterm">
+  <choice>
+    <ref name="varref"/>
+    <ref name="string"/>
+    <ref name="funcall"/>
+  </choice>
+</define>
+
+<define name="symterm">
+  <choice>
+    <ref name="varref"/>
+    <ref name="symbol"/>
+    <ref name="funcall"/>
+  </choice>
+</define>
+
+<define name="listterm">
+  <choice>
+    <ref name="varref"/>
+    <ref name="list"/>
+    <ref name="funcall"/>
+  </choice>
+</define>
+@endverbatim
+
+A &lt;strterm&gt;, &lt;symterm&gt; or &lt;listterm&gt; is a term whose
+value is a string, a symbol or a list respecivelly.  That is, if a
+&lt;varref&gt; appears as a &lt;strterm&gt;, its value must be an
+string and if a &lt;funcall&gt; appears as a &lt;symterm&gt;, it must
+return a symbol.
+
+@verbatim
+<define name="predefined">
+  <choice>
+@endverbatim
+
+The m17n database has the following predefined functions. 
+
+@verbatim
+    <element name="set"><attribute name="vname"><data type="Name"/></attribute><ref name="term"/></element>
+@endverbatim
+
+This element sets the value of the variable "vname" to the given term.
+The value of this funcall is the value of the term.
+
+#if EXAMPLE_CODE
+<set vname="MAX-COUNT"><integer>4</integer></set>
+#endif
+
+This code sets @c MAX-COUNT to 4.
+
+@verbatim
+    <element name="and"><oneOrMore><ref name="term"/></oneOrMore></element>
+@endverbatim
+
+This element evaluates the given terms one by one until one is
+evaluated to 0.  If none is evaluated to 0, the value of this funcall
+is &lt;integer&gt;1&lt;/integer&gt;.  Otherwise,
+&lt;integer&gt;0&lt;/integer&gt;.
+
+@verbatim
+    <element name="or"><oneOrMore><ref name="term"/></oneOrMore></element>
+@endverbatim
+
+This element evaluates the given terms one by one until one is
+evaluated not to 0.  If none is evaluated not to 0, the value of this
+funcall is &lt;integer&gt;0&lt;/integer&gt;.  Otherwise,
+&lt;integer&gt;1&lt;/integer&gt;.
+
+@verbatim
+    <element name="not"><ref name="term"/></element>
+@endverbatim
+
+If the given term is &lt;integer&gt;0&lt;/integer&gt;, the value of
+this funcall is &lt;integer&gt;1&lt;/integer&gt;.  Otherwise,
+&lt;integer&gt;0&lt;/integer&gt;.
+
+@verbatim
+    <element name="eq"><oneOrMore><ref name="term"/></oneOrMore></element>
+@endverbatim
+
+If the given terms have the same object, the value of this funcall is
+&lt;integer&gt;1&lt;/integer&gt;.  Otherwise,
+&lt;integer&gt;0&lt;/integer&gt;.
+
+@verbatim
+    <element name="noteq"><ref name="term"/><ref name="term"/></element>
+@endverbatim
+
+If the given terms have the same object, the value of this funcall is
+&lt;integer&gt;0&lt;/integer&gt;.  Otherwise,
+&lt;integer&gt;1&lt;/integer&gt;.
+
+@verbatim
+    <element name="equal"><ref name="term"/><ref name="term"/></element>
+@endverbatim
+
+If the first term equals to the second term, the value of this funcall
+is &lt;integer&gt;1&lt;/integer&gt;.  Otherwise,
+&lt;integer&gt;0&lt;/integer&gt;.  The equality of terms is defind as
+below: An integer equals to another integer iff they contain the same
+integer value.  A string equals to another string iff they contain
+strings of the same characters.  A symbol equals to another symbol iff
+they contain the same symbol.  A list equals to another list iff they
+are of the same length, and the Nth element of the first list equals
+to the Nth element of the second list.
+
+@verbatim
+    <element name="match"><ref name="term"/><ref name="term"/></element>
+@endverbatim
+
+If the first term matches with second term, the value of this funcall
+is &lt;integer&gt;1&lt;/integer&gt;.  Otherwise,
+&lt;integer&gt;0&lt;/integer&gt;.  The match of two terms is defined
+as below: An integer matches with another integer iff they contain the
+same integer value.  A string matches with another string iff the
+first string is a valid regular expression matching with the second
+string.  A symbol matches with another symbol iff they contain the
+same symbol.  A list matches with another list iff the first list is
+no longer than the second, and the Nth element of the first list
+equals to the Nth element of the second list.  An error matches with
+another error iif the first eroor's error type is <symbol/> or is the
+same as the second error's error type.
+
+@endverbatim
+    <element name="lt"><ref name="intterm"/><ref name="intterm"/></element>
+    <element name="le"><ref name="intterm"/><ref name="intterm"/></element>
+    <element name="ge"><ref name="intterm"/><ref name="intterm"/></element>
+    <element name="gt"><ref name="intterm"/><ref name="intterm"/></element>
+@endverbatim
+
+These elements take two integer terms and compare them.  The value of
+this funcall is &lt;integer&gt;1&lt;/integer&gt; when when first
+integer is less than, less than or equal to, equal to, greater than or
+equal to, greater than, and not equal to the second value,
+respectivelly.  Otherwise, &lt;integer&gt;0&lt;/integer&gt;.
+
+@verbatim
+    <element name="add">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+    <element name="sub">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+    <element name="mul">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+    <element name="div">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+@endverbatim
+
+When the attribute "vname" is given, these element adds, subtracts,
+multiplies or divides the value of the variable "vname" by the given
+integer term(s), and the result becomes the value of the variable and
+the funcall.  When the attribute is not given, these element adds,
+subtracts, multiplies or divides the first integer term by the rest.
+
+#if EXAMPLE_CODE
+<add vname="C-AFTER-V"><integer>1</integer></add>
+#endif
+
+This code increments @c C-AFTER-V by 1.
+
+@verbatim
+    <element name="mod">
+      <choice><group><attribute name="vname"/><ref name="intterm"/></group>
+              <group><ref name="intterm"/><ref name="intterm"/></group></choice>
+    </element>
+@endverbatim
+
+When the attribute "vname" is given, this element calculates the
+remaindar when the value of the variable "vname" is divided by the
+given integer term, and the result becomes the value of the funcall.
+When the attribute is not given, this element calculates the remaindar
+when the first integer term is divided by the second integer term.
+
+@verbatim
+    <element name="logand">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+    <element name="logior">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+    <element name="logxor">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+@endverbatim
+
+When the attribute "vname" is given, these elements perform "logical
+and", "logcal inclusive or", or "logical exclusive or" of the value of
+the variable "vname" and the given integer term(s).  The result
+becomes the value of the funcall.  When the attribute is not given,
+these elements perform "logical and", "logcal inclusive or", or
+"logical exclusive or" of the given integer term(s).
+
+@verbatim
+    <element name="lsh">
+      <choice><group><attribute name="vname"/><ref name="intterm"/></group>
+              <group><ref name="intterm"/><ref name="intterm"/></group></choice>
+    </element>
+@endverbatim
+
+When the attribute "vname" is given, this element shifts the bit in
+the value of the variable "vname" to the left by the count specified
+with the given integer term.  The result becomes the value of the
+funcall.  When not, this element shifts the bit in the first integer
+term to the left by the count specified with the second integer term.
+
+@verbatim
+    <element name="append">
+      <optional><attribute name="vname"/></optional>
+      <oneOrMore><ref name="term"/></oneOrMore>
+    </element>
+@endverbatim
+
+When the attribute "vname" is given, its value must be a list and that
+list is modified destructively by concatinating all the elements of
+the given terms if it is a list, or the element itself if not, in the
+specified order.  When no attribute is given, a list is made by
+concatinating all the given terms in the same manner.  The resulting
+list becomes the value of the funcall.
+
+@verbatim
+    <element name="concat">
+      <optional><attribute name="vname"/></optional>
+      <oneOrMore><choice><ref name="intterm"/><ref name="strterm"/><ref name="listterm"/></choice></oneOrMore>
+    </element>
+@endverbatim
+
+When the attribute "vname" is given, its value must be a string and
+that string is modified destructively by concatinating all the given
+term(s).  If a term is a string term, the string is to be
+concatinated.  If a term is a integer term, a string of a character
+whose code is its integer value is to be concatinated.  If If a term
+is a list term, its elements must be interger terms and a string
+containing characters whose codes are their integer values is to be
+concatinated.
+
+When no attribute is given, a string is made by concatinating all the
+given term(s) in the same manner.  The resulting list becomes the
+value of the funcall.
+
+@endverbatim
+    <element name="length"><choice><ref name="strterm"/><ref name="listterm"/></choice></element>
+@endverbatim
+
+This element counts the length of the given string or list term.
+
+@verbatim
+    <element name="nth">
+      <ref name="intterm"/><choice><ref name="strterm"/><ref name="listterm"/></choice>
+    </element>
+@endverbatim
+
+This element selects the N-th element of the given string or list
+term.  N is given as the integer term.
+
+@verbatim
+    <element name="copy"><ref name="listterm"/></element>
+@endverbatim
+
+This element makes a copy of the given string or list term.
+
+@verbatim
+    <element name="ins"><attribute name="vname"/>
+      <ref name="intterm"/><choice><ref name="strterm"/><ref name="listterm"/></choice>
+    </element>
+@endverbatim
+
+This element inserts the given string or list term to the value of the
+variable "vname".  The position to insert is given as the integer
+term.
+
+@verbatim
+    <element name="del"><attribute name="vname"/>
+      <ref name="intterm"/><ref name="intterm"/>
+    </element>
+@endverbatim
+
+This element deletes elements at the position between two integer
+terms from the value of the variable "vname".
+
+Elements below are for control structures.
+
+@verbatim
+    <element name="progn"><zeroOrMore><ref name="term"/></zeroOrMore></element>
+@endverbatim
+
+This element evaluates each of the given terms in sequence and returns
+the value of the last term.
+
+@verbatim
+    <element name="if"><ref name="term"/><ref name="term"/><optional><ref name="term"/></optional></element>
+@endverbatim
+
+If the first term is evaluated to be true, this element evaluates the
+second term.  If not and if the third term exists, the third term is
+evaluated.
+
+#if EXAMPLE_CODE
+    <if>
+      <lt><varref vname="C"/><integer>0</integer></lt>
+      <progn><shift><symbol>state-init</symbol></shift></progn>
+    </if>
+#endif
+This code performs the &lt;shift&gt; action if the variable @c C is negative.
+
+@verbatim
+    <element name="when"><oneOrMore><ref name="term"/></oneOrMore></element>
+@endverbatim
+
+If the first term is evaluated to be true, this element evaluates the rest.
+
+@verbatim
+    <element name="cond"><oneOrMore><ref name="list"/></oneOrMore></element>
+@endverbatim
+
+This &lt;cond&gt evaluates the first element of the given lists, one
+by one, and and when it finds the first list whose first element is
+evaluated to be true, other elements in the list are evaluated.
+
+#if EXAMPLE_CODE
+      <cond>
+        <list>
+	  <eq><varref vname="level"/><integer>0</integer></eq>
+          <set vname="ret"><integer>1</integer></set>
+        </list>
+        <list>
+          <integer>1</integer>
+          <funcall fname="macro-cp12"/>
+        </list>
+      </cond>
+#endif
+
+This code sets the varialbe "ret" to the integer value 1 when the
+variable "level" has value 0, otherwise, calls "macro-cp12".
+
+@verbatim
+    <element name="loop"><oneOrMore><ref name="term"/></oneOrMore></element>
+@endverbatim
+
+This element repeatedly executes the given terms.
+
+@verbatim
+    <element name="while"><oneOrMore><ref name="term"/></oneOrMore></element>
+@endverbatim
+
+This element evaluate the first term and if true, evaluate the rest.
+This processs repeats until the first term becomes not true.
+
+@verbatim
+    <element name="foreach"><attribute name="vname"/>
+       <choice><ref name="strterm"/><ref name="listterm"/></choice>
+       <oneOrMore><ref name="term"/></oneOrMore>
+    </element>
+@endverbatim 
+
+This element repeatedly evaluate terms for each element of the string
+or list term.  The attribute "vname" specifies the varialve that the
+current element is assigned to, on each loop.
+
+@verbatim
+    <element name="break"><optional><ref name="term"/></optional></element>
+@endverbatim
+
+This element exits iterators and returns the term if it is given.
+
+@verbatim
+    <element name="return"><optional><ref name="term"/></optional></element>
+@endverbatim
+
+This element exits executions and returns the term if it is given.
+
+@verbatim
+    <element name="catch">
+      <optional><attribute name="vname"><data type="Name"/></attribute></optional>
+      <choice><ref name="symbol"/><ref name="error"/></choice>
+      <oneOrMore><ref name="term"/></oneOrMore>
+    </element>
+@endverbatim
+
+Thie element evalustes the given terms one by one, until a term
+matching with the specified symbol or error is thrown by
+&gt;throw/&lt;.  If such an item is thrown, the value of this element
+is &gt;integer&lt;1&gt;/integer&lt;, otherwise
+&gt;integer&lt;0&gt;/integer&lt;.  If the attribute "vname" is given,
+its value is set to the last evaluated term.  It is the value of
+&gt;throw/&lt; if thrown.
+
+
+@verbatim
+    <element name="throw">
+      <choice>
+	<group><ref name="symbol"/><optional><ref name="term"/></optional></group>
+	<ref name="error"/>
+      </choice>
+    </element>
+@endverbatim
+
+This element throws to the catch for the specified symbol or eroor.
+The value of this element is the term (if any) or the symbol, or the
+error.
+
+@verbatim
+    <element name="quote"><ref name="term"/></element>
+@endverbatim
+
+This element quotes the given term.
+
+@verbatim
+    <element name="eval"><ref name="term"/></element>
+@endverbatim
+
+This element evaluates the given term.
+
+@verbatim
+    <element name="type"><ref name="term"/></element>
+  </choice>
+</define>
+
+@endverbatim
+This element shows the type of the given term.  The type is
+one of the followings: <symbol>integer</symbol>, <symbol>string</symbol>,
+<symbol>symbol</symbol>, <symbol>list</symbol>, <symbol>error</symbol>.
+
+
+

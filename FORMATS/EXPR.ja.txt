@@ -1,0 +1,735 @@
+/* Copyright (C) 2003, 2004, 2005, 2009
+     National Institute of Advanced Industrial Science and Technology (AIST)
+     Registration Number H15PRO112
+   See the end for copying conditions.  */
+
+/***ja
+
+@page pageexpr m17n データベースでの基本的な項の記述方法
+@section expr m17n データベースでの基本的な項の記述方法
+
+入力メソッドとフォントレイアウトテーブルは、基本的な項や表現の記述に関
+して共通する方法を用いている。
+
+以下は、RelaxNG で書かれたそれらの項や表現の定義用スキーマを示す。（こ
+のスキーマファイルは m17n-db-xml/MIMNEW/expr.rng にあり、入力メソッドと
+フォントレイアウトテーブル用のスキーマファイルは、このファイルを継承し
+て用いる。）
+
+@verbatim
+<?xml version="1.0" encoding="utf-8"?>
+
+<grammar 
+	 datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+         xmlns:xi="http://www.w3.org/1999/XML/xinclude"
+	 xmlns="http://relaxng.org/ns/structure/1.0"
+	 ns="http://www.m17n.org/MIM">
+ 
+<start combine="choice">
+  <ref name="expr"/>
+</start>
+
+<define name="expr">
+      <choice>
+	<ref name="defun"/>
+	<ref name="defmacro"/>
+	<ref name="defvar"/>
+	<ref name="term"/>
+      </choice>
+</define>
+@endverbatim
+
+m17n データベースでは、項(term)、関数を定義する defun, マクロを定義する
+defmacro, 変数を定義する defvar を用いることができる。
+
+@verbatim
+<define name="term" combine="choice">
+  <choice>
+    <ref name="integer"/>
+    <ref name="string"/>
+    <ref name="symbol"/>
+    <ref name="list"/>
+    <ref name="error"/>
+    <ref name="varref"/>
+    <ref name="funcall"/>
+  </choice>
+</define>
+
+<define name="integer">
+  <element name="integer">
+    <choice>
+      <data type="integer"/>
+      <data type="string"><param name="pattern">\?.</param></data>
+      <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
+    </choice>
+  </element>
+</define>
+
+<define name="string">
+  <element name="string"><data type="string"/></element>
+</define>
+
+<define name="symbol">
+  <element name="symbol"><data type="Name"/></element>
+</define>
+
+<define name="list">
+  <element name="list">
+    <zeroOrMore><ref name="term"/></zeroOrMore>
+  </element>
+</define>
+
+<define name="error">
+  <element name="error">
+    <optional><attribute name="ename"><data type="Name"/></attribute></optional>
+    <ref name="string"/>
+  </element>
+</define>
+@endverbatim
+
+m17n データベースにおける基本の項は、integer(整数), string(文字列),
+symbol(シンボル), list(リスト), variable reference(変数参照), function
+call(関数呼びだし)である。入力メソッドやフォントレイアウトテーブルのス
+キーマファイルでは、これらを拡張したり他の項を定義したりできる。
+
+１０進や１６進の文字コード、特別な文法、すなわち疑問符を前置すること(?a など)で表現された文字
+も integer である。
+
+@verbatim
+<define name="varref">
+  <element name="varref">
+   <attribute name="vname"><data type="Name"/></attribute><empty/>
+  </element>
+</define>
+@endverbatim
+
+&lt;varref&gt; エレメントは、属性 "vname" で指定された名前を持つ変数を参照する。
+
+#if EXAMPLE_CODE
+<varref vname="handled-keys">
+#endif
+
+このコードは "handled-keys" という名の変数を参照する。
+
+@verbatim
+<define name="defun">
+  <element name="defun">
+    <attribute name="fname"><data type="ID"/></attribute>
+    <optional>
+      <choice><ref name="args"/></choice>
+    </optional>
+    <zeroOrMore><ref name="term"/></zeroOrMore>
+  </element>
+</define>
+@endverbatim
+
+&lt;defun&gt; エレメントは、属性 "fname" で指定された名前を持つ関数を定義する。
+
+@verbatim
+<define name="args">
+  <element name="args">
+    <zeroOrMore>
+      <element name="fixed">
+	<attribute name="vname"><data type="Name"/></attribute>
+      </element>
+    </zeroOrMore>
+    <zeroOrMore>
+      <element name="optional">
+	<attribute name="vname"><data type="Name"/></attribute>
+      </element>
+    </zeroOrMore>
+    <zeroOrMore>
+      <element name="rest">
+	<attribute name="vname"><data type="Name"/></attribute>
+      </element>
+    </zeroOrMore>
+  </element>
+</define>
+@endverbatim
+
+&lt;args&gt; エレメントは、&lt;defun&gt; か&lt;defmacro&gt; の子要素と
+して現れ、親要素の fixed, optional, rest 引数を定義する。
+
+@verbatim
+<define name="defmacro">
+  <element name="defmacro">
+    <attribute name="fname"><data type="ID"/></attribute>
+    <optional>
+      <choice><ref name="args"/></choice>
+    </optional>
+    <zeroOrMore><ref name="term"/></zeroOrMore>
+  </element>
+</define>
+@endverbatim
+
+&lt;defmacro&gt; エレメントは、属性 "fname" で指定された名前を持つマク
+ロを定義する。&lt;defun&gt; とは異なり、マクロが呼ばれる時点で引数は評
+価されていなくてはならない。
+
+@verbatim
+<define name="defvar">
+  <element name="defvar">
+    <attribute name="vname"><data type="ID"/></attribute>
+    <optional>
+      <ref name="description"/>
+    </optional>
+    <optional>
+      <choice>
+	<group>
+	  <ref name="integer"/>
+	  <optional>
+	    <element name="possible-value">
+	      <oneOrMore>
+		<choice>
+		  <ref name="integer"/>
+		  <element name="range"><ref name="integer"/><ref name="integer"/></element>
+		</choice>
+	      </oneOrMore>
+	    </element>
+	  </optional>
+	</group>
+	<group>
+	  <ref name="string"/>
+	  <optional>
+	    <element name="possible-value">
+	      <oneOrMore>
+		<ref name="string"/>
+	      </oneOrMore>
+	    </element>
+	    </optional>
+	</group>
+	<group>
+	  <ref name="symbol"/>
+	  <optional>
+	    <element name="possible-value">
+	      <oneOrMore>
+		<ref name="symbol"/>
+	      </oneOrMore>
+	    </element>
+	    </optional>
+	</group>
+      </choice>
+    </optional>
+  </element>
+</define>
+@endverbatim
+
+各 &lt;defvar&gt; はひとつの変数を宣言する。変数は宣言されていてもいな
+くても属性 "vname" で参照される。同じ"vname" 属性を持つふたつ以上の変数
+は宣言できない。
+
+&lt;defvar&gt; は、その値を示す &lt;integer&gt;、&lt;string&gt;、
+&lt;symbol&gt; エレメントを持つことができる。すべての変数は、暗黙に整数
+値の0に初期化されている。
+
+&lt;defvar&gt; の値が与えられている場合には、取り得る値を示す
+&lt;possible-value&gt; エレメントも持つことができる。取り得る値の型（整
+数値、文字列、シンボルのどれか) は指定された値の型と同じでなくてはなら
+ない。
+
+指定された値の型が整数値であるときには、&lt;possible-value&gt; は
+&lt;range&gt; エレメントを持つことができる。&lt;range&gt; エレメントは、
+変数が持つことのできる値の範囲を指定し、&lt;integer&gt; エレメントと混
+在して利用できる。&lt;range&gt; エレメントは２つの &lt;integer&gt; を内
+容として持ち、ひとつめは許される最小値を、ふたつめは最大値を表す。
+
+@verbatim
+<define name="description">
+  <element name="description">
+    <choice>
+      <element name="gettext"><text/></element>
+      <text/>
+    </choice>
+  </element>
+</define>
+@endverbatim
+
+&lt;description&gt; エレメントは親要素を説明するテキストを指定する。
+&lt;gettext&gt; エレメントの内容は、(翻訳が与えられていれば)現在のロケー
+ルに応じて "gettext" を用いて翻訳される。
+
+<define name="funcall">
+  <choice>
+    <element name="funcall">
+      <attribute name="fname">
+	<data type="IDREF"/>
+      </attribute>
+      <zeroOrMore><ref name="term"/></zeroOrMore>
+    </element>
+    <ref name="predefined"/>
+  </choice>
+</define>
+
+&lt;funcall&gt; エレメントは、"fname" 属性で指定され &lt;defun&gt; か
+&lt;defmacro&gt; で定義された関数あるいはマクロを呼ぶ。m17n データベー
+スは幾つかの関数を予め定義している。
+
+関数定義では、引数はしばしば一定の型に制限される。たとえば数値計算は整
+数値を要求し、文字列を受け取らない。次の４つのエレメントはそのような制
+限を表すために定義されている。
+
+@verbatim
+<define name="intterm" combine="choice">
+  <choice>
+    <ref name="varref"/>
+    <ref name="integer"/>
+    <ref name="funcall"/>
+  </choice>
+</define>
+@endverbatim
+
+&lt;intterm&gt; はその値が整数値であるような項である。すなわち
+&lt;varref&gt; が &lt;intterm&gt; として現れた場合、その値は整数でなく
+てはならず、 &lt;funcall&gt; が &lt;intterm&gt; として現れた場合、それ
+は整数を返さなくてはならない。入力メソッドとフォントレイアウトテーブル
+用のスキーマファイルは追加の &lt;intterm&gt; を定義できる。
+
+@verbatim
+<define name="strterm">
+  <choice>
+    <ref name="varref"/>
+    <ref name="string"/>
+    <ref name="funcall"/>
+  </choice>
+</define>
+
+<define name="symterm">
+  <choice>
+    <ref name="varref"/>
+    <ref name="symbol"/>
+    <ref name="funcall"/>
+  </choice>
+</define>
+
+<define name="listterm">
+  <choice>
+    <ref name="varref"/>
+    <ref name="list"/>
+    <ref name="funcall"/>
+  </choice>
+</define>
+@endverbatim
+
+A &lt;strterm&gt;, &lt;symterm&gt;, &lt;listterm&gt; はその値がそれぞれ
+文字列、シンボル、リストである項である。すなわち&lt;varref&gt; が
+&lt;strterm&gt; として現れた場合、その値は文字列でなくてはならず
+&lt;funcall&gt; が &lt;symterm&gt; として現れた場合、それはシンボルを返
+さなくてはならない。
+
+@verbatim
+<define name="predefined">
+  <choice>
+@endverbatim
+
+m17n データベースには以下の関数が予め定義されている。
+
+@verbatim
+    <element name="set"><attribute name="vname"><data type="Name"/></attribute><ref name="term"/></element>
+@endverbatim
+
+このエレメントは与えられた項を変数 "vname" の値として設定する。
+この関数呼び出しの値は項の値である。
+
+#if EXAMPLE_CODE
+<set vname="MAX-COUNT"><integer>4</integer></set>
+#endif
+
+このコードは @c MAX-COUNT を 4 に設定する。
+
+@verbatim
+    <element name="and"><oneOrMore><ref name="term"/></oneOrMore></element>
+@endverbatim
+
+このエレメントは与えられた項をひとつずつ、どれかが 0 になるまで評価する。
+0 になるものがなければ、この関数呼び出しの値は
+&lt;integer&gt;1&lt;/integer&gt; であり、そうでなければ
+&lt;integer&gt;0&lt;/integer&gt; である。
+
+@verbatim
+    <element name="or"><oneOrMore><ref name="term"/></oneOrMore></element>
+@endverbatim
+
+このエレメントは与えられた項をひとつずつ、どれかが 0 以外になるまで評価
+する。0 にならないものがなければ、この関数呼び出しの値は
+&lt;integer&gt;0&lt;/integer&gt; であり、そうでなければ
+&lt;integer&gt;1&lt;/integer&gt; である。
+
+@verbatim
+    <element name="not"><ref name="term"/></element>
+@endverbatim
+
+与えられた項が &lt;integer&gt;0&lt;/integer&gt; ならば、この関数呼び出
+しの値は&lt;integer&gt;1&lt;/integer&gt;、そうでなければ
+&lt;integer&gt;0&lt;/integer&gt; である。
+
+@verbatim
+    <element name="eq"><oneOrMore><ref name="term"/></oneOrMore></element>
+@endverbatim
+
+与えられた項が同じオブジェクトならば、この関数呼び出しの値は
+&lt;integer&gt;1&lt;/integer&gt;、そうでなければ
+&lt;integer&gt;0&lt;/integer&gt; である。
+
+@verbatim
+    <element name="noteq"><ref name="term"/><ref name="term"/></element>
+@endverbatim
+
+与えられた項が同じオブジェクトならば、この関数呼び出しの値は
+&lt;integer&gt;0&lt;/integer&gt;、そうでなければ
+&lt;integer&gt;1&lt;/integer&gt; である。
+
+@verbatim
+    <element name="equal"><ref name="term"/><ref name="term"/></element>
+@endverbatim
+
+最初の項と二つめの項が同一であれば、この関数呼び出しの値は
+&lt;integer&gt;1&lt;/integer&gt;、そうでなければ
+&lt;integer&gt;0&lt;/integer&gt; である。項の同一性は以下のように定義す
+る: 整数と整数は同じ整数値を持つ場合に同一である。文字列と文字列は同じ
+文字を含む場合に同一である。シンボルとシンボルは同じシンボルを含む場合
+に同一である。リストとリストは同じ長さであり、それぞれのN番目の要素が同
+一である場合に同一である。
+
+@verbatim
+    <element name="match"><ref name="term"/><ref name="term"/></element>
+@endverbatim
+
+最初の項と二つめの項が合致すれば、この関数呼び出しの値は
+&lt;integer&gt;1&lt;/integer&gt;、そうでなければ
+&lt;integer&gt;0&lt;/integer&gt; である。項の合致は以下のように定義する:
+as below: 整数と整数は同じ整数値を持つ場合に合致する。文字列と文字列は、
+最初の文字列が二つめの文字列と合致する妥当な正規表現である場合に合致す
+る。シンボルとシンボルは同じシンボルを含む場合に合致する。リストとリス
+トは、最初のリストが二つめのリストより長くなく、それぞれのN番目の要素が
+同一である場合に合致する。エラーとエラーは、最初のエラーのエラータイプ
+が&lt;symbol/&gt; であるか二つめのエラーのエラータイプと同じである場合
+に合致する。
+
+@endverbatim
+    <element name="lt"><ref name="intterm"/><ref name="intterm"/></element>
+    <element name="le"><ref name="intterm"/><ref name="intterm"/></element>
+    <element name="ge"><ref name="intterm"/><ref name="intterm"/></element>
+    <element name="gt"><ref name="intterm"/><ref name="intterm"/></element>
+@endverbatim
+
+これらのエレメントは二つの項を取りそれらを比較する。これらの関数呼びだ
+しの値はそれぞれ最初の項が二つめの項より小さいとき、小さいか同じである
+とき、大きいか同じであるとき、大きいとき
+&lt;integer&gt;1&lt;/integer&gt; であり、そうでなければ
+&lt;integer&gt;0&lt;/integer&gt;である。
+
+@verbatim
+    <element name="add">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+    <element name="sub">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+    <element name="mul">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+    <element name="div">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+@endverbatim
+
+属性 "vname" が与えられている場合、これらのエレメントは変数 "vname" を
+与えられた整数の項で加減乗除し、その結果が変数の値となり、またこの変数
+呼び出しの値となる。属性が与えられなければ、最初の項を残りの項で加減乗
+除する。
+
+#if EXAMPLE_CODE
+<add vname="C-AFTER-V"><integer>1</integer></add>
+#endif
+
+このコードは @c C-AFTER-V の値を 1 増やす。
+
+@verbatim
+    <element name="mod">
+      <choice><group><attribute name="vname"/><ref name="intterm"/></group>
+              <group><ref name="intterm"/><ref name="intterm"/></group></choice>
+    </element>
+@endverbatim
+
+属性 "vname" が与えられている場合、このエレメントは変数 "vname" を与え
+られた整数の項で割った場合の余りを求め、その結果が変数の値となり、また
+この変数呼び出しの値となる。属性が与えられなければ、最初の項を次の項で
+割った余りを求める。
+
+@verbatim
+    <element name="logand">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+    <element name="logior">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+    <element name="logxor">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+@endverbatim
+
+属性 "vname" が与えられている場合、これらのエレメントはそれぞれ変数
+"vname" と与えられた整数項の論理積(logical and), 論理和(logcal
+inclusive or), 排他的論理和(logical exclusive or)を求める。結果が関数呼
+び出しの値となる。属性が与えられていない場合は、与えられた整数項の論理
+積, 論理和, 排他的論理和を求める。
+
+@verbatim
+    <element name="lsh">
+      <choice><group><attribute name="vname"/><ref name="intterm"/></group>
+              <group><ref name="intterm"/><ref name="intterm"/></group></choice>
+    </element>
+@endverbatim
+
+属性 "vname" が与えられている場合、このエレメントは変数 "vname"の
+値のビットを左に与えられた整数項の分だけシフトする。結果が関数呼
+び出しの値となる。属性が与えられていない場合は、最初の整数項を
+二つめの整数項の分だけシフトする。
+
+@verbatim
+    <element name="append">
+      <optional><attribute name="vname"/></optional>
+      <oneOrMore><ref name="term"/></oneOrMore>
+    </element>
+@endverbatim
+
+属性 "vname" が与えられている場合、変数 "vname" はリストでなくてはなら
+ない。このエレメントは、リストに与えられた項をその順に結合することによっ
+て破壊的に変更する。与えられた項がリストであればその要素が、そうでなけ
+れば項自体が結合される。属性が与えられていない場合には、すべての項を同
+様に結合したリストが作られる。結果が関数呼び出しの値となる。
+
+@verbatim
+    <element name="concat">
+      <optional><attribute name="vname"/></optional>
+      <oneOrMore><choice><ref name="intterm"/><ref name="strterm"/><ref name="listterm"/></choice></oneOrMore>
+    </element>
+@endverbatim
+
+属性 "vname" が与えられている場合、変数 "vname" は文字列でなくてはなら
+ない。このエレメントは、文字列に与えられた項をその順に結合することによっ
+て破壊的に変更する。与えられた項が文字列であればそれを結合する。整数で
+あればそれを文字コードとする文字からなる文字列を結合する。リストであれ
+ば、その要素はすべて整数であり、それらの値を文字コードとして持つ文字か
+らなる文字列を結合する。
+
+属性が与えられていない場合には、すべての項を同様に結合した文字列が作ら
+れる。結果が関数呼び出しの値となる。
+
+@endverbatim
+    <element name="length"><choice><ref name="strterm"/><ref name="listterm"/></choice></element>
+@endverbatim
+
+このエレメントは、与えられた文字列かリストの長さを調べる。
+
+@verbatim
+    <element name="nth">
+      <ref name="intterm"/><choice><ref name="strterm"/><ref name="listterm"/></choice>
+    </element>
+@endverbatim
+
+このエレメントは、与えられた文字列かリストの N 番目の要素を取り出す。N
+は整数値として与えられる。
+
+@verbatim
+    <element name="copy"><ref name="listterm"/></element>
+@endverbatim
+
+このエレメントは、与えられた文字列かリストのコピーを作る。
+
+@verbatim
+    <element name="ins"><attribute name="vname"/>
+      <ref name="intterm"/><choice><ref name="strterm"/><ref name="listterm"/></choice>
+    </element>
+@endverbatim
+
+このエレメントは、与えられた文字列かリストを変数 "vname" の値に挿入する。
+挿入位置は整数値として与えられる。
+
+@verbatim
+    <element name="del"><attribute name="vname"/>
+      <ref name="intterm"/><ref name="intterm"/>
+    </element>
+@endverbatim
+
+このエレメントは、変数 "vname" の値から与えられたふたつの整数値で挟まれ
+た位置の要素を取り除く。
+
+以下のエレメントは制御構造である。
+
+@verbatim
+    <element name="progn"><zeroOrMore><ref name="term"/></zeroOrMore></element>
+@endverbatim
+
+このエレメントは、与えられた項を順に評価し最後の項の値を返す。
+
+@verbatim
+    <element name="if"><ref name="term"/><ref name="term"/><optional><ref name="term"/></optional></element>
+@endverbatim
+
+このエレメントは、最初の項を評価した結果が真であれば、二つめの項を評価
+する。真でなく、かつ三つめの項があれば、それを評価する。
+
+
+#if EXAMPLE_CODE
+    <if>
+      <lt><varref vname="C"/><integer>0</integer></lt>
+      <progn><shift><symbol>state-init</symbol></shift></progn>
+    </if>
+#endif
+
+このコードは変数 @c C が負であるとき、&lt;shift&gt; を実行する。
+
+@verbatim
+    <element name="when"><oneOrMore><ref name="term"/></oneOrMore></element>
+@endverbatim
+
+このエレメントは、最初の項を評価した結果が真であれば、残りの項を評価す
+る。
+
+@verbatim
+    <element name="cond"><oneOrMore><ref name="list"/></oneOrMore></element>
+@endverbatim
+
+このエレメントは、与えられたリストを順に、最初の要素を評価していき、最
+初の要素が真と評価される最初のリストを見付けるとそのリストの残りの要素
+を評価する。
+
+#if EXAMPLE_CODE
+      <cond>
+        <list>
+	  <eq><varref vname="level"/><integer>0</integer></eq>
+          <set vname="ret"><integer>1</integer></set>
+        </list>
+        <list>
+          <integer>1</integer>
+          <funcall fname="macro-cp12"/>
+        </list>
+      </cond>
+#endif
+
+このコードは、変数 "level" の値が 0 であれば変数 "ret" の値を整数 1 に
+設定し、そうでなければ "macro-cp12" を呼ぶ。
+
+@verbatim
+    <element name="loop"><oneOrMore><ref name="term"/></oneOrMore></element>
+@endverbatim
+
+このエレメントは、与えられた項を繰り返し実行する。
+
+@verbatim
+    <element name="while"><oneOrMore><ref name="term"/></oneOrMore></element>
+@endverbatim
+
+このエレメントは、最初の項を評価して真であれば残りの項を評価する。この
+プロセスは最初の項が真でなくなるまで繰り返される。
+
+@verbatim
+    <element name="foreach"><attribute name="vname"/>
+       <choice><ref name="strterm"/><ref name="listterm"/></choice>
+       <oneOrMore><ref name="term"/></oneOrMore>
+    </element>
+@endverbatim 
+
+このエレメントは、文字列かリストの各要素について、与えられた項を繰り返
+し評価する。属性 "vname" は各繰り返しにおいてその時点での要素が割り当て
+られる変数を示す。
+
+@verbatim
+    <element name="break"><optional><ref name="term"/></optional></element>
+@endverbatim
+
+このエレメントは、繰り返しを終了し、項が与えられていればそれを返す。
+
+@verbatim
+    <element name="return"><optional><ref name="term"/></optional></element>
+@endverbatim
+
+このエレメントは、実行を終了し、項が与えられていればそれを返す。
+
+@verbatim
+    <element name="catch">
+      <optional><attribute name="vname"><data type="Name"/></attribute></optional>
+      <choice><ref name="symbol"/><ref name="error"/></choice>
+      <oneOrMore><ref name="term"/></oneOrMore>
+    </element>
+@endverbatim
+
+このエレメントは、与えられたシンボルかエラーに合致する項が
+&gt;throw/&lt;によって投げられるまで、与えられた項を一つずつ評価する。
+そのような項が投げられれば、このエレメントの値は
+&gt;integer&lt;1&gt;/integer&lt; であり、そうでなければ
+&gt;integer&lt;0&gt;/integer&lt; である。属性 "vname" が与えられていれ
+ば、その値は最後に評価された項に設定される。もし投げられれば、それが
+&gt;throw/&lt; の値となる。
+
+@verbatim
+    <element name="throw">
+      <choice>
+	<group><ref name="symbol"/><optional><ref name="term"/></optional></group>
+	<ref name="error"/>
+      </choice>
+    </element>
+@endverbatim
+
+このエレメントは、指定のシンボルかエラーを &gt;catch&lt; に投げる。この
+エレメントの値は、項が与えられていればそれ、またはシンボル、またはエラー
+である。
+
+@verbatim
+    <element name="quote"><ref name="term"/></element>
+@endverbatim
+
+このエレメントは、与えられた項をquote（評価せずに返す）する。
+
+@verbatim
+    <element name="eval"><ref name="term"/></element>
+@endverbatim
+
+このエレメントは、与えられた項を評価する。
+
+@verbatim
+    <element name="type"><ref name="term"/></element>
+  </choice>
+</define>
+
+@endverbatim
+
+このエレメントは、与えられた項の型を返す。型は以下のいずれか：
+&lt;symbol&gt;integer&lt;/symbol&gt;, &lt;symbol&gt;string&lt;/symbol&gt;,
+&lt;symbol&gt;symbol&lt;/symbol&gt;, &lt;symbol&gt;list&lt;/symbol&gt;, &lt;symbol&gt;error&lt;/symbol&gt;
+
+@section im-seealso SEE ALSO
+@ref mdbGeneral "mdbGeneral(5)"
+*/
+
+/* 
+Copyright (C) 2003, 2004, 2005, 2009
+  National Institute of Advanced Industrial Science and Technology (AIST)
+  Registration Number H15PRO112
+
+This file is part of the m17n database; a sub-part of the m17n
+library.
+
+The m17n library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1 of
+the License, or (at your option) any later version.
+
+The m17n library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with the m17n library; if not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+Boston, MA 02110-1301, USA.
+*/
+
+/* Local Variables: */
+/* coding: utf-8 */
+/* End: */
+
+
+

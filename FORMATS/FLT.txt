@@ -1,4 +1,4 @@
-/* Copyright (C) 2003, 2004
+/* Copyright (C) 2003, 2004, 2009
      National Institute of Advanced Industrial Science and Technology (AIST)
      Registration Number H15PRO112
    See the end for copying conditions.  */
@@ -82,21 +82,23 @@ one.
 
 </ul>
 
-When a @e run is passed to a stage, if the stage has a @c
-category-table, the category of each glyph in the current run is
-updated.  If there is a glyph that has no category, the current run
-ends before that glyph.  Then, the default values of code-offset,
-combining-spec, and left-padding-flag of this stage are initialized to
-zero.  After these setups, the initial conversion action of the stage
-is applied to the current run and a new (intermediate) glyph sequence
-is produced.  The new current run is then passed to the next stage or
-the rendering engine.
+When a @e run is passed to a stage, if the stage has a
+&lt;category-table&gt; element, the category of each glyph in the
+current run is updated.  If there is a glyph that has no category, the
+current run ends before that glyph.  Then, the default values of
+code-offset, combining-spec, and left-padding-flag of this stage are
+initialized to zero.  After these setups, the initial conversion of
+the stage is applied to the current run and a new (intermediate) glyph
+sequence is produced.  The new current run is then passed to the next
+stage or the rendering engine.
 
 
 @section flt-syntax FLT STAGES and CATEGORIES
 
 The following defines a schema for a FLT, written in RelaxNG.  (This
-schema file can be found at m17n-db-xml/FLT/flt.rng.) 
+schema file can be found at m17n-db-xml/FLTNEW/flt-expr.rng and
+includes m17n-db-xml/FLTNEW/expr.rng that defines basic expressions
+and terms.)
 
 @verbatim
 <?xml version="1.0" encoding="utf-8"?>
@@ -106,7 +108,10 @@ schema file can be found at m17n-db-xml/FLT/flt.rng.)
          xmlns:xi="http://www.w3.org/1999/XML/xinclude"
 	 xmlns="http://relaxng.org/ns/structure/1.0"
 	 ns="http://www.m17n.org/FLT">
-<start>
+
+<include href="expr.rng"/>
+
+<start combine="choice">
   <element name="font-layouter">
     <attribute name="key0"><data type="string"/></attribute>
     <attribute name="key1"><data type="string"/></attribute>
@@ -139,74 +144,75 @@ schema file can be found at m17n-db-xml/FLT/flt.rng.)
 
 The attributes "key0" and "key1" are used to find an FLT from the m17n
 database.  The element &lt;first-stage&gt; must have a
-&lt;category-table&gt;.  An FLT can convert characters defined in the
-&lt;category-table&gt; of its &lt;first-stage&gt;.
+&lt;category-table&gt;.  An FLT can handle only such characters that
+are contained in the &lt;category-table&gt; of its
+&lt;first-stage&gt;.
 
 @verbatim
 
 <define name="category-table">
   <element name="category-table">
-    <oneOrMore>
+    <zeroOrMore>
       <element name="category">
-	<choice>
-	  <attribute name="code"><ref name="glyph-code"/></attribute>
-	  <group><attribute name="from-code"><ref name="glyph-code"/></attribute>
-	         <attribute name="to-code"><ref name="glyph-code"/></attribute>
-	  </group>
-	</choice>
 	<attribute name="category-value">
 	  <data type="string"><param name="pattern">[a-zA-Z]</param></data>
 	</attribute>
+	<choice>
+	  <element name="glyph-code"><ref name="integer"/></element>
+	  <group><element name="from-code"><ref name="integer"/></element>
+	         <element name="to-code"><ref name="integer"/></element>
+	  </group>
+	</choice>
       </element>
-    </oneOrMore>
+    </zeroOrMore>
   </element>
-</define>
-
-<define name="glyph-code">
-  <choice>
-    <data type="string"><param name="pattern">[0#]x[0-9a-fA-F]{1,6}</param></data>
-    <data type="string"><param name="pattern">\?.</param></data>
-  </choice>
 </define>
 
 @endverbatim
 
-The element &lt;category-table&gt; declares cageories of characters
-that can be handled in a stage.  Each &lt;category&gt; element assigns
-the value of the attribute "category-value" to a glyph whose code is
-the value of the attribute "code", or a range of glyphs whose code 
-falls betwee the value of the attribute "from-code" and that of "to-code".
-
+The element &lt;category-table&gt; declares cageories of characters or
+glyphs that can be handled in a stage.  Each &lt;category&gt; element
+assigns the value of the attribute "category-value" to its content.
+When the content is an element &lt;glyph-code&lt;, it is the code of
+the character/glyph to which the category is assigned to.  When the
+content is the pair of &lt;from-code&lt; and &lt;to-code&lt;, all the
+characters/glyphs whose code falls between them are assinged the
+category.
 
 @verbatim
 <define name="generator">
   <element name="generator">
-    <ref name="action"/>
+    <ref name="funcall"/>
     <zeroOrMore>
-      <element name="macro-definition">
-	<attribute name="macro-ID"><data type="ID"></data></attribute>
-	<oneOrMore><ref name="action"/></oneOrMore>
-      </element>
+      <ref name="defmacro"/>
     </zeroOrMore>
   </element>
 </define>
 @endverbatim
 
-The element &lt;generator&gt; specifies the action applied to
-character/intermediate glyph code sequence passed to the stage.  The
-&lt;macro-definition&gt; define macros used in the action.  A macro is
-exapanded to the sequence of the correponding actions.
+The element &lt;generator&gt; specifies the conversion applied to
+character/intermediate glyph code sequence passed to the stage.  When
+the conversion requires any macros, they must be defined within the
+same &lt;generator&gt;.  A macro is exapanded to the sequence of the
+correponding conversions.
 
-@section flt-action FLT ACTIONS
-
-This section describes &lt;action&gt;s.  Each &lt;action&gt; specifies
-glyphs to be consumed and glyphs to be produced.  When some glyphs are
-consumed, they are taken away from the current run.  An action may
-fail in some explicitly described condition.
+@section flt-action FLT CONVERSIONS
 
 @verbatim
-    <element name="direct-code">
-      <attribute name="glyph-code"><ref name="glyph-code"/></attribute>
+<define name="funcall" combine="choice">
+  <choice>
+@endverbatim
+
+This section describes details of the possible conversions.  In
+addition to those defined in "expr.rng", some functions are specially
+defined for character/glyph conversions.
+
+A conversion can consume and/or produces glyphs.  When some glyphs are
+"consumed", they are taken away from the current run.  A conversion
+may fail in some explicitly described condition.
+
+@verbatim
+    <element name="direct-code"><ref name="integer"/></element>
     </element>
 @endverbatim
 
@@ -214,7 +220,7 @@ The element &lt;direct-code&gt; consumes no glyph and produces a glyph
 that has the following specifications:
 
 <ul>
-<li> code : @c glyph-code plus the default code-offset
+<li> code : the value of the reffered integer plus the default code-offset
 <li> combining-spec : default value
 <li> left-padding-flag : default value
 <li> right-padding-flag : zero
@@ -254,15 +260,14 @@ The element &lt;end-cluster&gt; specifies the end of a grapheme cluster.
 @endverbatim
 
 The element &lt;left-padding-flag&gt; sets the default
-left-padding-flag to 1.  No glyph is consumed.  No glyph is produced.
+left-padding-flag to 1.  No glyph is consumed or produced.
 
 @verbatim
     <element name="right-padding-flag"><empty/></element>
 @endverbatim
 
 The element &lt;right-padding-flag&gt; changes the right-padding-flag
-of the lastly generated glyph to 1.  No glyph is consumed.  No glyph
-is produced.
+of the lastly generated glyph to 1.  No glyph is consumed or produced.
 
 @verbatim
     <element name="separator"><empty/></element>
@@ -270,104 +275,110 @@ is produced.
 
 The element &lt;separator&gt; consumes no glyph and produces a special
 glyph whose category is ' ' and other attributes are zero.  This
-special glyph can be produced by this action only.
+special glyph can be produced by this function only.
 
 @verbatim
     <element name="regexp-block">
       <attribute name="regexp"/>
-      <zeroOrMore><ref name="action"/></zeroOrMore>
+      <zeroOrMore><ref name="funcall"/></zeroOrMore>
     </element>
 @endverbatim
 
-The value of the attribute "regexp" is a regular expression that
-should match the sequence of categories of the current run.  If a
-match is found, this action executes &lt;action&gt;s temporarily
-limiting the current run to the matched part.  This action consumes the
-matched part.
+The value of the attribute "regexp" is a regular expression that may
+match the sequence of categories of the current run.  If a match is
+found, refereed funcalls are executed, temporarily limiting the
+current run to the matched part.  The matched part is comsumed.
 
-Parenthesized subexpressions, if any, are recorded to be used in the
-&lt;match-block&gt; element in the &lt;action&gt;s.
+If any parenthesized subexpressions exist in the regular expression,
+the parts of the run that match the subexpressions are recorded to be
+used by the &lt;match-block&gt; element in this &lt;regexp-block&gt;.
 
-If no match is found, this action fails.
+If no match is found, &lt;regexp-block&gt; fails.
 
 @verbatim
 
     <element name="match-block">
       <attribute name="match-index"><data type="integer"/></attribute>
-      <zeroOrMore><ref name="action"/></zeroOrMore>
+      <zeroOrMore><ref name="funcall"/></zeroOrMore>
     </element>      
 
 @endverbatim
 
 The value of the attribute "match-index" is an integer specifying a
-parenthesized subexpression recorded by the previous
-&lt;regexp-bloack&gt; element.  If such a subexpression exists, this
-action executes &lt;action&gt;s temporarily limiting the current run to
-the subsequence that matches with the subexpression.  This action
-consumes the matched subsequence.
+parenthesized subexpression of a regular expression.  If the previous
+&lt;regexp-block&gt; element has recorded the corresponding part of
+the run, the &lt;match-block&gt; element executes specified
+conversions, temporarily limiting the current run to the part.  The
+recorded part is consumed.
 
-If the specified subexpression does not exist, this action fails.
+If the corresponding part does not exist, &lt;match-block&gt; fails.
 
-If this is the first action of the stage, the value of the attribute
-"match-index" must be 0, and it matches the whole current run.
+If this is the first conversion of the stage, that is, if no preceding
+&lt;regexp-block&gt; exists, the value of the attribute "match-index"
+must be 0.  In such case the corresponding part means the whole
+current run.
 
 @verbatim
     <element name="subst-block">
       <choice>
 	<element name="source-pattern">
-	  <list><oneOrMore><ref name="glyph-code"/></oneOrMore></list>
+	  <oneOrMore><ref name="integer"/></oneOrMore>
 	</element>
 	<element name="code-range">
-	  <attribute name="from-code"><ref name="glyph-code"/></attribute>
-	  <attribute name="to-code"><ref name="glyph-code"/></attribute>
+	  <attribute name="from-code"><ref name="integer"/></attribute>
+	  <attribute name="to-code"><ref name="integer"/></attribute>
 	</element>
       </choice>
-      <zeroOrMore><ref name="action"/></zeroOrMore>
+      <zeroOrMore><ref name="funcall"/></zeroOrMore>
     </element>
 @endverbatim
 
 If the sequence of codes of the current run matches the element
-&lt;source-pattern&gt; or the element &lt;code-range&gt;, this action
-executes &lt;action&gt;s, temporarily limiting the current run to the
-matched part. This action consumes the matched part.
+&lt;source-pattern&gt; or the element &lt;code-range&gt;, the element
+&lt;subst-block&gt; executes specified conversions, temporarily
+limiting the current run to the matched part. &lt;subst-block&gt;
+consumes the matched part.
 
-The element &lt;source-pattern&gt; specifies a sequence of glyph codes
-to be matched.  In this case, this action resets the default
-code-offset to zero.  The element &lt;code-range&gt; specifies a range
-of codes that should match the first glyph code of the code sequence.
-In this case, this action sets the default code-offset to the first
-glyph code minus the value of the "from-code" attribute.
+The element &lt;source-pattern&gt; specifies a sequence of
+character/glyph codes to be matched.  In this case, the default
+code-offset is reset to zero.  The element &lt;code-range&gt;
+specifies a range of codes that should match the first glyph code of
+the code sequence.  In this case, the default code-offset is set to
+the first glyph code minus the value of the "from-code" attribute.
 
-If no match is found, this action fails.  
+If no match is found, &lt;subst-block&gt; fails.  
 
 @verbatim
     <element name="cond-block">
-      <oneOrMore><ref name="action"></ref></oneOrMore>
+      <oneOrMore><ref name="funcall"/></oneOrMore>
+
     </element>
 @endverbatim
 
-This action sequentially executes &lt;action&gt;s until one succeeds.
-If no succeeds, this action fails.  Otherwise, it succeeds.
+The element &lt;cond-block&gt; sequentially tries to execute specified
+conversions until one succeeds.  If no conversion succeeds,
+&lt;cond-block&gt; fails.  Otherwise, it succeeds.
 
 @verbatim
     <element name="font-facility-block">
       <choice>
 	<ref name="font"/>
 	<element name="characters">
-	  <list><oneOrMore><ref name="glyph-code"/></oneOrMore></list>
+	  <oneOrMore><ref name="integer"/></oneOrMore>
 	</element>
       </choice>
-      <zeroOrMore><ref name="action"/></zeroOrMore>
+      <zeroOrMore><ref name="funcall"/></zeroOrMore>
     </element>
 @endverbatim
 
-The element &lt;font&gt;, referred in the line 3, supplies font
+The element &lt;font&gt;, referred in the third line, supplies font
 specifications.  If the current font matches with the referred
-specification, or has glyphs for the codes listed in the element
-&lt;characters&gt;, this action succeeds and executes &lt;action&gt;s.
-Otherwise, this action fails.
+specification, or has glyphs for the characters whose codes are listed
+in the element &lt;characters&gt;, the element
+&lt;font-facility-block&gt; succeeds and executes specified
+conversions.  Otherwise, &lt;font-facility-block&gt; fails.
 
-&lt;font&gt; is defined as follows:
+The element &lt;font&gt; is defined as follows:
 
 @verbatim
 <define name="font">
@@ -431,8 +442,9 @@ registry information, e.g. iso10646-1, iso8895-1, etc.
 &lt;otf-specification&gt; specifies an instruction to the OTF driver.
 It is defined as follows:
 
+@verbatim
 <define name="otf-specification">
-  <element name="otf">
+  <element name="otf-specification">
     <attribute name="script"/>
     <optional><attribute name="langsys"/></optional>
     <optional>
@@ -477,18 +489,18 @@ It is defined as follows:
     </optional>
   </element>
 </define>
-
 @endverbatim
 
 Values of the attribute "script", "langsys" and contents of the
-"feature" tags must be tag names defined in the OpenType
+"feature" elements must be tag names defined in the OpenType
 specification.
 
-The attribute "script" specifies a Script tag name (e.g. deva for
-Devanagari).
+The value of the attribute "script" specifies a Script tag name
+(e.g. deva for Devanagari).
 
-The attribute "langsys" specifies a Language System tag name.  If this
-attribute is omitted, the Default Language System table is used.
+The value of the attribute "langsys" specifies a Language System tag
+name.  If this attribute is omitted, the default Language System table
+is used.
 
 The element &lt;gsub-features&gt; has either a &lt;positive-list&gt;
 or a &lt;negative-list&gt;.  The &lt;feature&gt; element in each list
@@ -509,8 +521,8 @@ When the element &lt;otf-specification&gt; appears in a
 &lt;negative-list&gt; element specifies features that the font must
 (not) have.
 
-See the following page for the OpenType specification.\n
-    <http://www.microsoft.com/typography/otspec/default.htm>
+See &lt;http://www.microsoft.com/typography/otspec/default.htm&gt; for
+the OpenType specification.
 
 @verbatim
     <element name="combining-specification">
@@ -535,6 +547,7 @@ See the following page for the OpenType specification.\n
 	    <optional><attribute name="y-amount"><data type="integer"/></attribute></optional>
       </optional>
     </element>
+</define>
 @endverbatim
 
 The element &lt;combining-specification&gt; specifies how to combine
@@ -579,7 +592,8 @@ glyph.  The rectangle 0-6-8-2 is the bounding box of the glyph.  The
 positions 3, 4, and 5 are on the baseline. 9-11 are on the vertical
 center of the box, 0-2 and 6-8 are on the top and on the bottom
 respectively.  1, 10, 4, and 7 are on the horizontal center of the
-box.
+box. The values of the attributes "v-pos1" and "h-pos1" (or "v-pos2"
+and "h-pos2") for each reference point are shown in the right table.
 
 The attribute "x-direction", "x-amount", "y-direction", and "y-amount"
 specifies the relative position of these reference points.  If both
@@ -602,47 +616,36 @@ or "y-amount" is omitted, the default value 5 is used.
 Once the next glyph is combined with the previous one, they are
 treated as a single combined glyph.
 
-@verbatim
-    <element name="macro-reference">
-     <attribute name="macro-ID"><data type="IDREF"/></attribute>
-    </element>
-
-@endverbatim
-
-The element &lt;macro-reference&gt; refers to a macro defined in
-&lt;macro-definition&gt;.  The attribute "macro-ID" specifies a macro
-and this element is exapanded to the sequence of the correponding
-rules.
-
 @section flt-context-dependent CONTEXT DEPENDENT BEHAVIOR
 
-So far, it has been assumed that each sequence, which is drawn with a
-specific font, is context free, i.e. not affected by the glyphs
+So far, it has been assumed that each sequence that is drawn with a
+specific font is context free, i.e. not affected by the glyphs
 preceding or following that sequence.  This is true when sequence S1
 is drawn with font F1 while the preceding sequence S0 unconditionally
 requires font F0.
 
 @verbatim
   sequence                              S0      S1
-  currently used font                   F0      F1
-  usable font(s)                        F0      F1
+  font currently used                   F0      F1
+  font(s) possibly used                 F0      F1
 @endverbatim
 
-Sometimes, however, a clear separation of sequences is not possible.
-Suppose that the preceding sequence S0 can be drawn not only with F0
-but also with F1.
+Sometimes, however, a sequence of characters cannot be cleary and
+unambiguously separeted into sequences.  Suppose that the preceding
+sequence S0 can be drawn with F1 also.
 
 @verbatim
   sequence                              S0      S1
-  currently used font                   F0      F1
-  usable font(s)                        F0,F1   F1
+  font currently used                   F0      F1
+  font(s) possibly used                 F0,F1   F1
 @endverbatim
 
-In this case, glyphs used to draw the preceding S0 may affect glyph
-generation of S1.  Therefore it is necessary to access information
-about S0, which has already been processed, when processing S1.
-Generation rules in the first stage (only in the first stage) accept a
-special regular expression to access already processed parts.
+In this case, glyphs used to draw the preceding sequence S0 may affect
+glyph generation of the sequence S1.  Therefore it is necessary to
+access information about S0, which has already been processed, when
+processing S1.  For this purpose, actions in the first stage (only in
+the first stage) of conversion accept a special regular expression to
+access already processed parts.
 
 @verbatim
   "RE0 RE1"

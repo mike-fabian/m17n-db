@@ -1,425 +1,633 @@
-/* Copyright (C) 2003, 2004
+/* Copyright (C) 2003, 2004, 2009
      National Institute of Advanced Industrial Science and Technology (AIST)
      Registration Number H15PRO112
    See the end for copying conditions.  */
 
 /***ja
 
-@page mdbFLT �ե���ȥ쥤�����ȥơ��֥�
+@page mdbFLT フォントレイアウトテーブル
 
-@section flt-description ����
+@section flt-description 説明
 
-ñ��ʥ�����ץȤξ�硢ɽ�����󥸥�����򤷤��ե���ȤΥ��󥳡��ǥ���
-���˱�����ʸ�������ɤ򥰥�ե����ɤ˰�ʸ�������Ѵ����롣��������ʣ����
-�쥤�����Ȥ��׵᤹��ʸ�񡢤��Ȥ��Х����䥤��ɷϤΥ�����ץȤʤɤξ�硢
-���У����Ѵ��Ǥ��Խ�ʬ�Ǥ��롣ʣ����ʸ������ĤΥꥬ����Ȥ��������줿�ꡢ
-������Ū�ˤ��餷�����֤������ʤ��ƤϤʤ�ʤ�����դ����ä��ꤹ�롣
+単純なスクリプトの場合、表示エンジンは選択したフォントのエンコーディン
+グに応じて文字コードをグリフコードに一文字ずつ変換する。しかし、複雑な
+レイアウトを要求する文書、たとえばタイやインド系のスクリプトなどの場合、
+１対１の変換では不十分である。複数の文字が一つのリガチャとして描かれたり、
+２次元的にずらした位置に描かなくてはならないグリフがあったりする。
 
-���Τ褦��ʣ���ʥ�����ץȤ�������뤿�ᡢm17n �饤�֥��ϥե���ȥ�
-�������ȥơ��֥� (û�̤��� FLT �ȸƤ֤��Ȥˤ���) ���Ѥ��롣FLT �ɥ饤
-�Ф� FLT ���ᤷ��ʸ�����ɽ�����󥸥���Ϥ����ȤΤǤ��륰��������
-�����롣
+このような複雑なスクリプトを処理するため、m17n ライブラリはフォントレ
+イアウトテーブル (短縮して FLT と呼ぶことにする) を用いる。FLT ドライ
+バは FLT を解釈し、文字列を表示エンジンに渡すことのできるグリフ列に変
+換する。
 
-FLT �� OpenType Layout Table �˸�������� (CMAP, GSUB, and GPOS) ��
-�ä��ơ�ʸ���󤫤���� (grapheme) ���饹������Ф����ꡢ���饹�����
-ʸ�����¤��Ѥ����ꤹ�뤿��ξ������Ĥ��Ȥ��Ǥ��롣
+FLT は OpenType Layout Table に見られる情報 (CMAP, GSUB, GPOS) に
+加えて、文字列から書記素 (grapheme) クラスタを抽出したり、クラスタ内で
+文字を並べ変えたりするための情報を持つことができる。
 
-FLT �� 1 �İʾ���Ѵ����ơ�����³������ΤǤ��롣�ƥ��ơ����ǥ�������
-���̤Τ�Τ��Ѵ����졢���Υ��ơ������ɤޤ�롣���Ĺ���ϥ��ơ�����˰�
-�ʤ뤳�Ȥ����롣��������γ����Ǥϰʲ��������ͤ�°������ġ�
+flt は 1 つ以上の変換ステージが続いたものである。各ステージでコード列
+は別のものに変換され、次のステージに渡される。列の長さはステージ毎に異
+なることがある。
+
+レイアウトエンジンがテキストを描く際には、まずテキストの各文字に対して
+それぞれフォントと FLT とを決定する。レイアウトエンジンはテキストを同じ
+フォントと FLT を用いる部分文字列に分割し、それぞれの部分文字列を一つず
+つ、決定した FLT の最初のステージに渡して処理させる。
+
+各時点で処理されている部分文字列を、@e 現行の @e ラン と呼ぶ。
+
+部分文字列の各要素は以下の特徴（整数値で表される）で表現される。
 
 <ul>
-<li> ������
+<li> コード
 
-�Ѵ��κǽ�Υ��ơ����Ǥϡ�����ʸ�����ʸ�������ɡ��Ǹ�Υ��ơ����Ǥϡ�
-ɽ�����󥸥���Ϥ���륰��ե����ɡ�����ʳ��Ǥ����Ū�ʥ���ե����ɡ�
+変換の最初のステージでは、元の文字列の文字コード。最後のステージでは、
+表示エンジンに渡されるグリフコード。それ以外では中間的なグリフコード。
 
-<li> ���ƥ���
+<li> カテゴリ
 
-���Υ��ơ����� @c CATEGORY-TABLE ��������줿���������Υ��ơ����������
-���񤭤���Ƥ��ʤ����ƥ��꡼�����ɡ�
+類似した扱いを要する文字コードや中間的なグリフコードは、まとめて一つの
+カテゴリに分類する。@c カテゴリ は、そのステージの
+&lt;category-table&gt; で定義されたか、以前のステージで定義され上書きさ
+れていないカテゴリコードのうちのいずれか。
 
-<li> ��絬§
+<li> 結合規則
 
-0 �Ǥʤ���С����Ρ���֡˥���դ����Τ�ΤȤɤ���礹�뤫����ꤹ�롣
+変換の最初のステージでは、この値は0である。0 でない場合は、この（中間）
+グリフを直前のグリフとどう結合するかを指定する。
 
-<li> ���ѥǥ��󥰥ե饰
+<li> 左パディングフラグ
 
-0 �Ǥʤ���С�ɽ���ؿ��ˤ��Ρ���֡˥���դ����˥��ڡ������������ơ���
-�Υ���դȽŤʤ�ʤ��褦�ˤ���褦�ؼ����롣
+変換の最初のステージでは、この値は0である。0 でない場合は、表示関数にこ
+の（中間）グリフの前にスペースを挿入して、前のグリフと重ならないように
+するよう指示する。
 
-<li> ���ѥǥ��󥰥ե饰
+<li> 右パディングフラグ
 
-0 �Ǥʤ���С�ɽ���ؿ��ˤ��Ρ���֡˥���դθ�˥��ڡ������������ơ���
-�Υ���դȽŤʤ�ʤ��褦�ˤ���褦�ؼ����롣
+変換の最初のステージでは、この値は0である。0 でない場合は、表示関数にこ
+の（中間）グリフの後にスペースを挿入して、後のグリフと重ならないように
+するよう指示する。
 
 </ul>
 
-�쥤�����ȥ��󥸥󤬥ƥ����Ȥ������ݤˤϡ��ޤ��ƥ����Ȥγ�ʸ�����Ф���
-���줾��ե���Ȥ�FLT ����ꤹ�롣Ʊ���ե���Ȥ� FLT ���Ѥ�����ʬʸ����
-�˴ؤ��ơ��쥤�����ȥ��󥸥���б��������Ū�ʥ���դ�����������롣��
-��Ū�ʥ���ե����ɤγ����Ǥϡ������ɤ�°���Ȥ����б�����ʸ�������ɡ�¾
-��°���Ȥ��� 0 ����ġ��������FLT �κǽ�Υ��ơ����Ǹ��Ԥ� @e ��� (��
-ʬ��) �Ȥ��ƽ�������롣
+@e ランが変換ステージに渡ると、そのステージに &lt;category-table&gt; エ
+レメントがあれば、ランのすべてのグリフのカテゴリが更新される。カテゴリ
+の無いグリフがあれば、ランはそのグリフの前で終る。次にこのステージのコー
+ドオフセット、結合規則、左パディングフラグのデフォルト値が 0 に初期化さ
+れる。これらの準備の後、このステージの最初の変換規則が現行のランに適用
+され、新しい（中間）グリフ列が生成される。この新しい @e 現行のランは次
+のステージかレンダリングエンジンに渡される。
 
-�ƥ��ơ����ϰʲ��Τ褦��Ư����
+@section flt-syntax 文法と意味
 
-�ޤ����Υ��ơ����� @c CATEGORY-TABLE ������С����ԤΥ��Τ��٤ƤΥ�
-��դΥ��ƥ��꤬��������롣���ƥ����̵������դ�����С����Ϥ��Υ�
-��դ����ǽ��롣
+以下に、relaxngで記述された flt のスキーマを示す。(このスキーマのファイ
+ルは m17n-db-xml/FLTNEW/flt.rng である。またこのスキーマは、基本的な表
+現や項を定義する  m17n-db-xml/FLTNEW/expr.rng を継承して利用する。)
 
-���ˤ��Υ��ơ����Υ����ɥ��ե��åȡ���絬§�����ѥǥ��󥰥ե饰�� 0 
-�˽��������롣
-
-�����ǡ����Υ��ơ����κǽ���Ѵ���§�����ԤΥ���Ŭ�Ѥ���롣
-
-�Ǹ�˸��ԤΥ��Ͽ��������줿����֡˥��������֤��������롣
-
-@section flt-syntax ʸˡ�Ȱ�̣
-
-m17n �饤�֥�� �� m17n �ǡ����١������饿�� \<font, layouter,
-FLT-NAME\> ���Ѥ��� FLT ������ɤ��롣FLT �Υǡ����Υե����ޥåȤϰʲ����̤ꡧ
+m17n ライブラリ は m17n データベースからタグ \<font, layouter,
+flt-name\> を用いて flt をロードする。flt のデータのフォーマットは以下の通り：
 
 @verbatim
-FONT-LAYOUT-TABLE ::= FLT-DECLARATION ? STAGE0 STAGE *
+<?xml version="1.0" encoding="utf-8"?>
 
-FLT-DECLARATION ::= '(' 'font' 'layouter' NAME nil PROP * ')'
-NAME ::= SYMBOL
-PROP :: = VERSION | FONT
-VERSION ::= '(' 'version' MTEXT ')'
-FONT ::= '(' 'font' FONT-SPEC ')'
-FONT-SPEC ::=
-     '(' [[ FOUNDRY FAMILY
-           [ WEIGHT [ STYLE [ STRETCH [ ADSTYLE ]]]]]
-         REGISTRY ]
-	 [ OTF-SPEC ] [ LANG-SPEC ] ')'
+<grammar 
+	 datatypelibrary="http://www.w3.org/2001/xmlschema-datatypes"
+         xmlns:xi="http://www.w3.org/1999/xml/xinclude"
+	 xmlns="http://relaxng.org/ns/structure/1.0"
+	 ns="http://www.m17n.org/FLT">
 
-STAGE0 ::= CATEGORY-TABLE GENERATOR
+<include href="expr.rng"/>
 
-STAGE ::= CATEGORY-TABLE ? GENERATOR
+<start combine="choice">
+  <element name="font-layouter">
+    <attribute name="key0"><data type="string"/></attribute>
+    <attribute name="key1"><data type="string"/></attribute>
+    <optional><ref name="font"/></optional>
+    <optional>
+      <element name="m17n-version">
+	<data type="string"><param name="pattern">[0-9]+\.[0-9]+\.[0-9]+</param></data>
+      </element>
+    </optional>
+    <ref name="first-stage"/>
+    <zeroormore><ref name="stage"/></zeroormore>
+  </element>
+</start>
 
-CATEGORY-TABLE ::= '(' 'category' CATEGORY-SPEC + ')'
+<define name="first-stage">
+  <element name="first-stage">
+    <ref name="category-table"/>
+    <ref name="generator"/>
+  </element>
+</define>
 
-CATEGORY-SPEC ::= '(' CODE CATEGORY ')'
-                  | '(' CODE CODE CATEGORY ')'
+<define name="stage">
+  <element name="stage">
+    <optional><ref name="category-table"/></optional>
+    <ref name="generator"/>
+  </element>
+</define>
 
-CODE ::= INTEGER
-
-CATEGORY ::= INTEGER
 @endverbatim
 
-@c CATEGORY-SPEC �������ǡ� @c CODE �ϥ���ե����� @c CATEGORY ����
-ʸ�����뤤�Ͼ�ʸ���� ASCII code�����ʤ�� 'A', ... 'Z', 'a', .. 'z' ��
-�����줫�Ǥ��롣
-
-@c CATEGORY-SPEC �κǽ�η����ϡ�@c CATEGORY �򥳡��� @c CODE ����ĥ�
-��դ˳�����ơ�����ܤη����� @c CATEGORY ����Ĥ� @c CODE �δ֤Υ���
-�ɤ���ĥ���դ˳�����Ƥ롣
+属性 "key0" と "key1" は、m17n データベースから使用する FLT をみつける
+際に利用される。&lt;first-stage&gt; 要素は &lt;category-table&gt; 要素
+を持たなくてはならない。各 FLT は、&lt;first-stage&gt; の
+&lt;category-table&gt; に含まれる文字のみを処理できる。
 
 @verbatim
-GENERATOR ::= '(' 'generator' RULE MACRO-DEF * ')'
 
-RULE ::= REGEXP-BLOCK | MATCH-BLOCK | SUBST-BLOCK | COND-BLOCK
-         FONT-FACILITY-BLOCK | DIRECT-CODE | COMBINING-SPEC | OTF-SPEC
-         | PREDEFINED-RULE | MACRO-NAME
+<define name="category-table">
+  <element name="category-table">
+    <zeroOrMore>
+      <element name="category">
+	<attribute name="category-value">
+	  <data type="string"><param name="pattern">[a-zA-Z]</param></data>
+	</attribute>
+	<choice>
+	  <element name="glyph-code"><ref name="integer"/></element>
+	  <group><element name="from-code"><ref name="integer"/></element>
+	         <element name="to-code"><ref name="integer"/></element>
+	  </group>
+	</choice>
+      </element>
+    </zeroOrMore>
+  </element>
+</define>
 
-MACOR-DEF ::= '(' MACRO-NAME RULE + ')'
 @endverbatim
 
-�� @c RULE �ϡ����񤹤륰��դ��������륰��դ���ꤹ�롣�־��񤵤줿��
-����դϸ��ԤΥ�󤫤��������롣�롼��Ͼ����ˤ�äƤϼ��Ԥ��롣��
-��Ū�˼��ԤȽ񤫤�Ƥ������Τ����������Ȥߤʤ���
+&lt;category-table&gt; エレメントは、各ステージが処理できる文字やグリフ
+にカテゴリを割り当てる。各 &lt;category&gt; エレメントの属性
+"category-value" の値が、エレメントの内容で指定される文字／グリフのカテ
+ゴリである。内容が&lt;glyph-code&lt; エレメントである場合は、それがカテ
+ゴリを割り当てられる文字／グリフのコードである。内容が
+&lt;from-code&lt; と &lt;to-code&lt; の組であるばあいには、それらの間に
+含まれるコードを持つ文字／グリフにカテゴリを割り当てる。
 
 @verbatim
-DIRECT-CODE ::= INTEGER
+<define name="generator">
+  <element name="generator">
+    <ref name="funcall"/>
+    <zeroOrMore>
+      <ref name="defmacro"/>
+    </zeroOrMore>
+  </element>
+</define>
 @endverbatim
 
-���Υ롼��ϥ���դ���񤻤����ʲ���°������ĥ���դ��������롣
+&lt;generator&gt; エレメントは、そのステージに渡された文字列または中間
+的なグリフコード列に施される変換を指定する。変換の記述にマクロが含まれ
+る場合には、同じ &lt;generator&gt; 内で定義されていなければならない。マ
+クロは対応する変換の列に展開される。
+
+@section flt-action FLT の変換
+
+@verbatim
+<define name="funcall" combine="choice">
+  <choice>
+@endverbatim
+
+この節では個々の変換の詳細を説明する。"expr.rng" で与えられているものに
+加えて、いくつかの関数が文字／グリフの変換専用に定義されている。
+
+各変換においては、グリフを消費したり生成したりすることがある。「消費さ
+れた」グリフは現行のランから取り除かれる。ルールは状況によっては失敗す
+る。明示的に失敗と書かれている場合をのぞき、成功とみなす。
+
+@verbatim
+    <element name="direct-code">
+      <attribute name="glyph-code"><ref name="glyph-code"/></attribute>
+    </element>
+@endverbatim
+
+&lt;direct-code&gt; エレメントはグリフを消費せず、以下の特徴を持つグリ
+フを生成させる。
 
 <ul>
-<li> ������ : @c INTEGER �˥ǥե���ȤΥ����ɥ��ե��åȤ�­�������
-<li> ��絬§ : �ǥե������
-<li> ���ѥǥ��󥰥ե饰 : �ǥե������
-<li> ���ѥǥ��󥰥ե饰 : 0
+<li> コード : 属性 "glyph-code" の値にデフォルトのコードオフセットを足したもの
+<li> 結合規則 : デフォルト値
+<li> 左パデイングフラグ : デフォルト値
+<li> 右パデイングフラグ : 0
 </ul>
 
-����������塢�ǥե���ȤΥ����ɥ��ե��åȡ���絬§, ���ѥǥ��󥰥ե�
-�� �Ϥ��٤� 0 �˥ꥻ�åȤ���롣
+グリフ生成後、デフォルトのコードオフセット、結合規則, 左パディングフラ
+グ はすべて 0 に戻される。
 
 @verbatim
-PREDEFINED-RULE ::= '=' | '*' | '<' | '>' | '|' | '[' | ']'
+    <element name="copy-glyph"><empty/></element>
 @endverbatim
 
-�����ϰʲ��Τ褦��Ư����
-
-<ul>
-<li> @c =
-
-���ԤΥ��κǽ�Υ���դ���񤷡�Ʊ������դ��������롣���ԤΥ�󤬶�
-�ʤ�м��Ԥ��롣
-
-<li> @c *
-
-���Υ롼��򷫤��֤��¹Ԥ��롣���Υ롼�뤬���Ԥ���С����⤻�����Ԥ��롣
-
-<li> @c @<
-
-���ǥ��饹���λϤ�򼨤���
-
-<li> @c @>
-
-���ǥ��饹���ν���򼨤���
-
-<li> @c @[
-
-���ε�§�ϥǥե���Ȥκ��ѥǥ��󥰥ե饰�� 1 �ˤ��롣����դξ������
-���Ϥ��ʤ���
-
-<li> @c @]
-
-���ε�§�ϺǶ��������줿����դα��ѥǥ��󥰥ե饰�� 1 �ˤ��롣�����
-�ξ���������Ϥ��ʤ���
-
-<li> @c |
-
-����դ���񤻤������ƥ��꤬ ' ' ��¾��°���� 0 �Ǥ������̤ʥ���դ���
-�����롣���ε�§�������������̤ʥ���դ��������롣
-
-</ul>
+&lt;copy-glyph&gt; エレメントは、現行のランの最初のグリフを消費し、同じ
+グリフを生成する。現行のランが空ならば失敗する。
 
 @verbatim
-REGEXP-BLOCK ::= '(' REGEXP RULE * ')'
-
-REGEXP ::= MTEXT
+    <element name="repeat"><empty/></element>
 @endverbatim
 
-@c MTEXT �ϸ��ԤΥ��Υ��ƥ�����˹��פ��٤�����ɽ���Ǥ��롣���פ���
-�С����ε�§�ϰ��Ū�˸��ԤΥ�����פ�����ʬ�����˸��ꤷ����ǡ�@c
-RULE ��¹Ԥ��롣���פ�����ʬ�Ϥ��ε�§�ˤ�äƾ��񤵤�롣
-
-��̤ΤĤ�����ʬɽ��������С�@c RULE ����˽и����뤫�⤷��ʤ� @c
-MATCH-BLOCK �ˤ�äƻ��Ѥ��뤿��˵�Ͽ����롣
-
-���פ�����ʬ��̵����С����ε�§�ϼ��Ԥ��롣
+&lt;repeat&gt; エレメントは、前のルールを繰り返し実行する。前のルールが
+失敗すれば、何もせず失敗する。
 
 @verbatim
-MATCH-BLOCK ::= '(' MATCH-INDEX RULE * ')'
-
-MATCH-INDEX ::= INTEGER
+    <element name="start-cluster"><empty/></element>
 @endverbatim
 
-@c MATCH-INDEX ��ľ���� @c REGEXP-BLOCK �ˤ�äƵ�Ͽ���줿��ʬɽ�����
-�ꤹ�������Ǥ��롣���Τ褦����ʬɽ��������С����ε�§�ϰ��Ū�˸��Ԥ�
-������פ�����ʬɽ�������˸��ꤷ����ǡ�@c RULE ��¹Ԥ��롣���פ���
-��ʬ�Ϥ��ε�§�ˤ�äƾ��񤵤�롣
-
-���פ�����ʬ��̵����С����ε�§�ϼ��Ԥ��롣
-
-���ε�§�����ơ����κǽ�ε�§�Ǥ�����ϡ�@c MATCH-INDEX �� 0 �Ǥʤ�
-�ƤϤʤ�ʤ������ξ�������Τ˹��פ��뤳�Ȥˤʤ롣
+&lt;start-cluster&gt; エレメントは、書記素クラスタの始めを表す。
 
 @verbatim
-SUBST-BLOCK ::= '(' SOURCE-PATTERN RULE * ')'
-
-SOURCE-PATTERN ::= '(' CODE + ')'
-                   | (' 'range' CODE CODE ')'
+    <element name="end-cluster"><empty/></element>
 @endverbatim
 
-���ԤΥ��Υ������� @c SOURCE-PATTERN �ȹ��פ���С����ε�§�ϰ��
-Ū�˸��ԤΥ�����פ�����ʬ�����˸��ꤷ����ǡ�@c RULE ��¹Ԥ��롣
-���פ�����ʬ�Ͼ��񤵤�롣
-
-@c SOURCE-PATTERN �κǽ�η����ϡ����פ��륰��ե����ɤ������ꤹ�롣
-���ξ�硢���ε�§�ϥǥե���ȤΥ����ɥ��ե��åȤ� 0 �˥ꥻ�åȤ��롣
-
-��Ĥ�η����ϡ���������κǽ�Υ���ե����ɤ��ϰϤ���ꤹ�롣���ξ�硢
-���ε�§�ϥǥե���ȤΥ����ɥ��ե��åȤ�ǽ�Υ���ե����ɤ����ϰϤ��
-�ꤹ����� @c CODE ���������Τ����ꤹ�롣
-
-���פ�����ʬ��̵����С����ε�§�ϼ��Ԥ��롣
-
+&lt;end-cluster&gt; エレメントは、書記素クラスタの終わりを表す。
 
 @verbatim
-FONT-FACILITY-BLOCK ::= '(' FONT-FACILITY RULE * ')'
-FONT-FACILITY = '(' 'font-facility' CODE * ')'
-	      	| '(' 'font-facility' FONT-SPEC ')'
+    <element name="left-padding-flag"><empty/></element>
 @endverbatim
 
-���ߤΥե���Ȥ� @c CODE �Υ���դ���äƤ��뤫��@c FONT-SPEC �ȹ��פ�
-��С����ε�§����������@c RULE ��¹Ԥ��롣�����Ǥʤ���С����ε�§��
-���Ԥ��롣
+&lt;left-padding-flag&gt; エレメントは、デフォルトの左パディングフラグ
+を 1 に設定する。グリフの消費や生成は行わない。
 
 @verbatim
-COND-BLOCK ::= '(' 'cond' RULE + ')'
+    <element name="right-padding-flag"><empty/></element>
 @endverbatim
 
-���ε�§�� @c RULE ���ˡ��ɤ줫����������ޤǼ¹Ԥ��롣�ɤΥ롼���
-�������ʤ���С����ε�§�ϼ��Ԥ��롣�����Ǥʤ���������Ǥ��롣
+&lt;right-padding-flag&gt; エレメントは、最近生成されたグリフの右パディ
+ングフラグを 1 に設定する。グリフの消費や生成は行わない。
 
 @verbatim
-OTF-SPEC ::= SYMBOL
+    <element name="separator"><empty/></element>
 @endverbatim
 
-@c OTF-SPEC �ϡ�OTF �ɥ饤�Фؤλؼ�����ꤹ��̾������ĥ���ܥ�Ǥ��롣
-̾���ϰʲ���ʸˡ�˽�����
+&lt;separator&gt; エレメントは、グリフを消費せず、カテゴリが ' ' で他の
+属性が0 である特別なグリフを生成する。このエレメントだけがこの特別なグ
+リフを生成できる。
 
 @verbatim
-  OTF-SPEC-NAME ::= ':otf' SCRIPT LANGSYS ? GSUB-FEATURES ? GPOS-FEATURES ?
+    <element name="regexp-block">
+      <attribute name="regexp"/>
+      <zeroOrMore><ref name="funcall"/></zeroOrMore>
+    </element>
+@endverbatim
 
-  SCRIPT ::= SYMBOL
+属性 "regexp" の値は正規表現であり、このエレメントはまずこの正規表現が
+現行のランのカテゴリと合致するかを調べる。合致すれば、
+&lt;regexp-block&gt; エレメントは現行のランを一時的に合致した部分だけに
+限定した上で、指定のアクションを実行させる。合致した部分は消費される。
 
-  LANGSYS ::= '/' SYMBOL
+正規表現中に括弧のついた部分表現があれば、ランのうち対応する部分を記録
+する。この &lt;regexp-block&gt; エレメント中に &lt;match-block&gt; エレ
+メントがあれば、この記録が利用される。
 
-  GSUB-FEATURES ::= '=' FEATURE-LIST ?
+合致する部分が無ければ、&lt;regexp-block&gt; は失敗する。
 
-  GPOS-FEATURES ::= '+' FEATURE-LIST ?
+@verbatim
 
-  FEATURE-LIST ::= ( SYMBOL ',' ) * [ SYMBOL | '*' ]
+    <element name="match-block">
+      <attribute name="match-index"><data type="integer"/></attribute>
+      <zeroOrMore><ref name="funcall"/></zeroOrMore>
+    </element>      
 
 @endverbatim
 
-�� @c SYMBOL �� OpenType specification ��ǤΥ���̾����ꤹ�롣
+属性 "match-index" の値は、正規表現の括弧つき部分表現を指定する整数であ
+る。&lt;match-block&gt; エレメントは、直前の &lt;regexp-block&gt; エレ
+メントがその部分表現に対応するランの一部を記録していれば、一時的に現行
+のランを記録されていた部分だけに限定した上で、指定のアクションを実行す
+る。記録されていた部分は消費される。
 
-@c SCRIPT �ˤĤ��Ƥϡ�@c SYMBOL �ϥ�����ץȥ���̾��ɽ����Devanagari 
-�� deva �ʤɡ�)
+対応する部分が記録されていなければ、&lt;match-block&gt; は失敗する。
 
-@c LANGSYS �ξ��ϡ�@c SYMBOL �ϸ��쥷���ƥॿ��̾����ꤹ�롣@c
-LANGSYS ����ά�����С��ǥե���Ȥθ��쥷���ƥ�ơ��֥뤬���Ѥ���롣
-
-@c GSUB-FEATURES �Ǥϡ� @c FEATURE LIST ��γ� @c SYMBOL �� Ŭ�Ѥ��� 
-GSUB feature ����̾����ꤹ�롣'*' �ϻĤꤹ�٤Ƥ� feature ����ꤹ�뤿
-��˺Ǹ�����ǤȤ����Ѥ��뤳�Ȥ��Ǥ��롣 @c SYMBOL ������'~' ���Ĥ���
-���ꡢ�Ǹ�����Ǥ� '*' �ʤ�С�@c SYMBOL ��Ŭ�Ѥ���feature ���������
-�롣@c SYMBOL �����ꤵ��Ƥ��ʤ���С�GSUB feature ��Ŭ�Ѥ���ʤ���@c
-GSUB-FEATURES ���Τ���ά�����Ф��٤Ƥ� GSUB feature ��Ŭ�Ѥ���롣
-
-@c GPOS-FEATURES �λ���� @c GSUB-FEATURES �ξ���Ʊ�ͤǤ��롣
-
-���ƤΥ���̾�� ASCII ��ɽ����ǽʸ�����Ĥ���ʤ뤳�ȡ�
-
-OpenType �λ�����ˡ�ˤĤ��Ƥϼ��Υڡ����򻲾ȤΤ��ȡ�\n
-    <http://www.microsoft.com/typography/otspec/default.htm>
+このアクションがステージの最初、すなわち先行する &lt;regexp-block&gt;
+無しに現れる場合には、属性 "match-index" の値は 0 でなくてはならない。
+この場合、指定された部分表現に対応するランの一部とはラン全体である。
 
 @verbatim
-COMBINING ::= SYMBOL
+    <element name="subst-block">
+      <choice>
+	<element name="source-pattern">
+	  <oneOrMore><ref name="integer"/></oneOrMore>
+	</element>
+	<element name="code-range">
+	  <attribute name="from-code"><ref name="integer"/></attribute>
+	  <attribute name="to-code"><ref name="integer"/></attribute>
+	</element>
+      </choice>
+      <zeroOrMore><ref name="funcall"/></zeroOrMore>
+    </element>
 @endverbatim
 
-@c COMBINING �ϡ� ���Υ���դ����Τ�ΤȤɤ���礹�뤫�λؼ���̾���Ȥ�
-�ƻ��ĥ���ܥ�Ǥ��롣���Υ롼��ϥǥե���Ȥη�絬§�򥷥�ܥ�̾��ͭ
-�����������ɤ˥��åȤ��롣̾���ϰʲ���ʸˡ�˽�����
-following syntax.
+&lt;subst-block&gt; エレメントは、現行のランのコード列が
+&lt;source-pattern&gt; エレメントか &lt;code-range&gt; エレメントと合致
+した場合、一時的に現行のランを合致した部分だけに限定した上で指定の変換
+を実行する。合致した部分は消費される。
+
+&lt;source-pattern&gt; エレメントの内容は合致すべき文字／グリフコードの
+列である。この場合、デフォルトのコードオフセットは 0 にリセットされる。
+&lt;code-range&gt; エレメントは、文字／コード列の最初のグリフコードの範
+囲を指定する。この場合デフォルトのコードオフセットは、最初のグリフコー
+ドから属性"from-code" の値をを引いたものにセットされる。
+
+合致しなければ、&lt;subst-block&gt; は失敗する。
 
 @verbatim
-  COMBINING-NAME ::= VPOS HPOS OFFSET VPOS HPOS
-
-  VPOS ::= 't' | 'c' | 'b' | 'B'
-
-  HPOS ::= 'l' | 'c' | 'r'
-
-  OFFSET :: = '.' | XOFF | YOFF XOFF ?
-
-  XOFF ::= ('<' | '>') INTEGER ?
-
-  YOFF ::= ('+' | '-') INTEGER ?
+    <element name="cond-block">
+      <oneOrMore><ref name="funcall"/></oneOrMore>
+    </element>
 @endverbatim
 
-@c VPOS �� @c HPOS �ϼ��Τ褦�˿�ľ����ʿ���֤���ꤹ�롣
+&lt;cond-block&gt; エレメントは、指定の変換を順に、どれかが成功するまで
+実行しようとする。どれも成功しなければ、この規則は失敗する。そうでなけ
+れば成功である。
 
 @verbatim
-                                POINT VPOS HPOS
-                                ----- ---- ----
-    0----1----2 <---- top       0     t    l
-    |         |                 1     t    c
-    |         |                 2     t    r
-    |         |                 3     B    l
-    9   10   11 <---- center    4     B    c
-    |         |                 5     B    r
-  --3----4----5-- <-- baseline  6     b    l
-    |         |                 7     b    c
-    6----7----8 <---- bottom    8     b    r
-                                9     c    l
-    |    |    |                10     c    c
-  left center right            11     c    r
+    <element name="font-facility-block">
+      <choice>
+	<ref name="font"/>
+	<element name="characters">
+	  <oneOrMore><ref name="integer"/></oneOrMore>
+	</element>
+      </choice>
+      <zeroOrMore><ref name="funcall"/></zeroOrMore>
+    </element>
 @endverbatim
 
-���οޤϤ��륰��դ� 12 �λ������� 0 ���� 11 �ޤǤο����Ǽ����Ƥ��롣
-�ͳѷ� 0-6-8-2 �ϥ���դ�ɽ���ΰ�Ǥ��ꡢ����3, 4, 5 �ϥ١����饤���
-�ˤ��롣 9 �� 11 �Ϥ��줾����0-6 �� 2-8 ���濴�Ǥ��롣1, 10, 4, 7 �Ϥ�
-�줾����1-2, 3-5, 9-11, 6-8 ���濴�Ǥ��롣
+３行目の &lt;font&gt; エレメントはフォントの仕様を与える。現在のフォン
+トがこの仕様を満たしているか、&lt;characters&gt; エレメント中のリストで
+与えられたコードの文字グリフを持っていれば、
+&lt;font-facility-block&gt; エレメントは成功し、指定の変換を実行する。
+そうでなければ、&lt;font-facility-block&gt; は失敗する。
 
-����ɽ�ϡ��ƻ�������@c VPOS �� @c HPOS ���ȹ礻�ˤ�äƤɤΤ褦�˻���
-����뤫�򼨤��Ƥ��롣
-
-@c COMBINING-NAME �������κǽ�� @c VPOS �� @c HPOS �ϡ����Υ���դ�
-������������ܤ� @c VPOS �� @c HPOS �ϼ��Υ���դλ���������ꤹ�롣
-���Υ���դϤ�����Ĥλ��������Ťʤ�褦��������롣
-
-@c OFFSET �ϽŤʤ꤫¾�ξܺ٤���ꤹ�롣'.' �Ǥ���С���������Ĥ�Ʊ��
-���֤ˤ��롣
-
-@c XOFF �ϡ����Υ���դλ������� X ��ɸ�����λ���������ɤ�ۤɱ� 
-('<') ���뤤�Ϻ� ('>') �ؤ��餹�����ꤹ�롣
-
-@c YOFF �ϡ����Υ���դλ������� Y ��ɸ�����λ���������ɤ�ۤɾ� 
-('+') ���뤤�ϲ� ('-') �ؤ��餹�����ꤹ�롣
-
-�ɤ���ξ��ˤ⡢@c INTEGER �ϥե���ȥ������β��󤺤餹���򼨤��ͤ�
-���롣���ʤ�����⤷ @c INTEGER �� 10 �ʤ�Хե���ȥ�������10% (1/10) 
-���餹���Ȥˤʤ롣 @c INTEGER ����ά���줿���ˤϡ�5 �����ꤵ�줿���
-�Ȥ��롣
-
-���Υ���դ����Υ���դ˷�礵���ȡ������ϰ�Ĥη�祰��դȤ��ư�
-���롣
+&lt;font&gt; エレメントは以下のように定義されている。	
 
 @verbatim
-MACRO-NAME ::= SYMBOL
+<define name="font">
+  <element name="font">
+    <optional>
+      <optional>
+	<attribute name="foundry"><data type="token"/></attribute>
+	<attribute name="family"><data type="token"/></attribute>
+	<optional>
+	  <attribute name="weight"><data type="token"/></attribute>
+	  <optional>
+	    <attribute name="style"><data type="token"/></attribute>
+	    <optional>
+	      <attribute name="stretch"><data type="token"/></attribute>
+	      <optional>
+		<attribute name="adstyle"><data type="token"/></attribute>
+	      </optional>
+	    </optional>
+	  </optional>
+	</optional>
+      </optional>
+      <attribute name="registry"><data type="token"/></attribute>
+    </optional>
+    <optional>
+      <ref name="otf-specification"/>
+    </optional>
+    <zeroOrMore>
+      <element name="lang-specification">
+	<data type="token"><param name="minLength">2</param><param name="maxLength">3</param></data>
+      </element>
+    </zeroOrMore>
+  </element>
+</define>
 @endverbatim
 
-@c MACRO-NAME �� @c MACRO-DEF �Τ����줫�˸����륷��ܥ�Ǥ��ꡢ�б�
-����@c RULE �����Ÿ������롣
+属性 "foundry" の値は、adobe, misc 等フォントの開発元を表すシンボルで
+ある。
 
-@section flt-context-dependent ʸ̮�˰�¸���뿶��
+属性 "family" の値は、times, helvetica 等フォントのファミリを表すシン
+ボルである。
 
-�����ޤǤϡ�����Υե���Ȥ���������ʸ�����������ʸ̮��ͳ�Ǥ��뤳
-�ȡ����ʤ������Υ���դ˱ƶ�����ʤ����Ȥ�����Ȥ��Ƥ���������ϡ��� 
-S1 ���ե����F1 �ˤ�ä������졢��Ԥ����� S0 ����˥ե���� F0 ���׵�
-������ˤ���������
+属性 "weight" の値は、normal, bold 等フォントの太さを表すシンボルであ
+る。
+
+属性 "style" の値は、normal, italic 等フォントのスラントを表すシンボル
+である。
+
+属性 "stretch" の値は、normal, semicondensed 等フォントの文字幅を表すシ
+ンボルである。
+
+属性 "adstyle" の値は、serif, sans-serif 等フォントの抽象的フォントファ
+ミリを表すシンボルである。
+
+属性 "registry" の値は、iso10646-1, iso8895-1 等フォントのレジストリを
+表すシンボルである。
 
 @verbatim
-  ��                            S0      S1
-  ���ԤΥե����                F0      F1
-  ���Ѳ�ǽ�ʥե����            F0      F1
+    <ref name="otf-specification"/>
 @endverbatim
 
-���������ˤϡ�������Τ˶��ڤ뤳�Ȥ��Ǥ��ʤ����⤢�롣��Ԥ����� S0
-�� F0 �����Ǥʤ� F1 �Ǥ�������Ȥ��褦��
+&lt;otf-specification&gt; は OTF ドライバへの指示を表し、以下のように定
+義される。
 
 @verbatim
-  ��                            S0      S1
-  ���ԤΥե����                F0      F1
-  ���Ѳ�ǽ�ʥե����            F0,F1   F1
+<define name="otf-specification">
+  <element name="otf">
+    <attribute name="script"/>
+    <optional><attribute name="langsys"/></optional>
+    <optional>
+      <element name="gsub-features">
+	<choice>
+	  <element name="positive-list">
+	    <zeroOrMore>
+	      <element name="feature">
+		<data type="string"><param name="length">4</param></data>
+	      </element>
+	    </zeroOrMore>
+	  </element>
+	  <element name="negative-list">
+	    <zeroOrMore>
+	      <element name="feature">
+		<data type="string"><param name="length">4</param></data>
+	      </element>
+	    </zeroOrMore>
+	  </element>
+	</choice>
+      </element>
+    </optional>
+    <optional>
+      <element name="gpos-features">
+	<choice>
+	  <element name="positive-list">
+	    <zeroOrMore>
+	      <element name="feature">
+		<data type="string"><param name="length">4</param></data>
+	      </element>
+	    </zeroOrMore>
+	  </element>
+	  <element name="negative-list">
+	    <zeroOrMore>
+	      <element name="feature">
+		<data type="string"><param name="length">4</param></data>
+	      </element>
+	    </zeroOrMore>
+	  </element>
+	</choice>
+      </element>
+    </optional>
+  </element>
+</define>
+
 @endverbatim
 
-���ξ�硢��Ԥ��� S0 ����������˻Ȥ�줿����դ� S1 �Υ���դ�������
-�ƶ���Ϳ���뤳�Ȥ⤢�롣������ S1 �ν����κݤˤ��Ǥ˽����ν��ä� S0 ��
-�ؤ������˥�����������ɬ�פ����롣�ǽ�Υ��ơ����ʤ��Υ��ơ����Τߡ�
-��������§�ϡ������Ѥߤ���ʬ�إ��������������̤�����ɽ��������Ƥ��롣
+属性 "script", "langsys" の値と"feature" 要素の内容は OpenType
+specification で定義されたタグ名でなければならない。
+
+属性 "script" はスクリプトタグ名を表す。(Devanagari は deva など。)
+
+属性 "langsys" の値は言語システムタグ名を表す。この属性がが省略されてい
+れば、デフォルトの言語システムテーブルが使用される。
+
+&lt;gsub-features&gt; エレメントは &lt;positive-list&gt; か
+&lt;negative-list&gt; のどちらかのリストを持つ。リスト中の
+&lt;feature&gt; エレメントは、適用するべき（でない） GSUB Feature
+feature タグ名を指定する。&lt;positive-list&gt; エレメントが
+&lt;feature&gt; エレメントをひとつも持たなければ、GSUB feature は適用さ
+れない。&lt;negative-list&gt; 要素が &lt;feature&gt; エレメントをひとつ
+も持たなければ、すべての GSUB featureが適用される。
+
+&lt;gpos-features&gt; エレメントは &lt;positive-list&gt; か
+&lt;negative-list&gt; のどちらかのリストを持つ。リスト中の
+&lt;feature&gt; エレメントは、適用するべき（でない） GPOS Feature
+feature タグ名を指定する。&lt;positive-list&gt; エレメントが
+&lt;feature&gt; エレメントをひとつも持たなければ、GPOS feature は適用さ
+れない。&lt;negative-list&gt; 要素が &lt;feature&gt; エレメントをひとつ
+も持たなければ、すべての GPOS featureが適用される。
+
+&lt;otf-specification&gt; エレメントが &lt;font-facility-block" 中に現
+れる場合、&lt;positive-list&gt; エレメントや &lt;negative-list&gt; エレ
+メントは、フォントが持つべき（でない） feature を指定する。
+
+OpenType の指定方法については 
+&lt;http://www.microsoft.com/typography/otspec/default.htmglt;
+を参照のこと。
+
+@verbatim
+    <element name="combining-specification">
+      <attribute name="v-pos1">
+	<choice><value>t</value><value>c</value><value>b</value><value>B</value></choice>
+      </attribute>
+      <attribute name="v-pos2">
+	<choice><value>t</value><value>c</value><value>b</value><value>B</value></choice>
+      </attribute>
+      <attribute name="h-pos1">
+	<choice><value>l</value><value>c</value><value>r</value></choice>
+      </attribute>
+      <attribute name="h-pos2">
+	<choice><value>l</value><value>c</value><value>r</value></choice>
+      </attribute>
+      <optional>
+	    <attribute name="x-direction"><choice><value>right</value><value>left</value></choice></attribute>
+	    <optional><attribute name="x-amount"><data type="integer"/></attribute></optional>
+      </optional>
+      <optional>
+	    <attribute name="y-direction"><choice><value>up</value><value>down</value></choice></attribute>
+	    <optional><attribute name="y-amount"><data type="integer"/></attribute></optional>
+      </optional>
+    </element>
+@endverbatim
+
+&lt;combining-specification&gt; エレメントは次のグリフを前のグリフとど
+のように結合させるかを指定する。またデフォルトの結合規則を指定する。
+
+このエレメントは、グリフ毎に１つの参照点を定め、その参照点同士がグリフ
+が描画される際にどのような相対位置にあるかを指定する。
+
+属性 "v-pos1", "v-pos2" はそれぞれ前のグリフと次のグリフの参照点の垂直
+位置を示す。この属性が取り得る値は、"t", "c", "B", "b" であり、それぞれ
+グリフの表示領域の上端、中心、ベースライン、下端を示す。
+
+属性 "h-pos1", "h-pos2" はそれぞれ前のグリフと次のグリフの参照点の水平
+位置を示す。この属性が取り得る値は、"l", "c", "r" であり、それぞれグリ
+フの表示領域の左端、中心、右端を示す。
+
+次の図に可能な参照点を示す。
+
+@verbatim
+                                      v-pos  h-pos
+                                ----- ----   ----
+    0----1----2 <---- top       0     t      l
+    |         |                 1     t      c
+    |         |                 2     t      r
+    |         |                 3     B      l
+    9   10   11 <---- center    4     B      c
+    |         |                 5     B      r
+  --3----4----5-- <-- baseline  6     b      l
+    |         |                 7     b      c
+    6----7----8 <---- bottom    8     b      r
+                                9     c      l
+    |    |    |                10     c      c
+  left center right            11     c      r
+@endverbatim
+
+
+左側の図はあるグリフの 12 の参照点を 0 から 11 までの数字で示している。
+四角形 0-6-8-2 はグリフの表示領域であり、位置3, 4, 5 はベースライン上に
+ある。 9, 10, 11 は表示領域の高さを二分する位置にあり、1, 10, 4, 7 は表
+示領域の幅を二分する位置にある。
+
+各参照点の属性 "v-pos1" と "h-pos1" （あるいは "v-pos2" と "h-pos2"）の
+値を右側の表に示す。
+
+属性 "x-direction", "x-amount", "y-direction", "y-amount" は参照点の相
+対位置を指定する。"x-direction" も "y-direction" も省略されていれば、２
+つグリフの参照点は同じ位置に重なっている。
+
+属性 "x-direction" の値は "right" か "left" であり、次のグリフの参照点
+のx座標が前のグリフの参照点のx座標よりそれぞれ右あるいは左にずれること
+を意味する。属性 "y-direction" の値は "up" か "down" であり、次のグリフ
+の参照点のy座標が前のグリフの参照点のy座標よりそれぞれ上あるいは下にず
+れることを意味する。
+
+属性 "x-amount" と "y-amount" の値は、ずらす量をフォントサイズの1/100単
+位で指定する。つまり値が10であれば、フォントサイズの10% (1/10) ずらす。
+属性 "x-amount" や "y-amount" が省略されていれば、デフォルト値の 5 が用
+いられる。
+
+次のグリフが前のグリフに結合されると、それらは一つの結合グリフとして扱
+われる。
+
+@section flt-context-dependent 文脈に依存するふるまい
+
+ここまでは、特定のフォントで描かれる各文字／グリフ列が文脈自由であるこ
+と、すなわち前後のグリフに影響されないことを前提としてきた。これは、列 
+S1 がフォントF1 によって描かれ、先行する列 S0 が常にフォント F0 を要求
+する場合には正しい。
+
+@verbatim
+  列                            S0      S1
+  現行のフォント                F0      F1
+  利用可能なフォント            F0      F1
+@endverbatim
+
+しかし時には、列を明確に区切ることができない場合もある。先行する列 S0
+が F0 だけでなく F1 でも描けるとしよう。
+
+@verbatim
+  列                            S0      S1
+  現行のフォント                F0      F1
+  利用可能なフォント            F0,F1   F1
+@endverbatim
+
+この場合、先行する S0 を描くために使われたグリフが S1 のグリフの生成に
+影響を与えることもある。そこで S1 の処理の際にすでに処理の終った S0 に
+関する情報にアクセスする必要がある。最初のステージ（このステージのみ）
+の生成規則は、処理済みの部分へアクセスする特別な正規表現を許している。
 
 @verbatim
   "RE0 RE1"
 @endverbatim
 
-@c RE0 �� @c RE1 ����Ԥ��� S0 �ȸ�³���� S1 �ˤ��줾���б���������ɽ
-���Ǥ��롣
+@c RE0 と @c RE1 は先行の列 S0 と後続の列 S1 にそれぞれ対応する正規表
+現である。
 
-��Ĥ�����ɽ���δ֤Υ��ڡ��������ա���������̤ʥ��ƥ��� ' ' �򼨤���
-���� (�嵭����) ����������ɽ���ϥե���� F1 ����Ѥ��륰���������§��
-°���Ƥ��ꡢ�������ä� RE1 �����Ǥʤ�RE0 �� F1 �ѤΥ��ƥ�����Ѥ���ɽ
-������ʤ���Фʤ�ʤ����Ĥޤꡢ��Ԥ�����S0 �� F1 �ѤΥ��ƥ����ɽ��
-�ʤ����ˤ�(��κǽ����Τ褦��) ���Υѥ���������������§�ˤϹ���
-���ʤ���
+二つの正規表現の間のスペースに注意。これは特別なカテゴリ ' ' を示して
+いる (上記参照) 。この正規表現はフォント F1 を使用するグリフ生成規則に
+属しており、したがって RE1 だけでなくRE0 も F1 用のカテゴリを用いて表
+現されなければならない。つまり、先行する列S0 が F1 用のカテゴリで表せ
+ない場合には(上の最初の例のように) このパターンを持つ生成規則には合致
+しない。
 
-@section flt-seealso ����
+@section flt-seealso 参照
 
 @ref mdbGeneral "mdbGeneral(5)", 
 @ref flt-list "FLTs provided by the m17n database"

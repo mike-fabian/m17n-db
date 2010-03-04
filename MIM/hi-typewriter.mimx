@@ -9,417 +9,817 @@ Still experimental.
 </description>
   <title>क</title>
   <map-list>
-    <map id="map-consonant">
+    <map mname="map-consonant">
       <rule>
-        <keyseq keys="!"/>
-        <insert character="2317"/>
+        <keyseq>
+          <string>!</string>
+        </keyseq>
+        <insert>
+          <integer>2317</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="+"/>
-        <insert character="2315"/>
+        <keyseq>
+          <string>+</string>
+        </keyseq>
+        <insert>
+          <integer>2315</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="Q"/>
-        <insert character="2324"/>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <insert>
+          <integer>2324</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="W"/>
-        <insert character="2320"/>
+        <keyseq>
+          <string>W</string>
+        </keyseq>
+        <insert>
+          <integer>2320</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="E"/>
-        <insert character="2310"/>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <insert>
+          <integer>2310</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="R"/>
-        <insert character="2312"/>
+        <keyseq>
+          <string>R</string>
+        </keyseq>
+        <insert>
+          <integer>2312</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="T"/>
-        <insert character="2314"/>
+        <keyseq>
+          <string>T</string>
+        </keyseq>
+        <insert>
+          <integer>2314</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="Y"/>
-        <insert character="2349"/>
+        <keyseq>
+          <string>Y</string>
+        </keyseq>
+        <insert>
+          <integer>2349</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="y"/>
-        <insert character="2348"/>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <insert>
+          <integer>2348</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="U"/>
-        <insert character="2329"/>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert>
+          <integer>2329</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="u"/>
-        <insert character="2361"/>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <integer>2361</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="I"/>
-        <insert character="2328"/>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <insert>
+          <integer>2328</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="i"/>
-        <insert character="2327"/>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert>
+          <integer>2327</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="O"/>
-        <insert character="2343"/>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+        <insert>
+          <integer>2343</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="o"/>
-        <insert character="2342"/>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <integer>2342</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="P"/>
-        <insert character="2333"/>
+        <keyseq>
+          <string>P</string>
+        </keyseq>
+        <insert>
+          <integer>2333</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="p"/>
-        <insert character="2332"/>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+        <insert>
+          <integer>2332</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="{"/>
-        <insert character="2338"/>
+        <keyseq>
+          <string>{</string>
+        </keyseq>
+        <insert>
+          <integer>2338</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="["/>
-        <insert character="2337"/>
+        <keyseq>
+          <string>[</string>
+        </keyseq>
+        <insert>
+          <integer>2337</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="}"/>
-        <insert character="2334"/>
+        <keyseq>
+          <string>}</string>
+        </keyseq>
+        <insert>
+          <integer>2334</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="A"/>
-        <insert character="2323"/>
+        <keyseq>
+          <string>A</string>
+        </keyseq>
+        <insert>
+          <integer>2323</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="S"/>
-        <insert character="2319"/>
+        <keyseq>
+          <string>S</string>
+        </keyseq>
+        <insert>
+          <integer>2319</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="D"/>
-        <insert character="2309"/>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <insert>
+          <integer>2309</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="F"/>
-        <insert character="2311"/>
+        <keyseq>
+          <string>F</string>
+        </keyseq>
+        <insert>
+          <integer>2311</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="G"/>
-        <insert character="2313"/>
+        <keyseq>
+          <string>G</string>
+        </keyseq>
+        <insert>
+          <integer>2313</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="H"/>
-        <insert character="2347"/>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <insert>
+          <integer>2347</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="h"/>
-        <insert character="2346"/>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <insert>
+          <integer>2346</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="J"/>
-        <insert character="2353"/>
+        <keyseq>
+          <string>J</string>
+        </keyseq>
+        <insert>
+          <integer>2353</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="j"/>
-        <insert character="2352"/>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+        <insert>
+          <integer>2352</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="K"/>
-        <insert character="2326"/>
+        <keyseq>
+          <string>K</string>
+        </keyseq>
+        <insert>
+          <integer>2326</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="k"/>
-        <insert character="2325"/>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <integer>2325</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="L"/>
-        <insert character="2341"/>
+        <keyseq>
+          <string>L</string>
+        </keyseq>
+        <insert>
+          <integer>2341</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="l"/>
-        <insert character="2340"/>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+        <insert>
+          <integer>2340</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys=":"/>
-        <insert character="2331"/>
+        <keyseq>
+          <string>:</string>
+        </keyseq>
+        <insert>
+          <integer>2331</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys=";"/>
-        <insert character="2330"/>
+        <keyseq>
+          <string>;</string>
+        </keyseq>
+        <insert>
+          <integer>2330</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="&quot;"/>
-        <insert character="2336"/>
+        <keyseq>
+          <string>"</string>
+        </keyseq>
+        <insert>
+          <integer>2336</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="&apos;"/>
-        <insert character="2335"/>
+        <keyseq>
+          <string>'</string>
+        </keyseq>
+        <insert>
+          <integer>2335</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="|"/>
-        <insert character="2321"/>
+        <keyseq>
+          <string>|</string>
+        </keyseq>
+        <insert>
+          <integer>2321</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="~"/>
-        <insert character="2322"/>
+        <keyseq>
+          <string>~</string>
+        </keyseq>
+        <insert>
+          <integer>2322</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="Z"/>
-        <insert character="2318"/>
+        <keyseq>
+          <string>Z</string>
+        </keyseq>
+        <insert>
+          <integer>2318</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="C"/>
-        <insert character="2339"/>
+        <keyseq>
+          <string>C</string>
+        </keyseq>
+        <insert>
+          <integer>2339</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="c"/>
-        <insert character="2350"/>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <insert>
+          <integer>2350</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="V"/>
-        <insert character="2345"/>
+        <keyseq>
+          <string>V</string>
+        </keyseq>
+        <insert>
+          <integer>2345</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="v"/>
-        <insert character="2344"/>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert>
+          <integer>2344</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="B"/>
-        <insert character="2356"/>
+        <keyseq>
+          <string>B</string>
+        </keyseq>
+        <insert>
+          <integer>2356</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="b"/>
-        <insert character="2357"/>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <insert>
+          <integer>2357</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="N"/>
-        <insert character="2355"/>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+        <insert>
+          <integer>2355</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="n"/>
-        <insert character="2354"/>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <integer>2354</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="M"/>
-        <insert character="2358"/>
+        <keyseq>
+          <string>M</string>
+        </keyseq>
+        <insert>
+          <integer>2358</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="m"/>
-        <insert character="2360"/>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <integer>2360</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="&lt;"/>
-        <insert character="2359"/>
+        <keyseq>
+          <string>&lt;</string>
+        </keyseq>
+        <insert>
+          <integer>2359</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="/"/>
-        <insert character="2351"/>
+        <keyseq>
+          <string>/</string>
+        </keyseq>
+        <insert>
+          <integer>2351</integer>
+        </insert>
       </rule>
     </map>
-    <map id="map-halant">
+    <map mname="map-halant">
       <rule>
-        <keyseq keys="d"/>
-        <insert character="2381"/>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <insert>
+          <integer>2381</integer>
+        </insert>
       </rule>
     </map>
-    <map id="map-vowel-I">
+    <map mname="map-vowel-I">
       <rule>
-        <keyseq keys="f"/>
-        <insert character="2367"/>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+        <insert>
+          <integer>2367</integer>
+        </insert>
       </rule>
     </map>
-    <map id="map-else">
+    <map mname="map-else">
       <rule>
-        <keyseq keys="1"/>
-        <insert character="2407"/>
+        <keyseq>
+          <string>1</string>
+        </keyseq>
+        <insert>
+          <integer>2407</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="@"/>
-        <insert character="2373"/>
+        <keyseq>
+          <string>@</string>
+        </keyseq>
+        <insert>
+          <integer>2373</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="2"/>
-        <insert character="2408"/>
+        <keyseq>
+          <string>2</string>
+        </keyseq>
+        <insert>
+          <integer>2408</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="#"/>
-        <insert character="35"/>
+        <keyseq>
+          <string>#</string>
+        </keyseq>
+        <insert>
+          <integer>35</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="3"/>
-        <insert character="2409"/>
+        <keyseq>
+          <string>3</string>
+        </keyseq>
+        <insert>
+          <integer>2409</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="$"/>
-        <insert character="36"/>
+        <keyseq>
+          <string>$</string>
+        </keyseq>
+        <insert>
+          <integer>36</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="4"/>
-        <insert character="2410"/>
+        <keyseq>
+          <string>4</string>
+        </keyseq>
+        <insert>
+          <integer>2410</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="5"/>
-        <insert character="2411"/>
+        <keyseq>
+          <string>5</string>
+        </keyseq>
+        <insert>
+          <integer>2411</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="6"/>
-        <insert character="2412"/>
+        <keyseq>
+          <string>6</string>
+        </keyseq>
+        <insert>
+          <integer>2412</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="7"/>
-        <insert character="2413"/>
+        <keyseq>
+          <string>7</string>
+        </keyseq>
+        <insert>
+          <integer>2413</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="8"/>
-        <insert character="2414"/>
+        <keyseq>
+          <string>8</string>
+        </keyseq>
+        <insert>
+          <integer>2414</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="("/>
-        <insert character="40"/>
+        <keyseq>
+          <string>(</string>
+        </keyseq>
+        <insert>
+          <integer>40</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="9"/>
-        <insert character="2415"/>
+        <keyseq>
+          <string>9</string>
+        </keyseq>
+        <insert>
+          <integer>2415</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys=")"/>
-        <insert character="41"/>
+        <keyseq>
+          <string>)</string>
+        </keyseq>
+        <insert>
+          <integer>41</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="0"/>
-        <insert character="2406"/>
+        <keyseq>
+          <string>0</string>
+        </keyseq>
+        <insert>
+          <integer>2406</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="_"/>
-        <insert character="2307"/>
+        <keyseq>
+          <string>_</string>
+        </keyseq>
+        <insert>
+          <integer>2307</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="-"/>
-        <insert character="45"/>
+        <keyseq>
+          <string>-</string>
+        </keyseq>
+        <insert>
+          <integer>45</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="="/>
-        <insert character="2371"/>
+        <keyseq>
+          <string>=</string>
+        </keyseq>
+        <insert>
+          <integer>2371</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="q"/>
-        <insert character="2380"/>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <insert>
+          <integer>2380</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="w"/>
-        <insert character="2376"/>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+        <insert>
+          <integer>2376</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="e"/>
-        <insert character="2366"/>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <insert>
+          <integer>2366</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="r"/>
-        <insert character="2368"/>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+        <insert>
+          <integer>2368</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="t"/>
-        <insert character="2370"/>
+        <keyseq>
+          <string>t</string>
+        </keyseq>
+        <insert>
+          <integer>2370</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="]"/>
-        <insert character="2364"/>
+        <keyseq>
+          <string>]</string>
+        </keyseq>
+        <insert>
+          <integer>2364</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="a"/>
-        <insert character="2379"/>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+        <insert>
+          <integer>2379</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="s"/>
-        <insert character="2375"/>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+        <insert>
+          <integer>2375</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="g"/>
-        <insert character="2369"/>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <integer>2369</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="\"/>
-        <insert character="2377"/>
+        <keyseq>
+          <string>\</string>
+        </keyseq>
+        <insert>
+          <integer>2377</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="`"/>
-        <insert character="2378"/>
+        <keyseq>
+          <string>`</string>
+        </keyseq>
+        <insert>
+          <integer>2378</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="z"/>
-        <insert character="2374"/>
+        <keyseq>
+          <string>z</string>
+        </keyseq>
+        <insert>
+          <integer>2374</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="X"/>
-        <insert character="2305"/>
+        <keyseq>
+          <string>X</string>
+        </keyseq>
+        <insert>
+          <integer>2305</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="x"/>
-        <insert character="2306"/>
+        <keyseq>
+          <string>x</string>
+        </keyseq>
+        <insert>
+          <integer>2306</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys=","/>
-        <insert character="44"/>
+        <keyseq>
+          <string>,</string>
+        </keyseq>
+        <insert>
+          <integer>44</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="&gt;"/>
-        <insert character="2404"/>
+        <keyseq>
+          <string>&gt;</string>
+        </keyseq>
+        <insert>
+          <integer>2404</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="."/>
-        <insert character="46"/>
+        <keyseq>
+          <string>.</string>
+        </keyseq>
+        <insert>
+          <integer>46</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="?"/>
-        <insert character="2399"/>
+        <keyseq>
+          <string>?</string>
+        </keyseq>
+        <insert>
+          <integer>2399</integer>
+        </insert>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <branch branch-selecting-map="map-consonant"/>
-      <branch branch-selecting-map="map-halant"/>
-      <branch branch-selecting-map="map-else"/>
-      <branch branch-selecting-map="map-vowel-I">
-        <shift-to id="state-after-vowel-I"/>
+    <state sname="state-init">
+      <branch mname="map-consonant"/>
+      <branch mname="map-halant"/>
+      <branch mname="map-else"/>
+      <branch mname="map-vowel-I">
+        <shift>
+          <symbol>state-after-vowel-I</symbol>
+        </shift>
       </branch>
     </state>
-    <state id="state-after-vowel-I">
-      <branch branch-selecting-map="map-consonant">
-        <move-to-marker position="@first"/>
-        <delete-to-marker position="@next"/>
-        <move-to-marker position="@last"/>
-        <insert string="ि"/>
-        <shift-to id="state-after-consonant"/>
+    <state sname="state-after-vowel-I">
+      <branch mname="map-consonant">
+        <move>
+          <marker>@&lt;</marker>
+        </move>
+        <delete>
+          <marker>@+</marker>
+        </delete>
+        <move>
+          <marker>@&gt;</marker>
+        </move>
+        <insert>
+          <string>ि</string>
+        </insert>
+        <shift>
+          <symbol>state-after-consonant</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-vowel-I">
-        <delete-to-marker position="@previous"/>
-        <pushback-n-events n="1"/>
-        <shift-to id="state-init"/>
+      <branch mname="map-vowel-I">
+        <delete>
+          <marker>@-</marker>
+        </delete>
+        <pushback>
+          <integer>1</integer>
+        </pushback>
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
       <catch-all-branch>
-        <shift-to id="state-init"/>
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </catch-all-branch>
     </state>
-    <state id="state-after-consonant">
-      <branch branch-selecting-map="map-halant">
-        <move-to-marker position="@previous"/>
-        <delete-to-marker position="@previous"/>
-        <move-to-marker position="@last"/>
-        <insert string="ि"/>
-        <shift-to id="state-after-consonant-halant"/>
+    <state sname="state-after-consonant">
+      <branch mname="map-halant">
+        <move>
+          <marker>@-</marker>
+        </move>
+        <delete>
+          <marker>@-</marker>
+        </delete>
+        <move>
+          <marker>@&gt;</marker>
+        </move>
+        <insert>
+          <string>ि</string>
+        </insert>
+        <shift>
+          <symbol>state-after-consonant-halant</symbol>
+        </shift>
       </branch>
     </state>
-    <state id="state-after-consonant-halant">
-      <branch branch-selecting-map="map-consonant">
-        <move-to-marker position="@previous"/>
-        <delete-to-marker position="@previous"/>
-        <move-to-marker position="@last"/>
-        <insert string="ि"/>
-        <shift-to id="state-after-consonant"/>
+    <state sname="state-after-consonant-halant">
+      <branch mname="map-consonant">
+        <move>
+          <marker>@-</marker>
+        </move>
+        <delete>
+          <marker>@-</marker>
+        </delete>
+        <move>
+          <marker>@&gt;</marker>
+        </move>
+        <insert>
+          <string>ि</string>
+        </insert>
+        <shift>
+          <symbol>state-after-consonant</symbol>
+        </shift>
       </branch>
     </state>
   </state-list>

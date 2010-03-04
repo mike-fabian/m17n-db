@@ -1,8 +1,5 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
-<!--
-Input method for Lao using Lao keyboard layout.
--->
   <tags>
     <language>lo</language>
     <name>kbd</name>
@@ -19,428 +16,844 @@ In addition, Lao digits are assigned to these keys:
 </description>
   <title>ລ</title>
   <map-list>
-    <map id="map-map">
-      <rule>
-        <keyseq keys="!"/>
-        <insert character="49"/>
-      </rule>
-      <rule>
-        <keyseq keys="&quot;"/>
-        <insert character="61"/>
-      </rule>
-      <rule>
-        <keyseq keys="#"/>
-        <insert character="51"/>
-      </rule>
-      <rule>
-        <keyseq keys="$"/>
-        <insert character="52"/>
-      </rule>
-      <rule>
-        <keyseq keys="&amp;"/>
-        <insert character="53"/>
-      </rule>
-      <rule>
-        <keyseq keys="%"/>
-        <insert character="3788"/>
-      </rule>
-      <rule>
-        <keyseq keys="&apos;"/>
-        <insert character="3719"/>
-      </rule>
-      <rule>
-        <keyseq keys="("/>
-        <insert character="55"/>
-      </rule>
-      <rule>
-        <keyseq keys=")"/>
-        <insert character="56"/>
-      </rule>
-      <rule>
-        <keyseq keys="*"/>
-        <insert character="54"/>
-      </rule>
-      <rule>
-        <keyseq keys="+"/>
-        <insert string="ໍ່"/>
+    <map mname="map-map">
+      <rule>
+        <keyseq>
+          <string>!</string>
+        </keyseq>
+        <insert>
+          <integer>49</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=","/>
-        <insert character="3745"/>
-      </rule>
-      <rule>
-        <keyseq keys="-"/>
-        <insert character="3722"/>
-      </rule>
-      <rule>
-        <keyseq keys="."/>
-        <insert character="3779"/>
+      <rule>
+        <keyseq>
+          <string>"</string>
+        </keyseq>
+        <insert>
+          <integer>61</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="/"/>
-        <insert character="3741"/>
+      <rule>
+        <keyseq>
+          <string>#</string>
+        </keyseq>
+        <insert>
+          <integer>51</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="0"/>
-        <insert character="3714"/>
+      <rule>
+        <keyseq>
+          <string>$</string>
+        </keyseq>
+        <insert>
+          <integer>52</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="1"/>
-        <insert character="3746"/>
+      <rule>
+        <keyseq>
+          <string>&amp;</string>
+        </keyseq>
+        <insert>
+          <integer>53</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="2"/>
-        <insert character="3743"/>
+      <rule>
+        <keyseq>
+          <string>%</string>
+        </keyseq>
+        <insert>
+          <integer>3788</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="3"/>
-        <insert character="3778"/>
+      <rule>
+        <keyseq>
+          <string>'</string>
+        </keyseq>
+        <insert>
+          <integer>3719</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="4"/>
-        <insert character="3734"/>
+      <rule>
+        <keyseq>
+          <string>(</string>
+        </keyseq>
+        <insert>
+          <integer>55</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="5"/>
-        <insert character="3768"/>
+      <rule>
+        <keyseq>
+          <string>)</string>
+        </keyseq>
+        <insert>
+          <integer>56</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="6"/>
-        <insert character="3769"/>
+      <rule>
+        <keyseq>
+          <string>*</string>
+        </keyseq>
+        <insert>
+          <integer>54</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="7"/>
-        <insert character="3716"/>
+      <rule>
+        <keyseq>
+          <string>+</string>
+        </keyseq>
+        <insert>
+          <string>ໍ່</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="8"/>
-        <insert character="3733"/>
+      <rule>
+        <keyseq>
+          <string>,</string>
+        </keyseq>
+        <insert>
+          <integer>3745</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="9"/>
-        <insert character="3720"/>
+      <rule>
+        <keyseq>
+          <string>-</string>
+        </keyseq>
+        <insert>
+          <integer>3722</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=":"/>
-        <insert character="37"/>
+      <rule>
+        <keyseq>
+          <string>.</string>
+        </keyseq>
+        <insert>
+          <integer>3779</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";"/>
-        <insert character="3751"/>
+      <rule>
+        <keyseq>
+          <string>/</string>
+        </keyseq>
+        <insert>
+          <integer>3741</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="&lt;"/>
-        <insert character="3805"/>
+      <rule>
+        <keyseq>
+          <string>0</string>
+        </keyseq>
+        <insert>
+          <integer>3714</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="="/>
-        <insert character="3789"/>
+      <rule>
+        <keyseq>
+          <string>1</string>
+        </keyseq>
+        <insert>
+          <integer>3746</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="&gt;"/>
-        <insert character="36"/>
+      <rule>
+        <keyseq>
+          <string>2</string>
+        </keyseq>
+        <insert>
+          <integer>3743</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="?"/>
-        <insert character="41"/>
+      <rule>
+        <keyseq>
+          <string>3</string>
+        </keyseq>
+        <insert>
+          <integer>3778</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="@"/>
-        <insert character="50"/>
+      <rule>
+        <keyseq>
+          <string>4</string>
+        </keyseq>
+        <insert>
+          <integer>3734</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="A"/>
-        <insert string="ັ້"/>
+      <rule>
+        <keyseq>
+          <string>5</string>
+        </keyseq>
+        <insert>
+          <integer>3768</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="B"/>
-        <insert string="ຶ້"/>
+      <rule>
+        <keyseq>
+          <string>6</string>
+        </keyseq>
+        <insert>
+          <integer>3769</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="C"/>
-        <insert character="3759"/>
+      <rule>
+        <keyseq>
+          <string>7</string>
+        </keyseq>
+        <insert>
+          <integer>3716</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="D"/>
-        <insert character="46"/>
+      <rule>
+        <keyseq>
+          <string>8</string>
+        </keyseq>
+        <insert>
+          <integer>3733</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="E"/>
-        <insert string="ຳ້"/>
+      <rule>
+        <keyseq>
+          <string>9</string>
+        </keyseq>
+        <insert>
+          <integer>3720</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="F"/>
-        <insert character="44"/>
+      <rule>
+        <keyseq>
+          <string>:</string>
+        </keyseq>
+        <insert>
+          <integer>37</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="G"/>
-        <insert character="58"/>
+      <rule>
+        <keyseq>
+          <string>;</string>
+        </keyseq>
+        <insert>
+          <integer>3751</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="H"/>
-        <insert character="3786"/>
+      <rule>
+        <keyseq>
+          <string>&lt;</string>
+        </keyseq>
+        <insert>
+          <integer>3805</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="I"/>
-        <insert character="3758"/>
+      <rule>
+        <keyseq>
+          <string>=</string>
+        </keyseq>
+        <insert>
+          <integer>3789</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="J"/>
-        <insert character="3787"/>
+      <rule>
+        <keyseq>
+          <string>&gt;</string>
+        </keyseq>
+        <insert>
+          <integer>36</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="K"/>
-        <insert character="33"/>
+      <rule>
+        <keyseq>
+          <string>?</string>
+        </keyseq>
+        <insert>
+          <integer>41</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="L"/>
-        <insert character="63"/>
+      <rule>
+        <keyseq>
+          <string>@</string>
+        </keyseq>
+        <insert>
+          <integer>50</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="M"/>
-        <insert character="3782"/>
+      <rule>
+        <keyseq>
+          <string>A</string>
+        </keyseq>
+        <insert>
+          <string>ັ້</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="N"/>
-        <insert string="ື້"/>
+      <rule>
+        <keyseq>
+          <string>B</string>
+        </keyseq>
+        <insert>
+          <string>ຶ້</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="O"/>
-        <insert character="3804"/>
+      <rule>
+        <keyseq>
+          <string>C</string>
+        </keyseq>
+        <insert>
+          <integer>3759</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="P"/>
-        <insert character="3773"/>
+      <rule>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <insert>
+          <integer>46</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="Q"/>
-        <insert string="ົ້"/>
+      <rule>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <insert>
+          <string>ຳ້</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="R"/>
-        <insert character="95"/>
+      <rule>
+        <keyseq>
+          <string>F</string>
+        </keyseq>
+        <insert>
+          <integer>44</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="S"/>
-        <insert character="59"/>
+      <rule>
+        <keyseq>
+          <string>G</string>
+        </keyseq>
+        <insert>
+          <integer>58</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="T"/>
-        <insert character="43"/>
+      <rule>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <insert>
+          <integer>3786</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="U"/>
-        <insert string="ີ້"/>
+      <rule>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <insert>
+          <integer>3758</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="V"/>
-        <insert character="120"/>
+      <rule>
+        <keyseq>
+          <string>J</string>
+        </keyseq>
+        <insert>
+          <integer>3787</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="W"/>
-        <insert character="48"/>
+      <rule>
+        <keyseq>
+          <string>K</string>
+        </keyseq>
+        <insert>
+          <integer>33</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="X"/>
-        <insert character="40"/>
+      <rule>
+        <keyseq>
+          <string>L</string>
+        </keyseq>
+        <insert>
+          <integer>63</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="Y"/>
-        <insert string="ິ້"/>
+      <rule>
+        <keyseq>
+          <string>M</string>
+        </keyseq>
+        <insert>
+          <integer>3782</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="Z"/>
-        <insert character="34"/>
+      <rule>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+        <insert>
+          <string>ື້</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="["/>
-        <insert character="3738"/>
+      <rule>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+        <insert>
+          <integer>3804</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="]"/>
-        <insert character="3749"/>
+      <rule>
+        <keyseq>
+          <string>P</string>
+        </keyseq>
+        <insert>
+          <integer>3773</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="^"/>
-        <insert character="3772"/>
+      <rule>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <insert>
+          <string>ົ້</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="_"/>
-        <insert character="57"/>
+      <rule>
+        <keyseq>
+          <string>R</string>
+        </keyseq>
+        <insert>
+          <integer>95</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="`"/>
-        <insert character="42"/>
+      <rule>
+        <keyseq>
+          <string>S</string>
+        </keyseq>
+        <insert>
+          <integer>59</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="a"/>
-        <insert character="3761"/>
+      <rule>
+        <keyseq>
+          <string>T</string>
+        </keyseq>
+        <insert>
+          <integer>43</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="b"/>
-        <insert character="3766"/>
+      <rule>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert>
+          <string>ີ້</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="c"/>
-        <insert character="3777"/>
+      <rule>
+        <keyseq>
+          <string>V</string>
+        </keyseq>
+        <insert>
+          <integer>120</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <insert character="3713"/>
+      <rule>
+        <keyseq>
+          <string>W</string>
+        </keyseq>
+        <insert>
+          <integer>48</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <insert character="3763"/>
+      <rule>
+        <keyseq>
+          <string>X</string>
+        </keyseq>
+        <insert>
+          <integer>40</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="f"/>
-        <insert character="3732"/>
+      <rule>
+        <keyseq>
+          <string>Y</string>
+        </keyseq>
+        <insert>
+          <string>ິ້</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="g"/>
-        <insert character="3776"/>
+      <rule>
+        <keyseq>
+          <string>Z</string>
+        </keyseq>
+        <insert>
+          <integer>34</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="h"/>
-        <insert character="3785"/>
+      <rule>
+        <keyseq>
+          <string>[</string>
+        </keyseq>
+        <insert>
+          <integer>3738</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="i"/>
-        <insert character="3747"/>
+      <rule>
+        <keyseq>
+          <string>]</string>
+        </keyseq>
+        <insert>
+          <integer>3749</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="j"/>
-        <insert character="3784"/>
+      <rule>
+        <keyseq>
+          <string>^</string>
+        </keyseq>
+        <insert>
+          <integer>3772</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="k"/>
-        <insert character="3762"/>
+      <rule>
+        <keyseq>
+          <string>_</string>
+        </keyseq>
+        <insert>
+          <integer>57</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="l"/>
-        <insert character="3754"/>
+      <rule>
+        <keyseq>
+          <string>`</string>
+        </keyseq>
+        <insert>
+          <integer>42</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="m"/>
-        <insert character="3735"/>
+      <rule>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+        <insert>
+          <integer>3761</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="n"/>
-        <insert character="3767"/>
+      <rule>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <insert>
+          <integer>3766</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="o"/>
-        <insert character="3737"/>
+      <rule>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <insert>
+          <integer>3777</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="p"/>
-        <insert character="3725"/>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <insert>
+          <integer>3713</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="q"/>
-        <insert character="3771"/>
+      <rule>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <insert>
+          <integer>3763</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="r"/>
-        <insert character="3742"/>
+      <rule>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+        <insert>
+          <integer>3732</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="s"/>
-        <insert character="3755"/>
+      <rule>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <integer>3776</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="t"/>
-        <insert character="3760"/>
+      <rule>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <insert>
+          <integer>3785</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="u"/>
-        <insert character="3765"/>
+      <rule>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert>
+          <integer>3747</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="v"/>
-        <insert character="3757"/>
+      <rule>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+        <insert>
+          <integer>3784</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="w"/>
-        <insert character="3780"/>
+      <rule>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <integer>3762</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="x"/>
-        <insert character="3739"/>
+      <rule>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+        <insert>
+          <integer>3754</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="y"/>
-        <insert character="3764"/>
+      <rule>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <integer>3735</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="z"/>
-        <insert character="3740"/>
+      <rule>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <integer>3767</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="{"/>
-        <insert character="45"/>
+      <rule>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <integer>3737</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="|"/>
-        <insert string="ຫຼ"/>
+      <rule>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+        <insert>
+          <integer>3725</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="}"/>
-        <insert character="47"/>
+      <rule>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <insert>
+          <integer>3771</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="~"/>
-        <insert character="3788"/>
+      <rule>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+        <insert>
+          <integer>3742</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="\\"/>
-        <insert character="92"/>
+      <rule>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+        <insert>
+          <integer>3755</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="\0"/>
-        <insert character="3792"/>
+      <rule>
+        <keyseq>
+          <string>t</string>
+        </keyseq>
+        <insert>
+          <integer>3760</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="\1"/>
-        <insert character="3793"/>
+      <rule>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <integer>3765</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="\2"/>
-        <insert character="3794"/>
+      <rule>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert>
+          <integer>3757</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="\3"/>
-        <insert character="3795"/>
+      <rule>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+        <insert>
+          <integer>3780</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="\4"/>
-        <insert character="3796"/>
+      <rule>
+        <keyseq>
+          <string>x</string>
+        </keyseq>
+        <insert>
+          <integer>3739</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="\5"/>
-        <insert character="3797"/>
+      <rule>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <insert>
+          <integer>3764</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="\6"/>
-        <insert character="3798"/>
+      <rule>
+        <keyseq>
+          <string>z</string>
+        </keyseq>
+        <insert>
+          <integer>3740</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="\7"/>
-        <insert character="3799"/>
+      <rule>
+        <keyseq>
+          <string>{</string>
+        </keyseq>
+        <insert>
+          <integer>45</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="\8"/>
-        <insert character="3800"/>
+      <rule>
+        <keyseq>
+          <string>|</string>
+        </keyseq>
+        <insert>
+          <string>ຫຼ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="\9"/>
-        <insert character="3801"/>
+      <rule>
+        <keyseq>
+          <string>}</string>
+        </keyseq>
+        <insert>
+          <integer>47</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>~</string>
+        </keyseq>
+        <insert>
+          <integer>3788</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\\</string>
+        </keyseq>
+        <insert>
+          <integer>92</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\0</string>
+        </keyseq>
+        <insert>
+          <integer>3792</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\1</string>
+        </keyseq>
+        <insert>
+          <integer>3793</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\2</string>
+        </keyseq>
+        <insert>
+          <integer>3794</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\3</string>
+        </keyseq>
+        <insert>
+          <integer>3795</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\4</string>
+        </keyseq>
+        <insert>
+          <integer>3796</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\5</string>
+        </keyseq>
+        <insert>
+          <integer>3797</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\6</string>
+        </keyseq>
+        <insert>
+          <integer>3798</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\7</string>
+        </keyseq>
+        <insert>
+          <integer>3799</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\8</string>
+        </keyseq>
+        <insert>
+          <integer>3800</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\9</string>
+        </keyseq>
+        <insert>
+          <integer>3801</integer>
+        </insert>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <branch branch-selecting-map="map-map"/>
+    <state sname="state-init">
+      <branch mname="map-map"/>
     </state>
   </state-list>
 </input-method>

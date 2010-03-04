@@ -5,17 +5,14 @@
          xmlns:xi="http://www.w3.org/1999/XML/xinclude"
 	 xmlns="http://relaxng.org/ns/structure/1.0"
 	 ns="http://www.m17n.org/MIM">
+
+<include href="expr.rng"/>
  
-<start>
+<start combine="choice">
   <element name="input-method">
     <ref name="im-declaration"/>
     <optional>
-	<element name="description">
-	  <choice>
-	    <text/>
-	    <element name="get-text"><text/></element>
-	  </choice>
-	</element>
+      <ref name="description"/>
     </optional>
     <optional><element name="title"><data type="string"/></element></optional>
     <optional><ref name="variable-list"/></optional>
@@ -27,6 +24,8 @@
     <optional><ref name="state-list"/></optional>
   </element>
 </start>
+
+<!--   =====input method details====================================       -->
 
 <define name="im-declaration">
   <element name="tags">
@@ -64,115 +63,50 @@
 
 <define name="variable-list">
   <element name="variable-list">
-    <zeroOrMore>
-      <element name="variable">
-	<attribute name="id"/>
-	<optional>
-	  <element name="description">
-	    <choice>
-	      <element name="get-text"><text/></element>
-	      <text/>
-	    </choice>
-	  </element>
-	</optional>
-	<optional>
-	  <element name="value">		    
-	    <choice>
- 	      <group>
-		<attribute name="type"><value>string</value></attribute>
-		<data type="string"/>
-	      </group>
-	      <group>
-		<attribute name="type"><value>symbol</value></attribute>
-		<data type="string"/>
-	      </group>
-	      <group>
-	      <attribute name="type"><value>integer</value></attribute>
-	      <data type="integer"/>
-	      </group>
-	    </choice>
-	  </element>
-	</optional>
-	<optional>
-	  <element name="variable-value-candidate">
-	    <oneOrMore>
-	      <choice>
-		<element name="c-value">		    
-		  <choice>
-		    <group>
-		      <attribute name="type"><value>string</value></attribute>
-		      <data type="string"/>
-		    </group>
-		    <group>
-		      <attribute name="type"><value>symbol</value></attribute>
-		      <data type="string"/>
-		    </group>
-		    <group>
-		      <attribute name="type"><value>integer</value></attribute>
-		      <data type="integer"/>
-		    </group>
-		  </choice>
-		</element>
-		<element name="c-range">
-		  <attribute name="from"><data type="integer"/></attribute>
-		  <attribute name="to"><data type="integer"/></attribute>
-		</element>
-	      </choice>
-	    </oneOrMore>
-	  </element>
-	</optional>
-      </element>
-    </zeroOrMore>
+    <oneOrMore>
+      <ref name="defvar"/>
+    </oneOrMore>
   </element>
 </define>
 
 <define name="command-list">
   <element name="command-list">
-    <zeroOrMore>
-      <element name="command">
-	<attribute name="id">
+    <oneOrMore>
+      <element name="defcmd">
+	<attribute name="cname">
 	  <data type="ID"><param name="pattern">command-.*</param></data></attribute>
 	<optional>
-	  <element name="description">
-	    <choice><text/><element name="get-text"><text/></element></choice>
-	  </element>
+	  <ref name="description"/>
 	</optional>
 	<zeroOrMore><ref name="keyseq"/></zeroOrMore>
       </element>
-    </zeroOrMore>
+    </oneOrMore>
   </element>
 </define>
 
 <define name="module-list">
   <element name="module-list">
-    <zeroOrMore>
+    <oneOrMore>
       <element name="module">
-	<attribute name="id">
-	  <data type="ID"><param name="pattern">module-.*</param></data>
-	</attribute>
-	<zeroOrMore>
-	  <element name="function">
-	    <attribute name="id">
-		<data type="ID">
-		<param name="pattern">function-.*</param></data>
+	<attribute name="id"><data type="string"/></attribute>
+	<oneOrMore>
+	  <element name="defun">
+	    <attribute name="fname">
+	      <data type="ID"><param name="pattern">.*-function-.*</param></data>
 	    </attribute>
+	    <empty/>
 	  </element>
-	</zeroOrMore>
+	</oneOrMore>
       </element>
-    </zeroOrMore>
+    </oneOrMore>
   </element>
 </define>
 
 <define name="macro-list">
-  <element name="macro-list" ns="http://www.m17n.org/MIM">
-    <zeroOrMore>
-      <element name="macro">
-	<attribute name="id">
-	  <data type="ID"><param name="pattern">macro-.*</param></data>
-	</attribute>
-	<zeroOrMore><ref name="action"/></zeroOrMore>
-      </element>
-    </zeroOrMore>
+  <element name="macro-list">
+    <oneOrMore>
+      <ref name="defmacro"/>
+    </oneOrMore>
   </element>
 </define>
 
@@ -180,9 +114,9 @@
 
 <define name="map-list">
   <element name="map-list">
-  <zeroOrMore>
+  <oneOrMore>
     <element name="map">
-      <attribute name="id">
+      <attribute name="mname">
 	<data type="ID"><param name="pattern">map-.*</param></data>
       </attribute>
       <zeroOrMore>
@@ -191,388 +125,74 @@
 	    <ref name="keyseq"/>
 	    <ref name="command-reference"/>
 	  </choice>
-	  <zeroOrMore><ref name="action"/></zeroOrMore>
+	  <zeroOrMore><ref name="funcall"/></zeroOrMore>
 	</element>
       </zeroOrMore>
     </element>
-  </zeroOrMore>
+  </oneOrMore>
+  </element>
+</define>
+
+<define name="command-reference">
+  <element name="command">
+      <attribute name="cname"><data type="IDREF"/></attribute>
   </element>
 </define>
 
 <define name="keyseq">
   <element name="keyseq">
-    <choice>
-      <attribute name="keys"><data type="string"/></attribute>
-      <oneOrMore>
-	<choice>
-	  <element name="key-event"><data type="string"/></element>
-	  <element name="character-code">
-	    <choice>
-	      <data type="nonNegativeInteger"><param name="pattern">[0-9]{1,7}</param></data>
-	      <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
-	      <data type="string"><param name="pattern">\?.</param></data>
-	    </choice>
-	  </element>
-	</choice>
+    <oneOrMore>
+      <choice>
+	<ref name="listterm"/>
+	<ref name="strterm"/>
+      </choice>
       </oneOrMore>
-    </choice>
   </element>
 </define>
-
-<define name="command-reference">
-  <element name="command-reference">
-      <attribute name="id"><data type="IDREF"/></attribute>
-  </element>
-</define>
-
-<!-- actions used in map rules -->
-<define name="action">
-  <choice>
-    <ref name="insert"/>
-    <ref name="delete"/>
-
-    <ref name="select"/>
-    <element name="show-candidates"><empty/></element>
-    <element name="hide-candidates"><empty/></element>
-
-    <ref name="move"/>
-    <ref name="mark"/>
-
-    <ref name="pushback"/>
-    <element name="pop"><empty/></element>
-    <ref name="undo"/>
-    <element name="commit"><empty/></element>
-    <element name="unhandle"><empty/></element>
-
-    <ref name="call"/>
-
-    <element name="set"><ref name="set-val"/></element>
-    <element name="add"><ref name="set-val"/></element>
-    <element name="sub"><ref name="set-val"/></element>
-    <element name="mul"><ref name="set-val"/></element>
-    <element name="div"><ref name="set-val"/></element>
-
-    <ref name="if"/>
-    <ref name="conditional"/>
-
-    <element name="macro-reference">
-      <attribute name="id">
-	<data type="IDREF"/>
-      </attribute>
-    </element>
-  </choice>
-</define>
-
-<define name="set-val">
-    <attribute name="id"/>
-    <ref name="expr"/>
-</define>
-
-<!-- actions used in states -->
-
-<define name="saction">
-  <choice>
-    <element name="shift-to">
-      <attribute name="id"><data type="IDREF"><param name="pattern">state-.*</param></data></attribute>
-    </element>
-    <element name="shift-back"><empty/></element>
-    <ref name="action"/>
-  </choice>
-</define>
-
-<!--  symbols used in actions -->
-
-<!-- markers specify positions in a buffer -->
 
 <define name="marker">
-  <choice>
-    <ref name="predefined-marker"/>
-    <ref name="user-defined-marker"/>
-  </choice>
+  <element name="marker"><data type="string"/></element>
 </define>
 
-<define name="predefined-marker">
-    <!-- predefined markers start with @ -->
-      <attribute name="position">
-	<choice>
-	  <data type="string"><param name="pattern">@[0-9]</param></data>
-	  <value>@first</value>
-	  <value>@current</value>
-	  <value>@last</value>
-	  <value>@previous</value>
-	  <value>@next</value>
-	  <value>@previous_candidate_list</value>
-	  <value>@next_candidate_list</value>
-	</choice>
-      </attribute>
-</define>
-
-<define name="user-defined-marker">
-      <!--  user-defined markers do not start with @ -->
-      <attribute name="markerID">
-	<data type="string"><param  name="pattern">[^@].*</param></data>
-      </attribute>
-</define>
-
-<!--  a character inside or outside of the preedit buffer -->
-
-<define name="predefined-nth-previous-or-following-character">
-  <element name="predefined-nth-previous-or-following-character">
-    <attribute name="position">
-      <choice>
-	<data type="negativeInteger"/>
-	<data type="positiveInteger"/>
-    </choice>
-    </attribute>
-  </element>
-</define>
-
-<!-- selectors specify positions in a candidate list -->
-
-<define name="predefined-selector">
-      <choice>
-	<data type="string"><param name="pattern">@[0-9]</param></data>
+<define name="selector">
+  <element name="selector">
+    <choice>
 	<value>@first</value>
 	<value>@current</value>
 	<value>@last</value>
 	<value>@previous</value>
 	<value>@next</value>
-	<value>@previous_candidate_list</value>
-	<value>@next_candidate_list</value>
-      </choice>
-</define>
-
-<!-- var -->
-
-<define name="predefined-variable">
-  <attribute name="type"><value>predefined</value></attribute>
-  <attribute name="id">
-    <choice>
-      <value>handled-keys</value>
-      <value>predefined-surround-text-flag</value>
-      <data type="string"><param name="pattern">@.+</param></data>
-    </choice>
-  </attribute>
-</define>
-
-
-<define name="insert">  
-    <element name="insert">
-      <choice>
-	<attribute name="string"><data type="string"/></attribute>
-<!--	<attribute name="character"><data type="integer"/></attribute>-->
-	<attribute name="character">
-	  <choice>
-	    <data type="string"><param name="pattern">\?.</param></data>
-	    <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
-	    <data type="nonNegativeInteger"><param name="pattern">[0-9]{1,7}</param></data>
-	  </choice>
-	</attribute>
-	<group>
-	  <attribute name="character-or-string"><value>variable</value></attribute>
-	  <ref name="variable-reference"/>
-	</group>
-	<oneOrMore><element name="candidates"><data type="string"/></element></oneOrMore>
-	<oneOrMore><element name="list-of-candidates">
-	  <list><zeroOrMore><data type="NMTOKEN"/></zeroOrMore></list>    
-	</element></oneOrMore>
-      </choice>
-    </element>
-</define>
-
-<define name="delete">  
-    <choice>
-      <element name="delete-to-marker">
-	<ref name="marker"/></element>
-      <element name="delete-to-character-position"><data type="integer"/></element>
-      <element name="delete-n-characters">
-      <attribute name="n"><data type="integer"/></attribute></element>
-    </choice>
-</define>
-
-<define name="select">  
-  <element name="select">
-    <choice>
-      <attribute name="selector">
-	<ref name="predefined-selector"/>
-      </attribute>
-      <attribute name="index"><data type="integer"/></attribute>
-      <group>
-	<attribute name="index"><value>variable</value></attribute><ref name="variable-reference"/>
-      </group>
+	<value>@previous-candidate-change</value>
+	<value>@next-candidate-change</value>
     </choice>
   </element>
 </define>
-
-<define name="move">  
-    <choice>
-      <element name="move-to-marker"><ref name="marker"/></element>
-      <element name="move-to-character-position"><data type="integer"/></element>
-    </choice>
-</define>
-
-<define name="mark">  
-      <element name="mark-current-position">
-	<ref name="user-defined-marker"/>
-      </element>
-</define>
-
-<define name="pushback">  
-    <choice>
-      <element name="pushback-n-events">
-	<attribute name="n"><data type="nonNegativeInteger"/></attribute></element>
-      <element name="pushback-keyseq"><ref name="keyseq"/></element>
-    </choice>
-</define>
-
-<define name="undo">
-  <element name="undo">
-    <optional>
-      <choice>
-	<attribute name="target-of-undo">
-	  <choice>
-	    <data type="positiveInteger"/>
-	    <data type="negativeInteger"/>
-	  </choice>
-	</attribute>
-	<ref name="variable-reference"/>
-      </choice>
-    </optional>
-  </element>
-</define>
-
-<define name="call">
-  <element name="call">
-    <attribute name="id"><data type="IDREF"/></attribute>
-    <element name="function-reference">
-      <attribute name="id"><data type="IDREF"/></attribute>
-    </element>
-    <zeroOrMore>
-      <element name="argument">
-	<choice>
-	  <group>
-	    <attribute name="type"><value>string</value></attribute>
-	    <data type="string"/>
-	  </group>
-	  <group>
-	    <attribute name="type"><value>integer</value></attribute>
-	    <choice>
-	      <data type="string"><param name="pattern">\?.</param></data>
-	      <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
-	      <data type="nonNegativeInteger"><param name="pattern">[0-9]{1,7}</param></data>
-	    </choice>
-	  </group>
-	  <group>
-	    <attribute name="type"><value>plist</value></attribute>
-	    <ref name="plistObject"/>
-	  </group>
-	  <group>
-	    <attribute name="type"><value>symbol</value></attribute>
-	    <ref name="variable-reference"/>
-	  </group>
-	</choice>
-      </element>
-    </zeroOrMore>
-  </element>
-</define>
-
-<define name="expr">
-    <choice>
-      <group>
-	<element name="expr">
-	  <attribute name="operator"><ref name="operator"/></attribute>
-	  <zeroOrMore><ref name="expr"/></zeroOrMore>
-	</element>
-      </group>
-      <element name="int-val">
-	<choice>
-	  <data type="integer"/>
-	  <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
-	  <data type="string"><param name="pattern">\?.</param></data>
-	</choice>
-      </element>
-      <ref name="predefined-nth-previous-or-following-character"/>     
-      <ref name="variable-reference"/>
-    </choice>
-</define>
-
-<define name="variable-reference">
-  <element name="variable-reference">
-    <choice>
-      <attribute name="id"/>
-      <ref name="predefined-variable"/>
-    </choice>
-  </element>
-</define>
-
-<define name="operator">
-  <choice>
-      <value>+</value>
-      <value>-</value>
-      <value>*</value>
-      <value>/</value>
-      <value>|</value>
-      <value>&amp;</value>
-      <value>!</value>
-      <value>=</value>
-      <value>&lt;</value>
-      <value>&gt;</value>
-      <value>&lt;=</value>
-      <value>&gt;=</value>
-  </choice>
-</define>
-
-<define name="if">
-  <element name="if">
-    <attribute name="condition">
-      <choice><value>=</value><value>&lt;</value><value>&gt;</value>
-    <value>&lt;=</value><value>&gt;=</value></choice></attribute>
-    <ref name="expr"/>
-    <ref name="expr"/>
-    <element name="if-true-action-list">
-    <zeroOrMore><ref name="saction"/></zeroOrMore></element>
-    <optional><element name="if-not-true-action-list">
-    <zeroOrMore><ref name="saction"/></zeroOrMore></element></optional>
-  </element>
-</define>
-
-<define name="conditional">
-  <element name="conditional">
-    <zeroOrMore>
-      <group>
-	<element name="case">
-	<ref name="expr"/>
-	<zeroOrMore><ref name="saction"/></zeroOrMore>
-	</element>
-      </group>
-    </zeroOrMore>
-  </element>
-</define>
-      
 
 <define name="state-list">
   <element name="state-list">
     <zeroOrMore>
       <element name="state">
-	<attribute name="id">
+	<attribute name="sname">
 	  <data type="ID"><param name="pattern">state-.*</param></data>
 	</attribute>
-	<optional><element name="state-title-text"><data type="string"/></element></optional>
+	<optional><element name="title"><data type="string"/></element></optional>
 	<interleave>
 	<optional>
-	  <element name="state-hook"><oneOrMore><ref name="saction"/></oneOrMore></element>
+	  <element name="state-hook">
+	    <oneOrMore><ref name="funcall"/></oneOrMore>
+	  </element>
 	</optional>
 	<optional>
 	  <element name="catch-all-branch">
-	    <zeroOrMore><ref name="saction"/></zeroOrMore>
+	    <zeroOrMore><ref name="funcall"/></zeroOrMore> 
 	  </element>
 	</optional>
 	<zeroOrMore>
 	  <element name="branch">
-	    <attribute name="branch-selecting-map">
+	    <attribute name="mname">
 		<data type="IDREF"/>
 	    </attribute>
-	    <zeroOrMore><ref name="saction"/></zeroOrMore>
+	    <zeroOrMore><ref name="funcall"/></zeroOrMore>
 	  </element>
 	</zeroOrMore>
 	</interleave>
@@ -581,52 +201,71 @@
   </element>
 </define>
 
+<!--   ===MIM original terms and functions ======================================       -->
 
-<!-- plist -->
-  <define name="plistObject">
-    <element name="pListObject">
-    <choice>
-      <ref name="array"/>
-      <ref name="dict"/>
-      <group>
-	<attribute name="type"><value>string</value></attribute>
-	<data type="string"/>
-      </group>
-      <group>
-	<attribute name="type"><value>symbol</value></attribute>
-	<ref name="variable-reference"/>
-      </group>
-      <group>
-	<attribute name="type"><value>integer</value></attribute>
-	<choice>
-	  <data type="string"><param name="pattern">\?.</param></data>
-	  <data type="string"><param name="pattern">[0#]x[0-9A-F]{1,6}</param></data>
-	  <data type="nonNegativeInteger"><param name="pattern">[0-9]{1,7}</param></data>
-	</choice>
-      </group>
-    </choice>
-    </element>
-  </define>
+<define name="keyseqterm">
+  <choice>
+    <ref name="keyseq"/>
+    <ref name="funcall"/>
+    <ref name="varref"/>
+  </choice>
+</define>
 
-  <!-- Collections -->
-  <define name="array">
-    <element name="array">
-      <zeroOrMore>
-        <ref name="plistObject"/>
-      </zeroOrMore>
-    </element>
-  </define>
+<define name="markerterm">
+  <choice>
+    <ref name="marker"/>
+    <ref name="funcall"/>
+    <ref name="varref"/>
+  </choice>
+</define>
 
-  <define name="dict">
-    <element name="dict">
-      <zeroOrMore>
-	<element name="dict-item">
-	  <attribute name="key"/>
-	  <ref name="plistObject"/>
-	</element>
-      </zeroOrMore>
-    </element>
-  </define>
+<define name="selectorterm">
+  <choice>
+    <ref name="selector"/>
+    <ref name="funcall"/>
+    <ref name="varref"/>
+  </choice>
+</define>
+
+
+<define name="term" combine="choice">
+  <choice>
+    <ref name="keyseq"/>
+    <ref name="marker"/>
+    <ref name="selector"/>
+  </choice>
+</define>
+
+<define name="funcall" combine="choice">
+  <choice>
+    <element name="insert"><choice><ref name="intterm"/><ref name="strterm"/></choice></element>
+    <element name="insert-candidates">
+      <oneOrMore><choice><ref name="listterm"/><ref name="strterm"/></choice>
+    </oneOrMore></element>
+    <element name="delete"><choice><ref name="markerterm"/><ref name="intterm"/></choice></element>
+    <element name="select"><choice><ref name="selectorterm"/><ref name="intterm"/></choice></element>
+
+    <element name="show-candidates"><empty/></element>
+    <element name="hide-candidates"><empty/></element>
+
+    <element name="move"><choice><ref name="markerterm"/><ref name="intterm"/></choice></element>
+    <element name="mark"><ref name="markerterm"/></element>
+    <element name="pushback"><choice><ref name="keyseqterm"/><ref name="intterm"/></choice></element>
+
+    <element name="pop"><empty/></element>
+    <element name="undo"><optional><ref name="intterm"/></optional></element>
+    <element name="commit"><empty/></element>
+    <element name="unhandle"><empty/></element>
+
+    <element name="shift"><ref name="symterm"/></element>
+    <element name="shiftback"><empty/></element>
+
+    <element name="char-at"><ref name="markerterm"/></element>
+    <element name="key-count"><empty/></element>
+    <element name="surrounding-text-flag"><empty/></element>
+
+  </choice>
+</define>
 
 </grammar>
 

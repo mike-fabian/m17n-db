@@ -6,1238 +6,2244 @@
   </tags>
   <description>Tibetan input method based on EWTS.
 This implementation is based on THDL Extended Wylie Transliteration Scheme
-Version 2.0 &lt;http://www.thdl.org/collections/langling/ewts/ewts.php&gt;.</description>
+Version 2.0 &lt;http://www.thlib.org/reference/transliteration/#essay=/thl/ewts&gt;.</description>
   <title>ཀ</title>
   <variable-list>
-    <variable id="precomposed">
+    <defvar vname="precomposed">
       <description>
-        <get-text>Flag to tell whether or not to generate precomposed characters.
+        <gettext>Flag to tell whether or not to generate precomposed characters.
 If 1, generate precomposed characters if available (e.g. "ྲྀ"(U+0F76).
-If 0, generate only decomposed characters (e.g. "ྲྀ" (U+0FB2 U+0F80).</get-text>
+If 0, generate only decomposed characters (e.g. "ྲྀ" (U+0FB2 U+0F80).</gettext>
       </description>
-      <value type="integer">0</value>
-      <variable-value-candidate>
-        <c-value type="integer">0</c-value>
-        <c-value type="integer">1</c-value>
-      </variable-value-candidate>
-    </variable>
+      <integer>0</integer>
+      <possible-value>
+        <integer>0</integer>
+        <integer>1</integer>
+      </possible-value>
+    </defvar>
   </variable-list>
   <map-list>
-    <map id="map-consonant">
-      <rule>
-        <keyseq keys="k"/>
-        <insert string="ཀ"/>
-      </rule>
-      <rule>
-        <keyseq keys="kh"/>
-        <insert string="ཁ"/>
-      </rule>
-      <rule>
-        <keyseq keys="g"/>
-        <insert string="ག"/>
-      </rule>
-      <rule>
-        <keyseq keys="ng"/>
-        <insert string="ང"/>
-      </rule>
-      <rule>
-        <keyseq keys="c"/>
-        <insert string="ཅ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ch"/>
-        <insert string="ཆ"/>
-      </rule>
-      <rule>
-        <keyseq keys="j"/>
-        <insert string="ཇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ny"/>
-        <insert string="ཉ"/>
-      </rule>
-      <rule>
-        <keyseq keys="t"/>
-        <insert string="ཏ"/>
-      </rule>
-      <rule>
-        <keyseq keys="th"/>
-        <insert string="ཐ"/>
-      </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <insert string="ད"/>
-      </rule>
-      <rule>
-        <keyseq keys="n"/>
-        <insert string="ན"/>
-      </rule>
-      <rule>
-        <keyseq keys="p"/>
-        <insert string="པ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ph"/>
-        <insert string="ཕ"/>
-      </rule>
-      <rule>
-        <keyseq keys="b"/>
-        <insert string="བ"/>
-      </rule>
-      <rule>
-        <keyseq keys="m"/>
-        <insert string="མ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ts"/>
-        <insert string="ཙ"/>
-      </rule>
-      <rule>
-        <keyseq keys="tsh"/>
-        <insert string="ཚ"/>
-      </rule>
-      <rule>
-        <keyseq keys="dz"/>
-        <insert string="ཛ"/>
-      </rule>
-      <rule>
-        <keyseq keys="w"/>
-        <insert string="ཝ"/>
-      </rule>
-      <rule>
-        <keyseq keys="zh"/>
-        <insert string="ཞ"/>
-      </rule>
-      <rule>
-        <keyseq keys="z"/>
-        <insert string="ཟ"/>
-      </rule>
-      <rule>
-        <keyseq keys="&apos;"/>
-        <insert string="འ"/>
-      </rule>
-      <rule>
-        <keyseq keys="y"/>
-        <insert string="ཡ"/>
-      </rule>
-      <rule>
-        <keyseq keys="r"/>
-        <insert string="ར"/>
-      </rule>
-      <rule>
-        <keyseq keys="l"/>
-        <insert string="ལ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sh"/>
-        <insert string="ཤ"/>
-      </rule>
-      <rule>
-        <keyseq keys="s"/>
-        <insert string="ས"/>
-      </rule>
-      <rule>
-        <keyseq keys="h"/>
-        <insert string="ཧ"/>
-      </rule>
-      <rule>
-        <keyseq keys="a"/>
-        <insert string="ཨ"/>
-      </rule>
-    </map>
-    <map id="map-standard-stack">
-      <rule>
-        <keyseq keys="kl"/>
-        <insert string="ཀླ"/>
-      </rule>
-      <rule>
-        <keyseq keys="kr"/>
-        <insert string="ཀྲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="kw"/>
-        <insert string="ཀྭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ky"/>
-        <insert string="ཀྱ"/>
-      </rule>
-      <rule>
-        <keyseq keys="khr"/>
-        <insert string="ཁྲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="khw"/>
-        <insert string="ཁྭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="khy"/>
-        <insert string="ཁྱ"/>
-      </rule>
-      <rule>
-        <keyseq keys="gl"/>
-        <insert string="གླ"/>
-      </rule>
-      <rule>
-        <keyseq keys="gr"/>
-        <insert string="གྲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="grw"/>
-        <insert string="གྲྭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="gw"/>
-        <insert string="གྭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="gy"/>
-        <insert string="གྱ"/>
-      </rule>
-      <rule>
-        <keyseq keys="cw"/>
-        <insert string="ཅྭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="nyw"/>
-        <insert string="ཉྭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="tr"/>
-        <insert string="ཏྲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="tw"/>
-        <insert string="ཏྭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="thr"/>
-        <insert string="ཐྲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="dr"/>
-        <insert string="དྲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="drw"/>
-        <insert string="དྲྭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="dw"/>
-        <insert string="དྭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="pr"/>
-        <insert string="པྲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="py"/>
-        <insert string="པྱ"/>
-      </rule>
-      <rule>
-        <keyseq keys="phr"/>
-        <insert string="ཕྲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="phy"/>
-        <insert string="ཕྱ"/>
-      </rule>
-      <rule>
-        <keyseq keys="phyw"/>
-        <insert string="ཕྱྭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="bl"/>
-        <insert string="བླ"/>
-      </rule>
-      <rule>
-        <keyseq keys="br"/>
-        <insert string="བྲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="by"/>
-        <insert string="བྱ"/>
-      </rule>
-      <rule>
-        <keyseq keys="mr"/>
-        <insert string="མྲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="my"/>
-        <insert string="མྱ"/>
-      </rule>
-      <rule>
-        <keyseq keys="tsw"/>
-        <insert string="ཙྭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="tshw"/>
-        <insert string="ཚྭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="zhw"/>
-        <insert string="ཞྭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="zl"/>
-        <insert string="ཟླ"/>
-      </rule>
-      <rule>
-        <keyseq keys="zw"/>
-        <insert string="ཟྭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rb"/>
-        <insert string="རྦ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rd"/>
-        <insert string="རྡ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rdz"/>
-        <insert string="རྫ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rg"/>
-        <insert string="རྒ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rgw"/>
-        <insert string="རྒྭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rgy"/>
-        <insert string="རྒྱ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rj"/>
-        <insert string="རྗ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rk"/>
-        <insert string="རྐ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rky"/>
-        <insert string="རྐྱ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rl"/>
-        <insert string="རླ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rm"/>
-        <insert string="རྨ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rmy"/>
-        <insert string="རྨྱ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rn"/>
-        <insert string="རྣ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rng"/>
-        <insert string="རྔ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rny"/>
-        <insert string="རྙ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rt"/>
-        <insert string="རྟ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rts"/>
-        <insert string="རྩ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rtsw"/>
-        <insert string="རྩྭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rw"/>
-        <insert string="རྭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="lb"/>
-        <insert string="ལྦ"/>
-      </rule>
-      <rule>
-        <keyseq keys="lc"/>
-        <insert string="ལྕ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ld"/>
-        <insert string="ལྡ"/>
-      </rule>
-      <rule>
-        <keyseq keys="lg"/>
-        <insert string="ལྒ"/>
-      </rule>
-      <rule>
-        <keyseq keys="lh"/>
-        <insert string="ལྷ"/>
-      </rule>
-      <rule>
-        <keyseq keys="lj"/>
-        <insert string="ལྗ"/>
-      </rule>
-      <rule>
-        <keyseq keys="lk"/>
-        <insert string="ལྐ"/>
-      </rule>
-      <rule>
-        <keyseq keys="lng"/>
-        <insert string="ལྔ"/>
-      </rule>
-      <rule>
-        <keyseq keys="lp"/>
-        <insert string="ལྤ"/>
-      </rule>
-      <rule>
-        <keyseq keys="lt"/>
-        <insert string="ལྟ"/>
-      </rule>
-      <rule>
-        <keyseq keys="shr"/>
-        <insert string="ཤྲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="shw"/>
-        <insert string="ཤྭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sb"/>
-        <insert string="སྦ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sbr"/>
-        <insert string="སྦྲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sby"/>
-        <insert string="སྦྱ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sd"/>
-        <insert string="སྡ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sg"/>
-        <insert string="སྒ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sgr"/>
-        <insert string="སྒྲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sgy"/>
-        <insert string="སྒྱ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sk"/>
-        <insert string="སྐ"/>
-      </rule>
-      <rule>
-        <keyseq keys="skr"/>
-        <insert string="སྐྲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sky"/>
-        <insert string="སྐྱ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sl"/>
-        <insert string="སླ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sm"/>
-        <insert string="སྨ"/>
-      </rule>
-      <rule>
-        <keyseq keys="smr"/>
-        <insert string="སྨྲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="smy"/>
-        <insert string="སྨྱ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sn"/>
-        <insert string="སྣ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sng"/>
-        <insert string="སྔ"/>
-      </rule>
-      <rule>
-        <keyseq keys="snr"/>
-        <insert string="སྣྲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sny"/>
-        <insert string="སྙ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sp"/>
-        <insert string="སྤ"/>
-      </rule>
-      <rule>
-        <keyseq keys="spr"/>
-        <insert string="སྤྲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="spy"/>
-        <insert string="སྤྱ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sr"/>
-        <insert string="སྲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="st"/>
-        <insert string="སྟ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sts"/>
-        <insert string="སྩ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sw"/>
-        <insert string="སྭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="hr"/>
-        <insert string="ཧྲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="hw"/>
-        <insert string="ཧྭ"/>
-      </rule>
-    </map>
-    <map id="map-sanskrit">
-      <rule>
-        <keyseq keys="T"/>
-        <insert string="ཊ"/>
-      </rule>
-      <rule>
-        <keyseq keys="Th"/>
-        <insert string="ཋ"/>
-      </rule>
-      <rule>
-        <keyseq keys="D"/>
-        <insert string="ཌ"/>
-      </rule>
-      <rule>
-        <keyseq keys="N"/>
-        <insert string="ཎ"/>
-      </rule>
-      <rule>
-        <keyseq keys="Sh"/>
-        <insert string="ཥ"/>
-      </rule>
-      <rule>
-        <keyseq keys="oM"/>
-        <conditional>
-          <case>
-            <variable-reference id="precomposed"/>
-            <insert string="ༀ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཨོཾ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="R+"/>
-        <insert string="ཪ"/>
-      </rule>
-    </map>
-    <map id="map-force-stack">
-      <rule>
-        <keyseq keys="+"/>
-      </rule>
-    </map>
-    <map id="map-break-stack">
-      <rule>
-        <keyseq keys="."/>
-      </rule>
-    </map>
-    <map id="map-special-subjoined">
-      <rule>
-        <keyseq keys="h"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <variable-reference id="precomposed"/>
-              <int-val>0</int-val>
-            </expr>
-            <insert string="ྷ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>3906</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="གྷ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>3921</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="དྷ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>3926</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="བྷ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>3931</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ཛྷ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ྷ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="Sh"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <variable-reference id="precomposed"/>
-              <int-val>0</int-val>
-            </expr>
-            <insert string="ྵ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>3904</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ཀྵ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ྵ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="W"/>
-        <insert string="ྺ"/>
-      </rule>
-      <rule>
-        <keyseq keys="Y"/>
-        <insert string="ྻ"/>
-      </rule>
-      <rule>
-        <keyseq keys="R"/>
-        <insert string="ྼ"/>
-      </rule>
-    </map>
-    <map id="map-vowel">
-      <rule>
-        <keyseq keys="a"/>
-        <insert string=""/>
-      </rule>
-      <rule>
-        <keyseq keys="i"/>
-        <insert string="ི"/>
-      </rule>
-      <rule>
-        <keyseq keys="u"/>
-        <insert string="ུ"/>
-      </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <insert string="ེ"/>
-      </rule>
-      <rule>
-        <keyseq keys="o"/>
-        <insert string="ོ"/>
-      </rule>
-      <rule>
-        <keyseq keys="-i"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <variable-reference id="precomposed"/>
-              <int-val>0</int-val>
-            </expr>
-            <insert string="ྀ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>4018</int-val>
-            </expr>
-            <insert string="ྲྀ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>4019</int-val>
-            </expr>
-            <insert string="ླྀ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ྀ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="A"/>
-        <insert string="ཱ"/>
-      </rule>
-      <rule>
-        <keyseq keys="I"/>
-        <insert string="ཱི"/>
-      </rule>
-      <rule>
-        <keyseq keys="U"/>
-        <insert string="ཱུ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ai"/>
-        <insert string="ཻ"/>
-      </rule>
-      <rule>
-        <keyseq keys="au"/>
-        <insert string="ཽ"/>
-      </rule>
-      <rule>
-        <keyseq keys="r-I"/>
-        <insert string="ཷ"/>
-      </rule>
-      <rule>
-        <keyseq keys="l-I"/>
-        <insert string="ཹ"/>
-      </rule>
-      <rule>
-        <keyseq keys="-I"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <variable-reference id="precomposed"/>
-              <int-val>0</int-val>
-            </expr>
-            <insert string="ཱྀ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>4018</int-val>
-            </expr>
-            <insert string="ཷ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>4019</int-val>
-            </expr>
-            <insert string="ཹ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཱྀ"/>
-          </case>
-        </conditional>
-      </rule>
-    </map>
-    <map id="map-others">
-      <rule>
-        <keyseq keys="0"/>
-        <insert string="༠"/>
-      </rule>
-      <rule>
-        <keyseq keys="1"/>
-        <insert string="༡"/>
-      </rule>
-      <rule>
-        <keyseq keys="2"/>
-        <insert string="༢"/>
-      </rule>
-      <rule>
-        <keyseq keys="3"/>
-        <insert string="༣"/>
-      </rule>
-      <rule>
-        <keyseq keys="4"/>
-        <insert string="༤"/>
-      </rule>
-      <rule>
-        <keyseq keys="5"/>
-        <insert string="༥"/>
-      </rule>
-      <rule>
-        <keyseq keys="6"/>
-        <insert string="༦"/>
-      </rule>
-      <rule>
-        <keyseq keys="7"/>
-        <insert string="༧"/>
-      </rule>
-      <rule>
-        <keyseq keys="8"/>
-        <insert string="༨"/>
-      </rule>
-      <rule>
-        <keyseq keys="9"/>
-        <insert string="༩"/>
-      </rule>
-      <rule>
-        <keyseq keys="-1"/>
-        <insert string="༪"/>
-      </rule>
-      <rule>
-        <keyseq keys="-2"/>
-        <insert string="༫"/>
-      </rule>
-      <rule>
-        <keyseq keys="-3"/>
-        <insert string="༬"/>
-      </rule>
-      <rule>
-        <keyseq keys="-4"/>
-        <insert string="༭"/>
-      </rule>
-      <rule>
-        <keyseq keys="-5"/>
-        <insert string="༮"/>
-      </rule>
-      <rule>
-        <keyseq keys="-6"/>
-        <insert string="༯"/>
-      </rule>
-      <rule>
-        <keyseq keys="-7"/>
-        <insert string="༰"/>
-      </rule>
-      <rule>
-        <keyseq keys="-8"/>
-        <insert string="༱"/>
-      </rule>
-      <rule>
-        <keyseq keys="-9"/>
-        <insert string="༲"/>
-      </rule>
-      <rule>
-        <keyseq keys="-0"/>
-        <insert string="༳"/>
-      </rule>
-      <rule>
-        <keyseq keys="H"/>
-        <insert string="ཿ"/>
-      </rule>
-      <rule>
-        <keyseq keys="M"/>
-        <insert string="ཾ"/>
-      </rule>
-      <rule>
-        <keyseq keys="~M"/>
-        <insert string="ྃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="~M`"/>
-        <insert string="ྂ"/>
-      </rule>
-      <rule>
-        <keyseq keys="?"/>
-        <insert string="྄"/>
-      </rule>
-      <rule>
-        <keyseq keys="&amp;"/>
-        <insert string="྅"/>
-      </rule>
-      <rule>
-        <keyseq keys=" "/>
-        <insert string="་"/>
-      </rule>
-      <rule>
-        <keyseq keys="*"/>
-        <insert string="༌"/>
-      </rule>
-      <rule>
-        <keyseq keys="/"/>
-        <insert string="།"/>
-      </rule>
-      <rule>
-        <keyseq keys="//"/>
-        <insert string="༎"/>
-      </rule>
-      <rule>
-        <keyseq keys=";"/>
-        <insert string="༏"/>
-      </rule>
-      <rule>
-        <keyseq keys="|"/>
-        <insert string="༑"/>
-      </rule>
-      <rule>
-        <keyseq keys="!"/>
-        <insert string="༈"/>
-      </rule>
-      <rule>
-        <keyseq keys=":"/>
-        <insert string="༔"/>
-      </rule>
-      <rule>
-        <keyseq keys="_"/>
-        <insert string=" "/>
-      </rule>
-      <rule>
-        <keyseq keys="="/>
-        <insert string="༴"/>
-      </rule>
-      <rule>
-        <keyseq keys="@"/>
-        <insert string="༄"/>
-      </rule>
-      <rule>
-        <keyseq keys="#"/>
-        <insert string="༅"/>
-      </rule>
-      <rule>
-        <keyseq keys="$"/>
-        <insert string="༆"/>
-      </rule>
-      <rule>
-        <keyseq keys="%"/>
-        <insert string="༇"/>
-      </rule>
-      <rule>
-        <keyseq keys="&lt;"/>
-        <insert string="༺"/>
-      </rule>
-      <rule>
-        <keyseq keys="&gt;"/>
-        <insert string="༻"/>
-      </rule>
-      <rule>
-        <keyseq keys="("/>
-        <insert string="༼"/>
-      </rule>
-      <rule>
-        <keyseq keys=")"/>
-        <insert string="༽"/>
-      </rule>
-      <rule>
-        <keyseq keys="~X"/>
-        <insert string="༵"/>
-      </rule>
-      <rule>
-        <keyseq keys="X"/>
-        <insert string="༷"/>
-      </rule>
-      <rule>
-        <keyseq keys="^"/>
-        <insert string="༹"/>
-      </rule>
-    </map>
-    <map id="map-escape">
-      <rule>
-        <keyseq keys="\"/>
-        <mark-current-position markerID="BEG"/>
-        <insert string="\"/>
-      </rule>
-    </map>
-    <map id="map-non-tibetan">
-      <rule>
-        <keyseq keys="["/>
-      </rule>
-    </map>
-    <map id="map-unicode">
-      <rule>
-        <keyseq keys="u"/>
-        <insert string="u"/>
-        <set id="MAX-COUNT">
-          <int-val>4</int-val>
-        </set>
-      </rule>
-      <rule>
-        <keyseq keys="U"/>
-        <insert string="U"/>
-        <set id="MAX-COUNT">
-          <int-val>8</int-val>
-        </set>
-      </rule>
-    </map>
-    <map id="map-unescape">
-      <rule>
-        <keyseq keys="]"/>
-      </rule>
-    </map>
-    <map id="map-hexadigit">
-      <rule>
-        <keyseq keys="0"/>
-        <insert string="0"/>
-      </rule>
-      <rule>
-        <keyseq keys="1"/>
-        <insert string="1"/>
-      </rule>
-      <rule>
-        <keyseq keys="2"/>
-        <insert string="2"/>
-      </rule>
-      <rule>
-        <keyseq keys="3"/>
-        <insert string="3"/>
-      </rule>
-      <rule>
-        <keyseq keys="4"/>
-        <insert string="4"/>
-      </rule>
-      <rule>
-        <keyseq keys="5"/>
-        <insert string="5"/>
-      </rule>
-      <rule>
-        <keyseq keys="6"/>
-        <insert string="6"/>
-      </rule>
-      <rule>
-        <keyseq keys="7"/>
-        <insert string="7"/>
-      </rule>
-      <rule>
-        <keyseq keys="8"/>
-        <insert string="8"/>
-      </rule>
-      <rule>
-        <keyseq keys="9"/>
-        <insert string="9"/>
-      </rule>
-      <rule>
-        <keyseq keys="A"/>
-        <insert string="A"/>
-      </rule>
-      <rule>
-        <keyseq keys="a"/>
-        <insert string="A"/>
-      </rule>
-      <rule>
-        <keyseq keys="B"/>
-        <insert string="B"/>
-      </rule>
-      <rule>
-        <keyseq keys="b"/>
-        <insert string="B"/>
-      </rule>
-      <rule>
-        <keyseq keys="C"/>
-        <insert string="C"/>
-      </rule>
-      <rule>
-        <keyseq keys="c"/>
-        <insert string="C"/>
-      </rule>
-      <rule>
-        <keyseq keys="D"/>
-        <insert string="D"/>
-      </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <insert string="D"/>
-      </rule>
-      <rule>
-        <keyseq keys="E"/>
-        <insert string="E"/>
-      </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <insert string="E"/>
-      </rule>
-      <rule>
-        <keyseq keys="F"/>
-        <insert string="F"/>
-      </rule>
-      <rule>
-        <keyseq keys="f"/>
-        <insert string="F"/>
-      </rule>
-    </map>
-    <map id="map-backspace">
+    <map mname="map-consonant">
       <rule>
         <keyseq>
-          <key-event>Backspace</key-event>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <string>ཀ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>kh</string>
+        </keyseq>
+        <insert>
+          <string>ཁ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <string>ག</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ng</string>
+        </keyseq>
+        <insert>
+          <string>ང</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <insert>
+          <string>ཅ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ch</string>
+        </keyseq>
+        <insert>
+          <string>ཆ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+        <insert>
+          <string>ཇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ny</string>
+        </keyseq>
+        <insert>
+          <string>ཉ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>t</string>
+        </keyseq>
+        <insert>
+          <string>ཏ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>th</string>
+        </keyseq>
+        <insert>
+          <string>ཐ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <insert>
+          <string>ད</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <string>ན</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+        <insert>
+          <string>པ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ph</string>
+        </keyseq>
+        <insert>
+          <string>ཕ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <insert>
+          <string>བ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <string>མ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ts</string>
+        </keyseq>
+        <insert>
+          <string>ཙ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>tsh</string>
+        </keyseq>
+        <insert>
+          <string>ཚ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>dz</string>
+        </keyseq>
+        <insert>
+          <string>ཛ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+        <insert>
+          <string>ཝ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zh</string>
+        </keyseq>
+        <insert>
+          <string>ཞ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z</string>
+        </keyseq>
+        <insert>
+          <string>ཟ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>'</string>
+        </keyseq>
+        <insert>
+          <string>འ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <insert>
+          <string>ཡ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+        <insert>
+          <string>ར</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+        <insert>
+          <string>ལ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sh</string>
+        </keyseq>
+        <insert>
+          <string>ཤ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+        <insert>
+          <string>ས</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <insert>
+          <string>ཧ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+        <insert>
+          <string>ཨ</string>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-standard-stack">
+      <rule>
+        <keyseq>
+          <string>kl</string>
+        </keyseq>
+        <insert>
+          <string>ཀླ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>kr</string>
+        </keyseq>
+        <insert>
+          <string>ཀྲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>kw</string>
+        </keyseq>
+        <insert>
+          <string>ཀྭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ky</string>
+        </keyseq>
+        <insert>
+          <string>ཀྱ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>khr</string>
+        </keyseq>
+        <insert>
+          <string>ཁྲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>khw</string>
+        </keyseq>
+        <insert>
+          <string>ཁྭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>khy</string>
+        </keyseq>
+        <insert>
+          <string>ཁྱ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>gl</string>
+        </keyseq>
+        <insert>
+          <string>གླ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>gr</string>
+        </keyseq>
+        <insert>
+          <string>གྲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>grw</string>
+        </keyseq>
+        <insert>
+          <string>གྲྭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>gw</string>
+        </keyseq>
+        <insert>
+          <string>གྭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>gy</string>
+        </keyseq>
+        <insert>
+          <string>གྱ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>cw</string>
+        </keyseq>
+        <insert>
+          <string>ཅྭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>nyw</string>
+        </keyseq>
+        <insert>
+          <string>ཉྭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>tr</string>
+        </keyseq>
+        <insert>
+          <string>ཏྲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>tw</string>
+        </keyseq>
+        <insert>
+          <string>ཏྭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>thr</string>
+        </keyseq>
+        <insert>
+          <string>ཐྲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>dr</string>
+        </keyseq>
+        <insert>
+          <string>དྲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>drw</string>
+        </keyseq>
+        <insert>
+          <string>དྲྭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>dw</string>
+        </keyseq>
+        <insert>
+          <string>དྭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>pr</string>
+        </keyseq>
+        <insert>
+          <string>པྲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>py</string>
+        </keyseq>
+        <insert>
+          <string>པྱ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>phr</string>
+        </keyseq>
+        <insert>
+          <string>ཕྲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>phy</string>
+        </keyseq>
+        <insert>
+          <string>ཕྱ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>phyw</string>
+        </keyseq>
+        <insert>
+          <string>ཕྱྭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>bl</string>
+        </keyseq>
+        <insert>
+          <string>བླ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>br</string>
+        </keyseq>
+        <insert>
+          <string>བྲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>by</string>
+        </keyseq>
+        <insert>
+          <string>བྱ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>mr</string>
+        </keyseq>
+        <insert>
+          <string>མྲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>my</string>
+        </keyseq>
+        <insert>
+          <string>མྱ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>tsw</string>
+        </keyseq>
+        <insert>
+          <string>ཙྭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>tshw</string>
+        </keyseq>
+        <insert>
+          <string>ཚྭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zhw</string>
+        </keyseq>
+        <insert>
+          <string>ཞྭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zl</string>
+        </keyseq>
+        <insert>
+          <string>ཟླ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zw</string>
+        </keyseq>
+        <insert>
+          <string>ཟྭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rb</string>
+        </keyseq>
+        <insert>
+          <string>རྦ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rd</string>
+        </keyseq>
+        <insert>
+          <string>རྡ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rdz</string>
+        </keyseq>
+        <insert>
+          <string>རྫ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rg</string>
+        </keyseq>
+        <insert>
+          <string>རྒ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rgw</string>
+        </keyseq>
+        <insert>
+          <string>རྒྭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rgy</string>
+        </keyseq>
+        <insert>
+          <string>རྒྱ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rj</string>
+        </keyseq>
+        <insert>
+          <string>རྗ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rk</string>
+        </keyseq>
+        <insert>
+          <string>རྐ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rky</string>
+        </keyseq>
+        <insert>
+          <string>རྐྱ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rl</string>
+        </keyseq>
+        <insert>
+          <string>རླ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rm</string>
+        </keyseq>
+        <insert>
+          <string>རྨ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rmy</string>
+        </keyseq>
+        <insert>
+          <string>རྨྱ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rn</string>
+        </keyseq>
+        <insert>
+          <string>རྣ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rng</string>
+        </keyseq>
+        <insert>
+          <string>རྔ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rny</string>
+        </keyseq>
+        <insert>
+          <string>རྙ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rt</string>
+        </keyseq>
+        <insert>
+          <string>རྟ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rts</string>
+        </keyseq>
+        <insert>
+          <string>རྩ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rtsw</string>
+        </keyseq>
+        <insert>
+          <string>རྩྭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rw</string>
+        </keyseq>
+        <insert>
+          <string>རྭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lb</string>
+        </keyseq>
+        <insert>
+          <string>ལྦ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lc</string>
+        </keyseq>
+        <insert>
+          <string>ལྕ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ld</string>
+        </keyseq>
+        <insert>
+          <string>ལྡ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lg</string>
+        </keyseq>
+        <insert>
+          <string>ལྒ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lh</string>
+        </keyseq>
+        <insert>
+          <string>ལྷ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lj</string>
+        </keyseq>
+        <insert>
+          <string>ལྗ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lk</string>
+        </keyseq>
+        <insert>
+          <string>ལྐ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lng</string>
+        </keyseq>
+        <insert>
+          <string>ལྔ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lp</string>
+        </keyseq>
+        <insert>
+          <string>ལྤ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lt</string>
+        </keyseq>
+        <insert>
+          <string>ལྟ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>shr</string>
+        </keyseq>
+        <insert>
+          <string>ཤྲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>shw</string>
+        </keyseq>
+        <insert>
+          <string>ཤྭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sb</string>
+        </keyseq>
+        <insert>
+          <string>སྦ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sbr</string>
+        </keyseq>
+        <insert>
+          <string>སྦྲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sby</string>
+        </keyseq>
+        <insert>
+          <string>སྦྱ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sd</string>
+        </keyseq>
+        <insert>
+          <string>སྡ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sg</string>
+        </keyseq>
+        <insert>
+          <string>སྒ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sgr</string>
+        </keyseq>
+        <insert>
+          <string>སྒྲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sgy</string>
+        </keyseq>
+        <insert>
+          <string>སྒྱ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sk</string>
+        </keyseq>
+        <insert>
+          <string>སྐ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>skr</string>
+        </keyseq>
+        <insert>
+          <string>སྐྲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sky</string>
+        </keyseq>
+        <insert>
+          <string>སྐྱ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sl</string>
+        </keyseq>
+        <insert>
+          <string>སླ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sm</string>
+        </keyseq>
+        <insert>
+          <string>སྨ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>smr</string>
+        </keyseq>
+        <insert>
+          <string>སྨྲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>smy</string>
+        </keyseq>
+        <insert>
+          <string>སྨྱ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sn</string>
+        </keyseq>
+        <insert>
+          <string>སྣ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sng</string>
+        </keyseq>
+        <insert>
+          <string>སྔ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>snr</string>
+        </keyseq>
+        <insert>
+          <string>སྣྲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sny</string>
+        </keyseq>
+        <insert>
+          <string>སྙ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sp</string>
+        </keyseq>
+        <insert>
+          <string>སྤ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>spr</string>
+        </keyseq>
+        <insert>
+          <string>སྤྲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>spy</string>
+        </keyseq>
+        <insert>
+          <string>སྤྱ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sr</string>
+        </keyseq>
+        <insert>
+          <string>སྲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>st</string>
+        </keyseq>
+        <insert>
+          <string>སྟ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sts</string>
+        </keyseq>
+        <insert>
+          <string>སྩ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sw</string>
+        </keyseq>
+        <insert>
+          <string>སྭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>hr</string>
+        </keyseq>
+        <insert>
+          <string>ཧྲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>hw</string>
+        </keyseq>
+        <insert>
+          <string>ཧྭ</string>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-sanskrit">
+      <rule>
+        <keyseq>
+          <string>T</string>
+        </keyseq>
+        <insert>
+          <string>ཊ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Th</string>
+        </keyseq>
+        <insert>
+          <string>ཋ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <insert>
+          <string>ཌ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+        <insert>
+          <string>ཎ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Sh</string>
+        </keyseq>
+        <insert>
+          <string>ཥ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>oM</string>
+        </keyseq>
+        <cond>
+          <list>
+            <varref vname="precomposed"/>
+            <insert>
+              <string>ༀ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཨོཾ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>R+</string>
+        </keyseq>
+        <insert>
+          <string>ཪ</string>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-force-stack">
+      <rule>
+        <keyseq>
+          <string>+</string>
+        </keyseq>
+      </rule>
+    </map>
+    <map mname="map-break-stack">
+      <rule>
+        <keyseq>
+          <string>.</string>
+        </keyseq>
+      </rule>
+    </map>
+    <map mname="map-special-subjoined">
+      <rule>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <varref vname="precomposed"/>
+              <integer>0</integer>
+            </eq>
+            <insert>
+              <string>ྷ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>3906</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>གྷ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>3921</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>དྷ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>3926</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>བྷ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>3931</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ཛྷ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ྷ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Sh</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <varref vname="precomposed"/>
+              <integer>0</integer>
+            </eq>
+            <insert>
+              <string>ྵ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>3904</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ཀྵ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ྵ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>W</string>
+        </keyseq>
+        <insert>
+          <string>ྺ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Y</string>
+        </keyseq>
+        <insert>
+          <string>ྻ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>R</string>
+        </keyseq>
+        <insert>
+          <string>ྼ</string>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-vowel">
+      <rule>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+        <insert>
+          <string></string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert>
+          <string>ི</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <string>ུ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <insert>
+          <string>ེ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <string>ོ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>-i</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <varref vname="precomposed"/>
+              <integer>0</integer>
+            </eq>
+            <insert>
+              <string>ྀ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>4018</integer>
+            </eq>
+            <insert>
+              <string>ྲྀ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>4019</integer>
+            </eq>
+            <insert>
+              <string>ླྀ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ྀ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>A</string>
+        </keyseq>
+        <insert>
+          <string>ཱ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <insert>
+          <string>ཱི</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert>
+          <string>ཱུ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ai</string>
+        </keyseq>
+        <insert>
+          <string>ཻ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>au</string>
+        </keyseq>
+        <insert>
+          <string>ཽ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>r-I</string>
+        </keyseq>
+        <insert>
+          <string>ཷ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>l-I</string>
+        </keyseq>
+        <insert>
+          <string>ཹ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>-I</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <varref vname="precomposed"/>
+              <integer>0</integer>
+            </eq>
+            <insert>
+              <string>ཱྀ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>4018</integer>
+            </eq>
+            <insert>
+              <string>ཷ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>4019</integer>
+            </eq>
+            <insert>
+              <string>ཹ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཱྀ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+    </map>
+    <map mname="map-others">
+      <rule>
+        <keyseq>
+          <string>0</string>
+        </keyseq>
+        <insert>
+          <string>༠</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>1</string>
+        </keyseq>
+        <insert>
+          <string>༡</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>2</string>
+        </keyseq>
+        <insert>
+          <string>༢</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>3</string>
+        </keyseq>
+        <insert>
+          <string>༣</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>4</string>
+        </keyseq>
+        <insert>
+          <string>༤</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>5</string>
+        </keyseq>
+        <insert>
+          <string>༥</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>6</string>
+        </keyseq>
+        <insert>
+          <string>༦</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>7</string>
+        </keyseq>
+        <insert>
+          <string>༧</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>8</string>
+        </keyseq>
+        <insert>
+          <string>༨</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>9</string>
+        </keyseq>
+        <insert>
+          <string>༩</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>-1</string>
+        </keyseq>
+        <insert>
+          <string>༪</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>-2</string>
+        </keyseq>
+        <insert>
+          <string>༫</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>-3</string>
+        </keyseq>
+        <insert>
+          <string>༬</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>-4</string>
+        </keyseq>
+        <insert>
+          <string>༭</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>-5</string>
+        </keyseq>
+        <insert>
+          <string>༮</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>-6</string>
+        </keyseq>
+        <insert>
+          <string>༯</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>-7</string>
+        </keyseq>
+        <insert>
+          <string>༰</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>-8</string>
+        </keyseq>
+        <insert>
+          <string>༱</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>-9</string>
+        </keyseq>
+        <insert>
+          <string>༲</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>-0</string>
+        </keyseq>
+        <insert>
+          <string>༳</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <insert>
+          <string>ཿ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>M</string>
+        </keyseq>
+        <insert>
+          <string>ཾ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>~M</string>
+        </keyseq>
+        <insert>
+          <string>ྃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>~M`</string>
+        </keyseq>
+        <insert>
+          <string>ྂ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>?</string>
+        </keyseq>
+        <insert>
+          <string>྄</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&amp;</string>
+        </keyseq>
+        <insert>
+          <string>྅</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string> </string>
+        </keyseq>
+        <insert>
+          <string>་</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>*</string>
+        </keyseq>
+        <insert>
+          <string>༌</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>/</string>
+        </keyseq>
+        <insert>
+          <string>།</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>//</string>
+        </keyseq>
+        <insert>
+          <string>༎</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>;</string>
+        </keyseq>
+        <insert>
+          <string>༏</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>|</string>
+        </keyseq>
+        <insert>
+          <string>༑</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>!</string>
+        </keyseq>
+        <insert>
+          <string>༈</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>:</string>
+        </keyseq>
+        <insert>
+          <string>༔</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>_</string>
+        </keyseq>
+        <insert>
+          <string> </string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>=</string>
+        </keyseq>
+        <insert>
+          <string>༴</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>@</string>
+        </keyseq>
+        <insert>
+          <string>༄</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>#</string>
+        </keyseq>
+        <insert>
+          <string>༅</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>$</string>
+        </keyseq>
+        <insert>
+          <string>༆</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>%</string>
+        </keyseq>
+        <insert>
+          <string>༇</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&lt;</string>
+        </keyseq>
+        <insert>
+          <string>༺</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&gt;</string>
+        </keyseq>
+        <insert>
+          <string>༻</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>(</string>
+        </keyseq>
+        <insert>
+          <string>༼</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>)</string>
+        </keyseq>
+        <insert>
+          <string>༽</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>~X</string>
+        </keyseq>
+        <insert>
+          <string>༵</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>X</string>
+        </keyseq>
+        <insert>
+          <string>༷</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>^</string>
+        </keyseq>
+        <insert>
+          <string>༹</string>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-escape">
+      <rule>
+        <keyseq>
+          <string>\</string>
+        </keyseq>
+        <mark>
+          <marker>BEG</marker>
+        </mark>
+        <insert>
+          <string>\</string>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-non-tibetan">
+      <rule>
+        <keyseq>
+          <string>[</string>
+        </keyseq>
+      </rule>
+    </map>
+    <map mname="map-unicode">
+      <rule>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <string>u</string>
+        </insert>
+        <set vname="MAX-COUNT">
+          <integer>4</integer>
+        </set>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert>
+          <string>U</string>
+        </insert>
+        <set vname="MAX-COUNT">
+          <integer>8</integer>
+        </set>
+      </rule>
+    </map>
+    <map mname="map-unescape">
+      <rule>
+        <keyseq>
+          <string>]</string>
+        </keyseq>
+      </rule>
+    </map>
+    <map mname="map-hexadigit">
+      <rule>
+        <keyseq>
+          <string>0</string>
+        </keyseq>
+        <insert>
+          <string>0</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>1</string>
+        </keyseq>
+        <insert>
+          <string>1</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>2</string>
+        </keyseq>
+        <insert>
+          <string>2</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>3</string>
+        </keyseq>
+        <insert>
+          <string>3</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>4</string>
+        </keyseq>
+        <insert>
+          <string>4</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>5</string>
+        </keyseq>
+        <insert>
+          <string>5</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>6</string>
+        </keyseq>
+        <insert>
+          <string>6</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>7</string>
+        </keyseq>
+        <insert>
+          <string>7</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>8</string>
+        </keyseq>
+        <insert>
+          <string>8</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>9</string>
+        </keyseq>
+        <insert>
+          <string>9</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>A</string>
+        </keyseq>
+        <insert>
+          <string>A</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+        <insert>
+          <string>A</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>B</string>
+        </keyseq>
+        <insert>
+          <string>B</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <insert>
+          <string>B</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>C</string>
+        </keyseq>
+        <insert>
+          <string>C</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <insert>
+          <string>C</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <insert>
+          <string>D</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <insert>
+          <string>D</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <insert>
+          <string>E</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <insert>
+          <string>E</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>F</string>
+        </keyseq>
+        <insert>
+          <string>F</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+        <insert>
+          <string>F</string>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-backspace">
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>Backspace</symbol>
+          </list>
         </keyseq>
         <undo/>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <branch branch-selecting-map="map-consonant">
-        <shift-to id="state-after-consonant"/>
+    <state sname="state-init">
+      <branch mname="map-consonant">
+        <shift>
+          <symbol>state-after-consonant</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-standard-stack">
-        <shift-to id="state-after-consonant"/>
+      <branch mname="map-standard-stack">
+        <shift>
+          <symbol>state-after-consonant</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-sanskrit">
-        <shift-to id="state-after-consonant"/>
+      <branch mname="map-sanskrit">
+        <shift>
+          <symbol>state-after-consonant</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-vowel">
-        <move-to-marker position="@first"/>
-        <insert string="ཨ"/>
-        <move-to-marker position="@last"/>
-        <shift-to id="state-after-vowel"/>
-      </branch>
-      <branch branch-selecting-map="map-others"/>
-      <branch branch-selecting-map="map-escape">
-        <shift-to id="state-dispatch-escape"/>
-      </branch>
-      <branch branch-selecting-map="map-non-tibetan">
-        <shift-to id="state-non-tibetan"/>
-      </branch>
-      <branch branch-selecting-map="map-backspace"/>
-    </state>
-    <state id="state-after-consonant">
-      <branch branch-selecting-map="map-force-stack">
-        <shift-to id="state-consonant-stack"/>
-      </branch>
-      <branch branch-selecting-map="map-break-stack">
-        <shift-to id="state-init"/>
-      </branch>
-      <branch branch-selecting-map="map-vowel">
-        <shift-to id="state-after-vowel"/>
-      </branch>
-    </state>
-    <state id="state-consonant-stack">
-      <state-title-text>ཀ+</state-title-text>
-      <branch branch-selecting-map="map-special-subjoined">
-        <shift-to id="state-after-consonant"/>
-      </branch>
-      <branch branch-selecting-map="map-consonant">
-        <set id="C">
-          <predefined-nth-previous-or-following-character position="-1"/>
-        </set>
-        <delete-n-characters n="-1"/>
-        <add id="C">
-          <int-val>80</int-val>
-        </add>
-        <insert character-or-string="variable">
-          <variable-reference id="C"/>
+      <branch mname="map-vowel">
+        <move>
+          <marker>@&lt;</marker>
+        </move>
+        <insert>
+          <string>ཨ</string>
         </insert>
-        <shift-to id="state-after-consonant"/>
+        <move>
+          <marker>@&gt;</marker>
+        </move>
+        <shift>
+          <symbol>state-after-vowel</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-force-stack"/>
+      <branch mname="map-others"/>
+      <branch mname="map-escape">
+        <shift>
+          <symbol>state-dispatch-escape</symbol>
+        </shift>
+      </branch>
+      <branch mname="map-non-tibetan">
+        <shift>
+          <symbol>state-non-tibetan</symbol>
+        </shift>
+      </branch>
+      <branch mname="map-backspace"/>
+    </state>
+    <state sname="state-after-consonant">
+      <branch mname="map-force-stack">
+        <shift>
+          <symbol>state-consonant-stack</symbol>
+        </shift>
+      </branch>
+      <branch mname="map-break-stack">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
+      </branch>
+      <branch mname="map-vowel">
+        <shift>
+          <symbol>state-after-vowel</symbol>
+        </shift>
+      </branch>
+    </state>
+    <state sname="state-consonant-stack">
+      <title>ཀ+</title>
+      <branch mname="map-special-subjoined">
+        <shift>
+          <symbol>state-after-consonant</symbol>
+        </shift>
+      </branch>
+      <branch mname="map-consonant">
+        <set vname="C">
+          <char-at>
+            <marker>@-1</marker>
+          </char-at>
+        </set>
+        <delete>
+          <marker>@-1</marker>
+        </delete>
+        <add vname="C">
+          <integer>80</integer>
+        </add>
+        <insert>
+          <varref vname="C"/>
+        </insert>
+        <shift>
+          <symbol>state-after-consonant</symbol>
+        </shift>
+      </branch>
+      <branch mname="map-force-stack"/>
       <catch-all-branch>
         <pop/>
       </catch-all-branch>
     </state>
-    <state id="state-after-vowel">
-      <branch branch-selecting-map="map-force-stack">
-        <shift-to id="state-vowel-stack"/>
+    <state sname="state-after-vowel">
+      <branch mname="map-force-stack">
+        <shift>
+          <symbol>state-vowel-stack</symbol>
+        </shift>
       </branch>
     </state>
-    <state id="state-vowel-stack">
-      <state-title-text>ཀ+</state-title-text>
-      <branch branch-selecting-map="map-vowel">
-        <shift-to id="state-after-vowel"/>
+    <state sname="state-vowel-stack">
+      <title>ཀ+</title>
+      <branch mname="map-vowel">
+        <shift>
+          <symbol>state-after-vowel</symbol>
+        </shift>
       </branch>
     </state>
-    <state id="state-dispatch-escape">
-      <branch branch-selecting-map="map-unicode">
-        <shift-to id="state-unicode"/>
+    <state sname="state-dispatch-escape">
+      <branch mname="map-unicode">
+        <shift>
+          <symbol>state-unicode</symbol>
+        </shift>
       </branch>
       <catch-all-branch>
-        <delete-to-marker markerID="BEG"/>
-        <shift-to id="state-init"/>
+        <delete>
+          <marker>BEG</marker>
+        </delete>
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
         <unhandle/>
       </catch-all-branch>
     </state>
-    <state id="state-unicode">
-      <state-title-text>ཀu</state-title-text>
+    <state sname="state-unicode">
+      <title>ཀu</title>
       <state-hook>
-        <set id="COUNT">
-          <int-val>0</int-val>
+        <set vname="COUNT">
+          <integer>0</integer>
         </set>
-        <set id="UNICODE">
-          <int-val>0</int-val>
+        <set vname="UNICODE">
+          <integer>0</integer>
         </set>
       </state-hook>
-      <branch branch-selecting-map="map-hexadigit">
-        <conditional>
-          <case>
-            <expr operator="&gt;">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>57</int-val>
-            </expr>
-            <set id="UNICODE">
-              <expr operator="+">
-                <expr operator="*">
-                  <variable-reference id="UNICODE"/>
-                  <int-val>16</int-val>
-                </expr>
-                <expr operator="-">
-                  <predefined-nth-previous-or-following-character position="-1"/>
-                  <int-val>55</int-val>
-                </expr>
-              </expr>
+      <branch mname="map-hexadigit">
+        <cond>
+          <list>
+            <gt>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>57</integer>
+            </gt>
+            <set vname="UNICODE">
+              <add>
+                <mul>
+                  <varref vname="UNICODE"/>
+                  <integer>16</integer>
+                </mul>
+                <sub>
+                  <char-at>
+                    <marker>@-1</marker>
+                  </char-at>
+                  <integer>55</integer>
+                </sub>
+              </add>
             </set>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <set id="UNICODE">
-              <expr operator="+">
-                <expr operator="*">
-                  <variable-reference id="UNICODE"/>
-                  <int-val>16</int-val>
-                </expr>
-                <expr operator="-">
-                  <predefined-nth-previous-or-following-character position="-1"/>
-                  <int-val>48</int-val>
-                </expr>
-              </expr>
+          </list>
+          <list>
+            <integer>1</integer>
+            <set vname="UNICODE">
+              <add>
+                <mul>
+                  <varref vname="UNICODE"/>
+                  <integer>16</integer>
+                </mul>
+                <sub>
+                  <char-at>
+                    <marker>@-1</marker>
+                  </char-at>
+                  <integer>48</integer>
+                </sub>
+              </add>
             </set>
-          </case>
-        </conditional>
-        <set id="COUNT">
-          <expr operator="+">
-            <variable-reference id="COUNT"/>
-            <int-val>1</int-val>
-          </expr>
+          </list>
+        </cond>
+        <set vname="COUNT">
+          <add>
+            <varref vname="COUNT"/>
+            <integer>1</integer>
+          </add>
         </set>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <variable-reference id="COUNT"/>
-              <variable-reference id="MAX-COUNT"/>
-            </expr>
-            <delete-to-marker markerID="BEG"/>
-            <insert character-or-string="variable">
-              <variable-reference id="UNICODE"/>
+        <cond>
+          <list>
+            <eq>
+              <varref vname="COUNT"/>
+              <varref vname="MAX-COUNT"/>
+            </eq>
+            <delete>
+              <marker>BEG</marker>
+            </delete>
+            <insert>
+              <varref vname="UNICODE"/>
             </insert>
-            <shift-to id="state-init"/>
-          </case>
-        </conditional>
+            <shift>
+              <symbol>state-init</symbol>
+            </shift>
+          </list>
+        </cond>
       </branch>
     </state>
-    <state id="state-non-tibetan">
-      <state-title-text>ཀA</state-title-text>
-      <branch branch-selecting-map="map-unescape">
-        <shift-to id="state-init"/>
+    <state sname="state-non-tibetan">
+      <title>ཀA</title>
+      <branch mname="map-unescape">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
       <catch-all-branch>
         <unhandle/>

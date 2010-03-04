@@ -8,433 +8,821 @@
 </description>
   <title>ក</title>
   <map-list>
-    <map id="map-consonant">
+    <map mname="map-consonant">
       <rule>
-        <keyseq keys="k"/>
-        <insert string="ក"/>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <string>ក</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="kh"/>
-        <insert string="ខ"/>
+        <keyseq>
+          <string>kh</string>
+        </keyseq>
+        <insert>
+          <string>ខ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="K"/>
-        <insert string="គ"/>
+        <keyseq>
+          <string>K</string>
+        </keyseq>
+        <insert>
+          <string>គ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="Kh"/>
-        <insert string="ឃ"/>
+        <keyseq>
+          <string>Kh</string>
+        </keyseq>
+        <insert>
+          <string>ឃ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="KH"/>
-        <insert string="ឃ"/>
+        <keyseq>
+          <string>KH</string>
+        </keyseq>
+        <insert>
+          <string>ឃ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="g"/>
-        <insert string="ង"/>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <string>ង</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="c"/>
-        <insert string="ច"/>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <insert>
+          <string>ច</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="ch"/>
-        <insert string="ឆ"/>
+        <keyseq>
+          <string>ch</string>
+        </keyseq>
+        <insert>
+          <string>ឆ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="C"/>
-        <insert string="ជ"/>
+        <keyseq>
+          <string>C</string>
+        </keyseq>
+        <insert>
+          <string>ជ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="Ch"/>
-        <insert string="ឈ"/>
+        <keyseq>
+          <string>Ch</string>
+        </keyseq>
+        <insert>
+          <string>ឈ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="CH"/>
-        <insert string="ឈ"/>
+        <keyseq>
+          <string>CH</string>
+        </keyseq>
+        <insert>
+          <string>ឈ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="j"/>
-        <insert string="ញ"/>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+        <insert>
+          <string>ញ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="d"/>
-        <insert string="ដ"/>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <insert>
+          <string>ដ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="dh"/>
-        <insert string="ឋ"/>
+        <keyseq>
+          <string>dh</string>
+        </keyseq>
+        <insert>
+          <string>ឋ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="D"/>
-        <insert string="ឌ"/>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <insert>
+          <string>ឌ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="Dh"/>
-        <insert string="ឍ"/>
+        <keyseq>
+          <string>Dh</string>
+        </keyseq>
+        <insert>
+          <string>ឍ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="DH"/>
-        <insert string="ឍ"/>
+        <keyseq>
+          <string>DH</string>
+        </keyseq>
+        <insert>
+          <string>ឍ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="N"/>
-        <insert string="ណ"/>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+        <insert>
+          <string>ណ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="t"/>
-        <insert string="ត"/>
+        <keyseq>
+          <string>t</string>
+        </keyseq>
+        <insert>
+          <string>ត</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="th"/>
-        <insert string="ថ"/>
+        <keyseq>
+          <string>th</string>
+        </keyseq>
+        <insert>
+          <string>ថ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="T"/>
-        <insert string="ទ"/>
+        <keyseq>
+          <string>T</string>
+        </keyseq>
+        <insert>
+          <string>ទ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="Th"/>
-        <insert string="ធ"/>
+        <keyseq>
+          <string>Th</string>
+        </keyseq>
+        <insert>
+          <string>ធ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="TH"/>
-        <insert string="ធ"/>
+        <keyseq>
+          <string>TH</string>
+        </keyseq>
+        <insert>
+          <string>ធ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="n"/>
-        <insert string="ន"/>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <string>ន</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="b"/>
-        <insert string="ប"/>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <insert>
+          <string>ប</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="ph"/>
-        <insert string="ផ"/>
+        <keyseq>
+          <string>ph</string>
+        </keyseq>
+        <insert>
+          <string>ផ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="P"/>
-        <insert string="ព"/>
+        <keyseq>
+          <string>P</string>
+        </keyseq>
+        <insert>
+          <string>ព</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="Ph"/>
-        <insert string="ភ"/>
+        <keyseq>
+          <string>Ph</string>
+        </keyseq>
+        <insert>
+          <string>ភ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="PH"/>
-        <insert string="ភ"/>
+        <keyseq>
+          <string>PH</string>
+        </keyseq>
+        <insert>
+          <string>ភ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="m"/>
-        <insert string="ម"/>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <string>ម</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="y"/>
-        <insert string="យ"/>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <insert>
+          <string>យ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="r"/>
-        <insert string="រ"/>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+        <insert>
+          <string>រ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="l"/>
-        <insert string="ល"/>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+        <insert>
+          <string>ល</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="v"/>
-        <insert string="វ"/>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert>
+          <string>វ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="sh"/>
-        <insert string="ឝ"/>
+        <keyseq>
+          <string>sh</string>
+        </keyseq>
+        <insert>
+          <string>ឝ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="S"/>
-        <insert string="ឞ"/>
+        <keyseq>
+          <string>S</string>
+        </keyseq>
+        <insert>
+          <string>ឞ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="s"/>
-        <insert string="ស"/>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+        <insert>
+          <string>ស</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="h"/>
-        <insert string="ហ"/>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <insert>
+          <string>ហ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="L"/>
-        <insert string="ឡ"/>
+        <keyseq>
+          <string>L</string>
+        </keyseq>
+        <insert>
+          <string>ឡ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="&apos;"/>
-        <insert string="អ"/>
+        <keyseq>
+          <string>'</string>
+        </keyseq>
+        <insert>
+          <string>អ</string>
+        </insert>
       </rule>
     </map>
-    <map id="map-wirama">
+    <map mname="map-wirama">
       <rule>
-        <keyseq keys="/"/>
-        <insert string="្"/>
+        <keyseq>
+          <string>/</string>
+        </keyseq>
+        <insert>
+          <string>្</string>
+        </insert>
       </rule>
     </map>
-    <map id="map-vowel">
+    <map mname="map-vowel">
       <rule>
-        <keyseq keys="A"/>
-        <insert string="ា"/>
+        <keyseq>
+          <string>A</string>
+        </keyseq>
+        <insert>
+          <string>ា</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="e"/>
-        <insert string="ិ"/>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <insert>
+          <string>ិ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="ey"/>
-        <insert string="ី"/>
+        <keyseq>
+          <string>ey</string>
+        </keyseq>
+        <insert>
+          <string>ី</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="u"/>
-        <insert string="ឹ"/>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <string>ឹ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="ui"/>
-        <insert string="ឺ"/>
+        <keyseq>
+          <string>ui</string>
+        </keyseq>
+        <insert>
+          <string>ឺ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="o"/>
-        <insert string="ុ"/>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <string>ុ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="ou"/>
-        <insert string="ូ"/>
+        <keyseq>
+          <string>ou</string>
+        </keyseq>
+        <insert>
+          <string>ូ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="ua"/>
-        <insert string="ួ"/>
+        <keyseq>
+          <string>ua</string>
+        </keyseq>
+        <insert>
+          <string>ួ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="au"/>
-        <insert string="ើ"/>
+        <keyseq>
+          <string>au</string>
+        </keyseq>
+        <insert>
+          <string>ើ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="Iu"/>
-        <insert string="ឿ"/>
+        <keyseq>
+          <string>Iu</string>
+        </keyseq>
+        <insert>
+          <string>ឿ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="Ie"/>
-        <insert string="ៀ"/>
+        <keyseq>
+          <string>Ie</string>
+        </keyseq>
+        <insert>
+          <string>ៀ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="ei"/>
-        <insert string="េ"/>
+        <keyseq>
+          <string>ei</string>
+        </keyseq>
+        <insert>
+          <string>េ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="ae"/>
-        <insert string="ែ"/>
+        <keyseq>
+          <string>ae</string>
+        </keyseq>
+        <insert>
+          <string>ែ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="ay"/>
-        <insert string="ៃ"/>
+        <keyseq>
+          <string>ay</string>
+        </keyseq>
+        <insert>
+          <string>ៃ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="Ao"/>
-        <insert string="ោ"/>
+        <keyseq>
+          <string>Ao</string>
+        </keyseq>
+        <insert>
+          <string>ោ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="Aw"/>
-        <insert string="ៅ"/>
-      </rule>
-    </map>
-    <map id="map-quality">
-      <rule>
-        <keyseq keys="q1"/>
-        <insert string="៉"/>
-      </rule>
-      <rule>
-        <keyseq keys="q2"/>
-        <insert string="៊"/>
-      </rule>
-    </map>
-    <map id="map-diacritic">
-      <rule>
-        <keyseq keys="M"/>
-        <insert string="ំ"/>
-      </rule>
-      <rule>
-        <keyseq keys="H"/>
-        <insert string="ះ"/>
-      </rule>
-      <rule>
-        <keyseq keys=":"/>
-        <insert string="ៈ"/>
-      </rule>
-      <rule>
-        <keyseq keys="D1"/>
-        <insert string="់"/>
-      </rule>
-      <rule>
-        <keyseq keys="D2"/>
-        <insert string="៌"/>
-      </rule>
-      <rule>
-        <keyseq keys="D3"/>
-        <insert string="៍"/>
-      </rule>
-      <rule>
-        <keyseq keys="D4"/>
-        <insert string="៎"/>
-      </rule>
-      <rule>
-        <keyseq keys="D5"/>
-        <insert string="៏"/>
-      </rule>
-      <rule>
-        <keyseq keys="D6"/>
-        <insert string="័"/>
-      </rule>
-    </map>
-    <map id="map-ind-vowel">
-      <rule>
-        <keyseq keys="V1"/>
-        <insert string="ឥ"/>
-      </rule>
-      <rule>
-        <keyseq keys="V2"/>
-        <insert string="ឦ"/>
-      </rule>
-      <rule>
-        <keyseq keys="V3"/>
-        <insert string="ឧ"/>
-      </rule>
-      <rule>
-        <keyseq keys="V4"/>
-        <insert string="ឨ"/>
-      </rule>
-      <rule>
-        <keyseq keys="V5"/>
-        <insert string="ឩ"/>
-      </rule>
-      <rule>
-        <keyseq keys="V6"/>
-        <insert string="ឪ"/>
-      </rule>
-      <rule>
-        <keyseq keys="V7"/>
-        <insert string="ឫ"/>
-      </rule>
-      <rule>
-        <keyseq keys="V8"/>
-        <insert string="ឬ"/>
-      </rule>
-      <rule>
-        <keyseq keys="V9"/>
-        <insert string="ឭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="VA"/>
-        <insert string="ឮ"/>
-      </rule>
-      <rule>
-        <keyseq keys="VB"/>
-        <insert string="ឯ"/>
-      </rule>
-      <rule>
-        <keyseq keys="VC"/>
-        <insert string="ឰ"/>
-      </rule>
-      <rule>
-        <keyseq keys="VD"/>
-        <insert string="ឱ"/>
-      </rule>
-      <rule>
-        <keyseq keys="VE"/>
-        <insert string="ឲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="VF"/>
-        <insert string="ឳ"/>
+        <keyseq>
+          <string>Aw</string>
+        </keyseq>
+        <insert>
+          <string>ៅ</string>
+        </insert>
       </rule>
     </map>
-    <map id="map-misc">
+    <map mname="map-quality">
       <rule>
-        <keyseq keys="."/>
-        <insert string="។"/>
+        <keyseq>
+          <string>q1</string>
+        </keyseq>
+        <insert>
+          <string>៉</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="="/>
-        <insert string="៕"/>
-      </rule>
-      <rule>
-        <keyseq keys="%"/>
-        <insert string="៖"/>
-      </rule>
-      <rule>
-        <keyseq keys="]"/>
-        <insert string="ៗ"/>
-      </rule>
-      <rule>
-        <keyseq keys="_"/>
-        <insert string="៘"/>
-      </rule>
-      <rule>
-        <keyseq keys="@"/>
-        <insert string="៙"/>
-      </rule>
-      <rule>
-        <keyseq keys="&gt;"/>
-        <insert string="៛"/>
-      </rule>
-      <rule>
-        <keyseq keys="$"/>
-        <insert string="ៜ"/>
-      </rule>
-      <rule>
-        <keyseq keys="/"/>
-        <insert string="្"/>
+        <keyseq>
+          <string>q2</string>
+        </keyseq>
+        <insert>
+          <string>៊</string>
+        </insert>
       </rule>
     </map>
-    <map id="map-space">
+    <map mname="map-diacritic">
       <rule>
-        <keyseq keys=" "/>
-        <insert string=""/>
+        <keyseq>
+          <string>M</string>
+        </keyseq>
+        <insert>
+          <string>ំ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <insert>
+          <string>ះ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>:</string>
+        </keyseq>
+        <insert>
+          <string>ៈ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>D1</string>
+        </keyseq>
+        <insert>
+          <string>់</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>D2</string>
+        </keyseq>
+        <insert>
+          <string>៌</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>D3</string>
+        </keyseq>
+        <insert>
+          <string>៍</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>D4</string>
+        </keyseq>
+        <insert>
+          <string>៎</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>D5</string>
+        </keyseq>
+        <insert>
+          <string>៏</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>D6</string>
+        </keyseq>
+        <insert>
+          <string>័</string>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-ind-vowel">
+      <rule>
+        <keyseq>
+          <string>V1</string>
+        </keyseq>
+        <insert>
+          <string>ឥ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>V2</string>
+        </keyseq>
+        <insert>
+          <string>ឦ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>V3</string>
+        </keyseq>
+        <insert>
+          <string>ឧ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>V4</string>
+        </keyseq>
+        <insert>
+          <string>ឨ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>V5</string>
+        </keyseq>
+        <insert>
+          <string>ឩ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>V6</string>
+        </keyseq>
+        <insert>
+          <string>ឪ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>V7</string>
+        </keyseq>
+        <insert>
+          <string>ឫ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>V8</string>
+        </keyseq>
+        <insert>
+          <string>ឬ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>V9</string>
+        </keyseq>
+        <insert>
+          <string>ឭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>VA</string>
+        </keyseq>
+        <insert>
+          <string>ឮ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>VB</string>
+        </keyseq>
+        <insert>
+          <string>ឯ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>VC</string>
+        </keyseq>
+        <insert>
+          <string>ឰ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>VD</string>
+        </keyseq>
+        <insert>
+          <string>ឱ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>VE</string>
+        </keyseq>
+        <insert>
+          <string>ឲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>VF</string>
+        </keyseq>
+        <insert>
+          <string>ឳ</string>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-misc">
+      <rule>
+        <keyseq>
+          <string>.</string>
+        </keyseq>
+        <insert>
+          <string>។</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>=</string>
+        </keyseq>
+        <insert>
+          <string>៕</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>%</string>
+        </keyseq>
+        <insert>
+          <string>៖</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>]</string>
+        </keyseq>
+        <insert>
+          <string>ៗ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>_</string>
+        </keyseq>
+        <insert>
+          <string>៘</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>@</string>
+        </keyseq>
+        <insert>
+          <string>៙</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&gt;</string>
+        </keyseq>
+        <insert>
+          <string>៛</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>$</string>
+        </keyseq>
+        <insert>
+          <string>ៜ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>/</string>
+        </keyseq>
+        <insert>
+          <string>្</string>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-space">
+      <rule>
+        <keyseq>
+          <string> </string>
+        </keyseq>
+        <insert>
+          <string></string>
+        </insert>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <branch branch-selecting-map="map-consonant">
-        <shift-to id="state-c-state"/>
+    <state sname="state-init">
+      <branch mname="map-consonant">
+        <shift>
+          <symbol>state-c-state</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-vowel"/>
-      <branch branch-selecting-map="map-quality"/>
-      <branch branch-selecting-map="map-diacritic"/>
-      <branch branch-selecting-map="map-ind-vowel"/>
-      <branch branch-selecting-map="map-misc"/>
+      <branch mname="map-vowel"/>
+      <branch mname="map-quality"/>
+      <branch mname="map-diacritic"/>
+      <branch mname="map-ind-vowel"/>
+      <branch mname="map-misc"/>
     </state>
-    <state id="state-c-state">
-      <branch branch-selecting-map="map-wirama">
-        <shift-to id="state-cw-state"/>
+    <state sname="state-c-state">
+      <branch mname="map-wirama">
+        <shift>
+          <symbol>state-cw-state</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-space">
-        <shift-to id="state-init"/>
-      </branch>
-    </state>
-    <state id="state-cw-state">
-      <branch branch-selecting-map="map-consonant">
-        <shift-to id="state-cwc-state"/>
-      </branch>
-      <branch branch-selecting-map="map-space">
-        <shift-to id="state-init"/>
+      <branch mname="map-space">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
     </state>
-    <state id="state-cwc-state">
-      <branch branch-selecting-map="map-wirama">
-        <shift-to id="state-cwcw-state"/>
+    <state sname="state-cw-state">
+      <branch mname="map-consonant">
+        <shift>
+          <symbol>state-cwc-state</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-space">
-        <shift-to id="state-init"/>
+      <branch mname="map-space">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
     </state>
-    <state id="state-cwcw-state">
-      <branch branch-selecting-map="map-consonant">
-        <shift-to id="state-init"/>
+    <state sname="state-cwc-state">
+      <branch mname="map-wirama">
+        <shift>
+          <symbol>state-cwcw-state</symbol>
+        </shift>
+      </branch>
+      <branch mname="map-space">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
+      </branch>
+    </state>
+    <state sname="state-cwcw-state">
+      <branch mname="map-consonant">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
     </state>
   </state-list>

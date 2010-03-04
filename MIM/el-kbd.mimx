@@ -1,10 +1,5 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
-<!--
-Input method for Greek simulating Greek keyboard.
-@image html el-kbd.png "Keyboard Layout"
-@image latex el-kbd.eps "Keyboard Layout" width=\narrowwidth
--->
   <tags>
     <language>el</language>
     <name>kbd</name>
@@ -17,324 +12,636 @@ Input method for Greek simulating Greek keyboard.
 </description>
   <title>Ψ</title>
   <map-list>
-    <map id="map-map">
-      <rule>
-        <keyseq keys="q"/>
-        <insert character="59"/>
-      </rule>
-      <rule>
-        <keyseq keys="w"/>
-        <insert character="962"/>
-      </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <insert character="949"/>
-      </rule>
-      <rule>
-        <keyseq keys="r"/>
-        <insert character="961"/>
-      </rule>
-      <rule>
-        <keyseq keys="t"/>
-        <insert character="964"/>
-      </rule>
-      <rule>
-        <keyseq keys="y"/>
-        <insert character="965"/>
-      </rule>
-      <rule>
-        <keyseq keys="u"/>
-        <insert character="952"/>
-      </rule>
-      <rule>
-        <keyseq keys="i"/>
-        <insert character="953"/>
-      </rule>
-      <rule>
-        <keyseq keys="o"/>
-        <insert character="959"/>
-      </rule>
-      <rule>
-        <keyseq keys="p"/>
-        <insert character="960"/>
-      </rule>
-      <rule>
-        <keyseq keys="["/>
-        <insert character="91"/>
-      </rule>
-      <rule>
-        <keyseq keys="]"/>
-        <insert character="93"/>
-      </rule>
-      <rule>
-        <keyseq keys="a"/>
-        <insert character="945"/>
+    <map mname="map-map">
+      <rule>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <insert>
+          <integer>59</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="s"/>
-        <insert character="963"/>
+      <rule>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+        <insert>
+          <integer>962</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <insert character="948"/>
+      <rule>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <insert>
+          <integer>949</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="f"/>
-        <insert character="966"/>
+      <rule>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+        <insert>
+          <integer>961</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="g"/>
-        <insert character="947"/>
+      <rule>
+        <keyseq>
+          <string>t</string>
+        </keyseq>
+        <insert>
+          <integer>964</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="h"/>
-        <insert character="951"/>
+      <rule>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <insert>
+          <integer>965</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="j"/>
-        <insert character="958"/>
+      <rule>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <integer>952</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="k"/>
-        <insert character="954"/>
+      <rule>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert>
+          <integer>953</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="l"/>
-        <insert character="955"/>
+      <rule>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <integer>959</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";"/>
-        <insert character="900"/>
+      <rule>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+        <insert>
+          <integer>960</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="z"/>
-        <insert character="950"/>
+      <rule>
+        <keyseq>
+          <string>[</string>
+        </keyseq>
+        <insert>
+          <integer>91</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="x"/>
-        <insert character="967"/>
+      <rule>
+        <keyseq>
+          <string>]</string>
+        </keyseq>
+        <insert>
+          <integer>93</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="c"/>
-        <insert character="968"/>
+      <rule>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+        <insert>
+          <integer>945</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="v"/>
-        <insert character="969"/>
+      <rule>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+        <insert>
+          <integer>963</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="b"/>
-        <insert character="946"/>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <insert>
+          <integer>948</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="n"/>
-        <insert character="957"/>
+      <rule>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+        <insert>
+          <integer>966</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="m"/>
-        <insert character="956"/>
+      <rule>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <integer>947</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="Q"/>
-        <insert character="58"/>
+      <rule>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <insert>
+          <integer>951</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="W"/>
-        <insert character="931"/>
+      <rule>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+        <insert>
+          <integer>958</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="E"/>
-        <insert character="917"/>
+      <rule>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <integer>954</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="R"/>
-        <insert character="929"/>
+      <rule>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+        <insert>
+          <integer>955</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="T"/>
-        <insert character="932"/>
+      <rule>
+        <keyseq>
+          <string>;</string>
+        </keyseq>
+        <insert>
+          <integer>900</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="Y"/>
-        <insert character="933"/>
+      <rule>
+        <keyseq>
+          <string>z</string>
+        </keyseq>
+        <insert>
+          <integer>950</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="U"/>
-        <insert character="920"/>
+      <rule>
+        <keyseq>
+          <string>x</string>
+        </keyseq>
+        <insert>
+          <integer>967</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="I"/>
-        <insert character="921"/>
+      <rule>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <insert>
+          <integer>968</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="O"/>
-        <insert character="927"/>
+      <rule>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert>
+          <integer>969</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="P"/>
-        <insert character="928"/>
+      <rule>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <insert>
+          <integer>946</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="A"/>
-        <insert character="913"/>
+      <rule>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <integer>957</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="S"/>
-        <insert character="931"/>
+      <rule>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <integer>956</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="D"/>
-        <insert character="916"/>
+      <rule>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <insert>
+          <integer>58</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="F"/>
-        <insert character="934"/>
+      <rule>
+        <keyseq>
+          <string>W</string>
+        </keyseq>
+        <insert>
+          <integer>931</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="G"/>
-        <insert character="915"/>
+      <rule>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <insert>
+          <integer>917</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="H"/>
-        <insert character="919"/>
+      <rule>
+        <keyseq>
+          <string>R</string>
+        </keyseq>
+        <insert>
+          <integer>929</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="J"/>
-        <insert character="926"/>
+      <rule>
+        <keyseq>
+          <string>T</string>
+        </keyseq>
+        <insert>
+          <integer>932</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="K"/>
-        <insert character="922"/>
+      <rule>
+        <keyseq>
+          <string>Y</string>
+        </keyseq>
+        <insert>
+          <integer>933</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="L"/>
-        <insert character="923"/>
+      <rule>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert>
+          <integer>920</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=":"/>
-        <insert character="168"/>
+      <rule>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <insert>
+          <integer>921</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="Z"/>
-        <insert character="918"/>
+      <rule>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+        <insert>
+          <integer>927</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="X"/>
-        <insert character="935"/>
+      <rule>
+        <keyseq>
+          <string>P</string>
+        </keyseq>
+        <insert>
+          <integer>928</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="C"/>
-        <insert character="936"/>
+      <rule>
+        <keyseq>
+          <string>A</string>
+        </keyseq>
+        <insert>
+          <integer>913</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="V"/>
-        <insert character="937"/>
+      <rule>
+        <keyseq>
+          <string>S</string>
+        </keyseq>
+        <insert>
+          <integer>931</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="B"/>
-        <insert character="914"/>
+      <rule>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <insert>
+          <integer>916</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="N"/>
-        <insert character="925"/>
+      <rule>
+        <keyseq>
+          <string>F</string>
+        </keyseq>
+        <insert>
+          <integer>934</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="M"/>
-        <insert character="924"/>
+      <rule>
+        <keyseq>
+          <string>G</string>
+        </keyseq>
+        <insert>
+          <integer>915</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";a"/>
-        <insert character="940"/>
+      <rule>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <insert>
+          <integer>919</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";e"/>
-        <insert character="941"/>
+      <rule>
+        <keyseq>
+          <string>J</string>
+        </keyseq>
+        <insert>
+          <integer>926</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";h"/>
-        <insert character="942"/>
+      <rule>
+        <keyseq>
+          <string>K</string>
+        </keyseq>
+        <insert>
+          <integer>922</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";i"/>
-        <insert character="943"/>
+      <rule>
+        <keyseq>
+          <string>L</string>
+        </keyseq>
+        <insert>
+          <integer>923</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";o"/>
-        <insert character="972"/>
+      <rule>
+        <keyseq>
+          <string>:</string>
+        </keyseq>
+        <insert>
+          <integer>168</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";y"/>
-        <insert character="973"/>
+      <rule>
+        <keyseq>
+          <string>Z</string>
+        </keyseq>
+        <insert>
+          <integer>918</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";v"/>
-        <insert character="974"/>
+      <rule>
+        <keyseq>
+          <string>X</string>
+        </keyseq>
+        <insert>
+          <integer>935</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";A"/>
-        <insert character="902"/>
+      <rule>
+        <keyseq>
+          <string>C</string>
+        </keyseq>
+        <insert>
+          <integer>936</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";E"/>
-        <insert character="904"/>
+      <rule>
+        <keyseq>
+          <string>V</string>
+        </keyseq>
+        <insert>
+          <integer>937</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";H"/>
-        <insert character="905"/>
+      <rule>
+        <keyseq>
+          <string>B</string>
+        </keyseq>
+        <insert>
+          <integer>914</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";I"/>
-        <insert character="906"/>
+      <rule>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+        <insert>
+          <integer>925</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";O"/>
-        <insert character="908"/>
+      <rule>
+        <keyseq>
+          <string>M</string>
+        </keyseq>
+        <insert>
+          <integer>924</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";Y"/>
-        <insert character="910"/>
+      <rule>
+        <keyseq>
+          <string>;a</string>
+        </keyseq>
+        <insert>
+          <integer>940</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";V"/>
-        <insert character="911"/>
+      <rule>
+        <keyseq>
+          <string>;e</string>
+        </keyseq>
+        <insert>
+          <integer>941</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=":i"/>
-        <insert character="970"/>
+      <rule>
+        <keyseq>
+          <string>;h</string>
+        </keyseq>
+        <insert>
+          <integer>942</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=":y"/>
-        <insert character="971"/>
+      <rule>
+        <keyseq>
+          <string>;i</string>
+        </keyseq>
+        <insert>
+          <integer>943</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=":I"/>
-        <insert character="938"/>
+      <rule>
+        <keyseq>
+          <string>;o</string>
+        </keyseq>
+        <insert>
+          <integer>972</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=":Y"/>
-        <insert character="939"/>
+      <rule>
+        <keyseq>
+          <string>;y</string>
+        </keyseq>
+        <insert>
+          <integer>973</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";:i"/>
-        <insert character="912"/>
+      <rule>
+        <keyseq>
+          <string>;v</string>
+        </keyseq>
+        <insert>
+          <integer>974</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=":;i"/>
-        <insert character="912"/>
+      <rule>
+        <keyseq>
+          <string>;A</string>
+        </keyseq>
+        <insert>
+          <integer>902</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";:y"/>
-        <insert character="944"/>
+      <rule>
+        <keyseq>
+          <string>;E</string>
+        </keyseq>
+        <insert>
+          <integer>904</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=":;y"/>
-        <insert character="944"/>
+      <rule>
+        <keyseq>
+          <string>;H</string>
+        </keyseq>
+        <insert>
+          <integer>905</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>;I</string>
+        </keyseq>
+        <insert>
+          <integer>906</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>;O</string>
+        </keyseq>
+        <insert>
+          <integer>908</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>;Y</string>
+        </keyseq>
+        <insert>
+          <integer>910</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>;V</string>
+        </keyseq>
+        <insert>
+          <integer>911</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>:i</string>
+        </keyseq>
+        <insert>
+          <integer>970</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>:y</string>
+        </keyseq>
+        <insert>
+          <integer>971</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>:I</string>
+        </keyseq>
+        <insert>
+          <integer>938</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>:Y</string>
+        </keyseq>
+        <insert>
+          <integer>939</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>;:i</string>
+        </keyseq>
+        <insert>
+          <integer>912</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>:;i</string>
+        </keyseq>
+        <insert>
+          <integer>912</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>;:y</string>
+        </keyseq>
+        <insert>
+          <integer>944</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>:;y</string>
+        </keyseq>
+        <insert>
+          <integer>944</integer>
+        </insert>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <branch branch-selecting-map="map-map"/>
+    <state sname="state-init">
+      <branch mname="map-map"/>
     </state>
   </state-list>
 </input-method>

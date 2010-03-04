@@ -1,17 +1,11 @@
 <?xml version='1.0'?>
-<!--
-Input method for Korean Hangul using Romaja keys.  The
-roman-transliteration rules follows that of IIIMF shown in this
-page: http://www3.sympatico.ca/d.moser/hangul.html
--->
 <input-method xmlns="http://www.m17n.org/MIM">
   <tags>
     <language>ko</language>
     <name>romaja</name>
   </tags>
   <description>Hangul input method with romaja keys.
-The roman-transliteration rules follows that of IIIMF shown in
-the page &lt;http://www3.sympatico.ca/d.moser/hangul.html&gt;.
+The roman-transliteration rules follows that of Hangule LE in IIIMF.
 
 Common to CHOSEONG and JONGSEONG:
   ㄱ(g) ㄲ(gg,kk,qq,c) ㄴ(n) ㄷ(d) ㄹ(l) ㄹ(r) ㅁ(m) ㅂ(b,v) ㅅ(s)
@@ -37,1065 +31,1551 @@ Special:
 </description>
   <title>로마자</title>
   <macro-list>
-    <macro id="macro-compose">
-      <if condition="&gt;">
-        <variable-reference id="L"/>
-        <int-val>0</int-val>
-        <if-true-action-list>
-          <set id="LIndex">
-            <variable-reference id="L"/>
+    <defmacro fname="macro-compose">
+      <if>
+        <gt>
+          <varref vname="L"/>
+          <integer>0</integer>
+        </gt>
+        <progn>
+          <set vname="LIndex">
+            <varref vname="L"/>
           </set>
-          <sub id="LIndex">
-            <int-val>0x1100</int-val>
+          <sub vname="LIndex">
+            <integer>0x1100</integer>
           </sub>
-          <set id="VIndex">
-            <variable-reference id="V"/>
+          <set vname="VIndex">
+            <varref vname="V"/>
           </set>
-          <sub id="VIndex">
-            <int-val>0x1161</int-val>
+          <sub vname="VIndex">
+            <integer>0x1161</integer>
           </sub>
-          <set id="TIndex">
-            <variable-reference id="T"/>
+          <set vname="TIndex">
+            <varref vname="T"/>
           </set>
-          <sub id="TIndex">
-            <int-val>0x11A7</int-val>
+          <sub vname="TIndex">
+            <integer>0x11A7</integer>
           </sub>
-          <set id="S">
-            <variable-reference id="LIndex"/>
+          <set vname="S">
+            <varref vname="LIndex"/>
           </set>
-          <mul id="S">
-            <int-val>21</int-val>
+          <mul vname="S">
+            <integer>21</integer>
           </mul>
-          <add id="S">
-            <variable-reference id="VIndex"/>
+          <add vname="S">
+            <varref vname="VIndex"/>
           </add>
-          <mul id="S">
-            <int-val>28</int-val>
+          <mul vname="S">
+            <integer>28</integer>
           </mul>
-          <add id="S">
-            <variable-reference id="TIndex"/>
+          <add vname="S">
+            <varref vname="TIndex"/>
           </add>
-          <add id="S">
-            <int-val>0xAC00</int-val>
+          <add vname="S">
+            <integer>0xAC00</integer>
           </add>
-          <delete-to-marker position="@first"/>
-          <insert character-or-string="variable">
-            <variable-reference id="S"/>
+          <delete>
+            <marker>@&lt;</marker>
+          </delete>
+          <insert>
+            <varref vname="S"/>
           </insert>
-        </if-true-action-list>
+        </progn>
       </if>
-    </macro>
-    <macro id="macro-compose-vowel">
-      <if condition="&lt;">
-        <variable-reference id="L"/>
-        <int-val>0</int-val>
-        <if-true-action-list/>
-        <if-not-true-action-list>
-          <if condition="=">
-            <variable-reference id="L"/>
-            <int-val>0</int-val>
-            <if-true-action-list>
-              <set id="L">
-                <int-val>0x110B</int-val>
+    </defmacro>
+    <defmacro fname="macro-compose-vowel">
+      <if>
+        <lt>
+          <varref vname="L"/>
+          <integer>0</integer>
+        </lt>
+        <progn/>
+        <progn>
+          <if>
+            <eq>
+              <varref vname="L"/>
+              <integer>0</integer>
+            </eq>
+            <progn>
+              <set vname="L">
+                <integer>0x110B</integer>
               </set>
-            </if-true-action-list>
+            </progn>
           </if>
-          <set id="T1">
-            <variable-reference id="T"/>
+          <set vname="T1">
+            <varref vname="T"/>
           </set>
-          <set id="T">
-            <int-val>0x11A7</int-val>
+          <set vname="T">
+            <integer>0x11A7</integer>
           </set>
-          <macro-reference id="macro-compose"/>
-          <set id="T">
-            <variable-reference id="T1"/>
+          <funcall fname="macro-compose"/>
+          <set vname="T">
+            <varref vname="T1"/>
           </set>
-        </if-not-true-action-list>
+        </progn>
       </if>
-    </macro>
+    </defmacro>
   </macro-list>
   <map-list>
-    <map id="map-uppercase">
-      <rule>
-        <keyseq keys="B"/>
-        <pushback-keyseq>
-          <keyseq keys="b"/>
-        </pushback-keyseq>
-      </rule>
-      <rule>
-        <keyseq keys="C"/>
-        <pushback-keyseq>
-          <keyseq keys="c"/>
-        </pushback-keyseq>
-      </rule>
-      <rule>
-        <keyseq keys="D"/>
-        <pushback-keyseq>
-          <keyseq keys="d"/>
-        </pushback-keyseq>
-      </rule>
-      <rule>
-        <keyseq keys="F"/>
-        <pushback-keyseq>
-          <keyseq keys="f"/>
-        </pushback-keyseq>
-      </rule>
-      <rule>
-        <keyseq keys="G"/>
-        <pushback-keyseq>
-          <keyseq keys="g"/>
-        </pushback-keyseq>
-      </rule>
-      <rule>
-        <keyseq keys="H"/>
-        <pushback-keyseq>
-          <keyseq keys="h"/>
-        </pushback-keyseq>
-      </rule>
-      <rule>
-        <keyseq keys="J"/>
-        <pushback-keyseq>
-          <keyseq keys="j"/>
-        </pushback-keyseq>
-      </rule>
-      <rule>
-        <keyseq keys="K"/>
-        <pushback-keyseq>
-          <keyseq keys="k"/>
-        </pushback-keyseq>
-      </rule>
-      <rule>
-        <keyseq keys="L"/>
-        <pushback-keyseq>
-          <keyseq keys="l"/>
-        </pushback-keyseq>
-      </rule>
-      <rule>
-        <keyseq keys="M"/>
-        <pushback-keyseq>
-          <keyseq keys="m"/>
-        </pushback-keyseq>
-      </rule>
-      <rule>
-        <keyseq keys="N"/>
-        <pushback-keyseq>
-          <keyseq keys="n"/>
-        </pushback-keyseq>
-      </rule>
-      <rule>
-        <keyseq keys="P"/>
-        <pushback-keyseq>
-          <keyseq keys="p"/>
-        </pushback-keyseq>
-      </rule>
-      <rule>
-        <keyseq keys="Q"/>
-        <pushback-keyseq>
-          <keyseq keys="q"/>
-        </pushback-keyseq>
-      </rule>
-      <rule>
-        <keyseq keys="R"/>
-        <pushback-keyseq>
-          <keyseq keys="r"/>
-        </pushback-keyseq>
-      </rule>
-      <rule>
-        <keyseq keys="S"/>
-        <pushback-keyseq>
-          <keyseq keys="s"/>
-        </pushback-keyseq>
-      </rule>
-      <rule>
-        <keyseq keys="T"/>
-        <pushback-keyseq>
-          <keyseq keys="t"/>
-        </pushback-keyseq>
-      </rule>
-      <rule>
-        <keyseq keys="V"/>
-        <pushback-keyseq>
-          <keyseq keys="v"/>
-        </pushback-keyseq>
-      </rule>
-      <rule>
-        <keyseq keys="X"/>
-        <pushback-keyseq>
-          <keyseq keys="x"/>
-        </pushback-keyseq>
-      </rule>
-    </map>
-    <map id="map-X">
-      <rule>
-        <keyseq keys="g"/>
-        <set id="L1">
-          <int-val>0x1100</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11A8</int-val>
-        </set>
-        <insert character="70177"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="gg"/>
-        <set id="L1">
-          <int-val>0x1101</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11A9</int-val>
-        </set>
-        <insert character="70178"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="kk"/>
-        <set id="L1">
-          <int-val>0x1101</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11A9</int-val>
-        </set>
-        <insert character="70178"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="qq"/>
-        <set id="L1">
-          <int-val>0x1101</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11A9</int-val>
-        </set>
-        <insert character="70178"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="c"/>
-        <set id="L1">
-          <int-val>0x1101</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11A9</int-val>
-        </set>
-        <insert character="70178"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="n"/>
-        <set id="L1">
-          <int-val>0x1102</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11AB</int-val>
-        </set>
-        <insert character="70180"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <set id="L1">
-          <int-val>0x1103</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11AE</int-val>
-        </set>
-        <insert character="70183"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="l"/>
-        <set id="L1">
-          <int-val>0x1105</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11AF</int-val>
-        </set>
-        <insert character="70185"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="r"/>
-        <set id="L1">
-          <int-val>0x1105</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11AF</int-val>
-        </set>
-        <insert character="70185"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="m"/>
-        <set id="L1">
-          <int-val>0x1106</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11B7</int-val>
-        </set>
-        <insert character="70193"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="b"/>
-        <set id="L1">
-          <int-val>0x1107</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11B8</int-val>
-        </set>
-        <insert character="70194"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="v"/>
-        <set id="L1">
-          <int-val>0x1107</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11B8</int-val>
-        </set>
-        <insert character="70194"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="s"/>
-        <set id="L1">
-          <int-val>0x1109</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11BA</int-val>
-        </set>
-        <insert character="70197"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="ss"/>
-        <set id="L1">
-          <int-val>0x110A</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11BB</int-val>
-        </set>
-        <insert character="70198"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="ng"/>
-        <set id="L1">
-          <int-val>0x110B</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11BC</int-val>
-        </set>
-        <insert character="70199"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="x"/>
-        <set id="L1">
-          <int-val>0x110B</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11BC</int-val>
-        </set>
-        <insert character="70199"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="j"/>
-        <set id="L1">
-          <int-val>0x110C</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11BD</int-val>
-        </set>
-        <insert character="70200"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="ch"/>
-        <set id="L1">
-          <int-val>0x110E</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11BE</int-val>
-        </set>
-        <insert character="70202"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="k"/>
-        <set id="L1">
-          <int-val>0x110F</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11BF</int-val>
-        </set>
-        <insert character="70203"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="q"/>
-        <set id="L1">
-          <int-val>0x110F</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11BF</int-val>
-        </set>
-        <insert character="70203"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="t"/>
-        <set id="L1">
-          <int-val>0x1110</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11C0</int-val>
-        </set>
-        <insert character="70204"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="p"/>
-        <set id="L1">
-          <int-val>0x1111</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11C1</int-val>
-        </set>
-        <insert character="70205"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="f"/>
-        <set id="L1">
-          <int-val>0x1111</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11C1</int-val>
-        </set>
-        <insert character="70205"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="h"/>
-        <set id="L1">
-          <int-val>0x1112</int-val>
-        </set>
-        <set id="T">
-          <int-val>0x11C2</int-val>
-        </set>
-        <insert character="70206"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-    </map>
-    <map id="map-L">
-      <rule>
-        <keyseq keys="dd"/>
-        <set id="L">
-          <int-val>0x1104</int-val>
-        </set>
-        <insert character="70184"/>
-      </rule>
-      <rule>
-        <keyseq keys="tt"/>
-        <set id="L">
-          <int-val>0x1104</int-val>
-        </set>
-        <insert character="70184"/>
-      </rule>
-      <rule>
-        <keyseq keys="bb"/>
-        <set id="L">
-          <int-val>0x1108</int-val>
-        </set>
-        <insert character="70195"/>
-      </rule>
-      <rule>
-        <keyseq keys="vv"/>
-        <set id="L">
-          <int-val>0x1108</int-val>
-        </set>
-        <insert character="70195"/>
-      </rule>
-      <rule>
-        <keyseq keys="jj"/>
-        <set id="L">
-          <int-val>0x110D</int-val>
-        </set>
-        <insert character="70201"/>
-      </rule>
-    </map>
-    <map id="map-T">
-      <rule>
-        <keyseq keys="gs"/>
-        <set id="T">
-          <int-val>0x11AA</int-val>
-        </set>
-        <insert character="70179"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="nj"/>
-        <set id="T">
-          <int-val>0x11AC</int-val>
-        </set>
-        <insert character="70181"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="nh"/>
-        <set id="T">
-          <int-val>0x11AD</int-val>
-        </set>
-        <insert character="70182"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="lg"/>
-        <set id="T">
-          <int-val>0x11B0</int-val>
-        </set>
-        <insert character="70186"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="lm"/>
-        <set id="T">
-          <int-val>0x11B1</int-val>
-        </set>
-        <insert character="70187"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="lb"/>
-        <set id="T">
-          <int-val>0x11B2</int-val>
-        </set>
-        <insert character="70188"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="ls"/>
-        <set id="T">
-          <int-val>0x11B3</int-val>
-        </set>
-        <insert character="70189"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="lt"/>
-        <set id="T">
-          <int-val>0x11B4</int-val>
-        </set>
-        <insert character="70190"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="lp"/>
-        <set id="T">
-          <int-val>0x11B5</int-val>
-        </set>
-        <insert character="70191"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="lh"/>
-        <set id="T">
-          <int-val>0x11B6</int-val>
-        </set>
-        <insert character="70192"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-      <rule>
-        <keyseq keys="bs"/>
-        <set id="T">
-          <int-val>0x11B9</int-val>
-        </set>
-        <insert character="70196"/>
-        <macro-reference id="macro-compose"/>
-      </rule>
-    </map>
-    <map id="map-V">
-      <rule>
-        <keyseq keys="a"/>
-        <set id="V">
-          <int-val>0x1161</int-val>
-        </set>
-        <insert character="70207"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="ai"/>
-        <set id="V">
-          <int-val>0x1162</int-val>
-        </set>
-        <insert character="70208"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="ae"/>
-        <set id="V">
-          <int-val>0x1162</int-val>
-        </set>
-        <insert character="70208"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="ya"/>
-        <set id="V">
-          <int-val>0x1163</int-val>
-        </set>
-        <insert character="70209"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="ia"/>
-        <set id="V">
-          <int-val>0x1163</int-val>
-        </set>
-        <insert character="70209"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="yai"/>
-        <set id="V">
-          <int-val>0x1164</int-val>
-        </set>
-        <insert character="70210"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="yae"/>
-        <set id="V">
-          <int-val>0x1164</int-val>
-        </set>
-        <insert character="70210"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="iae"/>
-        <set id="V">
-          <int-val>0x1164</int-val>
-        </set>
-        <insert character="70210"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="eo"/>
-        <set id="V">
-          <int-val>0x1165</int-val>
-        </set>
-        <insert character="70211"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <set id="V">
-          <int-val>0x1166</int-val>
-        </set>
-        <insert character="70212"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="eoi"/>
-        <set id="V">
-          <int-val>0x1166</int-val>
-        </set>
-        <insert character="70212"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="yeo"/>
-        <set id="V">
-          <int-val>0x1167</int-val>
-        </set>
-        <insert character="70213"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="ieo"/>
-        <set id="V">
-          <int-val>0x1167</int-val>
-        </set>
-        <insert character="70213"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="ye"/>
-        <set id="V">
-          <int-val>0x1168</int-val>
-        </set>
-        <insert character="70214"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="ie"/>
-        <set id="V">
-          <int-val>0x1168</int-val>
-        </set>
-        <insert character="70214"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="yeoi"/>
-        <set id="V">
-          <int-val>0x1168</int-val>
-        </set>
-        <insert character="70214"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="o"/>
-        <set id="V">
-          <int-val>0x1169</int-val>
-        </set>
-        <insert character="70215"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="oa"/>
-        <set id="V">
-          <int-val>0x116A</int-val>
-        </set>
-        <insert character="70216"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="wa"/>
-        <set id="V">
-          <int-val>0x116A</int-val>
-        </set>
-        <insert character="70216"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="ua"/>
-        <set id="V">
-          <int-val>0x116A</int-val>
-        </set>
-        <insert character="70216"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="oai"/>
-        <set id="V">
-          <int-val>0x116B</int-val>
-        </set>
-        <insert character="70217"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="wae"/>
-        <set id="V">
-          <int-val>0x116B</int-val>
-        </set>
-        <insert character="70217"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="uae"/>
-        <set id="V">
-          <int-val>0x116B</int-val>
-        </set>
-        <insert character="70217"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="oae"/>
-        <set id="V">
-          <int-val>0x116B</int-val>
-        </set>
-        <insert character="70217"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="oi"/>
-        <set id="V">
-          <int-val>0x116C</int-val>
-        </set>
-        <insert character="70218"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="woe"/>
-        <set id="V">
-          <int-val>0x116C</int-val>
-        </set>
-        <insert character="70218"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="uoe"/>
-        <set id="V">
-          <int-val>0x116C</int-val>
-        </set>
-        <insert character="70218"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="oe"/>
-        <set id="V">
-          <int-val>0x116C</int-val>
-        </set>
-        <insert character="70218"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="yo"/>
-        <set id="V">
-          <int-val>0x116D</int-val>
-        </set>
-        <insert character="70219"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="io"/>
-        <set id="V">
-          <int-val>0x116D</int-val>
-        </set>
-        <insert character="70219"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="u"/>
-        <set id="V">
-          <int-val>0x116E</int-val>
-        </set>
-        <insert character="70220"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="w"/>
-        <set id="V">
-          <int-val>0x116E</int-val>
-        </set>
-        <insert character="70220"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="oo"/>
-        <set id="V">
-          <int-val>0x116E</int-val>
-        </set>
-        <insert character="70220"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="ueo"/>
-        <set id="V">
-          <int-val>0x116F</int-val>
-        </set>
-        <insert character="70221"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="wo"/>
-        <set id="V">
-          <int-val>0x116F</int-val>
-        </set>
-        <insert character="70221"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="uo"/>
-        <set id="V">
-          <int-val>0x116F</int-val>
-        </set>
-        <insert character="70221"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="ue"/>
-        <set id="V">
-          <int-val>0x1170</int-val>
-        </set>
-        <insert character="70222"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="we"/>
-        <set id="V">
-          <int-val>0x1170</int-val>
-        </set>
-        <insert character="70222"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="wi"/>
-        <set id="V">
-          <int-val>0x1171</int-val>
-        </set>
-        <insert character="70223"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="yu"/>
-        <set id="V">
-          <int-val>0x1172</int-val>
-        </set>
-        <insert character="70224"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="iu"/>
-        <set id="V">
-          <int-val>0x1172</int-val>
-        </set>
-        <insert character="70224"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="eu"/>
-        <set id="V">
-          <int-val>0x1173</int-val>
-        </set>
-        <insert character="70225"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="eui"/>
-        <set id="V">
-          <int-val>0x1174</int-val>
-        </set>
-        <insert character="70226"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="ui"/>
-        <set id="V">
-          <int-val>0x1174</int-val>
-        </set>
-        <insert character="70226"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="i"/>
-        <set id="V">
-          <int-val>0x1175</int-val>
-        </set>
-        <insert character="70227"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="y"/>
-        <set id="V">
-          <int-val>0x1175</int-val>
-        </set>
-        <insert character="70227"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-      <rule>
-        <keyseq keys="ee"/>
-        <set id="V">
-          <int-val>0x1175</int-val>
-        </set>
-        <insert character="70227"/>
-        <macro-reference id="macro-compose-vowel"/>
-      </rule>
-    </map>
-    <map id="map-V-head">
-      <rule>
-        <keyseq keys="a"/>
-      </rule>
-      <rule>
-        <keyseq keys="y"/>
-      </rule>
-      <rule>
-        <keyseq keys="e"/>
-      </rule>
-      <rule>
-        <keyseq keys="o"/>
-      </rule>
-      <rule>
-        <keyseq keys="w"/>
-      </rule>
-      <rule>
-        <keyseq keys="u"/>
-      </rule>
-      <rule>
-        <keyseq keys="i"/>
-      </rule>
-    </map>
-    <map id="map-punctuation">
-      <rule>
-        <keyseq keys=","/>
-        <insert character="44"/>
-      </rule>
-      <rule>
-        <keyseq keys=",,"/>
-        <insert character="53410"/>
-      </rule>
-      <rule>
-        <keyseq keys="."/>
-        <insert character="46"/>
-      </rule>
-      <rule>
-        <keyseq keys=".."/>
-        <insert character="53411"/>
-      </rule>
-      <rule>
-        <keyseq keys="?"/>
-        <insert character="63"/>
-      </rule>
-      <rule>
-        <keyseq keys="??"/>
-        <insert character="53417"/>
-      </rule>
-      <rule>
-        <keyseq keys="!"/>
-        <insert character="33"/>
-      </rule>
-      <rule>
-        <keyseq keys="!!"/>
-        <insert character="53418"/>
-      </rule>
-    </map>
-    <map id="map-backspace">
+    <map mname="map-uppercase">
       <rule>
         <keyseq>
-          <key-event>BackSpace</key-event>
+          <string>B</string>
         </keyseq>
-        <if condition="&gt;">
-          <variable-reference type="predefined" id="handled-keys"/>
-          <int-val>1</int-val>
-          <if-true-action-list>
-            <undo/>
-          </if-true-action-list>
-          <if-not-true-action-list>
-            <unhandle/>
-          </if-not-true-action-list>
-        </if>
-      </rule>
-    </map>
-    <map id="map-toggle-mode">
-      <rule>
-        <keyseq keys="I"/>
-        <if condition="=">
-          <variable-reference id="ISOLATED"/>
-          <int-val>0</int-val>
-          <if-true-action-list>
-            <set id="ISOLATED">
-              <int-val>1</int-val>
-            </set>
-          </if-true-action-list>
-          <if-not-true-action-list>
-            <set id="ISOLATED">
-              <int-val>0</int-val>
-            </set>
-          </if-not-true-action-list>
-        </if>
-      </rule>
-    </map>
-    <map id="map-commit-preedit">
-      <rule>
-        <keyseq keys=";"/>
+        <pushback>
+          <keyseq>
+            <string>b</string>
+          </keyseq>
+        </pushback>
       </rule>
       <rule>
         <keyseq>
-          <key-event>S- </key-event>
+          <string>C</string>
+        </keyseq>
+        <pushback>
+          <keyseq>
+            <string>c</string>
+          </keyseq>
+        </pushback>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <pushback>
+          <keyseq>
+            <string>d</string>
+          </keyseq>
+        </pushback>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>F</string>
+        </keyseq>
+        <pushback>
+          <keyseq>
+            <string>f</string>
+          </keyseq>
+        </pushback>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>G</string>
+        </keyseq>
+        <pushback>
+          <keyseq>
+            <string>g</string>
+          </keyseq>
+        </pushback>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <pushback>
+          <keyseq>
+            <string>h</string>
+          </keyseq>
+        </pushback>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>J</string>
+        </keyseq>
+        <pushback>
+          <keyseq>
+            <string>j</string>
+          </keyseq>
+        </pushback>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>K</string>
+        </keyseq>
+        <pushback>
+          <keyseq>
+            <string>k</string>
+          </keyseq>
+        </pushback>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>L</string>
+        </keyseq>
+        <pushback>
+          <keyseq>
+            <string>l</string>
+          </keyseq>
+        </pushback>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>M</string>
+        </keyseq>
+        <pushback>
+          <keyseq>
+            <string>m</string>
+          </keyseq>
+        </pushback>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+        <pushback>
+          <keyseq>
+            <string>n</string>
+          </keyseq>
+        </pushback>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>P</string>
+        </keyseq>
+        <pushback>
+          <keyseq>
+            <string>p</string>
+          </keyseq>
+        </pushback>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <pushback>
+          <keyseq>
+            <string>q</string>
+          </keyseq>
+        </pushback>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>R</string>
+        </keyseq>
+        <pushback>
+          <keyseq>
+            <string>r</string>
+          </keyseq>
+        </pushback>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>S</string>
+        </keyseq>
+        <pushback>
+          <keyseq>
+            <string>s</string>
+          </keyseq>
+        </pushback>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>T</string>
+        </keyseq>
+        <pushback>
+          <keyseq>
+            <string>t</string>
+          </keyseq>
+        </pushback>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>V</string>
+        </keyseq>
+        <pushback>
+          <keyseq>
+            <string>v</string>
+          </keyseq>
+        </pushback>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>X</string>
+        </keyseq>
+        <pushback>
+          <keyseq>
+            <string>x</string>
+          </keyseq>
+        </pushback>
+      </rule>
+    </map>
+    <map mname="map-X">
+      <rule>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x1100</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11A8</integer>
+        </set>
+        <insert>
+          <integer>12593</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>gg</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x1101</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11A9</integer>
+        </set>
+        <insert>
+          <integer>12594</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>kk</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x1101</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11A9</integer>
+        </set>
+        <insert>
+          <integer>12594</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>qq</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x1101</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11A9</integer>
+        </set>
+        <insert>
+          <integer>12594</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x1101</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11A9</integer>
+        </set>
+        <insert>
+          <integer>12594</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x1102</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11AB</integer>
+        </set>
+        <insert>
+          <integer>12596</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x1103</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11AE</integer>
+        </set>
+        <insert>
+          <integer>12599</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x1105</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11AF</integer>
+        </set>
+        <insert>
+          <integer>12601</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x1105</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11AF</integer>
+        </set>
+        <insert>
+          <integer>12601</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x1106</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11B7</integer>
+        </set>
+        <insert>
+          <integer>12609</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x1107</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11B8</integer>
+        </set>
+        <insert>
+          <integer>12610</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x1107</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11B8</integer>
+        </set>
+        <insert>
+          <integer>12610</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x1109</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11BA</integer>
+        </set>
+        <insert>
+          <integer>12613</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ss</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x110A</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11BB</integer>
+        </set>
+        <insert>
+          <integer>12614</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ng</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x110B</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11BC</integer>
+        </set>
+        <insert>
+          <integer>12615</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>x</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x110B</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11BC</integer>
+        </set>
+        <insert>
+          <integer>12615</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x110C</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11BD</integer>
+        </set>
+        <insert>
+          <integer>12616</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ch</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x110E</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11BE</integer>
+        </set>
+        <insert>
+          <integer>12618</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x110F</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11BF</integer>
+        </set>
+        <insert>
+          <integer>12619</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x110F</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11BF</integer>
+        </set>
+        <insert>
+          <integer>12619</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>t</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x1110</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11C0</integer>
+        </set>
+        <insert>
+          <integer>12620</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x1111</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11C1</integer>
+        </set>
+        <insert>
+          <integer>12621</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x1111</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11C1</integer>
+        </set>
+        <insert>
+          <integer>12621</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <set vname="L1">
+          <integer>0x1112</integer>
+        </set>
+        <set vname="T">
+          <integer>0x11C2</integer>
+        </set>
+        <insert>
+          <integer>12622</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+    </map>
+    <map mname="map-L">
+      <rule>
+        <keyseq>
+          <string>dd</string>
+        </keyseq>
+        <set vname="L">
+          <integer>0x1104</integer>
+        </set>
+        <insert>
+          <integer>12600</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>tt</string>
+        </keyseq>
+        <set vname="L">
+          <integer>0x1104</integer>
+        </set>
+        <insert>
+          <integer>12600</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>bb</string>
+        </keyseq>
+        <set vname="L">
+          <integer>0x1108</integer>
+        </set>
+        <insert>
+          <integer>12611</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>vv</string>
+        </keyseq>
+        <set vname="L">
+          <integer>0x1108</integer>
+        </set>
+        <insert>
+          <integer>12611</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>jj</string>
+        </keyseq>
+        <set vname="L">
+          <integer>0x110D</integer>
+        </set>
+        <insert>
+          <integer>12617</integer>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-T">
+      <rule>
+        <keyseq>
+          <string>gs</string>
+        </keyseq>
+        <set vname="T">
+          <integer>0x11AA</integer>
+        </set>
+        <insert>
+          <integer>12595</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>nj</string>
+        </keyseq>
+        <set vname="T">
+          <integer>0x11AC</integer>
+        </set>
+        <insert>
+          <integer>12597</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>nh</string>
+        </keyseq>
+        <set vname="T">
+          <integer>0x11AD</integer>
+        </set>
+        <insert>
+          <integer>12598</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lg</string>
+        </keyseq>
+        <set vname="T">
+          <integer>0x11B0</integer>
+        </set>
+        <insert>
+          <integer>12602</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lm</string>
+        </keyseq>
+        <set vname="T">
+          <integer>0x11B1</integer>
+        </set>
+        <insert>
+          <integer>12603</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lb</string>
+        </keyseq>
+        <set vname="T">
+          <integer>0x11B2</integer>
+        </set>
+        <insert>
+          <integer>12604</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ls</string>
+        </keyseq>
+        <set vname="T">
+          <integer>0x11B3</integer>
+        </set>
+        <insert>
+          <integer>12605</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lt</string>
+        </keyseq>
+        <set vname="T">
+          <integer>0x11B4</integer>
+        </set>
+        <insert>
+          <integer>12606</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lp</string>
+        </keyseq>
+        <set vname="T">
+          <integer>0x11B5</integer>
+        </set>
+        <insert>
+          <integer>12607</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lh</string>
+        </keyseq>
+        <set vname="T">
+          <integer>0x11B6</integer>
+        </set>
+        <insert>
+          <integer>12608</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>bs</string>
+        </keyseq>
+        <set vname="T">
+          <integer>0x11B9</integer>
+        </set>
+        <insert>
+          <integer>12612</integer>
+        </insert>
+        <funcall fname="macro-compose"/>
+      </rule>
+    </map>
+    <map mname="map-V">
+      <rule>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1161</integer>
+        </set>
+        <insert>
+          <integer>12623</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ai</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1162</integer>
+        </set>
+        <insert>
+          <integer>12624</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ae</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1162</integer>
+        </set>
+        <insert>
+          <integer>12624</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ya</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1163</integer>
+        </set>
+        <insert>
+          <integer>12625</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ia</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1163</integer>
+        </set>
+        <insert>
+          <integer>12625</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>yai</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1164</integer>
+        </set>
+        <insert>
+          <integer>12626</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>yae</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1164</integer>
+        </set>
+        <insert>
+          <integer>12626</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>iae</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1164</integer>
+        </set>
+        <insert>
+          <integer>12626</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>eo</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1165</integer>
+        </set>
+        <insert>
+          <integer>12627</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1166</integer>
+        </set>
+        <insert>
+          <integer>12628</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>eoi</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1166</integer>
+        </set>
+        <insert>
+          <integer>12628</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>yeo</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1167</integer>
+        </set>
+        <insert>
+          <integer>12629</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ieo</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1167</integer>
+        </set>
+        <insert>
+          <integer>12629</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ye</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1168</integer>
+        </set>
+        <insert>
+          <integer>12630</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ie</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1168</integer>
+        </set>
+        <insert>
+          <integer>12630</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>yeoi</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1168</integer>
+        </set>
+        <insert>
+          <integer>12630</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1169</integer>
+        </set>
+        <insert>
+          <integer>12631</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>oa</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x116A</integer>
+        </set>
+        <insert>
+          <integer>12632</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>wa</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x116A</integer>
+        </set>
+        <insert>
+          <integer>12632</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ua</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x116A</integer>
+        </set>
+        <insert>
+          <integer>12632</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>oai</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x116B</integer>
+        </set>
+        <insert>
+          <integer>12633</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>wae</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x116B</integer>
+        </set>
+        <insert>
+          <integer>12633</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>uae</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x116B</integer>
+        </set>
+        <insert>
+          <integer>12633</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>oae</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x116B</integer>
+        </set>
+        <insert>
+          <integer>12633</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>oi</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x116C</integer>
+        </set>
+        <insert>
+          <integer>12634</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>woe</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x116C</integer>
+        </set>
+        <insert>
+          <integer>12634</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>uoe</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x116C</integer>
+        </set>
+        <insert>
+          <integer>12634</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>oe</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x116C</integer>
+        </set>
+        <insert>
+          <integer>12634</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>yo</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x116D</integer>
+        </set>
+        <insert>
+          <integer>12635</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>io</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x116D</integer>
+        </set>
+        <insert>
+          <integer>12635</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x116E</integer>
+        </set>
+        <insert>
+          <integer>12636</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x116E</integer>
+        </set>
+        <insert>
+          <integer>12636</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>oo</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x116E</integer>
+        </set>
+        <insert>
+          <integer>12636</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ueo</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x116F</integer>
+        </set>
+        <insert>
+          <integer>12637</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>wo</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x116F</integer>
+        </set>
+        <insert>
+          <integer>12637</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>uo</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x116F</integer>
+        </set>
+        <insert>
+          <integer>12637</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ue</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1170</integer>
+        </set>
+        <insert>
+          <integer>12638</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>we</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1170</integer>
+        </set>
+        <insert>
+          <integer>12638</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>wi</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1171</integer>
+        </set>
+        <insert>
+          <integer>12639</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>yu</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1172</integer>
+        </set>
+        <insert>
+          <integer>12640</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>iu</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1172</integer>
+        </set>
+        <insert>
+          <integer>12640</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>eu</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1173</integer>
+        </set>
+        <insert>
+          <integer>12641</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>eui</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1174</integer>
+        </set>
+        <insert>
+          <integer>12642</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ui</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1174</integer>
+        </set>
+        <insert>
+          <integer>12642</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1175</integer>
+        </set>
+        <insert>
+          <integer>12643</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1175</integer>
+        </set>
+        <insert>
+          <integer>12643</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ee</string>
+        </keyseq>
+        <set vname="V">
+          <integer>0x1175</integer>
+        </set>
+        <insert>
+          <integer>12643</integer>
+        </insert>
+        <funcall fname="macro-compose-vowel"/>
+      </rule>
+    </map>
+    <map mname="map-V-head">
+      <rule>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+      </rule>
+    </map>
+    <map mname="map-punctuation">
+      <rule>
+        <keyseq>
+          <string>,</string>
+        </keyseq>
+        <insert>
+          <integer>44</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>,,</string>
+        </keyseq>
+        <insert>
+          <integer>12289</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>.</string>
+        </keyseq>
+        <insert>
+          <integer>46</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>..</string>
+        </keyseq>
+        <insert>
+          <integer>12290</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>?</string>
+        </keyseq>
+        <insert>
+          <integer>63</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>??</string>
+        </keyseq>
+        <insert>
+          <integer>65311</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>!</string>
+        </keyseq>
+        <insert>
+          <integer>33</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>!!</string>
+        </keyseq>
+        <insert>
+          <integer>65281</integer>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-backspace">
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>BackSpace</symbol>
+          </list>
+        </keyseq>
+        <if>
+          <gt>
+            <key-count/>
+            <integer>1</integer>
+          </gt>
+          <progn>
+            <undo/>
+          </progn>
+          <progn>
+            <unhandle/>
+          </progn>
+        </if>
+      </rule>
+    </map>
+    <map mname="map-toggle-mode">
+      <rule>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <if>
+          <eq>
+            <varref vname="ISOLATED"/>
+            <integer>0</integer>
+          </eq>
+          <progn>
+            <set vname="ISOLATED">
+              <integer>1</integer>
+            </set>
+          </progn>
+          <progn>
+            <set vname="ISOLATED">
+              <integer>0</integer>
+            </set>
+          </progn>
+        </if>
+      </rule>
+    </map>
+    <map mname="map-commit-preedit">
+      <rule>
+        <keyseq>
+          <string>;</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>S- </symbol>
+          </list>
         </keyseq>
       </rule>
     </map>
@@ -1109,139 +1589,183 @@ Special:
     </xi:include>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <state-title-text>로마자</state-title-text>
+    <state sname="state-init">
+      <title>로마자</title>
       <state-hook>
-        <set id="L">
-          <int-val>0</int-val>
+        <set vname="L">
+          <integer>0</integer>
         </set>
       </state-hook>
-      <branch branch-selecting-map="map-uppercase"/>
-      <branch branch-selecting-map="map-X">
-        <set id="L">
-          <variable-reference id="L1"/>
+      <branch mname="map-uppercase"/>
+      <branch mname="map-X">
+        <set vname="L">
+          <varref vname="L1"/>
         </set>
-        <shift-to id="state-after-L"/>
+        <shift>
+          <symbol>state-after-L</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-L">
-        <shift-to id="state-after-L"/>
+      <branch mname="map-L">
+        <shift>
+          <symbol>state-after-L</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-V">
-        <shift-to id="state-after-LV"/>
+      <branch mname="map-V">
+        <shift>
+          <symbol>state-after-LV</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-T"/>
-      <branch branch-selecting-map="map-backspace"/>
-      <branch branch-selecting-map="map-punctuation"/>
-      <branch branch-selecting-map="map-enter-fullwidth-mode">
-        <shift-to id="state-fullwidth-mode"/>
+      <branch mname="map-T"/>
+      <branch mname="map-backspace"/>
+      <branch mname="map-punctuation"/>
+      <branch mname="map-enter-fullwidth-mode">
+        <shift>
+          <symbol>state-fullwidth-mode</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-enter-single-fullwidth-mode">
-        <shift-to id="state-single-fullwidth-mode"/>
+      <branch mname="map-enter-single-fullwidth-mode">
+        <shift>
+          <symbol>state-single-fullwidth-mode</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-toggle-mode">
-        <shift-to id="state-isolated-jamo-mode"/>
+      <branch mname="map-toggle-mode">
+        <shift>
+          <symbol>state-isolated-jamo-mode</symbol>
+        </shift>
       </branch>
     </state>
-    <state id="state-after-L">
-      <branch branch-selecting-map="map-V">
-        <shift-to id="state-after-LV"/>
+    <state sname="state-after-L">
+      <branch mname="map-V">
+        <shift>
+          <symbol>state-after-LV</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-commit-preedit">
-        <shift-to id="state-init"/>
+      <branch mname="map-commit-preedit">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-backspace"/>
+      <branch mname="map-backspace"/>
     </state>
-    <state id="state-after-LV">
-      <branch branch-selecting-map="map-X">
-        <shift-to id="state-after-LVX"/>
+    <state sname="state-after-LV">
+      <branch mname="map-X">
+        <shift>
+          <symbol>state-after-LVX</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-T">
-        <shift-to id="state-init"/>
+      <branch mname="map-T">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-commit-preedit">
-        <shift-to id="state-init"/>
+      <branch mname="map-commit-preedit">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-backspace"/>
+      <branch mname="map-backspace"/>
     </state>
-    <state id="state-after-LVX">
-      <branch branch-selecting-map="map-V-head">
-        <delete-to-marker position="@first"/>
-        <pushback-n-events n="0"/>
-        <shift-to id="state-fix-LV-redo-L"/>
+    <state sname="state-after-LVX">
+      <branch mname="map-V-head">
+        <delete>
+          <marker>@&lt;</marker>
+        </delete>
+        <pushback>
+          <integer>0</integer>
+        </pushback>
+        <shift>
+          <symbol>state-fix-LV-redo-L</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-commit-preedit">
-        <shift-to id="state-init"/>
+      <branch mname="map-commit-preedit">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-backspace"/>
+      <branch mname="map-backspace"/>
     </state>
-    <state id="state-fix-LV-redo-L">
+    <state sname="state-fix-LV-redo-L">
       <state-hook>
-        <set id="L">
-          <int-val>0</int-val>
+        <set vname="L">
+          <integer>0</integer>
         </set>
       </state-hook>
-      <branch branch-selecting-map="map-X">
-        <set id="L">
-          <variable-reference id="L1"/>
+      <branch mname="map-X">
+        <set vname="L">
+          <varref vname="L1"/>
         </set>
-        <shift-to id="state-fix-LV-redo-V"/>
+        <shift>
+          <symbol>state-fix-LV-redo-V</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-L">
-        <shift-to id="state-fix-LV-redo-V"/>
+      <branch mname="map-L">
+        <shift>
+          <symbol>state-fix-LV-redo-V</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-V">
-        <set id="L">
-          <int-val>0x110B</int-val>
+      <branch mname="map-V">
+        <set vname="L">
+          <integer>0x110B</integer>
         </set>
-        <set id="T">
-          <int-val>0x11A7</int-val>
+        <set vname="T">
+          <integer>0x11A7</integer>
         </set>
-        <macro-reference id="macro-compose"/>
-        <shift-to id="state-init"/>
-      </branch>
-    </state>
-    <state id="state-fix-LV-redo-V">
-      <branch branch-selecting-map="map-V">
-        <set id="T">
-          <int-val>0x11A7</int-val>
-        </set>
-        <macro-reference id="macro-compose"/>
-        <shift-to id="state-init"/>
+        <funcall fname="macro-compose"/>
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
     </state>
-    <state id="state-isolated-jamo-mode">
-      <state-title-text>자모</state-title-text>
+    <state sname="state-fix-LV-redo-V">
+      <branch mname="map-V">
+        <set vname="T">
+          <integer>0x11A7</integer>
+        </set>
+        <funcall fname="macro-compose"/>
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
+      </branch>
+    </state>
+    <state sname="state-isolated-jamo-mode">
+      <title>자모</title>
       <state-hook>
-        <set id="L">
-          <int-val>-1</int-val>
+        <set vname="L">
+          <integer>-1</integer>
         </set>
       </state-hook>
-      <branch branch-selecting-map="map-X">
+      <branch mname="map-X">
         <commit/>
       </branch>
-      <branch branch-selecting-map="map-L">
-        <set id="L">
-          <int-val>-1</int-val>
+      <branch mname="map-L">
+        <set vname="L">
+          <integer>-1</integer>
         </set>
         <commit/>
       </branch>
-      <branch branch-selecting-map="map-T">
+      <branch mname="map-T">
         <commit/>
       </branch>
-      <branch branch-selecting-map="map-V">
+      <branch mname="map-V">
         <commit/>
       </branch>
-      <branch branch-selecting-map="map-commit-preedit">
+      <branch mname="map-commit-preedit">
         <commit/>
       </branch>
-      <branch branch-selecting-map="map-enter-fullwidth-mode">
-        <shift-to id="state-fullwidth-mode"/>
+      <branch mname="map-enter-fullwidth-mode">
+        <shift>
+          <symbol>state-fullwidth-mode</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-enter-single-fullwidth-mode">
-        <shift-to id="state-single-fullwidth-mode"/>
+      <branch mname="map-enter-single-fullwidth-mode">
+        <shift>
+          <symbol>state-single-fullwidth-mode</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-toggle-mode">
-        <shift-to id="state-init"/>
+      <branch mname="map-toggle-mode">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
       <catch-all-branch>
         <unhandle/>

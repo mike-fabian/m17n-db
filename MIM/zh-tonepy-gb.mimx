@@ -12,10 +12,10 @@ temporarily by typing "Z".
 </description>
   <title>调拼gb</title>
   <variable-list>
-    <variable id="candidates-group-size"/>
-    <variable id="candidates-charset">
-      <value type="symbol">gb2312.1980</value>
-    </variable>
+    <defvar vname="candidates-group-size"/>
+    <defvar vname="candidates-charset">
+      <symbol>gb2312.1980</symbol>
+    </defvar>
   </variable-list>
   <map-list>
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="zh-tonepy.mimx" xpointer="xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:map)">
@@ -23,16 +23,16 @@ temporarily by typing "Z".
         <language>zh</language>
         <name>tonepy</name>
       </tags>
-      <section>map</section>
+      <part>map</part>
     </xi:include>
   </map-list>
   <state-list>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="zh-tonepy.mimx" xpointer="xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:state)">
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="zh-tonepy.mimx" xpointer="xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:state)">
       <tags>
         <language>zh</language>
         <name>tonepy</name>
       </tags>
-      <section>state</section>
+      <part>state</part>
     </xi:include>
   </state-list>
 </input-method>

@@ -6,361 +6,451 @@
     <extra-id>global</extra-id>
   </tags>
   <description>
-    <get-text>Global variable and command definitions.
+    <gettext>Global variable and command definitions.
 This is actually not an input method, but provides documents,
 default values of global variables, and default key-bindings of
-global commands.</get-text>
+global commands.</gettext>
   </description>
   <variable-list>
-    <variable id="candidates-group-size">
+    <defvar vname="candidates-group-size">
       <description>
-        <get-text>Maxmum number of candidates in a candidate group.
+        <gettext>Maxmum number of candidates in a candidate group.
 Value must be an integer.
 If the value is not positive, number of candidates in a group is decided
-by how candiates are grouped in an input method source file.</get-text>
+by how candiates are grouped in an input method source file.</gettext>
       </description>
-      <value type="integer">10</value>
-    </variable>
-    <variable id="candidates-charset">
+      <integer>10</integer>
+    </defvar>
+    <defvar vname="candidates-charset">
       <description>
-        <get-text>Character set to limit candidates.
+        <gettext>Character set to limit candidates.
 Value must be a symbol representing a charater set, or nil.
 If the value is not nil, a candidate containing a character not belonging
-to the specified character set is ignored.</get-text>
+to the specified character set is ignored.</gettext>
       </description>
-      <value type="symbol">nil</value>
-    </variable>
+      <symbol>nil</symbol>
+    </defvar>
   </variable-list>
   <command-list>
-    <command id="command-commit">
+    <defcmd cname="command-commit">
       <description>
-        <get-text>Commit
-Commit the preedit text</get-text>
+        <gettext>Commit
+Commit the preedit text</gettext>
       </description>
       <keyseq>
-        <key-event>Return</key-event>
+        <list>
+          <symbol>Return</symbol>
+        </list>
       </keyseq>
       <keyseq>
-        <key-event>Linefeed</key-event>
+        <list>
+          <symbol>Linefeed</symbol>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-convert">
+    </defcmd>
+    <defcmd cname="command-convert">
       <description>
-        <get-text>Convert
-Convert the preedit text</get-text>
+        <gettext>Convert
+Convert the preedit text</gettext>
       </description>
       <keyseq>
-        <key-event> </key-event>
+        <list>
+          <integer>? </integer>
+        </list>
       </keyseq>
       <keyseq>
-        <key-event>Henkan</key-event>
+        <list>
+          <symbol>Henkan</symbol>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-revert">
+    </defcmd>
+    <defcmd cname="command-revert">
       <description>
-        <get-text>Revert
-Revert the conversion</get-text>
+        <gettext>Revert
+Revert the conversion</gettext>
       </description>
       <keyseq>
-        <key-event>Escape</key-event>
+        <list>
+          <symbol>Escape</symbol>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-prev-candidate">
+    </defcmd>
+    <defcmd cname="command-prev-candidate">
       <description>
-        <get-text>Previous candidate
-Spot the previous candidate</get-text>
+        <gettext>Previous candidate
+Spot the previous candidate</gettext>
       </description>
       <keyseq>
-        <key-event>Left</key-event>
+        <list>
+          <symbol>Left</symbol>
+        </list>
       </keyseq>
       <keyseq>
-        <key-event>C-B</key-event>
+        <list>
+          <symbol>C-B</symbol>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-next-candidate">
+    </defcmd>
+    <defcmd cname="command-next-candidate">
       <description>
-        <get-text>Next candidate
-Spot the next candidate</get-text>
+        <gettext>Next candidate
+Spot the next candidate</gettext>
       </description>
       <keyseq>
-        <key-event>Right</key-event>
+        <list>
+          <symbol>Right</symbol>
+        </list>
       </keyseq>
       <keyseq>
-        <key-event>C-F</key-event>
+        <list>
+          <symbol>C-F</symbol>
+        </list>
       </keyseq>
       <keyseq>
-        <key-event> </key-event>
+        <list>
+          <integer>? </integer>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-first-candidate">
+    </defcmd>
+    <defcmd cname="command-first-candidate">
       <description>
-        <get-text>First candidate
-Spot the first candidate in the current group</get-text>
+        <gettext>First candidate
+Spot the first candidate in the current group</gettext>
       </description>
       <keyseq>
-        <key-event>C-A</key-event>
+        <list>
+          <symbol>C-A</symbol>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-last-candidate">
+    </defcmd>
+    <defcmd cname="command-last-candidate">
       <description>
-        <get-text>Last candidate
-Spot the last candidate in the current group</get-text>
+        <gettext>Last candidate
+Spot the last candidate in the current group</gettext>
       </description>
       <keyseq>
-        <key-event>C-E</key-event>
+        <list>
+          <symbol>C-E</symbol>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-prev-candidate-group">
+    </defcmd>
+    <defcmd cname="command-prev-candidate-group">
       <description>
-        <get-text>Previous candidate group
-Move to the previous candidate group</get-text>
+        <gettext>Previous candidate group
+Move to the previous candidate group</gettext>
       </description>
       <keyseq>
-        <key-event>Up</key-event>
+        <list>
+          <symbol>Up</symbol>
+        </list>
       </keyseq>
       <keyseq>
-        <key-event>C-P</key-event>
+        <list>
+          <symbol>C-P</symbol>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-next-candidate-group">
+    </defcmd>
+    <defcmd cname="command-next-candidate-group">
       <description>
-        <get-text>Next candidate group
-Move to the next candidate group</get-text>
+        <gettext>Next candidate group
+Move to the next candidate group</gettext>
       </description>
       <keyseq>
-        <key-event>Down</key-event>
+        <list>
+          <symbol>Down</symbol>
+        </list>
       </keyseq>
       <keyseq>
-        <key-event>C-N</key-event>
+        <list>
+          <symbol>C-N</symbol>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-candidate-1">
+    </defcmd>
+    <defcmd cname="command-candidate-1">
       <description>
-        <get-text>Select the 1st candidate
-Select the first candidate in the current group</get-text>
+        <gettext>Select the 1st candidate
+Select the first candidate in the current group</gettext>
       </description>
       <keyseq>
-        <key-event>1</key-event>
+        <list>
+          <integer>?1</integer>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-candidate-2">
+    </defcmd>
+    <defcmd cname="command-candidate-2">
       <description>
-        <get-text>Select the 2nd candidate
-Select the second candidate in the current group</get-text>
+        <gettext>Select the 2nd candidate
+Select the second candidate in the current group</gettext>
       </description>
       <keyseq>
-        <key-event>2</key-event>
+        <list>
+          <integer>?2</integer>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-candidate-3">
+    </defcmd>
+    <defcmd cname="command-candidate-3">
       <description>
-        <get-text>Select the 3rd candidate
-Select the third candidate in the current group</get-text>
+        <gettext>Select the 3rd candidate
+Select the third candidate in the current group</gettext>
       </description>
       <keyseq>
-        <key-event>3</key-event>
+        <list>
+          <integer>?3</integer>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-candidate-4">
+    </defcmd>
+    <defcmd cname="command-candidate-4">
       <description>
-        <get-text>Select the 4th candidate
-Select the fourth candidate in the current group</get-text>
+        <gettext>Select the 4th candidate
+Select the fourth candidate in the current group</gettext>
       </description>
       <keyseq>
-        <key-event>4</key-event>
+        <list>
+          <integer>?4</integer>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-candidate-5">
+    </defcmd>
+    <defcmd cname="command-candidate-5">
       <description>
-        <get-text>Select the 5th candidate
-Select the fifth candidate in the current group</get-text>
+        <gettext>Select the 5th candidate
+Select the fifth candidate in the current group</gettext>
       </description>
       <keyseq>
-        <key-event>5</key-event>
+        <list>
+          <integer>?5</integer>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-candidate-6">
+    </defcmd>
+    <defcmd cname="command-candidate-6">
       <description>
-        <get-text>Select the 6th candidate
-Select the sixth candidate in the current group</get-text>
+        <gettext>Select the 6th candidate
+Select the sixth candidate in the current group</gettext>
       </description>
       <keyseq>
-        <key-event>6</key-event>
+        <list>
+          <integer>?6</integer>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-candidate-7">
+    </defcmd>
+    <defcmd cname="command-candidate-7">
       <description>
-        <get-text>Select the 7th candidate
-Select the seventh candidate in the current group</get-text>
+        <gettext>Select the 7th candidate
+Select the seventh candidate in the current group</gettext>
       </description>
       <keyseq>
-        <key-event>7</key-event>
+        <list>
+          <integer>?7</integer>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-candidate-8">
+    </defcmd>
+    <defcmd cname="command-candidate-8">
       <description>
-        <get-text>select the 8th candidate
-Select the eighth candidate in the current group</get-text>
+        <gettext>select the 8th candidate
+Select the eighth candidate in the current group</gettext>
       </description>
       <keyseq>
-        <key-event>8</key-event>
+        <list>
+          <integer>?8</integer>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-candidate-9">
+    </defcmd>
+    <defcmd cname="command-candidate-9">
       <description>
-        <get-text>Select the 9th candidate
-Select the ninth candidate in the current group</get-text>
+        <gettext>Select the 9th candidate
+Select the ninth candidate in the current group</gettext>
       </description>
       <keyseq>
-        <key-event>9</key-event>
+        <list>
+          <integer>?9</integer>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-candidate-10">
+    </defcmd>
+    <defcmd cname="command-candidate-10">
       <description>
-        <get-text>Select the 10th candidate
-Select the tenth candidate in the current group</get-text>
+        <gettext>Select the 10th candidate
+Select the tenth candidate in the current group</gettext>
       </description>
       <keyseq>
-        <key-event>0</key-event>
+        <list>
+          <integer>?0</integer>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-prev-char">
+    </defcmd>
+    <defcmd cname="command-prev-char">
       <description>
-        <get-text>Previous character
-Move to the previous character in the preedit text</get-text>
+        <gettext>Previous character
+Move to the previous character in the preedit text</gettext>
       </description>
       <keyseq>
-        <key-event>Left</key-event>
+        <list>
+          <symbol>Left</symbol>
+        </list>
       </keyseq>
       <keyseq>
-        <key-event>C-B</key-event>
+        <list>
+          <symbol>C-B</symbol>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-next-char">
+    </defcmd>
+    <defcmd cname="command-next-char">
       <description>
-        <get-text>Next character
-Move to the next character in the preedit text</get-text>
+        <gettext>Next character
+Move to the next character in the preedit text</gettext>
       </description>
       <keyseq>
-        <key-event>Right</key-event>
+        <list>
+          <symbol>Right</symbol>
+        </list>
       </keyseq>
       <keyseq>
-        <key-event>C-F</key-event>
+        <list>
+          <symbol>C-F</symbol>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-first-char">
+    </defcmd>
+    <defcmd cname="command-first-char">
       <description>
-        <get-text>Fist character
-Move to the first character in the preedit text</get-text>
+        <gettext>Fist character
+Move to the first character in the preedit text</gettext>
       </description>
       <keyseq>
-        <key-event>C-A</key-event>
+        <list>
+          <symbol>C-A</symbol>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-last-char">
+    </defcmd>
+    <defcmd cname="command-last-char">
       <description>
-        <get-text>Last character
-Move to the last character in the preedit text</get-text>
+        <gettext>Last character
+Move to the last character in the preedit text</gettext>
       </description>
       <keyseq>
-        <key-event>C-E</key-event>
+        <list>
+          <symbol>C-E</symbol>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-backward-delete-char">
+    </defcmd>
+    <defcmd cname="command-backward-delete-char">
       <description>
-        <get-text>Delete char backward
-Delete the previous character in the preedit text</get-text>
+        <gettext>Delete char backward
+Delete the previous character in the preedit text</gettext>
       </description>
       <keyseq>
-        <key-event>Backspace</key-event>
+        <list>
+          <symbol>Backspace</symbol>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-delete-char">
+    </defcmd>
+    <defcmd cname="command-delete-char">
       <description>
-        <get-text>Delete char
-Delete the following character in the preedit text</get-text>
+        <gettext>Delete char
+Delete the following character in the preedit text</gettext>
       </description>
       <keyseq>
-        <key-event>Delete</key-event>
+        <list>
+          <symbol>Delete</symbol>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-prev-segment">
+    </defcmd>
+    <defcmd cname="command-prev-segment">
       <description>
-        <get-text>Previous segment
-Move to the previous segment in the preedit text</get-text>
+        <gettext>Previous segment
+Move to the previous segment in the preedit text</gettext>
       </description>
       <keyseq>
-        <key-event>Left</key-event>
+        <list>
+          <symbol>Left</symbol>
+        </list>
       </keyseq>
       <keyseq>
-        <key-event>C-B</key-event>
+        <list>
+          <symbol>C-B</symbol>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-next-segment">
+    </defcmd>
+    <defcmd cname="command-next-segment">
       <description>
-        <get-text>Next segment
-Move to the next segment in the preedit text</get-text>
+        <gettext>Next segment
+Move to the next segment in the preedit text</gettext>
       </description>
       <keyseq>
-        <key-event>Right</key-event>
+        <list>
+          <symbol>Right</symbol>
+        </list>
       </keyseq>
       <keyseq>
-        <key-event>C-F</key-event>
+        <list>
+          <symbol>C-F</symbol>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-first-segment">
+    </defcmd>
+    <defcmd cname="command-first-segment">
       <description>
-        <get-text>First segment
-Move to the first segment in the preedit text</get-text>
+        <gettext>First segment
+Move to the first segment in the preedit text</gettext>
       </description>
       <keyseq>
-        <key-event>C-A</key-event>
+        <list>
+          <symbol>C-A</symbol>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-last-segment">
+    </defcmd>
+    <defcmd cname="command-last-segment">
       <description>
-        <get-text>Last segment
-Move to the last segment in the preedit text</get-text>
+        <gettext>Last segment
+Move to the last segment in the preedit text</gettext>
       </description>
       <keyseq>
-        <key-event>C-E</key-event>
+        <list>
+          <symbol>C-E</symbol>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-extend-segment">
+    </defcmd>
+    <defcmd cname="command-extend-segment">
       <description>
-        <get-text>Extend segment
-Extend the current segment length to the tail</get-text>
+        <gettext>Extend segment
+Extend the current segment length to the tail</gettext>
       </description>
       <keyseq>
-        <key-event>S-Right</key-event>
+        <list>
+          <symbol>S-Right</symbol>
+        </list>
       </keyseq>
       <keyseq>
-        <key-event>C-O</key-event>
+        <list>
+          <symbol>C-O</symbol>
+        </list>
       </keyseq>
-    </command>
-    <command id="command-shrink-segment">
+    </defcmd>
+    <defcmd cname="command-shrink-segment">
       <description>
-        <get-text>Shrink segment
-Shrink the current segment length from the tail</get-text>
+        <gettext>Shrink segment
+Shrink the current segment length from the tail</gettext>
       </description>
       <keyseq>
-        <key-event>S-Left</key-event>
+        <list>
+          <symbol>S-Left</symbol>
+        </list>
       </keyseq>
       <keyseq>
-        <key-event>C-I</key-event>
+        <list>
+          <symbol>C-I</symbol>
+        </list>
       </keyseq>
-    </command>
-    <command id="command--reload">
+    </defcmd>
+    <defcmd cname="command--reload">
       <description>
-        <get-text>Reload input method
+        <gettext>Reload input method
 Reload the input method (and configulation if any) and freshly start it.
 Note that the length of key-sequence bound for this command must be 1.
 This is one of special commands reserved by the m17n library, and
-should not be used in a map of an input method.</get-text>
+should not be used in a map of an input method.</gettext>
       </description>
       <keyseq>
-        <key-event>M-Return</key-event>
+        <list>
+          <symbol>M-Return</symbol>
+        </list>
       </keyseq>
-    </command>
+    </defcmd>
   </command-list>
 </input-method>

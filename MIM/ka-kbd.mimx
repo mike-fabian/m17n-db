@@ -1,15 +1,5 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
-<!--
-Input method for Georgian simulating Georgian keyboard.
-
-@image html ka-kbd.png "Keyboard Layout"
-@image latex ka-kbd.eps "Keyboard Layout" width=\narrowwidth
-You can also input more characters by the following key sequences:
-key char  [type a key sequence to insert the corresponding character]
-@image html ka-kbd2.png
-@image latex ka-kbd2.eps "Extra Keys" width=\narrowwidth
--->
   <tags>
     <language>ka</language>
     <name>kbd</name>
@@ -18,168 +8,324 @@ key char  [type a key sequence to insert the corresponding character]
 </description>
   <title>გ</title>
   <map-list>
-    <map id="map-map">
+    <map mname="map-map">
       <rule>
-        <keyseq keys="a"/>
-        <insert character="4304"/>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+        <insert>
+          <integer>4304</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="b"/>
-        <insert character="4305"/>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <insert>
+          <integer>4305</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="g"/>
-        <insert character="4306"/>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <integer>4306</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="d"/>
-        <insert character="4307"/>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <insert>
+          <integer>4307</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="e"/>
-        <insert character="4308"/>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <insert>
+          <integer>4308</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="v"/>
-        <insert character="4309"/>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert>
+          <integer>4309</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="z"/>
-        <insert character="4310"/>
+        <keyseq>
+          <string>z</string>
+        </keyseq>
+        <insert>
+          <integer>4310</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="t"/>
-        <insert character="4311"/>
+        <keyseq>
+          <string>t</string>
+        </keyseq>
+        <insert>
+          <integer>4311</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="i"/>
-        <insert character="4312"/>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert>
+          <integer>4312</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys=".k"/>
-        <insert character="4313"/>
+        <keyseq>
+          <string>.k</string>
+        </keyseq>
+        <insert>
+          <integer>4313</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="l"/>
-        <insert character="4314"/>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+        <insert>
+          <integer>4314</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="m"/>
-        <insert character="4315"/>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <integer>4315</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="n"/>
-        <insert character="4316"/>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <integer>4316</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="o"/>
-        <insert character="4317"/>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <integer>4317</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys=".p"/>
-        <insert character="4318"/>
+        <keyseq>
+          <string>.p</string>
+        </keyseq>
+        <insert>
+          <integer>4318</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="+z"/>
-        <insert character="4319"/>
+        <keyseq>
+          <string>+z</string>
+        </keyseq>
+        <insert>
+          <integer>4319</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="r"/>
-        <insert character="4320"/>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+        <insert>
+          <integer>4320</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="s"/>
-        <insert character="4321"/>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+        <insert>
+          <integer>4321</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys=".t"/>
-        <insert character="4322"/>
+        <keyseq>
+          <string>.t</string>
+        </keyseq>
+        <insert>
+          <integer>4322</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="u"/>
-        <insert character="4323"/>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <integer>4323</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="p"/>
-        <insert character="4324"/>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+        <insert>
+          <integer>4324</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="k"/>
-        <insert character="4325"/>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <integer>4325</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys=".g"/>
-        <insert character="4326"/>
+        <keyseq>
+          <string>.g</string>
+        </keyseq>
+        <insert>
+          <integer>4326</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="q"/>
-        <insert character="4327"/>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <insert>
+          <integer>4327</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="+s"/>
-        <insert character="4328"/>
+        <keyseq>
+          <string>+s</string>
+        </keyseq>
+        <insert>
+          <integer>4328</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="+c"/>
-        <insert character="4329"/>
+        <keyseq>
+          <string>+c</string>
+        </keyseq>
+        <insert>
+          <integer>4329</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="c"/>
-        <insert character="4330"/>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <insert>
+          <integer>4330</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="j"/>
-        <insert character="4331"/>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+        <insert>
+          <integer>4331</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys=".c"/>
-        <insert character="4332"/>
+        <keyseq>
+          <string>.c</string>
+        </keyseq>
+        <insert>
+          <integer>4332</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys=".+c"/>
-        <insert character="4333"/>
+        <keyseq>
+          <string>.+c</string>
+        </keyseq>
+        <insert>
+          <integer>4333</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="x"/>
-        <insert character="4334"/>
+        <keyseq>
+          <string>x</string>
+        </keyseq>
+        <insert>
+          <integer>4334</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="+j"/>
-        <insert character="4335"/>
+        <keyseq>
+          <string>+j</string>
+        </keyseq>
+        <insert>
+          <integer>4335</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="h"/>
-        <insert character="4336"/>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <insert>
+          <integer>4336</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="q1"/>
-        <insert character="4340"/>
+        <keyseq>
+          <string>q1</string>
+        </keyseq>
+        <insert>
+          <integer>4340</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="e0"/>
-        <insert character="4337"/>
+        <keyseq>
+          <string>e0</string>
+        </keyseq>
+        <insert>
+          <integer>4337</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="o1"/>
-        <insert character="4341"/>
+        <keyseq>
+          <string>o1</string>
+        </keyseq>
+        <insert>
+          <integer>4341</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="i1"/>
-        <insert character="4338"/>
+        <keyseq>
+          <string>i1</string>
+        </keyseq>
+        <insert>
+          <integer>4338</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="w"/>
-        <insert character="4339"/>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+        <insert>
+          <integer>4339</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="f"/>
-        <insert character="4342"/>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+        <insert>
+          <integer>4342</integer>
+        </insert>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <branch branch-selecting-map="map-map"/>
+    <state sname="state-init">
+      <branch mname="map-map"/>
     </state>
   </state-list>
 </input-method>

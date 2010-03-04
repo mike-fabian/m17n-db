@@ -8,84 +8,164 @@
 </description>
   <title>da-post</title>
   <map-list>
-    <map id="map-trans">
+    <map mname="map-trans">
       <rule>
-        <keyseq keys="AA"/>
-        <insert character="197"/>
+        <keyseq>
+          <string>AA</string>
+        </keyseq>
+        <insert>
+          <integer>197</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="aa"/>
-        <insert character="229"/>
+        <keyseq>
+          <string>aa</string>
+        </keyseq>
+        <insert>
+          <integer>229</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="AE"/>
-        <insert character="198"/>
+        <keyseq>
+          <string>AE</string>
+        </keyseq>
+        <insert>
+          <integer>198</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="ae"/>
-        <insert character="230"/>
+        <keyseq>
+          <string>ae</string>
+        </keyseq>
+        <insert>
+          <integer>230</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="OE"/>
-        <insert character="216"/>
+        <keyseq>
+          <string>OE</string>
+        </keyseq>
+        <insert>
+          <integer>216</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="oe"/>
-        <insert character="248"/>
+        <keyseq>
+          <string>oe</string>
+        </keyseq>
+        <insert>
+          <integer>248</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="E&apos;"/>
-        <insert character="201"/>
+        <keyseq>
+          <string>E'</string>
+        </keyseq>
+        <insert>
+          <integer>201</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="e&apos;"/>
-        <insert character="233"/>
+        <keyseq>
+          <string>e'</string>
+        </keyseq>
+        <insert>
+          <integer>233</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="AAA"/>
-        <insert string="A"/>
-        <insert string="A"/>
+        <keyseq>
+          <string>AAA</string>
+        </keyseq>
+        <insert>
+          <string>A</string>
+        </insert>
+        <insert>
+          <string>A</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="aaa"/>
-        <insert string="a"/>
-        <insert string="a"/>
+        <keyseq>
+          <string>aaa</string>
+        </keyseq>
+        <insert>
+          <string>a</string>
+        </insert>
+        <insert>
+          <string>a</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="AEE"/>
-        <insert string="A"/>
-        <insert string="E"/>
+        <keyseq>
+          <string>AEE</string>
+        </keyseq>
+        <insert>
+          <string>A</string>
+        </insert>
+        <insert>
+          <string>E</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="aee"/>
-        <insert string="a"/>
-        <insert string="e"/>
+        <keyseq>
+          <string>aee</string>
+        </keyseq>
+        <insert>
+          <string>a</string>
+        </insert>
+        <insert>
+          <string>e</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="OEE"/>
-        <insert string="O"/>
-        <insert string="E"/>
+        <keyseq>
+          <string>OEE</string>
+        </keyseq>
+        <insert>
+          <string>O</string>
+        </insert>
+        <insert>
+          <string>E</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="oee"/>
-        <insert string="o"/>
-        <insert string="e"/>
+        <keyseq>
+          <string>oee</string>
+        </keyseq>
+        <insert>
+          <string>o</string>
+        </insert>
+        <insert>
+          <string>e</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="E&apos;&apos;"/>
-        <insert string="E"/>
-        <insert string="&apos;"/>
+        <keyseq>
+          <string>E''</string>
+        </keyseq>
+        <insert>
+          <string>E</string>
+        </insert>
+        <insert>
+          <string>'</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="e&apos;&apos;"/>
-        <insert string="e"/>
-        <insert string="&apos;"/>
+        <keyseq>
+          <string>e''</string>
+        </keyseq>
+        <insert>
+          <string>e</string>
+        </insert>
+        <insert>
+          <string>'</string>
+        </insert>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <branch branch-selecting-map="map-trans"/>
+    <state sname="state-init">
+      <branch mname="map-trans"/>
     </state>
   </state-list>
 </input-method>

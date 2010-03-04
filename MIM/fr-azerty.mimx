@@ -5,7 +5,7 @@
     <name>azerty</name>
   </tags>
   <description>
-    <get-text>Simulating Azerty keyboard on English keyboard.
+    <gettext>Simulating Azerty keyboard on English keyboard.
 
      &amp;1  é2  "3  '4  (5  -6  è7  _8  ç9  à0  )°  =_  ²~
       aA  zZ  eE  rR  tT  yY  uU  iI  oO  pP  ^¨  $£
@@ -24,621 +24,1177 @@ respectively.
 Azerty keyboard has one more key at the bottom left corner for
 inputting "&lt;" and "&gt;".  As a normal English keyboard doesn't
 have such a key left, type '&lt;' and '&gt;' twice for "&lt;" and "&gt;"
-respectively.</get-text>
+respectively.</gettext>
   </description>
   <title>AZ </title>
   <map-list>
-    <map id="map-normal">
-      <rule>
-        <keyseq keys="1"/>
-        <insert character="38"/>
-      </rule>
-      <rule>
-        <keyseq keys="2"/>
-        <insert character="233"/>
-      </rule>
-      <rule>
-        <keyseq keys="3"/>
-        <insert character="34"/>
-      </rule>
-      <rule>
-        <keyseq keys="4"/>
-        <insert character="39"/>
-      </rule>
-      <rule>
-        <keyseq keys="5"/>
-        <insert character="40"/>
-      </rule>
-      <rule>
-        <keyseq keys="6"/>
-        <insert character="45"/>
-      </rule>
-      <rule>
-        <keyseq keys="7"/>
-        <insert character="232"/>
-      </rule>
-      <rule>
-        <keyseq keys="8"/>
-        <insert character="95"/>
-      </rule>
-      <rule>
-        <keyseq keys="9"/>
-        <insert character="231"/>
-      </rule>
-      <rule>
-        <keyseq keys="0"/>
-        <insert character="224"/>
-      </rule>
-      <rule>
-        <keyseq keys="-"/>
-        <insert character="41"/>
-      </rule>
-      <rule>
-        <keyseq keys="="/>
-        <insert character="61"/>
-      </rule>
-      <rule>
-        <keyseq keys="`"/>
-        <insert character="178"/>
-      </rule>
-      <rule>
-        <keyseq keys="q"/>
-        <insert character="97"/>
-      </rule>
-      <rule>
-        <keyseq keys="w"/>
-        <insert character="122"/>
-      </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <insert character="101"/>
-      </rule>
-      <rule>
-        <keyseq keys="r"/>
-        <insert character="114"/>
-      </rule>
-      <rule>
-        <keyseq keys="t"/>
-        <insert character="116"/>
-      </rule>
-      <rule>
-        <keyseq keys="y"/>
-        <insert character="121"/>
-      </rule>
-      <rule>
-        <keyseq keys="u"/>
-        <insert character="117"/>
-      </rule>
-      <rule>
-        <keyseq keys="i"/>
-        <insert character="105"/>
-      </rule>
-      <rule>
-        <keyseq keys="o"/>
-        <insert character="111"/>
-      </rule>
-      <rule>
-        <keyseq keys="p"/>
-        <insert character="112"/>
-      </rule>
-      <rule>
-        <keyseq keys="]"/>
-        <insert character="36"/>
-      </rule>
-      <rule>
-        <keyseq keys="a"/>
-        <insert character="113"/>
-      </rule>
-      <rule>
-        <keyseq keys="s"/>
-        <insert character="115"/>
-      </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <insert character="100"/>
-      </rule>
-      <rule>
-        <keyseq keys="f"/>
-        <insert character="102"/>
-      </rule>
-      <rule>
-        <keyseq keys="g"/>
-        <insert character="103"/>
-      </rule>
-      <rule>
-        <keyseq keys="h"/>
-        <insert character="104"/>
-      </rule>
-      <rule>
-        <keyseq keys="j"/>
-        <insert character="106"/>
-      </rule>
-      <rule>
-        <keyseq keys="k"/>
-        <insert character="107"/>
-      </rule>
-      <rule>
-        <keyseq keys="l"/>
-        <insert character="108"/>
-      </rule>
-      <rule>
-        <keyseq keys=";"/>
-        <insert character="109"/>
-      </rule>
-      <rule>
-        <keyseq keys="&apos;"/>
-        <insert character="249"/>
-      </rule>
-      <rule>
-        <keyseq keys="\"/>
-        <insert character="42"/>
-      </rule>
-      <rule>
-        <keyseq keys="z"/>
-        <insert character="119"/>
-      </rule>
-      <rule>
-        <keyseq keys="x"/>
-        <insert character="120"/>
-      </rule>
-      <rule>
-        <keyseq keys="c"/>
-        <insert character="99"/>
-      </rule>
-      <rule>
-        <keyseq keys="v"/>
-        <insert character="118"/>
-      </rule>
-      <rule>
-        <keyseq keys="b"/>
-        <insert character="98"/>
-      </rule>
-      <rule>
-        <keyseq keys="n"/>
-        <insert character="110"/>
-      </rule>
-      <rule>
-        <keyseq keys="m"/>
-        <insert character="44"/>
-      </rule>
-      <rule>
-        <keyseq keys=","/>
-        <insert character="59"/>
-      </rule>
-      <rule>
-        <keyseq keys="."/>
-        <insert character="58"/>
-      </rule>
-      <rule>
-        <keyseq keys="/"/>
-        <insert character="33"/>
-      </rule>
-      <rule>
-        <keyseq keys="!"/>
-        <insert character="49"/>
-      </rule>
-      <rule>
-        <keyseq keys="@"/>
-        <insert character="50"/>
-      </rule>
-      <rule>
-        <keyseq keys="#"/>
-        <insert character="51"/>
-      </rule>
-      <rule>
-        <keyseq keys="$"/>
-        <insert character="52"/>
-      </rule>
-      <rule>
-        <keyseq keys="%"/>
-        <insert character="53"/>
-      </rule>
-      <rule>
-        <keyseq keys="^"/>
-        <insert character="54"/>
-      </rule>
-      <rule>
-        <keyseq keys="&amp;"/>
-        <insert character="55"/>
-      </rule>
-      <rule>
-        <keyseq keys="*"/>
-        <insert character="56"/>
-      </rule>
-      <rule>
-        <keyseq keys="("/>
-        <insert character="57"/>
-      </rule>
-      <rule>
-        <keyseq keys=")"/>
-        <insert character="48"/>
-      </rule>
-      <rule>
-        <keyseq keys="_"/>
-        <insert character="176"/>
-      </rule>
-      <rule>
-        <keyseq keys="+"/>
-        <insert character="43"/>
-      </rule>
-      <rule>
-        <keyseq keys="~"/>
-        <insert character="126"/>
-      </rule>
-      <rule>
-        <keyseq keys="Q"/>
-        <insert character="65"/>
-      </rule>
-      <rule>
-        <keyseq keys="W"/>
-        <insert character="90"/>
-      </rule>
-      <rule>
-        <keyseq keys="E"/>
-        <insert character="69"/>
-      </rule>
-      <rule>
-        <keyseq keys="R"/>
-        <insert character="82"/>
-      </rule>
-      <rule>
-        <keyseq keys="T"/>
-        <insert character="84"/>
-      </rule>
-      <rule>
-        <keyseq keys="Y"/>
-        <insert character="89"/>
-      </rule>
-      <rule>
-        <keyseq keys="U"/>
-        <insert character="85"/>
-      </rule>
-      <rule>
-        <keyseq keys="I"/>
-        <insert character="73"/>
-      </rule>
-      <rule>
-        <keyseq keys="O"/>
-        <insert character="79"/>
-      </rule>
-      <rule>
-        <keyseq keys="P"/>
-        <insert character="80"/>
-      </rule>
-      <rule>
-        <keyseq keys="}"/>
-        <insert character="163"/>
-      </rule>
-      <rule>
-        <keyseq keys="A"/>
-        <insert character="81"/>
-      </rule>
-      <rule>
-        <keyseq keys="S"/>
-        <insert character="83"/>
-      </rule>
-      <rule>
-        <keyseq keys="D"/>
-        <insert character="68"/>
-      </rule>
-      <rule>
-        <keyseq keys="F"/>
-        <insert character="70"/>
-      </rule>
-      <rule>
-        <keyseq keys="G"/>
-        <insert character="71"/>
-      </rule>
-      <rule>
-        <keyseq keys="H"/>
-        <insert character="72"/>
-      </rule>
-      <rule>
-        <keyseq keys="J"/>
-        <insert character="74"/>
-      </rule>
-      <rule>
-        <keyseq keys="K"/>
-        <insert character="75"/>
-      </rule>
-      <rule>
-        <keyseq keys="L"/>
-        <insert character="76"/>
-      </rule>
-      <rule>
-        <keyseq keys=":"/>
-        <insert character="77"/>
-      </rule>
-      <rule>
-        <keyseq keys="&quot;"/>
-        <insert character="37"/>
-      </rule>
-      <rule>
-        <keyseq keys="|"/>
-        <insert character="181"/>
-      </rule>
-      <rule>
-        <keyseq keys="Z"/>
-        <insert character="87"/>
-      </rule>
-      <rule>
-        <keyseq keys="X"/>
-        <insert character="88"/>
-      </rule>
-      <rule>
-        <keyseq keys="C"/>
-        <insert character="67"/>
-      </rule>
-      <rule>
-        <keyseq keys="V"/>
-        <insert character="86"/>
-      </rule>
-      <rule>
-        <keyseq keys="B"/>
-        <insert character="66"/>
-      </rule>
-      <rule>
-        <keyseq keys="N"/>
-        <insert character="78"/>
-      </rule>
-      <rule>
-        <keyseq keys="M"/>
-        <insert character="63"/>
-      </rule>
-      <rule>
-        <keyseq keys="&lt;"/>
-        <insert character="46"/>
-      </rule>
-      <rule>
-        <keyseq keys="&lt;&lt;"/>
-        <insert character="60"/>
-      </rule>
-      <rule>
-        <keyseq keys="&gt;"/>
-        <insert character="47"/>
-      </rule>
-      <rule>
-        <keyseq keys="&gt;&gt;"/>
-        <insert character="62"/>
-      </rule>
-      <rule>
-        <keyseq keys="?"/>
-        <insert character="167"/>
-      </rule>
-    </map>
-    <map id="map-left-square-bracket">
-      <rule>
-        <keyseq keys="["/>
-      </rule>
-    </map>
-    <map id="map-left-curly-bracket">
-      <rule>
-        <keyseq keys="{"/>
-      </rule>
-    </map>
-    <map id="map-alt-2">
+    <map mname="map-normal">
       <rule>
         <keyseq>
-          <key-event>A-2</key-event>
+          <string>1</string>
+        </keyseq>
+        <insert>
+          <integer>38</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>2</string>
+        </keyseq>
+        <insert>
+          <integer>233</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>3</string>
+        </keyseq>
+        <insert>
+          <integer>34</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>4</string>
+        </keyseq>
+        <insert>
+          <integer>39</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>5</string>
+        </keyseq>
+        <insert>
+          <integer>40</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>6</string>
+        </keyseq>
+        <insert>
+          <integer>45</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>7</string>
+        </keyseq>
+        <insert>
+          <integer>232</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>8</string>
+        </keyseq>
+        <insert>
+          <integer>95</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>9</string>
+        </keyseq>
+        <insert>
+          <integer>231</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>0</string>
+        </keyseq>
+        <insert>
+          <integer>224</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>-</string>
+        </keyseq>
+        <insert>
+          <integer>41</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>=</string>
+        </keyseq>
+        <insert>
+          <integer>61</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>`</string>
+        </keyseq>
+        <insert>
+          <integer>178</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <insert>
+          <integer>97</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+        <insert>
+          <integer>122</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <insert>
+          <integer>101</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+        <insert>
+          <integer>114</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>t</string>
+        </keyseq>
+        <insert>
+          <integer>116</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <insert>
+          <integer>121</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <integer>117</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert>
+          <integer>105</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <integer>111</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+        <insert>
+          <integer>112</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>]</string>
+        </keyseq>
+        <insert>
+          <integer>36</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+        <insert>
+          <integer>113</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+        <insert>
+          <integer>115</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <insert>
+          <integer>100</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+        <insert>
+          <integer>102</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <integer>103</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <insert>
+          <integer>104</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+        <insert>
+          <integer>106</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <integer>107</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+        <insert>
+          <integer>108</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>;</string>
+        </keyseq>
+        <insert>
+          <integer>109</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>'</string>
+        </keyseq>
+        <insert>
+          <integer>249</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\</string>
+        </keyseq>
+        <insert>
+          <integer>42</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z</string>
+        </keyseq>
+        <insert>
+          <integer>119</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>x</string>
+        </keyseq>
+        <insert>
+          <integer>120</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <insert>
+          <integer>99</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert>
+          <integer>118</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <insert>
+          <integer>98</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <integer>110</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <integer>44</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>,</string>
+        </keyseq>
+        <insert>
+          <integer>59</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>.</string>
+        </keyseq>
+        <insert>
+          <integer>58</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>/</string>
+        </keyseq>
+        <insert>
+          <integer>33</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>!</string>
+        </keyseq>
+        <insert>
+          <integer>49</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>@</string>
+        </keyseq>
+        <insert>
+          <integer>50</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>#</string>
+        </keyseq>
+        <insert>
+          <integer>51</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>$</string>
+        </keyseq>
+        <insert>
+          <integer>52</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>%</string>
+        </keyseq>
+        <insert>
+          <integer>53</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>^</string>
+        </keyseq>
+        <insert>
+          <integer>54</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&amp;</string>
+        </keyseq>
+        <insert>
+          <integer>55</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>*</string>
+        </keyseq>
+        <insert>
+          <integer>56</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>(</string>
+        </keyseq>
+        <insert>
+          <integer>57</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>)</string>
+        </keyseq>
+        <insert>
+          <integer>48</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>_</string>
+        </keyseq>
+        <insert>
+          <integer>176</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>+</string>
+        </keyseq>
+        <insert>
+          <integer>43</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>~</string>
+        </keyseq>
+        <insert>
+          <integer>126</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <insert>
+          <integer>65</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>W</string>
+        </keyseq>
+        <insert>
+          <integer>90</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <insert>
+          <integer>69</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>R</string>
+        </keyseq>
+        <insert>
+          <integer>82</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>T</string>
+        </keyseq>
+        <insert>
+          <integer>84</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Y</string>
+        </keyseq>
+        <insert>
+          <integer>89</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert>
+          <integer>85</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <insert>
+          <integer>73</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+        <insert>
+          <integer>79</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>P</string>
+        </keyseq>
+        <insert>
+          <integer>80</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>}</string>
+        </keyseq>
+        <insert>
+          <integer>163</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>A</string>
+        </keyseq>
+        <insert>
+          <integer>81</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>S</string>
+        </keyseq>
+        <insert>
+          <integer>83</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <insert>
+          <integer>68</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>F</string>
+        </keyseq>
+        <insert>
+          <integer>70</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>G</string>
+        </keyseq>
+        <insert>
+          <integer>71</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <insert>
+          <integer>72</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>J</string>
+        </keyseq>
+        <insert>
+          <integer>74</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>K</string>
+        </keyseq>
+        <insert>
+          <integer>75</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>L</string>
+        </keyseq>
+        <insert>
+          <integer>76</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>:</string>
+        </keyseq>
+        <insert>
+          <integer>77</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>"</string>
+        </keyseq>
+        <insert>
+          <integer>37</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>|</string>
+        </keyseq>
+        <insert>
+          <integer>181</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Z</string>
+        </keyseq>
+        <insert>
+          <integer>87</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>X</string>
+        </keyseq>
+        <insert>
+          <integer>88</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>C</string>
+        </keyseq>
+        <insert>
+          <integer>67</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>V</string>
+        </keyseq>
+        <insert>
+          <integer>86</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>B</string>
+        </keyseq>
+        <insert>
+          <integer>66</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+        <insert>
+          <integer>78</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>M</string>
+        </keyseq>
+        <insert>
+          <integer>63</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&lt;</string>
+        </keyseq>
+        <insert>
+          <integer>46</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&lt;&lt;</string>
+        </keyseq>
+        <insert>
+          <integer>60</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&gt;</string>
+        </keyseq>
+        <insert>
+          <integer>47</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&gt;&gt;</string>
+        </keyseq>
+        <insert>
+          <integer>62</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>?</string>
+        </keyseq>
+        <insert>
+          <integer>167</integer>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-left-square-bracket">
+      <rule>
+        <keyseq>
+          <string>[</string>
+        </keyseq>
+      </rule>
+    </map>
+    <map mname="map-left-curly-bracket">
+      <rule>
+        <keyseq>
+          <string>{</string>
+        </keyseq>
+      </rule>
+    </map>
+    <map mname="map-alt-2">
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-2</symbol>
+          </list>
         </keyseq>
       </rule>
       <rule>
         <keyseq>
-          <key-event>C-A-2</key-event>
+          <list>
+            <symbol>C-A-2</symbol>
+          </list>
         </keyseq>
       </rule>
     </map>
-    <map id="map-alt-7">
+    <map mname="map-alt-7">
       <rule>
         <keyseq>
-          <key-event>A-7</key-event>
+          <list>
+            <symbol>A-7</symbol>
+          </list>
         </keyseq>
       </rule>
       <rule>
         <keyseq>
-          <key-event>C-A-7</key-event>
+          <list>
+            <symbol>C-A-7</symbol>
+          </list>
         </keyseq>
       </rule>
     </map>
-    <map id="map-circumflex">
+    <map mname="map-circumflex">
       <rule>
-        <keyseq keys="["/>
-        <insert character="94"/>
+        <keyseq>
+          <string>[</string>
+        </keyseq>
+        <insert>
+          <integer>94</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="q"/>
-        <insert character="226"/>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <insert>
+          <integer>226</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="e"/>
-        <insert character="234"/>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <insert>
+          <integer>234</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="i"/>
-        <insert character="238"/>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert>
+          <integer>238</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="o"/>
-        <insert character="244"/>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <integer>244</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="u"/>
-        <insert character="251"/>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <integer>251</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="Q"/>
-        <insert character="194"/>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <insert>
+          <integer>194</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="E"/>
-        <insert character="202"/>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <insert>
+          <integer>202</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="I"/>
-        <insert character="206"/>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <insert>
+          <integer>206</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="O"/>
-        <insert character="212"/>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+        <insert>
+          <integer>212</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="U"/>
-        <insert character="219"/>
-      </rule>
-    </map>
-    <map id="map-diaeresis">
-      <rule>
-        <keyseq keys="{"/>
-        <insert character="168"/>
-      </rule>
-      <rule>
-        <keyseq keys="q"/>
-        <insert character="228"/>
-      </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <insert character="235"/>
-      </rule>
-      <rule>
-        <keyseq keys="i"/>
-        <insert character="239"/>
-      </rule>
-      <rule>
-        <keyseq keys="o"/>
-        <insert character="246"/>
-      </rule>
-      <rule>
-        <keyseq keys="u"/>
-        <insert character="252"/>
-      </rule>
-      <rule>
-        <keyseq keys="y"/>
-        <insert character="255"/>
-      </rule>
-      <rule>
-        <keyseq keys="Q"/>
-        <insert character="196"/>
-      </rule>
-      <rule>
-        <keyseq keys="E"/>
-        <insert character="203"/>
-      </rule>
-      <rule>
-        <keyseq keys="I"/>
-        <insert character="207"/>
-      </rule>
-      <rule>
-        <keyseq keys="O"/>
-        <insert character="214"/>
-      </rule>
-      <rule>
-        <keyseq keys="U"/>
-        <insert character="220"/>
-      </rule>
-      <rule>
-        <keyseq keys="Y"/>
-        <insert character="376"/>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert>
+          <integer>219</integer>
+        </insert>
       </rule>
     </map>
-    <map id="map-tilde">
+    <map mname="map-diaeresis">
       <rule>
-        <keyseq keys="3"/>
-        <insert character="126"/>
+        <keyseq>
+          <string>{</string>
+        </keyseq>
+        <insert>
+          <integer>168</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="q"/>
-        <insert character="227"/>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <insert>
+          <integer>228</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="n"/>
-        <insert character="241"/>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <insert>
+          <integer>235</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="o"/>
-        <insert character="245"/>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert>
+          <integer>239</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <integer>246</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <integer>252</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <insert>
+          <integer>255</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <insert>
+          <integer>196</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <insert>
+          <integer>203</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <insert>
+          <integer>207</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+        <insert>
+          <integer>214</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert>
+          <integer>220</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Y</string>
+        </keyseq>
+        <insert>
+          <integer>376</integer>
+        </insert>
       </rule>
     </map>
-    <map id="map-grave">
+    <map mname="map-tilde">
       <rule>
-        <keyseq keys="q"/>
-        <insert character="224"/>
+        <keyseq>
+          <string>3</string>
+        </keyseq>
+        <insert>
+          <integer>126</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="e"/>
-        <insert character="232"/>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <insert>
+          <integer>227</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="i"/>
-        <insert character="236"/>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <integer>241</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="o"/>
-        <insert character="242"/>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <integer>245</integer>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-grave">
+      <rule>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <insert>
+          <integer>224</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="u"/>
-        <insert character="249"/>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <insert>
+          <integer>232</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="Q"/>
-        <insert character="192"/>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert>
+          <integer>236</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="E"/>
-        <insert character="200"/>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <integer>242</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="I"/>
-        <insert character="204"/>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <integer>249</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="O"/>
-        <insert character="210"/>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <insert>
+          <integer>192</integer>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="U"/>
-        <insert character="217"/>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <insert>
+          <integer>200</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <insert>
+          <integer>204</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+        <insert>
+          <integer>210</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert>
+          <integer>217</integer>
+        </insert>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <branch branch-selecting-map="map-normal"/>
-      <branch branch-selecting-map="map-left-square-bracket">
-        <shift-to id="state-circumflex"/>
+    <state sname="state-init">
+      <branch mname="map-normal"/>
+      <branch mname="map-left-square-bracket">
+        <shift>
+          <symbol>state-circumflex</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-left-curly-bracket">
-        <shift-to id="state-diaeresis"/>
+      <branch mname="map-left-curly-bracket">
+        <shift>
+          <symbol>state-diaeresis</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-alt-2">
-        <shift-to id="state-tilde"/>
+      <branch mname="map-alt-2">
+        <shift>
+          <symbol>state-tilde</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-alt-7">
-        <shift-to id="state-grave"/>
-      </branch>
-    </state>
-    <state id="state-circumflex">
-      <state-title-text>AZ^</state-title-text>
-      <branch branch-selecting-map="map-circumflex">
-        <shift-to id="state-init"/>
-      </branch>
-    </state>
-    <state id="state-diaeresis">
-      <state-title-text>AZ¨</state-title-text>
-      <branch branch-selecting-map="map-diaeresis">
-        <shift-to id="state-init"/>
+      <branch mname="map-alt-7">
+        <shift>
+          <symbol>state-grave</symbol>
+        </shift>
       </branch>
     </state>
-    <state id="state-tilde">
-      <state-title-text>AZ~</state-title-text>
-      <branch branch-selecting-map="map-tilde">
-        <shift-to id="state-init"/>
+    <state sname="state-circumflex">
+      <title>AZ^</title>
+      <branch mname="map-circumflex">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
     </state>
-    <state id="state-grave">
-      <state-title-text>AZ`</state-title-text>
-      <branch branch-selecting-map="map-grave">
-        <shift-to id="state-init"/>
+    <state sname="state-diaeresis">
+      <title>AZ¨</title>
+      <branch mname="map-diaeresis">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
+      </branch>
+    </state>
+    <state sname="state-tilde">
+      <title>AZ~</title>
+      <branch mname="map-tilde">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
+      </branch>
+    </state>
+    <state sname="state-grave">
+      <title>AZ`</title>
+      <branch mname="map-grave">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
     </state>
   </state-list>

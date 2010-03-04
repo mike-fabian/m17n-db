@@ -1,11 +1,5 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
-<!--
-Input method for Armenian.				   
-Simulating Eastern Armenian keyboard on American keyboard.  
-@image html hy-kbd.png "Keyboard Layout"			   
-@image latex hy-kbd.eps "Keyboard Layout" width=\narrowwidth
--->
   <tags>
     <language>hy</language>
     <name>kbd</name>
@@ -18,388 +12,764 @@ Simulating Eastern Armenian keyboard on American keyboard.
 </description>
   <title>HY</title>
   <map-list>
-    <map id="map-map">
-      <rule>
-        <keyseq keys="1"/>
-        <insert character="58"/>
-      </rule>
-      <rule>
-        <keyseq keys="!"/>
-        <insert character="49"/>
-      </rule>
-      <rule>
-        <keyseq keys="2"/>
-        <insert character="1393"/>
-      </rule>
-      <rule>
-        <keyseq keys="@"/>
-        <insert character="1345"/>
-      </rule>
-      <rule>
-        <keyseq keys="3"/>
-        <insert character="1397"/>
-      </rule>
-      <rule>
-        <keyseq keys="#"/>
-        <insert character="1349"/>
-      </rule>
-      <rule>
-        <keyseq keys="4"/>
-        <insert character="1371"/>
+    <map mname="map-map">
+      <rule>
+        <keyseq>
+          <string>1</string>
+        </keyseq>
+        <insert>
+          <integer>58</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="$"/>
-        <insert character="51"/>
-      </rule>
-      <rule>
-        <keyseq keys="5"/>
-        <insert character="44"/>
-      </rule>
-      <rule>
-        <keyseq keys="%"/>
-        <insert character="52"/>
-      </rule>
-      <rule>
-        <keyseq keys="6"/>
-        <insert character="45"/>
-      </rule>
-      <rule>
-        <keyseq keys="^"/>
-        <insert character="57"/>
-      </rule>
-      <rule>
-        <keyseq keys="7"/>
-        <insert character="46"/>
-      </rule>
-      <rule>
-        <keyseq keys="&amp;"/>
-        <insert character="1415"/>
+      <rule>
+        <keyseq>
+          <string>!</string>
+        </keyseq>
+        <insert>
+          <integer>49</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="8"/>
-        <insert character="171"/>
+      <rule>
+        <keyseq>
+          <string>2</string>
+        </keyseq>
+        <insert>
+          <integer>1393</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="*"/>
-        <insert character="40"/>
+      <rule>
+        <keyseq>
+          <string>@</string>
+        </keyseq>
+        <insert>
+          <integer>1345</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="9"/>
-        <insert character="187"/>
+      <rule>
+        <keyseq>
+          <string>3</string>
+        </keyseq>
+        <insert>
+          <integer>1397</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="("/>
-        <insert character="41"/>
+      <rule>
+        <keyseq>
+          <string>#</string>
+        </keyseq>
+        <insert>
+          <integer>1349</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="0"/>
-        <insert character="1413"/>
+      <rule>
+        <keyseq>
+          <string>4</string>
+        </keyseq>
+        <insert>
+          <integer>1371</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=")"/>
-        <insert character="1365"/>
+      <rule>
+        <keyseq>
+          <string>$</string>
+        </keyseq>
+        <insert>
+          <integer>51</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="-"/>
-        <insert character="1404"/>
+      <rule>
+        <keyseq>
+          <string>5</string>
+        </keyseq>
+        <insert>
+          <integer>44</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="_"/>
-        <insert character="1356"/>
+      <rule>
+        <keyseq>
+          <string>%</string>
+        </keyseq>
+        <insert>
+          <integer>52</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="="/>
-        <insert character="1386"/>
+      <rule>
+        <keyseq>
+          <string>6</string>
+        </keyseq>
+        <insert>
+          <integer>45</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="+"/>
-        <insert character="1338"/>
+      <rule>
+        <keyseq>
+          <string>^</string>
+        </keyseq>
+        <insert>
+          <integer>57</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="`"/>
-        <insert character="1373"/>
+      <rule>
+        <keyseq>
+          <string>7</string>
+        </keyseq>
+        <insert>
+          <integer>46</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="~"/>
-        <insert character="1372"/>
+      <rule>
+        <keyseq>
+          <string>&amp;</string>
+        </keyseq>
+        <insert>
+          <integer>1415</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="q"/>
-        <insert character="1389"/>
+      <rule>
+        <keyseq>
+          <string>8</string>
+        </keyseq>
+        <insert>
+          <integer>171</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="Q"/>
-        <insert character="1341"/>
+      <rule>
+        <keyseq>
+          <string>*</string>
+        </keyseq>
+        <insert>
+          <integer>40</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="w"/>
-        <insert character="1410"/>
+      <rule>
+        <keyseq>
+          <string>9</string>
+        </keyseq>
+        <insert>
+          <integer>187</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="W"/>
-        <insert character="1362"/>
+      <rule>
+        <keyseq>
+          <string>(</string>
+        </keyseq>
+        <insert>
+          <integer>41</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <insert character="1383"/>
+      <rule>
+        <keyseq>
+          <string>0</string>
+        </keyseq>
+        <insert>
+          <integer>1413</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="E"/>
-        <insert character="1335"/>
+      <rule>
+        <keyseq>
+          <string>)</string>
+        </keyseq>
+        <insert>
+          <integer>1365</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="r"/>
-        <insert character="1408"/>
+      <rule>
+        <keyseq>
+          <string>-</string>
+        </keyseq>
+        <insert>
+          <integer>1404</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="R"/>
-        <insert character="1360"/>
+      <rule>
+        <keyseq>
+          <string>_</string>
+        </keyseq>
+        <insert>
+          <integer>1356</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="t"/>
-        <insert character="1407"/>
+      <rule>
+        <keyseq>
+          <string>=</string>
+        </keyseq>
+        <insert>
+          <integer>1386</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="T"/>
-        <insert character="1359"/>
+      <rule>
+        <keyseq>
+          <string>+</string>
+        </keyseq>
+        <insert>
+          <integer>1338</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="y"/>
-        <insert character="1381"/>
+      <rule>
+        <keyseq>
+          <string>`</string>
+        </keyseq>
+        <insert>
+          <integer>1373</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="Y"/>
-        <insert character="1333"/>
+      <rule>
+        <keyseq>
+          <string>~</string>
+        </keyseq>
+        <insert>
+          <integer>1372</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="u"/>
-        <insert character="1384"/>
+      <rule>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <insert>
+          <integer>1389</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="U"/>
-        <insert character="1336"/>
+      <rule>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <insert>
+          <integer>1341</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="i"/>
-        <insert character="1387"/>
+      <rule>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+        <insert>
+          <integer>1410</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="I"/>
-        <insert character="1339"/>
+      <rule>
+        <keyseq>
+          <string>W</string>
+        </keyseq>
+        <insert>
+          <integer>1362</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="o"/>
-        <insert character="1400"/>
+      <rule>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <insert>
+          <integer>1383</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="O"/>
-        <insert character="1352"/>
+      <rule>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <insert>
+          <integer>1335</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="p"/>
-        <insert character="1402"/>
+      <rule>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+        <insert>
+          <integer>1408</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="P"/>
-        <insert character="1354"/>
+      <rule>
+        <keyseq>
+          <string>R</string>
+        </keyseq>
+        <insert>
+          <integer>1360</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="["/>
-        <insert character="1401"/>
+      <rule>
+        <keyseq>
+          <string>t</string>
+        </keyseq>
+        <insert>
+          <integer>1407</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="{"/>
-        <insert character="1353"/>
+      <rule>
+        <keyseq>
+          <string>T</string>
+        </keyseq>
+        <insert>
+          <integer>1359</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="]"/>
-        <insert character="1403"/>
+      <rule>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <insert>
+          <integer>1381</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="}"/>
-        <insert character="1355"/>
+      <rule>
+        <keyseq>
+          <string>Y</string>
+        </keyseq>
+        <insert>
+          <integer>1333</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="\"/>
-        <insert character="39"/>
+      <rule>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <integer>1384</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="|"/>
-        <insert character="1374"/>
+      <rule>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert>
+          <integer>1336</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="a"/>
-        <insert character="1377"/>
+      <rule>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert>
+          <integer>1387</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="A"/>
-        <insert character="1329"/>
+      <rule>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <insert>
+          <integer>1339</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="s"/>
-        <insert character="1405"/>
+      <rule>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <integer>1400</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="S"/>
-        <insert character="1357"/>
+      <rule>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+        <insert>
+          <integer>1352</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <insert character="1380"/>
+      <rule>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+        <insert>
+          <integer>1402</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="D"/>
-        <insert character="1332"/>
+      <rule>
+        <keyseq>
+          <string>P</string>
+        </keyseq>
+        <insert>
+          <integer>1354</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="f"/>
-        <insert character="1414"/>
+      <rule>
+        <keyseq>
+          <string>[</string>
+        </keyseq>
+        <insert>
+          <integer>1401</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="F"/>
-        <insert character="1366"/>
+      <rule>
+        <keyseq>
+          <string>{</string>
+        </keyseq>
+        <insert>
+          <integer>1353</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="g"/>
-        <insert character="1412"/>
+      <rule>
+        <keyseq>
+          <string>]</string>
+        </keyseq>
+        <insert>
+          <integer>1403</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="G"/>
-        <insert character="1364"/>
+      <rule>
+        <keyseq>
+          <string>}</string>
+        </keyseq>
+        <insert>
+          <integer>1355</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="h"/>
-        <insert character="1392"/>
+      <rule>
+        <keyseq>
+          <string>\</string>
+        </keyseq>
+        <insert>
+          <integer>39</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="H"/>
-        <insert character="1344"/>
+      <rule>
+        <keyseq>
+          <string>|</string>
+        </keyseq>
+        <insert>
+          <integer>1374</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="j"/>
-        <insert character="1395"/>
+      <rule>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+        <insert>
+          <integer>1377</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="J"/>
-        <insert character="1347"/>
+      <rule>
+        <keyseq>
+          <string>A</string>
+        </keyseq>
+        <insert>
+          <integer>1329</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="k"/>
-        <insert character="1391"/>
+      <rule>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+        <insert>
+          <integer>1405</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="K"/>
-        <insert character="1343"/>
+      <rule>
+        <keyseq>
+          <string>S</string>
+        </keyseq>
+        <insert>
+          <integer>1357</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="l"/>
-        <insert character="1388"/>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <insert>
+          <integer>1380</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="L"/>
-        <insert character="1340"/>
+      <rule>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <insert>
+          <integer>1332</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";"/>
-        <insert character="1385"/>
+      <rule>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+        <insert>
+          <integer>1414</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=":"/>
-        <insert character="1337"/>
+      <rule>
+        <keyseq>
+          <string>F</string>
+        </keyseq>
+        <insert>
+          <integer>1366</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="&apos;"/>
-        <insert character="1411"/>
+      <rule>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <integer>1412</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="&quot;"/>
-        <insert character="1363"/>
+      <rule>
+        <keyseq>
+          <string>G</string>
+        </keyseq>
+        <insert>
+          <integer>1364</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="z"/>
-        <insert character="1382"/>
+      <rule>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <insert>
+          <integer>1392</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="Z"/>
-        <insert character="1334"/>
+      <rule>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <insert>
+          <integer>1344</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="x"/>
-        <insert character="1409"/>
+      <rule>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+        <insert>
+          <integer>1395</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="X"/>
-        <insert character="1361"/>
+      <rule>
+        <keyseq>
+          <string>J</string>
+        </keyseq>
+        <insert>
+          <integer>1347</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="c"/>
-        <insert character="1379"/>
+      <rule>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <integer>1391</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="C"/>
-        <insert character="1331"/>
+      <rule>
+        <keyseq>
+          <string>K</string>
+        </keyseq>
+        <insert>
+          <integer>1343</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="v"/>
-        <insert character="1406"/>
+      <rule>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+        <insert>
+          <integer>1388</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="V"/>
-        <insert character="1358"/>
+      <rule>
+        <keyseq>
+          <string>L</string>
+        </keyseq>
+        <insert>
+          <integer>1340</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="b"/>
-        <insert character="1378"/>
+      <rule>
+        <keyseq>
+          <string>;</string>
+        </keyseq>
+        <insert>
+          <integer>1385</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="B"/>
-        <insert character="1330"/>
+      <rule>
+        <keyseq>
+          <string>:</string>
+        </keyseq>
+        <insert>
+          <integer>1337</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="n"/>
-        <insert character="1398"/>
+      <rule>
+        <keyseq>
+          <string>'</string>
+        </keyseq>
+        <insert>
+          <integer>1411</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="N"/>
-        <insert character="1350"/>
+      <rule>
+        <keyseq>
+          <string>"</string>
+        </keyseq>
+        <insert>
+          <integer>1363</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="m"/>
-        <insert character="1396"/>
+      <rule>
+        <keyseq>
+          <string>z</string>
+        </keyseq>
+        <insert>
+          <integer>1382</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="M"/>
-        <insert character="1348"/>
+      <rule>
+        <keyseq>
+          <string>Z</string>
+        </keyseq>
+        <insert>
+          <integer>1334</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=","/>
-        <insert character="1399"/>
+      <rule>
+        <keyseq>
+          <string>x</string>
+        </keyseq>
+        <insert>
+          <integer>1409</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="&lt;"/>
-        <insert character="1351"/>
+      <rule>
+        <keyseq>
+          <string>X</string>
+        </keyseq>
+        <insert>
+          <integer>1361</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="."/>
-        <insert character="1394"/>
+      <rule>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <insert>
+          <integer>1379</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="&gt;"/>
-        <insert character="1346"/>
+      <rule>
+        <keyseq>
+          <string>C</string>
+        </keyseq>
+        <insert>
+          <integer>1331</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="/"/>
-        <insert character="1390"/>
+      <rule>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert>
+          <integer>1406</integer>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="?"/>
-        <insert character="1342"/>
+      <rule>
+        <keyseq>
+          <string>V</string>
+        </keyseq>
+        <insert>
+          <integer>1358</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <insert>
+          <integer>1378</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>B</string>
+        </keyseq>
+        <insert>
+          <integer>1330</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <integer>1398</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+        <insert>
+          <integer>1350</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <integer>1396</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>M</string>
+        </keyseq>
+        <insert>
+          <integer>1348</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>,</string>
+        </keyseq>
+        <insert>
+          <integer>1399</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&lt;</string>
+        </keyseq>
+        <insert>
+          <integer>1351</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>.</string>
+        </keyseq>
+        <insert>
+          <integer>1394</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&gt;</string>
+        </keyseq>
+        <insert>
+          <integer>1346</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>/</string>
+        </keyseq>
+        <insert>
+          <integer>1390</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>?</string>
+        </keyseq>
+        <insert>
+          <integer>1342</integer>
+        </insert>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <branch branch-selecting-map="map-map"/>
+    <state sname="state-init">
+      <branch mname="map-map"/>
     </state>
   </state-list>
 </input-method>

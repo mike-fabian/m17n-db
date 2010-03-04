@@ -10,797 +10,1335 @@ This is acutually not a standalone input method, but is expected
 to be included in the other Vietnamese input method (e.g. vi-telex, vi-vni).
 </description>
   <macro-list>
-    <macro id="macro-handle-mark">
-      <move-to-marker markerID="T"/>
-      <select index="0"/>
-      <move-to-marker markerID="M"/>
-      <conditional>
-        <case>
-          <variable-reference id="V-3"/>
-          <conditional>
-            <case>
-              <expr operator="|">
-                <expr operator="=">
-                  <variable-reference id="V-1"/>
-                  <int-val>2282</int-val>
-                </expr>
-                <expr operator="=">
-                  <variable-reference id="V-1"/>
-                  <int-val>332001</int-val>
-                </expr>
-                <expr operator="=">
-                  <variable-reference id="V-1"/>
-                  <int-val>2250</int-val>
-                </expr>
-                <expr operator="=">
-                  <variable-reference id="V-1"/>
-                  <int-val>332000</int-val>
-                </expr>
-              </expr>
-              <set id="TPLACE">
-                <int-val>3</int-val>
-              </set>
-            </case>
-            <case>
-              <int-val>1</int-val>
-              <move-to-marker position="@previous"/>
-              <set id="TPLACE">
-                <int-val>2</int-val>
-              </set>
-            </case>
-          </conditional>
-        </case>
-        <case>
-          <variable-reference id="V-2"/>
-          <conditional>
-            <case>
-              <expr operator="|">
-                <expr operator="&gt;">
-                  <variable-reference id="V-1"/>
-                  <int-val>127</int-val>
-                </expr>
-                <expr operator="&amp;">
-                  <expr operator="|">
-                    <expr operator="=">
-                      <variable-reference id="C"/>
-                      <int-val>103</int-val>
-                    </expr>
-                    <expr operator="=">
-                      <variable-reference id="C"/>
-                      <int-val>71</int-val>
-                    </expr>
-                  </expr>
-                  <expr operator="|">
-                    <expr operator="=">
-                      <variable-reference id="V-2"/>
-                      <int-val>105</int-val>
-                    </expr>
-                    <expr operator="=">
-                      <variable-reference id="V-2"/>
-                      <int-val>73</int-val>
-                    </expr>
-                  </expr>
-                </expr>
-                <expr operator="&amp;">
-                  <expr operator="|">
-                    <expr operator="=">
-                      <variable-reference id="C"/>
-                      <int-val>113</int-val>
-                    </expr>
-                    <expr operator="=">
-                      <variable-reference id="C"/>
-                      <int-val>81</int-val>
-                    </expr>
-                  </expr>
-                  <expr operator="|">
-                    <expr operator="=">
-                      <variable-reference id="V-2"/>
-                      <int-val>117</int-val>
-                    </expr>
-                    <expr operator="=">
-                      <variable-reference id="V-2"/>
-                      <int-val>85</int-val>
-                    </expr>
-                  </expr>
-                </expr>
-                <expr operator="&amp;">
-                  <expr operator="|">
-                    <variable-reference id="tone-mark-on-last"/>
-                    <expr operator="&gt;">
-                      <variable-reference id="C-AFTER-V"/>
-                      <int-val>0</int-val>
-                    </expr>
-                  </expr>
-                  <expr operator="|">
-                    <expr operator="&amp;">
-                      <expr operator="|">
-                        <expr operator="=">
-                          <variable-reference id="V-2"/>
-                          <int-val>111</int-val>
-                        </expr>
-                        <expr operator="=">
-                          <variable-reference id="V-2"/>
-                          <int-val>79</int-val>
-                        </expr>
-                      </expr>
-                      <expr operator="|">
-                        <expr operator="=">
-                          <variable-reference id="V-1"/>
-                          <int-val>97</int-val>
-                        </expr>
-                        <expr operator="=">
-                          <variable-reference id="V-1"/>
-                          <int-val>65</int-val>
-                        </expr>
-                        <expr operator="=">
-                          <variable-reference id="V-1"/>
-                          <int-val>101</int-val>
-                        </expr>
-                        <expr operator="=">
-                          <variable-reference id="V-1"/>
-                          <int-val>69</int-val>
-                        </expr>
-                        <expr operator="=">
-                          <variable-reference id="V-1"/>
-                          <int-val>111</int-val>
-                        </expr>
-                        <expr operator="=">
-                          <variable-reference id="V-1"/>
-                          <int-val>79</int-val>
-                        </expr>
-                      </expr>
-                    </expr>
-                    <expr operator="&amp;">
-                      <expr operator="|">
-                        <expr operator="=">
-                          <variable-reference id="V-2"/>
-                          <int-val>117</int-val>
-                        </expr>
-                        <expr operator="=">
-                          <variable-reference id="V-2"/>
-                          <int-val>85</int-val>
-                        </expr>
-                      </expr>
-                      <expr operator="|">
-                        <expr operator="=">
-                          <variable-reference id="V-1"/>
-                          <int-val>121</int-val>
-                        </expr>
-                        <expr operator="=">
-                          <variable-reference id="V-1"/>
-                          <int-val>89</int-val>
-                        </expr>
-                      </expr>
-                    </expr>
-                  </expr>
-                </expr>
-              </expr>
-              <set id="TPLACE">
-                <int-val>2</int-val>
-              </set>
-            </case>
-            <case>
-              <int-val>1</int-val>
-              <move-to-marker position="@previous"/>
-              <set id="TPLACE">
-                <int-val>1</int-val>
-              </set>
-            </case>
-          </conditional>
-        </case>
-        <case>
-          <int-val>1</int-val>
-          <set id="TPLACE">
-            <int-val>1</int-val>
-          </set>
-        </case>
-      </conditional>
-      <select index="variable">
-        <variable-reference id="SELECT"/>
+    <defmacro fname="macro-handle-mark">
+      <move>
+        <marker>T</marker>
+      </move>
+      <select>
+        <integer>0</integer>
       </select>
-      <mark-current-position markerID="T"/>
-      <move-to-marker position="@last"/>
-    </macro>
+      <move>
+        <marker>M</marker>
+      </move>
+      <cond>
+        <list>
+          <varref vname="V-3"/>
+          <cond>
+            <list>
+              <or>
+                <eq>
+                  <varref vname="V-1"/>
+                  <integer>234</integer>
+                </eq>
+                <eq>
+                  <varref vname="V-1"/>
+                  <integer>417</integer>
+                </eq>
+                <eq>
+                  <varref vname="V-1"/>
+                  <integer>202</integer>
+                </eq>
+                <eq>
+                  <varref vname="V-1"/>
+                  <integer>416</integer>
+                </eq>
+              </or>
+              <set vname="TPLACE">
+                <integer>3</integer>
+              </set>
+            </list>
+            <list>
+              <integer>1</integer>
+              <move>
+                <marker>@-</marker>
+              </move>
+              <set vname="TPLACE">
+                <integer>2</integer>
+              </set>
+            </list>
+          </cond>
+        </list>
+        <list>
+          <varref vname="V-2"/>
+          <cond>
+            <list>
+              <or>
+                <gt>
+                  <varref vname="V-1"/>
+                  <integer>127</integer>
+                </gt>
+                <and>
+                  <or>
+                    <eq>
+                      <varref vname="C"/>
+                      <integer>103</integer>
+                    </eq>
+                    <eq>
+                      <varref vname="C"/>
+                      <integer>71</integer>
+                    </eq>
+                  </or>
+                  <or>
+                    <eq>
+                      <varref vname="V-2"/>
+                      <integer>105</integer>
+                    </eq>
+                    <eq>
+                      <varref vname="V-2"/>
+                      <integer>73</integer>
+                    </eq>
+                  </or>
+                </and>
+                <and>
+                  <or>
+                    <eq>
+                      <varref vname="C"/>
+                      <integer>113</integer>
+                    </eq>
+                    <eq>
+                      <varref vname="C"/>
+                      <integer>81</integer>
+                    </eq>
+                  </or>
+                  <or>
+                    <eq>
+                      <varref vname="V-2"/>
+                      <integer>117</integer>
+                    </eq>
+                    <eq>
+                      <varref vname="V-2"/>
+                      <integer>85</integer>
+                    </eq>
+                  </or>
+                </and>
+                <and>
+                  <or>
+                    <varref vname="tone-mark-on-last"/>
+                    <gt>
+                      <varref vname="C-AFTER-V"/>
+                      <integer>0</integer>
+                    </gt>
+                  </or>
+                  <or>
+                    <and>
+                      <or>
+                        <eq>
+                          <varref vname="V-2"/>
+                          <integer>111</integer>
+                        </eq>
+                        <eq>
+                          <varref vname="V-2"/>
+                          <integer>79</integer>
+                        </eq>
+                      </or>
+                      <or>
+                        <eq>
+                          <varref vname="V-1"/>
+                          <integer>97</integer>
+                        </eq>
+                        <eq>
+                          <varref vname="V-1"/>
+                          <integer>65</integer>
+                        </eq>
+                        <eq>
+                          <varref vname="V-1"/>
+                          <integer>101</integer>
+                        </eq>
+                        <eq>
+                          <varref vname="V-1"/>
+                          <integer>69</integer>
+                        </eq>
+                        <eq>
+                          <varref vname="V-1"/>
+                          <integer>111</integer>
+                        </eq>
+                        <eq>
+                          <varref vname="V-1"/>
+                          <integer>79</integer>
+                        </eq>
+                      </or>
+                    </and>
+                    <and>
+                      <or>
+                        <eq>
+                          <varref vname="V-2"/>
+                          <integer>117</integer>
+                        </eq>
+                        <eq>
+                          <varref vname="V-2"/>
+                          <integer>85</integer>
+                        </eq>
+                      </or>
+                      <or>
+                        <eq>
+                          <varref vname="V-1"/>
+                          <integer>121</integer>
+                        </eq>
+                        <eq>
+                          <varref vname="V-1"/>
+                          <integer>89</integer>
+                        </eq>
+                      </or>
+                    </and>
+                  </or>
+                </and>
+              </or>
+              <set vname="TPLACE">
+                <integer>2</integer>
+              </set>
+            </list>
+            <list>
+              <integer>1</integer>
+              <move>
+                <marker>@-</marker>
+              </move>
+              <set vname="TPLACE">
+                <integer>1</integer>
+              </set>
+            </list>
+          </cond>
+        </list>
+        <list>
+          <integer>1</integer>
+          <set vname="TPLACE">
+            <integer>1</integer>
+          </set>
+        </list>
+      </cond>
+      <select>
+        <varref vname="SELECT"/>
+      </select>
+      <mark>
+        <marker>T</marker>
+      </mark>
+      <move>
+        <marker>@&gt;</marker>
+      </move>
+    </defmacro>
   </macro-list>
   <map-list>
-    <map id="map-vowel">
-      <rule>
-        <keyseq keys="a"/>
-        <insert>
-          <candidates>aáàảãạ</candidates>
-        </insert>
-      </rule>
-      <rule>
-        <keyseq keys="A"/>
-        <insert>
-          <candidates>AÁÀẢÃẠ</candidates>
-        </insert>
-      </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <insert>
-          <candidates>eéèẻẽẹ</candidates>
-        </insert>
-      </rule>
-      <rule>
-        <keyseq keys="E"/>
-        <insert>
-          <candidates>EÉÈẺẼẸ</candidates>
-        </insert>
-      </rule>
-      <rule>
-        <keyseq keys="i"/>
-        <insert>
-          <candidates>iíìỉĩị</candidates>
-        </insert>
-      </rule>
-      <rule>
-        <keyseq keys="I"/>
-        <insert>
-          <candidates>IÍÌỈĨỊ</candidates>
-        </insert>
-      </rule>
-      <rule>
-        <keyseq keys="o"/>
-        <insert>
-          <candidates>oóòỏõọ</candidates>
-        </insert>
-      </rule>
-      <rule>
-        <keyseq keys="O"/>
-        <insert>
-          <candidates>OÓÒỎÕỌ</candidates>
-        </insert>
-      </rule>
-      <rule>
-        <keyseq keys="u"/>
-        <insert>
-          <candidates>uúùủũụ</candidates>
-        </insert>
-      </rule>
-      <rule>
-        <keyseq keys="U"/>
-        <insert>
-          <candidates>UÚÙỦŨỤ</candidates>
-        </insert>
-      </rule>
-      <rule>
-        <keyseq keys="y"/>
-        <insert>
-          <candidates>yýỳỷỹỵ</candidates>
-        </insert>
-      </rule>
-      <rule>
-        <keyseq keys="Y"/>
-        <insert>
-          <candidates>YÝỲỶỸỴ</candidates>
-        </insert>
-      </rule>
-    </map>
-    <map id="map-consonant">
-      <rule>
-        <keyseq keys="b"/>
-        <insert character="98"/>
-      </rule>
-      <rule>
-        <keyseq keys="c"/>
-        <insert character="99"/>
-      </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <insert character="100"/>
-      </rule>
-      <rule>
-        <keyseq keys="g"/>
-        <insert character="103"/>
-      </rule>
-      <rule>
-        <keyseq keys="h"/>
-        <insert character="104"/>
-      </rule>
-      <rule>
-        <keyseq keys="k"/>
-        <insert character="107"/>
-      </rule>
-      <rule>
-        <keyseq keys="l"/>
-        <insert character="108"/>
-      </rule>
-      <rule>
-        <keyseq keys="m"/>
-        <insert character="109"/>
-      </rule>
-      <rule>
-        <keyseq keys="n"/>
-        <insert character="110"/>
-      </rule>
-      <rule>
-        <keyseq keys="p"/>
-        <insert character="112"/>
-      </rule>
-      <rule>
-        <keyseq keys="q"/>
-        <insert character="113"/>
-      </rule>
-      <rule>
-        <keyseq keys="t"/>
-        <insert character="116"/>
-      </rule>
-      <rule>
-        <keyseq keys="v"/>
-        <insert character="118"/>
-      </rule>
-      <rule>
-        <keyseq keys="B"/>
-        <insert character="66"/>
-      </rule>
-      <rule>
-        <keyseq keys="C"/>
-        <insert character="67"/>
-      </rule>
-      <rule>
-        <keyseq keys="D"/>
-        <insert character="68"/>
-      </rule>
-      <rule>
-        <keyseq keys="G"/>
-        <insert character="71"/>
-      </rule>
-      <rule>
-        <keyseq keys="H"/>
-        <insert character="72"/>
-      </rule>
-      <rule>
-        <keyseq keys="K"/>
-        <insert character="75"/>
-      </rule>
-      <rule>
-        <keyseq keys="L"/>
-        <insert character="76"/>
-      </rule>
-      <rule>
-        <keyseq keys="M"/>
-        <insert character="77"/>
-      </rule>
-      <rule>
-        <keyseq keys="N"/>
-        <insert character="78"/>
-      </rule>
-      <rule>
-        <keyseq keys="P"/>
-        <insert character="80"/>
-      </rule>
-      <rule>
-        <keyseq keys="Q"/>
-        <insert character="81"/>
-      </rule>
-      <rule>
-        <keyseq keys="T"/>
-        <insert character="84"/>
-      </rule>
-      <rule>
-        <keyseq keys="V"/>
-        <insert character="86"/>
-      </rule>
-    </map>
-    <map id="map-ending-1st-notviet-consonant">
-      <rule>
-        <keyseq keys="q"/>
-        <insert character="113"/>
-      </rule>
-      <rule>
-        <keyseq keys="Q"/>
-        <insert character="81"/>
-      </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <insert character="100"/>
-      </rule>
-      <rule>
-        <keyseq keys="D"/>
-        <insert character="68"/>
-      </rule>
-      <rule>
-        <keyseq keys="g"/>
-        <insert character="103"/>
-      </rule>
-      <rule>
-        <keyseq keys="G"/>
-        <insert character="71"/>
-      </rule>
-      <rule>
-        <keyseq keys="h"/>
-        <insert character="104"/>
-      </rule>
-      <rule>
-        <keyseq keys="H"/>
-        <insert character="72"/>
-      </rule>
-      <rule>
-        <keyseq keys="k"/>
-        <insert character="107"/>
-      </rule>
-      <rule>
-        <keyseq keys="K"/>
-        <insert character="75"/>
-      </rule>
-      <rule>
-        <keyseq keys="l"/>
-        <insert character="108"/>
-      </rule>
-      <rule>
-        <keyseq keys="L"/>
-        <insert character="76"/>
-      </rule>
-      <rule>
-        <keyseq keys="v"/>
-        <insert character="118"/>
-      </rule>
-      <rule>
-        <keyseq keys="V"/>
-        <insert character="86"/>
-      </rule>
-      <rule>
-        <keyseq keys="b"/>
-        <insert character="98"/>
-      </rule>
-      <rule>
-        <keyseq keys="B"/>
-        <insert character="66"/>
-      </rule>
-      <rule>
-        <keyseq keys="z"/>
-        <insert character="122"/>
-      </rule>
-      <rule>
-        <keyseq keys="Z"/>
-        <insert character="90"/>
-      </rule>
-    </map>
-    <map id="map-ending-1st-consonant">
-      <rule>
-        <keyseq keys="c"/>
-        <insert character="99"/>
-      </rule>
-      <rule>
-        <keyseq keys="m"/>
-        <insert character="109"/>
-      </rule>
-      <rule>
-        <keyseq keys="n"/>
-        <insert character="110"/>
-      </rule>
-      <rule>
-        <keyseq keys="p"/>
-        <insert character="112"/>
-      </rule>
-      <rule>
-        <keyseq keys="t"/>
-        <insert character="116"/>
-      </rule>
-      <rule>
-        <keyseq keys="C"/>
-        <insert character="67"/>
-      </rule>
-      <rule>
-        <keyseq keys="M"/>
-        <insert character="77"/>
-      </rule>
-      <rule>
-        <keyseq keys="N"/>
-        <insert character="78"/>
-      </rule>
-      <rule>
-        <keyseq keys="P"/>
-        <insert character="80"/>
-      </rule>
-      <rule>
-        <keyseq keys="T"/>
-        <insert character="84"/>
-      </rule>
-    </map>
-    <map id="map-ending-2nd-consonant">
-      <rule>
-        <keyseq keys="g"/>
-        <insert character="103"/>
-      </rule>
-      <rule>
-        <keyseq keys="h"/>
-        <insert character="104"/>
-      </rule>
-      <rule>
-        <keyseq keys="G"/>
-        <insert character="71"/>
-      </rule>
-      <rule>
-        <keyseq keys="H"/>
-        <insert character="72"/>
-      </rule>
-    </map>
-    <map id="map-alnum">
-      <rule>
-        <keyseq keys="a"/>
-        <insert character="97"/>
-      </rule>
-      <rule>
-        <keyseq keys="b"/>
-        <insert character="98"/>
-      </rule>
-      <rule>
-        <keyseq keys="c"/>
-        <insert character="99"/>
-      </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <insert character="100"/>
-      </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <insert character="101"/>
-      </rule>
-      <rule>
-        <keyseq keys="f"/>
-        <insert character="102"/>
-      </rule>
-      <rule>
-        <keyseq keys="g"/>
-        <insert character="103"/>
-      </rule>
-      <rule>
-        <keyseq keys="h"/>
-        <insert character="104"/>
-      </rule>
-      <rule>
-        <keyseq keys="i"/>
-        <insert character="105"/>
-      </rule>
-      <rule>
-        <keyseq keys="j"/>
-        <insert character="106"/>
-      </rule>
-      <rule>
-        <keyseq keys="k"/>
-        <insert character="107"/>
-      </rule>
-      <rule>
-        <keyseq keys="l"/>
-        <insert character="108"/>
-      </rule>
-      <rule>
-        <keyseq keys="m"/>
-        <insert character="109"/>
-      </rule>
-      <rule>
-        <keyseq keys="n"/>
-        <insert character="110"/>
-      </rule>
-      <rule>
-        <keyseq keys="o"/>
-        <insert character="111"/>
-      </rule>
-      <rule>
-        <keyseq keys="p"/>
-        <insert character="112"/>
-      </rule>
-      <rule>
-        <keyseq keys="q"/>
-        <insert character="113"/>
-      </rule>
-      <rule>
-        <keyseq keys="r"/>
-        <insert character="114"/>
-      </rule>
-      <rule>
-        <keyseq keys="s"/>
-        <insert character="115"/>
-      </rule>
-      <rule>
-        <keyseq keys="t"/>
-        <insert character="116"/>
-      </rule>
-      <rule>
-        <keyseq keys="u"/>
-        <insert character="117"/>
-      </rule>
-      <rule>
-        <keyseq keys="v"/>
-        <insert character="118"/>
-      </rule>
-      <rule>
-        <keyseq keys="w"/>
-        <insert character="119"/>
-      </rule>
-      <rule>
-        <keyseq keys="x"/>
-        <insert character="120"/>
-      </rule>
-      <rule>
-        <keyseq keys="y"/>
-        <insert character="121"/>
-      </rule>
-      <rule>
-        <keyseq keys="z"/>
-        <insert character="122"/>
-      </rule>
-      <rule>
-        <keyseq keys="A"/>
-        <insert character="65"/>
-      </rule>
-      <rule>
-        <keyseq keys="B"/>
-        <insert character="66"/>
-      </rule>
-      <rule>
-        <keyseq keys="C"/>
-        <insert character="67"/>
-      </rule>
-      <rule>
-        <keyseq keys="D"/>
-        <insert character="68"/>
-      </rule>
-      <rule>
-        <keyseq keys="E"/>
-        <insert character="69"/>
-      </rule>
-      <rule>
-        <keyseq keys="F"/>
-        <insert character="70"/>
-      </rule>
-      <rule>
-        <keyseq keys="G"/>
-        <insert character="71"/>
-      </rule>
-      <rule>
-        <keyseq keys="H"/>
-        <insert character="72"/>
-      </rule>
-      <rule>
-        <keyseq keys="I"/>
-        <insert character="73"/>
-      </rule>
-      <rule>
-        <keyseq keys="J"/>
-        <insert character="74"/>
-      </rule>
-      <rule>
-        <keyseq keys="K"/>
-        <insert character="75"/>
-      </rule>
-      <rule>
-        <keyseq keys="L"/>
-        <insert character="76"/>
-      </rule>
-      <rule>
-        <keyseq keys="M"/>
-        <insert character="77"/>
-      </rule>
-      <rule>
-        <keyseq keys="N"/>
-        <insert character="78"/>
-      </rule>
-      <rule>
-        <keyseq keys="O"/>
-        <insert character="79"/>
-      </rule>
-      <rule>
-        <keyseq keys="P"/>
-        <insert character="80"/>
-      </rule>
-      <rule>
-        <keyseq keys="Q"/>
-        <insert character="81"/>
-      </rule>
-      <rule>
-        <keyseq keys="R"/>
-        <insert character="82"/>
-      </rule>
-      <rule>
-        <keyseq keys="S"/>
-        <insert character="83"/>
-      </rule>
-      <rule>
-        <keyseq keys="T"/>
-        <insert character="84"/>
-      </rule>
-      <rule>
-        <keyseq keys="U"/>
-        <insert character="85"/>
-      </rule>
-      <rule>
-        <keyseq keys="V"/>
-        <insert character="86"/>
-      </rule>
-      <rule>
-        <keyseq keys="W"/>
-        <insert character="87"/>
-      </rule>
-      <rule>
-        <keyseq keys="X"/>
-        <insert character="88"/>
-      </rule>
-      <rule>
-        <keyseq keys="Y"/>
-        <insert character="89"/>
-      </rule>
-      <rule>
-        <keyseq keys="Z"/>
-        <insert character="90"/>
-      </rule>
-      <rule>
-        <keyseq keys="0"/>
-        <insert character="48"/>
-      </rule>
-      <rule>
-        <keyseq keys="1"/>
-        <insert character="49"/>
-      </rule>
-      <rule>
-        <keyseq keys="2"/>
-        <insert character="50"/>
-      </rule>
-      <rule>
-        <keyseq keys="3"/>
-        <insert character="51"/>
-      </rule>
-      <rule>
-        <keyseq keys="4"/>
-        <insert character="52"/>
-      </rule>
-      <rule>
-        <keyseq keys="5"/>
-        <insert character="53"/>
-      </rule>
-      <rule>
-        <keyseq keys="6"/>
-        <insert character="54"/>
-      </rule>
-      <rule>
-        <keyseq keys="7"/>
-        <insert character="55"/>
-      </rule>
-      <rule>
-        <keyseq keys="8"/>
-        <insert character="56"/>
-      </rule>
-      <rule>
-        <keyseq keys="9"/>
-        <insert character="57"/>
-      </rule>
-    </map>
-    <map id="map-smart-quotes">
-      <rule>
-        <keyseq keys="&apos;"/>
-        <insert character="39"/>
-      </rule>
-      <rule>
-        <keyseq keys="&apos;&apos;"/>
-        <insert string="‘’"/>
-      </rule>
-      <rule>
-        <keyseq keys="&quot;"/>
-        <insert character="34"/>
-      </rule>
-      <rule>
-        <keyseq keys="&quot;&quot;"/>
-        <insert string="“”"/>
-      </rule>
-    </map>
-    <map id="map-permanent-escape">
-      <rule>
-        <keyseq keys="\"/>
-      </rule>
-    </map>
-    <map id="map-backspace">
+    <map mname="map-vowel">
       <rule>
         <keyseq>
-          <key-event>BackSpace</key-event>
+          <string>a</string>
         </keyseq>
-        <conditional>
-          <case>
-            <variable-reference id="backspace-is-undo"/>
+        <insert-candidates>
+          <string>aáàảãạ</string>
+        </insert-candidates>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>A</string>
+        </keyseq>
+        <insert-candidates>
+          <string>AÁÀẢÃẠ</string>
+        </insert-candidates>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <insert-candidates>
+          <string>eéèẻẽẹ</string>
+        </insert-candidates>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <insert-candidates>
+          <string>EÉÈẺẼẸ</string>
+        </insert-candidates>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert-candidates>
+          <string>iíìỉĩị</string>
+        </insert-candidates>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <insert-candidates>
+          <string>IÍÌỈĨỊ</string>
+        </insert-candidates>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert-candidates>
+          <string>oóòỏõọ</string>
+        </insert-candidates>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+        <insert-candidates>
+          <string>OÓÒỎÕỌ</string>
+        </insert-candidates>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert-candidates>
+          <string>uúùủũụ</string>
+        </insert-candidates>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert-candidates>
+          <string>UÚÙỦŨỤ</string>
+        </insert-candidates>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <insert-candidates>
+          <string>yýỳỷỹỵ</string>
+        </insert-candidates>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Y</string>
+        </keyseq>
+        <insert-candidates>
+          <string>YÝỲỶỸỴ</string>
+        </insert-candidates>
+      </rule>
+    </map>
+    <map mname="map-consonant">
+      <rule>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <insert>
+          <integer>98</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <insert>
+          <integer>99</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <insert>
+          <integer>100</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <integer>103</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <insert>
+          <integer>104</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <integer>107</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+        <insert>
+          <integer>108</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <integer>109</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <integer>110</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+        <insert>
+          <integer>112</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <insert>
+          <integer>113</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>t</string>
+        </keyseq>
+        <insert>
+          <integer>116</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert>
+          <integer>118</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>B</string>
+        </keyseq>
+        <insert>
+          <integer>66</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>C</string>
+        </keyseq>
+        <insert>
+          <integer>67</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <insert>
+          <integer>68</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>G</string>
+        </keyseq>
+        <insert>
+          <integer>71</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <insert>
+          <integer>72</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>K</string>
+        </keyseq>
+        <insert>
+          <integer>75</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>L</string>
+        </keyseq>
+        <insert>
+          <integer>76</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>M</string>
+        </keyseq>
+        <insert>
+          <integer>77</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+        <insert>
+          <integer>78</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>P</string>
+        </keyseq>
+        <insert>
+          <integer>80</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <insert>
+          <integer>81</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>T</string>
+        </keyseq>
+        <insert>
+          <integer>84</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>V</string>
+        </keyseq>
+        <insert>
+          <integer>86</integer>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-ending-1st-notviet-consonant">
+      <rule>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <insert>
+          <integer>113</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <insert>
+          <integer>81</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <insert>
+          <integer>100</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <insert>
+          <integer>68</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <integer>103</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>G</string>
+        </keyseq>
+        <insert>
+          <integer>71</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <insert>
+          <integer>104</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <insert>
+          <integer>72</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <integer>107</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>K</string>
+        </keyseq>
+        <insert>
+          <integer>75</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+        <insert>
+          <integer>108</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>L</string>
+        </keyseq>
+        <insert>
+          <integer>76</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert>
+          <integer>118</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>V</string>
+        </keyseq>
+        <insert>
+          <integer>86</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <insert>
+          <integer>98</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>B</string>
+        </keyseq>
+        <insert>
+          <integer>66</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z</string>
+        </keyseq>
+        <insert>
+          <integer>122</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Z</string>
+        </keyseq>
+        <insert>
+          <integer>90</integer>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-ending-1st-consonant">
+      <rule>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <insert>
+          <integer>99</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <integer>109</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <integer>110</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+        <insert>
+          <integer>112</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>t</string>
+        </keyseq>
+        <insert>
+          <integer>116</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>C</string>
+        </keyseq>
+        <insert>
+          <integer>67</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>M</string>
+        </keyseq>
+        <insert>
+          <integer>77</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+        <insert>
+          <integer>78</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>P</string>
+        </keyseq>
+        <insert>
+          <integer>80</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>T</string>
+        </keyseq>
+        <insert>
+          <integer>84</integer>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-ending-2nd-consonant">
+      <rule>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <integer>103</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <insert>
+          <integer>104</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>G</string>
+        </keyseq>
+        <insert>
+          <integer>71</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <insert>
+          <integer>72</integer>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-alnum">
+      <rule>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+        <insert>
+          <integer>97</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <insert>
+          <integer>98</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <insert>
+          <integer>99</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <insert>
+          <integer>100</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <insert>
+          <integer>101</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+        <insert>
+          <integer>102</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <integer>103</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <insert>
+          <integer>104</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert>
+          <integer>105</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+        <insert>
+          <integer>106</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <integer>107</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+        <insert>
+          <integer>108</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <integer>109</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <integer>110</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <integer>111</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+        <insert>
+          <integer>112</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <insert>
+          <integer>113</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+        <insert>
+          <integer>114</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+        <insert>
+          <integer>115</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>t</string>
+        </keyseq>
+        <insert>
+          <integer>116</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <integer>117</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert>
+          <integer>118</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+        <insert>
+          <integer>119</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>x</string>
+        </keyseq>
+        <insert>
+          <integer>120</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <insert>
+          <integer>121</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z</string>
+        </keyseq>
+        <insert>
+          <integer>122</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>A</string>
+        </keyseq>
+        <insert>
+          <integer>65</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>B</string>
+        </keyseq>
+        <insert>
+          <integer>66</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>C</string>
+        </keyseq>
+        <insert>
+          <integer>67</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <insert>
+          <integer>68</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <insert>
+          <integer>69</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>F</string>
+        </keyseq>
+        <insert>
+          <integer>70</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>G</string>
+        </keyseq>
+        <insert>
+          <integer>71</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <insert>
+          <integer>72</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <insert>
+          <integer>73</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>J</string>
+        </keyseq>
+        <insert>
+          <integer>74</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>K</string>
+        </keyseq>
+        <insert>
+          <integer>75</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>L</string>
+        </keyseq>
+        <insert>
+          <integer>76</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>M</string>
+        </keyseq>
+        <insert>
+          <integer>77</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+        <insert>
+          <integer>78</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+        <insert>
+          <integer>79</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>P</string>
+        </keyseq>
+        <insert>
+          <integer>80</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <insert>
+          <integer>81</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>R</string>
+        </keyseq>
+        <insert>
+          <integer>82</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>S</string>
+        </keyseq>
+        <insert>
+          <integer>83</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>T</string>
+        </keyseq>
+        <insert>
+          <integer>84</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert>
+          <integer>85</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>V</string>
+        </keyseq>
+        <insert>
+          <integer>86</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>W</string>
+        </keyseq>
+        <insert>
+          <integer>87</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>X</string>
+        </keyseq>
+        <insert>
+          <integer>88</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Y</string>
+        </keyseq>
+        <insert>
+          <integer>89</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Z</string>
+        </keyseq>
+        <insert>
+          <integer>90</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>0</string>
+        </keyseq>
+        <insert>
+          <integer>48</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>1</string>
+        </keyseq>
+        <insert>
+          <integer>49</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>2</string>
+        </keyseq>
+        <insert>
+          <integer>50</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>3</string>
+        </keyseq>
+        <insert>
+          <integer>51</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>4</string>
+        </keyseq>
+        <insert>
+          <integer>52</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>5</string>
+        </keyseq>
+        <insert>
+          <integer>53</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>6</string>
+        </keyseq>
+        <insert>
+          <integer>54</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>7</string>
+        </keyseq>
+        <insert>
+          <integer>55</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>8</string>
+        </keyseq>
+        <insert>
+          <integer>56</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>9</string>
+        </keyseq>
+        <insert>
+          <integer>57</integer>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-smart-quotes">
+      <rule>
+        <keyseq>
+          <string>'</string>
+        </keyseq>
+        <insert>
+          <integer>39</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>''</string>
+        </keyseq>
+        <insert>
+          <string>‘’</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>"</string>
+        </keyseq>
+        <insert>
+          <integer>34</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>""</string>
+        </keyseq>
+        <insert>
+          <string>“”</string>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-permanent-escape">
+      <rule>
+        <keyseq>
+          <string>\</string>
+        </keyseq>
+      </rule>
+    </map>
+    <map mname="map-backspace">
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>BackSpace</symbol>
+          </list>
+        </keyseq>
+        <cond>
+          <list>
+            <varref vname="backspace-is-undo"/>
             <undo/>
-          </case>
-        </conditional>
+          </list>
+        </cond>
       </rule>
     </map>
   </map-list>

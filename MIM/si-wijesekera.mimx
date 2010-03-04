@@ -11,2820 +11,4414 @@ buffer otherwise.
 </description>
   <title>සි</title>
   <variable-list>
-    <variable id="use-surrounding-text">
+    <defvar vname="use-surrounding-text">
       <description>
-      <get-text>Surrounding text vs. preedit If 1, try to use surrounding text.  Otherwise, use preedit.</get-text>
-    </description><value type="integer">1</value><variable-value-candidate>
-      <c-value type="integer">1</c-value>
-      <c-value type="integer">0</c-value>
-    </variable-value-candidate></variable>
+        <gettext>Surrounding text vs. preedit
+If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
+      </description>
+      <integer>1</integer>
+      <possible-value>
+        <integer>1</integer>
+        <integer>0</integer>
+      </possible-value>
+    </defvar>
   </variable-list>
   <macro-list>
-    <macro id="macro-forward">
-      <set id="cc3">
-        <predefined-nth-previous-or-following-character position="+3"/>
+    <defmacro fname="macro-forward">
+      <set vname="cc3">
+        <char-at>
+          <marker>@+3</marker>
+        </char-at>
       </set>
-      <conditional>
-        <case>
-          <expr operator="&amp;">
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="+1"/>
-              <int-val>0x0DCA</int-val>
-            </expr>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="+2"/>
-              <int-val>0x200D</int-val>
-            </expr>
-            <expr operator="&gt;=">
-              <variable-reference id="cc3"/>
-              <int-val>0x0D9A</int-val>
-            </expr>
-            <expr operator="&lt;=">
-              <variable-reference id="cc3"/>
-              <int-val>0x0DC6</int-val>
-            </expr>
-          </expr>
-          <delete-n-characters n="+3"/>
-          <insert character="0x0DCA"/>
-          <insert character="0x200D"/>
-          <insert character-or-string="variable">
-            <variable-reference id="cc3"/>
+      <cond>
+        <list>
+          <logand>
+            <eq>
+              <char-at>
+                <marker>@+1</marker>
+              </char-at>
+              <integer>0x0DCA</integer>
+            </eq>
+            <eq>
+              <char-at>
+                <marker>@+2</marker>
+              </char-at>
+              <integer>0x200D</integer>
+            </eq>
+            <ge>
+              <varref vname="cc3"/>
+              <integer>0x0D9A</integer>
+            </ge>
+            <le>
+              <varref vname="cc3"/>
+              <integer>0x0DC6</integer>
+            </le>
+          </logand>
+          <delete>
+            <marker>@+3</marker>
+          </delete>
+          <insert>
+            <integer>0x0DCA</integer>
           </insert>
-          <macro-reference id="macro-forward"/>
-        </case>
-      </conditional>
-    </macro>
-    <macro id="macro-backward">
-      <set id="cc1">
-        <predefined-nth-previous-or-following-character position="-1"/>
+          <insert>
+            <integer>0x200D</integer>
+          </insert>
+          <insert>
+            <varref vname="cc3"/>
+          </insert>
+          <funcall fname="macro-forward"/>
+        </list>
+      </cond>
+    </defmacro>
+    <defmacro fname="macro-backward">
+      <set vname="cc1">
+        <char-at>
+          <marker>@-1</marker>
+        </char-at>
       </set>
-      <conditional>
-        <case>
-          <expr operator="&amp;">
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-3"/>
-              <int-val>0x0DCA</int-val>
-            </expr>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-2"/>
-              <int-val>0x200D</int-val>
-            </expr>
-            <expr operator="&gt;=">
-              <variable-reference id="cc1"/>
-              <int-val>0x0D9A</int-val>
-            </expr>
-            <expr operator="&lt;=">
-              <variable-reference id="cc1"/>
-              <int-val>0x0DC6</int-val>
-            </expr>
-          </expr>
-          <delete-n-characters n="-3"/>
-          <insert character="0x0DCA"/>
-          <insert character="0x200D"/>
-          <insert character-or-string="variable">
-            <variable-reference id="cc1"/>
+      <cond>
+        <list>
+          <logand>
+            <eq>
+              <char-at>
+                <marker>@-3</marker>
+              </char-at>
+              <integer>0x0DCA</integer>
+            </eq>
+            <eq>
+              <char-at>
+                <marker>@-2</marker>
+              </char-at>
+              <integer>0x200D</integer>
+            </eq>
+            <ge>
+              <varref vname="cc1"/>
+              <integer>0x0D9A</integer>
+            </ge>
+            <le>
+              <varref vname="cc1"/>
+              <integer>0x0DC6</integer>
+            </le>
+          </logand>
+          <delete>
+            <marker>@-3</marker>
+          </delete>
+          <insert>
+            <integer>0x0DCA</integer>
           </insert>
-          <move-to-marker position="@first"/>
-          <macro-reference id="macro-backward"/>
-        </case>
-      </conditional>
-    </macro>
-    <macro id="macro-delete-preceding-zw">
-      <conditional>
-        <case>
-          <expr operator="|">
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x200C</int-val>
-            </expr>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x200D</int-val>
-            </expr>
-          </expr>
-          <delete-n-characters n="-1"/>
-          <macro-reference id="macro-delete-preceding-zw"/>
-        </case>
-      </conditional>
-    </macro>
-    <macro id="macro-delete-following-zw">
-      <conditional>
-        <case>
-          <expr operator="|">
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="+1"/>
-              <int-val>0x200C</int-val>
-            </expr>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="+1"/>
-              <int-val>0x200D</int-val>
-            </expr>
-          </expr>
-          <delete-n-characters n="+1"/>
-          <macro-reference id="macro-delete-following-zw"/>
-        </case>
-      </conditional>
-    </macro>
-    <macro id="macro-merge-kombuva">
-      <delete-n-characters n="-1"/>
-      <delete-n-characters n="+2"/>
-      <insert character-or-string="variable">
-        <variable-reference id="c1"/>
+          <insert>
+            <integer>0x200D</integer>
+          </insert>
+          <insert>
+            <varref vname="cc1"/>
+          </insert>
+          <move>
+            <marker>@&lt;</marker>
+          </move>
+          <funcall fname="macro-backward"/>
+        </list>
+      </cond>
+    </defmacro>
+    <defmacro fname="macro-delete-preceding-zw">
+      <cond>
+        <list>
+          <logior>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x200C</integer>
+            </eq>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x200D</integer>
+            </eq>
+          </logior>
+          <delete>
+            <marker>@-1</marker>
+          </delete>
+          <funcall fname="macro-delete-preceding-zw"/>
+        </list>
+      </cond>
+    </defmacro>
+    <defmacro fname="macro-delete-following-zw">
+      <cond>
+        <list>
+          <logior>
+            <eq>
+              <char-at>
+                <marker>@+1</marker>
+              </char-at>
+              <integer>0x200C</integer>
+            </eq>
+            <eq>
+              <char-at>
+                <marker>@+1</marker>
+              </char-at>
+              <integer>0x200D</integer>
+            </eq>
+          </logior>
+          <delete>
+            <marker>@+1</marker>
+          </delete>
+          <funcall fname="macro-delete-following-zw"/>
+        </list>
+      </cond>
+    </defmacro>
+    <defmacro fname="macro-merge-kombuva">
+      <delete>
+        <marker>@-1</marker>
+      </delete>
+      <delete>
+        <marker>@+2</marker>
+      </delete>
+      <insert>
+        <varref vname="c1"/>
       </insert>
-    </macro>
+    </defmacro>
   </macro-list>
   <map-list>
-    <map id="map-starter">
-      <rule>
-        <keyseq keys="A"/>
-      </rule>
-      <rule>
-        <keyseq keys="B"/>
-      </rule>
-      <rule>
-        <keyseq keys="C"/>
-      </rule>
-      <rule>
-        <keyseq keys="D"/>
-      </rule>
-      <rule>
-        <keyseq keys="E"/>
-      </rule>
-      <rule>
-        <keyseq keys="F"/>
-      </rule>
-      <rule>
-        <keyseq keys="G"/>
-      </rule>
-      <rule>
-        <keyseq keys="H"/>
-      </rule>
-      <rule>
-        <keyseq keys="I"/>
-      </rule>
-      <rule>
-        <keyseq keys="J"/>
-      </rule>
-      <rule>
-        <keyseq keys="K"/>
-      </rule>
-      <rule>
-        <keyseq keys="L"/>
-      </rule>
-      <rule>
-        <keyseq keys="M"/>
-      </rule>
-      <rule>
-        <keyseq keys="N"/>
-      </rule>
-      <rule>
-        <keyseq keys="O"/>
-      </rule>
-      <rule>
-        <keyseq keys="P"/>
-      </rule>
-      <rule>
-        <keyseq keys="Q"/>
-      </rule>
-      <rule>
-        <keyseq keys="R"/>
-      </rule>
-      <rule>
-        <keyseq keys="S"/>
-      </rule>
-      <rule>
-        <keyseq keys="T"/>
-      </rule>
-      <rule>
-        <keyseq keys="U"/>
-      </rule>
-      <rule>
-        <keyseq keys="V"/>
-      </rule>
-      <rule>
-        <keyseq keys="W"/>
-      </rule>
-      <rule>
-        <keyseq keys="X"/>
-      </rule>
-      <rule>
-        <keyseq keys="Y"/>
-      </rule>
-      <rule>
-        <keyseq keys="Z"/>
-      </rule>
-      <rule>
-        <keyseq keys="a"/>
-      </rule>
-      <rule>
-        <keyseq keys="b"/>
-      </rule>
-      <rule>
-        <keyseq keys="c"/>
-      </rule>
-      <rule>
-        <keyseq keys="d"/>
-      </rule>
-      <rule>
-        <keyseq keys="e"/>
-      </rule>
-      <rule>
-        <keyseq keys="f"/>
-      </rule>
-      <rule>
-        <keyseq keys="g"/>
-      </rule>
-      <rule>
-        <keyseq keys="h"/>
-      </rule>
-      <rule>
-        <keyseq keys="i"/>
-      </rule>
-      <rule>
-        <keyseq keys="j"/>
-      </rule>
-      <rule>
-        <keyseq keys="k"/>
-      </rule>
-      <rule>
-        <keyseq keys="l"/>
-      </rule>
-      <rule>
-        <keyseq keys="m"/>
-      </rule>
-      <rule>
-        <keyseq keys="n"/>
-      </rule>
-      <rule>
-        <keyseq keys="o"/>
-      </rule>
-      <rule>
-        <keyseq keys="p"/>
-      </rule>
-      <rule>
-        <keyseq keys="q"/>
-      </rule>
-      <rule>
-        <keyseq keys="r"/>
-      </rule>
-      <rule>
-        <keyseq keys="s"/>
-      </rule>
-      <rule>
-        <keyseq keys="t"/>
-      </rule>
-      <rule>
-        <keyseq keys="u"/>
-      </rule>
-      <rule>
-        <keyseq keys="v"/>
-      </rule>
-      <rule>
-        <keyseq keys="w"/>
-      </rule>
-      <rule>
-        <keyseq keys="x"/>
-      </rule>
-      <rule>
-        <keyseq keys="y"/>
-      </rule>
-      <rule>
-        <keyseq keys="z"/>
-      </rule>
-      <rule>
-        <keyseq keys="`"/>
-      </rule>
-      <rule>
-        <keyseq keys="~"/>
-      </rule>
-      <rule>
-        <keyseq keys="["/>
-      </rule>
-      <rule>
-        <keyseq keys="{"/>
-      </rule>
-      <rule>
-        <keyseq keys="]"/>
-      </rule>
-      <rule>
-        <keyseq keys="}"/>
-      </rule>
-      <rule>
-        <keyseq keys="\"/>
-      </rule>
-      <rule>
-        <keyseq keys="|"/>
-      </rule>
-      <rule>
-        <keyseq keys=";"/>
-      </rule>
-      <rule>
-        <keyseq keys=":"/>
-      </rule>
-      <rule>
-        <keyseq keys="&apos;"/>
-      </rule>
-      <rule>
-        <keyseq keys="&quot;"/>
-      </rule>
-      <rule>
-        <keyseq keys=","/>
-      </rule>
-      <rule>
-        <keyseq keys="&lt;"/>
-      </rule>
-      <rule>
-        <keyseq keys="."/>
-      </rule>
-      <rule>
-        <keyseq keys="&gt;"/>
-      </rule>
+    <map mname="map-starter">
       <rule>
         <keyseq>
-          <key-event>A-o</key-event>
+          <string>A</string>
         </keyseq>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-.</key-event>
+          <string>B</string>
         </keyseq>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-v</key-event>
+          <string>C</string>
         </keyseq>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-c</key-event>
+          <string>D</string>
         </keyseq>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-x</key-event>
+          <string>E</string>
         </keyseq>
       </rule>
       <rule>
         <keyseq>
-          <key-event>S- </key-event>
+          <string>F</string>
         </keyseq>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A- </key-event>
+          <string>G</string>
         </keyseq>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-,</key-event>
+          <string>H</string>
         </keyseq>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-a</key-event>
+          <string>I</string>
         </keyseq>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-'</key-event>
+          <string>J</string>
         </keyseq>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-z</key-event>
+          <string>K</string>
         </keyseq>
       </rule>
       <rule>
         <keyseq>
-          <key-event>BackSpace</key-event>
+          <string>L</string>
         </keyseq>
       </rule>
       <rule>
         <keyseq>
-          <key-event>Delete</key-event>
+          <string>M</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>P</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>R</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>S</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>T</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>V</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>W</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>X</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Y</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Z</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>t</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>x</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>`</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>~</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>[</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>{</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>]</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>}</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>|</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>;</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>:</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>'</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>"</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>,</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&lt;</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>.</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&gt;</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-o</symbol>
+          </list>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-.</symbol>
+          </list>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-v</symbol>
+          </list>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-c</symbol>
+          </list>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-x</symbol>
+          </list>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <string>S- </string>
+          </list>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <string>A- </string>
+          </list>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <string>A-,</string>
+          </list>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-a</symbol>
+          </list>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <string>A-'</string>
+          </list>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-z</symbol>
+          </list>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>BackSpace</symbol>
+          </list>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>Delete</symbol>
+          </list>
         </keyseq>
       </rule>
     </map>
-    <map id="map-consonant">
+    <map mname="map-consonant">
       <rule>
-        <keyseq keys="l"/>
-        <insert string="ක"/>
-      </rule>
-      <rule>
-        <keyseq keys="L"/>
-        <insert string="ඛ"/>
-      </rule>
-      <rule>
-        <keyseq keys="."/>
-        <insert string="ග"/>
-      </rule>
-      <rule>
-        <keyseq keys="&gt;"/>
-        <insert string="ඝ"/>
-      </rule>
-      <rule>
-        <keyseq keys="X"/>
-        <insert string="ඞ"/>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+        <insert>
+          <string>ක</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-.</key-event>
+          <string>L</string>
         </keyseq>
-        <insert string="ඟ"/>
-      </rule>
-      <rule>
-        <keyseq keys="p"/>
-        <insert string="ච"/>
-      </rule>
-      <rule>
-        <keyseq keys="P"/>
-        <insert string="ඡ"/>
-      </rule>
-      <rule>
-        <keyseq keys="c"/>
-        <insert string="ජ"/>
-      </rule>
-      <rule>
-        <keyseq keys="C"/>
-        <insert string="ඣ"/>
-      </rule>
-      <rule>
-        <keyseq keys="["/>
-        <insert string="ඤ"/>
-      </rule>
-      <rule>
-        <keyseq keys="{"/>
-        <insert string="ඥ"/>
+        <insert>
+          <string>ඛ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-c</key-event>
+          <string>.</string>
         </keyseq>
-        <insert string="ඦ"/>
-      </rule>
-      <rule>
-        <keyseq keys="g"/>
-        <insert string="ට"/>
-      </rule>
-      <rule>
-        <keyseq keys="G"/>
-        <insert string="ඨ"/>
-      </rule>
-      <rule>
-        <keyseq keys="v"/>
-        <insert string="ඩ"/>
-      </rule>
-      <rule>
-        <keyseq keys="V"/>
-        <insert string="ඪ"/>
-      </rule>
-      <rule>
-        <keyseq keys="K"/>
-        <insert string="ණ"/>
+        <insert>
+          <string>ග</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-v</key-event>
+          <string>&gt;</string>
         </keyseq>
-        <insert string="ඬ"/>
-      </rule>
-      <rule>
-        <keyseq keys=";"/>
-        <insert string="ත"/>
-      </rule>
-      <rule>
-        <keyseq keys=":"/>
-        <insert string="ථ"/>
-      </rule>
-      <rule>
-        <keyseq keys="o"/>
-        <insert string="ද"/>
-      </rule>
-      <rule>
-        <keyseq keys="O"/>
-        <insert string="ධ"/>
-      </rule>
-      <rule>
-        <keyseq keys="k"/>
-        <insert string="න"/>
+        <insert>
+          <string>ඝ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-o</key-event>
+          <string>X</string>
         </keyseq>
-        <insert string="ඳ"/>
+        <insert>
+          <string>ඞ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="m"/>
-        <insert string="ප"/>
+        <keyseq>
+          <list>
+            <symbol>A-.</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ඟ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="M"/>
-        <insert string="ඵ"/>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+        <insert>
+          <string>ච</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="n"/>
-        <insert string="බ"/>
+        <keyseq>
+          <string>P</string>
+        </keyseq>
+        <insert>
+          <string>ඡ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="N"/>
-        <insert string="භ"/>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <insert>
+          <string>ජ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="u"/>
-        <insert string="ම"/>
+        <keyseq>
+          <string>C</string>
+        </keyseq>
+        <insert>
+          <string>ඣ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="U"/>
-        <insert string="ඹ"/>
+        <keyseq>
+          <string>[</string>
+        </keyseq>
+        <insert>
+          <string>ඤ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="h"/>
-        <insert string="ය"/>
+        <keyseq>
+          <string>{</string>
+        </keyseq>
+        <insert>
+          <string>ඥ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="r"/>
-        <insert string="ර"/>
+        <keyseq>
+          <list>
+            <symbol>A-c</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ඦ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys=","/>
-        <insert string="ල"/>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <string>ට</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="j"/>
-        <insert string="ව"/>
+        <keyseq>
+          <string>G</string>
+        </keyseq>
+        <insert>
+          <string>ඨ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="Y"/>
-        <insert string="ශ"/>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert>
+          <string>ඩ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="I"/>
-        <insert string="ෂ"/>
+        <keyseq>
+          <string>V</string>
+        </keyseq>
+        <insert>
+          <string>ඪ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="i"/>
-        <insert string="ස"/>
+        <keyseq>
+          <string>K</string>
+        </keyseq>
+        <insert>
+          <string>ණ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="y"/>
-        <insert string="හ"/>
+        <keyseq>
+          <list>
+            <symbol>A-v</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ඬ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="&lt;"/>
-        <insert string="ළ"/>
+        <keyseq>
+          <string>;</string>
+        </keyseq>
+        <insert>
+          <string>ත</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="F"/>
-        <insert string="ෆ"/>
+        <keyseq>
+          <string>:</string>
+        </keyseq>
+        <insert>
+          <string>ථ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <string>ද</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+        <insert>
+          <string>ධ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <string>න</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-o</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ඳ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <string>ප</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>M</string>
+        </keyseq>
+        <insert>
+          <string>ඵ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <string>බ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+        <insert>
+          <string>භ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <string>ම</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert>
+          <string>ඹ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <insert>
+          <string>ය</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+        <insert>
+          <string>ර</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>,</string>
+        </keyseq>
+        <insert>
+          <string>ල</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+        <insert>
+          <string>ව</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Y</string>
+        </keyseq>
+        <insert>
+          <string>ශ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <insert>
+          <string>ෂ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert>
+          <string>ස</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <insert>
+          <string>හ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&lt;</string>
+        </keyseq>
+        <insert>
+          <string>ළ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>F</string>
+        </keyseq>
+        <insert>
+          <string>ෆ</string>
+        </insert>
       </rule>
     </map>
-    <map id="map-misc">
+    <map mname="map-misc">
       <rule>
-        <keyseq keys="x"/>
-        <insert string="ං"/>
+        <keyseq>
+          <string>x</string>
+        </keyseq>
+        <insert>
+          <string>ං</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-x</key-event>
+          <list>
+            <symbol>A-x</symbol>
+          </list>
         </keyseq>
-        <insert string="ඃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="w"/>
-        <insert string="අ"/>
-      </rule>
-      <rule>
-        <keyseq keys="b"/>
-        <insert string="ඉ"/>
-      </rule>
-      <rule>
-        <keyseq keys="B"/>
-        <insert string="ඊ"/>
-      </rule>
-      <rule>
-        <keyseq keys="W"/>
-        <insert string="උ"/>
-      </rule>
-      <rule>
-        <keyseq keys="R"/>
-        <insert string="ඍ"/>
+        <insert>
+          <string>ඃ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-,</key-event>
+          <string>w</string>
         </keyseq>
-        <insert string="ඏ"/>
-      </rule>
-      <rule>
-        <keyseq keys="T"/>
-        <insert string="ඔ"/>
-      </rule>
-      <rule>
-        <keyseq keys="s"/>
-        <insert string="ි"/>
-      </rule>
-      <rule>
-        <keyseq keys="S"/>
-        <insert string="ී"/>
-      </rule>
-      <rule>
-        <keyseq keys="q"/>
-        <insert string="ු"/>
-      </rule>
-      <rule>
-        <keyseq keys="Q"/>
-        <insert string="ූ"/>
+        <insert>
+          <string>අ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-a</key-event>
+          <string>b</string>
         </keyseq>
-        <insert string="ෳ"/>
+        <insert>
+          <string>ඉ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-'</key-event>
+          <string>B</string>
         </keyseq>
-        <insert string="෴"/>
-      </rule>
-      <rule>
-        <keyseq keys="]"/>
-        <insert string=";"/>
-      </rule>
-      <rule>
-        <keyseq keys="}"/>
-        <insert string=":"/>
-      </rule>
-      <rule>
-        <keyseq keys="&apos;"/>
-        <insert string="."/>
-      </rule>
-      <rule>
-        <keyseq keys="&quot;"/>
-        <insert string=","/>
-      </rule>
-      <rule>
-        <keyseq keys="z"/>
-        <insert string="&apos;"/>
-      </rule>
-      <rule>
-        <keyseq keys="Z"/>
-        <insert string="&quot;"/>
-      </rule>
-      <rule>
-        <keyseq keys="|"/>
-        <insert string="‍්"/>
-      </rule>
-      <rule>
-        <keyseq keys="J"/>
-        <insert string="ළු"/>
+        <insert>
+          <string>ඊ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>S- </key-event>
+          <string>W</string>
         </keyseq>
-        <insert string=" "/>
+        <insert>
+          <string>උ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A- </key-event>
+          <string>R</string>
         </keyseq>
-        <insert string="‌"/>
-      </rule>
-      <rule>
-        <keyseq keys="t"/>
-        <set id="c">
-          <predefined-nth-previous-or-following-character position="-2"/>
-        </set>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0DD9</int-val>
-            </expr>
-            <conditional>
-              <case>
-                <expr operator="=">
-                  <variable-reference id="c"/>
-                  <int-val>0x200C</int-val>
-                </expr>
-                <delete-n-characters n="-2"/>
-                <insert character="0x0D93"/>
-              </case>
-              <case>
-                <expr operator="|">
-                  <expr operator="&lt;">
-                    <variable-reference id="c"/>
-                    <int-val>0x0D9A</int-val>
-                  </expr>
-                  <expr operator="&gt;">
-                    <variable-reference id="c"/>
-                    <int-val>0x0DC6</int-val>
-                  </expr>
-                </expr>
-                <delete-n-characters n="-1"/>
-                <insert character="0x0D93"/>
-              </case>
-              <case>
-                <int-val>1</int-val>
-                <insert character="0x0D91"/>
-              </case>
-            </conditional>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert character="0x0D91"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="a"/>
-        <set id="c">
-          <predefined-nth-previous-or-following-character position="-1"/>
-        </set>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D91</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert character="0x0D92"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D94</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert character="0x0D95"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0DD9</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert character="0x0DDA"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0DDC</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert character="0x0DDD"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert character="0x0DCA"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <set id="c">
-          <predefined-nth-previous-or-following-character position="-1"/>
-        </set>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D85</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert character="0x0D86"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0DD9</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert character="0x0DDC"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert character="0x0DCF"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0D85</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert character="0x0D87"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert character="0x0DD0"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="E"/>
-        <set id="c">
-          <predefined-nth-previous-or-following-character position="-1"/>
-        </set>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D85</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert character="0x0D88"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0DD4</int-val>
-            </expr>
-            <conditional>
-              <case>
-                <expr operator="=">
-                  <predefined-nth-previous-or-following-character position="-2"/>
-                  <int-val>0x0DC5</int-val>
-                </expr>
-                <delete-n-characters n="-1"/>
-                <insert character="0x0DD6"/>
-              </case>
-              <case>
-                <int-val>1</int-val>
-                <insert character="0x0DD1"/>
-              </case>
-            </conditional>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert character="0x0DD1"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="D"/>
-        <set id="c">
-          <predefined-nth-previous-or-following-character position="-1"/>
-        </set>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D8D</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert character="0x0D8E"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0DD8</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert character="0x0DF2"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert character="0x0DD8"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="A"/>
-        <set id="c">
-          <predefined-nth-previous-or-following-character position="-1"/>
-        </set>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D8B</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert character="0x0D8C"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D8F</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert character="0x0D90"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D94</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert character="0x0D96"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0DD9</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert character="0x0DDE"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert character="0x0DDF"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="f"/>
-        <set id="c">
-          <predefined-nth-previous-or-following-character position="+1"/>
-        </set>
-        <conditional>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="&gt;=">
-                <variable-reference id="c"/>
-                <int-val>0x0D9A</int-val>
-              </expr>
-              <expr operator="&lt;=">
-                <variable-reference id="c"/>
-                <int-val>0x0DC6</int-val>
-              </expr>
-            </expr>
-            <delete-n-characters n="+1"/>
-            <insert character-or-string="variable">
-              <variable-reference id="c"/>
-            </insert>
-            <macro-reference id="macro-forward"/>
-            <set id="c">
-              <predefined-nth-previous-or-following-character position="+1"/>
-            </set>
-            <conditional>
-              <case>
-                <expr operator="=">
-                  <variable-reference id="c"/>
-                  <int-val>0x0DCA</int-val>
-                </expr>
-                <delete-n-characters n="+1"/>
-                <insert character="0x0DDA"/>
-              </case>
-              <case>
-                <expr operator="=">
-                  <variable-reference id="c"/>
-                  <int-val>0x0DD9</int-val>
-                </expr>
-                <delete-n-characters n="+1"/>
-                <insert character="0x0DDB"/>
-              </case>
-              <case>
-                <expr operator="=">
-                  <variable-reference id="c"/>
-                  <int-val>0x0DCF</int-val>
-                </expr>
-                <delete-n-characters n="+1"/>
-                <insert character="0x0DDC"/>
-              </case>
-              <case>
-                <expr operator="=">
-                  <variable-reference id="c"/>
-                  <int-val>0x0DDF</int-val>
-                </expr>
-                <delete-n-characters n="+1"/>
-                <insert character="0x0DDE"/>
-              </case>
-              <case>
-                <int-val>1</int-val>
-                <insert character="0x0DD9"/>
-              </case>
-            </conditional>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D91</int-val>
-            </expr>
-            <delete-n-characters n="+1"/>
-            <insert character="0x0D93"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0DD9</int-val>
-            </expr>
-            <delete-n-characters n="+1"/>
-            <insert character="0x0DDB"/>
-          </case>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="=">
-                <variable-reference id="c"/>
-                <int-val>0x200C</int-val>
-              </expr>
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="+2"/>
-                <int-val>0x0DD9</int-val>
-              </expr>
-            </expr>
-            <delete-n-characters n="+2"/>
-            <insert character="0x200C"/>
-            <insert character="0x0DDB"/>
-          </case>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DD9</int-val>
-              </expr>
-              <expr operator="|">
-                <expr operator="&lt;">
-                  <predefined-nth-previous-or-following-character position="-2"/>
-                  <int-val>0x0D9A</int-val>
-                </expr>
-                <expr operator="&gt;">
-                  <predefined-nth-previous-or-following-character position="-2"/>
-                  <int-val>0x0DC6</int-val>
-                </expr>
-              </expr>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert character="0x0DDB"/>
-          </case>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="&gt;=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0D9A</int-val>
-              </expr>
-              <expr operator="&lt;=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DC6</int-val>
-              </expr>
-            </expr>
-            <insert character="0x200C"/>
-            <insert character="0x0DD9"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert character="0x0DD9"/>
-          </case>
-        </conditional>
+        <insert>
+          <string>ඍ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-z</key-event>
+          <list>
+            <string>A-,</string>
+          </list>
         </keyseq>
-        <set id="c">
-          <predefined-nth-previous-or-following-character position="-1"/>
-        </set>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0DAF</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert character="0x0DB3"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D9C</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert character="0x0D9F"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0DA9</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert character="0x0DAC"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0DA2</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert character="0x0DA6"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="H"/>
-        <set id="c">
-          <predefined-nth-previous-or-following-character position="-1"/>
-        </set>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0DD9</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0DDB</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <set id="c">
-              <int-val>0</int-val>
-            </set>
-          </case>
-        </conditional>
-        <conditional>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="&gt;=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0D9A</int-val>
-              </expr>
-              <expr operator="&lt;=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DC6</int-val>
-              </expr>
-            </expr>
-            <insert character="0x0DCA"/>
-            <insert character="0x200D"/>
-            <insert character="0x0DBA"/>
-          </case>
-        </conditional>
-        <conditional>
-          <case>
-            <expr operator="&gt;">
-              <variable-reference id="c"/>
-              <int-val>0</int-val>
-            </expr>
-            <insert character-or-string="variable">
-              <variable-reference id="c"/>
-            </insert>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="`"/>
-        <set id="c">
-          <predefined-nth-previous-or-following-character position="-1"/>
-        </set>
-        <conditional>
-          <case>
-            <expr operator="|">
-              <expr operator="=">
-                <variable-reference id="c"/>
-                <int-val>0x0DD9</int-val>
-              </expr>
-              <expr operator="=">
-                <variable-reference id="c"/>
-                <int-val>0x0DDB</int-val>
-              </expr>
-              <expr operator="=">
-                <variable-reference id="c"/>
-                <int-val>0x0DD2</int-val>
-              </expr>
-              <expr operator="=">
-                <variable-reference id="c"/>
-                <int-val>0x0DD3</int-val>
-              </expr>
-            </expr>
-            <delete-n-characters n="-1"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <set id="c">
-              <int-val>0</int-val>
-            </set>
-          </case>
-        </conditional>
-        <conditional>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="&gt;=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0D9A</int-val>
-              </expr>
-              <expr operator="&lt;=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DC6</int-val>
-              </expr>
-            </expr>
-            <insert character="0x0DCA"/>
-            <insert character="0x200D"/>
-            <insert character="0x0DBB"/>
-          </case>
-        </conditional>
-        <conditional>
-          <case>
-            <expr operator="&gt;">
-              <variable-reference id="c"/>
-              <int-val>0</int-val>
-            </expr>
-            <insert character-or-string="variable">
-              <variable-reference id="c"/>
-            </insert>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="~"/>
-        <set id="c">
-          <predefined-nth-previous-or-following-character position="-1"/>
-        </set>
-        <conditional>
-          <case>
-            <expr operator="|">
-              <expr operator="=">
-                <variable-reference id="c"/>
-                <int-val>0x0DD9</int-val>
-              </expr>
-              <expr operator="=">
-                <variable-reference id="c"/>
-                <int-val>0x0DDB</int-val>
-              </expr>
-            </expr>
-            <delete-n-characters n="-1"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <set id="c">
-              <int-val>0</int-val>
-            </set>
-          </case>
-        </conditional>
-        <macro-reference id="macro-backward"/>
-        <conditional>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="&gt;=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0D9A</int-val>
-              </expr>
-              <expr operator="&lt;=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DC6</int-val>
-              </expr>
-            </expr>
-            <set id="c1">
-              <predefined-nth-previous-or-following-character position="-1"/>
-            </set>
-            <delete-n-characters n="-1"/>
-            <insert character-or-string="variable">
-              <variable-reference id="c1"/>
-            </insert>
-            <move-to-marker position="@first"/>
-            <insert character="0x0DBB"/>
-            <insert character="0x0DCA"/>
-            <insert character="0x200D"/>
-          </case>
-        </conditional>
-        <conditional>
-          <case>
-            <expr operator="&gt;">
-              <variable-reference id="c"/>
-              <int-val>0</int-val>
-            </expr>
-            <move-to-marker position="@last"/>
-            <insert character-or-string="variable">
-              <variable-reference id="c"/>
-            </insert>
-          </case>
-        </conditional>
+        <insert>
+          <string>ඏ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>BackSpace</key-event>
+          <string>T</string>
         </keyseq>
-        <macro-reference id="macro-delete-preceding-zw"/>
-        <set id="c">
-          <predefined-nth-previous-or-following-character position="-1"/>
+        <insert>
+          <string>ඔ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+        <insert>
+          <string>ි</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>S</string>
+        </keyseq>
+        <insert>
+          <string>ී</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <insert>
+          <string>ු</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <insert>
+          <string>ූ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-a</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ෳ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <string>A-'</string>
+          </list>
+        </keyseq>
+        <insert>
+          <string>෴</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>]</string>
+        </keyseq>
+        <insert>
+          <string>;</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>}</string>
+        </keyseq>
+        <insert>
+          <string>:</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>'</string>
+        </keyseq>
+        <insert>
+          <string>.</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>"</string>
+        </keyseq>
+        <insert>
+          <string>,</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z</string>
+        </keyseq>
+        <insert>
+          <string>'</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Z</string>
+        </keyseq>
+        <insert>
+          <string>"</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>|</string>
+        </keyseq>
+        <insert>
+          <string>‍්</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>J</string>
+        </keyseq>
+        <insert>
+          <string>ළු</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <string>S- </string>
+          </list>
+        </keyseq>
+        <insert>
+          <string> </string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <string>A- </string>
+          </list>
+        </keyseq>
+        <insert>
+          <string>‌</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>t</string>
+        </keyseq>
+        <set vname="c">
+          <char-at>
+            <marker>@-2</marker>
+          </char-at>
         </set>
-        <conditional>
-          <case>
-            <expr operator="&lt;">
-              <variable-reference id="c"/>
-              <int-val>0</int-val>
-            </expr>
-            <unhandle/>
-          </case>
-        </conditional>
-        <delete-n-characters n="-1"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D86</int-val>
-            </expr>
-            <insert character="0x0D85"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D87</int-val>
-            </expr>
-            <insert character="0x0D85"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D88</int-val>
-            </expr>
-            <insert character="0x0D85"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D8C</int-val>
-            </expr>
-            <insert character="0x0D8B"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D8E</int-val>
-            </expr>
-            <insert character="0x0D8D"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D90</int-val>
-            </expr>
-            <insert character="0x0D8F"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D92</int-val>
-            </expr>
-            <insert character="0x0D8F"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D93</int-val>
-            </expr>
-            <conditional>
-              <case>
-                <expr operator="&amp;">
-                  <expr operator="&gt;=">
-                    <predefined-nth-previous-or-following-character position="-1"/>
-                    <int-val>0x0D9A</int-val>
-                  </expr>
-                  <expr operator="&lt;=">
-                    <predefined-nth-previous-or-following-character position="-1"/>
-                    <int-val>0x0DC6</int-val>
-                  </expr>
-                </expr>
-                <insert character="0x200C"/>
-              </case>
-            </conditional>
-            <insert character="0x0DD9"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D95</int-val>
-            </expr>
-            <insert character="0x0D94"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D96</int-val>
-            </expr>
-            <insert character="0x0D94"/>
-          </case>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="&gt;=">
-                <variable-reference id="c"/>
-                <int-val>0x0D9A</int-val>
-              </expr>
-              <expr operator="&lt;=">
-                <variable-reference id="c"/>
-                <int-val>0x0DC6</int-val>
-              </expr>
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-2"/>
-                <int-val>0x0DCA</int-val>
-              </expr>
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x200D</int-val>
-              </expr>
-            </expr>
-            <conditional>
-              <case>
-                <expr operator="=">
-                  <predefined-nth-previous-or-following-character position="-3"/>
-                  <int-val>0x0DBB</int-val>
-                </expr>
-                <delete-n-characters n="-3"/>
-                <insert character-or-string="variable">
-                  <variable-reference id="c"/>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0DD9</integer>
+            </eq>
+            <cond>
+              <list>
+                <eq>
+                  <varref vname="c"/>
+                  <integer>0x200C</integer>
+                </eq>
+                <delete>
+                  <marker>@-2</marker>
+                </delete>
+                <insert>
+                  <integer>0x0D93</integer>
                 </insert>
-              </case>
-              <case>
-                <int-val>1</int-val>
-                <delete-n-characters n="-2"/>
-              </case>
-            </conditional>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0DD9</int-val>
-            </expr>
-            <conditional>
-              <case>
-                <expr operator="|">
-                  <expr operator="&lt;">
-                    <predefined-nth-previous-or-following-character position="-1"/>
-                    <int-val>0x0D9A</int-val>
-                  </expr>
-                  <expr operator="&gt;">
-                    <predefined-nth-previous-or-following-character position="-1"/>
-                    <int-val>0x0DC6</int-val>
-                  </expr>
-                </expr>
-              </case>
-              <case>
-                <expr operator="=">
-                  <predefined-nth-previous-or-following-character position="+1"/>
-                  <int-val>0x0D91</int-val>
-                </expr>
-                <delete-n-characters n="-1"/>
-                <delete-n-characters n="+1"/>
-                <insert character="0x0D93"/>
-              </case>
-              <case>
-                <expr operator="&amp;">
-                  <expr operator="&gt;=">
-                    <predefined-nth-previous-or-following-character position="+1"/>
-                    <int-val>0x0D9A</int-val>
-                  </expr>
-                  <expr operator="&lt;=">
-                    <predefined-nth-previous-or-following-character position="+1"/>
-                    <int-val>0x0DC6</int-val>
-                  </expr>
-                </expr>
-                <set id="c1">
-                  <predefined-nth-previous-or-following-character position="+1"/>
+              </list>
+              <list>
+                <logior>
+                  <lt>
+                    <varref vname="c"/>
+                    <integer>0x0D9A</integer>
+                  </lt>
+                  <gt>
+                    <varref vname="c"/>
+                    <integer>0x0DC6</integer>
+                  </gt>
+                </logior>
+                <delete>
+                  <marker>@-1</marker>
+                </delete>
+                <insert>
+                  <integer>0x0D93</integer>
+                </insert>
+              </list>
+              <list>
+                <integer>1</integer>
+                <insert>
+                  <integer>0x0D91</integer>
+                </insert>
+              </list>
+            </cond>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <integer>0x0D91</integer>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+        <set vname="c">
+          <char-at>
+            <marker>@-1</marker>
+          </char-at>
+        </set>
+        <cond>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D91</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <integer>0x0D92</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D94</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <integer>0x0D95</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0DD9</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <integer>0x0DDA</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0DDC</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <integer>0x0DDD</integer>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <integer>0x0DCA</integer>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <set vname="c">
+          <char-at>
+            <marker>@-1</marker>
+          </char-at>
+        </set>
+        <cond>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D85</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <integer>0x0D86</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0DD9</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <integer>0x0DDC</integer>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <integer>0x0DCF</integer>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0D85</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <integer>0x0D87</integer>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <integer>0x0DD0</integer>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <set vname="c">
+          <char-at>
+            <marker>@-1</marker>
+          </char-at>
+        </set>
+        <cond>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D85</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <integer>0x0D88</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0DD4</integer>
+            </eq>
+            <cond>
+              <list>
+                <eq>
+                  <char-at>
+                    <marker>@-2</marker>
+                  </char-at>
+                  <integer>0x0DC5</integer>
+                </eq>
+                <delete>
+                  <marker>@-1</marker>
+                </delete>
+                <insert>
+                  <integer>0x0DD6</integer>
+                </insert>
+              </list>
+              <list>
+                <integer>1</integer>
+                <insert>
+                  <integer>0x0DD1</integer>
+                </insert>
+              </list>
+            </cond>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <integer>0x0DD1</integer>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <set vname="c">
+          <char-at>
+            <marker>@-1</marker>
+          </char-at>
+        </set>
+        <cond>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D8D</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <integer>0x0D8E</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0DD8</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <integer>0x0DF2</integer>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <integer>0x0DD8</integer>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>A</string>
+        </keyseq>
+        <set vname="c">
+          <char-at>
+            <marker>@-1</marker>
+          </char-at>
+        </set>
+        <cond>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D8B</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <integer>0x0D8C</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D8F</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <integer>0x0D90</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D94</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <integer>0x0D96</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0DD9</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <integer>0x0DDE</integer>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <integer>0x0DDF</integer>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+        <set vname="c">
+          <char-at>
+            <marker>@+1</marker>
+          </char-at>
+        </set>
+        <cond>
+          <list>
+            <logand>
+              <ge>
+                <varref vname="c"/>
+                <integer>0x0D9A</integer>
+              </ge>
+              <le>
+                <varref vname="c"/>
+                <integer>0x0DC6</integer>
+              </le>
+            </logand>
+            <delete>
+              <marker>@+1</marker>
+            </delete>
+            <insert>
+              <varref vname="c"/>
+            </insert>
+            <funcall fname="macro-forward"/>
+            <set vname="c">
+              <char-at>
+                <marker>@+1</marker>
+              </char-at>
+            </set>
+            <cond>
+              <list>
+                <eq>
+                  <varref vname="c"/>
+                  <integer>0x0DCA</integer>
+                </eq>
+                <delete>
+                  <marker>@+1</marker>
+                </delete>
+                <insert>
+                  <integer>0x0DDA</integer>
+                </insert>
+              </list>
+              <list>
+                <eq>
+                  <varref vname="c"/>
+                  <integer>0x0DD9</integer>
+                </eq>
+                <delete>
+                  <marker>@+1</marker>
+                </delete>
+                <insert>
+                  <integer>0x0DDB</integer>
+                </insert>
+              </list>
+              <list>
+                <eq>
+                  <varref vname="c"/>
+                  <integer>0x0DCF</integer>
+                </eq>
+                <delete>
+                  <marker>@+1</marker>
+                </delete>
+                <insert>
+                  <integer>0x0DDC</integer>
+                </insert>
+              </list>
+              <list>
+                <eq>
+                  <varref vname="c"/>
+                  <integer>0x0DDF</integer>
+                </eq>
+                <delete>
+                  <marker>@+1</marker>
+                </delete>
+                <insert>
+                  <integer>0x0DDE</integer>
+                </insert>
+              </list>
+              <list>
+                <integer>1</integer>
+                <insert>
+                  <integer>0x0DD9</integer>
+                </insert>
+              </list>
+            </cond>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D91</integer>
+            </eq>
+            <delete>
+              <marker>@+1</marker>
+            </delete>
+            <insert>
+              <integer>0x0D93</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0DD9</integer>
+            </eq>
+            <delete>
+              <marker>@+1</marker>
+            </delete>
+            <insert>
+              <integer>0x0DDB</integer>
+            </insert>
+          </list>
+          <list>
+            <logand>
+              <eq>
+                <varref vname="c"/>
+                <integer>0x200C</integer>
+              </eq>
+              <eq>
+                <char-at>
+                  <marker>@+2</marker>
+                </char-at>
+                <integer>0x0DD9</integer>
+              </eq>
+            </logand>
+            <delete>
+              <marker>@+2</marker>
+            </delete>
+            <insert>
+              <integer>0x200C</integer>
+            </insert>
+            <insert>
+              <integer>0x0DDB</integer>
+            </insert>
+          </list>
+          <list>
+            <logand>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DD9</integer>
+              </eq>
+              <logior>
+                <lt>
+                  <char-at>
+                    <marker>@-2</marker>
+                  </char-at>
+                  <integer>0x0D9A</integer>
+                </lt>
+                <gt>
+                  <char-at>
+                    <marker>@-2</marker>
+                  </char-at>
+                  <integer>0x0DC6</integer>
+                </gt>
+              </logior>
+            </logand>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <integer>0x0DDB</integer>
+            </insert>
+          </list>
+          <list>
+            <logand>
+              <ge>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0D9A</integer>
+              </ge>
+              <le>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DC6</integer>
+              </le>
+            </logand>
+            <insert>
+              <integer>0x200C</integer>
+            </insert>
+            <insert>
+              <integer>0x0DD9</integer>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <integer>0x0DD9</integer>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-z</symbol>
+          </list>
+        </keyseq>
+        <set vname="c">
+          <char-at>
+            <marker>@-1</marker>
+          </char-at>
+        </set>
+        <cond>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0DAF</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <integer>0x0DB3</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D9C</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <integer>0x0D9F</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0DA9</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <integer>0x0DAC</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0DA2</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <integer>0x0DA6</integer>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <set vname="c">
+          <char-at>
+            <marker>@-1</marker>
+          </char-at>
+        </set>
+        <cond>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0DD9</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0DDB</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+          </list>
+          <list>
+            <integer>1</integer>
+            <set vname="c">
+              <integer>0</integer>
+            </set>
+          </list>
+        </cond>
+        <cond>
+          <list>
+            <logand>
+              <ge>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0D9A</integer>
+              </ge>
+              <le>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DC6</integer>
+              </le>
+            </logand>
+            <insert>
+              <integer>0x0DCA</integer>
+            </insert>
+            <insert>
+              <integer>0x200D</integer>
+            </insert>
+            <insert>
+              <integer>0x0DBA</integer>
+            </insert>
+          </list>
+        </cond>
+        <cond>
+          <list>
+            <gt>
+              <varref vname="c"/>
+              <integer>0</integer>
+            </gt>
+            <insert>
+              <varref vname="c"/>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>`</string>
+        </keyseq>
+        <set vname="c">
+          <char-at>
+            <marker>@-1</marker>
+          </char-at>
+        </set>
+        <cond>
+          <list>
+            <logior>
+              <eq>
+                <varref vname="c"/>
+                <integer>0x0DD9</integer>
+              </eq>
+              <eq>
+                <varref vname="c"/>
+                <integer>0x0DDB</integer>
+              </eq>
+              <eq>
+                <varref vname="c"/>
+                <integer>0x0DD2</integer>
+              </eq>
+              <eq>
+                <varref vname="c"/>
+                <integer>0x0DD3</integer>
+              </eq>
+            </logior>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+          </list>
+          <list>
+            <integer>1</integer>
+            <set vname="c">
+              <integer>0</integer>
+            </set>
+          </list>
+        </cond>
+        <cond>
+          <list>
+            <logand>
+              <ge>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0D9A</integer>
+              </ge>
+              <le>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DC6</integer>
+              </le>
+            </logand>
+            <insert>
+              <integer>0x0DCA</integer>
+            </insert>
+            <insert>
+              <integer>0x200D</integer>
+            </insert>
+            <insert>
+              <integer>0x0DBB</integer>
+            </insert>
+          </list>
+        </cond>
+        <cond>
+          <list>
+            <gt>
+              <varref vname="c"/>
+              <integer>0</integer>
+            </gt>
+            <insert>
+              <varref vname="c"/>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>~</string>
+        </keyseq>
+        <set vname="c">
+          <char-at>
+            <marker>@-1</marker>
+          </char-at>
+        </set>
+        <cond>
+          <list>
+            <logior>
+              <eq>
+                <varref vname="c"/>
+                <integer>0x0DD9</integer>
+              </eq>
+              <eq>
+                <varref vname="c"/>
+                <integer>0x0DDB</integer>
+              </eq>
+            </logior>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+          </list>
+          <list>
+            <integer>1</integer>
+            <set vname="c">
+              <integer>0</integer>
+            </set>
+          </list>
+        </cond>
+        <funcall fname="macro-backward"/>
+        <cond>
+          <list>
+            <logand>
+              <ge>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0D9A</integer>
+              </ge>
+              <le>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DC6</integer>
+              </le>
+            </logand>
+            <set vname="c1">
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+            </set>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <varref vname="c1"/>
+            </insert>
+            <move>
+              <marker>@&lt;</marker>
+            </move>
+            <insert>
+              <integer>0x0DBB</integer>
+            </insert>
+            <insert>
+              <integer>0x0DCA</integer>
+            </insert>
+            <insert>
+              <integer>0x200D</integer>
+            </insert>
+          </list>
+        </cond>
+        <cond>
+          <list>
+            <gt>
+              <varref vname="c"/>
+              <integer>0</integer>
+            </gt>
+            <move>
+              <marker>@&gt;</marker>
+            </move>
+            <insert>
+              <varref vname="c"/>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>BackSpace</symbol>
+          </list>
+        </keyseq>
+        <funcall fname="macro-delete-preceding-zw"/>
+        <set vname="c">
+          <char-at>
+            <marker>@-1</marker>
+          </char-at>
+        </set>
+        <cond>
+          <list>
+            <lt>
+              <varref vname="c"/>
+              <integer>0</integer>
+            </lt>
+            <unhandle/>
+          </list>
+        </cond>
+        <delete>
+          <marker>@-1</marker>
+        </delete>
+        <cond>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D86</integer>
+            </eq>
+            <insert>
+              <integer>0x0D85</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D87</integer>
+            </eq>
+            <insert>
+              <integer>0x0D85</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D88</integer>
+            </eq>
+            <insert>
+              <integer>0x0D85</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D8C</integer>
+            </eq>
+            <insert>
+              <integer>0x0D8B</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D8E</integer>
+            </eq>
+            <insert>
+              <integer>0x0D8D</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D90</integer>
+            </eq>
+            <insert>
+              <integer>0x0D8F</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D92</integer>
+            </eq>
+            <insert>
+              <integer>0x0D8F</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D93</integer>
+            </eq>
+            <cond>
+              <list>
+                <logand>
+                  <ge>
+                    <char-at>
+                      <marker>@-1</marker>
+                    </char-at>
+                    <integer>0x0D9A</integer>
+                  </ge>
+                  <le>
+                    <char-at>
+                      <marker>@-1</marker>
+                    </char-at>
+                    <integer>0x0DC6</integer>
+                  </le>
+                </logand>
+                <insert>
+                  <integer>0x200C</integer>
+                </insert>
+              </list>
+            </cond>
+            <insert>
+              <integer>0x0DD9</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D95</integer>
+            </eq>
+            <insert>
+              <integer>0x0D94</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D96</integer>
+            </eq>
+            <insert>
+              <integer>0x0D94</integer>
+            </insert>
+          </list>
+          <list>
+            <logand>
+              <ge>
+                <varref vname="c"/>
+                <integer>0x0D9A</integer>
+              </ge>
+              <le>
+                <varref vname="c"/>
+                <integer>0x0DC6</integer>
+              </le>
+              <eq>
+                <char-at>
+                  <marker>@-2</marker>
+                </char-at>
+                <integer>0x0DCA</integer>
+              </eq>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x200D</integer>
+              </eq>
+            </logand>
+            <cond>
+              <list>
+                <eq>
+                  <char-at>
+                    <marker>@-3</marker>
+                  </char-at>
+                  <integer>0x0DBB</integer>
+                </eq>
+                <delete>
+                  <marker>@-3</marker>
+                </delete>
+                <insert>
+                  <varref vname="c"/>
+                </insert>
+              </list>
+              <list>
+                <integer>1</integer>
+                <delete>
+                  <marker>@-2</marker>
+                </delete>
+              </list>
+            </cond>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0DD9</integer>
+            </eq>
+            <cond>
+              <list>
+                <logior>
+                  <lt>
+                    <char-at>
+                      <marker>@-1</marker>
+                    </char-at>
+                    <integer>0x0D9A</integer>
+                  </lt>
+                  <gt>
+                    <char-at>
+                      <marker>@-1</marker>
+                    </char-at>
+                    <integer>0x0DC6</integer>
+                  </gt>
+                </logior>
+              </list>
+              <list>
+                <eq>
+                  <char-at>
+                    <marker>@+1</marker>
+                  </char-at>
+                  <integer>0x0D91</integer>
+                </eq>
+                <delete>
+                  <marker>@-1</marker>
+                </delete>
+                <delete>
+                  <marker>@+1</marker>
+                </delete>
+                <insert>
+                  <integer>0x0D93</integer>
+                </insert>
+              </list>
+              <list>
+                <logand>
+                  <ge>
+                    <char-at>
+                      <marker>@+1</marker>
+                    </char-at>
+                    <integer>0x0D9A</integer>
+                  </ge>
+                  <le>
+                    <char-at>
+                      <marker>@+1</marker>
+                    </char-at>
+                    <integer>0x0DC6</integer>
+                  </le>
+                </logand>
+                <set vname="c1">
+                  <char-at>
+                    <marker>@+1</marker>
+                  </char-at>
                 </set>
-                <conditional>
-                  <case>
-                    <expr operator="=">
-                      <predefined-nth-previous-or-following-character position="+2"/>
-                      <int-val>0x0DD9</int-val>
-                    </expr>
-                    <macro-reference id="macro-merge-kombuva"/>
-                    <insert character="0x0DDB"/>
-                  </case>
-                  <case>
-                    <expr operator="=">
-                      <predefined-nth-previous-or-following-character position="+2"/>
-                      <int-val>0x0DCA</int-val>
-                    </expr>
-                    <macro-reference id="macro-merge-kombuva"/>
-                    <insert character="0x0DDA"/>
-                  </case>
-                  <case>
-                    <expr operator="=">
-                      <predefined-nth-previous-or-following-character position="+2"/>
-                      <int-val>0x0DCF</int-val>
-                    </expr>
-                    <macro-reference id="macro-merge-kombuva"/>
-                    <insert character="0x0DDC"/>
-                  </case>
-                  <case>
-                    <expr operator="=">
-                      <predefined-nth-previous-or-following-character position="+2"/>
-                      <int-val>0x0DDF</int-val>
-                    </expr>
-                    <macro-reference id="macro-merge-kombuva"/>
-                    <insert character="0x0DDE"/>
-                  </case>
-                  <case>
-                    <int-val>1</int-val>
-                    <delete-n-characters n="-1"/>
-                    <delete-n-characters n="+1"/>
-                    <insert character-or-string="variable">
-                      <variable-reference id="c1"/>
+                <cond>
+                  <list>
+                    <eq>
+                      <char-at>
+                        <marker>@+2</marker>
+                      </char-at>
+                      <integer>0x0DD9</integer>
+                    </eq>
+                    <funcall fname="macro-merge-kombuva"/>
+                    <insert>
+                      <integer>0x0DDB</integer>
                     </insert>
-                    <insert character="0x0DD9"/>
-                  </case>
-                </conditional>
-              </case>
-              <case>
-                <expr operator="&amp;">
-                  <expr operator="&gt;=">
-                    <predefined-nth-previous-or-following-character position="-2"/>
-                    <int-val>0x0D9A</int-val>
-                  </expr>
-                  <expr operator="&lt;=">
-                    <predefined-nth-previous-or-following-character position="-2"/>
-                    <int-val>0x0DC6</int-val>
-                  </expr>
-                </expr>
-                <delete-n-characters n="-1"/>
-                <insert character="0x200C"/>
-                <insert character="0x0DD9"/>
-              </case>
-              <case>
-                <expr operator="&amp;">
-                  <expr operator="=">
-                    <predefined-nth-previous-or-following-character position="-4"/>
-                    <int-val>0x0DBB</int-val>
-                  </expr>
-                  <expr operator="=">
-                    <predefined-nth-previous-or-following-character position="-3"/>
-                    <int-val>0x0DCA</int-val>
-                  </expr>
-                  <expr operator="=">
-                    <predefined-nth-previous-or-following-character position="-2"/>
-                    <int-val>0x200D</int-val>
-                  </expr>
-                </expr>
-                <set id="c1">
-                  <predefined-nth-previous-or-following-character position="-1"/>
-                </set>
-                <delete-n-characters n="-4"/>
-                <insert character-or-string="variable">
-                  <variable-reference id="c1"/>
+                  </list>
+                  <list>
+                    <eq>
+                      <char-at>
+                        <marker>@+2</marker>
+                      </char-at>
+                      <integer>0x0DCA</integer>
+                    </eq>
+                    <funcall fname="macro-merge-kombuva"/>
+                    <insert>
+                      <integer>0x0DDA</integer>
+                    </insert>
+                  </list>
+                  <list>
+                    <eq>
+                      <char-at>
+                        <marker>@+2</marker>
+                      </char-at>
+                      <integer>0x0DCF</integer>
+                    </eq>
+                    <funcall fname="macro-merge-kombuva"/>
+                    <insert>
+                      <integer>0x0DDC</integer>
+                    </insert>
+                  </list>
+                  <list>
+                    <eq>
+                      <char-at>
+                        <marker>@+2</marker>
+                      </char-at>
+                      <integer>0x0DDF</integer>
+                    </eq>
+                    <funcall fname="macro-merge-kombuva"/>
+                    <insert>
+                      <integer>0x0DDE</integer>
+                    </insert>
+                  </list>
+                  <list>
+                    <integer>1</integer>
+                    <delete>
+                      <marker>@-1</marker>
+                    </delete>
+                    <delete>
+                      <marker>@+1</marker>
+                    </delete>
+                    <insert>
+                      <varref vname="c1"/>
+                    </insert>
+                    <insert>
+                      <integer>0x0DD9</integer>
+                    </insert>
+                  </list>
+                </cond>
+              </list>
+              <list>
+                <logand>
+                  <ge>
+                    <char-at>
+                      <marker>@-2</marker>
+                    </char-at>
+                    <integer>0x0D9A</integer>
+                  </ge>
+                  <le>
+                    <char-at>
+                      <marker>@-2</marker>
+                    </char-at>
+                    <integer>0x0DC6</integer>
+                  </le>
+                </logand>
+                <delete>
+                  <marker>@-1</marker>
+                </delete>
+                <insert>
+                  <integer>0x200C</integer>
                 </insert>
-                <insert character="0x0DD9"/>
-              </case>
-              <case>
-                <expr operator="&amp;">
-                  <expr operator="&gt;=">
-                    <predefined-nth-previous-or-following-character position="-4"/>
-                    <int-val>0x0D9A</int-val>
-                  </expr>
-                  <expr operator="&lt;=">
-                    <predefined-nth-previous-or-following-character position="-4"/>
-                    <int-val>0x0DC6</int-val>
-                  </expr>
-                  <expr operator="=">
-                    <predefined-nth-previous-or-following-character position="-3"/>
-                    <int-val>0x0DCA</int-val>
-                  </expr>
-                  <expr operator="=">
-                    <predefined-nth-previous-or-following-character position="-2"/>
-                    <int-val>0x200D</int-val>
-                  </expr>
-                </expr>
-                <delete-n-characters n="-3"/>
-                <insert character="0x0DD9"/>
-              </case>
-              <case>
-                <int-val>1</int-val>
-                <delete-n-characters n="-1"/>
-                <insert character="0x0DD9"/>
-              </case>
-            </conditional>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0DDA</int-val>
-            </expr>
-            <insert character="0x0DD9"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0DDB</int-val>
-            </expr>
-            <conditional>
-              <case>
-                <expr operator="|">
-                  <expr operator="&lt;">
-                    <predefined-nth-previous-or-following-character position="-1"/>
-                    <int-val>0x0D9A</int-val>
-                  </expr>
-                  <expr operator="&gt;">
-                    <predefined-nth-previous-or-following-character position="-1"/>
-                    <int-val>0x0DC6</int-val>
-                  </expr>
-                </expr>
-                <insert character="0x0DD9"/>
-              </case>
-              <case>
-                <expr operator="&amp;">
-                  <expr operator="&gt;=">
-                    <predefined-nth-previous-or-following-character position="-2"/>
-                    <int-val>0x0D9A</int-val>
-                  </expr>
-                  <expr operator="&lt;=">
-                    <predefined-nth-previous-or-following-character position="-2"/>
-                    <int-val>0x0DC6</int-val>
-                  </expr>
-                </expr>
-                <delete-n-characters n="-1"/>
-                <insert character="0x200C"/>
-                <insert character="0x0DDB"/>
-              </case>
-              <case>
-                <expr operator="&amp;">
-                  <expr operator="=">
-                    <predefined-nth-previous-or-following-character position="-4"/>
-                    <int-val>0x0DBB</int-val>
-                  </expr>
-                  <expr operator="=">
-                    <predefined-nth-previous-or-following-character position="-3"/>
-                    <int-val>0x0DCA</int-val>
-                  </expr>
-                  <expr operator="=">
-                    <predefined-nth-previous-or-following-character position="-2"/>
-                    <int-val>0x200D</int-val>
-                  </expr>
-                </expr>
-                <set id="c1">
-                  <predefined-nth-previous-or-following-character position="-1"/>
-                </set>
-                <delete-n-characters n="-4"/>
-                <insert character-or-string="variable">
-                  <variable-reference id="c1"/>
+                <insert>
+                  <integer>0x0DD9</integer>
                 </insert>
-                <insert character="0x0DDB"/>
-              </case>
-              <case>
-                <expr operator="&amp;">
-                  <expr operator="&gt;=">
-                    <predefined-nth-previous-or-following-character position="-4"/>
-                    <int-val>0x0D9A</int-val>
-                  </expr>
-                  <expr operator="&lt;=">
-                    <predefined-nth-previous-or-following-character position="-4"/>
-                    <int-val>0x0DC6</int-val>
-                  </expr>
-                  <expr operator="=">
-                    <predefined-nth-previous-or-following-character position="-3"/>
-                    <int-val>0x0DCA</int-val>
-                  </expr>
-                  <expr operator="=">
-                    <predefined-nth-previous-or-following-character position="-2"/>
-                    <int-val>0x200D</int-val>
-                  </expr>
-                </expr>
-                <delete-n-characters n="-3"/>
-                <insert character="0x0DDB"/>
-              </case>
-              <case>
-                <int-val>1</int-val>
-                <delete-n-characters n="-1"/>
-                <insert character="0x0DDB"/>
-              </case>
-            </conditional>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0DDC</int-val>
-            </expr>
-            <insert character="0x0DD9"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0DDD</int-val>
-            </expr>
-            <insert character="0x0DDC"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0DDE</int-val>
-            </expr>
-            <insert character="0x0DD9"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0DF2</int-val>
-            </expr>
-            <insert character="0x0DD8"/>
-          </case>
-        </conditional>
-        <conditional>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="&gt;=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0D9A</int-val>
-              </expr>
-              <expr operator="&lt;=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DC6</int-val>
-              </expr>
-              <expr operator="|">
-                <expr operator="=">
-                  <predefined-nth-previous-or-following-character position="+1"/>
-                  <int-val>0x0DD9</int-val>
-                </expr>
-                <expr operator="=">
-                  <predefined-nth-previous-or-following-character position="+1"/>
-                  <int-val>0x0DDB</int-val>
-                </expr>
-              </expr>
-            </expr>
-            <insert character="0x200C"/>
-          </case>
-        </conditional>
+              </list>
+              <list>
+                <logand>
+                  <eq>
+                    <char-at>
+                      <marker>@-4</marker>
+                    </char-at>
+                    <integer>0x0DBB</integer>
+                  </eq>
+                  <eq>
+                    <char-at>
+                      <marker>@-3</marker>
+                    </char-at>
+                    <integer>0x0DCA</integer>
+                  </eq>
+                  <eq>
+                    <char-at>
+                      <marker>@-2</marker>
+                    </char-at>
+                    <integer>0x200D</integer>
+                  </eq>
+                </logand>
+                <set vname="c1">
+                  <char-at>
+                    <marker>@-1</marker>
+                  </char-at>
+                </set>
+                <delete>
+                  <marker>@-4</marker>
+                </delete>
+                <insert>
+                  <varref vname="c1"/>
+                </insert>
+                <insert>
+                  <integer>0x0DD9</integer>
+                </insert>
+              </list>
+              <list>
+                <logand>
+                  <ge>
+                    <char-at>
+                      <marker>@-4</marker>
+                    </char-at>
+                    <integer>0x0D9A</integer>
+                  </ge>
+                  <le>
+                    <char-at>
+                      <marker>@-4</marker>
+                    </char-at>
+                    <integer>0x0DC6</integer>
+                  </le>
+                  <eq>
+                    <char-at>
+                      <marker>@-3</marker>
+                    </char-at>
+                    <integer>0x0DCA</integer>
+                  </eq>
+                  <eq>
+                    <char-at>
+                      <marker>@-2</marker>
+                    </char-at>
+                    <integer>0x200D</integer>
+                  </eq>
+                </logand>
+                <delete>
+                  <marker>@-3</marker>
+                </delete>
+                <insert>
+                  <integer>0x0DD9</integer>
+                </insert>
+              </list>
+              <list>
+                <integer>1</integer>
+                <delete>
+                  <marker>@-1</marker>
+                </delete>
+                <insert>
+                  <integer>0x0DD9</integer>
+                </insert>
+              </list>
+            </cond>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0DDA</integer>
+            </eq>
+            <insert>
+              <integer>0x0DD9</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0DDB</integer>
+            </eq>
+            <cond>
+              <list>
+                <logior>
+                  <lt>
+                    <char-at>
+                      <marker>@-1</marker>
+                    </char-at>
+                    <integer>0x0D9A</integer>
+                  </lt>
+                  <gt>
+                    <char-at>
+                      <marker>@-1</marker>
+                    </char-at>
+                    <integer>0x0DC6</integer>
+                  </gt>
+                </logior>
+                <insert>
+                  <integer>0x0DD9</integer>
+                </insert>
+              </list>
+              <list>
+                <logand>
+                  <ge>
+                    <char-at>
+                      <marker>@-2</marker>
+                    </char-at>
+                    <integer>0x0D9A</integer>
+                  </ge>
+                  <le>
+                    <char-at>
+                      <marker>@-2</marker>
+                    </char-at>
+                    <integer>0x0DC6</integer>
+                  </le>
+                </logand>
+                <delete>
+                  <marker>@-1</marker>
+                </delete>
+                <insert>
+                  <integer>0x200C</integer>
+                </insert>
+                <insert>
+                  <integer>0x0DDB</integer>
+                </insert>
+              </list>
+              <list>
+                <logand>
+                  <eq>
+                    <char-at>
+                      <marker>@-4</marker>
+                    </char-at>
+                    <integer>0x0DBB</integer>
+                  </eq>
+                  <eq>
+                    <char-at>
+                      <marker>@-3</marker>
+                    </char-at>
+                    <integer>0x0DCA</integer>
+                  </eq>
+                  <eq>
+                    <char-at>
+                      <marker>@-2</marker>
+                    </char-at>
+                    <integer>0x200D</integer>
+                  </eq>
+                </logand>
+                <set vname="c1">
+                  <char-at>
+                    <marker>@-1</marker>
+                  </char-at>
+                </set>
+                <delete>
+                  <marker>@-4</marker>
+                </delete>
+                <insert>
+                  <varref vname="c1"/>
+                </insert>
+                <insert>
+                  <integer>0x0DDB</integer>
+                </insert>
+              </list>
+              <list>
+                <logand>
+                  <ge>
+                    <char-at>
+                      <marker>@-4</marker>
+                    </char-at>
+                    <integer>0x0D9A</integer>
+                  </ge>
+                  <le>
+                    <char-at>
+                      <marker>@-4</marker>
+                    </char-at>
+                    <integer>0x0DC6</integer>
+                  </le>
+                  <eq>
+                    <char-at>
+                      <marker>@-3</marker>
+                    </char-at>
+                    <integer>0x0DCA</integer>
+                  </eq>
+                  <eq>
+                    <char-at>
+                      <marker>@-2</marker>
+                    </char-at>
+                    <integer>0x200D</integer>
+                  </eq>
+                </logand>
+                <delete>
+                  <marker>@-3</marker>
+                </delete>
+                <insert>
+                  <integer>0x0DDB</integer>
+                </insert>
+              </list>
+              <list>
+                <integer>1</integer>
+                <delete>
+                  <marker>@-1</marker>
+                </delete>
+                <insert>
+                  <integer>0x0DDB</integer>
+                </insert>
+              </list>
+            </cond>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0DDC</integer>
+            </eq>
+            <insert>
+              <integer>0x0DD9</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0DDD</integer>
+            </eq>
+            <insert>
+              <integer>0x0DDC</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0DDE</integer>
+            </eq>
+            <insert>
+              <integer>0x0DD9</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0DF2</integer>
+            </eq>
+            <insert>
+              <integer>0x0DD8</integer>
+            </insert>
+          </list>
+        </cond>
+        <cond>
+          <list>
+            <logand>
+              <ge>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0D9A</integer>
+              </ge>
+              <le>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DC6</integer>
+              </le>
+              <logior>
+                <eq>
+                  <char-at>
+                    <marker>@+1</marker>
+                  </char-at>
+                  <integer>0x0DD9</integer>
+                </eq>
+                <eq>
+                  <char-at>
+                    <marker>@+1</marker>
+                  </char-at>
+                  <integer>0x0DDB</integer>
+                </eq>
+              </logior>
+            </logand>
+            <insert>
+              <integer>0x200C</integer>
+            </insert>
+          </list>
+        </cond>
       </rule>
       <rule>
         <keyseq>
-          <key-event>Delete</key-event>
+          <list>
+            <symbol>Delete</symbol>
+          </list>
         </keyseq>
-        <macro-reference id="macro-delete-following-zw"/>
-        <set id="c">
-          <predefined-nth-previous-or-following-character position="+1"/>
+        <funcall fname="macro-delete-following-zw"/>
+        <set vname="c">
+          <char-at>
+            <marker>@+1</marker>
+          </char-at>
         </set>
-        <conditional>
-          <case>
-            <expr operator="&lt;">
-              <variable-reference id="c"/>
-              <int-val>0</int-val>
-            </expr>
+        <cond>
+          <list>
+            <lt>
+              <varref vname="c"/>
+              <integer>0</integer>
+            </lt>
             <unhandle/>
-          </case>
-        </conditional>
-        <delete-n-characters n="+1"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D86</int-val>
-            </expr>
-            <insert character="0x0DCF"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D87</int-val>
-            </expr>
-            <insert character="0x0DD0"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D88</int-val>
-            </expr>
-            <insert character="0x0DD1"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D8C</int-val>
-            </expr>
-            <insert character="0x0DDF"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D8E</int-val>
-            </expr>
-            <insert character="0x0DD8"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D90</int-val>
-            </expr>
-            <insert character="0x0DDF"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D92</int-val>
-            </expr>
-            <insert character="0x0DCA"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0D93</int-val>
-            </expr>
-            <insert character="0x0D91"/>
-          </case>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="&gt;=">
-                <variable-reference id="c"/>
-                <int-val>0x0D9A</int-val>
-              </expr>
-              <expr operator="&lt;=">
-                <variable-reference id="c"/>
-                <int-val>0x0DC6</int-val>
-              </expr>
-            </expr>
-            <macro-reference id="macro-forward"/>
-            <conditional>
-              <case>
-                <expr operator="=">
-                  <predefined-nth-previous-or-following-character position="+1"/>
-                  <int-val>0x0DD9</int-val>
-                </expr>
-                <delete-n-characters n="+1"/>
-                <move-to-marker position="@first"/>
-                <insert character-or-string="variable">
-                  <variable-reference id="c"/>
+          </list>
+        </cond>
+        <delete>
+          <marker>@+1</marker>
+        </delete>
+        <cond>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D86</integer>
+            </eq>
+            <insert>
+              <integer>0x0DCF</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D87</integer>
+            </eq>
+            <insert>
+              <integer>0x0DD0</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D88</integer>
+            </eq>
+            <insert>
+              <integer>0x0DD1</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D8C</integer>
+            </eq>
+            <insert>
+              <integer>0x0DDF</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D8E</integer>
+            </eq>
+            <insert>
+              <integer>0x0DD8</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D90</integer>
+            </eq>
+            <insert>
+              <integer>0x0DDF</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D92</integer>
+            </eq>
+            <insert>
+              <integer>0x0DCA</integer>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0D93</integer>
+            </eq>
+            <insert>
+              <integer>0x0D91</integer>
+            </insert>
+          </list>
+          <list>
+            <logand>
+              <ge>
+                <varref vname="c"/>
+                <integer>0x0D9A</integer>
+              </ge>
+              <le>
+                <varref vname="c"/>
+                <integer>0x0DC6</integer>
+              </le>
+            </logand>
+            <funcall fname="macro-forward"/>
+            <cond>
+              <list>
+                <eq>
+                  <char-at>
+                    <marker>@+1</marker>
+                  </char-at>
+                  <integer>0x0DD9</integer>
+                </eq>
+                <delete>
+                  <marker>@+1</marker>
+                </delete>
+                <move>
+                  <marker>@&lt;</marker>
+                </move>
+                <insert>
+                  <varref vname="c"/>
                 </insert>
-              </case>
-              <case>
-                <expr operator="=">
-                  <predefined-nth-previous-or-following-character position="+1"/>
-                  <int-val>0x0DDB</int-val>
-                </expr>
-                <delete-n-characters n="+1"/>
-                <insert character="0x0DD9"/>
-                <move-to-marker position="@first"/>
-                <insert character-or-string="variable">
-                  <variable-reference id="c"/>
+              </list>
+              <list>
+                <eq>
+                  <char-at>
+                    <marker>@+1</marker>
+                  </char-at>
+                  <integer>0x0DDB</integer>
+                </eq>
+                <delete>
+                  <marker>@+1</marker>
+                </delete>
+                <insert>
+                  <integer>0x0DD9</integer>
                 </insert>
-              </case>
-              <case>
-                <expr operator="=">
-                  <predefined-nth-previous-or-following-character position="+1"/>
-                  <int-val>0x0DDA</int-val>
-                </expr>
-                <delete-n-characters n="+1"/>
-                <insert character="0x0DCA"/>
-                <move-to-marker position="@first"/>
-                <insert character-or-string="variable">
-                  <variable-reference id="c"/>
+                <move>
+                  <marker>@&lt;</marker>
+                </move>
+                <insert>
+                  <varref vname="c"/>
                 </insert>
-              </case>
-              <case>
-                <expr operator="=">
-                  <predefined-nth-previous-or-following-character position="+1"/>
-                  <int-val>0x0DDC</int-val>
-                </expr>
-                <delete-n-characters n="+1"/>
-                <insert character="0x0DCF"/>
-                <move-to-marker position="@first"/>
-                <insert character-or-string="variable">
-                  <variable-reference id="c"/>
+              </list>
+              <list>
+                <eq>
+                  <char-at>
+                    <marker>@+1</marker>
+                  </char-at>
+                  <integer>0x0DDA</integer>
+                </eq>
+                <delete>
+                  <marker>@+1</marker>
+                </delete>
+                <insert>
+                  <integer>0x0DCA</integer>
                 </insert>
-              </case>
-              <case>
-                <expr operator="=">
-                  <predefined-nth-previous-or-following-character position="+1"/>
-                  <int-val>0x0DDE</int-val>
-                </expr>
-                <delete-n-characters n="+1"/>
-                <insert character="0x0DDF"/>
-                <move-to-marker position="@first"/>
-                <insert character-or-string="variable">
-                  <variable-reference id="c"/>
+                <move>
+                  <marker>@&lt;</marker>
+                </move>
+                <insert>
+                  <varref vname="c"/>
                 </insert>
-              </case>
-              <case>
-                <int-val>1</int-val>
-                <delete-to-marker position="@first"/>
-              </case>
-            </conditional>
-          </case>
-          <case>
-            <expr operator="=">
-              <variable-reference id="c"/>
-              <int-val>0x0DDB</int-val>
-            </expr>
-            <insert character="0x0DD9"/>
-          </case>
-        </conditional>
+              </list>
+              <list>
+                <eq>
+                  <char-at>
+                    <marker>@+1</marker>
+                  </char-at>
+                  <integer>0x0DDC</integer>
+                </eq>
+                <delete>
+                  <marker>@+1</marker>
+                </delete>
+                <insert>
+                  <integer>0x0DCF</integer>
+                </insert>
+                <move>
+                  <marker>@&lt;</marker>
+                </move>
+                <insert>
+                  <varref vname="c"/>
+                </insert>
+              </list>
+              <list>
+                <eq>
+                  <char-at>
+                    <marker>@+1</marker>
+                  </char-at>
+                  <integer>0x0DDE</integer>
+                </eq>
+                <delete>
+                  <marker>@+1</marker>
+                </delete>
+                <insert>
+                  <integer>0x0DDF</integer>
+                </insert>
+                <move>
+                  <marker>@&lt;</marker>
+                </move>
+                <insert>
+                  <varref vname="c"/>
+                </insert>
+              </list>
+              <list>
+                <integer>1</integer>
+                <delete>
+                  <marker>@&lt;</marker>
+                </delete>
+              </list>
+            </cond>
+          </list>
+          <list>
+            <eq>
+              <varref vname="c"/>
+              <integer>0x0DDB</integer>
+            </eq>
+            <insert>
+              <integer>0x0DD9</integer>
+            </insert>
+          </list>
+        </cond>
       </rule>
     </map>
-    <map id="map-independent">
+    <map mname="map-independent">
       <rule>
-        <keyseq keys="w"/>
-        <insert string="අ"/>
-      </rule>
-      <rule>
-        <keyseq keys="b"/>
-        <insert string="ඉ"/>
-      </rule>
-      <rule>
-        <keyseq keys="B"/>
-        <insert string="ඊ"/>
-      </rule>
-      <rule>
-        <keyseq keys="W"/>
-        <insert string="උ"/>
-      </rule>
-      <rule>
-        <keyseq keys="R"/>
-        <insert string="ඍ"/>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+        <insert>
+          <string>අ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-,</key-event>
+          <string>b</string>
         </keyseq>
-        <insert string="ඏ"/>
-      </rule>
-      <rule>
-        <keyseq keys="t"/>
-        <insert string="එ"/>
-      </rule>
-      <rule>
-        <keyseq keys="T"/>
-        <insert string="ඔ"/>
-      </rule>
-      <rule>
-        <keyseq keys="l"/>
-        <insert string="ක"/>
-      </rule>
-      <rule>
-        <keyseq keys="L"/>
-        <insert string="ඛ"/>
-      </rule>
-      <rule>
-        <keyseq keys="."/>
-        <insert string="ග"/>
-      </rule>
-      <rule>
-        <keyseq keys="&gt;"/>
-        <insert string="ඝ"/>
-      </rule>
-      <rule>
-        <keyseq keys="X"/>
-        <insert string="ඞ"/>
+        <insert>
+          <string>ඉ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-.</key-event>
+          <string>B</string>
         </keyseq>
-        <insert string="ඟ"/>
+        <insert>
+          <string>ඊ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <character-code>0x2E</character-code>
-          <key-event>A-z</key-event>
+          <string>W</string>
         </keyseq>
-        <insert string="ඟ"/>
-      </rule>
-      <rule>
-        <keyseq keys="p"/>
-        <insert string="ච"/>
-      </rule>
-      <rule>
-        <keyseq keys="P"/>
-        <insert string="ඡ"/>
-      </rule>
-      <rule>
-        <keyseq keys="c"/>
-        <insert string="ජ"/>
-      </rule>
-      <rule>
-        <keyseq keys="C"/>
-        <insert string="ඣ"/>
-      </rule>
-      <rule>
-        <keyseq keys="["/>
-        <insert string="ඤ"/>
-      </rule>
-      <rule>
-        <keyseq keys="{"/>
-        <insert string="ඥ"/>
+        <insert>
+          <string>උ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-c</key-event>
+          <string>R</string>
         </keyseq>
-        <insert string="ඦ"/>
+        <insert>
+          <string>ඍ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <character-code>0x63</character-code>
-          <key-event>A-z</key-event>
+          <list>
+            <string>A-,</string>
+          </list>
         </keyseq>
-        <insert string="ඦ"/>
-      </rule>
-      <rule>
-        <keyseq keys="g"/>
-        <insert string="ට"/>
-      </rule>
-      <rule>
-        <keyseq keys="G"/>
-        <insert string="ඨ"/>
-      </rule>
-      <rule>
-        <keyseq keys="v"/>
-        <insert string="ඩ"/>
-      </rule>
-      <rule>
-        <keyseq keys="V"/>
-        <insert string="ඪ"/>
-      </rule>
-      <rule>
-        <keyseq keys="K"/>
-        <insert string="ණ"/>
+        <insert>
+          <string>ඏ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-v</key-event>
+          <string>t</string>
         </keyseq>
-        <insert string="ඬ"/>
+        <insert>
+          <string>එ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <character-code>0x76</character-code>
-          <key-event>A-z</key-event>
+          <string>T</string>
         </keyseq>
-        <insert string="ඬ"/>
-      </rule>
-      <rule>
-        <keyseq keys=";"/>
-        <insert string="ත"/>
-      </rule>
-      <rule>
-        <keyseq keys=":"/>
-        <insert string="ථ"/>
-      </rule>
-      <rule>
-        <keyseq keys="o"/>
-        <insert string="ද"/>
-      </rule>
-      <rule>
-        <keyseq keys="O"/>
-        <insert string="ධ"/>
-      </rule>
-      <rule>
-        <keyseq keys="k"/>
-        <insert string="න"/>
+        <insert>
+          <string>ඔ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-o</key-event>
+          <string>l</string>
         </keyseq>
-        <insert string="ඳ"/>
+        <insert>
+          <string>ක</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <character-code>0x6F</character-code>
-          <key-event>A-z</key-event>
+          <string>L</string>
         </keyseq>
-        <insert string="ඳ"/>
-      </rule>
-      <rule>
-        <keyseq keys="m"/>
-        <insert string="ප"/>
-      </rule>
-      <rule>
-        <keyseq keys="M"/>
-        <insert string="ඵ"/>
-      </rule>
-      <rule>
-        <keyseq keys="n"/>
-        <insert string="බ"/>
-      </rule>
-      <rule>
-        <keyseq keys="N"/>
-        <insert string="භ"/>
-      </rule>
-      <rule>
-        <keyseq keys="u"/>
-        <insert string="ම"/>
-      </rule>
-      <rule>
-        <keyseq keys="U"/>
-        <insert string="ඹ"/>
-      </rule>
-      <rule>
-        <keyseq keys="h"/>
-        <insert string="ය"/>
-      </rule>
-      <rule>
-        <keyseq keys="r"/>
-        <insert string="ර"/>
-      </rule>
-      <rule>
-        <keyseq keys=","/>
-        <insert string="ල"/>
-      </rule>
-      <rule>
-        <keyseq keys="j"/>
-        <insert string="ව"/>
-      </rule>
-      <rule>
-        <keyseq keys="Y"/>
-        <insert string="ශ"/>
-      </rule>
-      <rule>
-        <keyseq keys="I"/>
-        <insert string="ෂ"/>
-      </rule>
-      <rule>
-        <keyseq keys="i"/>
-        <insert string="ස"/>
-      </rule>
-      <rule>
-        <keyseq keys="y"/>
-        <insert string="හ"/>
-      </rule>
-      <rule>
-        <keyseq keys="&lt;"/>
-        <insert string="ළ"/>
-      </rule>
-      <rule>
-        <keyseq keys="F"/>
-        <insert string="ෆ"/>
+        <insert>
+          <string>ඛ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-'</key-event>
+          <string>.</string>
         </keyseq>
-        <insert string="෴"/>
-      </rule>
-      <rule>
-        <keyseq keys="J"/>
-        <insert string="ළු"/>
+        <insert>
+          <string>ග</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>S- </key-event>
+          <string>&gt;</string>
         </keyseq>
-        <insert string=" "/>
+        <insert>
+          <string>ඝ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A- </key-event>
+          <string>X</string>
         </keyseq>
-        <insert string="‌"/>
+        <insert>
+          <string>ඞ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="]"/>
-        <insert string=";"/>
+        <keyseq>
+          <list>
+            <symbol>A-.</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ඟ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="}"/>
-        <insert string=":"/>
+        <keyseq>
+          <list>
+            <integer>0x2E</integer>
+            <symbol>A-z</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ඟ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="&apos;"/>
-        <insert string="."/>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+        <insert>
+          <string>ච</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="&quot;"/>
-        <insert string=","/>
+        <keyseq>
+          <string>P</string>
+        </keyseq>
+        <insert>
+          <string>ඡ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="z"/>
-        <insert string="&apos;"/>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <insert>
+          <string>ජ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="Z"/>
-        <insert string="&quot;"/>
+        <keyseq>
+          <string>C</string>
+        </keyseq>
+        <insert>
+          <string>ඣ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>[</string>
+        </keyseq>
+        <insert>
+          <string>ඤ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>{</string>
+        </keyseq>
+        <insert>
+          <string>ඥ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-c</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ඦ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <integer>0x63</integer>
+            <symbol>A-z</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ඦ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <string>ට</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>G</string>
+        </keyseq>
+        <insert>
+          <string>ඨ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert>
+          <string>ඩ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>V</string>
+        </keyseq>
+        <insert>
+          <string>ඪ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>K</string>
+        </keyseq>
+        <insert>
+          <string>ණ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-v</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ඬ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <integer>0x76</integer>
+            <symbol>A-z</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ඬ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>;</string>
+        </keyseq>
+        <insert>
+          <string>ත</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>:</string>
+        </keyseq>
+        <insert>
+          <string>ථ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <string>ද</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+        <insert>
+          <string>ධ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <string>න</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-o</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ඳ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <integer>0x6F</integer>
+            <symbol>A-z</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ඳ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <string>ප</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>M</string>
+        </keyseq>
+        <insert>
+          <string>ඵ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <string>බ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+        <insert>
+          <string>භ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <string>ම</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert>
+          <string>ඹ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <insert>
+          <string>ය</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+        <insert>
+          <string>ර</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>,</string>
+        </keyseq>
+        <insert>
+          <string>ල</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+        <insert>
+          <string>ව</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Y</string>
+        </keyseq>
+        <insert>
+          <string>ශ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <insert>
+          <string>ෂ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert>
+          <string>ස</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <insert>
+          <string>හ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&lt;</string>
+        </keyseq>
+        <insert>
+          <string>ළ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>F</string>
+        </keyseq>
+        <insert>
+          <string>ෆ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <string>A-'</string>
+          </list>
+        </keyseq>
+        <insert>
+          <string>෴</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>J</string>
+        </keyseq>
+        <insert>
+          <string>ළු</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <string>S- </string>
+          </list>
+        </keyseq>
+        <insert>
+          <string> </string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <string>A- </string>
+          </list>
+        </keyseq>
+        <insert>
+          <string>‌</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>]</string>
+        </keyseq>
+        <insert>
+          <string>;</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>}</string>
+        </keyseq>
+        <insert>
+          <string>:</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>'</string>
+        </keyseq>
+        <insert>
+          <string>.</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>"</string>
+        </keyseq>
+        <insert>
+          <string>,</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z</string>
+        </keyseq>
+        <insert>
+          <string>'</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Z</string>
+        </keyseq>
+        <insert>
+          <string>"</string>
+        </insert>
       </rule>
     </map>
-    <map id="map-dependent">
-      <rule>
-        <keyseq keys="x"/>
-        <insert string="ං"/>
-      </rule>
+    <map mname="map-dependent">
       <rule>
         <keyseq>
-          <key-event>A-x</key-event>
+          <string>x</string>
         </keyseq>
-        <insert string="ඃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="a"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0D91</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ඒ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0D94</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ඕ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0DD9</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ේ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0DDC</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ෝ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="්"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0D85</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ආ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0DD9</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ො"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ා"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0D85</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ඇ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ැ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="E"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0D85</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ඈ"/>
-          </case>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-2"/>
-                <int-val>0x0DC5</int-val>
-              </expr>
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DD4</int-val>
-              </expr>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ූ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ෑ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="s"/>
-        <insert string="ි"/>
-      </rule>
-      <rule>
-        <keyseq keys="S"/>
-        <insert string="ී"/>
-      </rule>
-      <rule>
-        <keyseq keys="q"/>
-        <insert string="ු"/>
-      </rule>
-      <rule>
-        <keyseq keys="Q"/>
-        <insert string="ූ"/>
-      </rule>
-      <rule>
-        <keyseq keys="D"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0D8D</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ඎ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ෘ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="DD"/>
-        <insert string="ෲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="A"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0D8B</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ඌ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0D8F</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ඐ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0D94</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ඖ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0DD9</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ෞ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ෟ"/>
-          </case>
-        </conditional>
+        <insert>
+          <string>ං</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-a</key-event>
+          <list>
+            <symbol>A-x</symbol>
+          </list>
         </keyseq>
-        <insert string="ෳ"/>
+        <insert>
+          <string>ඃ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="H"/>
-        <conditional>
-          <case>
-            <expr operator="|">
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DD9</int-val>
-              </expr>
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DDB</int-val>
-              </expr>
-            </expr>
-            <move-to-marker position="@previous"/>
-            <insert string="්‍ය"/>
-            <move-to-marker position="@last"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="්‍ය"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="`"/>
-        <conditional>
-          <case>
-            <expr operator="|">
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DD2</int-val>
-              </expr>
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DD3</int-val>
-              </expr>
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DD9</int-val>
-              </expr>
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DDB</int-val>
-              </expr>
-            </expr>
-            <move-to-marker position="@previous"/>
-            <insert string="්‍ර"/>
-            <move-to-marker position="@last"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="්‍ර"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="~"/>
-        <move-to-marker position="@first"/>
-        <insert string="ර්‍"/>
-        <move-to-marker position="@last"/>
-      </rule>
-    </map>
-    <map id="map-kombuva">
-      <rule>
-        <keyseq keys="f"/>
-        <insert string="ෙ"/>
-      </rule>
-    </map>
-    <map id="map-join">
-      <rule>
-        <keyseq keys="\"/>
-      </rule>
-    </map>
-    <map id="map-backspace">
       <rule>
         <keyseq>
-          <key-event>BackSpace</key-event>
+          <string>a</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0D91</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ඒ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0D94</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ඕ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0DD9</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ේ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0DDC</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ෝ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>්</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0D85</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ආ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0DD9</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ො</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ා</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0D85</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ඇ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ැ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0D85</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ඈ</string>
+            </insert>
+          </list>
+          <list>
+            <logand>
+              <eq>
+                <char-at>
+                  <marker>@-2</marker>
+                </char-at>
+                <integer>0x0DC5</integer>
+              </eq>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DD4</integer>
+              </eq>
+            </logand>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ූ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ෑ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+        <insert>
+          <string>ි</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>S</string>
+        </keyseq>
+        <insert>
+          <string>ී</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <insert>
+          <string>ු</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <insert>
+          <string>ූ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0D8D</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ඎ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ෘ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>DD</string>
+        </keyseq>
+        <insert>
+          <string>ෲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>A</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0D8B</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ඌ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0D8F</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ඐ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0D94</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ඖ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0DD9</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ෞ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ෟ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-a</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ෳ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <cond>
+          <list>
+            <logior>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DD9</integer>
+              </eq>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DDB</integer>
+              </eq>
+            </logior>
+            <move>
+              <marker>@-</marker>
+            </move>
+            <insert>
+              <string>්‍ය</string>
+            </insert>
+            <move>
+              <marker>@&gt;</marker>
+            </move>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>්‍ය</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>`</string>
+        </keyseq>
+        <cond>
+          <list>
+            <logior>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DD2</integer>
+              </eq>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DD3</integer>
+              </eq>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DD9</integer>
+              </eq>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DDB</integer>
+              </eq>
+            </logior>
+            <move>
+              <marker>@-</marker>
+            </move>
+            <insert>
+              <string>්‍ර</string>
+            </insert>
+            <move>
+              <marker>@&gt;</marker>
+            </move>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>්‍ර</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>~</string>
+        </keyseq>
+        <move>
+          <marker>@&lt;</marker>
+        </move>
+        <insert>
+          <string>ර්‍</string>
+        </insert>
+        <move>
+          <marker>@&gt;</marker>
+        </move>
+      </rule>
+    </map>
+    <map mname="map-kombuva">
+      <rule>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+        <insert>
+          <string>ෙ</string>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-join">
+      <rule>
+        <keyseq>
+          <string>\</string>
+        </keyseq>
+      </rule>
+    </map>
+    <map mname="map-backspace">
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>BackSpace</symbol>
+          </list>
         </keyseq>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <branch branch-selecting-map="map-starter">
-        <pushback-n-events n="1"/>
-        <conditional>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="=">
-                <variable-reference id="use-surrounding-text"/>
-                <int-val>1</int-val>
-              </expr>
-              <expr operator="=">
-                <variable-reference type="predefined" id="predefined-surround-text-flag"/>
-                <int-val>-1</int-val>
-              </expr>
-            </expr>
-            <shift-to id="state-surrounding-text"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <shift-to id="state-preedit"/>
-          </case>
-        </conditional>
+    <state sname="state-init">
+      <branch mname="map-starter">
+        <pushback>
+          <integer>1</integer>
+        </pushback>
+        <cond>
+          <list>
+            <logand>
+              <eq>
+                <varref vname="use-surrounding-text"/>
+                <integer>1</integer>
+              </eq>
+              <eq>
+                <surrounding-text-flag/>
+                <integer>-1</integer>
+              </eq>
+            </logand>
+            <shift>
+              <symbol>state-surrounding-text</symbol>
+            </shift>
+          </list>
+          <list>
+            <integer>1</integer>
+            <shift>
+              <symbol>state-preedit</symbol>
+            </shift>
+          </list>
+        </cond>
       </branch>
     </state>
-    <state id="state-surrounding-text">
-      <branch branch-selecting-map="map-consonant">
-        <move-to-marker position="@first"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0DD9</int-val>
-            </expr>
-            <conditional>
-              <case>
-                <expr operator="=">
-                  <predefined-nth-previous-or-following-character position="-2"/>
-                  <int-val>0x200C</int-val>
-                </expr>
-                <delete-n-characters n="-2"/>
-                <move-to-marker position="@last"/>
-                <insert character="0x0DD9"/>
-              </case>
-              <case>
-                <expr operator="|">
-                  <expr operator="&lt;">
-                    <predefined-nth-previous-or-following-character position="-2"/>
-                    <int-val>0x0D9A</int-val>
-                  </expr>
-                  <expr operator="&gt;">
-                    <predefined-nth-previous-or-following-character position="-2"/>
-                    <int-val>0x0DC6</int-val>
-                  </expr>
-                </expr>
-                <delete-n-characters n="-1"/>
-                <move-to-marker position="@last"/>
-                <insert character="0x0DD9"/>
-              </case>
-            </conditional>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0DDB</int-val>
-            </expr>
-            <conditional>
-              <case>
-                <expr operator="=">
-                  <predefined-nth-previous-or-following-character position="-2"/>
-                  <int-val>0x200C</int-val>
-                </expr>
-                <delete-n-characters n="-2"/>
-                <move-to-marker position="@last"/>
-                <insert character="0x0DDB"/>
-              </case>
-              <case>
-                <expr operator="|">
-                  <expr operator="&lt;">
-                    <predefined-nth-previous-or-following-character position="-2"/>
-                    <int-val>0x0D9A</int-val>
-                  </expr>
-                  <expr operator="&gt;">
-                    <predefined-nth-previous-or-following-character position="-2"/>
-                    <int-val>0x0DC6</int-val>
-                  </expr>
-                </expr>
-                <delete-n-characters n="-1"/>
-                <move-to-marker position="@last"/>
-                <insert character="0x0DDB"/>
-              </case>
-            </conditional>
-          </case>
-        </conditional>
-        <commit/>
-      </branch>
-      <branch branch-selecting-map="map-misc">
-        <commit/>
-      </branch>
-      <branch branch-selecting-map="map-join">
-        <shift-to id="state-join"/>
-      </branch>
-    </state>
-    <state id="state-join">
-      <branch branch-selecting-map="map-consonant">
-        <move-to-marker position="@first"/>
-        <set id="c">
-          <predefined-nth-previous-or-following-character position="-1"/>
-        </set>
-        <conditional>
-          <case>
-            <expr operator="|">
-              <expr operator="=">
-                <variable-reference id="c"/>
-                <int-val>0x0DD9</int-val>
-              </expr>
-              <expr operator="=">
-                <variable-reference id="c"/>
-                <int-val>0x0DDB</int-val>
-              </expr>
-            </expr>
-            <conditional>
-              <case>
-                <expr operator="&amp;">
-                  <expr operator="&gt;=">
-                    <predefined-nth-previous-or-following-character position="-2"/>
-                    <int-val>0x0D9A</int-val>
-                  </expr>
-                  <expr operator="&lt;=">
-                    <predefined-nth-previous-or-following-character position="-2"/>
-                    <int-val>0x0DC6</int-val>
-                  </expr>
-                </expr>
-                <delete-n-characters n="-1"/>
-                <insert character="0x0DCA"/>
-                <insert character="0x200D"/>
-                <move-to-marker position="@last"/>
-                <insert character-or-string="variable">
-                  <variable-reference id="c"/>
+    <state sname="state-surrounding-text">
+      <branch mname="map-consonant">
+        <move>
+          <marker>@&lt;</marker>
+        </move>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0DD9</integer>
+            </eq>
+            <cond>
+              <list>
+                <eq>
+                  <char-at>
+                    <marker>@-2</marker>
+                  </char-at>
+                  <integer>0x200C</integer>
+                </eq>
+                <delete>
+                  <marker>@-2</marker>
+                </delete>
+                <move>
+                  <marker>@&gt;</marker>
+                </move>
+                <insert>
+                  <integer>0x0DD9</integer>
                 </insert>
-              </case>
-            </conditional>
-          </case>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="&gt;=">
-                <variable-reference id="c"/>
-                <int-val>0x0D9A</int-val>
-              </expr>
-              <expr operator="&lt;=">
-                <variable-reference id="c"/>
-                <int-val>0x0DC6</int-val>
-              </expr>
-            </expr>
-            <insert character="0x0DCA"/>
-            <insert character="0x200D"/>
-          </case>
-        </conditional>
+              </list>
+              <list>
+                <logior>
+                  <lt>
+                    <char-at>
+                      <marker>@-2</marker>
+                    </char-at>
+                    <integer>0x0D9A</integer>
+                  </lt>
+                  <gt>
+                    <char-at>
+                      <marker>@-2</marker>
+                    </char-at>
+                    <integer>0x0DC6</integer>
+                  </gt>
+                </logior>
+                <delete>
+                  <marker>@-1</marker>
+                </delete>
+                <move>
+                  <marker>@&gt;</marker>
+                </move>
+                <insert>
+                  <integer>0x0DD9</integer>
+                </insert>
+              </list>
+            </cond>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0DDB</integer>
+            </eq>
+            <cond>
+              <list>
+                <eq>
+                  <char-at>
+                    <marker>@-2</marker>
+                  </char-at>
+                  <integer>0x200C</integer>
+                </eq>
+                <delete>
+                  <marker>@-2</marker>
+                </delete>
+                <move>
+                  <marker>@&gt;</marker>
+                </move>
+                <insert>
+                  <integer>0x0DDB</integer>
+                </insert>
+              </list>
+              <list>
+                <logior>
+                  <lt>
+                    <char-at>
+                      <marker>@-2</marker>
+                    </char-at>
+                    <integer>0x0D9A</integer>
+                  </lt>
+                  <gt>
+                    <char-at>
+                      <marker>@-2</marker>
+                    </char-at>
+                    <integer>0x0DC6</integer>
+                  </gt>
+                </logior>
+                <delete>
+                  <marker>@-1</marker>
+                </delete>
+                <move>
+                  <marker>@&gt;</marker>
+                </move>
+                <insert>
+                  <integer>0x0DDB</integer>
+                </insert>
+              </list>
+            </cond>
+          </list>
+        </cond>
         <commit/>
-        <shift-to id="state-surrounding-text"/>
+      </branch>
+      <branch mname="map-misc">
+        <commit/>
+      </branch>
+      <branch mname="map-join">
+        <shift>
+          <symbol>state-join</symbol>
+        </shift>
+      </branch>
+    </state>
+    <state sname="state-join">
+      <branch mname="map-consonant">
+        <move>
+          <marker>@&lt;</marker>
+        </move>
+        <set vname="c">
+          <char-at>
+            <marker>@-1</marker>
+          </char-at>
+        </set>
+        <cond>
+          <list>
+            <logior>
+              <eq>
+                <varref vname="c"/>
+                <integer>0x0DD9</integer>
+              </eq>
+              <eq>
+                <varref vname="c"/>
+                <integer>0x0DDB</integer>
+              </eq>
+            </logior>
+            <cond>
+              <list>
+                <logand>
+                  <ge>
+                    <char-at>
+                      <marker>@-2</marker>
+                    </char-at>
+                    <integer>0x0D9A</integer>
+                  </ge>
+                  <le>
+                    <char-at>
+                      <marker>@-2</marker>
+                    </char-at>
+                    <integer>0x0DC6</integer>
+                  </le>
+                </logand>
+                <delete>
+                  <marker>@-1</marker>
+                </delete>
+                <insert>
+                  <integer>0x0DCA</integer>
+                </insert>
+                <insert>
+                  <integer>0x200D</integer>
+                </insert>
+                <move>
+                  <marker>@&gt;</marker>
+                </move>
+                <insert>
+                  <varref vname="c"/>
+                </insert>
+              </list>
+            </cond>
+          </list>
+          <list>
+            <logand>
+              <ge>
+                <varref vname="c"/>
+                <integer>0x0D9A</integer>
+              </ge>
+              <le>
+                <varref vname="c"/>
+                <integer>0x0DC6</integer>
+              </le>
+            </logand>
+            <insert>
+              <integer>0x0DCA</integer>
+            </insert>
+            <insert>
+              <integer>0x200D</integer>
+            </insert>
+          </list>
+        </cond>
+        <commit/>
+        <shift>
+          <symbol>state-surrounding-text</symbol>
+        </shift>
       </branch>
       <catch-all-branch>
         <commit/>
-        <shift-to id="state-surrounding-text"/>
+        <shift>
+          <symbol>state-surrounding-text</symbol>
+        </shift>
       </catch-all-branch>
     </state>
-    <state id="state-preedit">
-      <branch branch-selecting-map="map-independent">
-        <shift-to id="state-independent-state"/>
+    <state sname="state-preedit">
+      <branch mname="map-independent">
+        <shift>
+          <symbol>state-independent-state</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-kombuva">
-        <shift-to id="state-kombuva-state"/>
+      <branch mname="map-kombuva">
+        <shift>
+          <symbol>state-kombuva-state</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-dependent"/>
+      <branch mname="map-dependent"/>
     </state>
-    <state id="state-independent-state">
-      <branch branch-selecting-map="map-dependent"/>
-      <branch branch-selecting-map="map-join">
-        <conditional>
-          <case>
-            <expr operator="|">
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DD9</int-val>
-              </expr>
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DDB</int-val>
-              </expr>
-            </expr>
-            <shift-to id="state-join-state"/>
-          </case>
-          <case>
-            <expr operator="|">
-              <expr operator="&lt;">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0D9A</int-val>
-              </expr>
-              <expr operator="&gt;">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DC6</int-val>
-              </expr>
-            </expr>
-            <undo target-of-undo="-1"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <shift-to id="state-join-state"/>
-          </case>
-        </conditional>
+    <state sname="state-independent-state">
+      <branch mname="map-dependent"/>
+      <branch mname="map-join">
+        <cond>
+          <list>
+            <logior>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DD9</integer>
+              </eq>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DDB</integer>
+              </eq>
+            </logior>
+            <shift>
+              <symbol>state-join-state</symbol>
+            </shift>
+          </list>
+          <list>
+            <logior>
+              <lt>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0D9A</integer>
+              </lt>
+              <gt>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DC6</integer>
+              </gt>
+            </logior>
+            <undo>
+              <integer>-1</integer>
+            </undo>
+          </list>
+          <list>
+            <integer>1</integer>
+            <shift>
+              <symbol>state-join-state</symbol>
+            </shift>
+          </list>
+        </cond>
       </branch>
-      <branch branch-selecting-map="map-backspace">
+      <branch mname="map-backspace">
         <undo/>
       </branch>
     </state>
-    <state id="state-join-state">
+    <state sname="state-join-state">
       <state-hook>
-        <mark-current-position markerID="p"/>
+        <mark>
+          <marker>p</marker>
+        </mark>
       </state-hook>
-      <branch branch-selecting-map="map-independent">
-        <move-to-marker markerID="p"/>
-        <set id="c">
-          <predefined-nth-previous-or-following-character position="-1"/>
+      <branch mname="map-independent">
+        <move>
+          <marker>p</marker>
+        </move>
+        <set vname="c">
+          <char-at>
+            <marker>@-1</marker>
+          </char-at>
         </set>
-        <conditional>
-          <case>
-            <expr operator="|">
-              <expr operator="=">
-                <variable-reference id="c"/>
-                <int-val>0x0DD9</int-val>
-              </expr>
-              <expr operator="=">
-                <variable-reference id="c"/>
-                <int-val>0x0DDB</int-val>
-              </expr>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="්‍"/>
-            <move-to-marker position="@last"/>
-            <insert character-or-string="variable">
-              <variable-reference id="c"/>
+        <cond>
+          <list>
+            <logior>
+              <eq>
+                <varref vname="c"/>
+                <integer>0x0DD9</integer>
+              </eq>
+              <eq>
+                <varref vname="c"/>
+                <integer>0x0DDB</integer>
+              </eq>
+            </logior>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>්‍</string>
             </insert>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="්‍"/>
-            <move-to-marker position="@last"/>
-          </case>
-        </conditional>
-        <shift-to id="state-independent-state"/>
+            <move>
+              <marker>@&gt;</marker>
+            </move>
+            <insert>
+              <varref vname="c"/>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>්‍</string>
+            </insert>
+            <move>
+              <marker>@&gt;</marker>
+            </move>
+          </list>
+        </cond>
+        <shift>
+          <symbol>state-independent-state</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-backspace">
+      <branch mname="map-backspace">
         <undo/>
       </branch>
     </state>
-    <state id="state-kombuva-state">
+    <state sname="state-kombuva-state">
       <state-hook>
-        <mark-current-position markerID="p"/>
+        <mark>
+          <marker>p</marker>
+        </mark>
       </state-hook>
-      <branch branch-selecting-map="map-independent">
-        <conditional>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="=">
-                <variable-reference id="@0" type="predefined"/>
-                <int-val>0x0DD9</int-val>
-              </expr>
-              <expr operator="=">
-                <variable-reference id="@1" type="predefined"/>
-                <int-val>0x0D91</int-val>
-              </expr>
-            </expr>
-            <delete-to-marker position="@first"/>
-            <insert string="ඓ"/>
-            <shift-to id="state-independent-state"/>
-          </case>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="=">
-                <variable-reference id="@0" type="predefined"/>
-                <int-val>0x0DD9</int-val>
-              </expr>
-              <expr operator="&lt;">
-                <variable-reference id="@2" type="predefined"/>
-                <int-val>0</int-val>
-              </expr>
-            </expr>
-            <move-to-marker position="@0"/>
-            <delete-to-marker position="@next"/>
-            <move-to-marker position="@last"/>
-            <insert string="ෙ"/>
-            <shift-to id="state-independent-state"/>
-          </case>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="=">
-                <variable-reference id="@0" type="predefined"/>
-                <int-val>0x0DDB</int-val>
-              </expr>
-              <expr operator="&lt;">
-                <variable-reference id="@2" type="predefined"/>
-                <int-val>0</int-val>
-              </expr>
-            </expr>
-            <move-to-marker position="@0"/>
-            <delete-to-marker position="@next"/>
-            <move-to-marker position="@last"/>
-            <insert string="ෛ"/>
-            <shift-to id="state-independent-state"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <delete-to-marker markerID="p"/>
-            <pushback-n-events n="1"/>
-            <shift-to id="state-preedit"/>
-          </case>
-        </conditional>
+      <branch mname="map-independent">
+        <cond>
+          <list>
+            <logand>
+              <eq>
+                <char-at>
+                  <marker>@0</marker>
+                </char-at>
+                <integer>0x0DD9</integer>
+              </eq>
+              <eq>
+                <char-at>
+                  <marker>@1</marker>
+                </char-at>
+                <integer>0x0D91</integer>
+              </eq>
+            </logand>
+            <delete>
+              <marker>@&lt;</marker>
+            </delete>
+            <insert>
+              <string>ඓ</string>
+            </insert>
+            <shift>
+              <symbol>state-independent-state</symbol>
+            </shift>
+          </list>
+          <list>
+            <logand>
+              <eq>
+                <char-at>
+                  <marker>@0</marker>
+                </char-at>
+                <integer>0x0DD9</integer>
+              </eq>
+              <lt>
+                <char-at>
+                  <marker>@2</marker>
+                </char-at>
+                <integer>0</integer>
+              </lt>
+            </logand>
+            <move>
+              <marker>@0</marker>
+            </move>
+            <delete>
+              <marker>@+</marker>
+            </delete>
+            <move>
+              <marker>@&gt;</marker>
+            </move>
+            <insert>
+              <string>ෙ</string>
+            </insert>
+            <shift>
+              <symbol>state-independent-state</symbol>
+            </shift>
+          </list>
+          <list>
+            <logand>
+              <eq>
+                <char-at>
+                  <marker>@0</marker>
+                </char-at>
+                <integer>0x0DDB</integer>
+              </eq>
+              <lt>
+                <char-at>
+                  <marker>@2</marker>
+                </char-at>
+                <integer>0</integer>
+              </lt>
+            </logand>
+            <move>
+              <marker>@0</marker>
+            </move>
+            <delete>
+              <marker>@+</marker>
+            </delete>
+            <move>
+              <marker>@&gt;</marker>
+            </move>
+            <insert>
+              <string>ෛ</string>
+            </insert>
+            <shift>
+              <symbol>state-independent-state</symbol>
+            </shift>
+          </list>
+          <list>
+            <integer>1</integer>
+            <delete>
+              <marker>p</marker>
+            </delete>
+            <pushback>
+              <integer>1</integer>
+            </pushback>
+            <shift>
+              <symbol>state-preedit</symbol>
+            </shift>
+          </list>
+        </cond>
       </branch>
-      <branch branch-selecting-map="map-kombuva">
-        <mark-current-position markerID="p"/>
-        <conditional>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="=">
-                <variable-reference id="@0" type="predefined"/>
-                <int-val>0x0DD9</int-val>
-              </expr>
-              <expr operator="&lt;">
-                <variable-reference id="@2" type="predefined"/>
-                <int-val>0</int-val>
-              </expr>
-            </expr>
-            <delete-to-marker position="@first"/>
-            <insert string="ෛ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <delete-to-marker position="@previous"/>
-            <pushback-n-events n="1"/>
-            <shift-to id="state-preedit"/>
-          </case>
-        </conditional>
+      <branch mname="map-kombuva">
+        <mark>
+          <marker>p</marker>
+        </mark>
+        <cond>
+          <list>
+            <logand>
+              <eq>
+                <char-at>
+                  <marker>@0</marker>
+                </char-at>
+                <integer>0x0DD9</integer>
+              </eq>
+              <lt>
+                <char-at>
+                  <marker>@2</marker>
+                </char-at>
+                <integer>0</integer>
+              </lt>
+            </logand>
+            <delete>
+              <marker>@&lt;</marker>
+            </delete>
+            <insert>
+              <string>ෛ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <pushback>
+              <integer>1</integer>
+            </pushback>
+            <shift>
+              <symbol>state-preedit</symbol>
+            </shift>
+          </list>
+        </cond>
       </branch>
-      <branch branch-selecting-map="map-dependent">
-        <mark-current-position markerID="p"/>
+      <branch mname="map-dependent">
+        <mark>
+          <marker>p</marker>
+        </mark>
       </branch>
-      <branch branch-selecting-map="map-backspace">
+      <branch mname="map-backspace">
         <undo/>
       </branch>
     </state>

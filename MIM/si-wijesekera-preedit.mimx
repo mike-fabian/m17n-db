@@ -10,761 +10,1303 @@ This input method uses preedit rather than surrounding text.
 </description>
   <title>සි</title>
   <map-list>
-    <map id="map-independent">
+    <map mname="map-independent">
       <rule>
-        <keyseq keys="w"/>
-        <insert string="අ"/>
-      </rule>
-      <rule>
-        <keyseq keys="b"/>
-        <insert string="ඉ"/>
-      </rule>
-      <rule>
-        <keyseq keys="B"/>
-        <insert string="ඊ"/>
-      </rule>
-      <rule>
-        <keyseq keys="W"/>
-        <insert string="උ"/>
-      </rule>
-      <rule>
-        <keyseq keys="R"/>
-        <insert string="ඍ"/>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+        <insert>
+          <string>අ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-,</key-event>
+          <string>b</string>
         </keyseq>
-        <insert string="ඏ"/>
-      </rule>
-      <rule>
-        <keyseq keys="t"/>
-        <insert string="එ"/>
-      </rule>
-      <rule>
-        <keyseq keys="T"/>
-        <insert string="ඔ"/>
-      </rule>
-      <rule>
-        <keyseq keys="l"/>
-        <insert string="ක"/>
-      </rule>
-      <rule>
-        <keyseq keys="L"/>
-        <insert string="ඛ"/>
-      </rule>
-      <rule>
-        <keyseq keys="."/>
-        <insert string="ග"/>
-      </rule>
-      <rule>
-        <keyseq keys="&gt;"/>
-        <insert string="ඝ"/>
-      </rule>
-      <rule>
-        <keyseq keys="X"/>
-        <insert string="ඞ"/>
+        <insert>
+          <string>ඉ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-.</key-event>
+          <string>B</string>
         </keyseq>
-        <insert string="ඟ"/>
+        <insert>
+          <string>ඊ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <character-code>0x2E</character-code>
-          <key-event>A-z</key-event>
+          <string>W</string>
         </keyseq>
-        <insert string="ඟ"/>
-      </rule>
-      <rule>
-        <keyseq keys="p"/>
-        <insert string="ච"/>
-      </rule>
-      <rule>
-        <keyseq keys="P"/>
-        <insert string="ඡ"/>
-      </rule>
-      <rule>
-        <keyseq keys="c"/>
-        <insert string="ජ"/>
-      </rule>
-      <rule>
-        <keyseq keys="C"/>
-        <insert string="ඣ"/>
-      </rule>
-      <rule>
-        <keyseq keys="["/>
-        <insert string="ඤ"/>
-      </rule>
-      <rule>
-        <keyseq keys="{"/>
-        <insert string="ඥ"/>
+        <insert>
+          <string>උ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-c</key-event>
+          <string>R</string>
         </keyseq>
-        <insert string="ඦ"/>
+        <insert>
+          <string>ඍ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <character-code>0x63</character-code>
-          <key-event>A-z</key-event>
+          <list>
+            <string>A-,</string>
+          </list>
         </keyseq>
-        <insert string="ඦ"/>
-      </rule>
-      <rule>
-        <keyseq keys="g"/>
-        <insert string="ට"/>
-      </rule>
-      <rule>
-        <keyseq keys="G"/>
-        <insert string="ඨ"/>
-      </rule>
-      <rule>
-        <keyseq keys="v"/>
-        <insert string="ඩ"/>
-      </rule>
-      <rule>
-        <keyseq keys="V"/>
-        <insert string="ඪ"/>
-      </rule>
-      <rule>
-        <keyseq keys="K"/>
-        <insert string="ණ"/>
+        <insert>
+          <string>ඏ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-v</key-event>
+          <string>t</string>
         </keyseq>
-        <insert string="ඬ"/>
+        <insert>
+          <string>එ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <character-code>0x76</character-code>
-          <key-event>A-z</key-event>
+          <string>T</string>
         </keyseq>
-        <insert string="ඬ"/>
-      </rule>
-      <rule>
-        <keyseq keys=";"/>
-        <insert string="ත"/>
-      </rule>
-      <rule>
-        <keyseq keys=":"/>
-        <insert string="ථ"/>
-      </rule>
-      <rule>
-        <keyseq keys="o"/>
-        <insert string="ද"/>
-      </rule>
-      <rule>
-        <keyseq keys="O"/>
-        <insert string="ධ"/>
-      </rule>
-      <rule>
-        <keyseq keys="k"/>
-        <insert string="න"/>
+        <insert>
+          <string>ඔ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-o</key-event>
+          <string>l</string>
         </keyseq>
-        <insert string="ඳ"/>
+        <insert>
+          <string>ක</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <character-code>0x6F</character-code>
-          <key-event>A-z</key-event>
+          <string>L</string>
         </keyseq>
-        <insert string="ඳ"/>
-      </rule>
-      <rule>
-        <keyseq keys="m"/>
-        <insert string="ප"/>
-      </rule>
-      <rule>
-        <keyseq keys="M"/>
-        <insert string="ඵ"/>
-      </rule>
-      <rule>
-        <keyseq keys="n"/>
-        <insert string="බ"/>
-      </rule>
-      <rule>
-        <keyseq keys="N"/>
-        <insert string="භ"/>
-      </rule>
-      <rule>
-        <keyseq keys="u"/>
-        <insert string="ම"/>
-      </rule>
-      <rule>
-        <keyseq keys="U"/>
-        <insert string="ඹ"/>
-      </rule>
-      <rule>
-        <keyseq keys="h"/>
-        <insert string="ය"/>
-      </rule>
-      <rule>
-        <keyseq keys="r"/>
-        <insert string="ර"/>
-      </rule>
-      <rule>
-        <keyseq keys=","/>
-        <insert string="ල"/>
-      </rule>
-      <rule>
-        <keyseq keys="j"/>
-        <insert string="ව"/>
-      </rule>
-      <rule>
-        <keyseq keys="Y"/>
-        <insert string="ශ"/>
-      </rule>
-      <rule>
-        <keyseq keys="I"/>
-        <insert string="ෂ"/>
-      </rule>
-      <rule>
-        <keyseq keys="i"/>
-        <insert string="ස"/>
-      </rule>
-      <rule>
-        <keyseq keys="y"/>
-        <insert string="හ"/>
-      </rule>
-      <rule>
-        <keyseq keys="&lt;"/>
-        <insert string="ළ"/>
-      </rule>
-      <rule>
-        <keyseq keys="F"/>
-        <insert string="ෆ"/>
+        <insert>
+          <string>ඛ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-'</key-event>
+          <string>.</string>
         </keyseq>
-        <insert string="෴"/>
-      </rule>
-      <rule>
-        <keyseq keys="J"/>
-        <insert string="ළු"/>
+        <insert>
+          <string>ග</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>S- </key-event>
+          <string>&gt;</string>
         </keyseq>
-        <insert string=" "/>
+        <insert>
+          <string>ඝ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A- </key-event>
+          <string>X</string>
         </keyseq>
-        <insert string="‌"/>
+        <insert>
+          <string>ඞ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="]"/>
-        <insert string=";"/>
+        <keyseq>
+          <list>
+            <symbol>A-.</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ඟ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="}"/>
-        <insert string=":"/>
+        <keyseq>
+          <list>
+            <integer>0x2E</integer>
+            <symbol>A-z</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ඟ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="&apos;"/>
-        <insert string="."/>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+        <insert>
+          <string>ච</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="&quot;"/>
-        <insert string=","/>
+        <keyseq>
+          <string>P</string>
+        </keyseq>
+        <insert>
+          <string>ඡ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="z"/>
-        <insert string="&apos;"/>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <insert>
+          <string>ජ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="Z"/>
-        <insert string="&quot;"/>
+        <keyseq>
+          <string>C</string>
+        </keyseq>
+        <insert>
+          <string>ඣ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>[</string>
+        </keyseq>
+        <insert>
+          <string>ඤ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>{</string>
+        </keyseq>
+        <insert>
+          <string>ඥ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-c</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ඦ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <integer>0x63</integer>
+            <symbol>A-z</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ඦ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <string>ට</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>G</string>
+        </keyseq>
+        <insert>
+          <string>ඨ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert>
+          <string>ඩ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>V</string>
+        </keyseq>
+        <insert>
+          <string>ඪ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>K</string>
+        </keyseq>
+        <insert>
+          <string>ණ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-v</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ඬ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <integer>0x76</integer>
+            <symbol>A-z</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ඬ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>;</string>
+        </keyseq>
+        <insert>
+          <string>ත</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>:</string>
+        </keyseq>
+        <insert>
+          <string>ථ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <string>ද</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+        <insert>
+          <string>ධ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <string>න</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-o</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ඳ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <integer>0x6F</integer>
+            <symbol>A-z</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ඳ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <string>ප</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>M</string>
+        </keyseq>
+        <insert>
+          <string>ඵ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <string>බ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+        <insert>
+          <string>භ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <string>ම</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert>
+          <string>ඹ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <insert>
+          <string>ය</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+        <insert>
+          <string>ර</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>,</string>
+        </keyseq>
+        <insert>
+          <string>ල</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+        <insert>
+          <string>ව</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Y</string>
+        </keyseq>
+        <insert>
+          <string>ශ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <insert>
+          <string>ෂ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert>
+          <string>ස</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <insert>
+          <string>හ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&lt;</string>
+        </keyseq>
+        <insert>
+          <string>ළ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>F</string>
+        </keyseq>
+        <insert>
+          <string>ෆ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <string>A-'</string>
+          </list>
+        </keyseq>
+        <insert>
+          <string>෴</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>J</string>
+        </keyseq>
+        <insert>
+          <string>ළු</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <string>S- </string>
+          </list>
+        </keyseq>
+        <insert>
+          <string> </string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <string>A- </string>
+          </list>
+        </keyseq>
+        <insert>
+          <string>‌</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>]</string>
+        </keyseq>
+        <insert>
+          <string>;</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>}</string>
+        </keyseq>
+        <insert>
+          <string>:</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>'</string>
+        </keyseq>
+        <insert>
+          <string>.</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>"</string>
+        </keyseq>
+        <insert>
+          <string>,</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z</string>
+        </keyseq>
+        <insert>
+          <string>'</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Z</string>
+        </keyseq>
+        <insert>
+          <string>"</string>
+        </insert>
       </rule>
     </map>
-    <map id="map-dependent">
-      <rule>
-        <keyseq keys="x"/>
-        <insert string="ං"/>
-      </rule>
+    <map mname="map-dependent">
       <rule>
         <keyseq>
-          <key-event>A-x</key-event>
+          <string>x</string>
         </keyseq>
-        <insert string="ඃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="a"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0D91</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ඒ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0D94</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ඕ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0DD9</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ේ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0DDC</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ෝ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="්"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0D85</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ආ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0DD9</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ො"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ා"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0D85</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ඇ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ැ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="E"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0D85</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ඈ"/>
-          </case>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-2"/>
-                <int-val>0x0DC5</int-val>
-              </expr>
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DD4</int-val>
-              </expr>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ූ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ෑ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="s"/>
-        <insert string="ි"/>
-      </rule>
-      <rule>
-        <keyseq keys="S"/>
-        <insert string="ී"/>
-      </rule>
-      <rule>
-        <keyseq keys="q"/>
-        <insert string="ු"/>
-      </rule>
-      <rule>
-        <keyseq keys="Q"/>
-        <insert string="ූ"/>
-      </rule>
-      <rule>
-        <keyseq keys="D"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0D8D</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ඎ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ෘ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="DD"/>
-        <insert string="ෲ"/>
-      </rule>
-      <rule>
-        <keyseq keys="A"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0D8B</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ඌ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0D8F</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ඐ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0D94</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ඖ"/>
-          </case>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0DD9</int-val>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="ෞ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ෟ"/>
-          </case>
-        </conditional>
+        <insert>
+          <string>ං</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-a</key-event>
+          <list>
+            <symbol>A-x</symbol>
+          </list>
         </keyseq>
-        <insert string="ෳ"/>
+        <insert>
+          <string>ඃ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="H"/>
-        <conditional>
-          <case>
-            <expr operator="|">
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DD9</int-val>
-              </expr>
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DDB</int-val>
-              </expr>
-            </expr>
-            <move-to-marker position="@previous"/>
-            <insert string="්‍ය"/>
-            <move-to-marker position="@last"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="්‍ය"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="`"/>
-        <conditional>
-          <case>
-            <expr operator="|">
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DD2</int-val>
-              </expr>
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DD3</int-val>
-              </expr>
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DD9</int-val>
-              </expr>
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DDB</int-val>
-              </expr>
-            </expr>
-            <move-to-marker position="@previous"/>
-            <insert string="්‍ර"/>
-            <move-to-marker position="@last"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="්‍ර"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="~"/>
-        <move-to-marker position="@first"/>
-        <insert string="ර්‍"/>
-        <move-to-marker position="@last"/>
-      </rule>
-    </map>
-    <map id="map-kombuva">
-      <rule>
-        <keyseq keys="f"/>
-        <insert string="ෙ"/>
-      </rule>
-    </map>
-    <map id="map-join">
-      <rule>
-        <keyseq keys="\"/>
-      </rule>
-    </map>
-    <map id="map-backspace">
       <rule>
         <keyseq>
-          <key-event>BackSpace</key-event>
+          <string>a</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0D91</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ඒ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0D94</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ඕ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0DD9</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ේ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0DDC</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ෝ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>්</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0D85</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ආ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0DD9</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ො</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ා</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0D85</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ඇ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ැ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0D85</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ඈ</string>
+            </insert>
+          </list>
+          <list>
+            <logand>
+              <eq>
+                <char-at>
+                  <marker>@-2</marker>
+                </char-at>
+                <integer>0x0DC5</integer>
+              </eq>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DD4</integer>
+              </eq>
+            </logand>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ූ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ෑ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+        <insert>
+          <string>ි</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>S</string>
+        </keyseq>
+        <insert>
+          <string>ී</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <insert>
+          <string>ු</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <insert>
+          <string>ූ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0D8D</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ඎ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ෘ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>DD</string>
+        </keyseq>
+        <insert>
+          <string>ෲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>A</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0D8B</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ඌ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0D8F</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ඐ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0D94</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ඖ</string>
+            </insert>
+          </list>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0DD9</integer>
+            </eq>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>ෞ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ෟ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-a</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <string>ෳ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <cond>
+          <list>
+            <logior>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DD9</integer>
+              </eq>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DDB</integer>
+              </eq>
+            </logior>
+            <move>
+              <marker>@-</marker>
+            </move>
+            <insert>
+              <string>්‍ය</string>
+            </insert>
+            <move>
+              <marker>@&gt;</marker>
+            </move>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>්‍ය</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>`</string>
+        </keyseq>
+        <cond>
+          <list>
+            <logior>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DD2</integer>
+              </eq>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DD3</integer>
+              </eq>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DD9</integer>
+              </eq>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DDB</integer>
+              </eq>
+            </logior>
+            <move>
+              <marker>@-</marker>
+            </move>
+            <insert>
+              <string>්‍ර</string>
+            </insert>
+            <move>
+              <marker>@&gt;</marker>
+            </move>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>්‍ර</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>~</string>
+        </keyseq>
+        <move>
+          <marker>@&lt;</marker>
+        </move>
+        <insert>
+          <string>ර්‍</string>
+        </insert>
+        <move>
+          <marker>@&gt;</marker>
+        </move>
+      </rule>
+    </map>
+    <map mname="map-kombuva">
+      <rule>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+        <insert>
+          <string>ෙ</string>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-join">
+      <rule>
+        <keyseq>
+          <string>\</string>
+        </keyseq>
+      </rule>
+    </map>
+    <map mname="map-backspace">
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>BackSpace</symbol>
+          </list>
         </keyseq>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init-state">
-      <branch branch-selecting-map="map-independent">
-        <shift-to id="state-independent-state"/>
+    <state sname="state-init-state">
+      <branch mname="map-independent">
+        <shift>
+          <symbol>state-independent-state</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-kombuva">
-        <shift-to id="state-kombuva-state"/>
+      <branch mname="map-kombuva">
+        <shift>
+          <symbol>state-kombuva-state</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-dependent"/>
+      <branch mname="map-dependent"/>
     </state>
-    <state id="state-independent-state">
-      <branch branch-selecting-map="map-dependent"/>
-      <branch branch-selecting-map="map-join">
-        <conditional>
-          <case>
-            <expr operator="|">
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DD9</int-val>
-              </expr>
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DDB</int-val>
-              </expr>
-            </expr>
-            <shift-to id="state-join-state"/>
-          </case>
-          <case>
-            <expr operator="|">
-              <expr operator="&lt;">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0D9A</int-val>
-              </expr>
-              <expr operator="&gt;">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0DC6</int-val>
-              </expr>
-            </expr>
-            <undo target-of-undo="-1"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <shift-to id="state-join-state"/>
-          </case>
-        </conditional>
+    <state sname="state-independent-state">
+      <branch mname="map-dependent"/>
+      <branch mname="map-join">
+        <cond>
+          <list>
+            <logior>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DD9</integer>
+              </eq>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DDB</integer>
+              </eq>
+            </logior>
+            <shift>
+              <symbol>state-join-state</symbol>
+            </shift>
+          </list>
+          <list>
+            <logior>
+              <lt>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0D9A</integer>
+              </lt>
+              <gt>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0DC6</integer>
+              </gt>
+            </logior>
+            <undo>
+              <integer>-1</integer>
+            </undo>
+          </list>
+          <list>
+            <integer>1</integer>
+            <shift>
+              <symbol>state-join-state</symbol>
+            </shift>
+          </list>
+        </cond>
       </branch>
-      <branch branch-selecting-map="map-backspace">
+      <branch mname="map-backspace">
         <undo/>
       </branch>
     </state>
-    <state id="state-join-state">
+    <state sname="state-join-state">
       <state-hook>
-        <mark-current-position markerID="p"/>
+        <mark>
+          <marker>p</marker>
+        </mark>
       </state-hook>
-      <branch branch-selecting-map="map-independent">
-        <move-to-marker markerID="p"/>
-        <set id="c">
-          <predefined-nth-previous-or-following-character position="-1"/>
+      <branch mname="map-independent">
+        <move>
+          <marker>p</marker>
+        </move>
+        <set vname="c">
+          <char-at>
+            <marker>@-1</marker>
+          </char-at>
         </set>
-        <conditional>
-          <case>
-            <expr operator="|">
-              <expr operator="=">
-                <variable-reference id="c"/>
-                <int-val>0x0DD9</int-val>
-              </expr>
-              <expr operator="=">
-                <variable-reference id="c"/>
-                <int-val>0x0DDB</int-val>
-              </expr>
-            </expr>
-            <delete-to-marker position="@previous"/>
-            <insert string="්‍"/>
-            <move-to-marker position="@last"/>
-            <insert character-or-string="variable">
-              <variable-reference id="c"/>
+        <cond>
+          <list>
+            <logior>
+              <eq>
+                <varref vname="c"/>
+                <integer>0x0DD9</integer>
+              </eq>
+              <eq>
+                <varref vname="c"/>
+                <integer>0x0DDB</integer>
+              </eq>
+            </logior>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <insert>
+              <string>්‍</string>
             </insert>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="්‍"/>
-            <move-to-marker position="@last"/>
-          </case>
-        </conditional>
-        <shift-to id="state-independent-state"/>
+            <move>
+              <marker>@&gt;</marker>
+            </move>
+            <insert>
+              <varref vname="c"/>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>්‍</string>
+            </insert>
+            <move>
+              <marker>@&gt;</marker>
+            </move>
+          </list>
+        </cond>
+        <shift>
+          <symbol>state-independent-state</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-backspace">
+      <branch mname="map-backspace">
         <undo/>
       </branch>
     </state>
-    <state id="state-kombuva-state">
+    <state sname="state-kombuva-state">
       <state-hook>
-        <mark-current-position markerID="p"/>
+        <mark>
+          <marker>p</marker>
+        </mark>
       </state-hook>
-      <branch branch-selecting-map="map-independent">
-        <conditional>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="=">
-                <variable-reference id="@0" type="predefined"/>
-                <int-val>0x0DD9</int-val>
-              </expr>
-              <expr operator="=">
-                <variable-reference id="@1" type="predefined"/>
-                <int-val>0x0D91</int-val>
-              </expr>
-            </expr>
-            <delete-to-marker position="@first"/>
-            <insert string="ඓ"/>
-            <shift-to id="state-independent-state"/>
-          </case>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="=">
-                <variable-reference id="@0" type="predefined"/>
-                <int-val>0x0DD9</int-val>
-              </expr>
-              <expr operator="&lt;">
-                <variable-reference id="@2" type="predefined"/>
-                <int-val>0</int-val>
-              </expr>
-            </expr>
-            <move-to-marker position="@0"/>
-            <delete-to-marker position="@next"/>
-            <move-to-marker position="@last"/>
-            <insert string="ෙ"/>
-            <shift-to id="state-independent-state"/>
-          </case>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="=">
-                <variable-reference id="@0" type="predefined"/>
-                <int-val>0x0DDB</int-val>
-              </expr>
-              <expr operator="&lt;">
-                <variable-reference id="@2" type="predefined"/>
-                <int-val>0</int-val>
-              </expr>
-            </expr>
-            <move-to-marker position="@0"/>
-            <delete-to-marker position="@next"/>
-            <move-to-marker position="@last"/>
-            <insert string="ෛ"/>
-            <shift-to id="state-independent-state"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <delete-to-marker markerID="p"/>
-            <pushback-n-events n="1"/>
-            <shift-to id="state-init-state"/>
-          </case>
-        </conditional>
+      <branch mname="map-independent">
+        <cond>
+          <list>
+            <logand>
+              <eq>
+                <char-at>
+                  <marker>@0</marker>
+                </char-at>
+                <integer>0x0DD9</integer>
+              </eq>
+              <eq>
+                <char-at>
+                  <marker>@1</marker>
+                </char-at>
+                <integer>0x0D91</integer>
+              </eq>
+            </logand>
+            <delete>
+              <marker>@&lt;</marker>
+            </delete>
+            <insert>
+              <string>ඓ</string>
+            </insert>
+            <shift>
+              <symbol>state-independent-state</symbol>
+            </shift>
+          </list>
+          <list>
+            <logand>
+              <eq>
+                <char-at>
+                  <marker>@0</marker>
+                </char-at>
+                <integer>0x0DD9</integer>
+              </eq>
+              <lt>
+                <char-at>
+                  <marker>@2</marker>
+                </char-at>
+                <integer>0</integer>
+              </lt>
+            </logand>
+            <move>
+              <marker>@0</marker>
+            </move>
+            <delete>
+              <marker>@+</marker>
+            </delete>
+            <move>
+              <marker>@&gt;</marker>
+            </move>
+            <insert>
+              <string>ෙ</string>
+            </insert>
+            <shift>
+              <symbol>state-independent-state</symbol>
+            </shift>
+          </list>
+          <list>
+            <logand>
+              <eq>
+                <char-at>
+                  <marker>@0</marker>
+                </char-at>
+                <integer>0x0DDB</integer>
+              </eq>
+              <lt>
+                <char-at>
+                  <marker>@2</marker>
+                </char-at>
+                <integer>0</integer>
+              </lt>
+            </logand>
+            <move>
+              <marker>@0</marker>
+            </move>
+            <delete>
+              <marker>@+</marker>
+            </delete>
+            <move>
+              <marker>@&gt;</marker>
+            </move>
+            <insert>
+              <string>ෛ</string>
+            </insert>
+            <shift>
+              <symbol>state-independent-state</symbol>
+            </shift>
+          </list>
+          <list>
+            <integer>1</integer>
+            <delete>
+              <marker>p</marker>
+            </delete>
+            <pushback>
+              <integer>1</integer>
+            </pushback>
+            <shift>
+              <symbol>state-init-state</symbol>
+            </shift>
+          </list>
+        </cond>
       </branch>
-      <branch branch-selecting-map="map-kombuva">
-        <mark-current-position markerID="p"/>
-        <conditional>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="=">
-                <variable-reference id="@0" type="predefined"/>
-                <int-val>0x0DD9</int-val>
-              </expr>
-              <expr operator="&lt;">
-                <variable-reference id="@2" type="predefined"/>
-                <int-val>0</int-val>
-              </expr>
-            </expr>
-            <delete-to-marker position="@first"/>
-            <insert string="ෛ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <delete-to-marker position="@previous"/>
-            <pushback-n-events n="1"/>
-            <shift-to id="state-init-state"/>
-          </case>
-        </conditional>
+      <branch mname="map-kombuva">
+        <mark>
+          <marker>p</marker>
+        </mark>
+        <cond>
+          <list>
+            <logand>
+              <eq>
+                <char-at>
+                  <marker>@0</marker>
+                </char-at>
+                <integer>0x0DD9</integer>
+              </eq>
+              <lt>
+                <char-at>
+                  <marker>@2</marker>
+                </char-at>
+                <integer>0</integer>
+              </lt>
+            </logand>
+            <delete>
+              <marker>@&lt;</marker>
+            </delete>
+            <insert>
+              <string>ෛ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <delete>
+              <marker>@-</marker>
+            </delete>
+            <pushback>
+              <integer>1</integer>
+            </pushback>
+            <shift>
+              <symbol>state-init-state</symbol>
+            </shift>
+          </list>
+        </cond>
       </branch>
-      <branch branch-selecting-map="map-dependent">
-        <mark-current-position markerID="p"/>
+      <branch mname="map-dependent">
+        <mark>
+          <marker>p</marker>
+        </mark>
       </branch>
-      <branch branch-selecting-map="map-backspace">
+      <branch mname="map-backspace">
         <undo/>
       </branch>
     </state>

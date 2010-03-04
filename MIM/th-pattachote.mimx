@@ -11,16 +11,23 @@ The correction algorithm follows the one shown in the following
 </description>
   <title>ท</title>
   <variable-list>
-    <variable id="level"><description>
-      <get-text>Acceptance level The level of character sequence acceptance defined in WTT 2.0. 0 accepts any key sequence.  2 accepts only orthographic ones. 1 is somewhere between.</get-text>
-    </description><value type="integer">1</value><variable-value-candidate>
-      <c-value type="integer">0</c-value>
-      <c-value type="integer">1</c-value>
-      <c-value type="integer">2</c-value>
-    </variable-value-candidate></variable>
+    <defvar vname="level">
+      <description>
+        <gettext>Acceptance level
+The level of character sequence acceptance defined in WTT 2.0.
+0 accepts any key sequence.  2 accepts only orthographic ones.
+1 is somewhere between.</gettext>
+      </description>
+      <integer>1</integer>
+      <possible-value>
+        <integer>0</integer>
+        <integer>1</integer>
+        <integer>2</integer>
+      </possible-value>
+    </defvar>
   </variable-list>
   <macro-list>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="th-kesmanee.mimx" xpointer="xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:macro)">
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="xml" href="th-kesmanee.mimx" xpointer="xmlns(mim=http://www.m17n.org/MIM)xpointer(//mim:defmacro)">
       <tags>
         <language>th</language>
         <name>kesmanee</name>
@@ -29,759 +36,1175 @@ The correction algorithm follows the one shown in the following
     </xi:include>
   </macro-list>
   <map-list>
-    <map id="map-map">
-      <rule>
-        <keyseq keys="!"/>
-        <insert string="+"/>
-      </rule>
-      <rule>
-        <keyseq keys="&quot;"/>
-        <insert string="ฑ"/>
-      </rule>
-      <rule>
-        <keyseq keys="#"/>
-        <insert string="/"/>
-      </rule>
-      <rule>
-        <keyseq keys="$"/>
-        <insert string=","/>
-      </rule>
-      <rule>
-        <keyseq keys="%"/>
-        <insert string="?"/>
-      </rule>
-      <rule>
-        <keyseq keys="&amp;"/>
-        <insert string="_"/>
-      </rule>
-      <rule>
-        <keyseq keys="&apos;"/>
-        <insert string="ข"/>
+    <map mname="map-map">
+      <rule>
+        <keyseq>
+          <string>!</string>
+        </keyseq>
+        <insert>
+          <string>+</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="("/>
-        <insert string="("/>
-      </rule>
-      <rule>
-        <keyseq keys=")"/>
-        <insert string=")"/>
-      </rule>
-      <rule>
-        <keyseq keys="*"/>
-        <insert string="."/>
-      </rule>
-      <rule>
-        <keyseq keys="+"/>
-        <insert string="%"/>
-      </rule>
-      <rule>
-        <keyseq keys=","/>
-        <insert string="ะ"/>
-      </rule>
-      <rule>
-        <keyseq keys="-"/>
-        <insert string="๑"/>
-      </rule>
-      <rule>
-        <keyseq keys="."/>
-        <insert string="จ"/>
+      <rule>
+        <keyseq>
+          <string>"</string>
+        </keyseq>
+        <insert>
+          <string>ฑ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="/"/>
-        <insert string="พ"/>
+      <rule>
+        <keyseq>
+          <string>#</string>
+        </keyseq>
+        <insert>
+          <string>/</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="0"/>
-        <insert string="๐"/>
+      <rule>
+        <keyseq>
+          <string>$</string>
+        </keyseq>
+        <insert>
+          <string>,</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="1"/>
-        <insert string="="/>
+      <rule>
+        <keyseq>
+          <string>%</string>
+        </keyseq>
+        <insert>
+          <string>?</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="2"/>
-        <insert string="๒"/>
+      <rule>
+        <keyseq>
+          <string>&amp;</string>
+        </keyseq>
+        <insert>
+          <string>_</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="3"/>
-        <insert string="๓"/>
+      <rule>
+        <keyseq>
+          <string>'</string>
+        </keyseq>
+        <insert>
+          <string>ข</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="4"/>
-        <insert string="๔"/>
+      <rule>
+        <keyseq>
+          <string>(</string>
+        </keyseq>
+        <insert>
+          <string>(</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="5"/>
-        <insert string="๕"/>
+      <rule>
+        <keyseq>
+          <string>)</string>
+        </keyseq>
+        <insert>
+          <string>)</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="6"/>
-        <insert string="ู"/>
+      <rule>
+        <keyseq>
+          <string>*</string>
+        </keyseq>
+        <insert>
+          <string>.</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="7"/>
-        <insert string="๗"/>
+      <rule>
+        <keyseq>
+          <string>+</string>
+        </keyseq>
+        <insert>
+          <string>%</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="8"/>
-        <insert string="๘"/>
+      <rule>
+        <keyseq>
+          <string>,</string>
+        </keyseq>
+        <insert>
+          <string>ะ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="9"/>
-        <insert string="๙"/>
+      <rule>
+        <keyseq>
+          <string>-</string>
+        </keyseq>
+        <insert>
+          <string>๑</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=":"/>
-        <insert string="ฆ"/>
+      <rule>
+        <keyseq>
+          <string>.</string>
+        </keyseq>
+        <insert>
+          <string>จ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";"/>
-        <insert string="ไ"/>
+      <rule>
+        <keyseq>
+          <string>/</string>
+        </keyseq>
+        <insert>
+          <string>พ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="&lt;"/>
-        <insert string="ฟ"/>
+      <rule>
+        <keyseq>
+          <string>0</string>
+        </keyseq>
+        <insert>
+          <string>๐</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="="/>
-        <insert string="๖"/>
+      <rule>
+        <keyseq>
+          <string>1</string>
+        </keyseq>
+        <insert>
+          <string>=</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="&gt;"/>
-        <insert string="ฉ"/>
+      <rule>
+        <keyseq>
+          <string>2</string>
+        </keyseq>
+        <insert>
+          <string>๒</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="?"/>
-        <insert string="ฬ"/>
+      <rule>
+        <keyseq>
+          <string>3</string>
+        </keyseq>
+        <insert>
+          <string>๓</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="@"/>
-        <insert string="&quot;"/>
+      <rule>
+        <keyseq>
+          <string>4</string>
+        </keyseq>
+        <insert>
+          <string>๔</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="A"/>
-        <insert string="๋"/>
+      <rule>
+        <keyseq>
+          <string>5</string>
+        </keyseq>
+        <insert>
+          <string>๕</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="B"/>
-        <insert string="ฺ"/>
+      <rule>
+        <keyseq>
+          <string>6</string>
+        </keyseq>
+        <insert>
+          <string>ู</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="C"/>
-        <insert string="ฐ"/>
+      <rule>
+        <keyseq>
+          <string>7</string>
+        </keyseq>
+        <insert>
+          <string>๗</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="D"/>
-        <insert string="ำ"/>
+      <rule>
+        <keyseq>
+          <string>8</string>
+        </keyseq>
+        <insert>
+          <string>๘</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="E"/>
-        <insert string="ๆ"/>
+      <rule>
+        <keyseq>
+          <string>9</string>
+        </keyseq>
+        <insert>
+          <string>๙</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="F"/>
-        <insert string="ณ"/>
+      <rule>
+        <keyseq>
+          <string>:</string>
+        </keyseq>
+        <insert>
+          <string>ฆ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="G"/>
-        <insert string="์"/>
+      <rule>
+        <keyseq>
+          <string>;</string>
+        </keyseq>
+        <insert>
+          <string>ไ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="H"/>
-        <insert string="ื"/>
+      <rule>
+        <keyseq>
+          <string>&lt;</string>
+        </keyseq>
+        <insert>
+          <string>ฟ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="I"/>
-        <insert string="ซ"/>
+      <rule>
+        <keyseq>
+          <string>=</string>
+        </keyseq>
+        <insert>
+          <string>๖</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="J"/>
-        <insert string="ผ"/>
+      <rule>
+        <keyseq>
+          <string>&gt;</string>
+        </keyseq>
+        <insert>
+          <string>ฉ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="K"/>
-        <insert string="ช"/>
+      <rule>
+        <keyseq>
+          <string>?</string>
+        </keyseq>
+        <insert>
+          <string>ฬ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="L"/>
-        <insert string="โ"/>
+      <rule>
+        <keyseq>
+          <string>@</string>
+        </keyseq>
+        <insert>
+          <string>"</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="M"/>
-        <insert string="ฮ"/>
+      <rule>
+        <keyseq>
+          <string>A</string>
+        </keyseq>
+        <insert>
+          <string>๋</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="N"/>
-        <insert string="ศ"/>
+      <rule>
+        <keyseq>
+          <string>B</string>
+        </keyseq>
+        <insert>
+          <string>ฺ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="O"/>
-        <insert string="ถ"/>
+      <rule>
+        <keyseq>
+          <string>C</string>
+        </keyseq>
+        <insert>
+          <string>ฐ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="P"/>
-        <insert string="ฒ"/>
+      <rule>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <insert>
+          <string>ำ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="Q"/>
-        <insert string="๊"/>
+      <rule>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <insert>
+          <string>ๆ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="R"/>
-        <insert string="ญ"/>
+      <rule>
+        <keyseq>
+          <string>F</string>
+        </keyseq>
+        <insert>
+          <string>ณ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="S"/>
-        <insert string="ธ"/>
+      <rule>
+        <keyseq>
+          <string>G</string>
+        </keyseq>
+        <insert>
+          <string>์</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="T"/>
-        <insert string="ษ"/>
+      <rule>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <insert>
+          <string>ื</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="U"/>
-        <insert string="ฝ"/>
+      <rule>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <insert>
+          <string>ซ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="V"/>
-        <insert string="ภ"/>
+      <rule>
+        <keyseq>
+          <string>J</string>
+        </keyseq>
+        <insert>
+          <string>ผ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="W"/>
-        <insert string="ฤ"/>
+      <rule>
+        <keyseq>
+          <string>K</string>
+        </keyseq>
+        <insert>
+          <string>ช</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="X"/>
-        <insert string="ฏ"/>
+      <rule>
+        <keyseq>
+          <string>L</string>
+        </keyseq>
+        <insert>
+          <string>โ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="Y"/>
-        <insert string="ึ"/>
+      <rule>
+        <keyseq>
+          <string>M</string>
+        </keyseq>
+        <insert>
+          <string>ฮ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="Z"/>
-        <insert string="ฎ"/>
+      <rule>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+        <insert>
+          <string>ศ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="["/>
-        <insert string="ใ"/>
+      <rule>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+        <insert>
+          <string>ถ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="\"/>
-        <insert string="ๅ"/>
+      <rule>
+        <keyseq>
+          <string>P</string>
+        </keyseq>
+        <insert>
+          <string>ฒ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="]"/>
-        <insert string="ฌ"/>
+      <rule>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <insert>
+          <string>๊</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="^"/>
-        <insert string="ุ"/>
+      <rule>
+        <keyseq>
+          <string>R</string>
+        </keyseq>
+        <insert>
+          <string>ญ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="_"/>
-        <insert string="-"/>
+      <rule>
+        <keyseq>
+          <string>S</string>
+        </keyseq>
+        <insert>
+          <string>ธ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="`"/>
-        <insert string="_"/>
+      <rule>
+        <keyseq>
+          <string>T</string>
+        </keyseq>
+        <insert>
+          <string>ษ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="a"/>
-        <insert string="้"/>
+      <rule>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert>
+          <string>ฝ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="b"/>
-        <insert string="ิ"/>
+      <rule>
+        <keyseq>
+          <string>V</string>
+        </keyseq>
+        <insert>
+          <string>ภ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="c"/>
-        <insert string="ล"/>
+      <rule>
+        <keyseq>
+          <string>W</string>
+        </keyseq>
+        <insert>
+          <string>ฤ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <insert string="ง"/>
+      <rule>
+        <keyseq>
+          <string>X</string>
+        </keyseq>
+        <insert>
+          <string>ฏ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <insert string="ย"/>
+      <rule>
+        <keyseq>
+          <string>Y</string>
+        </keyseq>
+        <insert>
+          <string>ึ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="f"/>
-        <insert string="ก"/>
+      <rule>
+        <keyseq>
+          <string>Z</string>
+        </keyseq>
+        <insert>
+          <string>ฎ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="g"/>
-        <insert string="ั"/>
+      <rule>
+        <keyseq>
+          <string>[</string>
+        </keyseq>
+        <insert>
+          <string>ใ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="h"/>
-        <insert string="ี"/>
+      <rule>
+        <keyseq>
+          <string>\</string>
+        </keyseq>
+        <insert>
+          <string>ๅ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="i"/>
-        <insert string="ม"/>
+      <rule>
+        <keyseq>
+          <string>]</string>
+        </keyseq>
+        <insert>
+          <string>ฌ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="j"/>
-        <insert string="า"/>
+      <rule>
+        <keyseq>
+          <string>^</string>
+        </keyseq>
+        <insert>
+          <string>ุ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="k"/>
-        <insert string="น"/>
+      <rule>
+        <keyseq>
+          <string>_</string>
+        </keyseq>
+        <insert>
+          <string>-</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="l"/>
-        <insert string="เ"/>
+      <rule>
+        <keyseq>
+          <string>`</string>
+        </keyseq>
+        <insert>
+          <string>_</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="m"/>
-        <insert string="ส"/>
+      <rule>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+        <insert>
+          <string>้</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="n"/>
-        <insert string="ค"/>
+      <rule>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <insert>
+          <string>ิ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="o"/>
-        <insert string="ว"/>
+      <rule>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <insert>
+          <string>ล</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="p"/>
-        <insert string="แ"/>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <insert>
+          <string>ง</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="q"/>
-        <insert string="็"/>
+      <rule>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <insert>
+          <string>ย</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="r"/>
-        <insert string="อ"/>
+      <rule>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+        <insert>
+          <string>ก</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="s"/>
-        <insert string="ท"/>
+      <rule>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <string>ั</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="t"/>
-        <insert string="ร"/>
+      <rule>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <insert>
+          <string>ี</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="u"/>
-        <insert string="ด"/>
+      <rule>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert>
+          <string>ม</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="v"/>
-        <insert string="ห"/>
+      <rule>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+        <insert>
+          <string>า</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="w"/>
-        <insert string="ต"/>
+      <rule>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <string>น</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="x"/>
-        <insert string="ป"/>
+      <rule>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+        <insert>
+          <string>เ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="y"/>
-        <insert string="่"/>
+      <rule>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <string>ส</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="z"/>
-        <insert string="บ"/>
+      <rule>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <string>ค</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="{"/>
-        <insert string="ฯ"/>
+      <rule>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <string>ว</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="|"/>
-        <insert string="ํ"/>
+      <rule>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+        <insert>
+          <string>แ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="}"/>
-        <insert string="ฦ"/>
+      <rule>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <insert>
+          <string>็</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="~"/>
-        <insert string="฿"/>
+      <rule>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+        <insert>
+          <string>อ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+        <insert>
+          <string>ท</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>t</string>
+        </keyseq>
+        <insert>
+          <string>ร</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <string>ด</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert>
+          <string>ห</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+        <insert>
+          <string>ต</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>x</string>
+        </keyseq>
+        <insert>
+          <string>ป</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <insert>
+          <string>่</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z</string>
+        </keyseq>
+        <insert>
+          <string>บ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>{</string>
+        </keyseq>
+        <insert>
+          <string>ฯ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>|</string>
+        </keyseq>
+        <insert>
+          <string>ํ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>}</string>
+        </keyseq>
+        <insert>
+          <string>ฦ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>~</string>
+        </keyseq>
+        <insert>
+          <string>฿</string>
+        </insert>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <branch branch-selecting-map="map-map">
-        <delete-to-marker position="@first"/>
-        <pushback-n-events n="1"/>
-        <shift-to id="state-main"/>
+    <state sname="state-init">
+      <branch mname="map-map">
+        <delete>
+          <marker>@&lt;</marker>
+        </delete>
+        <pushback>
+          <integer>1</integer>
+        </pushback>
+        <shift>
+          <symbol>state-main</symbol>
+        </shift>
       </branch>
     </state>
-    <state id="state-main">
-      <branch branch-selecting-map="map-map">
-        <set id="x">
-          <predefined-nth-previous-or-following-character position="-3"/>
+    <state sname="state-main">
+      <branch mname="map-map">
+        <set vname="x">
+          <char-at>
+            <marker>@-3</marker>
+          </char-at>
         </set>
-        <set id="y">
-          <predefined-nth-previous-or-following-character position="-2"/>
+        <set vname="y">
+          <char-at>
+            <marker>@-2</marker>
+          </char-at>
         </set>
-        <set id="z">
-          <predefined-nth-previous-or-following-character position="-1"/>
+        <set vname="z">
+          <char-at>
+            <marker>@-1</marker>
+          </char-at>
         </set>
-        <set id="arg1">
-          <variable-reference id="y"/>
+        <set vname="arg1">
+          <varref vname="y"/>
         </set>
-        <set id="arg2">
-          <variable-reference id="z"/>
+        <set vname="arg2">
+          <varref vname="z"/>
         </set>
-        <macro-reference id="macro-cp"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <variable-reference id="ret"/>
-              <int-val>1</int-val>
-            </expr>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <macro-reference id="macro-ac"/>
-            <conditional>
-              <case>
-                <expr operator="=">
-                  <variable-reference id="ret"/>
-                  <int-val>1</int-val>
-                </expr>
-              </case>
-              <case>
-                <int-val>1</int-val>
-                <set id="arg1">
-                  <variable-reference id="x"/>
+        <funcall fname="macro-cp"/>
+        <cond>
+          <list>
+            <eq>
+              <varref vname="ret"/>
+              <integer>1</integer>
+            </eq>
+          </list>
+          <list>
+            <integer>1</integer>
+            <funcall fname="macro-ac"/>
+            <cond>
+              <list>
+                <eq>
+                  <varref vname="ret"/>
+                  <integer>1</integer>
+                </eq>
+              </list>
+              <list>
+                <integer>1</integer>
+                <set vname="arg1">
+                  <varref vname="x"/>
                 </set>
-                <set id="arg2">
-                  <variable-reference id="z"/>
+                <set vname="arg2">
+                  <varref vname="z"/>
                 </set>
-                <macro-reference id="macro-cp"/>
-                <conditional>
-                  <case>
-                    <expr operator="=">
-                      <variable-reference id="ret"/>
-                      <int-val>1</int-val>
-                    </expr>
-                    <set id="arg1">
-                      <variable-reference id="z"/>
+                <funcall fname="macro-cp"/>
+                <cond>
+                  <list>
+                    <eq>
+                      <varref vname="ret"/>
+                      <integer>1</integer>
+                    </eq>
+                    <set vname="arg1">
+                      <varref vname="z"/>
                     </set>
-                    <set id="arg2">
-                      <variable-reference id="y"/>
+                    <set vname="arg2">
+                      <varref vname="y"/>
                     </set>
-                    <macro-reference id="macro-cp"/>
-                    <conditional>
-                      <case>
-                        <expr operator="=">
-                          <variable-reference id="ret"/>
-                          <int-val>1</int-val>
-                        </expr>
-                        <delete-n-characters n="-2"/>
-                        <insert character-or-string="variable">
-                          <variable-reference id="z"/>
+                    <funcall fname="macro-cp"/>
+                    <cond>
+                      <list>
+                        <eq>
+                          <varref vname="ret"/>
+                          <integer>1</integer>
+                        </eq>
+                        <delete>
+                          <marker>@-2</marker>
+                        </delete>
+                        <insert>
+                          <varref vname="z"/>
                         </insert>
-                        <insert character-or-string="variable">
-                          <variable-reference id="y"/>
+                        <insert>
+                          <varref vname="y"/>
                         </insert>
-                      </case>
-                      <case>
-                        <int-val>1</int-val>
-                        <set id="arg1">
-                          <variable-reference id="x"/>
+                      </list>
+                      <list>
+                        <integer>1</integer>
+                        <set vname="arg1">
+                          <varref vname="x"/>
                         </set>
-                        <set id="arg2">
-                          <variable-reference id="y"/>
+                        <set vname="arg2">
+                          <varref vname="y"/>
                         </set>
-                        <macro-reference id="macro-cp"/>
-                        <conditional>
-                          <case>
-                            <expr operator="=">
-                              <variable-reference id="ret"/>
-                              <int-val>1</int-val>
-                            </expr>
-                            <delete-n-characters n="-2"/>
-                            <insert character-or-string="variable">
-                              <variable-reference id="z"/>
+                        <funcall fname="macro-cp"/>
+                        <cond>
+                          <list>
+                            <eq>
+                              <varref vname="ret"/>
+                              <integer>1</integer>
+                            </eq>
+                            <delete>
+                              <marker>@-2</marker>
+                            </delete>
+                            <insert>
+                              <varref vname="z"/>
                             </insert>
-                          </case>
-                          <case>
-                            <expr operator="&amp;">
-                              <expr operator="|">
-                                <expr operator="=">
-                                  <variable-reference id="y"/>
-                                  <int-val>0x0E30</int-val>
-                                </expr>
-                                <expr operator="=">
-                                  <variable-reference id="y"/>
-                                  <int-val>0x0E32</int-val>
-                                </expr>
-                                <expr operator="=">
-                                  <variable-reference id="y"/>
-                                  <int-val>0x0E33</int-val>
-                                </expr>
-                              </expr>
-                              <expr operator="&gt;=">
-                                <variable-reference id="z"/>
-                                <int-val>0x0E48</int-val>
-                              </expr>
-                              <expr operator="&lt;=">
-                                <variable-reference id="z"/>
-                                <int-val>0x0E4B</int-val>
-                              </expr>
-                            </expr>
-                            <delete-n-characters n="-2"/>
-                            <insert character-or-string="variable">
-                              <variable-reference id="z"/>
+                          </list>
+                          <list>
+                            <logand>
+                              <logior>
+                                <eq>
+                                  <varref vname="y"/>
+                                  <integer>0x0E30</integer>
+                                </eq>
+                                <eq>
+                                  <varref vname="y"/>
+                                  <integer>0x0E32</integer>
+                                </eq>
+                                <eq>
+                                  <varref vname="y"/>
+                                  <integer>0x0E33</integer>
+                                </eq>
+                              </logior>
+                              <ge>
+                                <varref vname="z"/>
+                                <integer>0x0E48</integer>
+                              </ge>
+                              <le>
+                                <varref vname="z"/>
+                                <integer>0x0E4B</integer>
+                              </le>
+                            </logand>
+                            <delete>
+                              <marker>@-2</marker>
+                            </delete>
+                            <insert>
+                              <varref vname="z"/>
                             </insert>
-                            <insert character-or-string="variable">
-                              <variable-reference id="y"/>
+                            <insert>
+                              <varref vname="y"/>
                             </insert>
-                          </case>
-                          <case>
-                            <int-val>1</int-val>
-                            <delete-n-characters n="-1"/>
-                          </case>
-                        </conditional>
-                      </case>
-                    </conditional>
-                  </case>
-                  <case>
-                    <int-val>1</int-val>
-                    <set id="arg1">
-                      <variable-reference id="x"/>
+                          </list>
+                          <list>
+                            <integer>1</integer>
+                            <delete>
+                              <marker>@-1</marker>
+                            </delete>
+                          </list>
+                        </cond>
+                      </list>
+                    </cond>
+                  </list>
+                  <list>
+                    <integer>1</integer>
+                    <set vname="arg1">
+                      <varref vname="x"/>
                     </set>
-                    <set id="arg2">
-                      <variable-reference id="z"/>
+                    <set vname="arg2">
+                      <varref vname="z"/>
                     </set>
-                    <macro-reference id="macro-ac"/>
-                    <conditional>
-                      <case>
-                        <expr operator="&amp;">
-                          <expr operator="=">
-                            <variable-reference id="ret"/>
-                            <int-val>1</int-val>
-                          </expr>
-                          <expr operator="&amp;">
-                            <expr operator="&gt;=">
-                              <variable-reference id="y"/>
-                              <int-val>0x0E01</int-val>
-                            </expr>
-                            <expr operator="&lt;=">
-                              <variable-reference id="y"/>
-                              <int-val>0x0E5B</int-val>
-                            </expr>
-                          </expr>
-                          <expr operator="&amp;">
-                            <expr operator="&gt;=">
-                              <variable-reference id="z"/>
-                              <int-val>0x0E01</int-val>
-                            </expr>
-                            <expr operator="&lt;=">
-                              <variable-reference id="z"/>
-                              <int-val>0x0E5B</int-val>
-                            </expr>
-                          </expr>
-                        </expr>
-                        <delete-n-characters n="-2"/>
-                        <insert character-or-string="variable">
-                          <variable-reference id="z"/>
+                    <funcall fname="macro-ac"/>
+                    <cond>
+                      <list>
+                        <logand>
+                          <eq>
+                            <varref vname="ret"/>
+                            <integer>1</integer>
+                          </eq>
+                          <logand>
+                            <ge>
+                              <varref vname="y"/>
+                              <integer>0x0E01</integer>
+                            </ge>
+                            <le>
+                              <varref vname="y"/>
+                              <integer>0x0E5B</integer>
+                            </le>
+                          </logand>
+                          <logand>
+                            <ge>
+                              <varref vname="z"/>
+                              <integer>0x0E01</integer>
+                            </ge>
+                            <le>
+                              <varref vname="z"/>
+                              <integer>0x0E5B</integer>
+                            </le>
+                          </logand>
+                        </logand>
+                        <delete>
+                          <marker>@-2</marker>
+                        </delete>
+                        <insert>
+                          <varref vname="z"/>
                         </insert>
-                      </case>
-                      <case>
-                        <int-val>1</int-val>
-                        <delete-n-characters n="-1"/>
-                      </case>
-                    </conditional>
-                  </case>
-                </conditional>
-              </case>
-            </conditional>
-          </case>
-        </conditional>
-        <set id="w">
-          <predefined-nth-previous-or-following-character position="-1"/>
+                      </list>
+                      <list>
+                        <integer>1</integer>
+                        <delete>
+                          <marker>@-1</marker>
+                        </delete>
+                      </list>
+                    </cond>
+                  </list>
+                </cond>
+              </list>
+            </cond>
+          </list>
+        </cond>
+        <set vname="w">
+          <char-at>
+            <marker>@-1</marker>
+          </char-at>
         </set>
-        <conditional>
-          <case>
-            <expr operator="&gt;">
-              <variable-reference type="predefined" id="predefined-surround-text-flag"/>
-              <int-val>-2</int-val>
-            </expr>
+        <cond>
+          <list>
+            <gt>
+              <surrounding-text-flag/>
+              <integer>-2</integer>
+            </gt>
             <commit/>
-          </case>
-          <case>
-            <expr operator="|">
-              <expr operator="&amp;">
-                <expr operator="&gt;=">
-                  <variable-reference id="w"/>
-                  <int-val>0x0000</int-val>
-                </expr>
-                <expr operator="&lt;=">
-                  <variable-reference id="w"/>
-                  <int-val>0x0E00</int-val>
-                </expr>
-              </expr>
-              <expr operator="=">
-                <variable-reference id="w"/>
-                <int-val>0x0E2F</int-val>
-              </expr>
-              <expr operator="=">
-                <variable-reference id="w"/>
-                <int-val>0x0E3F</int-val>
-              </expr>
-              <expr operator="=">
-                <variable-reference id="w"/>
-                <int-val>0x0E46</int-val>
-              </expr>
-              <expr operator="&gt;=">
-                <variable-reference id="w"/>
-                <int-val>0x0E4F</int-val>
-              </expr>
-            </expr>
+          </list>
+          <list>
+            <logior>
+              <logand>
+                <ge>
+                  <varref vname="w"/>
+                  <integer>0x0000</integer>
+                </ge>
+                <le>
+                  <varref vname="w"/>
+                  <integer>0x0E00</integer>
+                </le>
+              </logand>
+              <eq>
+                <varref vname="w"/>
+                <integer>0x0E2F</integer>
+              </eq>
+              <eq>
+                <varref vname="w"/>
+                <integer>0x0E3F</integer>
+              </eq>
+              <eq>
+                <varref vname="w"/>
+                <integer>0x0E46</integer>
+              </eq>
+              <ge>
+                <varref vname="w"/>
+                <integer>0x0E4F</integer>
+              </ge>
+            </logior>
             <commit/>
-          </case>
-          <case>
-            <expr operator="|">
-              <expr operator="&amp;">
-                <expr operator="&gt;=">
-                  <variable-reference id="w"/>
-                  <int-val>0x0E01</int-val>
-                </expr>
-                <expr operator="&lt;=">
-                  <variable-reference id="w"/>
-                  <int-val>0x0E23</int-val>
-                </expr>
-              </expr>
-              <expr operator="=">
-                <variable-reference id="w"/>
-                <int-val>0x0E25</int-val>
-              </expr>
-              <expr operator="&amp;">
-                <expr operator="&gt;=">
-                  <variable-reference id="w"/>
-                  <int-val>0x0E27</int-val>
-                </expr>
-                <expr operator="&lt;=">
-                  <variable-reference id="w"/>
-                  <int-val>0x0E2E</int-val>
-                </expr>
-              </expr>
-            </expr>
-            <conditional>
-              <case>
-                <expr operator="|">
-                  <expr operator="=">
-                    <predefined-nth-previous-or-following-character position="-2"/>
-                    <int-val>0x0E24</int-val>
-                  </expr>
-                  <expr operator="=">
-                    <predefined-nth-previous-or-following-character position="-2"/>
-                    <int-val>0x0E26</int-val>
-                  </expr>
-                </expr>
-              </case>
-              <case>
-                <int-val>1</int-val>
-                <delete-n-characters n="-1"/>
+          </list>
+          <list>
+            <logior>
+              <logand>
+                <ge>
+                  <varref vname="w"/>
+                  <integer>0x0E01</integer>
+                </ge>
+                <le>
+                  <varref vname="w"/>
+                  <integer>0x0E23</integer>
+                </le>
+              </logand>
+              <eq>
+                <varref vname="w"/>
+                <integer>0x0E25</integer>
+              </eq>
+              <logand>
+                <ge>
+                  <varref vname="w"/>
+                  <integer>0x0E27</integer>
+                </ge>
+                <le>
+                  <varref vname="w"/>
+                  <integer>0x0E2E</integer>
+                </le>
+              </logand>
+            </logior>
+            <cond>
+              <list>
+                <logior>
+                  <eq>
+                    <char-at>
+                      <marker>@-2</marker>
+                    </char-at>
+                    <integer>0x0E24</integer>
+                  </eq>
+                  <eq>
+                    <char-at>
+                      <marker>@-2</marker>
+                    </char-at>
+                    <integer>0x0E26</integer>
+                  </eq>
+                </logior>
+              </list>
+              <list>
+                <integer>1</integer>
+                <delete>
+                  <marker>@-1</marker>
+                </delete>
                 <commit/>
-                <insert character-or-string="variable">
-                  <variable-reference id="w"/>
+                <insert>
+                  <varref vname="w"/>
                 </insert>
-              </case>
-            </conditional>
-          </case>
-          <case>
-            <expr operator="|">
-              <expr operator="&amp;">
-                <expr operator="&gt;=">
-                  <variable-reference id="w"/>
-                  <int-val>0x0E40</int-val>
-                </expr>
-                <expr operator="&lt;=">
-                  <variable-reference id="w"/>
-                  <int-val>0x0E45</int-val>
-                </expr>
-              </expr>
-              <expr operator="=">
-                <variable-reference id="w"/>
-                <int-val>0x0E24</int-val>
-              </expr>
-              <expr operator="=">
-                <variable-reference id="w"/>
-                <int-val>0x0E26</int-val>
-              </expr>
-            </expr>
-            <delete-n-characters n="-1"/>
+              </list>
+            </cond>
+          </list>
+          <list>
+            <logior>
+              <logand>
+                <ge>
+                  <varref vname="w"/>
+                  <integer>0x0E40</integer>
+                </ge>
+                <le>
+                  <varref vname="w"/>
+                  <integer>0x0E45</integer>
+                </le>
+              </logand>
+              <eq>
+                <varref vname="w"/>
+                <integer>0x0E24</integer>
+              </eq>
+              <eq>
+                <varref vname="w"/>
+                <integer>0x0E26</integer>
+              </eq>
+            </logior>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
             <commit/>
-            <insert character-or-string="variable">
-              <variable-reference id="w"/>
+            <insert>
+              <varref vname="w"/>
             </insert>
-          </case>
-          <case>
-            <expr operator="|">
-              <expr operator="=">
-                <variable-reference id="w"/>
-                <int-val>0x0E30</int-val>
-              </expr>
-              <expr operator="=">
-                <variable-reference id="w"/>
-                <int-val>0x0E32</int-val>
-              </expr>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <set id="v">
-              <predefined-nth-previous-or-following-character position="-1"/>
+          </list>
+          <list>
+            <logior>
+              <eq>
+                <varref vname="w"/>
+                <integer>0x0E30</integer>
+              </eq>
+              <eq>
+                <varref vname="w"/>
+                <integer>0x0E32</integer>
+              </eq>
+            </logior>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <set vname="v">
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
             </set>
-            <conditional>
-              <case>
-                <expr operator="|">
-                  <expr operator="&amp;">
-                    <expr operator="&gt;=">
-                      <variable-reference id="v"/>
-                      <int-val>0x0E01</int-val>
-                    </expr>
-                    <expr operator="&lt;=">
-                      <variable-reference id="v"/>
-                      <int-val>0x0E23</int-val>
-                    </expr>
-                  </expr>
-                  <expr operator="=">
-                    <variable-reference id="v"/>
-                    <int-val>0x0E25</int-val>
-                  </expr>
-                  <expr operator="&amp;">
-                    <expr operator="&gt;=">
-                      <variable-reference id="v"/>
-                      <int-val>0x0E27</int-val>
-                    </expr>
-                    <expr operator="&lt;=">
-                      <variable-reference id="v"/>
-                      <int-val>0x0E2E</int-val>
-                    </expr>
-                  </expr>
-                </expr>
-                <delete-n-characters n="-1"/>
+            <cond>
+              <list>
+                <logior>
+                  <logand>
+                    <ge>
+                      <varref vname="v"/>
+                      <integer>0x0E01</integer>
+                    </ge>
+                    <le>
+                      <varref vname="v"/>
+                      <integer>0x0E23</integer>
+                    </le>
+                  </logand>
+                  <eq>
+                    <varref vname="v"/>
+                    <integer>0x0E25</integer>
+                  </eq>
+                  <logand>
+                    <ge>
+                      <varref vname="v"/>
+                      <integer>0x0E27</integer>
+                    </ge>
+                    <le>
+                      <varref vname="v"/>
+                      <integer>0x0E2E</integer>
+                    </le>
+                  </logand>
+                </logior>
+                <delete>
+                  <marker>@-1</marker>
+                </delete>
                 <commit/>
-                <insert character-or-string="variable">
-                  <variable-reference id="v"/>
+                <insert>
+                  <varref vname="v"/>
                 </insert>
-                <insert character-or-string="variable">
-                  <variable-reference id="w"/>
+                <insert>
+                  <varref vname="w"/>
                 </insert>
-              </case>
-              <case>
-                <int-val>1</int-val>
+              </list>
+              <list>
+                <integer>1</integer>
                 <commit/>
-                <insert character-or-string="variable">
-                  <variable-reference id="w"/>
+                <insert>
+                  <varref vname="w"/>
                 </insert>
-              </case>
-            </conditional>
-          </case>
-        </conditional>
+              </list>
+            </cond>
+          </list>
+        </cond>
       </branch>
     </state>
   </state-list>

@@ -11,268 +11,512 @@ Communication, Science and Technology.
 </description>
   <title>dv-ph</title>
   <map-list>
-    <map id="map-generic">
+    <map mname="map-generic">
       <rule>
-        <keyseq keys="q"/>
-        <insert character="1968"/>
-      </rule>
-      <rule>
-        <keyseq keys="w"/>
-        <insert character="1927"/>
-      </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <insert character="1964"/>
-      </rule>
-      <rule>
-        <keyseq keys="r"/>
-        <insert character="1923"/>
-      </rule>
-      <rule>
-        <keyseq keys="t"/>
-        <insert character="1932"/>
-      </rule>
-      <rule>
-        <keyseq keys="y"/>
-        <insert character="1940"/>
-      </rule>
-      <rule>
-        <keyseq keys="u"/>
-        <insert character="1962"/>
-      </rule>
-      <rule>
-        <keyseq keys="i"/>
-        <insert character="1960"/>
-      </rule>
-      <rule>
-        <keyseq keys="o"/>
-        <insert character="1966"/>
-      </rule>
-      <rule>
-        <keyseq keys="p"/>
-        <insert character="1941"/>
-      </rule>
-      <rule>
-        <keyseq keys="a"/>
-        <insert character="1958"/>
-      </rule>
-      <rule>
-        <keyseq keys="s"/>
-        <insert character="1936"/>
-      </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <insert character="1931"/>
-      </rule>
-      <rule>
-        <keyseq keys="f"/>
-        <insert character="1930"/>
-      </rule>
-      <rule>
-        <keyseq keys="g"/>
-        <insert character="1934"/>
-      </rule>
-      <rule>
-        <keyseq keys="h"/>
-        <insert character="1920"/>
-      </rule>
-      <rule>
-        <keyseq keys="j"/>
-        <insert character="1942"/>
-      </rule>
-      <rule>
-        <keyseq keys="k"/>
-        <insert character="1926"/>
-      </rule>
-      <rule>
-        <keyseq keys="l"/>
-        <insert character="1933"/>
-      </rule>
-      <rule>
-        <keyseq keys=";"/>
-        <insert character="1563"/>
-      </rule>
-      <rule>
-        <keyseq keys="z"/>
-        <insert character="1938"/>
-      </rule>
-      <rule>
-        <keyseq keys="x"/>
-        <insert character="215"/>
-      </rule>
-      <rule>
-        <keyseq keys="c"/>
-        <insert character="1943"/>
-      </rule>
-      <rule>
-        <keyseq keys="v"/>
-        <insert character="1928"/>
-      </rule>
-      <rule>
-        <keyseq keys="b"/>
-        <insert character="1924"/>
-      </rule>
-      <rule>
-        <keyseq keys="n"/>
-        <insert character="1922"/>
-      </rule>
-      <rule>
-        <keyseq keys="m"/>
-        <insert character="1929"/>
-      </rule>
-      <rule>
-        <keyseq keys=","/>
-        <insert character="1548"/>
-      </rule>
-      <rule>
-        <keyseq keys="Q"/>
-        <insert character="1956"/>
-      </rule>
-      <rule>
-        <keyseq keys="W"/>
-        <insert character="1954"/>
-      </rule>
-      <rule>
-        <keyseq keys="E"/>
-        <insert character="1965"/>
-      </rule>
-      <rule>
-        <keyseq keys="R"/>
-        <insert character="1948"/>
-      </rule>
-      <rule>
-        <keyseq keys="T"/>
-        <insert character="1939"/>
-      </rule>
-      <rule>
-        <keyseq keys="Y"/>
-        <insert character="1952"/>
-      </rule>
-      <rule>
-        <keyseq keys="U"/>
-        <insert character="1963"/>
-      </rule>
-      <rule>
-        <keyseq keys="I"/>
-        <insert character="1961"/>
-      </rule>
-      <rule>
-        <keyseq keys="O"/>
-        <insert character="1967"/>
-      </rule>
-      <rule>
-        <keyseq keys="P"/>
-        <insert character="247"/>
-      </rule>
-      <rule>
-        <keyseq keys="A"/>
-        <insert character="1959"/>
-      </rule>
-      <rule>
-        <keyseq keys="S"/>
-        <insert character="1921"/>
-      </rule>
-      <rule>
-        <keyseq keys="D"/>
-        <insert character="1937"/>
-      </rule>
-      <rule>
-        <keyseq keys="F"/>
-        <insert character="65010"/>
-      </rule>
-      <rule>
-        <keyseq keys="G"/>
-        <insert character="1955"/>
-      </rule>
-      <rule>
-        <keyseq keys="H"/>
-        <insert character="1945"/>
-      </rule>
-      <rule>
-        <keyseq keys="J"/>
-        <insert character="1947"/>
-      </rule>
-      <rule>
-        <keyseq keys="K"/>
-        <insert character="1946"/>
-      </rule>
-      <rule>
-        <keyseq keys="L"/>
-        <insert character="1925"/>
-      </rule>
-      <rule>
-        <keyseq keys="Z"/>
-        <insert character="1953"/>
-      </rule>
-      <rule>
-        <keyseq keys="X"/>
-        <insert character="1944"/>
-      </rule>
-      <rule>
-        <keyseq keys="C"/>
-        <insert character="1949"/>
-      </rule>
-      <rule>
-        <keyseq keys="V"/>
-        <insert character="1957"/>
-      </rule>
-      <rule>
-        <keyseq keys="B"/>
-        <insert character="1950"/>
-      </rule>
-      <rule>
-        <keyseq keys="N"/>
-        <insert character="1935"/>
-      </rule>
-      <rule>
-        <keyseq keys="M"/>
-        <insert character="1951"/>
-      </rule>
-      <rule>
-        <keyseq keys="?"/>
-        <insert character="1567"/>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <insert>
+          <integer>1968</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-v</key-event>
+          <string>w</string>
         </keyseq>
-        <insert character="8205"/>
+        <insert>
+          <integer>1927</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-b</key-event>
+          <string>e</string>
         </keyseq>
-        <insert character="8204"/>
+        <insert>
+          <integer>1964</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-n</key-event>
+          <string>r</string>
         </keyseq>
-        <insert character="8206"/>
+        <insert>
+          <integer>1923</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-m</key-event>
+          <string>t</string>
         </keyseq>
-        <insert character="8207"/>
+        <insert>
+          <integer>1932</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-;</key-event>
+          <string>y</string>
         </keyseq>
-        <insert character="59"/>
+        <insert>
+          <integer>1940</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-,</key-event>
+          <string>u</string>
         </keyseq>
-        <insert character="44"/>
+        <insert>
+          <integer>1962</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert>
+          <integer>1960</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <integer>1966</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+        <insert>
+          <integer>1941</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+        <insert>
+          <integer>1958</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+        <insert>
+          <integer>1936</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <insert>
+          <integer>1931</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+        <insert>
+          <integer>1930</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <integer>1934</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <insert>
+          <integer>1920</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+        <insert>
+          <integer>1942</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <integer>1926</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+        <insert>
+          <integer>1933</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>;</string>
+        </keyseq>
+        <insert>
+          <integer>1563</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z</string>
+        </keyseq>
+        <insert>
+          <integer>1938</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>x</string>
+        </keyseq>
+        <insert>
+          <integer>215</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <insert>
+          <integer>1943</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert>
+          <integer>1928</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <insert>
+          <integer>1924</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <integer>1922</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <integer>1929</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>,</string>
+        </keyseq>
+        <insert>
+          <integer>1548</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <insert>
+          <integer>1956</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>W</string>
+        </keyseq>
+        <insert>
+          <integer>1954</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <insert>
+          <integer>1965</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>R</string>
+        </keyseq>
+        <insert>
+          <integer>1948</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>T</string>
+        </keyseq>
+        <insert>
+          <integer>1939</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Y</string>
+        </keyseq>
+        <insert>
+          <integer>1952</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert>
+          <integer>1963</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <insert>
+          <integer>1961</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+        <insert>
+          <integer>1967</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>P</string>
+        </keyseq>
+        <insert>
+          <integer>247</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>A</string>
+        </keyseq>
+        <insert>
+          <integer>1959</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>S</string>
+        </keyseq>
+        <insert>
+          <integer>1921</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <insert>
+          <integer>1937</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>F</string>
+        </keyseq>
+        <insert>
+          <integer>65010</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>G</string>
+        </keyseq>
+        <insert>
+          <integer>1955</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <insert>
+          <integer>1945</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>J</string>
+        </keyseq>
+        <insert>
+          <integer>1947</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>K</string>
+        </keyseq>
+        <insert>
+          <integer>1946</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>L</string>
+        </keyseq>
+        <insert>
+          <integer>1925</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Z</string>
+        </keyseq>
+        <insert>
+          <integer>1953</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>X</string>
+        </keyseq>
+        <insert>
+          <integer>1944</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>C</string>
+        </keyseq>
+        <insert>
+          <integer>1949</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>V</string>
+        </keyseq>
+        <insert>
+          <integer>1957</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>B</string>
+        </keyseq>
+        <insert>
+          <integer>1950</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+        <insert>
+          <integer>1935</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>M</string>
+        </keyseq>
+        <insert>
+          <integer>1951</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>?</string>
+        </keyseq>
+        <insert>
+          <integer>1567</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-v</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>8205</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-b</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>8204</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-n</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>8206</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-m</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>8207</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <string>A-;</string>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>59</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <string>A-,</string>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>44</integer>
+        </insert>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <branch branch-selecting-map="map-generic"/>
+    <state sname="state-init">
+      <branch mname="map-generic"/>
     </state>
   </state-list>
 </input-method>

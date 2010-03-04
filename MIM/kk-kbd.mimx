@@ -1,12 +1,5 @@
 <?xml version='1.0'?>
 <input-method xmlns="http://www.m17n.org/MIM">
-<!--
-Input method for Kazakh written in the Cyrillic script.
-Simulating Kazakh keyboard.
-
-@image html kk-kbd.png "Keyboard Layout"
-@image latex kk-kbd.eps "Keyboard Layout" width=\narrowwidth
--->
   <tags>
     <language>kk</language>
     <name>kbd</name>
@@ -19,372 +12,732 @@ Simulating Kazakh keyboard.
 </description>
   <title>ҚА</title>
   <map-list>
-    <map id="map-map">
-      <rule>
-        <keyseq keys="`"/>
-        <insert string="("/>
-      </rule>
-      <rule>
-        <keyseq keys="~"/>
-        <insert string=")"/>
-      </rule>
-      <rule>
-        <keyseq keys="1"/>
-        <insert string="&quot;"/>
-      </rule>
-      <rule>
-        <keyseq keys="2"/>
-        <insert string="ә"/>
-      </rule>
-      <rule>
-        <keyseq keys="@"/>
-        <insert string="Ә"/>
-      </rule>
-      <rule>
-        <keyseq keys="3"/>
-        <insert string="і"/>
-      </rule>
-      <rule>
-        <keyseq keys="#"/>
-        <insert string="І"/>
-      </rule>
-      <rule>
-        <keyseq keys="4"/>
-        <insert string="ӊ"/>
-      </rule>
-      <rule>
-        <keyseq keys="$"/>
-        <insert string="Ӊ"/>
-      </rule>
-      <rule>
-        <keyseq keys="5"/>
-        <insert string="ғ"/>
-      </rule>
-      <rule>
-        <keyseq keys="%"/>
-        <insert string="Ғ"/>
-      </rule>
-      <rule>
-        <keyseq keys="6"/>
-        <insert string=","/>
-      </rule>
-      <rule>
-        <keyseq keys="^"/>
-        <insert string=";"/>
+    <map mname="map-map">
+      <rule>
+        <keyseq>
+          <string>`</string>
+        </keyseq>
+        <insert>
+          <string>(</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="7"/>
-        <insert string="."/>
+      <rule>
+        <keyseq>
+          <string>~</string>
+        </keyseq>
+        <insert>
+          <string>)</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="&amp;"/>
-        <insert string=":"/>
+      <rule>
+        <keyseq>
+          <string>1</string>
+        </keyseq>
+        <insert>
+          <string>"</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="8"/>
-        <insert string="ү"/>
+      <rule>
+        <keyseq>
+          <string>2</string>
+        </keyseq>
+        <insert>
+          <string>ә</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="*"/>
-        <insert string="Ү"/>
+      <rule>
+        <keyseq>
+          <string>@</string>
+        </keyseq>
+        <insert>
+          <string>Ә</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="9"/>
-        <insert string="ұ"/>
+      <rule>
+        <keyseq>
+          <string>3</string>
+        </keyseq>
+        <insert>
+          <string>і</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="("/>
-        <insert string="Ұ"/>
+      <rule>
+        <keyseq>
+          <string>#</string>
+        </keyseq>
+        <insert>
+          <string>І</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="0"/>
-        <insert string="қ"/>
+      <rule>
+        <keyseq>
+          <string>4</string>
+        </keyseq>
+        <insert>
+          <string>ӊ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=")"/>
-        <insert string="Қ"/>
+      <rule>
+        <keyseq>
+          <string>$</string>
+        </keyseq>
+        <insert>
+          <string>Ӊ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="-"/>
-        <insert string="ө"/>
+      <rule>
+        <keyseq>
+          <string>5</string>
+        </keyseq>
+        <insert>
+          <string>ғ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="_"/>
-        <insert string="Ө"/>
+      <rule>
+        <keyseq>
+          <string>%</string>
+        </keyseq>
+        <insert>
+          <string>Ғ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="="/>
-        <insert string="һ"/>
+      <rule>
+        <keyseq>
+          <string>6</string>
+        </keyseq>
+        <insert>
+          <string>,</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="+"/>
-        <insert string="Һ"/>
+      <rule>
+        <keyseq>
+          <string>^</string>
+        </keyseq>
+        <insert>
+          <string>;</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="q"/>
-        <insert string="й"/>
+      <rule>
+        <keyseq>
+          <string>7</string>
+        </keyseq>
+        <insert>
+          <string>.</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="Q"/>
-        <insert string="Й"/>
+      <rule>
+        <keyseq>
+          <string>&amp;</string>
+        </keyseq>
+        <insert>
+          <string>:</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="w"/>
-        <insert string="ц"/>
+      <rule>
+        <keyseq>
+          <string>8</string>
+        </keyseq>
+        <insert>
+          <string>ү</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="W"/>
-        <insert string="Ц"/>
+      <rule>
+        <keyseq>
+          <string>*</string>
+        </keyseq>
+        <insert>
+          <string>Ү</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <insert string="у"/>
+      <rule>
+        <keyseq>
+          <string>9</string>
+        </keyseq>
+        <insert>
+          <string>ұ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="E"/>
-        <insert string="У"/>
+      <rule>
+        <keyseq>
+          <string>(</string>
+        </keyseq>
+        <insert>
+          <string>Ұ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="r"/>
-        <insert string="к"/>
+      <rule>
+        <keyseq>
+          <string>0</string>
+        </keyseq>
+        <insert>
+          <string>қ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="R"/>
-        <insert string="К"/>
+      <rule>
+        <keyseq>
+          <string>)</string>
+        </keyseq>
+        <insert>
+          <string>Қ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="t"/>
-        <insert string="е"/>
+      <rule>
+        <keyseq>
+          <string>-</string>
+        </keyseq>
+        <insert>
+          <string>ө</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="T"/>
-        <insert string="Е"/>
+      <rule>
+        <keyseq>
+          <string>_</string>
+        </keyseq>
+        <insert>
+          <string>Ө</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="y"/>
-        <insert string="н"/>
+      <rule>
+        <keyseq>
+          <string>=</string>
+        </keyseq>
+        <insert>
+          <string>һ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="Y"/>
-        <insert string="Н"/>
+      <rule>
+        <keyseq>
+          <string>+</string>
+        </keyseq>
+        <insert>
+          <string>Һ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="u"/>
-        <insert string="г"/>
+      <rule>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <insert>
+          <string>й</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="U"/>
-        <insert string="Г"/>
+      <rule>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <insert>
+          <string>Й</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="i"/>
-        <insert string="ш"/>
+      <rule>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+        <insert>
+          <string>ц</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="I"/>
-        <insert string="Ш"/>
+      <rule>
+        <keyseq>
+          <string>W</string>
+        </keyseq>
+        <insert>
+          <string>Ц</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="o"/>
-        <insert string="щ"/>
+      <rule>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <insert>
+          <string>у</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="O"/>
-        <insert string="Щ"/>
+      <rule>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <insert>
+          <string>У</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="p"/>
-        <insert string="з"/>
+      <rule>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+        <insert>
+          <string>к</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="P"/>
-        <insert string="З"/>
+      <rule>
+        <keyseq>
+          <string>R</string>
+        </keyseq>
+        <insert>
+          <string>К</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="["/>
-        <insert string="х"/>
+      <rule>
+        <keyseq>
+          <string>t</string>
+        </keyseq>
+        <insert>
+          <string>е</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="{"/>
-        <insert string="Х"/>
+      <rule>
+        <keyseq>
+          <string>T</string>
+        </keyseq>
+        <insert>
+          <string>Е</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="]"/>
-        <insert string="ъ"/>
+      <rule>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <insert>
+          <string>н</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="}"/>
-        <insert string="Ъ"/>
+      <rule>
+        <keyseq>
+          <string>Y</string>
+        </keyseq>
+        <insert>
+          <string>Н</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="a"/>
-        <insert string="ф"/>
+      <rule>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <string>г</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="A"/>
-        <insert string="Ф"/>
+      <rule>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert>
+          <string>Г</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="s"/>
-        <insert string="ы"/>
+      <rule>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert>
+          <string>ш</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="S"/>
-        <insert string="Ы"/>
+      <rule>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <insert>
+          <string>Ш</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <insert string="в"/>
+      <rule>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <string>щ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="D"/>
-        <insert string="В"/>
+      <rule>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+        <insert>
+          <string>Щ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="f"/>
-        <insert string="а"/>
+      <rule>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+        <insert>
+          <string>з</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="F"/>
-        <insert string="А"/>
+      <rule>
+        <keyseq>
+          <string>P</string>
+        </keyseq>
+        <insert>
+          <string>З</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="g"/>
-        <insert string="п"/>
+      <rule>
+        <keyseq>
+          <string>[</string>
+        </keyseq>
+        <insert>
+          <string>х</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="G"/>
-        <insert string="П"/>
+      <rule>
+        <keyseq>
+          <string>{</string>
+        </keyseq>
+        <insert>
+          <string>Х</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="h"/>
-        <insert string="р"/>
+      <rule>
+        <keyseq>
+          <string>]</string>
+        </keyseq>
+        <insert>
+          <string>ъ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="H"/>
-        <insert string="Р"/>
+      <rule>
+        <keyseq>
+          <string>}</string>
+        </keyseq>
+        <insert>
+          <string>Ъ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="j"/>
-        <insert string="о"/>
+      <rule>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+        <insert>
+          <string>ф</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="J"/>
-        <insert string="О"/>
+      <rule>
+        <keyseq>
+          <string>A</string>
+        </keyseq>
+        <insert>
+          <string>Ф</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="k"/>
-        <insert string="л"/>
+      <rule>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+        <insert>
+          <string>ы</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="K"/>
-        <insert string="Л"/>
+      <rule>
+        <keyseq>
+          <string>S</string>
+        </keyseq>
+        <insert>
+          <string>Ы</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="l"/>
-        <insert string="д"/>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <insert>
+          <string>в</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="L"/>
-        <insert string="Д"/>
+      <rule>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <insert>
+          <string>В</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=";"/>
-        <insert string="ж"/>
+      <rule>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+        <insert>
+          <string>а</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=":"/>
-        <insert string="Ж"/>
+      <rule>
+        <keyseq>
+          <string>F</string>
+        </keyseq>
+        <insert>
+          <string>А</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="&apos;"/>
-        <insert string="э"/>
+      <rule>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <string>п</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="&quot;"/>
-        <insert string="Э"/>
+      <rule>
+        <keyseq>
+          <string>G</string>
+        </keyseq>
+        <insert>
+          <string>П</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="z"/>
-        <insert string="я"/>
+      <rule>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <insert>
+          <string>р</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="Z"/>
-        <insert string="Я"/>
+      <rule>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <insert>
+          <string>Р</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="x"/>
-        <insert string="ч"/>
+      <rule>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+        <insert>
+          <string>о</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="X"/>
-        <insert string="Ч"/>
+      <rule>
+        <keyseq>
+          <string>J</string>
+        </keyseq>
+        <insert>
+          <string>О</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="c"/>
-        <insert string="с"/>
+      <rule>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <string>л</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="C"/>
-        <insert string="С"/>
+      <rule>
+        <keyseq>
+          <string>K</string>
+        </keyseq>
+        <insert>
+          <string>Л</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="v"/>
-        <insert string="м"/>
+      <rule>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+        <insert>
+          <string>д</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="V"/>
-        <insert string="М"/>
+      <rule>
+        <keyseq>
+          <string>L</string>
+        </keyseq>
+        <insert>
+          <string>Д</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="b"/>
-        <insert string="и"/>
+      <rule>
+        <keyseq>
+          <string>;</string>
+        </keyseq>
+        <insert>
+          <string>ж</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="B"/>
-        <insert string="И"/>
+      <rule>
+        <keyseq>
+          <string>:</string>
+        </keyseq>
+        <insert>
+          <string>Ж</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="n"/>
-        <insert string="т"/>
+      <rule>
+        <keyseq>
+          <string>'</string>
+        </keyseq>
+        <insert>
+          <string>э</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="N"/>
-        <insert string="Т"/>
+      <rule>
+        <keyseq>
+          <string>"</string>
+        </keyseq>
+        <insert>
+          <string>Э</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="m"/>
-        <insert string="ь"/>
+      <rule>
+        <keyseq>
+          <string>z</string>
+        </keyseq>
+        <insert>
+          <string>я</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="M"/>
-        <insert string="Ь"/>
+      <rule>
+        <keyseq>
+          <string>Z</string>
+        </keyseq>
+        <insert>
+          <string>Я</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys=","/>
-        <insert string="б"/>
+      <rule>
+        <keyseq>
+          <string>x</string>
+        </keyseq>
+        <insert>
+          <string>ч</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="&lt;"/>
-        <insert string="Б"/>
+      <rule>
+        <keyseq>
+          <string>X</string>
+        </keyseq>
+        <insert>
+          <string>Ч</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="."/>
-        <insert string="ю"/>
+      <rule>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <insert>
+          <string>с</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="&gt;"/>
-        <insert string="Ю"/>
+      <rule>
+        <keyseq>
+          <string>C</string>
+        </keyseq>
+        <insert>
+          <string>С</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="/"/>
-        <insert string="№"/>
+      <rule>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert>
+          <string>м</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>V</string>
+        </keyseq>
+        <insert>
+          <string>М</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <insert>
+          <string>и</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>B</string>
+        </keyseq>
+        <insert>
+          <string>И</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <string>т</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+        <insert>
+          <string>Т</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <string>ь</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>M</string>
+        </keyseq>
+        <insert>
+          <string>Ь</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>,</string>
+        </keyseq>
+        <insert>
+          <string>б</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&lt;</string>
+        </keyseq>
+        <insert>
+          <string>Б</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>.</string>
+        </keyseq>
+        <insert>
+          <string>ю</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&gt;</string>
+        </keyseq>
+        <insert>
+          <string>Ю</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>/</string>
+        </keyseq>
+        <insert>
+          <string>№</string>
+        </insert>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <branch branch-selecting-map="map-map"/>
+    <state sname="state-init">
+      <branch mname="map-map"/>
     </state>
   </state-list>
 </input-method>

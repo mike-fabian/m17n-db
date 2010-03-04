@@ -5,203 +5,305 @@
     <name>unicode</name>
   </tags>
   <description>
-    <get-text>Input method for Unicode BMP characters using hexadigits.
+    <gettext>Input method for Unicode BMP characters using hexadigits.
 Type C-u followed by four hexadecimal numbers [0-9A-Fa-f]
 of a Unicode character code.
-</get-text>
+</gettext>
   </description>
   <title>UNICODE</title>
   <variable-list>
-    <variable id="prompt">
+    <defvar vname="prompt">
       <description>
-        <get-text>Preedit prompt
-Prompt string shown in the preedit area while typing hexadecimal numbers.</get-text>
+        <gettext>Preedit prompt
+Prompt string shown in the preedit area while typing hexadecimal numbers.</gettext>
       </description>
-      <value type="string">U+</value>
-    </variable>
+      <string>U+</string>
+    </defvar>
   </variable-list>
   <command-list>
-    <command id="command-start">
+    <defcmd cname="command-start">
       <description>
-        <get-text>Start Unicode
-Start typing hexadecimal numbers of Unicode character.</get-text>
+        <gettext>Start Unicode
+Start typing hexadecimal numbers of Unicode character.</gettext>
       </description>
       <keyseq>
-        <key-event>C-U</key-event>
+        <list>
+          <symbol>C-U</symbol>
+        </list>
       </keyseq>
-    </command>
+    </defcmd>
   </command-list>
   <map-list>
-    <map id="map-starter">
+    <map mname="map-starter">
       <rule>
-        <command-reference id="command-start"/>
-        <insert character-or-string="variable">
-          <variable-reference id="prompt"/>
+        <command cname="command-start"/>
+        <insert>
+          <varref vname="prompt"/>
         </insert>
       </rule>
     </map>
-    <map id="map-hex">
-      <rule>
-        <keyseq keys="0"/>
-        <insert string="0"/>
-      </rule>
-      <rule>
-        <keyseq keys="1"/>
-        <insert string="1"/>
-      </rule>
-      <rule>
-        <keyseq keys="2"/>
-        <insert string="2"/>
-      </rule>
-      <rule>
-        <keyseq keys="3"/>
-        <insert string="3"/>
-      </rule>
-      <rule>
-        <keyseq keys="4"/>
-        <insert string="4"/>
-      </rule>
-      <rule>
-        <keyseq keys="5"/>
-        <insert string="5"/>
-      </rule>
-      <rule>
-        <keyseq keys="6"/>
-        <insert string="6"/>
-      </rule>
-      <rule>
-        <keyseq keys="7"/>
-        <insert string="7"/>
-      </rule>
-      <rule>
-        <keyseq keys="8"/>
-        <insert string="8"/>
-      </rule>
-      <rule>
-        <keyseq keys="9"/>
-        <insert string="9"/>
-      </rule>
-      <rule>
-        <keyseq keys="A"/>
-        <insert string="A"/>
-      </rule>
-      <rule>
-        <keyseq keys="B"/>
-        <insert string="B"/>
-      </rule>
-      <rule>
-        <keyseq keys="C"/>
-        <insert string="C"/>
-      </rule>
-      <rule>
-        <keyseq keys="D"/>
-        <insert string="D"/>
-      </rule>
-      <rule>
-        <keyseq keys="E"/>
-        <insert string="E"/>
-      </rule>
-      <rule>
-        <keyseq keys="F"/>
-        <insert string="F"/>
-      </rule>
-      <rule>
-        <keyseq keys="a"/>
-        <insert string="A"/>
-      </rule>
-      <rule>
-        <keyseq keys="b"/>
-        <insert string="B"/>
-      </rule>
-      <rule>
-        <keyseq keys="c"/>
-        <insert string="C"/>
-      </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <insert string="D"/>
-      </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <insert string="E"/>
-      </rule>
-      <rule>
-        <keyseq keys="f"/>
-        <insert string="F"/>
-      </rule>
-    </map>
-    <map id="map-backspace">
+    <map mname="map-hex">
       <rule>
         <keyseq>
-          <key-event>BackSpace</key-event>
+          <string>0</string>
+        </keyseq>
+        <insert>
+          <string>0</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>1</string>
+        </keyseq>
+        <insert>
+          <string>1</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>2</string>
+        </keyseq>
+        <insert>
+          <string>2</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>3</string>
+        </keyseq>
+        <insert>
+          <string>3</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>4</string>
+        </keyseq>
+        <insert>
+          <string>4</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>5</string>
+        </keyseq>
+        <insert>
+          <string>5</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>6</string>
+        </keyseq>
+        <insert>
+          <string>6</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>7</string>
+        </keyseq>
+        <insert>
+          <string>7</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>8</string>
+        </keyseq>
+        <insert>
+          <string>8</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>9</string>
+        </keyseq>
+        <insert>
+          <string>9</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>A</string>
+        </keyseq>
+        <insert>
+          <string>A</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>B</string>
+        </keyseq>
+        <insert>
+          <string>B</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>C</string>
+        </keyseq>
+        <insert>
+          <string>C</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <insert>
+          <string>D</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <insert>
+          <string>E</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>F</string>
+        </keyseq>
+        <insert>
+          <string>F</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+        <insert>
+          <string>A</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <insert>
+          <string>B</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <insert>
+          <string>C</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <insert>
+          <string>D</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <insert>
+          <string>E</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+        <insert>
+          <string>F</string>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-backspace">
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>BackSpace</symbol>
+          </list>
         </keyseq>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <branch branch-selecting-map="map-starter">
-        <set id="code">
-          <int-val>0</int-val>
+    <state sname="state-init">
+      <branch mname="map-starter">
+        <set vname="code">
+          <integer>0</integer>
         </set>
-        <set id="count">
-          <int-val>0</int-val>
+        <set vname="count">
+          <integer>0</integer>
         </set>
-        <shift-to id="state-uni-hex"/>
+        <shift>
+          <symbol>state-uni-hex</symbol>
+        </shift>
       </branch>
     </state>
-    <state id="state-uni-hex">
-      <branch branch-selecting-map="map-hex">
-        <set id="this">
-          <predefined-nth-previous-or-following-character position="-1"/>
+    <state sname="state-uni-hex">
+      <branch mname="map-hex">
+        <set vname="this">
+          <char-at>
+            <marker>@-1</marker>
+          </char-at>
         </set>
-        <conditional>
-          <case>
-            <expr operator="&lt;">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>65</int-val>
-            </expr>
-            <sub id="this">
-              <int-val>48</int-val>
+        <cond>
+          <list>
+            <lt>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>65</integer>
+            </lt>
+            <sub vname="this">
+              <integer>48</integer>
             </sub>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <sub id="this">
-              <int-val>55</int-val>
+          </list>
+          <list>
+            <integer>1</integer>
+            <sub vname="this">
+              <integer>55</integer>
             </sub>
-          </case>
-        </conditional>
-        <set id="code">
-          <expr operator="+">
-            <expr operator="*">
-              <variable-reference id="code"/>
-              <int-val>16</int-val>
-            </expr>
-            <variable-reference id="this"/>
-          </expr>
+          </list>
+        </cond>
+        <set vname="code">
+          <add>
+            <mul>
+              <varref vname="code"/>
+              <integer>16</integer>
+            </mul>
+            <varref vname="this"/>
+          </add>
         </set>
-        <set id="count">
-          <expr operator="+">
-            <variable-reference id="count"/>
-            <int-val>1</int-val>
-          </expr>
+        <set vname="count">
+          <add>
+            <varref vname="count"/>
+            <integer>1</integer>
+          </add>
         </set>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <variable-reference id="count"/>
-              <int-val>4</int-val>
-            </expr>
-            <delete-to-marker position="@first"/>
-            <insert character-or-string="variable">
-              <variable-reference id="code"/>
+        <cond>
+          <list>
+            <eq>
+              <varref vname="count"/>
+              <integer>4</integer>
+            </eq>
+            <delete>
+              <marker>@first</marker>
+            </delete>
+            <insert>
+              <varref vname="code"/>
             </insert>
-            <shift-to id="state-init"/>
-          </case>
-        </conditional>
+            <shift>
+              <symbol>state-init</symbol>
+            </shift>
+          </list>
+        </cond>
       </branch>
-      <branch branch-selecting-map="map-backspace">
+      <branch mname="map-backspace">
         <undo/>
       </branch>
     </state>

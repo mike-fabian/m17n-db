@@ -6,987 +6,1625 @@
   </tags>
   <description>Tibetan input method using the TCRC keyboard layout.
 For more information, see the page:
-  http://www.tibet.net/download/tcrckbd.rtf
+  http://www.tibet.net/tb/download/tcrckbd.rtf
 </description>
   <title>ཀ</title>
   <map-list>
-    <map id="map-map">
-      <rule>
-        <keyseq keys="!"/>
-        <insert string="༑"/>
-      </rule>
-      <rule>
-        <keyseq keys="@"/>
-        <insert string="༄"/>
-      </rule>
-      <rule>
-        <keyseq keys="#"/>
-        <insert string="༄༅"/>
-      </rule>
-      <rule>
-        <keyseq keys="^"/>
-        <insert string="྾"/>
-      </rule>
-      <rule>
-        <keyseq keys="&amp;"/>
-        <insert string="༼"/>
-      </rule>
-      <rule>
-        <keyseq keys="*"/>
-        <insert string="༽"/>
-      </rule>
-      <rule>
-        <keyseq keys="_"/>
-        <insert string="ཱྀ"/>
-      </rule>
-      <rule>
-        <keyseq keys="+"/>
-        <insert string="ཾ"/>
-      </rule>
-      <rule>
-        <keyseq keys="|"/>
-        <insert string="༈"/>
-      </rule>
-      <rule>
-        <keyseq keys="`"/>
-        <insert string="༌"/>
-      </rule>
-      <rule>
-        <keyseq keys="1"/>
-        <insert string="༡"/>
-      </rule>
-      <rule>
-        <keyseq keys="2"/>
-        <insert string="༢"/>
-      </rule>
-      <rule>
-        <keyseq keys="3"/>
-        <insert string="༣"/>
+    <map mname="map-map">
+      <rule>
+        <keyseq>
+          <string>!</string>
+        </keyseq>
+        <insert>
+          <string>༑</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="4"/>
-        <insert string="༤"/>
+      <rule>
+        <keyseq>
+          <string>@</string>
+        </keyseq>
+        <insert>
+          <string>༄</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="5"/>
-        <insert string="༥"/>
+      <rule>
+        <keyseq>
+          <string>#</string>
+        </keyseq>
+        <insert>
+          <string>༄༅</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="6"/>
-        <insert string="༦"/>
+      <rule>
+        <keyseq>
+          <string>^</string>
+        </keyseq>
+        <insert>
+          <string>྾</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="7"/>
-        <insert string="༧"/>
+      <rule>
+        <keyseq>
+          <string>&amp;</string>
+        </keyseq>
+        <insert>
+          <string>༼</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="8"/>
-        <insert string="༨"/>
+      <rule>
+        <keyseq>
+          <string>*</string>
+        </keyseq>
+        <insert>
+          <string>༽</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="9"/>
-        <insert string="༩"/>
+      <rule>
+        <keyseq>
+          <string>_</string>
+        </keyseq>
+        <insert>
+          <string>ཱྀ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="0"/>
-        <insert string="༠"/>
+      <rule>
+        <keyseq>
+          <string>+</string>
+        </keyseq>
+        <insert>
+          <string>ཾ</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="-"/>
-        <insert string="ྀ"/>
+      <rule>
+        <keyseq>
+          <string>|</string>
+        </keyseq>
+        <insert>
+          <string>༈</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="="/>
-        <insert string="ྃ"/>
+      <rule>
+        <keyseq>
+          <string>`</string>
+        </keyseq>
+        <insert>
+          <string>༌</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="\"/>
-        <insert string="༔"/>
+      <rule>
+        <keyseq>
+          <string>1</string>
+        </keyseq>
+        <insert>
+          <string>༡</string>
+        </insert>
       </rule>
-      <rule>
-        <keyseq keys="Q"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྛ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཋ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="W"/>
-        <insert string="ྭ"/>
-      </rule>
-      <rule>
-        <keyseq keys="E"/>
-        <insert string="ཻ"/>
-      </rule>
-      <rule>
-        <keyseq keys="R"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྲ྄"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ར྄"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="T"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྠ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཐ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="Y"/>
-        <insert string="-"/>
-      </rule>
-      <rule>
-        <keyseq keys="U"/>
-        <insert string="ཱུ"/>
-      </rule>
-      <rule>
-        <keyseq keys="I"/>
-        <insert string="ཱི"/>
-      </rule>
-      <rule>
-        <keyseq keys="O"/>
-        <insert string="ཽ"/>
-      </rule>
-      <rule>
-        <keyseq keys="P"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྥ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཕ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="{"/>
-        <insert string="`"/>
-      </rule>
-      <rule>
-        <keyseq keys="}"/>
-        <insert string="+"/>
-      </rule>
-      <rule>
-        <keyseq keys="q"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྚ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཊ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="w"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྭ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཝ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <insert string="ེ"/>
-      </rule>
-      <rule>
-        <keyseq keys="r"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྲ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ར"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="t"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྟ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཏ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="y"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྱ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཡ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="u"/>
-        <insert string="ུ"/>
-      </rule>
-      <rule>
-        <keyseq keys="i"/>
-        <insert string="ི"/>
-      </rule>
-      <rule>
-        <keyseq keys="o"/>
-        <insert string="ོ"/>
-      </rule>
-      <rule>
-        <keyseq keys="p"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྤ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="པ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="["/>
-        <insert string="&apos;"/>
-      </rule>
-      <rule>
-        <keyseq keys="]"/>
-        <insert string=","/>
-      </rule>
-      <rule>
-        <keyseq keys="A"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྸ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཨ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="S"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྴ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཤ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="D"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྫ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཛ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="F"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྡྷ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="དྷ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="G"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྒྷ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="གྷ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="H"/>
-        <insert string="ྷ"/>
-      </rule>
-      <rule>
-        <keyseq keys="J"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྫྷ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཛྷ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="K"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྑ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཁ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="L"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ླ྄"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ལ྄"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys=":"/>
-        <insert string="ཿ"/>
-      </rule>
-      <rule>
-        <keyseq keys="&quot;"/>
-        <insert string="ཱ"/>
-      </rule>
-      <rule>
-        <keyseq keys="a"/>
-        <insert string="྄"/>
-      </rule>
-      <rule>
-        <keyseq keys="s"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྶ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ས"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྡ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ད"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="f"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྔ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ང"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="g"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྒ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ག"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="h"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྷ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཧ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="j"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྗ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཇ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="k"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྐ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཀ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="l"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ླ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ལ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys=";"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྜྷ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཌྷ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="&apos;"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྰ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="འ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="Z"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྮ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཞ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="X"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྪ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཚ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="C"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྖ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཆ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="V"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྞ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཎ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="B"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྦྷ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="བྷ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="N"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྙ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཉ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="M"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྵ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཥ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="&lt;"/>
-        <insert string="ླ"/>
-      </rule>
-      <rule>
-        <keyseq keys="&gt;"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྲ྄"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཪ྄"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="?"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྶ྄"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ས྄"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="z"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྯ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཟ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="x"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྩ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཙ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="c"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྕ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཅ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="v"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྜ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ཌ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="b"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྦ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="བ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="n"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྣ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="ན"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="m"/>
-        <conditional>
-          <case>
-            <expr operator="=">
-              <predefined-nth-previous-or-following-character position="-1"/>
-              <int-val>0x0F84</int-val>
-            </expr>
-            <delete-n-characters n="-1"/>
-            <insert string="ྨ"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="མ"/>
-          </case>
-        </conditional>
-      </rule>
-      <rule>
-        <keyseq keys="."/>
-        <insert string="ྲ"/>
-      </rule>
-      <rule>
-        <keyseq keys=","/>
-        <insert string="ྱ"/>
-      </rule>
-      <rule>
-        <keyseq keys="/"/>
-        <conditional>
-          <case>
-            <expr operator="|">
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0F44</int-val>
-              </expr>
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0F94</int-val>
-              </expr>
-            </expr>
-            <insert string="་"/>
-          </case>
-        </conditional>
-        <insert string="།"/>
-      </rule>
-      <rule>
-        <keyseq keys=" "/>
-        <conditional>
-          <case>
-            <expr operator="&amp;">
-              <expr operator="|">
-                <expr operator="=">
-                  <predefined-nth-previous-or-following-character position="-2"/>
-                  <int-val>0x0F42</int-val>
-                </expr>
-                <expr operator="=">
-                  <predefined-nth-previous-or-following-character position="-2"/>
-                  <int-val>0x0F92</int-val>
-                </expr>
-              </expr>
-              <expr operator="=">
-                <predefined-nth-previous-or-following-character position="-1"/>
-                <int-val>0x0F0B</int-val>
-              </expr>
-            </expr>
-            <delete-n-characters n="-1"/>
-          </case>
-          <case>
-            <int-val>1</int-val>
-            <insert string="་"/>
-          </case>
-        </conditional>
+      <rule>
+        <keyseq>
+          <string>2</string>
+        </keyseq>
+        <insert>
+          <string>༢</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>3</string>
+        </keyseq>
+        <insert>
+          <string>༣</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>4</string>
+        </keyseq>
+        <insert>
+          <string>༤</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>5</string>
+        </keyseq>
+        <insert>
+          <string>༥</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>6</string>
+        </keyseq>
+        <insert>
+          <string>༦</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>7</string>
+        </keyseq>
+        <insert>
+          <string>༧</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>8</string>
+        </keyseq>
+        <insert>
+          <string>༨</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>9</string>
+        </keyseq>
+        <insert>
+          <string>༩</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>0</string>
+        </keyseq>
+        <insert>
+          <string>༠</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>-</string>
+        </keyseq>
+        <insert>
+          <string>ྀ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>=</string>
+        </keyseq>
+        <insert>
+          <string>ྃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\</string>
+        </keyseq>
+        <insert>
+          <string>༔</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྛ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཋ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>W</string>
+        </keyseq>
+        <insert>
+          <string>ྭ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <insert>
+          <string>ཻ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>R</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྲ྄</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ར྄</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>T</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྠ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཐ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Y</string>
+        </keyseq>
+        <insert>
+          <string>-</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert>
+          <string>ཱུ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <insert>
+          <string>ཱི</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+        <insert>
+          <string>ཽ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>P</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྥ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཕ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>{</string>
+        </keyseq>
+        <insert>
+          <string>`</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>}</string>
+        </keyseq>
+        <insert>
+          <string>+</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྚ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཊ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྭ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཝ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <insert>
+          <string>ེ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྲ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ར</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>t</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྟ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཏ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྱ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཡ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <string>ུ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert>
+          <string>ི</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <string>ོ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྤ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>པ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>[</string>
+        </keyseq>
+        <insert>
+          <string>'</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>]</string>
+        </keyseq>
+        <insert>
+          <string>,</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>A</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྸ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཨ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>S</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྴ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཤ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྫ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཛ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>F</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྡྷ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>དྷ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>G</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྒྷ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>གྷ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <insert>
+          <string>ྷ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>J</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྫྷ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཛྷ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>K</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྑ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཁ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>L</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ླ྄</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ལ྄</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>:</string>
+        </keyseq>
+        <insert>
+          <string>ཿ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>"</string>
+        </keyseq>
+        <insert>
+          <string>ཱ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+        <insert>
+          <string>྄</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྶ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ས</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྡ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ད</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྔ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ང</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྒ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ག</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྷ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཧ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྗ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཇ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྐ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཀ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ླ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ལ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>;</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྜྷ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཌྷ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>'</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྰ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>འ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Z</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྮ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཞ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>X</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྪ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཚ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>C</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྖ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཆ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>V</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྞ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཎ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>B</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྦྷ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>བྷ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྙ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཉ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>M</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྵ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཥ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&lt;</string>
+        </keyseq>
+        <insert>
+          <string>ླ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&gt;</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྲ྄</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཪ྄</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>?</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྶ྄</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ས྄</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྯ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཟ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>x</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྩ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཙ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྕ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཅ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྜ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ཌ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྦ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>བ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྣ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>ན</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <cond>
+          <list>
+            <eq>
+              <char-at>
+                <marker>@-1</marker>
+              </char-at>
+              <integer>0x0F84</integer>
+            </eq>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+            <insert>
+              <string>ྨ</string>
+            </insert>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>མ</string>
+            </insert>
+          </list>
+        </cond>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>.</string>
+        </keyseq>
+        <insert>
+          <string>ྲ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>,</string>
+        </keyseq>
+        <insert>
+          <string>ྱ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>/</string>
+        </keyseq>
+        <cond>
+          <list>
+            <logior>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0F44</integer>
+              </eq>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0F94</integer>
+              </eq>
+            </logior>
+            <insert>
+              <string>་</string>
+            </insert>
+          </list>
+        </cond>
+        <insert>
+          <string>།</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string> </string>
+        </keyseq>
+        <cond>
+          <list>
+            <logand>
+              <logior>
+                <eq>
+                  <char-at>
+                    <marker>@-2</marker>
+                  </char-at>
+                  <integer>0x0F42</integer>
+                </eq>
+                <eq>
+                  <char-at>
+                    <marker>@-2</marker>
+                  </char-at>
+                  <integer>0x0F92</integer>
+                </eq>
+              </logior>
+              <eq>
+                <char-at>
+                  <marker>@-1</marker>
+                </char-at>
+                <integer>0x0F0B</integer>
+              </eq>
+            </logand>
+            <delete>
+              <marker>@-1</marker>
+            </delete>
+          </list>
+          <list>
+            <integer>1</integer>
+            <insert>
+              <string>་</string>
+            </insert>
+          </list>
+        </cond>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <branch branch-selecting-map="map-map"/>
+    <state sname="state-init">
+      <branch mname="map-map"/>
     </state>
   </state-list>
 </input-method>

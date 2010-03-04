@@ -9,252 +9,560 @@ Note that it's not for inputting Han characters.
 </description>
   <title>PinYin</title>
   <map-list>
-    <map id="map-vowel">
+    <map mname="map-vowel">
       <rule>
-        <keyseq keys="a"/>
-        <insert>
-          <list-of-candidates>a ā á ǎ à</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>a</string>
+            <string>ā</string>
+            <string>á</string>
+            <string>ǎ</string>
+            <string>à</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="ai"/>
-        <insert>
-          <list-of-candidates>ai āi ái ǎi ài</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>ai</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>ai</string>
+            <string>āi</string>
+            <string>ái</string>
+            <string>ǎi</string>
+            <string>ài</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="an"/>
-        <insert>
-          <list-of-candidates>an ān án ǎn àn</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>an</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>an</string>
+            <string>ān</string>
+            <string>án</string>
+            <string>ǎn</string>
+            <string>àn</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="ang"/>
-        <insert>
-          <list-of-candidates>ang āng áng ǎng àng</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>ang</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>ang</string>
+            <string>āng</string>
+            <string>áng</string>
+            <string>ǎng</string>
+            <string>àng</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="ao"/>
-        <insert>
-          <list-of-candidates>ao āo áo ǎo ào</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>ao</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>ao</string>
+            <string>āo</string>
+            <string>áo</string>
+            <string>ǎo</string>
+            <string>ào</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="e"/>
-        <insert>
-          <list-of-candidates>e ē é ě è</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>e</string>
+            <string>ē</string>
+            <string>é</string>
+            <string>ě</string>
+            <string>è</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="ei"/>
-        <insert>
-          <list-of-candidates>ei ēi éi ěi èi</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>ei</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>ei</string>
+            <string>ēi</string>
+            <string>éi</string>
+            <string>ěi</string>
+            <string>èi</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="en"/>
-        <insert>
-          <list-of-candidates>en ēn én ěn èn</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>en</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>en</string>
+            <string>ēn</string>
+            <string>én</string>
+            <string>ěn</string>
+            <string>èn</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="eng"/>
-        <insert>
-          <list-of-candidates>eng ēng éng ěng èng</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>eng</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>eng</string>
+            <string>ēng</string>
+            <string>éng</string>
+            <string>ěng</string>
+            <string>èng</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="er"/>
-        <insert>
-          <list-of-candidates>er ēr ér ěr èr</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>er</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>er</string>
+            <string>ēr</string>
+            <string>ér</string>
+            <string>ěr</string>
+            <string>èr</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="i"/>
-        <insert>
-          <list-of-candidates>i ī í ǐ ì</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>i</string>
+            <string>ī</string>
+            <string>í</string>
+            <string>ǐ</string>
+            <string>ì</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="ia"/>
-        <insert>
-          <list-of-candidates>ia iā iá iǎ ià</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>ia</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>ia</string>
+            <string>iā</string>
+            <string>iá</string>
+            <string>iǎ</string>
+            <string>ià</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="ian"/>
-        <insert>
-          <list-of-candidates>ian iān ián iǎn iàn</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>ian</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>ian</string>
+            <string>iān</string>
+            <string>ián</string>
+            <string>iǎn</string>
+            <string>iàn</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="iang"/>
-        <insert>
-          <list-of-candidates>iang iāng iáng iǎng iàng</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>iang</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>iang</string>
+            <string>iāng</string>
+            <string>iáng</string>
+            <string>iǎng</string>
+            <string>iàng</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="iao"/>
-        <insert>
-          <list-of-candidates>iao iāo iáo iǎo iào</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>iao</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>iao</string>
+            <string>iāo</string>
+            <string>iáo</string>
+            <string>iǎo</string>
+            <string>iào</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="ie"/>
-        <insert>
-          <list-of-candidates>ie iē ié iě iè</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>ie</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>ie</string>
+            <string>iē</string>
+            <string>ié</string>
+            <string>iě</string>
+            <string>iè</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="in"/>
-        <insert>
-          <list-of-candidates>in īn ín ǐn ìn</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>in</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>in</string>
+            <string>īn</string>
+            <string>ín</string>
+            <string>ǐn</string>
+            <string>ìn</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="ing"/>
-        <insert>
-          <list-of-candidates>ing īng íng ǐng ìng</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>ing</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>ing</string>
+            <string>īng</string>
+            <string>íng</string>
+            <string>ǐng</string>
+            <string>ìng</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="iong"/>
-        <insert>
-          <list-of-candidates>iong iōng ióng iǒng iòng</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>iong</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>iong</string>
+            <string>iōng</string>
+            <string>ióng</string>
+            <string>iǒng</string>
+            <string>iòng</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="iu"/>
-        <insert>
-          <list-of-candidates>iu iū iú iǔ iù</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>iu</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>iu</string>
+            <string>iū</string>
+            <string>iú</string>
+            <string>iǔ</string>
+            <string>iù</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="o"/>
-        <insert>
-          <list-of-candidates>o ō ó ǒ ò</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>o</string>
+            <string>ō</string>
+            <string>ó</string>
+            <string>ǒ</string>
+            <string>ò</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="ong"/>
-        <insert>
-          <list-of-candidates>ong ōng óng ǒng òng</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>ong</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>ong</string>
+            <string>ōng</string>
+            <string>óng</string>
+            <string>ǒng</string>
+            <string>òng</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="ou"/>
-        <insert>
-          <list-of-candidates>ou ōu óu ǒu òu</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>ou</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>ou</string>
+            <string>ōu</string>
+            <string>óu</string>
+            <string>ǒu</string>
+            <string>òu</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="u"/>
-        <insert>
-          <list-of-candidates>u ū ú ǔ ù</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>u</string>
+            <string>ū</string>
+            <string>ú</string>
+            <string>ǔ</string>
+            <string>ù</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="u:"/>
-        <insert>
-          <list-of-candidates>ü ǖ ǘ ǚ ǜ</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>u:</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>ü</string>
+            <string>ǖ</string>
+            <string>ǘ</string>
+            <string>ǚ</string>
+            <string>ǜ</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="v"/>
-        <insert>
-          <list-of-candidates>ü ǖ ǘ ǚ ǜ</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>ü</string>
+            <string>ǖ</string>
+            <string>ǘ</string>
+            <string>ǚ</string>
+            <string>ǜ</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="ua"/>
-        <insert>
-          <list-of-candidates>ua uā uá uǎ uà</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>ua</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>ua</string>
+            <string>uā</string>
+            <string>uá</string>
+            <string>uǎ</string>
+            <string>uà</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="uai"/>
-        <insert>
-          <list-of-candidates>uai uāi uái uǎi uài</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>uai</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>uai</string>
+            <string>uāi</string>
+            <string>uái</string>
+            <string>uǎi</string>
+            <string>uài</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="uan"/>
-        <insert>
-          <list-of-candidates>uan uān uán uǎn uàn</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>uan</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>uan</string>
+            <string>uān</string>
+            <string>uán</string>
+            <string>uǎn</string>
+            <string>uàn</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="uang"/>
-        <insert>
-          <list-of-candidates>uang uāng uáng uǎng uàng</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>uang</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>uang</string>
+            <string>uāng</string>
+            <string>uáng</string>
+            <string>uǎng</string>
+            <string>uàng</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="ue"/>
-        <insert>
-          <list-of-candidates>ue uē ué uě uè</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>ue</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>ue</string>
+            <string>uē</string>
+            <string>ué</string>
+            <string>uě</string>
+            <string>uè</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="u:e"/>
-        <insert>
-          <list-of-candidates>üe üē üé üě üè</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>u:e</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>üe</string>
+            <string>üē</string>
+            <string>üé</string>
+            <string>üě</string>
+            <string>üè</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="ve"/>
-        <insert>
-          <list-of-candidates>üe üē üé üě üè</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>ve</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>üe</string>
+            <string>üē</string>
+            <string>üé</string>
+            <string>üě</string>
+            <string>üè</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="ui"/>
-        <insert>
-          <list-of-candidates>ui uī uí uǐ uì</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>ui</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>ui</string>
+            <string>uī</string>
+            <string>uí</string>
+            <string>uǐ</string>
+            <string>uì</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="un"/>
-        <insert>
-          <list-of-candidates>un ūn ún ǔn ùn</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>un</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>un</string>
+            <string>ūn</string>
+            <string>ún</string>
+            <string>ǔn</string>
+            <string>ùn</string>
+          </list>
+        </insert-candidates>
       </rule>
       <rule>
-        <keyseq keys="uo"/>
-        <insert>
-          <list-of-candidates>uo uō uó uǒ uò</list-of-candidates>
-        </insert>
+        <keyseq>
+          <string>uo</string>
+        </keyseq>
+        <insert-candidates>
+          <list>
+            <string>uo</string>
+            <string>uō</string>
+            <string>uó</string>
+            <string>uǒ</string>
+            <string>uò</string>
+          </list>
+        </insert-candidates>
       </rule>
     </map>
-    <map id="map-tone">
+    <map mname="map-tone">
       <rule>
-        <keyseq keys="1"/>
-        <select index="1"/>
+        <keyseq>
+          <string>1</string>
+        </keyseq>
+        <select>
+          <integer>1</integer>
+        </select>
       </rule>
       <rule>
-        <keyseq keys="2"/>
-        <select index="2"/>
+        <keyseq>
+          <string>2</string>
+        </keyseq>
+        <select>
+          <integer>2</integer>
+        </select>
       </rule>
       <rule>
-        <keyseq keys="3"/>
-        <select index="3"/>
+        <keyseq>
+          <string>3</string>
+        </keyseq>
+        <select>
+          <integer>3</integer>
+        </select>
       </rule>
       <rule>
-        <keyseq keys="4"/>
-        <select index="4"/>
+        <keyseq>
+          <string>4</string>
+        </keyseq>
+        <select>
+          <integer>4</integer>
+        </select>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <branch branch-selecting-map="map-vowel">
-        <shift-to id="state-select"/>
+    <state sname="state-init">
+      <branch mname="map-vowel">
+        <shift>
+          <symbol>state-select</symbol>
+        </shift>
       </branch>
     </state>
-    <state id="state-select">
-      <branch branch-selecting-map="map-tone">
-        <shift-to id="state-init"/>
+    <state sname="state-select">
+      <branch mname="map-tone">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
     </state>
   </state-list>

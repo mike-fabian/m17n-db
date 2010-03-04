@@ -15,1852 +15,3402 @@ communicate with Anthy.  For more detail about Anthy, see the page
 </description>
   <title>aあ</title>
   <variable-list>
-    <variable id="input-mode">
+    <defvar vname="input-mode">
       <description>Hiragana or Katakana (not yet implemented)
 Select Hiragana or Katakana</description>
-      <value type="symbol">hiragana</value>
-      <variable-value-candidate>
-        <c-value type="symbol">hiragana</c-value>
-        <c-value type="symbol">katakana</c-value>
-      </variable-value-candidate>
-    </variable>
-    <variable id="zen-han">
+      <symbol>hiragana</symbol>
+      <possible-value>
+        <symbol>hiragana</symbol>
+        <symbol>katakana</symbol>
+      </possible-value>
+    </defvar>
+    <defvar vname="zen-han">
       <description>Zenkaku or Hankaku (not yet implemented)</description>
-      <value type="symbol">zenkaku</value>
-      <variable-value-candidate>
-        <c-value type="symbol">hankaku</c-value>
-        <c-value type="symbol">zenkaku</c-value>
-      </variable-value-candidate>
-    </variable>
+      <symbol>zenkaku</symbol>
+      <possible-value>
+        <symbol>hankaku</symbol>
+        <symbol>zenkaku</symbol>
+      </possible-value>
+    </defvar>
   </variable-list>
   <command-list>
-    <command id="command-convert"/>
-    <command id="command-commit"/>
+    <defcmd cname="command-convert"/>
+    <defcmd cname="command-commit"/>
   </command-list>
   <module-list>
-    <module id="module-libmimx-anthy">
-      <function id="function-convert"/>
-      <function id="function-resize"/>
-      <function id="function-change"/>
-      <function id="function-commit"/>
-      <function id="function-init"/>
-      <function id="function-fini"/>
+    <module id="libmimx-anthy">
+      <defun fname="libmimx-anthy-function-convert"/>
+      <defun fname="libmimx-anthy-function-resize"/>
+      <defun fname="libmimx-anthy-function-change"/>
+      <defun fname="libmimx-anthy-function-commit"/>
+      <defun fname="libmimx-anthy-function-init"/>
+      <defun fname="libmimx-anthy-function-fini"/>
     </module>
   </module-list>
   <map-list>
-    <map id="map-starter">
-      <rule>
-        <keyseq keys="a"/>
-      </rule>
-      <rule>
-        <keyseq keys="i"/>
-      </rule>
-      <rule>
-        <keyseq keys="u"/>
-      </rule>
-      <rule>
-        <keyseq keys="e"/>
-      </rule>
-      <rule>
-        <keyseq keys="o"/>
-      </rule>
-      <rule>
-        <keyseq keys="k"/>
-      </rule>
-      <rule>
-        <keyseq keys="s"/>
-      </rule>
-      <rule>
-        <keyseq keys="t"/>
-      </rule>
-      <rule>
-        <keyseq keys="n"/>
-      </rule>
-      <rule>
-        <keyseq keys="h"/>
-      </rule>
-      <rule>
-        <keyseq keys="m"/>
-      </rule>
-      <rule>
-        <keyseq keys="y"/>
-      </rule>
-      <rule>
-        <keyseq keys="r"/>
-      </rule>
-      <rule>
-        <keyseq keys="l"/>
-      </rule>
-      <rule>
-        <keyseq keys="w"/>
-      </rule>
-      <rule>
-        <keyseq keys="g"/>
-      </rule>
-      <rule>
-        <keyseq keys="z"/>
-      </rule>
-      <rule>
-        <keyseq keys="d"/>
-      </rule>
-      <rule>
-        <keyseq keys="b"/>
-      </rule>
-      <rule>
-        <keyseq keys="p"/>
-      </rule>
-      <rule>
-        <keyseq keys="c"/>
-      </rule>
-      <rule>
-        <keyseq keys="j"/>
-      </rule>
-      <rule>
-        <keyseq keys="f"/>
-      </rule>
-      <rule>
-        <keyseq keys="x"/>
-      </rule>
-      <rule>
-        <keyseq keys="v"/>
-      </rule>
-      <rule>
-        <keyseq keys="1"/>
-      </rule>
-      <rule>
-        <keyseq keys="2"/>
-      </rule>
-      <rule>
-        <keyseq keys="3"/>
-      </rule>
-      <rule>
-        <keyseq keys="4"/>
-      </rule>
-      <rule>
-        <keyseq keys="5"/>
-      </rule>
-      <rule>
-        <keyseq keys="6"/>
-      </rule>
-      <rule>
-        <keyseq keys="7"/>
-      </rule>
-      <rule>
-        <keyseq keys="8"/>
-      </rule>
-      <rule>
-        <keyseq keys="9"/>
-      </rule>
-      <rule>
-        <keyseq keys="0"/>
-      </rule>
-      <rule>
-        <keyseq keys="!"/>
-      </rule>
-      <rule>
-        <keyseq keys="@"/>
-      </rule>
-      <rule>
-        <keyseq keys="#"/>
-      </rule>
-      <rule>
-        <keyseq keys="$"/>
-      </rule>
-      <rule>
-        <keyseq keys="%"/>
-      </rule>
-      <rule>
-        <keyseq keys="^"/>
-      </rule>
-      <rule>
-        <keyseq keys="&amp;"/>
-      </rule>
-      <rule>
-        <keyseq keys="*"/>
-      </rule>
-      <rule>
-        <keyseq keys="("/>
-      </rule>
-      <rule>
-        <keyseq keys=")"/>
-      </rule>
-      <rule>
-        <keyseq keys="-"/>
-      </rule>
-      <rule>
-        <keyseq keys="="/>
-      </rule>
-      <rule>
-        <keyseq keys="`"/>
-      </rule>
-      <rule>
-        <keyseq keys="\"/>
-      </rule>
-      <rule>
-        <keyseq keys="|"/>
-      </rule>
-      <rule>
-        <keyseq keys="_"/>
-      </rule>
-      <rule>
-        <keyseq keys="+"/>
-      </rule>
-      <rule>
-        <keyseq keys="~"/>
-      </rule>
-      <rule>
-        <keyseq keys="["/>
-      </rule>
-      <rule>
-        <keyseq keys="]"/>
-      </rule>
-      <rule>
-        <keyseq keys="{"/>
-      </rule>
-      <rule>
-        <keyseq keys="}"/>
-      </rule>
-      <rule>
-        <keyseq keys=":"/>
-      </rule>
-      <rule>
-        <keyseq keys=";"/>
-      </rule>
-      <rule>
-        <keyseq keys="&quot;"/>
-      </rule>
-      <rule>
-        <keyseq keys="&apos;"/>
-      </rule>
-      <rule>
-        <keyseq keys="."/>
-      </rule>
-      <rule>
-        <keyseq keys=","/>
-      </rule>
-      <rule>
-        <keyseq keys="&lt;"/>
-      </rule>
-      <rule>
-        <keyseq keys="&gt;"/>
-      </rule>
-      <rule>
-        <keyseq keys="?"/>
-      </rule>
-      <rule>
-        <keyseq keys="/"/>
-      </rule>
-    </map>
-    <map id="map-ordinary">
-      <rule>
-        <keyseq keys="a"/>
-        <insert string="あ"/>
-      </rule>
-      <rule>
-        <keyseq keys="i"/>
-        <insert string="い"/>
-      </rule>
-      <rule>
-        <keyseq keys="u"/>
-        <insert string="う"/>
-      </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <insert string="え"/>
-      </rule>
-      <rule>
-        <keyseq keys="o"/>
-        <insert string="お"/>
-      </rule>
-      <rule>
-        <keyseq keys="ka"/>
-        <insert string="か"/>
-      </rule>
-      <rule>
-        <keyseq keys="ki"/>
-        <insert string="き"/>
-      </rule>
-      <rule>
-        <keyseq keys="ku"/>
-        <insert string="く"/>
-      </rule>
-      <rule>
-        <keyseq keys="ke"/>
-        <insert string="け"/>
-      </rule>
-      <rule>
-        <keyseq keys="ko"/>
-        <insert string="こ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sa"/>
-        <insert string="さ"/>
-      </rule>
-      <rule>
-        <keyseq keys="si"/>
-        <insert string="し"/>
-      </rule>
-      <rule>
-        <keyseq keys="su"/>
-        <insert string="す"/>
-      </rule>
-      <rule>
-        <keyseq keys="se"/>
-        <insert string="せ"/>
-      </rule>
-      <rule>
-        <keyseq keys="so"/>
-        <insert string="そ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ta"/>
-        <insert string="た"/>
-      </rule>
-      <rule>
-        <keyseq keys="ti"/>
-        <insert string="ち"/>
-      </rule>
-      <rule>
-        <keyseq keys="tu"/>
-        <insert string="つ"/>
-      </rule>
-      <rule>
-        <keyseq keys="te"/>
-        <insert string="て"/>
-      </rule>
-      <rule>
-        <keyseq keys="to"/>
-        <insert string="と"/>
-      </rule>
-      <rule>
-        <keyseq keys="na"/>
-        <insert string="な"/>
-      </rule>
-      <rule>
-        <keyseq keys="ni"/>
-        <insert string="に"/>
-      </rule>
-      <rule>
-        <keyseq keys="nu"/>
-        <insert string="ぬ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ne"/>
-        <insert string="ね"/>
-      </rule>
-      <rule>
-        <keyseq keys="no"/>
-        <insert string="の"/>
-      </rule>
-      <rule>
-        <keyseq keys="ha"/>
-        <insert string="は"/>
-      </rule>
-      <rule>
-        <keyseq keys="hi"/>
-        <insert string="ひ"/>
-      </rule>
-      <rule>
-        <keyseq keys="hu"/>
-        <insert string="ふ"/>
-      </rule>
-      <rule>
-        <keyseq keys="he"/>
-        <insert string="へ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ho"/>
-        <insert string="ほ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ma"/>
-        <insert string="ま"/>
-      </rule>
-      <rule>
-        <keyseq keys="mi"/>
-        <insert string="み"/>
-      </rule>
-      <rule>
-        <keyseq keys="mu"/>
-        <insert string="む"/>
-      </rule>
-      <rule>
-        <keyseq keys="me"/>
-        <insert string="め"/>
-      </rule>
-      <rule>
-        <keyseq keys="mo"/>
-        <insert string="も"/>
-      </rule>
-      <rule>
-        <keyseq keys="ya"/>
-        <insert string="や"/>
-      </rule>
-      <rule>
-        <keyseq keys="yu"/>
-        <insert string="ゆ"/>
-      </rule>
-      <rule>
-        <keyseq keys="yo"/>
-        <insert string="よ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ra"/>
-        <insert string="ら"/>
-      </rule>
-      <rule>
-        <keyseq keys="ri"/>
-        <insert string="り"/>
-      </rule>
-      <rule>
-        <keyseq keys="ru"/>
-        <insert string="る"/>
-      </rule>
-      <rule>
-        <keyseq keys="re"/>
-        <insert string="れ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ro"/>
-        <insert string="ろ"/>
-      </rule>
-      <rule>
-        <keyseq keys="la"/>
-        <insert string="ら"/>
-      </rule>
-      <rule>
-        <keyseq keys="li"/>
-        <insert string="り"/>
-      </rule>
-      <rule>
-        <keyseq keys="lu"/>
-        <insert string="る"/>
-      </rule>
-      <rule>
-        <keyseq keys="le"/>
-        <insert string="れ"/>
-      </rule>
-      <rule>
-        <keyseq keys="lo"/>
-        <insert string="ろ"/>
-      </rule>
-      <rule>
-        <keyseq keys="wa"/>
-        <insert string="わ"/>
-      </rule>
-      <rule>
-        <keyseq keys="wi"/>
-        <insert string="ゐ"/>
-      </rule>
-      <rule>
-        <keyseq keys="wu"/>
-        <insert string="う"/>
-      </rule>
-      <rule>
-        <keyseq keys="we"/>
-        <insert string="ゑ"/>
-      </rule>
-      <rule>
-        <keyseq keys="wo"/>
-        <insert string="を"/>
-      </rule>
-      <rule>
-        <keyseq keys="ga"/>
-        <insert string="が"/>
-      </rule>
-      <rule>
-        <keyseq keys="gi"/>
-        <insert string="ぎ"/>
-      </rule>
-      <rule>
-        <keyseq keys="gu"/>
-        <insert string="ぐ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ge"/>
-        <insert string="げ"/>
-      </rule>
-      <rule>
-        <keyseq keys="go"/>
-        <insert string="ご"/>
-      </rule>
-      <rule>
-        <keyseq keys="za"/>
-        <insert string="ざ"/>
-      </rule>
-      <rule>
-        <keyseq keys="zi"/>
-        <insert string="じ"/>
-      </rule>
-      <rule>
-        <keyseq keys="zu"/>
-        <insert string="ず"/>
-      </rule>
-      <rule>
-        <keyseq keys="ze"/>
-        <insert string="ぜ"/>
-      </rule>
-      <rule>
-        <keyseq keys="zo"/>
-        <insert string="ぞ"/>
-      </rule>
-      <rule>
-        <keyseq keys="da"/>
-        <insert string="だ"/>
-      </rule>
-      <rule>
-        <keyseq keys="di"/>
-        <insert string="ぢ"/>
-      </rule>
-      <rule>
-        <keyseq keys="du"/>
-        <insert string="づ"/>
-      </rule>
-      <rule>
-        <keyseq keys="de"/>
-        <insert string="で"/>
-      </rule>
-      <rule>
-        <keyseq keys="do"/>
-        <insert string="ど"/>
-      </rule>
-      <rule>
-        <keyseq keys="ba"/>
-        <insert string="ば"/>
-      </rule>
-      <rule>
-        <keyseq keys="bi"/>
-        <insert string="び"/>
-      </rule>
-      <rule>
-        <keyseq keys="bu"/>
-        <insert string="ぶ"/>
-      </rule>
-      <rule>
-        <keyseq keys="be"/>
-        <insert string="べ"/>
-      </rule>
-      <rule>
-        <keyseq keys="bo"/>
-        <insert string="ぼ"/>
-      </rule>
-      <rule>
-        <keyseq keys="pa"/>
-        <insert string="ぱ"/>
-      </rule>
-      <rule>
-        <keyseq keys="pi"/>
-        <insert string="ぴ"/>
-      </rule>
-      <rule>
-        <keyseq keys="pu"/>
-        <insert string="ぷ"/>
-      </rule>
-      <rule>
-        <keyseq keys="pe"/>
-        <insert string="ぺ"/>
-      </rule>
-      <rule>
-        <keyseq keys="po"/>
-        <insert string="ぽ"/>
-      </rule>
-      <rule>
-        <keyseq keys="kya"/>
-        <insert string="きゃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="kyu"/>
-        <insert string="きゅ"/>
-      </rule>
-      <rule>
-        <keyseq keys="kye"/>
-        <insert string="きぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="kyo"/>
-        <insert string="きょ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sya"/>
-        <insert string="しゃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="syu"/>
-        <insert string="しゅ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sye"/>
-        <insert string="しぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="syo"/>
-        <insert string="しょ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sha"/>
-        <insert string="しゃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="shu"/>
-        <insert string="しゅ"/>
-      </rule>
-      <rule>
-        <keyseq keys="she"/>
-        <insert string="しぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="sho"/>
-        <insert string="しょ"/>
-      </rule>
-      <rule>
-        <keyseq keys="cha"/>
-        <insert string="ちゃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="chu"/>
-        <insert string="ちゅ"/>
-      </rule>
-      <rule>
-        <keyseq keys="che"/>
-        <insert string="ちぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="cho"/>
-        <insert string="ちょ"/>
-      </rule>
-      <rule>
-        <keyseq keys="tya"/>
-        <insert string="ちゃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="tyu"/>
-        <insert string="ちゅ"/>
-      </rule>
-      <rule>
-        <keyseq keys="tye"/>
-        <insert string="ちぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="tyo"/>
-        <insert string="ちょ"/>
-      </rule>
-      <rule>
-        <keyseq keys="nya"/>
-        <insert string="にゃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="nyu"/>
-        <insert string="にゅ"/>
-      </rule>
-      <rule>
-        <keyseq keys="nye"/>
-        <insert string="にぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="nyo"/>
-        <insert string="にょ"/>
-      </rule>
-      <rule>
-        <keyseq keys="hya"/>
-        <insert string="ひゃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="hyu"/>
-        <insert string="ひゅ"/>
-      </rule>
-      <rule>
-        <keyseq keys="hye"/>
-        <insert string="ひぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="hyo"/>
-        <insert string="ひょ"/>
-      </rule>
-      <rule>
-        <keyseq keys="mya"/>
-        <insert string="みゃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="myu"/>
-        <insert string="みゅ"/>
-      </rule>
-      <rule>
-        <keyseq keys="mye"/>
-        <insert string="みぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="myo"/>
-        <insert string="みょ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rya"/>
-        <insert string="りゃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ryu"/>
-        <insert string="りゅ"/>
-      </rule>
-      <rule>
-        <keyseq keys="rye"/>
-        <insert string="りぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ryo"/>
-        <insert string="りょ"/>
-      </rule>
-      <rule>
-        <keyseq keys="lya"/>
-        <insert string="りゃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="lyu"/>
-        <insert string="りゅ"/>
-      </rule>
-      <rule>
-        <keyseq keys="lye"/>
-        <insert string="りぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="lyo"/>
-        <insert string="りょ"/>
-      </rule>
-      <rule>
-        <keyseq keys="gya"/>
-        <insert string="ぎゃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="gyu"/>
-        <insert string="ぎゅ"/>
-      </rule>
-      <rule>
-        <keyseq keys="gye"/>
-        <insert string="ぎぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="gyo"/>
-        <insert string="ぎょ"/>
-      </rule>
-      <rule>
-        <keyseq keys="zya"/>
-        <insert string="じゃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="zyu"/>
-        <insert string="じゅ"/>
-      </rule>
-      <rule>
-        <keyseq keys="zye"/>
-        <insert string="じぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="zyo"/>
-        <insert string="じょ"/>
-      </rule>
-      <rule>
-        <keyseq keys="jya"/>
-        <insert string="じゃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="jyu"/>
-        <insert string="じゅ"/>
-      </rule>
-      <rule>
-        <keyseq keys="jye"/>
-        <insert string="じぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="jyo"/>
-        <insert string="じょ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ja"/>
-        <insert string="じゃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ju"/>
-        <insert string="じゅ"/>
-      </rule>
-      <rule>
-        <keyseq keys="je"/>
-        <insert string="じぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="jo"/>
-        <insert string="じょ"/>
-      </rule>
-      <rule>
-        <keyseq keys="bya"/>
-        <insert string="びゃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="byu"/>
-        <insert string="びゅ"/>
-      </rule>
-      <rule>
-        <keyseq keys="bye"/>
-        <insert string="びぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="byo"/>
-        <insert string="びょ"/>
-      </rule>
-      <rule>
-        <keyseq keys="pya"/>
-        <insert string="ぴゃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="pyu"/>
-        <insert string="ぴゅ"/>
-      </rule>
-      <rule>
-        <keyseq keys="pye"/>
-        <insert string="ぴぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="pyo"/>
-        <insert string="ぴょ"/>
-      </rule>
-      <rule>
-        <keyseq keys="kwa"/>
-        <insert string="くゎ"/>
-      </rule>
-      <rule>
-        <keyseq keys="kwi"/>
-        <insert string="くぃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="kwe"/>
-        <insert string="くぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="kwo"/>
-        <insert string="くぉ"/>
-      </rule>
-      <rule>
-        <keyseq keys="tsa"/>
-        <insert string="つぁ"/>
-      </rule>
-      <rule>
-        <keyseq keys="tsi"/>
-        <insert string="つぃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="tse"/>
-        <insert string="つぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="tso"/>
-        <insert string="つぉ"/>
-      </rule>
-      <rule>
-        <keyseq keys="fa"/>
-        <insert string="ふぁ"/>
-      </rule>
-      <rule>
-        <keyseq keys="fi"/>
-        <insert string="ふぃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="fe"/>
-        <insert string="ふぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="fo"/>
-        <insert string="ふぉ"/>
-      </rule>
-      <rule>
-        <keyseq keys="gwa"/>
-        <insert string="ぐゎ"/>
-      </rule>
-      <rule>
-        <keyseq keys="gwi"/>
-        <insert string="ぐぃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="gwe"/>
-        <insert string="ぐぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="gwo"/>
-        <insert string="ぐぉ"/>
-      </rule>
-      <rule>
-        <keyseq keys="dyi"/>
-        <insert string="でぃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="dyu"/>
-        <insert string="どぅ"/>
-      </rule>
-      <rule>
-        <keyseq keys="dye"/>
-        <insert string="でぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="dyo"/>
-        <insert string="どぉ"/>
-      </rule>
-      <rule>
-        <keyseq keys="xwi"/>
-        <insert string="うぃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="xwe"/>
-        <insert string="うぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="xwo"/>
-        <insert string="うぉ"/>
-      </rule>
-      <rule>
-        <keyseq keys="shi"/>
-        <insert string="し"/>
-      </rule>
-      <rule>
-        <keyseq keys="tyi"/>
-        <insert string="てぃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="chi"/>
-        <insert string="ち"/>
-      </rule>
-      <rule>
-        <keyseq keys="tsu"/>
-        <insert string="つ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ji"/>
-        <insert string="じ"/>
-      </rule>
-      <rule>
-        <keyseq keys="fu"/>
-        <insert string="ふ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ye"/>
-        <insert string="いぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="va"/>
-        <insert string="ヴぁ"/>
-      </rule>
-      <rule>
-        <keyseq keys="vi"/>
-        <insert string="ヴぃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="vu"/>
-        <insert string="ヴ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ve"/>
-        <insert string="ヴぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="vo"/>
-        <insert string="ヴぉ"/>
-      </rule>
-      <rule>
-        <keyseq keys="xa"/>
-        <insert string="ぁ"/>
-      </rule>
-      <rule>
-        <keyseq keys="xi"/>
-        <insert string="ぃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="xu"/>
-        <insert string="ぅ"/>
-      </rule>
-      <rule>
-        <keyseq keys="xe"/>
-        <insert string="ぇ"/>
-      </rule>
-      <rule>
-        <keyseq keys="xo"/>
-        <insert string="ぉ"/>
-      </rule>
-      <rule>
-        <keyseq keys="xtu"/>
-        <insert string="っ"/>
-      </rule>
-      <rule>
-        <keyseq keys="xya"/>
-        <insert string="ゃ"/>
-      </rule>
-      <rule>
-        <keyseq keys="xyu"/>
-        <insert string="ゅ"/>
-      </rule>
-      <rule>
-        <keyseq keys="xyo"/>
-        <insert string="ょ"/>
-      </rule>
-      <rule>
-        <keyseq keys="xwa"/>
-        <insert string="ゎ"/>
-      </rule>
-      <rule>
-        <keyseq keys="xka"/>
-        <insert string="ヵ"/>
-      </rule>
-      <rule>
-        <keyseq keys="xke"/>
-        <insert string="ヶ"/>
-      </rule>
-    </map>
-    <map id="map-alnum">
-      <rule>
-        <keyseq keys="1"/>
-        <insert string="１"/>
-      </rule>
-      <rule>
-        <keyseq keys="2"/>
-        <insert string="２"/>
-      </rule>
-      <rule>
-        <keyseq keys="3"/>
-        <insert string="３"/>
-      </rule>
-      <rule>
-        <keyseq keys="4"/>
-        <insert string="４"/>
-      </rule>
-      <rule>
-        <keyseq keys="5"/>
-        <insert string="５"/>
-      </rule>
-      <rule>
-        <keyseq keys="6"/>
-        <insert string="６"/>
-      </rule>
-      <rule>
-        <keyseq keys="7"/>
-        <insert string="７"/>
-      </rule>
-      <rule>
-        <keyseq keys="8"/>
-        <insert string="８"/>
-      </rule>
-      <rule>
-        <keyseq keys="9"/>
-        <insert string="９"/>
-      </rule>
-      <rule>
-        <keyseq keys="0"/>
-        <insert string="０"/>
-      </rule>
-      <rule>
-        <keyseq keys="!"/>
-        <insert string="！"/>
-      </rule>
-      <rule>
-        <keyseq keys="@"/>
-        <insert string="＠"/>
-      </rule>
-      <rule>
-        <keyseq keys="#"/>
-        <insert string="＃"/>
-      </rule>
-      <rule>
-        <keyseq keys="$"/>
-        <insert string="＄"/>
-      </rule>
-      <rule>
-        <keyseq keys="%"/>
-        <insert string="％"/>
-      </rule>
-      <rule>
-        <keyseq keys="^"/>
-        <insert string="＾"/>
-      </rule>
-      <rule>
-        <keyseq keys="&amp;"/>
-        <insert string="＆"/>
-      </rule>
-      <rule>
-        <keyseq keys="*"/>
-        <insert string="＊"/>
-      </rule>
-      <rule>
-        <keyseq keys="("/>
-        <insert string="（"/>
-      </rule>
-      <rule>
-        <keyseq keys=")"/>
-        <insert string="）"/>
-      </rule>
-      <rule>
-        <keyseq keys="-"/>
-        <insert string="ー"/>
-      </rule>
-      <rule>
-        <keyseq keys="="/>
-        <insert string="＝"/>
-      </rule>
-      <rule>
-        <keyseq keys="`"/>
-        <insert string="｀"/>
-      </rule>
-      <rule>
-        <keyseq keys="\"/>
-        <insert string="￥"/>
-      </rule>
-      <rule>
-        <keyseq keys="|"/>
-        <insert string="｜"/>
-      </rule>
-      <rule>
-        <keyseq keys="_"/>
-        <insert string="＿"/>
-      </rule>
-      <rule>
-        <keyseq keys="+"/>
-        <insert string="＋"/>
-      </rule>
-      <rule>
-        <keyseq keys="~"/>
-        <insert string="￣"/>
-      </rule>
-      <rule>
-        <keyseq keys="["/>
-        <insert string="「"/>
-      </rule>
-      <rule>
-        <keyseq keys="]"/>
-        <insert string="」"/>
-      </rule>
-      <rule>
-        <keyseq keys="{"/>
-        <insert string="｛"/>
-      </rule>
-      <rule>
-        <keyseq keys="}"/>
-        <insert string="｝"/>
-      </rule>
-      <rule>
-        <keyseq keys=":"/>
-        <insert string="："/>
-      </rule>
-      <rule>
-        <keyseq keys=";"/>
-        <insert string="；"/>
-      </rule>
-      <rule>
-        <keyseq keys="&quot;"/>
-        <insert string="”"/>
-      </rule>
-      <rule>
-        <keyseq keys="&apos;"/>
-        <insert string="’"/>
-      </rule>
-      <rule>
-        <keyseq keys="."/>
-        <insert string="。"/>
-      </rule>
-      <rule>
-        <keyseq keys=","/>
-        <insert string="、"/>
-      </rule>
-      <rule>
-        <keyseq keys="&lt;"/>
-        <insert string="＜"/>
-      </rule>
-      <rule>
-        <keyseq keys="&gt;"/>
-        <insert string="＞"/>
-      </rule>
-      <rule>
-        <keyseq keys="?"/>
-        <insert string="？"/>
-      </rule>
-      <rule>
-        <keyseq keys="/"/>
-        <insert string="／"/>
-      </rule>
-    </map>
-    <map id="map-symbol">
-      <rule>
-        <keyseq keys="z1"/>
-        <insert string="○"/>
-      </rule>
-      <rule>
-        <keyseq keys="z!"/>
-        <insert string="●"/>
-      </rule>
-      <rule>
-        <keyseq keys="z2"/>
-        <insert string="▽"/>
-      </rule>
-      <rule>
-        <keyseq keys="z@"/>
-        <insert string="▼"/>
-      </rule>
-      <rule>
-        <keyseq keys="z3"/>
-        <insert string="△"/>
-      </rule>
-      <rule>
-        <keyseq keys="z#"/>
-        <insert string="▲"/>
-      </rule>
-      <rule>
-        <keyseq keys="z4"/>
-        <insert string="□"/>
-      </rule>
-      <rule>
-        <keyseq keys="z$"/>
-        <insert string="■"/>
-      </rule>
-      <rule>
-        <keyseq keys="z5"/>
-        <insert string="◇"/>
-      </rule>
-      <rule>
-        <keyseq keys="z%"/>
-        <insert string="◆"/>
-      </rule>
-      <rule>
-        <keyseq keys="z6"/>
-        <insert string="☆"/>
-      </rule>
-      <rule>
-        <keyseq keys="z^"/>
-        <insert string="★"/>
-      </rule>
-      <rule>
-        <keyseq keys="z7"/>
-        <insert string="◎"/>
-      </rule>
-      <rule>
-        <keyseq keys="z&amp;"/>
-        <insert string="£"/>
-      </rule>
-      <rule>
-        <keyseq keys="z8"/>
-        <insert string="¢"/>
-      </rule>
-      <rule>
-        <keyseq keys="z*"/>
-        <insert string="×"/>
-      </rule>
-      <rule>
-        <keyseq keys="z9"/>
-        <insert string="♂"/>
-      </rule>
-      <rule>
-        <keyseq keys="z("/>
-        <insert string="【"/>
-      </rule>
-      <rule>
-        <keyseq keys="z0"/>
-        <insert string="♀"/>
-      </rule>
-      <rule>
-        <keyseq keys="z)"/>
-        <insert string="】"/>
-      </rule>
-      <rule>
-        <keyseq keys="z-"/>
-        <insert string="〜"/>
-      </rule>
-      <rule>
-        <keyseq keys="z_"/>
-        <insert string="∴"/>
-      </rule>
-      <rule>
-        <keyseq keys="z="/>
-        <insert string="≠"/>
-      </rule>
-      <rule>
-        <keyseq keys="z+"/>
-        <insert string="±"/>
-      </rule>
-      <rule>
-        <keyseq keys="z\"/>
-        <insert string="＼"/>
-      </rule>
-      <rule>
-        <keyseq keys="z|"/>
-        <insert string="‖"/>
-      </rule>
-      <rule>
-        <keyseq keys="z`"/>
-        <insert string="´"/>
-      </rule>
-      <rule>
-        <keyseq keys="z~"/>
-        <insert string="¨"/>
-      </rule>
-      <rule>
-        <keyseq keys="zq"/>
-        <insert string="《"/>
-      </rule>
-      <rule>
-        <keyseq keys="zQ"/>
-        <insert string="〈"/>
-      </rule>
-      <rule>
-        <keyseq keys="zw"/>
-        <insert string="》"/>
-      </rule>
-      <rule>
-        <keyseq keys="zW"/>
-        <insert string="〉"/>
-      </rule>
-      <rule>
-        <keyseq keys="zr"/>
-        <insert string="々"/>
-      </rule>
-      <rule>
-        <keyseq keys="zR"/>
-        <insert string="仝"/>
-      </rule>
-      <rule>
-        <keyseq keys="zt"/>
-        <insert string="〆"/>
-      </rule>
-      <rule>
-        <keyseq keys="zT"/>
-        <insert string="§"/>
-      </rule>
-      <rule>
-        <keyseq keys="zp"/>
-        <insert string="〒"/>
-      </rule>
-      <rule>
-        <keyseq keys="zP"/>
-        <insert string="↑"/>
-      </rule>
-      <rule>
-        <keyseq keys="z["/>
-        <insert string="『"/>
-      </rule>
-      <rule>
-        <keyseq keys="z{"/>
-        <insert string="〔"/>
-      </rule>
-      <rule>
-        <keyseq keys="z]"/>
-        <insert string="』"/>
-      </rule>
-      <rule>
-        <keyseq keys="z}"/>
-        <insert string="〕"/>
-      </rule>
-      <rule>
-        <keyseq keys="zs"/>
-        <insert string="ヽ"/>
-      </rule>
-      <rule>
-        <keyseq keys="zS"/>
-        <insert string="ヾ"/>
-      </rule>
-      <rule>
-        <keyseq keys="zd"/>
-        <insert string="ゝ"/>
-      </rule>
-      <rule>
-        <keyseq keys="zD"/>
-        <insert string="ゞ"/>
-      </rule>
-      <rule>
-        <keyseq keys="zf"/>
-        <insert string="〃"/>
-      </rule>
-      <rule>
-        <keyseq keys="zF"/>
-        <insert string="→"/>
-      </rule>
-      <rule>
-        <keyseq keys="zg"/>
-        <insert string="‐"/>
-      </rule>
-      <rule>
-        <keyseq keys="zG"/>
-        <insert string="―"/>
-      </rule>
-      <rule>
-        <keyseq keys="zh"/>
-        <insert string="←"/>
-      </rule>
-      <rule>
-        <keyseq keys="zj"/>
-        <insert string="↓"/>
-      </rule>
-      <rule>
-        <keyseq keys="zk"/>
-        <insert string="↑"/>
-      </rule>
-      <rule>
-        <keyseq keys="zl"/>
-        <insert string="→"/>
-      </rule>
-      <rule>
-        <keyseq keys="z;"/>
-        <insert string="゛"/>
-      </rule>
-      <rule>
-        <keyseq keys="z:"/>
-        <insert string="゜"/>
-      </rule>
-      <rule>
-        <keyseq keys="z&apos;"/>
-        <insert string="‘"/>
-      </rule>
-      <rule>
-        <keyseq keys="z&quot;"/>
-        <insert string="“"/>
-      </rule>
-      <rule>
-        <keyseq keys="zx"/>
-        <insert string=":-"/>
-      </rule>
-      <rule>
-        <keyseq keys="zX"/>
-        <insert string=":-)"/>
-      </rule>
-      <rule>
-        <keyseq keys="zc"/>
-        <insert string="〇"/>
-      </rule>
-      <rule>
-        <keyseq keys="zC"/>
-        <insert string="℃"/>
-      </rule>
-      <rule>
-        <keyseq keys="zv"/>
-        <insert string="※"/>
-      </rule>
-      <rule>
-        <keyseq keys="zV"/>
-        <insert string="÷"/>
-      </rule>
-      <rule>
-        <keyseq keys="zb"/>
-        <insert string="°"/>
-      </rule>
-      <rule>
-        <keyseq keys="zB"/>
-        <insert string="←"/>
-      </rule>
-      <rule>
-        <keyseq keys="zn"/>
-        <insert string="′"/>
-      </rule>
-      <rule>
-        <keyseq keys="zN"/>
-        <insert string="↓"/>
-      </rule>
-      <rule>
-        <keyseq keys="zm"/>
-        <insert string="″"/>
-      </rule>
-      <rule>
-        <keyseq keys="zM"/>
-        <insert string="〓"/>
-      </rule>
-      <rule>
-        <keyseq keys="z,"/>
-        <insert string="‥"/>
-      </rule>
-      <rule>
-        <keyseq keys="z&lt;"/>
-        <insert string="≦"/>
-      </rule>
-      <rule>
-        <keyseq keys="z."/>
-        <insert string="…"/>
-      </rule>
-      <rule>
-        <keyseq keys="z&gt;"/>
-        <insert string="≧"/>
-      </rule>
-      <rule>
-        <keyseq keys="z/"/>
-        <insert string="・"/>
-      </rule>
-      <rule>
-        <keyseq keys="z?"/>
-        <insert string="∞"/>
-      </rule>
-    </map>
-    <map id="map-hatsuon">
-      <rule>
-        <keyseq keys="n"/>
-        <insert string="n"/>
-      </rule>
-    </map>
-    <map id="map-sokuon">
-      <rule>
-        <keyseq keys="kk"/>
-      </rule>
-      <rule>
-        <keyseq keys="ss"/>
-      </rule>
-      <rule>
-        <keyseq keys="tt"/>
-      </rule>
-      <rule>
-        <keyseq keys="hh"/>
-      </rule>
-      <rule>
-        <keyseq keys="mm"/>
-      </rule>
-      <rule>
-        <keyseq keys="rr"/>
-      </rule>
-      <rule>
-        <keyseq keys="ll"/>
-      </rule>
-      <rule>
-        <keyseq keys="ww"/>
-      </rule>
-      <rule>
-        <keyseq keys="gg"/>
-      </rule>
-      <rule>
-        <keyseq keys="zz"/>
-      </rule>
-      <rule>
-        <keyseq keys="dd"/>
-      </rule>
-      <rule>
-        <keyseq keys="bb"/>
-      </rule>
-      <rule>
-        <keyseq keys="pp"/>
-      </rule>
-      <rule>
-        <keyseq keys="cc"/>
-      </rule>
-      <rule>
-        <keyseq keys="jj"/>
-      </rule>
-      <rule>
-        <keyseq keys="ff"/>
-      </rule>
-    </map>
-    <map id="map-henkan">
-      <rule>
-        <command-reference id="command-convert"/>
-      </rule>
-    </map>
-    <map id="map-kakutei">
-      <rule>
-        <command-reference id="command-commit"/>
-      </rule>
-    </map>
-    <map id="map-backspace">
+    <map mname="map-starter">
       <rule>
         <keyseq>
-          <key-event>BackSpace</key-event>
+          <string>a</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>t</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>x</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>1</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>2</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>3</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>4</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>5</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>6</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>7</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>8</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>9</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>0</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>!</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>@</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>#</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>$</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>%</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>^</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&amp;</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>*</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>(</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>)</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>-</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>=</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>`</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>|</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>_</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>+</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>~</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>[</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>]</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>{</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>}</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>:</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>;</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>"</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>'</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>.</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>,</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&lt;</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&gt;</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>?</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>/</string>
         </keyseq>
       </rule>
     </map>
-    <map id="map-edit">
+    <map mname="map-ordinary">
       <rule>
         <keyseq>
-          <key-event>Delete</key-event>
+          <string>a</string>
         </keyseq>
-        <delete-to-marker position="@next"/>
+        <insert>
+          <string>あ</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>BackSpace</key-event>
+          <string>i</string>
         </keyseq>
-        <delete-to-marker position="@previous"/>
+        <insert>
+          <string>い</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>Left</key-event>
+          <string>u</string>
         </keyseq>
-        <move-to-marker position="@previous"/>
+        <insert>
+          <string>う</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>Right</key-event>
+          <string>e</string>
         </keyseq>
-        <move-to-marker position="@next"/>
+        <insert>
+          <string>え</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <string>お</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ka</string>
+        </keyseq>
+        <insert>
+          <string>か</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ki</string>
+        </keyseq>
+        <insert>
+          <string>き</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ku</string>
+        </keyseq>
+        <insert>
+          <string>く</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ke</string>
+        </keyseq>
+        <insert>
+          <string>け</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ko</string>
+        </keyseq>
+        <insert>
+          <string>こ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sa</string>
+        </keyseq>
+        <insert>
+          <string>さ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>si</string>
+        </keyseq>
+        <insert>
+          <string>し</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>su</string>
+        </keyseq>
+        <insert>
+          <string>す</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>se</string>
+        </keyseq>
+        <insert>
+          <string>せ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>so</string>
+        </keyseq>
+        <insert>
+          <string>そ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ta</string>
+        </keyseq>
+        <insert>
+          <string>た</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ti</string>
+        </keyseq>
+        <insert>
+          <string>ち</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>tu</string>
+        </keyseq>
+        <insert>
+          <string>つ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>te</string>
+        </keyseq>
+        <insert>
+          <string>て</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>to</string>
+        </keyseq>
+        <insert>
+          <string>と</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>na</string>
+        </keyseq>
+        <insert>
+          <string>な</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ni</string>
+        </keyseq>
+        <insert>
+          <string>に</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>nu</string>
+        </keyseq>
+        <insert>
+          <string>ぬ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ne</string>
+        </keyseq>
+        <insert>
+          <string>ね</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>no</string>
+        </keyseq>
+        <insert>
+          <string>の</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ha</string>
+        </keyseq>
+        <insert>
+          <string>は</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>hi</string>
+        </keyseq>
+        <insert>
+          <string>ひ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>hu</string>
+        </keyseq>
+        <insert>
+          <string>ふ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>he</string>
+        </keyseq>
+        <insert>
+          <string>へ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ho</string>
+        </keyseq>
+        <insert>
+          <string>ほ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ma</string>
+        </keyseq>
+        <insert>
+          <string>ま</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>mi</string>
+        </keyseq>
+        <insert>
+          <string>み</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>mu</string>
+        </keyseq>
+        <insert>
+          <string>む</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>me</string>
+        </keyseq>
+        <insert>
+          <string>め</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>mo</string>
+        </keyseq>
+        <insert>
+          <string>も</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ya</string>
+        </keyseq>
+        <insert>
+          <string>や</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>yu</string>
+        </keyseq>
+        <insert>
+          <string>ゆ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>yo</string>
+        </keyseq>
+        <insert>
+          <string>よ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ra</string>
+        </keyseq>
+        <insert>
+          <string>ら</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ri</string>
+        </keyseq>
+        <insert>
+          <string>り</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ru</string>
+        </keyseq>
+        <insert>
+          <string>る</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>re</string>
+        </keyseq>
+        <insert>
+          <string>れ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ro</string>
+        </keyseq>
+        <insert>
+          <string>ろ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>la</string>
+        </keyseq>
+        <insert>
+          <string>ら</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>li</string>
+        </keyseq>
+        <insert>
+          <string>り</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lu</string>
+        </keyseq>
+        <insert>
+          <string>る</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>le</string>
+        </keyseq>
+        <insert>
+          <string>れ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lo</string>
+        </keyseq>
+        <insert>
+          <string>ろ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>wa</string>
+        </keyseq>
+        <insert>
+          <string>わ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>wi</string>
+        </keyseq>
+        <insert>
+          <string>ゐ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>wu</string>
+        </keyseq>
+        <insert>
+          <string>う</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>we</string>
+        </keyseq>
+        <insert>
+          <string>ゑ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>wo</string>
+        </keyseq>
+        <insert>
+          <string>を</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ga</string>
+        </keyseq>
+        <insert>
+          <string>が</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>gi</string>
+        </keyseq>
+        <insert>
+          <string>ぎ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>gu</string>
+        </keyseq>
+        <insert>
+          <string>ぐ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ge</string>
+        </keyseq>
+        <insert>
+          <string>げ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>go</string>
+        </keyseq>
+        <insert>
+          <string>ご</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>za</string>
+        </keyseq>
+        <insert>
+          <string>ざ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zi</string>
+        </keyseq>
+        <insert>
+          <string>じ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zu</string>
+        </keyseq>
+        <insert>
+          <string>ず</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ze</string>
+        </keyseq>
+        <insert>
+          <string>ぜ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zo</string>
+        </keyseq>
+        <insert>
+          <string>ぞ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>da</string>
+        </keyseq>
+        <insert>
+          <string>だ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>di</string>
+        </keyseq>
+        <insert>
+          <string>ぢ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>du</string>
+        </keyseq>
+        <insert>
+          <string>づ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>de</string>
+        </keyseq>
+        <insert>
+          <string>で</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>do</string>
+        </keyseq>
+        <insert>
+          <string>ど</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ba</string>
+        </keyseq>
+        <insert>
+          <string>ば</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>bi</string>
+        </keyseq>
+        <insert>
+          <string>び</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>bu</string>
+        </keyseq>
+        <insert>
+          <string>ぶ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>be</string>
+        </keyseq>
+        <insert>
+          <string>べ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>bo</string>
+        </keyseq>
+        <insert>
+          <string>ぼ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>pa</string>
+        </keyseq>
+        <insert>
+          <string>ぱ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>pi</string>
+        </keyseq>
+        <insert>
+          <string>ぴ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>pu</string>
+        </keyseq>
+        <insert>
+          <string>ぷ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>pe</string>
+        </keyseq>
+        <insert>
+          <string>ぺ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>po</string>
+        </keyseq>
+        <insert>
+          <string>ぽ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>kya</string>
+        </keyseq>
+        <insert>
+          <string>きゃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>kyu</string>
+        </keyseq>
+        <insert>
+          <string>きゅ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>kye</string>
+        </keyseq>
+        <insert>
+          <string>きぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>kyo</string>
+        </keyseq>
+        <insert>
+          <string>きょ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sya</string>
+        </keyseq>
+        <insert>
+          <string>しゃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>syu</string>
+        </keyseq>
+        <insert>
+          <string>しゅ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sye</string>
+        </keyseq>
+        <insert>
+          <string>しぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>syo</string>
+        </keyseq>
+        <insert>
+          <string>しょ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sha</string>
+        </keyseq>
+        <insert>
+          <string>しゃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>shu</string>
+        </keyseq>
+        <insert>
+          <string>しゅ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>she</string>
+        </keyseq>
+        <insert>
+          <string>しぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>sho</string>
+        </keyseq>
+        <insert>
+          <string>しょ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>cha</string>
+        </keyseq>
+        <insert>
+          <string>ちゃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>chu</string>
+        </keyseq>
+        <insert>
+          <string>ちゅ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>che</string>
+        </keyseq>
+        <insert>
+          <string>ちぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>cho</string>
+        </keyseq>
+        <insert>
+          <string>ちょ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>tya</string>
+        </keyseq>
+        <insert>
+          <string>ちゃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>tyu</string>
+        </keyseq>
+        <insert>
+          <string>ちゅ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>tye</string>
+        </keyseq>
+        <insert>
+          <string>ちぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>tyo</string>
+        </keyseq>
+        <insert>
+          <string>ちょ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>nya</string>
+        </keyseq>
+        <insert>
+          <string>にゃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>nyu</string>
+        </keyseq>
+        <insert>
+          <string>にゅ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>nye</string>
+        </keyseq>
+        <insert>
+          <string>にぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>nyo</string>
+        </keyseq>
+        <insert>
+          <string>にょ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>hya</string>
+        </keyseq>
+        <insert>
+          <string>ひゃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>hyu</string>
+        </keyseq>
+        <insert>
+          <string>ひゅ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>hye</string>
+        </keyseq>
+        <insert>
+          <string>ひぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>hyo</string>
+        </keyseq>
+        <insert>
+          <string>ひょ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>mya</string>
+        </keyseq>
+        <insert>
+          <string>みゃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>myu</string>
+        </keyseq>
+        <insert>
+          <string>みゅ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>mye</string>
+        </keyseq>
+        <insert>
+          <string>みぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>myo</string>
+        </keyseq>
+        <insert>
+          <string>みょ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rya</string>
+        </keyseq>
+        <insert>
+          <string>りゃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ryu</string>
+        </keyseq>
+        <insert>
+          <string>りゅ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>rye</string>
+        </keyseq>
+        <insert>
+          <string>りぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ryo</string>
+        </keyseq>
+        <insert>
+          <string>りょ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lya</string>
+        </keyseq>
+        <insert>
+          <string>りゃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lyu</string>
+        </keyseq>
+        <insert>
+          <string>りゅ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lye</string>
+        </keyseq>
+        <insert>
+          <string>りぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>lyo</string>
+        </keyseq>
+        <insert>
+          <string>りょ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>gya</string>
+        </keyseq>
+        <insert>
+          <string>ぎゃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>gyu</string>
+        </keyseq>
+        <insert>
+          <string>ぎゅ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>gye</string>
+        </keyseq>
+        <insert>
+          <string>ぎぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>gyo</string>
+        </keyseq>
+        <insert>
+          <string>ぎょ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zya</string>
+        </keyseq>
+        <insert>
+          <string>じゃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zyu</string>
+        </keyseq>
+        <insert>
+          <string>じゅ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zye</string>
+        </keyseq>
+        <insert>
+          <string>じぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zyo</string>
+        </keyseq>
+        <insert>
+          <string>じょ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>jya</string>
+        </keyseq>
+        <insert>
+          <string>じゃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>jyu</string>
+        </keyseq>
+        <insert>
+          <string>じゅ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>jye</string>
+        </keyseq>
+        <insert>
+          <string>じぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>jyo</string>
+        </keyseq>
+        <insert>
+          <string>じょ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ja</string>
+        </keyseq>
+        <insert>
+          <string>じゃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ju</string>
+        </keyseq>
+        <insert>
+          <string>じゅ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>je</string>
+        </keyseq>
+        <insert>
+          <string>じぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>jo</string>
+        </keyseq>
+        <insert>
+          <string>じょ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>bya</string>
+        </keyseq>
+        <insert>
+          <string>びゃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>byu</string>
+        </keyseq>
+        <insert>
+          <string>びゅ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>bye</string>
+        </keyseq>
+        <insert>
+          <string>びぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>byo</string>
+        </keyseq>
+        <insert>
+          <string>びょ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>pya</string>
+        </keyseq>
+        <insert>
+          <string>ぴゃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>pyu</string>
+        </keyseq>
+        <insert>
+          <string>ぴゅ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>pye</string>
+        </keyseq>
+        <insert>
+          <string>ぴぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>pyo</string>
+        </keyseq>
+        <insert>
+          <string>ぴょ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>kwa</string>
+        </keyseq>
+        <insert>
+          <string>くゎ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>kwi</string>
+        </keyseq>
+        <insert>
+          <string>くぃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>kwe</string>
+        </keyseq>
+        <insert>
+          <string>くぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>kwo</string>
+        </keyseq>
+        <insert>
+          <string>くぉ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>tsa</string>
+        </keyseq>
+        <insert>
+          <string>つぁ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>tsi</string>
+        </keyseq>
+        <insert>
+          <string>つぃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>tse</string>
+        </keyseq>
+        <insert>
+          <string>つぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>tso</string>
+        </keyseq>
+        <insert>
+          <string>つぉ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>fa</string>
+        </keyseq>
+        <insert>
+          <string>ふぁ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>fi</string>
+        </keyseq>
+        <insert>
+          <string>ふぃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>fe</string>
+        </keyseq>
+        <insert>
+          <string>ふぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>fo</string>
+        </keyseq>
+        <insert>
+          <string>ふぉ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>gwa</string>
+        </keyseq>
+        <insert>
+          <string>ぐゎ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>gwi</string>
+        </keyseq>
+        <insert>
+          <string>ぐぃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>gwe</string>
+        </keyseq>
+        <insert>
+          <string>ぐぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>gwo</string>
+        </keyseq>
+        <insert>
+          <string>ぐぉ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>dyi</string>
+        </keyseq>
+        <insert>
+          <string>でぃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>dyu</string>
+        </keyseq>
+        <insert>
+          <string>どぅ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>dye</string>
+        </keyseq>
+        <insert>
+          <string>でぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>dyo</string>
+        </keyseq>
+        <insert>
+          <string>どぉ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>xwi</string>
+        </keyseq>
+        <insert>
+          <string>うぃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>xwe</string>
+        </keyseq>
+        <insert>
+          <string>うぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>xwo</string>
+        </keyseq>
+        <insert>
+          <string>うぉ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>shi</string>
+        </keyseq>
+        <insert>
+          <string>し</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>tyi</string>
+        </keyseq>
+        <insert>
+          <string>てぃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>chi</string>
+        </keyseq>
+        <insert>
+          <string>ち</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>tsu</string>
+        </keyseq>
+        <insert>
+          <string>つ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ji</string>
+        </keyseq>
+        <insert>
+          <string>じ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>fu</string>
+        </keyseq>
+        <insert>
+          <string>ふ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ye</string>
+        </keyseq>
+        <insert>
+          <string>いぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>va</string>
+        </keyseq>
+        <insert>
+          <string>ヴぁ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>vi</string>
+        </keyseq>
+        <insert>
+          <string>ヴぃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>vu</string>
+        </keyseq>
+        <insert>
+          <string>ヴ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ve</string>
+        </keyseq>
+        <insert>
+          <string>ヴぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>vo</string>
+        </keyseq>
+        <insert>
+          <string>ヴぉ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>xa</string>
+        </keyseq>
+        <insert>
+          <string>ぁ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>xi</string>
+        </keyseq>
+        <insert>
+          <string>ぃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>xu</string>
+        </keyseq>
+        <insert>
+          <string>ぅ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>xe</string>
+        </keyseq>
+        <insert>
+          <string>ぇ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>xo</string>
+        </keyseq>
+        <insert>
+          <string>ぉ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>xtu</string>
+        </keyseq>
+        <insert>
+          <string>っ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>xya</string>
+        </keyseq>
+        <insert>
+          <string>ゃ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>xyu</string>
+        </keyseq>
+        <insert>
+          <string>ゅ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>xyo</string>
+        </keyseq>
+        <insert>
+          <string>ょ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>xwa</string>
+        </keyseq>
+        <insert>
+          <string>ゎ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>xka</string>
+        </keyseq>
+        <insert>
+          <string>ヵ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>xke</string>
+        </keyseq>
+        <insert>
+          <string>ヶ</string>
+        </insert>
       </rule>
     </map>
-    <map id="map-henkan-edit">
+    <map mname="map-alnum">
       <rule>
         <keyseq>
-          <key-event>Left</key-event>
+          <string>1</string>
         </keyseq>
-        <move-to-marker position="@previous_candidate_list"/>
+        <insert>
+          <string>１</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>Right</key-event>
+          <string>2</string>
         </keyseq>
-        <move-to-marker position="@next_candidate_list"/>
+        <insert>
+          <string>２</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>S-Left</key-event>
+          <string>3</string>
         </keyseq>
-        <call id="module-libmimx-anthy">
-          <function-reference id="function-resize"/>
-          <argument type="symbol">
-            <variable-reference id="t"/>
-          </argument>
-        </call>
+        <insert>
+          <string>３</string>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>S-Right</key-event>
+          <string>4</string>
         </keyseq>
-        <call id="module-libmimx-anthy">
-          <function-reference id="function-resize"/>
-          <argument type="symbol">
-            <variable-reference id="nil"/>
-          </argument>
-        </call>
+        <insert>
+          <string>４</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>5</string>
+        </keyseq>
+        <insert>
+          <string>５</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>6</string>
+        </keyseq>
+        <insert>
+          <string>６</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>7</string>
+        </keyseq>
+        <insert>
+          <string>７</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>8</string>
+        </keyseq>
+        <insert>
+          <string>８</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>9</string>
+        </keyseq>
+        <insert>
+          <string>９</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>0</string>
+        </keyseq>
+        <insert>
+          <string>０</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>!</string>
+        </keyseq>
+        <insert>
+          <string>！</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>@</string>
+        </keyseq>
+        <insert>
+          <string>＠</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>#</string>
+        </keyseq>
+        <insert>
+          <string>＃</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>$</string>
+        </keyseq>
+        <insert>
+          <string>＄</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>%</string>
+        </keyseq>
+        <insert>
+          <string>％</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>^</string>
+        </keyseq>
+        <insert>
+          <string>＾</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&amp;</string>
+        </keyseq>
+        <insert>
+          <string>＆</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>*</string>
+        </keyseq>
+        <insert>
+          <string>＊</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>(</string>
+        </keyseq>
+        <insert>
+          <string>（</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>)</string>
+        </keyseq>
+        <insert>
+          <string>）</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>-</string>
+        </keyseq>
+        <insert>
+          <string>ー</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>=</string>
+        </keyseq>
+        <insert>
+          <string>＝</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>`</string>
+        </keyseq>
+        <insert>
+          <string>｀</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\</string>
+        </keyseq>
+        <insert>
+          <string>￥</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>|</string>
+        </keyseq>
+        <insert>
+          <string>｜</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>_</string>
+        </keyseq>
+        <insert>
+          <string>＿</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>+</string>
+        </keyseq>
+        <insert>
+          <string>＋</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>~</string>
+        </keyseq>
+        <insert>
+          <string>￣</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>[</string>
+        </keyseq>
+        <insert>
+          <string>「</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>]</string>
+        </keyseq>
+        <insert>
+          <string>」</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>{</string>
+        </keyseq>
+        <insert>
+          <string>｛</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>}</string>
+        </keyseq>
+        <insert>
+          <string>｝</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>:</string>
+        </keyseq>
+        <insert>
+          <string>：</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>;</string>
+        </keyseq>
+        <insert>
+          <string>；</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>"</string>
+        </keyseq>
+        <insert>
+          <string>”</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>'</string>
+        </keyseq>
+        <insert>
+          <string>’</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>.</string>
+        </keyseq>
+        <insert>
+          <string>。</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>,</string>
+        </keyseq>
+        <insert>
+          <string>、</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&lt;</string>
+        </keyseq>
+        <insert>
+          <string>＜</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&gt;</string>
+        </keyseq>
+        <insert>
+          <string>＞</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>?</string>
+        </keyseq>
+        <insert>
+          <string>？</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>/</string>
+        </keyseq>
+        <insert>
+          <string>／</string>
+        </insert>
       </rule>
     </map>
-    <map id="map-choose">
+    <map mname="map-symbol">
       <rule>
-        <keyseq keys="1"/>
-        <select index="0"/>
+        <keyseq>
+          <string>z1</string>
+        </keyseq>
+        <insert>
+          <string>○</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="2"/>
-        <select index="1"/>
+        <keyseq>
+          <string>z!</string>
+        </keyseq>
+        <insert>
+          <string>●</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="3"/>
-        <select index="2"/>
+        <keyseq>
+          <string>z2</string>
+        </keyseq>
+        <insert>
+          <string>▽</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="4"/>
-        <select index="3"/>
+        <keyseq>
+          <string>z@</string>
+        </keyseq>
+        <insert>
+          <string>▼</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="5"/>
-        <select index="4"/>
+        <keyseq>
+          <string>z3</string>
+        </keyseq>
+        <insert>
+          <string>△</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="6"/>
-        <select index="5"/>
+        <keyseq>
+          <string>z#</string>
+        </keyseq>
+        <insert>
+          <string>▲</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="7"/>
-        <select index="6"/>
+        <keyseq>
+          <string>z4</string>
+        </keyseq>
+        <insert>
+          <string>□</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="8"/>
-        <select index="7"/>
+        <keyseq>
+          <string>z$</string>
+        </keyseq>
+        <insert>
+          <string>■</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="9"/>
-        <select index="8"/>
+        <keyseq>
+          <string>z5</string>
+        </keyseq>
+        <insert>
+          <string>◇</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="0"/>
-        <select index="9"/>
+        <keyseq>
+          <string>z%</string>
+        </keyseq>
+        <insert>
+          <string>◆</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z6</string>
+        </keyseq>
+        <insert>
+          <string>☆</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z^</string>
+        </keyseq>
+        <insert>
+          <string>★</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z7</string>
+        </keyseq>
+        <insert>
+          <string>◎</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z&amp;</string>
+        </keyseq>
+        <insert>
+          <string>£</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z8</string>
+        </keyseq>
+        <insert>
+          <string>¢</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z*</string>
+        </keyseq>
+        <insert>
+          <string>×</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z9</string>
+        </keyseq>
+        <insert>
+          <string>♂</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z(</string>
+        </keyseq>
+        <insert>
+          <string>【</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z0</string>
+        </keyseq>
+        <insert>
+          <string>♀</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z)</string>
+        </keyseq>
+        <insert>
+          <string>】</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z-</string>
+        </keyseq>
+        <insert>
+          <string>〜</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z_</string>
+        </keyseq>
+        <insert>
+          <string>∴</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z=</string>
+        </keyseq>
+        <insert>
+          <string>≠</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z+</string>
+        </keyseq>
+        <insert>
+          <string>±</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z\</string>
+        </keyseq>
+        <insert>
+          <string>＼</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z|</string>
+        </keyseq>
+        <insert>
+          <string>‖</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z`</string>
+        </keyseq>
+        <insert>
+          <string>´</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z~</string>
+        </keyseq>
+        <insert>
+          <string>¨</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zq</string>
+        </keyseq>
+        <insert>
+          <string>《</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zQ</string>
+        </keyseq>
+        <insert>
+          <string>〈</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zw</string>
+        </keyseq>
+        <insert>
+          <string>》</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zW</string>
+        </keyseq>
+        <insert>
+          <string>〉</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zr</string>
+        </keyseq>
+        <insert>
+          <string>々</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zR</string>
+        </keyseq>
+        <insert>
+          <string>仝</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zt</string>
+        </keyseq>
+        <insert>
+          <string>〆</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zT</string>
+        </keyseq>
+        <insert>
+          <string>§</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zp</string>
+        </keyseq>
+        <insert>
+          <string>〒</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zP</string>
+        </keyseq>
+        <insert>
+          <string>↑</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z[</string>
+        </keyseq>
+        <insert>
+          <string>『</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z{</string>
+        </keyseq>
+        <insert>
+          <string>〔</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z]</string>
+        </keyseq>
+        <insert>
+          <string>』</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z}</string>
+        </keyseq>
+        <insert>
+          <string>〕</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zs</string>
+        </keyseq>
+        <insert>
+          <string>ヽ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zS</string>
+        </keyseq>
+        <insert>
+          <string>ヾ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zd</string>
+        </keyseq>
+        <insert>
+          <string>ゝ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zD</string>
+        </keyseq>
+        <insert>
+          <string>ゞ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zf</string>
+        </keyseq>
+        <insert>
+          <string>〃</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zF</string>
+        </keyseq>
+        <insert>
+          <string>→</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zg</string>
+        </keyseq>
+        <insert>
+          <string>‐</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zG</string>
+        </keyseq>
+        <insert>
+          <string>―</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zh</string>
+        </keyseq>
+        <insert>
+          <string>←</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zj</string>
+        </keyseq>
+        <insert>
+          <string>↓</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zk</string>
+        </keyseq>
+        <insert>
+          <string>↑</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zl</string>
+        </keyseq>
+        <insert>
+          <string>→</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z;</string>
+        </keyseq>
+        <insert>
+          <string>゛</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z:</string>
+        </keyseq>
+        <insert>
+          <string>゜</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z'</string>
+        </keyseq>
+        <insert>
+          <string>‘</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z"</string>
+        </keyseq>
+        <insert>
+          <string>“</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zx</string>
+        </keyseq>
+        <insert>
+          <string>:-</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zX</string>
+        </keyseq>
+        <insert>
+          <string>:-)</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zc</string>
+        </keyseq>
+        <insert>
+          <string>〇</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zC</string>
+        </keyseq>
+        <insert>
+          <string>℃</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zv</string>
+        </keyseq>
+        <insert>
+          <string>※</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zV</string>
+        </keyseq>
+        <insert>
+          <string>÷</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zb</string>
+        </keyseq>
+        <insert>
+          <string>°</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zB</string>
+        </keyseq>
+        <insert>
+          <string>←</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zn</string>
+        </keyseq>
+        <insert>
+          <string>′</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zN</string>
+        </keyseq>
+        <insert>
+          <string>↓</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zm</string>
+        </keyseq>
+        <insert>
+          <string>″</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zM</string>
+        </keyseq>
+        <insert>
+          <string>〓</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z,</string>
+        </keyseq>
+        <insert>
+          <string>‥</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z&lt;</string>
+        </keyseq>
+        <insert>
+          <string>≦</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z.</string>
+        </keyseq>
+        <insert>
+          <string>…</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z&gt;</string>
+        </keyseq>
+        <insert>
+          <string>≧</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z/</string>
+        </keyseq>
+        <insert>
+          <string>・</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>z?</string>
+        </keyseq>
+        <insert>
+          <string>∞</string>
+        </insert>
       </rule>
     </map>
-    <map id="map-change-candidate">
+    <map mname="map-hatsuon">
       <rule>
         <keyseq>
-          <key-event>C-A</key-event>
+          <string>n</string>
         </keyseq>
-        <select selector="@first"/>
+        <insert>
+          <string>n</string>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-sokuon">
+      <rule>
+        <keyseq>
+          <string>kk</string>
+        </keyseq>
       </rule>
       <rule>
         <keyseq>
-          <key-event>C-P</key-event>
+          <string>ss</string>
         </keyseq>
-        <select selector="@previous_candidate_list"/>
       </rule>
       <rule>
         <keyseq>
-          <key-event>C-B</key-event>
+          <string>tt</string>
         </keyseq>
-        <select selector="@previous"/>
       </rule>
       <rule>
         <keyseq>
-          <key-event>Up</key-event>
+          <string>hh</string>
         </keyseq>
-        <select selector="@previous"/>
-      </rule>
-      <rule>
-        <keyseq keys=" "/>
-        <select selector="@next"/>
       </rule>
       <rule>
         <keyseq>
-          <key-event>C-F</key-event>
+          <string>mm</string>
         </keyseq>
-        <select selector="@next"/>
       </rule>
       <rule>
         <keyseq>
-          <key-event>Down</key-event>
+          <string>rr</string>
         </keyseq>
-        <select selector="@next"/>
       </rule>
       <rule>
         <keyseq>
-          <key-event>C-N</key-event>
+          <string>ll</string>
         </keyseq>
-        <select selector="@next_candidate_list"/>
       </rule>
       <rule>
         <keyseq>
-          <key-event>C-E</key-event>
+          <string>ww</string>
         </keyseq>
-        <select selector="@last"/>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>gg</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>zz</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>dd</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>bb</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>pp</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>cc</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>jj</string>
+        </keyseq>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ff</string>
+        </keyseq>
+      </rule>
+    </map>
+    <map mname="map-henkan">
+      <rule>
+        <command cname="command-convert"/>
+      </rule>
+    </map>
+    <map mname="map-kakutei">
+      <rule>
+        <command cname="command-commit"/>
+      </rule>
+    </map>
+    <map mname="map-backspace">
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>BackSpace</symbol>
+          </list>
+        </keyseq>
+      </rule>
+    </map>
+    <map mname="map-edit">
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>Delete</symbol>
+          </list>
+        </keyseq>
+        <delete>
+          <marker>@+</marker>
+        </delete>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>BackSpace</symbol>
+          </list>
+        </keyseq>
+        <delete>
+          <marker>@-</marker>
+        </delete>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>Left</symbol>
+          </list>
+        </keyseq>
+        <move>
+          <marker>@-</marker>
+        </move>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>Right</symbol>
+          </list>
+        </keyseq>
+        <move>
+          <marker>@+</marker>
+        </move>
+      </rule>
+    </map>
+    <map mname="map-henkan-edit">
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>Left</symbol>
+          </list>
+        </keyseq>
+        <move>
+          <marker>@[</marker>
+        </move>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>Right</symbol>
+          </list>
+        </keyseq>
+        <move>
+          <marker>@]</marker>
+        </move>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>S-Left</symbol>
+          </list>
+        </keyseq>
+        <funcall fname="libmimx-anthy-function-resize">
+          <symbol>t</symbol>
+        </funcall>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>S-Right</symbol>
+          </list>
+        </keyseq>
+        <funcall fname="libmimx-anthy-function-resize">
+          <symbol>nil</symbol>
+        </funcall>
+      </rule>
+    </map>
+    <map mname="map-choose">
+      <rule>
+        <keyseq>
+          <string>1</string>
+        </keyseq>
+        <select>
+          <integer>0</integer>
+        </select>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>2</string>
+        </keyseq>
+        <select>
+          <integer>1</integer>
+        </select>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>3</string>
+        </keyseq>
+        <select>
+          <integer>2</integer>
+        </select>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>4</string>
+        </keyseq>
+        <select>
+          <integer>3</integer>
+        </select>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>5</string>
+        </keyseq>
+        <select>
+          <integer>4</integer>
+        </select>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>6</string>
+        </keyseq>
+        <select>
+          <integer>5</integer>
+        </select>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>7</string>
+        </keyseq>
+        <select>
+          <integer>6</integer>
+        </select>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>8</string>
+        </keyseq>
+        <select>
+          <integer>7</integer>
+        </select>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>9</string>
+        </keyseq>
+        <select>
+          <integer>8</integer>
+        </select>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>0</string>
+        </keyseq>
+        <select>
+          <integer>9</integer>
+        </select>
+      </rule>
+    </map>
+    <map mname="map-change-candidate">
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>C-A</symbol>
+          </list>
+        </keyseq>
+        <select>
+          <selector>@first</selector>
+        </select>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>C-P</symbol>
+          </list>
+        </keyseq>
+        <select>
+          <selector>@previous-candidate-change</selector>
+        </select>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>C-B</symbol>
+          </list>
+        </keyseq>
+        <select>
+          <selector>@previous</selector>
+        </select>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>Up</symbol>
+          </list>
+        </keyseq>
+        <select>
+          <selector>@previous</selector>
+        </select>
+      </rule>
+      <rule>
+        <keyseq>
+          <string> </string>
+        </keyseq>
+        <select>
+          <selector>@next</selector>
+        </select>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>C-F</symbol>
+          </list>
+        </keyseq>
+        <select>
+          <selector>@next</selector>
+        </select>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>Down</symbol>
+          </list>
+        </keyseq>
+        <select>
+          <selector>@next</selector>
+        </select>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>C-N</symbol>
+          </list>
+        </keyseq>
+        <select>
+          <selector>@next-candidate-change</selector>
+        </select>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>C-E</symbol>
+          </list>
+        </keyseq>
+        <select>
+          <selector>@last</selector>
+        </select>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <state-title-text>aあ</state-title-text>
-      <branch branch-selecting-map="map-starter">
-        <pushback-n-events n="1"/>
-        <shift-to id="state-pre-henkan"/>
+    <state sname="state-init">
+      <title>aあ</title>
+      <branch mname="map-starter">
+        <pushback>
+          <integer>1</integer>
+        </pushback>
+        <shift>
+          <symbol>state-pre-henkan</symbol>
+        </shift>
       </branch>
     </state>
-    <state id="state-pre-henkan">
-      <branch branch-selecting-map="map-ordinary"/>
-      <branch branch-selecting-map="map-alnum"/>
-      <branch branch-selecting-map="map-symbol"/>
-      <branch branch-selecting-map="map-hatsuon">
-        <shift-to id="state-hatsuon"/>
+    <state sname="state-pre-henkan">
+      <branch mname="map-ordinary"/>
+      <branch mname="map-alnum"/>
+      <branch mname="map-symbol"/>
+      <branch mname="map-hatsuon">
+        <shift>
+          <symbol>state-hatsuon</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-sokuon">
-        <insert string="っ"/>
-        <pushback-n-events n="1"/>
+      <branch mname="map-sokuon">
+        <insert>
+          <string>っ</string>
+        </insert>
+        <pushback>
+          <integer>1</integer>
+        </pushback>
       </branch>
-      <branch branch-selecting-map="map-henkan">
-        <call id="module-libmimx-anthy">
-          <function-reference id="function-convert"/>
-        </call>
-        <shift-to id="state-henkan"/>
+      <branch mname="map-henkan">
+        <funcall fname="libmimx-anthy-function-convert"/>
+        <shift>
+          <symbol>state-henkan</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-kakutei">
-        <shift-to id="state-init"/>
+      <branch mname="map-kakutei">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-backspace">
-        <pushback-n-events n="1"/>
-        <shift-to id="state-edit"/>
+      <branch mname="map-backspace">
+        <pushback>
+          <integer>1</integer>
+        </pushback>
+        <shift>
+          <symbol>state-edit</symbol>
+        </shift>
       </branch>
       <catch-all-branch>
-        <shift-to id="state-fail"/>
+        <shift>
+          <symbol>state-fail</symbol>
+        </shift>
       </catch-all-branch>
     </state>
-    <state id="state-hatsuon">
-      <branch branch-selecting-map="map-hatsuon">
-        <delete-to-marker position="@previous"/>
-        <delete-to-marker position="@previous"/>
-        <insert string="ん"/>
-        <shift-to id="state-pre-henkan"/>
+    <state sname="state-hatsuon">
+      <branch mname="map-hatsuon">
+        <delete>
+          <marker>@-</marker>
+        </delete>
+        <delete>
+          <marker>@-</marker>
+        </delete>
+        <insert>
+          <string>ん</string>
+        </insert>
+        <shift>
+          <symbol>state-pre-henkan</symbol>
+        </shift>
       </branch>
       <catch-all-branch>
-        <delete-to-marker position="@previous"/>
-        <insert string="ん"/>
-        <shift-to id="state-pre-henkan"/>
+        <delete>
+          <marker>@-</marker>
+        </delete>
+        <insert>
+          <string>ん</string>
+        </insert>
+        <shift>
+          <symbol>state-pre-henkan</symbol>
+        </shift>
       </catch-all-branch>
     </state>
-    <state id="state-henkan">
-      <state-title-text>漢</state-title-text>
+    <state sname="state-henkan">
+      <title>漢</title>
       <state-hook>
-        <set id="K">
-          <variable-reference id="handled-keys" type="predefined"/>
+        <set vname="K">
+          <key-count/>
         </set>
-        <sub id="K">
-          <int-val>1</int-val>
+        <sub vname="K">
+          <integer>1</integer>
         </sub>
       </state-hook>
-      <branch branch-selecting-map="map-henkan-edit"/>
-      <branch branch-selecting-map="map-change-candidate">
-        <call id="module-libmimx-anthy">
-          <function-reference id="function-change"/>
-        </call>
+      <branch mname="map-henkan-edit"/>
+      <branch mname="map-change-candidate">
+        <funcall fname="libmimx-anthy-function-change"/>
         <show-candidates/>
-        <shift-to id="state-henkan2"/>
+        <shift>
+          <symbol>state-henkan2</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-choose">
+      <branch mname="map-choose">
         <hide-candidates/>
-        <shift-to id="state-init"/>
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-kakutei">
-        <call id="module-libmimx-anthy">
-          <function-reference id="function-commit"/>
-        </call>
-        <shift-to id="state-init"/>
+      <branch mname="map-kakutei">
+        <funcall fname="libmimx-anthy-function-commit"/>
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-backspace">
+      <branch mname="map-backspace">
         <undo>
-          <variable-reference id="K"/>
+          <varref vname="K"/>
         </undo>
       </branch>
       <catch-all-branch>
-        <call id="module-libmimx-anthy">
-          <function-reference id="function-commit"/>
-        </call>
-        <shift-to id="state-init"/>
+        <funcall fname="libmimx-anthy-function-commit"/>
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </catch-all-branch>
     </state>
-    <state id="state-henkan2">
-      <state-title-text>漢</state-title-text>
-      <branch branch-selecting-map="map-change-candidate">
-        <call id="module-libmimx-anthy">
-          <function-reference id="function-change"/>
-        </call>
+    <state sname="state-henkan2">
+      <title>漢</title>
+      <branch mname="map-change-candidate">
+        <funcall fname="libmimx-anthy-function-change"/>
         <show-candidates/>
       </branch>
-      <branch branch-selecting-map="map-backspace">
+      <branch mname="map-backspace">
         <undo>
-          <variable-reference id="K"/>
+          <varref vname="K"/>
         </undo>
       </branch>
       <catch-all-branch>
         <hide-candidates/>
-        <shift-to id="state-henkan"/>
+        <shift>
+          <symbol>state-henkan</symbol>
+        </shift>
       </catch-all-branch>
     </state>
-    <state id="state-fail">
-      <branch branch-selecting-map="map-backspace">
+    <state sname="state-fail">
+      <branch mname="map-backspace">
         <undo/>
       </branch>
-      <branch branch-selecting-map="map-starter">
-        <pushback-n-events n="1"/>
-        <shift-to id="state-pre-henkan"/>
+      <branch mname="map-starter">
+        <pushback>
+          <integer>1</integer>
+        </pushback>
+        <shift>
+          <symbol>state-pre-henkan</symbol>
+        </shift>
       </branch>
       <catch-all-branch>
-        <shift-to id="state-edit"/>
+        <shift>
+          <symbol>state-edit</symbol>
+        </shift>
       </catch-all-branch>
     </state>
-    <state id="state-edit">
-      <branch branch-selecting-map="map-edit">
-        <set id="C">
-          <variable-reference id="@0"/>
+    <state sname="state-edit">
+      <branch mname="map-edit">
+        <set vname="C">
+          <char-at>
+            <marker>@0</marker>
+          </char-at>
         </set>
-        <if condition="&lt;">
-          <variable-reference id="C"/>
-          <int-val>0</int-val>
-          <if-true-action-list>
-            <shift-to id="state-init"/>
-          </if-true-action-list>
+        <if>
+          <lt>
+            <varref vname="C"/>
+            <integer>0</integer>
+          </lt>
+          <progn>
+            <shift>
+              <symbol>state-init</symbol>
+            </shift>
+          </progn>
         </if>
       </branch>
-      <branch branch-selecting-map="map-starter">
-        <pushback-n-events n="1"/>
-        <shift-to id="state-pre-henkan"/>
+      <branch mname="map-starter">
+        <pushback>
+          <integer>1</integer>
+        </pushback>
+        <shift>
+          <symbol>state-pre-henkan</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-henkan">
-        <call id="module-libmimx-anthy">
-          <function-reference id="function-convert"/>
-        </call>
-        <shift-to id="state-henkan"/>
+      <branch mname="map-henkan">
+        <funcall fname="libmimx-anthy-function-convert"/>
+        <shift>
+          <symbol>state-henkan</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-kakutei">
-        <shift-to id="state-init"/>
+      <branch mname="map-kakutei">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
     </state>
   </state-list>

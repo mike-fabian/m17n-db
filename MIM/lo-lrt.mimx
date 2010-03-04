@@ -8,740 +8,1530 @@
 </description>
   <title>ກ</title>
   <map-list>
-    <map id="map-consonant">
+    <map mname="map-consonant">
       <rule>
-        <keyseq keys="k"/>
-        <insert string="ກ"/>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <string>ກ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="kh"/>
-        <insert string="ຂ"/>
+        <keyseq>
+          <string>kh</string>
+        </keyseq>
+        <insert>
+          <string>ຂ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="qh"/>
-        <insert string="ຄ"/>
+        <keyseq>
+          <string>qh</string>
+        </keyseq>
+        <insert>
+          <string>ຄ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="ng"/>
-        <insert string="ງ"/>
+        <keyseq>
+          <string>ng</string>
+        </keyseq>
+        <insert>
+          <string>ງ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="j"/>
-        <insert string="ຈ"/>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+        <insert>
+          <string>ຈ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="s"/>
-        <insert string="ສ"/>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+        <insert>
+          <string>ສ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="x"/>
-        <insert string="ຊ"/>
+        <keyseq>
+          <string>x</string>
+        </keyseq>
+        <insert>
+          <string>ຊ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="y"/>
-        <insert string="ຍ"/>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <insert>
+          <string>ຍ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="d"/>
-        <insert string="ດ"/>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <insert>
+          <string>ດ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="t"/>
-        <insert string="ຕ"/>
+        <keyseq>
+          <string>t</string>
+        </keyseq>
+        <insert>
+          <string>ຕ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="th"/>
-        <insert string="ຖ"/>
+        <keyseq>
+          <string>th</string>
+        </keyseq>
+        <insert>
+          <string>ຖ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="dh"/>
-        <insert string="ທ"/>
+        <keyseq>
+          <string>dh</string>
+        </keyseq>
+        <insert>
+          <string>ທ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="n"/>
-        <insert string="ນ"/>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <string>ນ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="b"/>
-        <insert string="ບ"/>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <insert>
+          <string>ບ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="p"/>
-        <insert string="ປ"/>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+        <insert>
+          <string>ປ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="hp"/>
-        <insert string="ຜ"/>
+        <keyseq>
+          <string>hp</string>
+        </keyseq>
+        <insert>
+          <string>ຜ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="fh"/>
-        <insert string="ຝ"/>
+        <keyseq>
+          <string>fh</string>
+        </keyseq>
+        <insert>
+          <string>ຝ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="ph"/>
-        <insert string="ພ"/>
+        <keyseq>
+          <string>ph</string>
+        </keyseq>
+        <insert>
+          <string>ພ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="f"/>
-        <insert string="ຟ"/>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+        <insert>
+          <string>ຟ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="m"/>
-        <insert string="ມ"/>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <string>ມ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="gn"/>
-        <insert string="ຢ"/>
+        <keyseq>
+          <string>gn</string>
+        </keyseq>
+        <insert>
+          <string>ຢ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="l"/>
-        <insert string="ລ"/>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+        <insert>
+          <string>ລ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="r"/>
-        <insert string="ຣ"/>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+        <insert>
+          <string>ຣ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="v"/>
-        <insert string="ວ"/>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert>
+          <string>ວ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="w"/>
-        <insert string="ວ"/>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+        <insert>
+          <string>ວ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="hh"/>
-        <insert string="ຫ"/>
+        <keyseq>
+          <string>hh</string>
+        </keyseq>
+        <insert>
+          <string>ຫ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="O"/>
-        <insert string="ອ"/>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+        <insert>
+          <string>ອ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="h"/>
-        <insert string="ຮ"/>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <insert>
+          <string>ຮ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="nh"/>
-        <insert string="ໜ"/>
+        <keyseq>
+          <string>nh</string>
+        </keyseq>
+        <insert>
+          <string>ໜ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="mh"/>
-        <insert string="ໝ"/>
+        <keyseq>
+          <string>mh</string>
+        </keyseq>
+        <insert>
+          <string>ໝ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="lh"/>
-        <insert string="ຫຼ"/>
+        <keyseq>
+          <string>lh</string>
+        </keyseq>
+        <insert>
+          <string>ຫຼ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="ngh"/>
-        <insert string="ຫງ"/>
+        <keyseq>
+          <string>ngh</string>
+        </keyseq>
+        <insert>
+          <string>ຫງ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="yh"/>
-        <insert string="ຫຽ"/>
+        <keyseq>
+          <string>yh</string>
+        </keyseq>
+        <insert>
+          <string>ຫຽ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="wh"/>
-        <insert string="ຫວ"/>
+        <keyseq>
+          <string>wh</string>
+        </keyseq>
+        <insert>
+          <string>ຫວ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="hl"/>
-        <insert string="ຫລ"/>
+        <keyseq>
+          <string>hl</string>
+        </keyseq>
+        <insert>
+          <string>ຫລ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="hy"/>
-        <insert string="ຫຍ"/>
+        <keyseq>
+          <string>hy</string>
+        </keyseq>
+        <insert>
+          <string>ຫຍ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="hn"/>
-        <insert string="ຫນ"/>
+        <keyseq>
+          <string>hn</string>
+        </keyseq>
+        <insert>
+          <string>ຫນ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="hm"/>
-        <insert string="ຫມ"/>
-      </rule>
-    </map>
-    <map id="map-semi-vowel">
-      <rule>
-        <keyseq keys="r"/>
-        <move-to-character-position>1</move-to-character-position>
-        <insert string="ຼ"/>
-        <move-to-marker position="@last"/>
-      </rule>
-    </map>
-    <map id="map-vowel-simple">
-      <rule>
-        <keyseq keys="ar"/>
-        <insert string="າ"/>
-      </rule>
-      <rule>
-        <keyseq keys="i"/>
-        <insert string="ິ"/>
-        <mark-current-position markerID="TONE"/>
-      </rule>
-      <rule>
-        <keyseq keys="ii"/>
-        <insert string="ີ"/>
-        <mark-current-position markerID="TONE"/>
-      </rule>
-      <rule>
-        <keyseq keys="eu"/>
-        <insert string="ຶ"/>
-        <mark-current-position markerID="TONE"/>
-      </rule>
-      <rule>
-        <keyseq keys="ur"/>
-        <insert string="ື"/>
-        <mark-current-position markerID="TONE"/>
-      </rule>
-      <rule>
-        <keyseq keys="u"/>
-        <insert string="ຸ"/>
-        <mark-current-position markerID="TONE"/>
-      </rule>
-      <rule>
-        <keyseq keys="uu"/>
-        <insert string="ູ"/>
-        <mark-current-position markerID="TONE"/>
-      </rule>
-      <rule>
-        <keyseq keys="aM"/>
-        <insert string="ຳ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ee"/>
-        <move-to-marker position="@previous"/>
-        <move-to-marker position="@previous"/>
-        <insert string="ເ"/>
-        <move-to-marker position="@next"/>
-        <move-to-marker position="@next"/>
-      </rule>
-      <rule>
-        <keyseq keys="aa"/>
-        <move-to-marker position="@previous"/>
-        <move-to-marker position="@previous"/>
-        <insert string="ແ"/>
-        <move-to-marker position="@next"/>
-        <move-to-marker position="@next"/>
-      </rule>
-      <rule>
-        <keyseq keys="oo"/>
-        <move-to-marker position="@previous"/>
-        <move-to-marker position="@previous"/>
-        <insert string="ໂ"/>
-        <move-to-marker position="@next"/>
-        <move-to-marker position="@next"/>
-      </rule>
-      <rule>
-        <keyseq keys="ai"/>
-        <move-to-marker position="@previous"/>
-        <move-to-marker position="@previous"/>
-        <insert string="ໄ"/>
-        <move-to-marker position="@next"/>
-        <move-to-marker position="@next"/>
-      </rule>
-      <rule>
-        <keyseq keys="ei"/>
-        <move-to-marker position="@previous"/>
-        <move-to-marker position="@previous"/>
-        <insert string="ໃ"/>
-        <move-to-marker position="@next"/>
-        <move-to-marker position="@next"/>
-      </rule>
-      <rule>
-        <keyseq keys="er"/>
-        <move-to-marker position="@previous"/>
-        <move-to-marker position="@previous"/>
-        <insert string="ເ"/>
-        <move-to-marker position="@next"/>
-        <move-to-marker position="@next"/>
-        <insert string="ິ"/>
-        <mark-current-position markerID="TONE"/>
-      </rule>
-      <rule>
-        <keyseq keys="ir"/>
-        <move-to-marker position="@previous"/>
-        <move-to-marker position="@previous"/>
-        <insert string="ເ"/>
-        <move-to-marker position="@next"/>
-        <move-to-marker position="@next"/>
-        <insert string="ີ"/>
-        <mark-current-position markerID="TONE"/>
-      </rule>
-      <rule>
-        <keyseq keys="ea"/>
-        <move-to-marker position="@previous"/>
-        <move-to-marker position="@previous"/>
-        <insert string="ເ"/>
-        <move-to-marker position="@next"/>
-        <move-to-marker position="@next"/>
-        <insert string="ຶ"/>
-        <mark-current-position markerID="TONE"/>
-        <insert string="ອ"/>
-      </rule>
-      <rule>
-        <keyseq keys="eaa"/>
-        <move-to-marker position="@previous"/>
-        <move-to-marker position="@previous"/>
-        <insert string="ເ"/>
-        <move-to-marker position="@next"/>
-        <move-to-marker position="@next"/>
-        <insert string="ື"/>
-        <mark-current-position markerID="TONE"/>
-        <insert string="ອ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ao"/>
-        <move-to-marker position="@previous"/>
-        <move-to-marker position="@previous"/>
-        <insert string="ເ"/>
-        <move-to-marker position="@next"/>
-        <move-to-marker position="@next"/>
-        <insert string="ົ"/>
-        <mark-current-position markerID="TONE"/>
-        <insert string="າ"/>
-      </rule>
-    </map>
-    <map id="map-vowel-a-e-ae">
-      <rule>
-        <keyseq keys="a"/>
-        <insert string="ະ"/>
-      </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <move-to-marker position="@previous"/>
-        <move-to-marker position="@previous"/>
-        <insert string="ເ"/>
-        <move-to-marker position="@next"/>
-        <move-to-marker position="@next"/>
-        <insert string="ະ"/>
-      </rule>
-      <rule>
-        <keyseq keys="ae"/>
-        <move-to-marker position="@previous"/>
-        <move-to-marker position="@previous"/>
-        <insert string="ແ"/>
-        <move-to-marker position="@next"/>
-        <move-to-marker position="@next"/>
-        <insert string="ະ"/>
+        <keyseq>
+          <string>hm</string>
+        </keyseq>
+        <insert>
+          <string>ຫມ</string>
+        </insert>
       </rule>
     </map>
-    <map id="map-vowel-oe">
+    <map mname="map-semi-vowel">
       <rule>
-        <keyseq keys="oe"/>
-        <move-to-marker position="@previous"/>
-        <move-to-marker position="@previous"/>
-        <insert string="ເ"/>
-        <move-to-marker position="@next"/>
-        <move-to-marker position="@next"/>
-        <insert string="າະ"/>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+        <move>
+          <integer>1</integer>
+        </move>
+        <insert>
+          <string>ຼ</string>
+        </insert>
+        <move>
+          <marker>@&gt;</marker>
+        </move>
       </rule>
     </map>
-    <map id="map-vowel-o">
+    <map mname="map-vowel-simple">
       <rule>
-        <keyseq keys="o"/>
-        <move-to-marker position="@previous"/>
-        <move-to-marker position="@previous"/>
-        <insert string="ໂ"/>
-        <move-to-marker position="@next"/>
-        <move-to-marker position="@next"/>
-        <insert string="ະ"/>
+        <keyseq>
+          <string>ar</string>
+        </keyseq>
+        <insert>
+          <string>າ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert>
+          <string>ິ</string>
+        </insert>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ii</string>
+        </keyseq>
+        <insert>
+          <string>ີ</string>
+        </insert>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>eu</string>
+        </keyseq>
+        <insert>
+          <string>ຶ</string>
+        </insert>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ur</string>
+        </keyseq>
+        <insert>
+          <string>ື</string>
+        </insert>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <string>ຸ</string>
+        </insert>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>uu</string>
+        </keyseq>
+        <insert>
+          <string>ູ</string>
+        </insert>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>aM</string>
+        </keyseq>
+        <insert>
+          <string>ຳ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ee</string>
+        </keyseq>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <insert>
+          <string>ເ</string>
+        </insert>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <move>
+          <marker>@+</marker>
+        </move>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>aa</string>
+        </keyseq>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <insert>
+          <string>ແ</string>
+        </insert>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <move>
+          <marker>@+</marker>
+        </move>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>oo</string>
+        </keyseq>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <insert>
+          <string>ໂ</string>
+        </insert>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <move>
+          <marker>@+</marker>
+        </move>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ai</string>
+        </keyseq>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <insert>
+          <string>ໄ</string>
+        </insert>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <move>
+          <marker>@+</marker>
+        </move>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ei</string>
+        </keyseq>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <insert>
+          <string>ໃ</string>
+        </insert>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <move>
+          <marker>@+</marker>
+        </move>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>er</string>
+        </keyseq>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <insert>
+          <string>ເ</string>
+        </insert>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <insert>
+          <string>ິ</string>
+        </insert>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ir</string>
+        </keyseq>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <insert>
+          <string>ເ</string>
+        </insert>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <insert>
+          <string>ີ</string>
+        </insert>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ea</string>
+        </keyseq>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <insert>
+          <string>ເ</string>
+        </insert>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <insert>
+          <string>ຶ</string>
+        </insert>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
+        <insert>
+          <string>ອ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>eaa</string>
+        </keyseq>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <insert>
+          <string>ເ</string>
+        </insert>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <insert>
+          <string>ື</string>
+        </insert>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
+        <insert>
+          <string>ອ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ao</string>
+        </keyseq>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <insert>
+          <string>ເ</string>
+        </insert>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <insert>
+          <string>ົ</string>
+        </insert>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
+        <insert>
+          <string>າ</string>
+        </insert>
       </rule>
     </map>
-    <map id="map-vowel-or">
+    <map mname="map-vowel-a-e-ae">
       <rule>
-        <keyseq keys="or"/>
-        <insert string="ໍ"/>
-        <mark-current-position markerID="TONE"/>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+        <insert>
+          <string>ະ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <insert>
+          <string>ເ</string>
+        </insert>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <insert>
+          <string>ະ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>ae</string>
+        </keyseq>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <insert>
+          <string>ແ</string>
+        </insert>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <insert>
+          <string>ະ</string>
+        </insert>
       </rule>
     </map>
-    <map id="map-vowel-ua">
+    <map mname="map-vowel-oe">
       <rule>
-        <keyseq keys="ua"/>
-        <insert string="ົ"/>
-        <mark-current-position markerID="TONE"/>
-        <insert string="ວະ"/>
+        <keyseq>
+          <string>oe</string>
+        </keyseq>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <insert>
+          <string>ເ</string>
+        </insert>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <insert>
+          <string>າະ</string>
+        </insert>
       </rule>
     </map>
-    <map id="map-vowel-uaa">
+    <map mname="map-vowel-o">
       <rule>
-        <keyseq keys="uaa"/>
-        <insert string="ົ"/>
-        <mark-current-position markerID="TONE"/>
-        <insert string="ວ"/>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <insert>
+          <string>ໂ</string>
+        </insert>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <insert>
+          <string>ະ</string>
+        </insert>
       </rule>
     </map>
-    <map id="map-vowel-ie">
+    <map mname="map-vowel-or">
       <rule>
-        <keyseq keys="ie"/>
-        <move-to-marker position="@previous"/>
-        <move-to-marker position="@previous"/>
-        <insert string="ເ"/>
-        <move-to-marker position="@next"/>
-        <move-to-marker position="@next"/>
-        <insert string="ັ"/>
-        <mark-current-position markerID="TONE"/>
-        <insert string="ຽະ"/>
+        <keyseq>
+          <string>or</string>
+        </keyseq>
+        <insert>
+          <string>ໍ</string>
+        </insert>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
       </rule>
     </map>
-    <map id="map-vowel-ia">
+    <map mname="map-vowel-ua">
       <rule>
-        <keyseq keys="ia"/>
-        <move-to-marker position="@previous"/>
-        <move-to-marker position="@previous"/>
-        <insert string="ເ"/>
-        <move-to-marker position="@next"/>
-        <move-to-marker position="@next"/>
-        <insert string="ັ"/>
-        <mark-current-position markerID="TONE"/>
-        <insert string="ຽ"/>
+        <keyseq>
+          <string>ua</string>
+        </keyseq>
+        <insert>
+          <string>ົ</string>
+        </insert>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
+        <insert>
+          <string>ວະ</string>
+        </insert>
       </rule>
     </map>
-    <map id="map-maa-sakod">
+    <map mname="map-vowel-uaa">
       <rule>
-        <keyseq keys="k"/>
-        <insert string="ກ"/>
-      </rule>
-      <rule>
-        <keyseq keys="g"/>
-        <insert string="ງ"/>
-      </rule>
-      <rule>
-        <keyseq keys="y"/>
-        <insert string="ຍ"/>
-      </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <insert string="ດ"/>
-      </rule>
-      <rule>
-        <keyseq keys="n"/>
-        <insert string="ນ"/>
-      </rule>
-      <rule>
-        <keyseq keys="b"/>
-        <insert string="ບ"/>
-      </rule>
-      <rule>
-        <keyseq keys="m"/>
-        <insert string="ມ"/>
-      </rule>
-      <rule>
-        <keyseq keys="v"/>
-        <insert string="ວ"/>
-      </rule>
-      <rule>
-        <keyseq keys="w"/>
-        <insert string="ວ"/>
+        <keyseq>
+          <string>uaa</string>
+        </keyseq>
+        <insert>
+          <string>ົ</string>
+        </insert>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
+        <insert>
+          <string>ວ</string>
+        </insert>
       </rule>
     </map>
-    <map id="map-maa-sakod-y-v">
+    <map mname="map-vowel-ie">
       <rule>
-        <keyseq keys="y"/>
-        <insert string="ຍ"/>
-      </rule>
-      <rule>
-        <keyseq keys="v"/>
-        <insert string="ວ"/>
-      </rule>
-      <rule>
-        <keyseq keys="w"/>
-        <insert string="ວ"/>
-      </rule>
-    </map>
-    <map id="map-maa-sakod-non-y-v">
-      <rule>
-        <keyseq keys="k"/>
-        <insert string="ກ"/>
-      </rule>
-      <rule>
-        <keyseq keys="g"/>
-        <insert string="ງ"/>
-      </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <insert string="ດ"/>
-      </rule>
-      <rule>
-        <keyseq keys="n"/>
-        <insert string="ນ"/>
-      </rule>
-      <rule>
-        <keyseq keys="b"/>
-        <insert string="ບ"/>
-      </rule>
-      <rule>
-        <keyseq keys="m"/>
-        <insert string="ມ"/>
+        <keyseq>
+          <string>ie</string>
+        </keyseq>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <insert>
+          <string>ເ</string>
+        </insert>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <insert>
+          <string>ັ</string>
+        </insert>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
+        <insert>
+          <string>ຽະ</string>
+        </insert>
       </rule>
     </map>
-    <map id="map-tone">
+    <map mname="map-vowel-ia">
       <rule>
-        <keyseq keys="&apos;"/>
-        <move-to-marker markerID="TONE"/>
-        <insert string="່"/>
-        <move-to-marker position="@last"/>
-      </rule>
-      <rule>
-        <keyseq keys="&quot;"/>
-        <move-to-marker markerID="TONE"/>
-        <insert string="້"/>
-        <move-to-marker position="@last"/>
-      </rule>
-      <rule>
-        <keyseq keys="^"/>
-        <move-to-marker markerID="TONE"/>
-        <insert string="໊"/>
-        <move-to-marker position="@last"/>
-      </rule>
-      <rule>
-        <keyseq keys="+"/>
-        <move-to-marker markerID="TONE"/>
-        <insert string="໋"/>
-        <move-to-marker position="@last"/>
-      </rule>
-      <rule>
-        <keyseq keys="~"/>
-        <move-to-marker markerID="TONE"/>
-        <insert string="໌"/>
-        <move-to-marker position="@last"/>
+        <keyseq>
+          <string>ia</string>
+        </keyseq>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <insert>
+          <string>ເ</string>
+        </insert>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <insert>
+          <string>ັ</string>
+        </insert>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
+        <insert>
+          <string>ຽ</string>
+        </insert>
       </rule>
     </map>
-    <map id="map-punctuation">
+    <map mname="map-maa-sakod">
       <rule>
-        <keyseq keys="\0"/>
-        <insert string="໐"/>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <string>ກ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="\1"/>
-        <insert string="໑"/>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <string>ງ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="\2"/>
-        <insert string="໒"/>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <insert>
+          <string>ຍ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="\3"/>
-        <insert string="໓"/>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <insert>
+          <string>ດ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="\4"/>
-        <insert string="໔"/>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <string>ນ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="\5"/>
-        <insert string="໕"/>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <insert>
+          <string>ບ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="\6"/>
-        <insert string="໖"/>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <string>ມ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="\7"/>
-        <insert string="໗"/>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert>
+          <string>ວ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="\8"/>
-        <insert string="໘"/>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+        <insert>
+          <string>ວ</string>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-maa-sakod-y-v">
+      <rule>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <insert>
+          <string>ຍ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="\9"/>
-        <insert string="໙"/>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert>
+          <string>ວ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="\\"/>
-        <insert string="ໆ"/>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+        <insert>
+          <string>ວ</string>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-maa-sakod-non-y-v">
+      <rule>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <string>ກ</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="\$"/>
-        <insert string="ຯ"/>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <string>ງ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <insert>
+          <string>ດ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <string>ນ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <insert>
+          <string>ບ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <string>ມ</string>
+        </insert>
+      </rule>
+    </map>
+    <map mname="map-tone">
+      <rule>
+        <keyseq>
+          <string>'</string>
+        </keyseq>
+        <move>
+          <marker>TONE</marker>
+        </move>
+        <insert>
+          <string>່</string>
+        </insert>
+        <move>
+          <marker>@&gt;</marker>
+        </move>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>"</string>
+        </keyseq>
+        <move>
+          <marker>TONE</marker>
+        </move>
+        <insert>
+          <string>້</string>
+        </insert>
+        <move>
+          <marker>@&gt;</marker>
+        </move>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>^</string>
+        </keyseq>
+        <move>
+          <marker>TONE</marker>
+        </move>
+        <insert>
+          <string>໊</string>
+        </insert>
+        <move>
+          <marker>@&gt;</marker>
+        </move>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>+</string>
+        </keyseq>
+        <move>
+          <marker>TONE</marker>
+        </move>
+        <insert>
+          <string>໋</string>
+        </insert>
+        <move>
+          <marker>@&gt;</marker>
+        </move>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>~</string>
+        </keyseq>
+        <move>
+          <marker>TONE</marker>
+        </move>
+        <insert>
+          <string>໌</string>
+        </insert>
+        <move>
+          <marker>@&gt;</marker>
+        </move>
+      </rule>
+    </map>
+    <map mname="map-punctuation">
+      <rule>
+        <keyseq>
+          <string>\0</string>
+        </keyseq>
+        <insert>
+          <string>໐</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\1</string>
+        </keyseq>
+        <insert>
+          <string>໑</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\2</string>
+        </keyseq>
+        <insert>
+          <string>໒</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\3</string>
+        </keyseq>
+        <insert>
+          <string>໓</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\4</string>
+        </keyseq>
+        <insert>
+          <string>໔</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\5</string>
+        </keyseq>
+        <insert>
+          <string>໕</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\6</string>
+        </keyseq>
+        <insert>
+          <string>໖</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\7</string>
+        </keyseq>
+        <insert>
+          <string>໗</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\8</string>
+        </keyseq>
+        <insert>
+          <string>໘</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\9</string>
+        </keyseq>
+        <insert>
+          <string>໙</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\\</string>
+        </keyseq>
+        <insert>
+          <string>ໆ</string>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>\$</string>
+        </keyseq>
+        <insert>
+          <string>ຯ</string>
+        </insert>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <branch branch-selecting-map="map-consonant">
-        <move-to-character-position>1</move-to-character-position>
-        <mark-current-position markerID="TONE"/>
-        <move-to-marker position="@last"/>
-        <shift-to id="state-c-state"/>
+    <state sname="state-init">
+      <branch mname="map-consonant">
+        <move>
+          <integer>1</integer>
+        </move>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
+        <move>
+          <marker>@&gt;</marker>
+        </move>
+        <shift>
+          <symbol>state-c-state</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-vowel-simple"/>
-      <branch branch-selecting-map="map-vowel-a-e-ae"/>
-      <branch branch-selecting-map="map-vowel-oe"/>
-      <branch branch-selecting-map="map-vowel-o"/>
-      <branch branch-selecting-map="map-vowel-or"/>
-      <branch branch-selecting-map="map-vowel-ua"/>
-      <branch branch-selecting-map="map-vowel-uaa"/>
-      <branch branch-selecting-map="map-vowel-ie"/>
-      <branch branch-selecting-map="map-vowel-ia"/>
-      <branch branch-selecting-map="map-tone"/>
-      <branch branch-selecting-map="map-punctuation"/>
+      <branch mname="map-vowel-simple"/>
+      <branch mname="map-vowel-a-e-ae"/>
+      <branch mname="map-vowel-oe"/>
+      <branch mname="map-vowel-o"/>
+      <branch mname="map-vowel-or"/>
+      <branch mname="map-vowel-ua"/>
+      <branch mname="map-vowel-uaa"/>
+      <branch mname="map-vowel-ie"/>
+      <branch mname="map-vowel-ia"/>
+      <branch mname="map-tone"/>
+      <branch mname="map-punctuation"/>
     </state>
-    <state id="state-c-state">
-      <branch branch-selecting-map="map-semi-vowel">
-        <shift-to id="state-cs-state"/>
+    <state sname="state-c-state">
+      <branch mname="map-semi-vowel">
+        <shift>
+          <symbol>state-cs-state</symbol>
+        </shift>
       </branch>
       <catch-all-branch>
-        <shift-to id="state-cs-state"/>
+        <shift>
+          <symbol>state-cs-state</symbol>
+        </shift>
       </catch-all-branch>
     </state>
-    <state id="state-cs-state">
-      <branch branch-selecting-map="map-vowel-simple">
-        <shift-to id="state-csv-state"/>
+    <state sname="state-cs-state">
+      <branch mname="map-vowel-simple">
+        <shift>
+          <symbol>state-csv-state</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-vowel-a-e-ae">
-        <shift-to id="state-csv-a-e-ae-state"/>
+      <branch mname="map-vowel-a-e-ae">
+        <shift>
+          <symbol>state-csv-a-e-ae-state</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-vowel-oe">
-        <shift-to id="state-csv-oe-state"/>
+      <branch mname="map-vowel-oe">
+        <shift>
+          <symbol>state-csv-oe-state</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-vowel-o">
-        <shift-to id="state-csv-o-state"/>
+      <branch mname="map-vowel-o">
+        <shift>
+          <symbol>state-csv-o-state</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-vowel-or">
-        <shift-to id="state-csv-or-state"/>
+      <branch mname="map-vowel-or">
+        <shift>
+          <symbol>state-csv-or-state</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-vowel-ua">
-        <shift-to id="state-csv-ua-state"/>
+      <branch mname="map-vowel-ua">
+        <shift>
+          <symbol>state-csv-ua-state</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-vowel-uaa">
-        <shift-to id="state-csv-uaa-state"/>
+      <branch mname="map-vowel-uaa">
+        <shift>
+          <symbol>state-csv-uaa-state</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-vowel-ie">
-        <shift-to id="state-csv-ie-state"/>
+      <branch mname="map-vowel-ie">
+        <shift>
+          <symbol>state-csv-ie-state</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-vowel-ia">
-        <shift-to id="state-csv-ia-state"/>
+      <branch mname="map-vowel-ia">
+        <shift>
+          <symbol>state-csv-ia-state</symbol>
+        </shift>
       </branch>
       <catch-all-branch>
-        <shift-to id="state-csv-state"/>
+        <shift>
+          <symbol>state-csv-state</symbol>
+        </shift>
       </catch-all-branch>
     </state>
-    <state id="state-csv-state">
-      <branch branch-selecting-map="map-maa-sakod">
-        <shift-to id="state-csvm-state"/>
+    <state sname="state-csv-state">
+      <branch mname="map-maa-sakod">
+        <shift>
+          <symbol>state-csvm-state</symbol>
+        </shift>
       </branch>
       <catch-all-branch>
-        <shift-to id="state-csvm-state"/>
+        <shift>
+          <symbol>state-csvm-state</symbol>
+        </shift>
       </catch-all-branch>
     </state>
-    <state id="state-csv-a-e-ae-state">
-      <branch branch-selecting-map="map-maa-sakod">
-        <move-to-marker position="@previous"/>
-        <delete-to-marker position="@previous"/>
-        <insert string="ັ"/>
-        <mark-current-position markerID="TONE"/>
-        <move-to-marker position="@last"/>
-        <shift-to id="state-csvm-state"/>
+    <state sname="state-csv-a-e-ae-state">
+      <branch mname="map-maa-sakod">
+        <move>
+          <marker>@-</marker>
+        </move>
+        <delete>
+          <marker>@-</marker>
+        </delete>
+        <insert>
+          <string>ັ</string>
+        </insert>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
+        <move>
+          <marker>@&gt;</marker>
+        </move>
+        <shift>
+          <symbol>state-csvm-state</symbol>
+        </shift>
       </branch>
       <catch-all-branch>
-        <shift-to id="state-csvm-state"/>
+        <shift>
+          <symbol>state-csvm-state</symbol>
+        </shift>
       </catch-all-branch>
     </state>
-    <state id="state-csv-oe-state">
-      <branch branch-selecting-map="map-maa-sakod">
-        <move-to-marker position="@previous"/>
-        <delete-to-marker position="@previous"/>
-        <delete-to-marker position="@previous"/>
-        <insert string="ັ"/>
-        <mark-current-position markerID="TONE"/>
-        <insert string="ອ"/>
-        <move-to-marker position="@last"/>
-        <shift-to id="state-csvm-state"/>
+    <state sname="state-csv-oe-state">
+      <branch mname="map-maa-sakod">
+        <move>
+          <marker>@-</marker>
+        </move>
+        <delete>
+          <marker>@-</marker>
+        </delete>
+        <delete>
+          <marker>@-</marker>
+        </delete>
+        <insert>
+          <string>ັ</string>
+        </insert>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
+        <insert>
+          <string>ອ</string>
+        </insert>
+        <move>
+          <marker>@&gt;</marker>
+        </move>
+        <shift>
+          <symbol>state-csvm-state</symbol>
+        </shift>
       </branch>
       <catch-all-branch>
-        <shift-to id="state-csvm-state"/>
+        <shift>
+          <symbol>state-csvm-state</symbol>
+        </shift>
       </catch-all-branch>
     </state>
-    <state id="state-csv-o-state">
-      <branch branch-selecting-map="map-maa-sakod-y-v">
-        <move-to-marker position="@previous"/>
-        <delete-to-marker position="@previous"/>
-        <insert string="ັ"/>
-        <mark-current-position markerID="TONE"/>
-        <move-to-marker position="@last"/>
-        <shift-to id="state-csvm-state"/>
+    <state sname="state-csv-o-state">
+      <branch mname="map-maa-sakod-y-v">
+        <move>
+          <marker>@-</marker>
+        </move>
+        <delete>
+          <marker>@-</marker>
+        </delete>
+        <insert>
+          <string>ັ</string>
+        </insert>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
+        <move>
+          <marker>@&gt;</marker>
+        </move>
+        <shift>
+          <symbol>state-csvm-state</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-maa-sakod-non-y-v">
-        <move-to-marker position="@previous"/>
-        <delete-to-marker position="@previous"/>
-        <insert string="ົ"/>
-        <mark-current-position markerID="TONE"/>
-        <move-to-character-position>0</move-to-character-position>
-        <delete-to-marker position="@next"/>
-        <move-to-marker position="@last"/>
-        <shift-to id="state-csvm-state"/>
-      </branch>
-      <catch-all-branch>
-        <shift-to id="state-csvm-state"/>
-      </catch-all-branch>
-    </state>
-    <state id="state-csv-or-state">
-      <branch branch-selecting-map="map-maa-sakod">
-        <move-to-marker position="@previous"/>
-        <delete-to-marker position="@previous"/>
-        <insert string="ອ"/>
-        <move-to-marker position="@next"/>
-        <shift-to id="state-csvm-state"/>
-      </branch>
-      <catch-all-branch>
-        <shift-to id="state-csvm-state"/>
-      </catch-all-branch>
-    </state>
-    <state id="state-csv-ua-state">
-      <branch branch-selecting-map="map-maa-sakod">
-        <move-to-marker position="@previous"/>
-        <delete-to-character-position>-3</delete-to-character-position>
-        <insert string="ັວ"/>
-        <move-to-marker position="@next"/>
-        <shift-to id="state-csvm-state"/>
-      </branch>
-      <catch-all-branch>
-        <shift-to id="state-csvm-state"/>
-      </catch-all-branch>
-    </state>
-    <state id="state-csv-uaa-state">
-      <branch branch-selecting-map="map-maa-sakod">
-        <move-to-marker position="@previous"/>
-        <move-to-marker position="@previous"/>
-        <delete-to-marker position="@previous"/>
-        <move-to-marker position="@next"/>
-        <move-to-marker position="@next"/>
-        <shift-to id="state-csvm-state"/>
+      <branch mname="map-maa-sakod-non-y-v">
+        <move>
+          <marker>@-</marker>
+        </move>
+        <delete>
+          <marker>@-</marker>
+        </delete>
+        <insert>
+          <string>ົ</string>
+        </insert>
+        <mark>
+          <marker>TONE</marker>
+        </mark>
+        <move>
+          <integer>0</integer>
+        </move>
+        <delete>
+          <marker>@+</marker>
+        </delete>
+        <move>
+          <marker>@&gt;</marker>
+        </move>
+        <shift>
+          <symbol>state-csvm-state</symbol>
+        </shift>
       </branch>
       <catch-all-branch>
-        <shift-to id="state-csvm-state"/>
+        <shift>
+          <symbol>state-csvm-state</symbol>
+        </shift>
       </catch-all-branch>
     </state>
-    <state id="state-csv-ie-state">
-      <branch branch-selecting-map="map-maa-sakod">
-        <move-to-marker position="@previous"/>
-        <delete-to-marker position="@previous"/>
-        <move-to-marker position="@next"/>
-        <shift-to id="state-csvm-state"/>
+    <state sname="state-csv-or-state">
+      <branch mname="map-maa-sakod">
+        <move>
+          <marker>@-</marker>
+        </move>
+        <delete>
+          <marker>@-</marker>
+        </delete>
+        <insert>
+          <string>ອ</string>
+        </insert>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <shift>
+          <symbol>state-csvm-state</symbol>
+        </shift>
       </branch>
       <catch-all-branch>
-        <shift-to id="state-csvm-state"/>
+        <shift>
+          <symbol>state-csvm-state</symbol>
+        </shift>
       </catch-all-branch>
     </state>
-    <state id="state-csv-ia-state">
-      <branch branch-selecting-map="map-maa-sakod">
-        <move-to-marker position="@previous"/>
-        <move-to-marker position="@previous"/>
-        <delete-to-marker position="@previous"/>
-        <move-to-marker position="@next"/>
-        <move-to-marker position="@next"/>
-        <shift-to id="state-csvm-state"/>
+    <state sname="state-csv-ua-state">
+      <branch mname="map-maa-sakod">
+        <move>
+          <marker>@-</marker>
+        </move>
+        <delete>
+          <integer>-3</integer>
+        </delete>
+        <insert>
+          <string>ັວ</string>
+        </insert>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <shift>
+          <symbol>state-csvm-state</symbol>
+        </shift>
       </branch>
       <catch-all-branch>
-        <shift-to id="state-csvm-state"/>
+        <shift>
+          <symbol>state-csvm-state</symbol>
+        </shift>
       </catch-all-branch>
     </state>
-    <state id="state-csvm-state">
-      <branch branch-selecting-map="map-tone">
-        <shift-to id="state-init"/>
+    <state sname="state-csv-uaa-state">
+      <branch mname="map-maa-sakod">
+        <move>
+          <marker>@-</marker>
+        </move>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <delete>
+          <marker>@-</marker>
+        </delete>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <shift>
+          <symbol>state-csvm-state</symbol>
+        </shift>
+      </branch>
+      <catch-all-branch>
+        <shift>
+          <symbol>state-csvm-state</symbol>
+        </shift>
+      </catch-all-branch>
+    </state>
+    <state sname="state-csv-ie-state">
+      <branch mname="map-maa-sakod">
+        <move>
+          <marker>@-</marker>
+        </move>
+        <delete>
+          <marker>@-</marker>
+        </delete>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <shift>
+          <symbol>state-csvm-state</symbol>
+        </shift>
+      </branch>
+      <catch-all-branch>
+        <shift>
+          <symbol>state-csvm-state</symbol>
+        </shift>
+      </catch-all-branch>
+    </state>
+    <state sname="state-csv-ia-state">
+      <branch mname="map-maa-sakod">
+        <move>
+          <marker>@-</marker>
+        </move>
+        <move>
+          <marker>@-</marker>
+        </move>
+        <delete>
+          <marker>@-</marker>
+        </delete>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <move>
+          <marker>@+</marker>
+        </move>
+        <shift>
+          <symbol>state-csvm-state</symbol>
+        </shift>
+      </branch>
+      <catch-all-branch>
+        <shift>
+          <symbol>state-csvm-state</symbol>
+        </shift>
+      </catch-all-branch>
+    </state>
+    <state sname="state-csvm-state">
+      <branch mname="map-tone">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
     </state>
   </state-list>

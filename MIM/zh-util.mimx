@@ -10,193 +10,287 @@ This is acutually not a standalone input method, but is expected
 to be included in the other Chinese input method (e.g. zh-py).
 </description>
   <map-list>
-    <map id="map-choose">
+    <map mname="map-choose">
       <rule>
-        <keyseq keys="1"/>
-        <select index="0"/>
+        <keyseq>
+          <string>1</string>
+        </keyseq>
+        <select>
+          <integer>0</integer>
+        </select>
       </rule>
       <rule>
-        <keyseq keys="2"/>
-        <select index="1"/>
+        <keyseq>
+          <string>2</string>
+        </keyseq>
+        <select>
+          <integer>1</integer>
+        </select>
       </rule>
       <rule>
-        <keyseq keys="3"/>
-        <select index="2"/>
+        <keyseq>
+          <string>3</string>
+        </keyseq>
+        <select>
+          <integer>2</integer>
+        </select>
       </rule>
       <rule>
-        <keyseq keys="4"/>
-        <select index="3"/>
+        <keyseq>
+          <string>4</string>
+        </keyseq>
+        <select>
+          <integer>3</integer>
+        </select>
       </rule>
       <rule>
-        <keyseq keys="5"/>
-        <select index="4"/>
+        <keyseq>
+          <string>5</string>
+        </keyseq>
+        <select>
+          <integer>4</integer>
+        </select>
       </rule>
       <rule>
-        <keyseq keys="6"/>
-        <select index="5"/>
+        <keyseq>
+          <string>6</string>
+        </keyseq>
+        <select>
+          <integer>5</integer>
+        </select>
       </rule>
       <rule>
-        <keyseq keys="7"/>
-        <select index="6"/>
+        <keyseq>
+          <string>7</string>
+        </keyseq>
+        <select>
+          <integer>6</integer>
+        </select>
       </rule>
       <rule>
-        <keyseq keys="8"/>
-        <select index="7"/>
+        <keyseq>
+          <string>8</string>
+        </keyseq>
+        <select>
+          <integer>7</integer>
+        </select>
       </rule>
       <rule>
-        <keyseq keys="9"/>
-        <select index="8"/>
+        <keyseq>
+          <string>9</string>
+        </keyseq>
+        <select>
+          <integer>8</integer>
+        </select>
       </rule>
       <rule>
-        <keyseq keys="0"/>
-        <select index="9"/>
+        <keyseq>
+          <string>0</string>
+        </keyseq>
+        <select>
+          <integer>9</integer>
+        </select>
       </rule>
     </map>
-    <map id="map-change-candidate">
+    <map mname="map-change-candidate">
       <rule>
         <keyseq>
-          <key-event>Left</key-event>
+          <list>
+            <symbol>Left</symbol>
+          </list>
         </keyseq>
-        <select selector="@previous"/>
+        <select>
+          <selector>@previous</selector>
+        </select>
       </rule>
       <rule>
         <keyseq>
-          <key-event>C-b</key-event>
+          <list>
+            <symbol>C-b</symbol>
+          </list>
         </keyseq>
-        <select selector="@previous"/>
+        <select>
+          <selector>@previous</selector>
+        </select>
       </rule>
       <rule>
         <keyseq>
-          <key-event>Right</key-event>
+          <list>
+            <symbol>Right</symbol>
+          </list>
         </keyseq>
-        <select selector="@next"/>
+        <select>
+          <selector>@next</selector>
+        </select>
       </rule>
       <rule>
         <keyseq>
-          <key-event>C-f</key-event>
+          <list>
+            <symbol>C-f</symbol>
+          </list>
         </keyseq>
-        <select selector="@next"/>
+        <select>
+          <selector>@next</selector>
+        </select>
       </rule>
       <rule>
         <keyseq>
-          <key-event>Up</key-event>
+          <list>
+            <symbol>Up</symbol>
+          </list>
         </keyseq>
-        <select selector="@previous_candidate_list"/>
+        <select>
+          <selector>@previous-candidate-change</selector>
+        </select>
       </rule>
       <rule>
         <keyseq>
-          <key-event>C-p</key-event>
+          <list>
+            <symbol>C-p</symbol>
+          </list>
         </keyseq>
-        <select selector="@previous_candidate_list"/>
+        <select>
+          <selector>@previous-candidate-change</selector>
+        </select>
       </rule>
       <rule>
         <keyseq>
-          <key-event>Down</key-event>
+          <list>
+            <symbol>Down</symbol>
+          </list>
         </keyseq>
-        <select selector="@next_candidate_list"/>
+        <select>
+          <selector>@next-candidate-change</selector>
+        </select>
       </rule>
       <rule>
         <keyseq>
-          <key-event>C-n</key-event>
+          <list>
+            <symbol>C-n</symbol>
+          </list>
         </keyseq>
-        <select selector="@next_candidate_list"/>
+        <select>
+          <selector>@next-candidate-change</selector>
+        </select>
       </rule>
     </map>
-    <map id="map-focus-move">
+    <map mname="map-focus-move">
       <rule>
         <keyseq>
-          <key-event>input-focus-move</key-event>
+          <list>
+            <symbol>input-focus-move</symbol>
+          </list>
         </keyseq>
       </rule>
     </map>
-    <map id="map-focus-change">
+    <map mname="map-focus-change">
       <rule>
         <keyseq>
-          <key-event>input-focus-out</key-event>
+          <list>
+            <symbol>input-focus-out</symbol>
+          </list>
         </keyseq>
-        <set id="KK">
-          <variable-reference id="handled-keys" type="predefined"/>
+        <set vname="KK">
+          <key-count/>
         </set>
-        <sub id="KK">
-          <int-val>1</int-val>
+        <sub vname="KK">
+          <integer>1</integer>
         </sub>
         <undo>
-          <variable-reference id="KK"/>
+          <varref vname="KK"/>
         </undo>
       </rule>
       <rule>
         <keyseq>
-          <key-event>input-focus-in</key-event>
+          <list>
+            <symbol>input-focus-in</symbol>
+          </list>
         </keyseq>
-        <set id="KK">
-          <variable-reference id="handled-keys" type="predefined"/>
+        <set vname="KK">
+          <key-count/>
         </set>
-        <sub id="KK">
-          <int-val>1</int-val>
+        <sub vname="KK">
+          <integer>1</integer>
         </sub>
         <undo>
-          <variable-reference id="KK"/>
+          <varref vname="KK"/>
         </undo>
       </rule>
     </map>
-    <map id="map-backspace">
+    <map mname="map-backspace">
       <rule>
         <keyseq>
-          <key-event>BackSpace</key-event>
+          <list>
+            <symbol>BackSpace</symbol>
+          </list>
         </keyseq>
       </rule>
     </map>
-    <map id="map-commit-preedit">
+    <map mname="map-commit-preedit">
       <rule>
         <keyseq>
-          <key-event>S- </key-event>
+          <list>
+            <string>S- </string>
+          </list>
         </keyseq>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-check-undo">
-      <branch branch-selecting-map="map-backspace">
+    <state sname="state-check-undo">
+      <branch mname="map-backspace">
         <undo/>
       </branch>
-      <branch branch-selecting-map="map-focus-move">
-        <shift-to id="state-init"/>
+      <branch mname="map-focus-move">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-focus-change"/>
+      <branch mname="map-focus-change"/>
       <catch-all-branch>
         <hide-candidates/>
-        <shift-to id="state-init"/>
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </catch-all-branch>
     </state>
-    <state id="state-select">
+    <state sname="state-select">
       <state-hook>
-        <set id="K">
-          <variable-reference id="handled-keys" type="predefined"/>
+        <set vname="K">
+          <key-count/>
         </set>
-        <sub id="K">
-          <int-val>1</int-val>
+        <sub vname="K">
+          <integer>1</integer>
         </sub>
       </state-hook>
-      <branch branch-selecting-map="map-focus-move">
-        <shift-to id="state-init"/>
+      <branch mname="map-focus-move">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-focus-change"/>
-      <branch branch-selecting-map="map-choose">
+      <branch mname="map-focus-change"/>
+      <branch mname="map-choose">
         <hide-candidates/>
-        <shift-to id="state-init"/>
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
-      <branch branch-selecting-map="map-change-candidate"/>
-      <branch branch-selecting-map="map-backspace">
+      <branch mname="map-change-candidate"/>
+      <branch mname="map-backspace">
         <undo>
-          <variable-reference id="K"/>
+          <varref vname="K"/>
         </undo>
       </branch>
-      <branch branch-selecting-map="map-commit-preedit">
-        <shift-to id="state-init"/>
+      <branch mname="map-commit-preedit">
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </branch>
       <catch-all-branch>
         <hide-candidates/>
-        <shift-to id="state-init"/>
+        <shift>
+          <symbol>state-init</symbol>
+        </shift>
       </catch-all-branch>
     </state>
   </state-list>

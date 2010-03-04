@@ -12,262 +12,481 @@ done by the m17n input method.
 </description>
   <title>ISPELL</title>
   <module-list>
-    <module id="module-libmimx-ispell">
-      <function id="function-ispell_word"/>
-      <function id="function-init"/>
-      <function id="function-fini"/>
+    <module id="libmimx-ispell">
+      <defun fname="libmimx-ispell-function-ispell_word"/>
+      <defun fname="libmimx-ispell-function-init"/>
+      <defun fname="libmimx-ispell-function-fini"/>
     </module>
   </module-list>
   <map-list>
-    <map id="map-alpha">
+    <map mname="map-alpha">
       <rule>
-        <keyseq keys="A"/>
-        <insert string="A"/>
+        <keyseq>
+          <string>A</string>
+        </keyseq>
+        <insert>
+          <string>A</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="B"/>
-        <insert string="B"/>
+        <keyseq>
+          <string>B</string>
+        </keyseq>
+        <insert>
+          <string>B</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="C"/>
-        <insert string="C"/>
+        <keyseq>
+          <string>C</string>
+        </keyseq>
+        <insert>
+          <string>C</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="D"/>
-        <insert string="D"/>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <insert>
+          <string>D</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="E"/>
-        <insert string="E"/>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <insert>
+          <string>E</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="F"/>
-        <insert string="F"/>
+        <keyseq>
+          <string>F</string>
+        </keyseq>
+        <insert>
+          <string>F</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="G"/>
-        <insert string="G"/>
+        <keyseq>
+          <string>G</string>
+        </keyseq>
+        <insert>
+          <string>G</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="H"/>
-        <insert string="H"/>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <insert>
+          <string>H</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="I"/>
-        <insert string="I"/>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <insert>
+          <string>I</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="J"/>
-        <insert string="J"/>
+        <keyseq>
+          <string>J</string>
+        </keyseq>
+        <insert>
+          <string>J</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="K"/>
-        <insert string="K"/>
+        <keyseq>
+          <string>K</string>
+        </keyseq>
+        <insert>
+          <string>K</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="L"/>
-        <insert string="L"/>
+        <keyseq>
+          <string>L</string>
+        </keyseq>
+        <insert>
+          <string>L</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="M"/>
-        <insert string="M"/>
+        <keyseq>
+          <string>M</string>
+        </keyseq>
+        <insert>
+          <string>M</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="N"/>
-        <insert string="N"/>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+        <insert>
+          <string>N</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="O"/>
-        <insert string="O"/>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+        <insert>
+          <string>O</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="P"/>
-        <insert string="P"/>
+        <keyseq>
+          <string>P</string>
+        </keyseq>
+        <insert>
+          <string>P</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="Q"/>
-        <insert string="Q"/>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <insert>
+          <string>Q</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="R"/>
-        <insert string="R"/>
+        <keyseq>
+          <string>R</string>
+        </keyseq>
+        <insert>
+          <string>R</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="S"/>
-        <insert string="S"/>
+        <keyseq>
+          <string>S</string>
+        </keyseq>
+        <insert>
+          <string>S</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="T"/>
-        <insert string="T"/>
+        <keyseq>
+          <string>T</string>
+        </keyseq>
+        <insert>
+          <string>T</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="U"/>
-        <insert string="U"/>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert>
+          <string>U</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="V"/>
-        <insert string="V"/>
+        <keyseq>
+          <string>V</string>
+        </keyseq>
+        <insert>
+          <string>V</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="W"/>
-        <insert string="W"/>
+        <keyseq>
+          <string>W</string>
+        </keyseq>
+        <insert>
+          <string>W</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="X"/>
-        <insert string="X"/>
+        <keyseq>
+          <string>X</string>
+        </keyseq>
+        <insert>
+          <string>X</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="Y"/>
-        <insert string="Y"/>
+        <keyseq>
+          <string>Y</string>
+        </keyseq>
+        <insert>
+          <string>Y</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="Z"/>
-        <insert string="Z"/>
+        <keyseq>
+          <string>Z</string>
+        </keyseq>
+        <insert>
+          <string>Z</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="a"/>
-        <insert string="a"/>
+        <keyseq>
+          <string>a</string>
+        </keyseq>
+        <insert>
+          <string>a</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="b"/>
-        <insert string="b"/>
+        <keyseq>
+          <string>b</string>
+        </keyseq>
+        <insert>
+          <string>b</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="c"/>
-        <insert string="c"/>
+        <keyseq>
+          <string>c</string>
+        </keyseq>
+        <insert>
+          <string>c</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="d"/>
-        <insert string="d"/>
+        <keyseq>
+          <string>d</string>
+        </keyseq>
+        <insert>
+          <string>d</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="e"/>
-        <insert string="e"/>
+        <keyseq>
+          <string>e</string>
+        </keyseq>
+        <insert>
+          <string>e</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="f"/>
-        <insert string="f"/>
+        <keyseq>
+          <string>f</string>
+        </keyseq>
+        <insert>
+          <string>f</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="g"/>
-        <insert string="g"/>
+        <keyseq>
+          <string>g</string>
+        </keyseq>
+        <insert>
+          <string>g</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="h"/>
-        <insert string="h"/>
+        <keyseq>
+          <string>h</string>
+        </keyseq>
+        <insert>
+          <string>h</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="i"/>
-        <insert string="i"/>
+        <keyseq>
+          <string>i</string>
+        </keyseq>
+        <insert>
+          <string>i</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="j"/>
-        <insert string="j"/>
+        <keyseq>
+          <string>j</string>
+        </keyseq>
+        <insert>
+          <string>j</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="k"/>
-        <insert string="k"/>
+        <keyseq>
+          <string>k</string>
+        </keyseq>
+        <insert>
+          <string>k</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="l"/>
-        <insert string="l"/>
+        <keyseq>
+          <string>l</string>
+        </keyseq>
+        <insert>
+          <string>l</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="m"/>
-        <insert string="m"/>
+        <keyseq>
+          <string>m</string>
+        </keyseq>
+        <insert>
+          <string>m</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="n"/>
-        <insert string="n"/>
+        <keyseq>
+          <string>n</string>
+        </keyseq>
+        <insert>
+          <string>n</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="o"/>
-        <insert string="o"/>
+        <keyseq>
+          <string>o</string>
+        </keyseq>
+        <insert>
+          <string>o</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="p"/>
-        <insert string="p"/>
+        <keyseq>
+          <string>p</string>
+        </keyseq>
+        <insert>
+          <string>p</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="q"/>
-        <insert string="q"/>
+        <keyseq>
+          <string>q</string>
+        </keyseq>
+        <insert>
+          <string>q</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="r"/>
-        <insert string="r"/>
+        <keyseq>
+          <string>r</string>
+        </keyseq>
+        <insert>
+          <string>r</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="s"/>
-        <insert string="s"/>
+        <keyseq>
+          <string>s</string>
+        </keyseq>
+        <insert>
+          <string>s</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="t"/>
-        <insert string="t"/>
+        <keyseq>
+          <string>t</string>
+        </keyseq>
+        <insert>
+          <string>t</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="u"/>
-        <insert string="u"/>
+        <keyseq>
+          <string>u</string>
+        </keyseq>
+        <insert>
+          <string>u</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="v"/>
-        <insert string="v"/>
+        <keyseq>
+          <string>v</string>
+        </keyseq>
+        <insert>
+          <string>v</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="w"/>
-        <insert string="w"/>
+        <keyseq>
+          <string>w</string>
+        </keyseq>
+        <insert>
+          <string>w</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="x"/>
-        <insert string="x"/>
+        <keyseq>
+          <string>x</string>
+        </keyseq>
+        <insert>
+          <string>x</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="y"/>
-        <insert string="y"/>
+        <keyseq>
+          <string>y</string>
+        </keyseq>
+        <insert>
+          <string>y</string>
+        </insert>
       </rule>
       <rule>
-        <keyseq keys="z"/>
-        <insert string="z"/>
+        <keyseq>
+          <string>z</string>
+        </keyseq>
+        <insert>
+          <string>z</string>
+        </insert>
       </rule>
     </map>
-    <map id="map-ispell">
+    <map mname="map-ispell">
       <rule>
         <keyseq>
-          <key-event>Tab</key-event>
+          <list>
+            <symbol>Tab</symbol>
+          </list>
         </keyseq>
-        <call id="module-libmimx-ispell">
-          <function-reference id="function-ispell_word"/>
-	  <argument type="symbol"><variable-reference id="init"/></argument>
-          <argument type="symbol"><variable-reference id="select"/></argument>
-        </call>
+        <funcall fname="libmimx-ispell-function-ispell_word">
+          <symbol>init</symbol>
+          <symbol>select</symbol>
+        </funcall>
       </rule>
     </map>
-    <map id="map-change">
+    <map mname="map-change">
       <rule>
         <keyseq>
-          <key-event>Left</key-event>
+          <list>
+            <symbol>Left</symbol>
+          </list>
         </keyseq>
-        <select selector="@previous"/>
+        <select>
+          <selector>@previous</selector>
+        </select>
       </rule>
       <rule>
         <keyseq>
-          <key-event>Right</key-event>
+          <list>
+            <symbol>Right</symbol>
+          </list>
         </keyseq>
-        <select selector="@next"/>
+        <select>
+          <selector>@next</selector>
+        </select>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <branch branch-selecting-map="map-alpha">
-        <shift-to id="state-alpha"/>
+    <state sname="state-init">
+      <branch mname="map-alpha">
+        <shift>
+          <symbol>state-alpha</symbol>
+        </shift>
       </branch>
     </state>
-    <state id="state-alpha">
-      <branch branch-selecting-map="map-alpha"/>
-      <branch branch-selecting-map="map-ispell"/>
+    <state sname="state-alpha">
+      <branch mname="map-alpha"/>
+      <branch mname="map-ispell"/>
     </state>
-    <state id="state-select">
-      <branch branch-selecting-map="map-change"/>
+    <state sname="state-select">
+      <branch mname="map-change"/>
     </state>
   </state-list>
 </input-method>

@@ -10,528 +10,972 @@ The keyboard layout was published by Beth Mardutho: The Syriac Institute.
 </description>
   <title>syrc-ph</title>
   <map-list>
-    <map id="map-generic">
-      <rule>
-        <keyseq keys="`"/>
-        <insert character="1807"/>
-      </rule>
-      <rule>
-        <keyseq keys="\"/>
-        <insert character="1798"/>
-      </rule>
-      <rule>
-        <keyseq keys="q"/>
-        <insert character="1833"/>
-      </rule>
-      <rule>
-        <keyseq keys="w"/>
-        <insert character="1816"/>
-      </rule>
-      <rule>
-        <keyseq keys="e"/>
-        <insert character="1814"/>
-      </rule>
-      <rule>
-        <keyseq keys="r"/>
-        <insert character="1834"/>
-      </rule>
-      <rule>
-        <keyseq keys="t"/>
-        <insert character="1836"/>
-      </rule>
-      <rule>
-        <keyseq keys="y"/>
-        <insert character="1821"/>
-      </rule>
-      <rule>
-        <keyseq keys="u"/>
-        <insert character="1820"/>
-      </rule>
-      <rule>
-        <keyseq keys="i"/>
-        <insert character="1829"/>
-      </rule>
-      <rule>
-        <keyseq keys="o"/>
-        <insert character="1831"/>
-      </rule>
-      <rule>
-        <keyseq keys="p"/>
-        <insert character="1830"/>
-      </rule>
-      <rule>
-        <keyseq keys="a"/>
-        <insert character="1808"/>
-      </rule>
-      <rule>
-        <keyseq keys="s"/>
-        <insert character="1827"/>
-      </rule>
-      <rule>
-        <keyseq keys="d"/>
-        <insert character="1813"/>
-      </rule>
-      <rule>
-        <keyseq keys="f"/>
-        <insert character="1812"/>
-      </rule>
-      <rule>
-        <keyseq keys="g"/>
-        <insert character="1811"/>
-      </rule>
-      <rule>
-        <keyseq keys="h"/>
-        <insert character="1815"/>
-      </rule>
-      <rule>
-        <keyseq keys="j"/>
-        <insert character="1819"/>
-      </rule>
-      <rule>
-        <keyseq keys="k"/>
-        <insert character="1823"/>
-      </rule>
-      <rule>
-        <keyseq keys="l"/>
-        <insert character="1824"/>
-      </rule>
-      <rule>
-        <keyseq keys=";"/>
-        <insert character="1818"/>
-      </rule>
-      <rule>
-        <keyseq keys="&apos;"/>
-        <insert character="1822"/>
-      </rule>
-      <rule>
-        <keyseq keys="z"/>
-        <insert character="1817"/>
-      </rule>
-      <rule>
-        <keyseq keys="x"/>
-        <insert character="1832"/>
-      </rule>
-      <rule>
-        <keyseq keys="c"/>
-        <insert character="1828"/>
-      </rule>
-      <rule>
-        <keyseq keys="v"/>
-        <insert character="1835"/>
-      </rule>
-      <rule>
-        <keyseq keys="b"/>
-        <insert character="1810"/>
-      </rule>
-      <rule>
-        <keyseq keys="n"/>
-        <insert character="1826"/>
-      </rule>
-      <rule>
-        <keyseq keys="m"/>
-        <insert character="1825"/>
-      </rule>
-      <rule>
-        <keyseq keys=","/>
-        <insert character="1792"/>
-      </rule>
-      <rule>
-        <keyseq keys="/"/>
-        <insert character="1799"/>
-      </rule>
-      <rule>
-        <keyseq keys="~"/>
-        <insert character="814"/>
-      </rule>
-      <rule>
-        <keyseq keys="@"/>
-        <insert character="778"/>
-      </rule>
-      <rule>
-        <keyseq keys="#"/>
-        <insert character="805"/>
-      </rule>
-      <rule>
-        <keyseq keys="$"/>
-        <insert character="1865"/>
-      </rule>
-      <rule>
-        <keyseq keys="%"/>
-        <insert character="9840"/>
-      </rule>
-      <rule>
-        <keyseq keys="^"/>
-        <insert character="9841"/>
-      </rule>
-      <rule>
-        <keyseq keys="&amp;"/>
-        <insert character="1802"/>
-      </rule>
-      <rule>
-        <keyseq keys="*"/>
-        <insert character="171"/>
-      </rule>
-      <rule>
-        <keyseq keys="_"/>
-        <insert character="187"/>
-      </rule>
-      <rule>
-        <keyseq keys="|"/>
-        <insert character="58"/>
-      </rule>
-      <rule>
-        <keyseq keys="Q"/>
-        <insert character="1840"/>
-      </rule>
-      <rule>
-        <keyseq keys="W"/>
-        <insert character="1843"/>
-      </rule>
-      <rule>
-        <keyseq keys="E"/>
-        <insert character="1846"/>
-      </rule>
-      <rule>
-        <keyseq keys="R"/>
-        <insert character="1850"/>
-      </rule>
-      <rule>
-        <keyseq keys="T"/>
-        <insert character="1853"/>
-      </rule>
-      <rule>
-        <keyseq keys="Y"/>
-        <insert character="1856"/>
-      </rule>
-      <rule>
-        <keyseq keys="U"/>
-        <insert character="1857"/>
-      </rule>
-      <rule>
-        <keyseq keys="I"/>
-        <insert character="776"/>
-      </rule>
-      <rule>
-        <keyseq keys="O"/>
-        <insert character="772"/>
-      </rule>
-      <rule>
-        <keyseq keys="P"/>
-        <insert character="775"/>
-      </rule>
-      <rule>
-        <keyseq keys="{"/>
-        <insert character="771"/>
-      </rule>
-      <rule>
-        <keyseq keys="}"/>
-        <insert character="1866"/>
-      </rule>
-      <rule>
-        <keyseq keys="A"/>
-        <insert character="1841"/>
-      </rule>
-      <rule>
-        <keyseq keys="S"/>
-        <insert character="1844"/>
-      </rule>
-      <rule>
-        <keyseq keys="D"/>
-        <insert character="1847"/>
-      </rule>
-      <rule>
-        <keyseq keys="F"/>
-        <insert character="1851"/>
-      </rule>
-      <rule>
-        <keyseq keys="G"/>
-        <insert character="1854"/>
-      </rule>
-      <rule>
-        <keyseq keys="H"/>
-        <insert character="1809"/>
-      </rule>
-      <rule>
-        <keyseq keys="J"/>
-        <insert character="45"/>
-      </rule>
-      <rule>
-        <keyseq keys="K"/>
-        <insert character="804"/>
-      </rule>
-      <rule>
-        <keyseq keys="L"/>
-        <insert character="817"/>
-      </rule>
-      <rule>
-        <keyseq keys=":"/>
-        <insert character="803"/>
-      </rule>
-      <rule>
-        <keyseq keys="&quot;"/>
-        <insert character="816"/>
-      </rule>
-      <rule>
-        <keyseq keys="Z"/>
-        <insert character="1842"/>
-      </rule>
-      <rule>
-        <keyseq keys="X"/>
-        <insert character="1845"/>
-      </rule>
-      <rule>
-        <keyseq keys="C"/>
-        <insert character="1848"/>
-      </rule>
-      <rule>
-        <keyseq keys="V"/>
-        <insert character="1852"/>
-      </rule>
-      <rule>
-        <keyseq keys="B"/>
-        <insert character="1855"/>
-      </rule>
-      <rule>
-        <keyseq keys="N"/>
-        <insert character="1849"/>
-      </rule>
-      <rule>
-        <keyseq keys="M"/>
-        <insert character="1858"/>
-      </rule>
-      <rule>
-        <keyseq keys="&lt;"/>
-        <insert character="1548"/>
-      </rule>
-      <rule>
-        <keyseq keys="&gt;"/>
-        <insert character="1563"/>
-      </rule>
-      <rule>
-        <keyseq keys="?"/>
-        <insert character="1567"/>
+    <map mname="map-generic">
+      <rule>
+        <keyseq>
+          <string>`</string>
+        </keyseq>
+        <insert>
+          <integer>1807</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-`</key-event>
+          <string>\</string>
         </keyseq>
-        <insert character="1617"/>
+        <insert>
+          <integer>1798</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-1</key-event>
+          <string>q</string>
         </keyseq>
-        <insert character="1793"/>
+        <insert>
+          <integer>1833</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-2</key-event>
+          <string>w</string>
         </keyseq>
-        <insert character="1794"/>
+        <insert>
+          <integer>1816</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-3</key-event>
+          <string>e</string>
         </keyseq>
-        <insert character="1795"/>
+        <insert>
+          <integer>1814</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-4</key-event>
+          <string>r</string>
         </keyseq>
-        <insert character="1796"/>
+        <insert>
+          <integer>1834</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-5</key-event>
+          <string>t</string>
         </keyseq>
-        <insert character="1797"/>
+        <insert>
+          <integer>1836</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-6</key-event>
+          <string>y</string>
         </keyseq>
-        <insert character="1800"/>
+        <insert>
+          <integer>1821</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-7</key-event>
+          <string>u</string>
         </keyseq>
-        <insert character="1801"/>
+        <insert>
+          <integer>1820</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-8</key-event>
+          <string>i</string>
         </keyseq>
-        <insert character="1803"/>
+        <insert>
+          <integer>1829</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-9</key-event>
+          <string>o</string>
         </keyseq>
-        <insert character="1804"/>
+        <insert>
+          <integer>1831</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-0</key-event>
+          <string>p</string>
         </keyseq>
-        <insert character="1805"/>
+        <insert>
+          <integer>1830</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A--</key-event>
+          <string>a</string>
         </keyseq>
-        <insert character="9484"/>
+        <insert>
+          <integer>1808</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-=</key-event>
+          <string>s</string>
         </keyseq>
-        <insert character="9488"/>
+        <insert>
+          <integer>1827</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-q</key-event>
+          <string>d</string>
         </keyseq>
-        <insert character="1614"/>
+        <insert>
+          <integer>1813</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-w</key-event>
+          <string>f</string>
         </keyseq>
-        <insert character="1611"/>
+        <insert>
+          <integer>1812</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-e</key-event>
+          <string>g</string>
         </keyseq>
-        <insert character="1615"/>
+        <insert>
+          <integer>1811</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-r</key-event>
+          <string>h</string>
         </keyseq>
-        <insert character="1612"/>
+        <insert>
+          <integer>1815</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-t</key-event>
+          <string>j</string>
         </keyseq>
-        <insert character="1619"/>
+        <insert>
+          <integer>1819</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-y</key-event>
+          <string>k</string>
         </keyseq>
-        <insert character="1620"/>
+        <insert>
+          <integer>1823</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-u</key-event>
+          <string>l</string>
         </keyseq>
-        <insert character="1863"/>
+        <insert>
+          <integer>1824</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-i</key-event>
+          <string>;</string>
         </keyseq>
-        <insert character="1859"/>
+        <insert>
+          <integer>1818</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-o</key-event>
+          <string>'</string>
         </keyseq>
-        <insert character="1861"/>
+        <insert>
+          <integer>1822</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-p</key-event>
+          <string>z</string>
         </keyseq>
-        <insert character="813"/>
+        <insert>
+          <integer>1817</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-a</key-event>
+          <string>x</string>
         </keyseq>
-        <insert character="1616"/>
+        <insert>
+          <integer>1832</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-s</key-event>
+          <string>c</string>
         </keyseq>
-        <insert character="1613"/>
+        <insert>
+          <integer>1828</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-f</key-event>
+          <string>v</string>
         </keyseq>
-        <insert character="1569"/>
+        <insert>
+          <integer>1835</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-g</key-event>
+          <string>b</string>
         </keyseq>
-        <insert character="1621"/>
+        <insert>
+          <integer>1810</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-h</key-event>
+          <string>n</string>
         </keyseq>
-        <insert character="1648"/>
+        <insert>
+          <integer>1826</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-j</key-event>
+          <string>m</string>
         </keyseq>
-        <insert character="1864"/>
+        <insert>
+          <integer>1825</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-k</key-event>
+          <string>,</string>
         </keyseq>
-        <insert character="1860"/>
+        <insert>
+          <integer>1792</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-l</key-event>
+          <string>/</string>
         </keyseq>
-        <insert character="1862"/>
+        <insert>
+          <integer>1799</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-x</key-event>
+          <string>~</string>
         </keyseq>
-        <insert character="1618"/>
+        <insert>
+          <integer>814</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-c</key-event>
+          <string>@</string>
         </keyseq>
-        <insert character="8204"/>
+        <insert>
+          <integer>778</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-v</key-event>
+          <string>#</string>
         </keyseq>
-        <insert character="8205"/>
+        <insert>
+          <integer>805</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-b</key-event>
+          <string>$</string>
         </keyseq>
-        <insert character="8206"/>
+        <insert>
+          <integer>1865</integer>
+        </insert>
       </rule>
       <rule>
         <keyseq>
-          <key-event>A-n</key-event>
+          <string>%</string>
         </keyseq>
-        <insert character="8207"/>
+        <insert>
+          <integer>9840</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>^</string>
+        </keyseq>
+        <insert>
+          <integer>9841</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&amp;</string>
+        </keyseq>
+        <insert>
+          <integer>1802</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>*</string>
+        </keyseq>
+        <insert>
+          <integer>171</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>_</string>
+        </keyseq>
+        <insert>
+          <integer>187</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>|</string>
+        </keyseq>
+        <insert>
+          <integer>58</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Q</string>
+        </keyseq>
+        <insert>
+          <integer>1840</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>W</string>
+        </keyseq>
+        <insert>
+          <integer>1843</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>E</string>
+        </keyseq>
+        <insert>
+          <integer>1846</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>R</string>
+        </keyseq>
+        <insert>
+          <integer>1850</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>T</string>
+        </keyseq>
+        <insert>
+          <integer>1853</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Y</string>
+        </keyseq>
+        <insert>
+          <integer>1856</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>U</string>
+        </keyseq>
+        <insert>
+          <integer>1857</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>I</string>
+        </keyseq>
+        <insert>
+          <integer>776</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>O</string>
+        </keyseq>
+        <insert>
+          <integer>772</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>P</string>
+        </keyseq>
+        <insert>
+          <integer>775</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>{</string>
+        </keyseq>
+        <insert>
+          <integer>771</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>}</string>
+        </keyseq>
+        <insert>
+          <integer>1866</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>A</string>
+        </keyseq>
+        <insert>
+          <integer>1841</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>S</string>
+        </keyseq>
+        <insert>
+          <integer>1844</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>D</string>
+        </keyseq>
+        <insert>
+          <integer>1847</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>F</string>
+        </keyseq>
+        <insert>
+          <integer>1851</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>G</string>
+        </keyseq>
+        <insert>
+          <integer>1854</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>H</string>
+        </keyseq>
+        <insert>
+          <integer>1809</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>J</string>
+        </keyseq>
+        <insert>
+          <integer>45</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>K</string>
+        </keyseq>
+        <insert>
+          <integer>804</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>L</string>
+        </keyseq>
+        <insert>
+          <integer>817</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>:</string>
+        </keyseq>
+        <insert>
+          <integer>803</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>"</string>
+        </keyseq>
+        <insert>
+          <integer>816</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>Z</string>
+        </keyseq>
+        <insert>
+          <integer>1842</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>X</string>
+        </keyseq>
+        <insert>
+          <integer>1845</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>C</string>
+        </keyseq>
+        <insert>
+          <integer>1848</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>V</string>
+        </keyseq>
+        <insert>
+          <integer>1852</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>B</string>
+        </keyseq>
+        <insert>
+          <integer>1855</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>N</string>
+        </keyseq>
+        <insert>
+          <integer>1849</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>M</string>
+        </keyseq>
+        <insert>
+          <integer>1858</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&lt;</string>
+        </keyseq>
+        <insert>
+          <integer>1548</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>&gt;</string>
+        </keyseq>
+        <insert>
+          <integer>1563</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <string>?</string>
+        </keyseq>
+        <insert>
+          <integer>1567</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <string>A-`</string>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1617</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-1</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1793</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-2</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1794</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-3</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1795</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-4</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1796</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-5</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1797</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-6</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1800</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-7</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1801</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-8</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1803</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-9</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1804</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-0</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1805</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A--</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>9484</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <string>A-=</string>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>9488</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-q</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1614</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-w</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1611</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-e</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1615</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-r</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1612</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-t</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1619</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-y</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1620</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-u</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1863</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-i</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1859</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-o</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1861</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-p</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>813</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-a</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1616</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-s</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1613</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-f</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1569</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-g</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1621</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-h</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1648</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-j</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1864</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-k</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1860</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-l</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1862</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-x</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>1618</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-c</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>8204</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-v</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>8205</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-b</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>8206</integer>
+        </insert>
+      </rule>
+      <rule>
+        <keyseq>
+          <list>
+            <symbol>A-n</symbol>
+          </list>
+        </keyseq>
+        <insert>
+          <integer>8207</integer>
+        </insert>
       </rule>
     </map>
   </map-list>
   <state-list>
-    <state id="state-init">
-      <branch branch-selecting-map="map-generic"/>
+    <state sname="state-init">
+      <branch mname="map-generic"/>
     </state>
   </state-list>
 </input-method>

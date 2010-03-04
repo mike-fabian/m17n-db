@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<grammar 
+	 datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+         xmlns:xi="http://www.w3.org/1999/XML/xinclude"
+	 xmlns="http://relaxng.org/ns/structure/1.0"
+	 ns="http://www.m17n.org/MIM">
+
+ 
+<start combine="choice">
+  <ref name="expr"/>
+</start>
+
+<define name="expr">
+      <choice>
+	<ref name="defun"/>
+	<ref name="defmacro"/>
+	<ref name="defvar"/>
+	<ref name="term"/>
+      </choice>
+</define>
+
+<define name="term" combine="choice">
+  <choice>
+    <ref name="integer"/>
+    <ref name="string"/>
+    <ref name="symbol"/>
+    <ref name="list"/>
+    <ref name="error"/>
+    <ref name="varref"/>
+    <ref name="funcall"/>
+  </choice>
+</define>
+
+<define name="defun">
+  <element name="defun">
+    <attribute name="fname"><data type="ID"/></attribute>
+    <optional>
+      <choice><ref name="args"/></choice>
+    </optional>
+    <zeroOrMore><ref name="term"/></zeroOrMore>
+  </element>
+</define>
+
+<define name="defmacro">
+  <element name="defmacro">
+    <attribute name="fname"><data type="ID"/></attribute>
+    <optional>
+      <choice><ref name="args"/></choice>
+    </optional>
+    <zeroOrMore><ref name="term"/></zeroOrMore>
+  </element>
+</define>
+
+<define name="args">
+  <element name="args">
+    <zeroOrMore>
+      <element name="fixed">
+	<attribute name="vname"><data type="Name"/></attribute>
+      </element>
+    </zeroOrMore>
+    <zeroOrMore>
+      <element name="optional">
+	<attribute name="vname"><data type="Name"/></attribute>
+      </element>
+    </zeroOrMore>
+    <zeroOrMore>
+      <element name="rest">
+	<attribute name="vname"><data type="Name"/></attribute>
+      </element>
+    </zeroOrMore>
+  </element>
+</define>
+
+<define name="defvar">
+  <element name="defvar">
+    <attribute name="vname"><data type="ID"/></attribute>
+    <optional>
+      <ref name="description"/>
+    </optional>
+    <optional>
+      <choice>
+	<group>
+	  <ref name="integer"/>
+	  <optional>
+	    <element name="possible-value">
+	      <oneOrMore>
+		<choice>
+		  <ref name="integer"/>
+		  <element name="range"><ref name="integer"/><ref name="integer"/></element>
+		</choice>
+	      </oneOrMore>
+	    </element>
+	  </optional>
+	</group>
+	<group>
+	  <ref name="string"/>
+	  <optional>
+	    <element name="possible-value">
+	      <oneOrMore>
+		<ref name="string"/>
+	      </oneOrMore>
+	    </element>
+	    </optional>
+	</group>
+	<group>
+	  <ref name="symbol"/>
+	  <optional>
+	    <element name="possible-value">
+	      <oneOrMore>
+		<ref name="symbol"/>
+	      </oneOrMore>
+	    </element>
+	    </optional>
+	</group>
+      </choice>
+    </optional>
+  </element>
+</define>
+
+<define name="description">
+  <element name="description">
+    <choice>
+      <element name="gettext"><text/></element>
+      <text/>
+    </choice>
+  </element>
+</define>
+
+<define name="integer">
+  <element name="integer">
+    <choice>
+      <data type="integer"/>
+      <data type="string"><param name="pattern">\?.</param></data>
+      <data type="string"><param name="pattern">[0#]x[0-9a-fA-F]{1,6}</param></data>
+    </choice>
+  </element>
+</define>
+
+<define name="string">
+  <element name="string"><data type="string"/></element>
+</define>
+
+<define name="symbol">
+  <element name="symbol"><data type="string"/></element>
+</define>
+
+<define name="list">
+  <element name="list">
+    <zeroOrMore><ref name="term"/></zeroOrMore>
+  </element>
+</define>
+
+<define name="error">
+  <element name="error">
+    <optional><attribute name="ename"><data type="Name"/></attribute></optional>
+    <ref name="string"/>
+  </element>
+</define>
+
+<define name="varref">
+  <element name="varref">
+   <attribute name="vname"><data type="Name"/></attribute><empty/>
+  </element>
+</define>
+
+<define name="funcall">
+  <choice>
+    <element name="funcall">
+      <attribute name="fname">
+	<data type="IDREF"/>
+      </attribute>
+      <zeroOrMore><ref name="term"/></zeroOrMore>
+    </element>
+    <ref name="predefined"/>
+  </choice>
+</define>
+
+<define name="predefined">
+  <choice>
+    <element name="set"><attribute name="vname"><data type="Name"/></attribute><ref name="term"/></element>
+
+    <element name="and"><oneOrMore><ref name="term"/></oneOrMore></element>
+    <element name="or"><oneOrMore><ref name="term"/></oneOrMore></element>
+    <element name="not"><ref name="term"/></element>
+    <element name="eq"><oneOrMore><ref name="term"/></oneOrMore></element>
+    <element name="noteq"><ref name="term"/><ref name="term"/></element>
+    <element name="equal"><ref name="term"/><ref name="term"/></element>
+    <element name="match"><ref name="term"/><ref name="term"/></element>
+
+    <element name="lt"><ref name="intterm"/><ref name="intterm"/></element>
+    <element name="le"><ref name="intterm"/><ref name="intterm"/></element>
+    <element name="ge"><ref name="intterm"/><ref name="intterm"/></element>
+    <element name="gt"><ref name="intterm"/><ref name="intterm"/></element>
+
+    <element name="add">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+    <element name="sub">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+    <element name="mul">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+    <element name="div">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+    <element name="mod">
+      <choice><group><attribute name="vname"/><ref name="intterm"/></group>
+              <group><ref name="intterm"/><ref name="intterm"/></group></choice>
+    </element>
+
+    <element name="logand">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+    <element name="logior">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+    <element name="logxor">
+      <optional><attribute name="vname"/></optional><oneOrMore><ref name="intterm"/></oneOrMore>
+    </element>
+    <element name="lsh">
+      <choice><group><attribute name="vname"/><ref name="intterm"/></group>
+              <group><ref name="intterm"/><ref name="intterm"/></group></choice>
+    </element>
+
+    <element name="append">
+      <optional><attribute name="vname"/></optional>
+      <oneOrMore><ref name="term"/></oneOrMore>
+    </element>
+    <element name="concat">
+      <optional><attribute name="vname"/></optional>
+      <oneOrMore><choice><ref name="intterm"/><ref name="strterm"/><ref name="listterm"/></choice></oneOrMore>
+    </element>
+    <element name="length"><choice><ref name="strterm"/><ref name="listterm"/></choice></element>
+    <element name="nth"><ref name="intterm"/><choice><ref name="strterm"/><ref name="listterm"/></choice></element>
+    <element name="copy"><ref name="listterm"/></element>
+    <element name="ins"><attribute name="vname"/>
+      <ref name="intterm"/><choice><ref name="strterm"/><ref name="listterm"/></choice>
+    </element>
+    <element name="del"><attribute name="vname"/>
+      <ref name="intterm"/><ref name="intterm"/>
+    </element>
+
+    <element name="progn"><zeroOrMore><ref name="term"/></zeroOrMore></element>
+    <element name="if"><ref name="term"/><ref name="term"/><optional><ref name="term"/></optional></element>
+    <element name="when"><oneOrMore><ref name="term"/></oneOrMore></element>
+    <element name="cond"><oneOrMore><ref name="list"/></oneOrMore></element>
+
+    <element name="loop"><oneOrMore><ref name="term"/></oneOrMore></element>
+    <element name="while"><oneOrMore><ref name="term"/></oneOrMore></element>
+    <element name="foreach"><attribute name="vname"/>
+       <choice><ref name="strterm"/><ref name="listterm"/></choice>
+       <oneOrMore><ref name="term"/></oneOrMore>
+    </element>
+    <element name="break"><optional><ref name="term"/></optional></element>
+    <element name="return"><optional><ref name="term"/></optional></element>
+    <element name="catch">
+      <optional><attribute name="vname"><data type="Name"/></attribute></optional>
+      <choice><ref name="symbol"/><ref name="error"/></choice>
+      <oneOrMore><ref name="term"/></oneOrMore>
+    </element>
+    <element name="throw">
+      <choice>
+	<group><ref name="symbol"/><optional><ref name="term"/></optional></group>
+	<ref name="error"/>
+      </choice>
+    </element>
+    <element name="quote"><ref name="term"/></element>
+    <element name="eval"><ref name="term"/></element>
+    <element name="type"><ref name="term"/></element>
+  </choice>
+</define>
+
+<define name="intterm" combine="choice">
+  <choice>
+    <ref name="varref"/>
+    <ref name="integer"/>
+    <ref name="funcall"/>
+  </choice>
+</define>
+
+<define name="strterm">
+  <choice>
+    <ref name="varref"/>
+    <ref name="string"/>
+    <ref name="funcall"/>
+  </choice>
+</define>
+
+<define name="symterm">
+  <choice>
+    <ref name="varref"/>
+    <ref name="symbol"/>
+    <ref name="funcall"/>
+  </choice>
+</define>
+
+<define name="listterm">
+  <choice>
+    <ref name="varref"/>
+    <ref name="list"/>
+    <ref name="funcall"/>
+  </choice>
+</define>
+
+</grammar>

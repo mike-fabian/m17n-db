@@ -1,0 +1,125 @@
+default namespace = "http://www.m17n.org/MIM"
+namespace xi = "http://www.w3.org/1999/XML/xinclude"
+
+include "expr.rnc"
+start |=
+  element input-method {
+    im-declaration,
+    description?,
+    element title { xsd:string }?,
+    variable-list?,
+    command-list?,
+    module-list?,
+    macro-list?,
+    map-list?,
+    state-list?
+  }
+# =====input method details====================================
+im-declaration =
+  element tags {
+    element language {
+      "t"
+      | xsd:string { pattern = "[a-z]{2,3}" }
+    },
+    ((element name { "nil" },
+      element extra-id { xsd:ID })
+     | (element name {
+          xsd:string { pattern = "[^n][^i][^l]" }
+          | xsd:string { pattern = ".{1,2}" }
+          | xsd:string { pattern = "....+" }
+        },
+        element extra-id { xsd:ID }?))
+  },
+  element m17n-version {
+    xsd:string { pattern = "[0-9]+\.[0-9]+\.[0-9]+" }
+  }?
+# setups
+variable-list = element variable-list { defvar+ }
+command-list =
+  element command-list {
+    element defcmd {
+      attribute cname {
+        xsd:ID { pattern = "command-.*" }
+      },
+      description?,
+      keyseq*
+    }+
+  }
+module-list =
+  element module-list {
+    element module {
+      attribute id { xsd:string },
+      element defun {
+        attribute fname {
+          xsd:ID { pattern = ".*-function-.*" }
+        },
+        empty
+      }+
+    }+
+  }
+macro-list = element macro-list { defun+ }
+# the real work
+map-list =
+  element map-list {
+    element map {
+      attribute mname {
+        xsd:ID { pattern = "map-.*" }
+      },
+      element rule { (keyseq | command-reference), funcall* }*
+    }+
+  }
+command-reference =
+  element command {
+    attribute cname { xsd:IDREF }
+  }
+keyseq = element keyseq { (listterm | strterm)+ }
+marker = element marker { xsd:string }
+selector =
+  element selector {
+    "@first"
+    | "@current"
+    | "@last"
+    | "@previous"
+    | "@next"
+    | "@previous-candidate-change"
+    | "@next-candidate-change"
+  }
+state-list =
+  element state-list {
+    element state {
+      attribute sname {
+        xsd:ID { pattern = "state-.*" }
+      },
+      element title { xsd:string }?,
+      (element state-hook { funcall+ }?
+       & element catch-all-branch { funcall* }?
+       & element branch {
+           attribute mname { xsd:IDREF },
+           funcall*
+         }*)
+    }*
+  }
+# ===MIM original terms and functions ======================================
+keyseqterm = keyseq | funcall | varref
+markerterm = marker | funcall | varref
+selectorterm = selector | funcall | varref
+term |= keyseq | marker | selector
+funcall |=
+  element insert { intterm | strterm }
+  | element insert-candidates { (listterm | strterm)+ }
+  | element delete { markerterm | intterm }
+  | element select { selectorterm | intterm }
+  | element show-candidates { empty }
+  | element hide-candidates { empty }
+  | element move { markerterm | intterm }
+  | element mark { markerterm }
+  | element pushback { keyseqterm | intterm }
+  | element pop { empty }
+  | element undo { intterm? }
+  | element commit { empty }
+  | element unhandle { empty }
+  | element shift { symterm }
+  | element shiftback { empty }
+  | element char-at { markerterm }
+  | element key-count { empty }
+  | element surrounding-text-flag { empty }

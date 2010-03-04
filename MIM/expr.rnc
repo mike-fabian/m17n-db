@@ -1,0 +1,175 @@
+default namespace = "http://www.m17n.org/MIM"
+namespace xi = "http://www.w3.org/1999/XML/xinclude"
+
+start |= expr
+expr = defun | defmacro | defvar | term
+term |= integer | \string | symbol | \list | error | varref | funcall
+defun =
+  element defun {
+    attribute fname { xsd:ID },
+    (args)?,
+    term*
+  }
+defmacro =
+  element defmacro {
+    attribute fname { xsd:ID },
+    (args)?,
+    term*
+  }
+args =
+  element args {
+    element fixed {
+      attribute vname { xsd:Name }
+    }*,
+    element optional {
+      attribute vname { xsd:Name }
+    }*,
+    element rest {
+      attribute vname { xsd:Name }
+    }*
+  }
+defvar =
+  element defvar {
+    attribute vname { xsd:ID },
+    description?,
+    ((integer,
+      element possible-value {
+        (integer
+         | element range { integer, integer })+
+      }?)
+     | (\string,
+        element possible-value { \string+ }?)
+     | (symbol,
+        element possible-value { symbol+ }?))?
+  }
+description =
+  element description {
+    element gettext { text }
+    | text
+  }
+integer =
+  element integer {
+    xsd:integer
+    | xsd:string { pattern = "\?." }
+    | xsd:string { pattern = "[0#]x[0-9A-F]{1,6}" }
+  }
+\string = element string { xsd:string }
+symbol = element symbol { xsd:string }
+\list = element list { term* }
+error =
+  element error {
+    attribute ename { xsd:Name }?,
+    \string
+  }
+varref =
+  element varref {
+    attribute vname { xsd:Name },
+    empty
+  }
+funcall =
+  element funcall {
+    attribute fname { xsd:IDREF },
+    term*
+  }
+  | predefined
+predefined =
+  element set {
+    attribute vname { xsd:Name },
+    term
+  }
+  | element and { term+ }
+  | element or { term+ }
+  | element not { term }
+  | element eq { term+ }
+  | element noteq { term, term }
+  | element equal { term, term }
+  | element match { term, term }
+  | element lt { intterm, intterm }
+  | element le { intterm, intterm }
+  | element ge { intterm, intterm }
+  | element gt { intterm, intterm }
+  | element add {
+      attribute vname { text }?,
+      intterm+
+    }
+  | element sub {
+      attribute vname { text }?,
+      intterm+
+    }
+  | element mul {
+      attribute vname { text }?,
+      intterm+
+    }
+  | element div {
+      attribute vname { text }?,
+      intterm+
+    }
+  | element mod {
+      (attribute vname { text },
+       intterm)
+      | (intterm, intterm)
+    }
+  | element logand {
+      attribute vname { text }?,
+      intterm+
+    }
+  | element logior {
+      attribute vname { text }?,
+      intterm+
+    }
+  | element logxor {
+      attribute vname { text }?,
+      intterm+
+    }
+  | element lsh {
+      (attribute vname { text },
+       intterm)
+      | (intterm, intterm)
+    }
+  | element append {
+      attribute vname { text }?,
+      term+
+    }
+  | element concat {
+      attribute vname { text }?,
+      (intterm | strterm | listterm)+
+    }
+  | element length { strterm | listterm }
+  | element nth { intterm, (strterm | listterm) }
+  | element copy { listterm }
+  | element ins {
+      attribute vname { text },
+      intterm,
+      (strterm | listterm)
+    }
+  | element del {
+      attribute vname { text },
+      intterm,
+      intterm
+    }
+  | element progn { term* }
+  | element if { term, term, term? }
+  | element when { term+ }
+  | element cond { \list+ }
+  | element loop { term+ }
+  | element while { term+ }
+  | element foreach {
+      attribute vname { text },
+      (strterm | listterm),
+      term+
+    }
+  | element break { term? }
+  | element return { term? }
+  | element catch {
+      attribute vname { xsd:Name }?,
+      (symbol | error),
+      term+
+    }
+  | element throw { (symbol, term?) | error }
+  | element quote { term }
+  | element eval { term }
+  | element type { term }
+intterm |= varref | integer | funcall
+strterm = varref | \string | funcall
+symterm = varref | symbol | funcall
+listterm = varref | \list | funcall

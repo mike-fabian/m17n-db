@@ -210,6 +210,9 @@ the value can be omitted.
   </variable-list>
 #endif
 
+This code declares a variable "precomposed" whose possible values are
+integer 0 or 1 and the default value is 0.
+
 @verbatim
 <define name="command-list">
   <element name="command-list">
@@ -247,7 +250,7 @@ the attribute "cname" whose value must start with "command-".
 
 Like &lt;variable-list&gt;, the declaration can be used in two ways.
 One is to introduce a new command.  In that case, the &lt;keyseq&gt;
-element must appear in &lt;command&gt;.  Another is to inherit the
+element must appear in &lt;defcmd&gt;.  Another is to inherit the
 command from what declared in "global.mimx", and to give the different
 key binding and/or to make the command customizable specially for the
 current input method.  In the latter case, &lt;keyseq&gt; can be
@@ -285,7 +288,7 @@ Commit the preedit text</get-text>
     </oneOrMore>
   </element>
 </define>
-@endbatim
+@endverbatim
 
 Each &lt;module&gt; element declares an external module (i.e. dynamic
 library).  The value of "id" attribute gives the name of the module.
@@ -294,10 +297,9 @@ library).  The value of "id" attribute gives the name of the module.
 The name of the module, "-function-" and the name of the function
 itself consitute the value of the "fname" attribute.  If the "fname"
 attribute has the value that ends with "init", it is called with only
-the default arguments (see &lt;call&gt;) when an input context is
-created for the input method.  If it has the value that ends with
-"fini", it is called with only the default arguments when the input
-context is destroyed.
+the default arguments when an input context is created for the input
+method.  If it has the value that ends with "fini", it is called with
+only the default arguments when the input context is destroyed.
 
 #if EXAMPLE_CODE
   <module-list>
@@ -327,7 +329,7 @@ represents &lt;funcall&gt;s to execute.
 This code calls the function 'resize' of the module 'libmimx-anthy'
 with a symbol argument whose value is "t".
 
-
+@verbatim
 <define name="macro-list">
   <element name="macro-list">
     <oneOrMore>
@@ -335,6 +337,7 @@ with a symbol argument whose value is "t".
     </oneOrMore>
   </element>
 </define>
+@endbatim
 
 &lt;macro-list&gt; declares macros used in this input method.  Details
 of &lt;defun&gt; can be found in @ref expr.
@@ -363,8 +366,8 @@ This code declares one macro "macro-delete-preceding-zw".
 
 @subsection im-terms Input Method Terms
 
-The m17n database has special tags and terms for wrinting input
-methods: markers, selectors and key sequences.
+The m17n database has special terms for wrinting input methods:
+markers, selectors and key sequences.
 
 @verbatim
 <define name="term" combine="choice">
@@ -376,7 +379,7 @@ methods: markers, selectors and key sequences.
 </define>
 @endverbatim
 
-These terms can be used in functions defined in expr.rng.
+These terms can be used in functions defined in mimnew.rng.
 
 @verbatim
 <define name="marker">
@@ -392,8 +395,8 @@ position of a marker is referred by the elements &lt;move&gt;,
 Some markers that starts with @@ have special meanings.  @@0, @@1,
 ... , @@9 mark the 0th, 1st, ... , 9th position in the preedit buffer
 respectively.  @@&lt;, @@=, @@&gt;, @@- and @@+ mark the first,
-current, last, previous and next position in the preediting buffer
-respectively.  @@[ marks the previous position where a candidate list
+current, last, preceding and following position in the preediting buffer
+respectively.  @@[ marks the preceding position where a candidate list
 changes.  @@] marks the next position where a candidate list changes.
 
 @@+N and @@-N (N is an positive integer) mark the N-th preceding or
@@ -513,17 +516,18 @@ used, for instance, with a West European keyboard, the value may
 contain Latin-1 characters.
 
 The element in the &lt;listterm&gt in the &lt;keyseq&gt; must be
-either an intterm whose value is a valid character code, or a symterm
-whose value is the return value of the minput_event_to_key ()
-function.  Under the X window system, you can quickly check the value
-using the @c xev command.  For example, the return key, the backspace
-key, and the 0 key on the keypad are represented as @c Return, @c
-BackSpace, @c KP_0 respectively.  If the shift, control, meta, alt,
-super, and hyper modifiers are used, they are represented by the S- ,
-C- , M- , A- , s-, and H- prefixes respectively in this order.  Thus,
-"return with shift with meta with hyper" is @c S-M-H-Return.  Note
-that "a with shift" .. "z with shift" are represented simply as A
-.. Z.  Thus "a with shift with meta with hyper" is @c M-H-A.
+either an &lt;intterm&gt; whose value is a valid character code, or a
+&lt;symterm&gt; whose value is the return value of the
+minput_event_to_key () function.  Under the X window system, you can
+quickly check the value using the @c xev command.  For example, the
+return key, the backspace key, and the 0 key on the keypad are
+represented as @c Return, @c BackSpace, @c KP_0 respectively.  If the
+shift, control, meta, alt, super, and hyper modifiers are used, they
+are represented by the S- , C- , M- , A- , s-, and H- prefixes
+respectively in this order.  Thus, "return with shift with meta with
+hyper" is @c S-M-H-Return.  Note that "a with shift" .. "z with shift"
+are represented simply as A .. Z.  Thus "a with shift with meta with
+hyper" is @c M-H-A.
 
 
 #if EXAMPLE_CODE
@@ -627,7 +631,7 @@ value would have, if appeared in its place.
 
 This code calls the command "command-start".
 
-@subsection imfuncalls Input Method Function Calls
+@subsection imfuncalls Input Method Functions
 
 In addion to those defined in expr.rng, the m17n database prepares
 several functions for writing input methods.  
@@ -640,8 +644,8 @@ several functions for writing input methods.
 
 The element &lt;insert&gt; inserts a character or a M-text before the
 current position.  
-When its content is a strterm, its value is the M-text to be inserted.
-When an intterm is given, its value is the code of a character to be
+When its content is a &lt;strterm&gt;, its value is the M-text to be inserted.
+When an &lt;intterm&gt; is given, its value is the code of a character to be
 inserted.
 The marker positions affected by the insertion are
 automatically relocated.
@@ -663,12 +667,13 @@ These codes insert the same character "á".
 The element &lt;insert-candidates&gt; specifies characters or strings
 to be possibly inserted before the current position. 
 
-When a listterm is glven, each item in this list is a candidate string
-to be inserted.  When a strterm is given, each character in the string
-is a candidate character to be inserted.  &lt;insert&gt; inserts the
-first candidate before the current position.  The inserted character
-or string is associated with the list of candidates and the
-information indicating the currently selected candidate.
+When a &lt;listterm&gt; is glven, each item in this list is a
+candidate string to be inserted.  When a &lt;strterm&gt; is given,
+each character in the string is a candidate character to be inserted.
+&lt;insert-candidates&gt; inserts the first candidate before the current
+position.  The inserted character or string is associated with the
+list of candidates and the information indicating the currently
+selected candidate.
 
 
 #if EXAMPLE_CODE
@@ -690,7 +695,7 @@ of five items with it.
     <element name="delete"><choice><ref name="markerterm"/><ref name="intterm"/></choice></element>
 @endverbatim
 
-When a markerterm is given, this element deletes characters between
+When a &lt;markerterm&gt; is given, this element deletes characters between
 the current position and the specified marker position.
 
 #if EXAMPLE_CODE
@@ -698,9 +703,9 @@ the current position and the specified marker position.
 #endif
 
 This code deletes the character between the current position and the
-previous position.
+preceding position.
 
-When a intterm is given, the element &lt;delete&gt; treats it as a
+When a &lt;intterm&gt; is given, the element &lt;delete&gt; treats it as a
 character position, and deletes characters between the current
 position and the character position.
 
@@ -711,11 +716,12 @@ automatically relocated.
     <element name="select"><choice><ref name="selectorterm"/><ref name="intterm"/></choice></element>
 @endverbatim
 
-The element &lt;select&gt; first checks if the character just before
-the current position belongs to a string that is associated with a
+The element &lt;select&gt; first checks if the string just before the
+current position belongs to a string that is associated with a
 candidate list.  If so, it replaces that string with a candidate
-specified by the selectorterm or the intterm.  If a intterm is given,
-it specifies a position in the candidate list.
+specified by the &lt;selectorterm&gt; or the &lt;intterm&gt;.  If a
+&lt;intterm&gt; is given, it specifies a position in the candidate
+list.
 
 #if EXAMPLE_CODE
 <select><selector>@first</selector></select>
@@ -744,8 +750,8 @@ hide the currently displayed candidate list.
 @endverbatim
 
 The element &lt;move&gt; moves the current position.  When a
-markerterm is given, the current position is moved to the position of
-the marker.  When an intterm is given, its value is a character
+&lt;markerterm&gt; is given, the current position is moved to the position of
+the marker.  When an &lt;intterm&gt; is given, its value is a character
 position and the current position is moved to the character postion.
 
 #if EXAMPLE_CODE
@@ -774,8 +780,8 @@ This code sets the marker "M" to the current position.
 @endverbatim
 
 The element &lt;pushback&gt; pushes back key events to the event
-queue.  When a keyseqterm is given, it pushes back specified keys.  An
-intterm given to this element must not be negative.  If it is zero,
+queue.  When a &lt;keyseqterm&gt; is given, it pushes back specified keys.  An
+&lt;intterm&gt; given to this element must not be negative.  If it is zero,
 all key events are pushed back.  If it is a positive integer N, the
 latest N key events are pushed back.
 
@@ -830,7 +836,7 @@ unhandled.
 @endverbatim
 
 The element &lt;shift&gt; shifts the current state (See @ref imstate.)
-to the one specified by the value of the given symterm".  The value
+to the one specified by the value of the given &lt;symterm&gt;.  The value
 must appear in &lt;state-list&gt;.  The element &lt;shiftback&gt;
 shifts the current state to the previous one.
 
@@ -839,8 +845,8 @@ shifts the current state to the previous one.
 @endverbatim
 
 The element &lt;char-at&gt; returns the integer value
-<integer>C</integer>, where C is the character in the preedit text or
-the surrounding text at the postion specified by the given markerterm.
+&lt;integer&gt;C&lt;/integer&gt;, where C is the character in the preedit text or
+the surrounding text at the postion specified by the given &lt;markerterm&gt;.
 
 @verbatim
     <element name="key-count"><empty/></element>
@@ -856,9 +862,10 @@ The element &lt;key-count&gt; returns the integer value
 </define>
 @endverbatim
 
-The element &lt;surrounding-text-flag&gt; returns <integer>1</integer>
-if surrounding text handling is supported or <integer>0</integer> if
-not.
+&lt;surrounding-text-flag&gt; returns &lt;integer&gt;1&lt;/integer&gt;
+if surrounding text handling is supported or
+&lt;integer&gt;0&lt;/integer&gt; if not.
+
 
 @subsection imstate Input Method States and Transitions
 
@@ -916,13 +923,13 @@ the input method driver is in the first &lt;state&gt; of the
 &lt;state-list&gt;.
 
 Each &lt;state&gt; has zero or more &lt;branch&gt;es.  Each
-&lt;branch&gt; corresponds to a &lt;map&gt; in a &lt;map-list&gt;.
-The value of the attribute "mname" specifies a &lt;map&gt;'s "mname"
-value.  When the input sequence matches one of the &lt;keyseq&gt; (or
+&lt;branch&gt; corresponds to a &lt;map&gt; in a &lt;map-list&gt;
+whose "mname" value is the same with the branch's "mname" value.  When
+the input sequence matches one of the &lt;keyseq&gt; (or
 &lt;command-reference&gt;) of a &lt;rule&gt; of the &lt;map&gt;, the
-corresponding &lt;branch&gt; is selected, &lt;funcall&gt;s in the
-&lt;rule&gt; are executed, &lt;funcall&gt;s specified in that
-&lt;branch&gt; are executed, and the input method driver shifts to the
+corresponding &lt;branch&gt; is selected.  The input method driver
+first executes &lt;funcall&gt;s in the &lt;rule&gt;, then
+&lt;funcall&gt;s specified in that &lt;branch&gt;, and shifts to the
 initial condition of the current state.
 
 Whenever the input method driver shifts to the initial condition of
@@ -967,11 +974,12 @@ When an input sequence does not match with any of the &lt;branch&gt;s in the cur
 
 This code defines state transitions in an input method.  It has two
 states "state-init" and "state-second".  The state "state-init" has
-two &lt;branchglt;s: "map-consonant" and "map-independent".  When an
-input sequence belonging to "map-consonant" is given, the state is
-shifted to "state-second", after executing &lt;funcall&gt;s in the
-&lt;rule&gt; for the input sequence.  The state "state-second" has
-three branches, two of which shift the state back to the "state-init".
+two &lt;branchglt;s corresponding to "map-consonant" and
+"map-independent".  When an input sequence belonging to
+"map-consonant" is given, the state is shifted to "state-second",
+after executing &lt;funcall&gt;s in the &lt;rule&gt; for the input
+sequence.  The state "state-second" has three branches, two of which
+shift the state back to the "state-init".
 
 @verbatim
 </grammar>

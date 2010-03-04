@@ -70,8 +70,8 @@
 	<optional>
 	  <element name="description">
 	    <choice>
-	      <text/>
 	      <element name="get-text"><text/></element>
+	      <text/>
 	    </choice>
 	  </element>
 	</optional>
@@ -273,8 +273,7 @@
 <define name="saction">
   <choice>
     <element name="shift-to">
-      <attribute name="id"><data type="IDREF"/>
-      </attribute>
+      <attribute name="id"><data type="IDREF"><param name="pattern">state-.*</param></data></attribute>
     </element>
     <element name="shift-back"><empty/></element>
     <ref name="action"/>

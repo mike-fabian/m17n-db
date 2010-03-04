@@ -1,4 +1,4 @@
-/* Copyright (C) 2003, 2004, 2005, 2009
+/* Copyright (C) 2009
      National Institute of Advanced Industrial Science and Technology (AIST)
      Registration Number H15PRO112
    See the end for copying conditions.  */
@@ -704,7 +704,7 @@ inclusive or), 排他的論理和(logical exclusive or)を求める。結果が�
 */
 
 /* 
-Copyright (C) 2003, 2004, 2005, 2009
+Copyright (C) 2009
   National Institute of Advanced Industrial Science and Technology (AIST)
   Registration Number H15PRO112
 

@@ -1,4 +1,4 @@
-/* Copyright (C) 2003, 2004, 2005, 2009
+/* Copyright (C) 2009
      National Institute of Advanced Industrial Science and Technology (AIST)
      Registration Number H15PRO112
    See the end for copying conditions.  */
@@ -91,7 +91,8 @@ variables.
 
 Basic terms in the m17n database are integers, strings, symbols,
 lists, variable references and function calls.  The schema file for
-Input Method or Font Layout Table may define other kind of terms.
+Input Method or Font Layout Table may extend these definitions or
+define other kind of terms.
 
 Decimal character codes, hexadecimal character codes, and characters
 represented with special syntax (a question mark followed by the
@@ -112,7 +113,7 @@ specified with the "vname" attribute.
 <varref vname="handled-keys">
 #endif
 
-This code referes to the variable "handled-keys".
+This code refers to the variable "handled-keys".
 
 @verbatim
 <define name="defun">
@@ -168,7 +169,7 @@ arguments.
 @endverbatim
 
 A &lt;defmacro&gt; element defines a macro whose name is specified
-with the "fname" attribute.  Unlike &lt;defmacro&gt;, &lt;args&gt;
+with the "fname" attribute.  Unlike &lt;defun&gt;, its arguments
 must be already evaluated when the macro is called.
 
 @verbatim
@@ -230,7 +231,7 @@ implicitly initialized to the integer value zero.
 When a &lt;defvar&gt; specifies a value, it may have the
 &lt;possible-value&gt; element that lists the possible values of the
 variable.  The type (one of integer, symbol, string) of the possible
-values must be same with that of the specifeid value.
+values must be same with that of the specified value.
 
 When the type of the specified value is integer,
 &lt;possible-value&gt; may have one or more &lt;range&gt; elements.  A
@@ -273,9 +274,9 @@ A &lt;funcall&gt; element calls a function or a macro specified by the
 The m17n database has some predefined functions, too.
 
 In function definitions, arguments are often restricted to a certain
-type.  For example, arithmetic operations would require integers, not
-strings.  The following four elements are defined to represent such
-restrictions.
+type.  For example, arithmetic operations would require integers, and
+would not accept strings.  The following four elements are defined to
+represent such restrictions.
 
 @verbatim
 <define name="intterm" combine="choice">
@@ -291,7 +292,7 @@ A &lt;intterm&gt; is a term whose value is an integer.  That is, if a
 &lt;varref&gt; appears as a &lt;intterm&gt;, its value must be an
 integer and if a &lt;funcall&gt; appears as a &lt;intterm&gt;, it must
 return an integer.  The schema file for Input Method or Font Layout
-Table may define other kind of intterms.
+Table may define other kind of &lt;intterm&gt;.
 
 @verbatim
 <define name="strterm">
@@ -320,7 +321,7 @@ Table may define other kind of intterms.
 @endverbatim
 
 A &lt;strterm&gt;, &lt;symterm&gt; or &lt;listterm&gt; is a term whose
-value is a string, a symbol or a list respecivelly.  That is, if a
+value is a string, a symbol or a list respectively.  That is, if a
 &lt;varref&gt; appears as a &lt;strterm&gt;, its value must be an
 string and if a &lt;funcall&gt; appears as a &lt;symterm&gt;, it must
 return a symbol.
@@ -393,7 +394,7 @@ If the given terms have the same object, the value of this funcall is
 
 If the first term equals to the second term, the value of this funcall
 is &lt;integer&gt;1&lt;/integer&gt;.  Otherwise,
-&lt;integer&gt;0&lt;/integer&gt;.  The equality of terms is defind as
+&lt;integer&gt;0&lt;/integer&gt;.  The equality of terms is defined as
 below: An integer equals to another integer iff they contain the same
 integer value.  A string equals to another string iff they contain
 strings of the same characters.  A symbol equals to another symbol iff
@@ -415,7 +416,7 @@ string.  A symbol matches with another symbol iff they contain the
 same symbol.  A list matches with another list iff the first list is
 no longer than the second, and the Nth element of the first list
 equals to the Nth element of the second list.  An error matches with
-another error iif the first eroor's error type is <symbol/> or is the
+another error iff the first error's error type is &lt;symbol/&gt; or is the
 same as the second error's error type.
 
 @endverbatim
@@ -426,10 +427,10 @@ same as the second error's error type.
 @endverbatim
 
 These elements take two integer terms and compare them.  The value of
-this funcall is &lt;integer&gt;1&lt;/integer&gt; when when first
-integer is less than, less than or equal to, equal to, greater than or
-equal to, greater than, and not equal to the second value,
-respectivelly.  Otherwise, &lt;integer&gt;0&lt;/integer&gt;.
+this funcall is &lt;integer&gt;1&lt;/integer&gt; when first integer is
+less than, less than or equal to, greater than or equal to, greater
+than the second value, respectively.  Otherwise,
+&lt;integer&gt;0&lt;/integer&gt;.
 
 @verbatim
     <element name="add">
@@ -468,7 +469,7 @@ This code increments @c C-AFTER-V by 1.
 When the attribute "vname" is given, this element calculates the
 remaindar when the value of the variable "vname" is divided by the
 given integer term, and the result becomes the value of the funcall.
-When the attribute is not given, this element calculates the remaindar
+When the attribute is not given, this element calculates the remainder
 when the first integer term is divided by the second integer term.
 
 @verbatim
@@ -484,10 +485,10 @@ when the first integer term is divided by the second integer term.
 @endverbatim
 
 When the attribute "vname" is given, these elements perform "logical
-and", "logcal inclusive or", or "logical exclusive or" of the value of
-the variable "vname" and the given integer term(s).  The result
+and", "logical inclusive or", or "logical exclusive or" of the value of
+the variable "vname" and the given integer term(s), respectively.  The result
 becomes the value of the funcall.  When the attribute is not given,
-these elements perform "logical and", "logcal inclusive or", or
+these elements perform "logical and", "logical inclusive or", or
 "logical exclusive or" of the given integer term(s).
 
 @verbatim
@@ -510,12 +511,12 @@ term to the left by the count specified with the second integer term.
     </element>
 @endverbatim
 
-When the attribute "vname" is given, its value must be a list and that
-list is modified destructively by concatinating all the elements of
-the given terms if it is a list, or the element itself if not, in the
-specified order.  When no attribute is given, a list is made by
-concatinating all the given terms in the same manner.  The resulting
-list becomes the value of the funcall.
+When the attribute "vname" is given, the value of the variable "vname"
+must be a list.  This element modifies the list destructively by
+concatenating all the elements of the given terms if it is a list, or
+the term itself if not, in the specified order.  When no attribute is
+given, a list is made by concatenating all the given terms in the same
+manner.  The resulting list becomes the value of the funcall.
 
 @verbatim
     <element name="concat">
@@ -525,12 +526,12 @@ list becomes the value of the funcall.
 @endverbatim
 
 When the attribute "vname" is given, its value must be a string and
-that string is modified destructively by concatinating all the given
+that string is modified destructively by concatenating all the given
 term(s).  If a term is a string term, the string is to be
 concatinated.  If a term is a integer term, a string of a character
 whose code is its integer value is to be concatinated.  If If a term
-is a list term, its elements must be interger terms and a string
-containing characters whose codes are their integer values is to be
+is a list term, its elements must be interger terms, and a string
+containing characters whose codes are the integer values is to be
 concatinated.
 
 When no attribute is given, a string is made by concatinating all the
@@ -600,7 +601,7 @@ evaluated.
       <progn><shift><symbol>state-init</symbol></shift></progn>
     </if>
 #endif
-This code performs the &lt;shift&gt; action if the variable @c C is negative.
+This code performs the &lt;shift&gt; if the variable @c C is negative.
 
 @verbatim
     <element name="when"><oneOrMore><ref name="term"/></oneOrMore></element>
@@ -612,7 +613,7 @@ If the first term is evaluated to be true, this element evaluates the rest.
     <element name="cond"><oneOrMore><ref name="list"/></oneOrMore></element>
 @endverbatim
 
-This &lt;cond&gt evaluates the first element of the given lists, one
+This element evaluates the first element of the given lists, one
 by one, and and when it finds the first list whose first element is
 evaluated to be true, other elements in the list are evaluated.
 
@@ -629,7 +630,7 @@ evaluated to be true, other elements in the list are evaluated.
       </cond>
 #endif
 
-This code sets the varialbe "ret" to the integer value 1 when the
+This code sets the variable "ret" to the integer value 1 when the
 variable "level" has value 0, otherwise, calls "macro-cp12".
 
 @verbatim
@@ -643,7 +644,7 @@ This element repeatedly executes the given terms.
 @endverbatim
 
 This element evaluate the first term and if true, evaluate the rest.
-This processs repeats until the first term becomes not true.
+This process repeats until the first term becomes not true.
 
 @verbatim
     <element name="foreach"><attribute name="vname"/>
@@ -653,7 +654,7 @@ This processs repeats until the first term becomes not true.
 @endverbatim 
 
 This element repeatedly evaluate terms for each element of the string
-or list term.  The attribute "vname" specifies the varialve that the
+or list term.  The attribute "vname" specifies the variable that the
 current element is assigned to, on each loop.
 
 @verbatim
@@ -676,7 +677,7 @@ This element exits executions and returns the term if it is given.
     </element>
 @endverbatim
 
-Thie element evalustes the given terms one by one, until a term
+This element evaluates the given terms one by one, until a term
 matching with the specified symbol or error is thrown by
 &gt;throw/&lt;.  If such an item is thrown, the value of this element
 is &gt;integer&lt;1&gt;/integer&lt;, otherwise
@@ -694,7 +695,7 @@ its value is set to the last evaluated term.  It is the value of
     </element>
 @endverbatim
 
-This element throws to the catch for the specified symbol or eroor.
+This element throws to the catch for the specified symbol or error.
 The value of this element is the term (if any) or the symbol, or the
 error.
 
@@ -716,9 +717,41 @@ This element evaluates the given term.
 </define>
 
 @endverbatim
-This element shows the type of the given term.  The type is
-one of the followings: <symbol>integer</symbol>, <symbol>string</symbol>,
-<symbol>symbol</symbol>, <symbol>list</symbol>, <symbol>error</symbol>.
+This element shows the type of the given term.  The type is one of the
+followings: &lt;symbol&gt;integer&lt;/symbol&gt;,
+&lt;symbol&gt;string&lt;/symbol&gt;,
+&lt;symbol&gt;symbol&lt;/symbol&gt;,
+&lt;symbol&gt;list&lt;/symbol&gt;, &lt;symbol&gt;error&lt;/symbol&gt;
 
+@section im-seealso SEE ALSO
+@ref mdbGeneral "mdbGeneral(5)"
+*/
 
+/* 
+Copyright (C) 2009
+  National Institute of Advanced Industrial Science and Technology (AIST)
+  Registration Number H15PRO112
+
+This file is part of the m17n database; a sub-part of the m17n
+library.
+
+The m17n library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1 of
+the License, or (at your option) any later version.
+
+The m17n library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with the m17n library; if not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+Boston, MA 02110-1301, USA.
+*/
+
+/* Local Variables: */
+/* coding: utf-8 */
+/* End: */
 

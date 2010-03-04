@@ -3,7 +3,7 @@
      Registration Number H15PRO112
    See the end for copying conditions.  */
 
-/***en
+/***ja
 
 @page mdbIM インプットメソッド
 
@@ -17,9 +17,9 @@ m17n ライブラリは、m17n データベースから動的にロードでき�
 
 @section im-format 文法と意味
 
-以下に RelaxNG で書かれた入力メソッド定義用スキーマを示す。（このスキー
-マファイルは m17n-db-xml/MIMNEW/mimnew.rng にあり、
-基本的な表現や項を定義する m17n-db-xml/MIMNEW/mimnew.rng も利用する。） 
+以下に RelaxNG で書かれた入力メソッド定義用スキーマを示す。（このファイ
+ルは m17n-db-xml/MIMNEW/mimnew.rng にある。またこのスキーマは、基本的な
+表現や項を定義する m17n-db-xml/MIMNEW/expr.rng を継承して利用する。）
 
 @verbatim
 
@@ -966,7 +966,7 @@ preeditバッファ中の全ての文字をコミットし、preeditバッファ
 */
 
 /* 
-Copyright (C) 2003, 2004, 2005
+Copyright (C) 2003, 2004, 2005, 2009
   National Institute of Advanced Industrial Science and Technology (AIST)
   Registration Number H15PRO112
 

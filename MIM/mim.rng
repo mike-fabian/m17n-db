@@ -162,8 +162,8 @@
 	<value>@last</value>
 	<value>@previous</value>
 	<value>@next</value>
-	<value>@previous-candidate-change</value>
-	<value>@next-candidate-change</value>
+	<value>@previous-group</value>
+	<value>@next-group</value>
     </choice>
   </element>
 </define>

@@ -140,7 +140,7 @@ to be included in the other Chinese input method (e.g. zh-py).
           </list>
         </keyseq>
         <select>
-          <selector>@previous-candidate-change</selector>
+          <selector>@previous-group</selector>
         </select>
       </rule>
       <rule>
@@ -150,7 +150,7 @@ to be included in the other Chinese input method (e.g. zh-py).
           </list>
         </keyseq>
         <select>
-          <selector>@previous-candidate-change</selector>
+          <selector>@previous-group</selector>
         </select>
       </rule>
       <rule>
@@ -160,7 +160,7 @@ to be included in the other Chinese input method (e.g. zh-py).
           </list>
         </keyseq>
         <select>
-          <selector>@next-candidate-change</selector>
+          <selector>@next-group</selector>
         </select>
       </rule>
       <rule>
@@ -170,7 +170,7 @@ to be included in the other Chinese input method (e.g. zh-py).
           </list>
         </keyseq>
         <select>
-          <selector>@next-candidate-change</selector>
+          <selector>@next-group</selector>
         </select>
       </rule>
     </map>
@@ -230,7 +230,7 @@ to be included in the other Chinese input method (e.g. zh-py).
       <rule>
         <keyseq>
           <list>
-            <string>S- </string>
+            <symbol>S- </symbol>
           </list>
         </keyseq>
       </rule>

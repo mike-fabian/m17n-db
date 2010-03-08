@@ -3142,7 +3142,7 @@ Select Hiragana or Katakana</description>
           </list>
         </keyseq>
         <select>
-          <selector>@previous-candidate-change</selector>
+          <selector>@previous-group</selector>
         </select>
       </rule>
       <rule>
@@ -3200,7 +3200,7 @@ Select Hiragana or Katakana</description>
           </list>
         </keyseq>
         <select>
-          <selector>@next-candidate-change</selector>
+          <selector>@next-group</selector>
         </select>
       </rule>
       <rule>

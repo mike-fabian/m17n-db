@@ -57,7 +57,7 @@ module-list =
       }+
     }+
   }
-macro-list = element macro-list { defun+ }
+macro-list = element macro-list { defmacro+ }
 # the real work
 map-list =
   element map-list {
@@ -81,8 +81,8 @@ selector =
     | "@last"
     | "@previous"
     | "@next"
-    | "@previous-candidate-change"
-    | "@next-candidate-change"
+    | "@previous-group"
+    | "@next-group"
   }
 state-list =
   element state-list {

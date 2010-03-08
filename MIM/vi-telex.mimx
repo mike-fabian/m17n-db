@@ -897,6 +897,12 @@ If the value is 1, Backspace key undoes the previous key
         <set vname="SELECT">
           <integer>0</integer>
         </set>
+        <set vname="NST">
+          <eq>
+            <surrounding-text-flag/>
+            <integer>-2</integer>
+          </eq>
+        </set>
       </state-hook>
       <branch mname="map-consonant">
         <set vname="C">
@@ -904,6 +910,14 @@ If the value is 1, Backspace key undoes the previous key
             <marker>@-1</marker>
           </char-at>
         </set>
+        <cond>
+          <list>
+            <varref vname="NST"/>
+            <shift>
+              <symbol>state-after-c</symbol>
+            </shift>
+          </list>
+        </cond>
       </branch>
       <branch mname="map-consonant-ext">
         <set vname="C">
@@ -911,6 +925,14 @@ If the value is 1, Backspace key undoes the previous key
             <marker>@-1</marker>
           </char-at>
         </set>
+        <cond>
+          <list>
+            <varref vname="NST"/>
+            <shift>
+              <symbol>state-after-c</symbol>
+            </shift>
+          </list>
+        </cond>
       </branch>
       <branch mname="map-consonant-or-tone-mark">
         <cond>
@@ -964,6 +986,14 @@ If the value is 1, Backspace key undoes the previous key
                 <marker>@-1</marker>
               </char-at>
             </set>
+            <cond>
+              <list>
+                <varref vname="NST"/>
+                <shift>
+                  <symbol>state-after-c</symbol>
+                </shift>
+              </list>
+            </cond>
           </list>
         </cond>
       </branch>
@@ -1010,6 +1040,40 @@ If the value is 1, Backspace key undoes the previous key
         </shift>
       </branch>
       <branch mname="map-smart-quotes"/>
+    </state>
+    <state sname="state-after-c">
+      <branch mname="map-vowel">
+        <mark>
+          <marker>M</marker>
+        </mark>
+        <set vname="V-2">
+          <varref vname="V-1"/>
+        </set>
+        <set vname="V-1">
+          <char-at>
+            <marker>@-1</marker>
+          </char-at>
+        </set>
+        <shift>
+          <symbol>state-after-v</symbol>
+        </shift>
+      </branch>
+      <branch mname="map-vowel-ext">
+        <mark>
+          <marker>M</marker>
+        </mark>
+        <set vname="V-2">
+          <varref vname="V-1"/>
+        </set>
+        <set vname="V-1">
+          <char-at>
+            <marker>@-1</marker>
+          </char-at>
+        </set>
+        <shift>
+          <symbol>state-after-v</symbol>
+        </shift>
+      </branch>
     </state>
     <state sname="state-after-v">
       <branch mname="map-ending-1st-consonant">

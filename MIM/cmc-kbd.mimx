@@ -4,6 +4,7 @@
     <language>cmc</language>
     <name>kbd</name>
   </tags>
+  <m17n-version>1.6.0</m17n-version>
   <description>
     <gettext>Cham input method simulating Cham keyboard.
 Cham characters are encoded in logical order in memory and in files.
@@ -779,7 +780,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
             </set>
             <cond>
               <list>
-                <and>
+                <logand>
                   <ge>
                     <varref vname="PREV"/>
                     <integer>0xAA00</integer>
@@ -788,7 +789,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
                     <varref vname="PREV"/>
                     <integer>0xAA28</integer>
                   </le>
-                </and>
+                </logand>
                 <delete>
                   <marker>@-2</marker>
                 </delete>
@@ -803,7 +804,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
             </cond>
           </list>
           <list>
-            <or>
+            <logior>
               <eq>
                 <varref vname="PREV"/>
                 <varref vname="PV1"/>
@@ -812,7 +813,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
                 <varref vname="PREV"/>
                 <varref vname="PV2"/>
               </eq>
-            </or>
+            </logior>
             <cond>
               <list>
                 <eq>
@@ -823,7 +824,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
                 </eq>
                 <cond>
                   <list>
-                    <and>
+                    <logand>
                       <ge>
                         <char-at>
                           <marker>@-3</marker>
@@ -836,7 +837,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
                         </char-at>
                         <integer>0xAA28</integer>
                       </le>
-                    </and>
+                    </logand>
                     <delete>
                       <marker>@-4</marker>
                     </delete>
@@ -854,7 +855,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
                 </cond>
               </list>
               <list>
-                <and>
+                <logand>
                   <ge>
                     <char-at>
                       <marker>@-2</marker>
@@ -867,7 +868,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
                     </char-at>
                     <integer>0xAA28</integer>
                   </le>
-                </and>
+                </logand>
                 <delete>
                   <marker>@-2</marker>
                 </delete>
@@ -895,12 +896,12 @@ Backspace and Delete also work in the manner of visual order.</gettext>
         </keyseq>
         <set vname="NEXT">
           <char-at>
-            <marker>@+1</marker>
+            <marker>@+0</marker>
           </char-at>
         </set>
         <cond>
           <list>
-            <and>
+            <logand>
               <ge>
                 <varref vname="NEXT"/>
                 <integer>0xAA00</integer>
@@ -909,10 +910,10 @@ Backspace and Delete also work in the manner of visual order.</gettext>
                 <varref vname="NEXT"/>
                 <integer>0xAA28</integer>
               </le>
-            </and>
+            </logand>
             <set vname="N2">
               <char-at>
-                <marker>@+2</marker>
+                <marker>@+1</marker>
               </char-at>
             </set>
             <cond>
@@ -923,12 +924,12 @@ Backspace and Delete also work in the manner of visual order.</gettext>
                 </eq>
                 <set vname="N3">
                   <char-at>
-                    <marker>@+3</marker>
+                    <marker>@+2</marker>
                   </char-at>
                 </set>
                 <cond>
                   <list>
-                    <or>
+                    <logior>
                       <eq>
                         <varref vname="N3"/>
                         <varref vname="PV1"/>
@@ -937,7 +938,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
                         <varref vname="N3"/>
                         <varref vname="PV2"/>
                       </eq>
-                    </or>
+                    </logior>
                     <delete>
                       <marker>@+3</marker>
                     </delete>
@@ -960,7 +961,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
                 </cond>
               </list>
               <list>
-                <or>
+                <logior>
                   <eq>
                     <varref vname="N2"/>
                     <varref vname="PV1"/>
@@ -969,7 +970,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
                     <varref vname="N2"/>
                     <varref vname="PV2"/>
                   </eq>
-                </or>
+                </logior>
                 <delete>
                   <marker>@+2</marker>
                 </delete>
@@ -1028,7 +1029,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
             </set>
             <cond>
               <list>
-                <or>
+                <logior>
                   <eq>
                     <varref vname="PREV"/>
                     <varref vname="PV1"/>
@@ -1037,7 +1038,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
                     <varref vname="PREV"/>
                     <varref vname="PV2"/>
                   </eq>
-                </or>
+                </logior>
                 <delete>
                   <marker>@-3</marker>
                 </delete>
@@ -1052,7 +1053,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
                 </insert>
               </list>
               <list>
-                <or>
+                <logior>
                   <lt>
                     <varref vname="PREV"/>
                     <integer>0xAA00</integer>
@@ -1061,7 +1062,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
                     <varref vname="PREV"/>
                     <integer>0xAA28</integer>
                   </gt>
-                </or>
+                </logior>
                 <delete>
                   <marker>@-2</marker>
                 </delete>
@@ -1075,7 +1076,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
             </cond>
           </list>
           <list>
-            <or>
+            <logior>
               <eq>
                 <varref vname="PREV"/>
                 <varref vname="PV1"/>
@@ -1084,7 +1085,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
                 <varref vname="PREV"/>
                 <varref vname="PV2"/>
               </eq>
-            </or>
+            </logior>
             <cond>
               <list>
                 <eq>
@@ -1095,7 +1096,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
                 </eq>
               </list>
               <list>
-                <or>
+                <logior>
                   <lt>
                     <char-at>
                       <marker>@-3</marker>
@@ -1108,7 +1109,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
                     </char-at>
                     <integer>0xAA28</integer>
                   </gt>
-                </or>
+                </logior>
                 <delete>
                   <marker>@-2</marker>
                 </delete>
@@ -1131,12 +1132,12 @@ Backspace and Delete also work in the manner of visual order.</gettext>
         </set>
         <set vname="NEXT">
           <char-at>
-            <marker>@+1</marker>
+            <marker>@+0</marker>
           </char-at>
         </set>
         <cond>
           <list>
-            <and>
+            <logand>
               <ge>
                 <varref vname="NEXT"/>
                 <integer>0xAA00</integer>
@@ -1145,7 +1146,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
                 <varref vname="NEXT"/>
                 <integer>0xAA28</integer>
               </le>
-            </and>
+            </logand>
             <delete>
               <marker>@-1</marker>
             </delete>
@@ -1160,14 +1161,14 @@ Backspace and Delete also work in the manner of visual order.</gettext>
             </insert>
             <set vname="NEXT">
               <char-at>
-                <marker>@+1</marker>
+                <marker>@+0</marker>
               </char-at>
             </set>
           </list>
         </cond>
         <cond>
           <list>
-            <and>
+            <logand>
               <ge>
                 <varref vname="NEXT"/>
                 <integer>0xAA33</integer>
@@ -1176,7 +1177,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
                 <varref vname="NEXT"/>
                 <integer>0xAA36</integer>
               </le>
-            </and>
+            </logand>
             <delete>
               <marker>@-1</marker>
             </delete>
@@ -1200,12 +1201,12 @@ Backspace and Delete also work in the manner of visual order.</gettext>
         </set>
         <set vname="NEXT">
           <char-at>
-            <marker>@+1</marker>
+            <marker>@+0</marker>
           </char-at>
         </set>
         <cond>
           <list>
-            <and>
+            <logand>
               <ge>
                 <varref vname="NEXT"/>
                 <integer>0xAA00</integer>
@@ -1214,7 +1215,7 @@ Backspace and Delete also work in the manner of visual order.</gettext>
                 <varref vname="NEXT"/>
                 <integer>0xAA28</integer>
               </le>
-            </and>
+            </logand>
             <delete>
               <marker>@-1</marker>
             </delete>

@@ -4,19 +4,21 @@
     <language>si</language>
     <name>wijesekera</name>
   </tags>
+  <m17n-version>1.6.0</m17n-version>
   <description>Sinhala input method based on SLS 1134 Rev. 2:2004.
-  &lt;http://www.fonts.lk/doc/sin-kbd-layout4.pdf&gt;
-This input method uses surrounding text if possible, or a preedit
-buffer otherwise.
+  &lt;http://www.siyabas.lk/docs/sin-kbd-layout5.pdf&gt;
+Although this code supports both surrounding text and preedit,
+the former is disabled by default to avoid confusion caused by
+faulty applications.
 </description>
   <title>සි</title>
   <variable-list>
     <defvar vname="use-surrounding-text">
       <description>
-        <gettext>Surrounding text vs. preedit
+        <gettext>Surrounding text vs. preedit.
 If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
       </description>
-      <integer>1</integer>
+      <integer>0</integer>
       <possible-value>
         <integer>1</integer>
         <integer>0</integer>
@@ -27,7 +29,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
     <defmacro fname="macro-forward">
       <set vname="cc3">
         <char-at>
-          <marker>@+3</marker>
+          <marker>@+2</marker>
         </char-at>
       </set>
       <cond>
@@ -35,13 +37,13 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
           <logand>
             <eq>
               <char-at>
-                <marker>@+1</marker>
+                <marker>@+0</marker>
               </char-at>
               <integer>0x0DCA</integer>
             </eq>
             <eq>
               <char-at>
-                <marker>@+2</marker>
+                <marker>@+1</marker>
               </char-at>
               <integer>0x200D</integer>
             </eq>
@@ -149,13 +151,13 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
           <logior>
             <eq>
               <char-at>
-                <marker>@+1</marker>
+                <marker>@+0</marker>
               </char-at>
               <integer>0x200C</integer>
             </eq>
             <eq>
               <char-at>
-                <marker>@+1</marker>
+                <marker>@+0</marker>
               </char-at>
               <integer>0x200D</integer>
             </eq>
@@ -559,21 +561,21 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
       <rule>
         <keyseq>
           <list>
-            <string>S- </string>
+            <symbol>S- </symbol>
           </list>
         </keyseq>
       </rule>
       <rule>
         <keyseq>
           <list>
-            <string>A- </string>
+            <symbol>A- </symbol>
           </list>
         </keyseq>
       </rule>
       <rule>
         <keyseq>
           <list>
-            <string>A-,</string>
+            <symbol>A-,</symbol>
           </list>
         </keyseq>
       </rule>
@@ -587,7 +589,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
       <rule>
         <keyseq>
           <list>
-            <string>A-'</string>
+            <symbol>A-'</symbol>
           </list>
         </keyseq>
       </rule>
@@ -1013,7 +1015,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
       <rule>
         <keyseq>
           <list>
-            <string>A-,</string>
+            <symbol>A-,</symbol>
           </list>
         </keyseq>
         <insert>
@@ -1073,7 +1075,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
       <rule>
         <keyseq>
           <list>
-            <string>A-'</string>
+            <symbol>A-'</symbol>
           </list>
         </keyseq>
         <insert>
@@ -1147,7 +1149,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
       <rule>
         <keyseq>
           <list>
-            <string>S- </string>
+            <symbol>S- </symbol>
           </list>
         </keyseq>
         <insert>
@@ -1157,7 +1159,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
       <rule>
         <keyseq>
           <list>
-            <string>A- </string>
+            <symbol>A- </symbol>
           </list>
         </keyseq>
         <insert>
@@ -1535,7 +1537,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
         </keyseq>
         <set vname="c">
           <char-at>
-            <marker>@+1</marker>
+            <marker>@+0</marker>
           </char-at>
         </set>
         <cond>
@@ -1559,7 +1561,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
             <funcall fname="macro-forward"/>
             <set vname="c">
               <char-at>
-                <marker>@+1</marker>
+                <marker>@+0</marker>
               </char-at>
             </set>
             <cond>
@@ -1651,7 +1653,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
               </eq>
               <eq>
                 <char-at>
-                  <marker>@+2</marker>
+                  <marker>@+1</marker>
                 </char-at>
                 <integer>0x0DD9</integer>
               </eq>
@@ -2237,7 +2239,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
               <list>
                 <eq>
                   <char-at>
-                    <marker>@+1</marker>
+                    <marker>@+0</marker>
                   </char-at>
                   <integer>0x0D91</integer>
                 </eq>
@@ -2255,27 +2257,27 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
                 <logand>
                   <ge>
                     <char-at>
-                      <marker>@+1</marker>
+                      <marker>@+0</marker>
                     </char-at>
                     <integer>0x0D9A</integer>
                   </ge>
                   <le>
                     <char-at>
-                      <marker>@+1</marker>
+                      <marker>@+0</marker>
                     </char-at>
                     <integer>0x0DC6</integer>
                   </le>
                 </logand>
                 <set vname="c1">
                   <char-at>
-                    <marker>@+1</marker>
+                    <marker>@+0</marker>
                   </char-at>
                 </set>
                 <cond>
                   <list>
                     <eq>
                       <char-at>
-                        <marker>@+2</marker>
+                        <marker>@+1</marker>
                       </char-at>
                       <integer>0x0DD9</integer>
                     </eq>
@@ -2287,7 +2289,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
                   <list>
                     <eq>
                       <char-at>
-                        <marker>@+2</marker>
+                        <marker>@+1</marker>
                       </char-at>
                       <integer>0x0DCA</integer>
                     </eq>
@@ -2299,7 +2301,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
                   <list>
                     <eq>
                       <char-at>
-                        <marker>@+2</marker>
+                        <marker>@+1</marker>
                       </char-at>
                       <integer>0x0DCF</integer>
                     </eq>
@@ -2311,7 +2313,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
                   <list>
                     <eq>
                       <char-at>
-                        <marker>@+2</marker>
+                        <marker>@+1</marker>
                       </char-at>
                       <integer>0x0DDF</integer>
                     </eq>
@@ -2638,13 +2640,13 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
               <logior>
                 <eq>
                   <char-at>
-                    <marker>@+1</marker>
+                    <marker>@+0</marker>
                   </char-at>
                   <integer>0x0DD9</integer>
                 </eq>
                 <eq>
                   <char-at>
-                    <marker>@+1</marker>
+                    <marker>@+0</marker>
                   </char-at>
                   <integer>0x0DDB</integer>
                 </eq>
@@ -2665,7 +2667,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
         <funcall fname="macro-delete-following-zw"/>
         <set vname="c">
           <char-at>
-            <marker>@+1</marker>
+            <marker>@+0</marker>
           </char-at>
         </set>
         <cond>
@@ -2769,7 +2771,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
               <list>
                 <eq>
                   <char-at>
-                    <marker>@+1</marker>
+                    <marker>@+0</marker>
                   </char-at>
                   <integer>0x0DD9</integer>
                 </eq>
@@ -2786,7 +2788,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
               <list>
                 <eq>
                   <char-at>
-                    <marker>@+1</marker>
+                    <marker>@+0</marker>
                   </char-at>
                   <integer>0x0DDB</integer>
                 </eq>
@@ -2806,7 +2808,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
               <list>
                 <eq>
                   <char-at>
-                    <marker>@+1</marker>
+                    <marker>@+0</marker>
                   </char-at>
                   <integer>0x0DDA</integer>
                 </eq>
@@ -2826,7 +2828,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
               <list>
                 <eq>
                   <char-at>
-                    <marker>@+1</marker>
+                    <marker>@+0</marker>
                   </char-at>
                   <integer>0x0DDC</integer>
                 </eq>
@@ -2846,7 +2848,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
               <list>
                 <eq>
                   <char-at>
-                    <marker>@+1</marker>
+                    <marker>@+0</marker>
                   </char-at>
                   <integer>0x0DDE</integer>
                 </eq>
@@ -2927,7 +2929,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
       <rule>
         <keyseq>
           <list>
-            <string>A-,</string>
+            <symbol>A-,</symbol>
           </list>
         </keyseq>
         <insert>
@@ -3333,7 +3335,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
       <rule>
         <keyseq>
           <list>
-            <string>A-'</string>
+            <symbol>A-'</symbol>
           </list>
         </keyseq>
         <insert>
@@ -3351,7 +3353,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
       <rule>
         <keyseq>
           <list>
-            <string>S- </string>
+            <symbol>S- </symbol>
           </list>
         </keyseq>
         <insert>
@@ -3361,7 +3363,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.</gettext>
       <rule>
         <keyseq>
           <list>
-            <string>A- </string>
+            <symbol>A- </symbol>
           </list>
         </keyseq>
         <insert>

@@ -4,6 +4,10 @@
     <language>t</language>
     <name>latn-post</name>
   </tags>
+  <!-- Input method for Latin script with postfix modifiers.
+@image html latn-post.png
+@image latex latn-post.eps " Examples " width=\narrowwidth
+-->
   <description>Latin script input method using postfix modifiers.
    | mark       | postfix | examples
    |------------+---------+----------

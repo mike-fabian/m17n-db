@@ -1,4 +1,5 @@
 <?xml version='1.0'?>
+<!-- Input method for Lao using Lao keyboard layout.-->
 <input-method xmlns="http://www.m17n.org/MIM">
   <tags>
     <language>lo</language>

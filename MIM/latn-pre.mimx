@@ -4,6 +4,11 @@
     <language>t</language>
     <name>latn-pre</name>
   </tags>
+  <!-- Input method for Latin script with prefix modifiers.
+@image html latn-pre.png
+@image latex latn-pre.eps " Examples " width=
+arrowwidth
+-->
   <description>Latin script input method using prefix modifiers.
 ;; | mark       | prefix | examples
 ;; |------------+--------+----------

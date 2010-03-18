@@ -58,7 +58,6 @@ INPUT_METHOD = \
 	ru-kbd.mimx ru-yawerty.mimx ru-phonetic.mimx \
 	sa-harvard-kyoto.mimx \
 	si-samanala.mimx si-wijesekera.mimx \
-	si-wijesekera-preedit-alt.mimx si-wijesekera-preedit.mimx \
 	sk-kbd.mimx \
 	sr-kbd.mimx \
 	sv-post.mimx \

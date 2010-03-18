@@ -21,9 +21,9 @@
 # Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 # Boston, MA 02110-1301, USA.
 
-pkgdata_DATA = ${INPUT_METHOD} mim.rng
+pkgdata_DATA = ${INPUT_METHOD} expr.rng mim.rng
 
-EXTRA_DIST = ${INPUT_METHOD} mim.rng
+EXTRA_DIST = ${INPUT_METHOD} expr.rng mim.rng
 
 INPUT_METHOD = \
 	am-sera.mimx \

@@ -1,5 +1,8 @@
 2010-03-18  Kenichi Handa  <handa@m17n.org>
 
+	* MIM/Makefile.am (INPUT_METHOD): Exclude
+	si-wijesekera-preedit-alt.mimx and si-wijesekera-preedit.mimx.
+
 	* MIM/Makefile.am (pkgdata_DATA): Include expr.rng.
 	(EXTRA_DIST): Likewise.
 

@@ -25,7 +25,7 @@ to be included in the other Vietnamese input method (e.g. vi-telex, vi-vni).
           <varref vname="V-3"/>
           <cond>
             <list>
-              <or>
+              <logior>
                 <eq>
                   <varref vname="V-1"/>
                   <integer>234</integer>
@@ -42,7 +42,7 @@ to be included in the other Vietnamese input method (e.g. vi-telex, vi-vni).
                   <varref vname="V-1"/>
                   <integer>416</integer>
                 </eq>
-              </or>
+              </logior>
               <set vname="TPLACE">
                 <integer>3</integer>
               </set>
@@ -62,13 +62,13 @@ to be included in the other Vietnamese input method (e.g. vi-telex, vi-vni).
           <varref vname="V-2"/>
           <cond>
             <list>
-              <or>
+              <logior>
                 <gt>
                   <varref vname="V-1"/>
                   <integer>127</integer>
                 </gt>
-                <and>
-                  <or>
+                <logand>
+                  <logior>
                     <eq>
                       <varref vname="C"/>
                       <integer>103</integer>
@@ -77,8 +77,8 @@ to be included in the other Vietnamese input method (e.g. vi-telex, vi-vni).
                       <varref vname="C"/>
                       <integer>71</integer>
                     </eq>
-                  </or>
-                  <or>
+                  </logior>
+                  <logior>
                     <eq>
                       <varref vname="V-2"/>
                       <integer>105</integer>
@@ -87,10 +87,10 @@ to be included in the other Vietnamese input method (e.g. vi-telex, vi-vni).
                       <varref vname="V-2"/>
                       <integer>73</integer>
                     </eq>
-                  </or>
-                </and>
-                <and>
-                  <or>
+                  </logior>
+                </logand>
+                <logand>
+                  <logior>
                     <eq>
                       <varref vname="C"/>
                       <integer>113</integer>
@@ -99,8 +99,8 @@ to be included in the other Vietnamese input method (e.g. vi-telex, vi-vni).
                       <varref vname="C"/>
                       <integer>81</integer>
                     </eq>
-                  </or>
-                  <or>
+                  </logior>
+                  <logior>
                     <eq>
                       <varref vname="V-2"/>
                       <integer>117</integer>
@@ -109,19 +109,19 @@ to be included in the other Vietnamese input method (e.g. vi-telex, vi-vni).
                       <varref vname="V-2"/>
                       <integer>85</integer>
                     </eq>
-                  </or>
-                </and>
-                <and>
-                  <or>
+                  </logior>
+                </logand>
+                <logand>
+                  <logior>
                     <varref vname="tone-mark-on-last"/>
                     <gt>
                       <varref vname="C-AFTER-V"/>
                       <integer>0</integer>
                     </gt>
-                  </or>
-                  <or>
-                    <and>
-                      <or>
+                  </logior>
+                  <logior>
+                    <logand>
+                      <logior>
                         <eq>
                           <varref vname="V-2"/>
                           <integer>111</integer>
@@ -130,8 +130,8 @@ to be included in the other Vietnamese input method (e.g. vi-telex, vi-vni).
                           <varref vname="V-2"/>
                           <integer>79</integer>
                         </eq>
-                      </or>
-                      <or>
+                      </logior>
+                      <logior>
                         <eq>
                           <varref vname="V-1"/>
                           <integer>97</integer>
@@ -156,10 +156,10 @@ to be included in the other Vietnamese input method (e.g. vi-telex, vi-vni).
                           <varref vname="V-1"/>
                           <integer>79</integer>
                         </eq>
-                      </or>
-                    </and>
-                    <and>
-                      <or>
+                      </logior>
+                    </logand>
+                    <logand>
+                      <logior>
                         <eq>
                           <varref vname="V-2"/>
                           <integer>117</integer>
@@ -168,8 +168,8 @@ to be included in the other Vietnamese input method (e.g. vi-telex, vi-vni).
                           <varref vname="V-2"/>
                           <integer>85</integer>
                         </eq>
-                      </or>
-                      <or>
+                      </logior>
+                      <logior>
                         <eq>
                           <varref vname="V-1"/>
                           <integer>121</integer>
@@ -178,11 +178,11 @@ to be included in the other Vietnamese input method (e.g. vi-telex, vi-vni).
                           <varref vname="V-1"/>
                           <integer>89</integer>
                         </eq>
-                      </or>
-                    </and>
-                  </or>
-                </and>
-              </or>
+                      </logior>
+                    </logand>
+                  </logior>
+                </logand>
+              </logior>
               <set vname="TPLACE">
                 <integer>2</integer>
               </set>

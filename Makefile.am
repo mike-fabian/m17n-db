@@ -284,13 +284,11 @@ BLOCK.tab:
 	echo "# Generated from $<." > $@
 	@$(AWK) -f CHARTAB.awk FIELD=$@ $< >>$@
 
-pkgdatadir=$(datadir)/m17n
-
-bin_SCRIPTS = m17n-db
+pkgdatadir=$(datadir)/@INSTSUBDIR@
 
 pkgconfigdir = ${datadir}/pkgconfig
 
-pkgconfig_DATA = m17n-db.pc
+pkgconfig_DATA = m17n-db-2.pc
 
 # Clear files that are automatically generated.
 clean:

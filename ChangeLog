@@ -1,3 +1,26 @@
+2010-03-26  Kenichi Handa  <handa@m17n.org>
+
+	* m17n-db-2.pc.in: Renamed from m17n-db.pc.in.
+
+	* MIM/Makefile.am (pkgdatadir): Append @INSTSUBDIR@.
+
+	* LANGDATA/Makefile.am (pkgdatadir): Append @INSTSUBDIR@.
+
+	* FLT/Makefile.am (pkgdatadir): Append @INSTSUBDIR@.
+
+	* icons/Makefile.am (pkgdatadir): Append @INSTSUBDIR@.
+
+	* configure.ac: Versions changed to 2.0.0alpha.
+	(INSTSUBDIR): New variable.  AC_SUBST it.
+	(LANGNAME_TABLES): Delete m17n-db Change m17n-db.pc to
+	m17n-db-2.pc.
+
+	* Makefile.am (bin_SCRIPTS): Delete it.
+	(pkgdatadir): Append @INSTSUBDIR@.
+	(pkgconfig_DATA): Change to m17n-db-2.pc.
+
+	* mim-im: New direcotry.
+
 2010-03-18  Kenichi Handa  <handa@m17n.org>
 
 	* MIM/Makefile.am (INPUT_METHOD): Exclude

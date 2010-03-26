@@ -1,4 +1,4 @@
-# Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008
+# Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010
 #   National Institute of Advanced Industrial Science and Technology (AIST)
 #   Registration Number H15PRO112
 
@@ -21,9 +21,12 @@
 # Boston, MA 02110-1301, USA.
 
 # Process this file with autoconf to produce a configure script.
-AC_INIT(m17n-db, 1.5.3, bugs-m17n-lib@m17n.org)
-AM_INIT_AUTOMAKE(m17n-db, 1.5.3)
+AC_INIT(m17n-db, 2.0.0alpha, bugs-m17n-lib@m17n.org)
+AM_INIT_AUTOMAKE(m17n-db, 2.0.0alpha)
 AM_GNU_GETTEXT([external])
+
+INSTSUBDIR=m17n/2.0
+AC_SUBST(INSTSUBDIR)
 
 # Checks for programs.
 AC_PROG_INSTALL
@@ -76,7 +79,7 @@ AC_SUBST(ICONS)
 LANGNAME_TABLES=`cd LANGDATA; echo *.lnm`
 AC_SUBST(LANGNAME_TABLES)
 
-AC_CONFIG_FILES([Makefile mapconv m17n-db m17n-db.pc
+AC_CONFIG_FILES([Makefile mapconv m17n-db-2.pc
 		 icons/Makefile po/Makefile.in
 		 FLT/Makefile MIM/Makefile LANGDATA/Makefile
 		 ])

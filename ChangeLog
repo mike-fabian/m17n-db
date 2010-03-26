@@ -1,5 +1,7 @@
 2010-03-26  Kenichi Handa  <handa@m17n.org>
 
+	* .cvsignore: Change m17n-db.pc to m17n-db-2.pc.
+
 	* m17n-db-2.pc.in: Renamed from m17n-db.pc.in.
 
 	* MIM/Makefile.am (pkgdatadir): Append @INSTSUBDIR@.

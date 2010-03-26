@@ -22,6 +22,6 @@
 # Boston, MA 02110-1301, USA.
 
 pkgdata_DATA = @ICONS@
-pkgdatadir=$(datadir)/m17n/icons
+pkgdatadir=$(datadir)/@INSTSUBDIR@/icons
 
 EXTRA_DIST = @ICONS@

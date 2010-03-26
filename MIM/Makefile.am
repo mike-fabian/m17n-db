@@ -79,4 +79,4 @@ INPUT_METHOD = \
 	ispell.mimx \
 	global.mimx cjk-util.mimx zh-util.mimx
 
-pkgdatadir=$(datadir)/m17n
+pkgdatadir=$(datadir)/@INSTSUBDIR@

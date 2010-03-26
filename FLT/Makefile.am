@@ -49,5 +49,4 @@ FONT_LAYOUT_TABLE = \
 	COMBINING.flt \
 	NO-CTL.flt
 
-pkgdatadir=$(datadir)/m17n
-
+pkgdatadir=$(datadir)/@INSTSUBDIR@

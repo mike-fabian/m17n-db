@@ -21,7 +21,7 @@
 # Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 # Boston, MA 02110-1301, USA.
 
-pkgdatadir=$(datadir)/m17n
+pkgdatadir=$(datadir)/@INSTSUBDIR@
 
 TABLES=@LANGNAME_TABLES@
 

@@ -32,7 +32,7 @@ The level of character sequence acceptance defined in WTT 2.0.
         <language>th</language>
         <name>kesmanee</name>
       </tags>
-      <part>macro</part>
+      <section>macro</section>
     </xi:include>
   </macro-list>
   <map-list>
@@ -795,7 +795,7 @@ The level of character sequence acceptance defined in WTT 2.0.
     <state sname="state-init">
       <branch mname="map-map">
         <delete>
-          <marker>@first</marker>
+          <marker>@&lt;</marker>
         </delete>
         <pushback>
           <integer>1</integer>
@@ -907,8 +907,8 @@ The level of character sequence acceptance defined in WTT 2.0.
                             </insert>
                           </list>
                           <list>
-                            <and>
-                              <or>
+                            <logand>
+                              <logior>
                                 <eq>
                                   <varref vname="y"/>
                                   <integer>0x0E30</integer>
@@ -921,7 +921,7 @@ The level of character sequence acceptance defined in WTT 2.0.
                                   <varref vname="y"/>
                                   <integer>0x0E33</integer>
                                 </eq>
-                              </or>
+                              </logior>
                               <ge>
                                 <varref vname="z"/>
                                 <integer>0x0E48</integer>
@@ -930,7 +930,7 @@ The level of character sequence acceptance defined in WTT 2.0.
                                 <varref vname="z"/>
                                 <integer>0x0E4B</integer>
                               </le>
-                            </and>
+                            </logand>
                             <delete>
                               <marker>@-2</marker>
                             </delete>
@@ -962,12 +962,12 @@ The level of character sequence acceptance defined in WTT 2.0.
                     <funcall fname="macro-ac"/>
                     <cond>
                       <list>
-                        <and>
+                        <logand>
                           <eq>
                             <varref vname="ret"/>
                             <integer>1</integer>
                           </eq>
-                          <and>
+                          <logand>
                             <ge>
                               <varref vname="y"/>
                               <integer>0x0E01</integer>
@@ -976,8 +976,8 @@ The level of character sequence acceptance defined in WTT 2.0.
                               <varref vname="y"/>
                               <integer>0x0E5B</integer>
                             </le>
-                          </and>
-                          <and>
+                          </logand>
+                          <logand>
                             <ge>
                               <varref vname="z"/>
                               <integer>0x0E01</integer>
@@ -986,8 +986,8 @@ The level of character sequence acceptance defined in WTT 2.0.
                               <varref vname="z"/>
                               <integer>0x0E5B</integer>
                             </le>
-                          </and>
-                        </and>
+                          </logand>
+                        </logand>
                         <delete>
                           <marker>@-2</marker>
                         </delete>
@@ -1022,8 +1022,8 @@ The level of character sequence acceptance defined in WTT 2.0.
             <commit/>
           </list>
           <list>
-            <or>
-              <and>
+            <logior>
+              <logand>
                 <ge>
                   <varref vname="w"/>
                   <integer>0x0000</integer>
@@ -1032,7 +1032,7 @@ The level of character sequence acceptance defined in WTT 2.0.
                   <varref vname="w"/>
                   <integer>0x0E00</integer>
                 </le>
-              </and>
+              </logand>
               <eq>
                 <varref vname="w"/>
                 <integer>0x0E2F</integer>
@@ -1049,12 +1049,12 @@ The level of character sequence acceptance defined in WTT 2.0.
                 <varref vname="w"/>
                 <integer>0x0E4F</integer>
               </ge>
-            </or>
+            </logior>
             <commit/>
           </list>
           <list>
-            <or>
-              <and>
+            <logior>
+              <logand>
                 <ge>
                   <varref vname="w"/>
                   <integer>0x0E01</integer>
@@ -1063,12 +1063,12 @@ The level of character sequence acceptance defined in WTT 2.0.
                   <varref vname="w"/>
                   <integer>0x0E23</integer>
                 </le>
-              </and>
+              </logand>
               <eq>
                 <varref vname="w"/>
                 <integer>0x0E25</integer>
               </eq>
-              <and>
+              <logand>
                 <ge>
                   <varref vname="w"/>
                   <integer>0x0E27</integer>
@@ -1077,11 +1077,11 @@ The level of character sequence acceptance defined in WTT 2.0.
                   <varref vname="w"/>
                   <integer>0x0E2E</integer>
                 </le>
-              </and>
-            </or>
+              </logand>
+            </logior>
             <cond>
               <list>
-                <or>
+                <logior>
                   <eq>
                     <char-at>
                       <marker>@-2</marker>
@@ -1094,7 +1094,7 @@ The level of character sequence acceptance defined in WTT 2.0.
                     </char-at>
                     <integer>0x0E26</integer>
                   </eq>
-                </or>
+                </logior>
               </list>
               <list>
                 <integer>1</integer>
@@ -1109,8 +1109,8 @@ The level of character sequence acceptance defined in WTT 2.0.
             </cond>
           </list>
           <list>
-            <or>
-              <and>
+            <logior>
+              <logand>
                 <ge>
                   <varref vname="w"/>
                   <integer>0x0E40</integer>
@@ -1119,7 +1119,7 @@ The level of character sequence acceptance defined in WTT 2.0.
                   <varref vname="w"/>
                   <integer>0x0E45</integer>
                 </le>
-              </and>
+              </logand>
               <eq>
                 <varref vname="w"/>
                 <integer>0x0E24</integer>
@@ -1128,7 +1128,7 @@ The level of character sequence acceptance defined in WTT 2.0.
                 <varref vname="w"/>
                 <integer>0x0E26</integer>
               </eq>
-            </or>
+            </logior>
             <delete>
               <marker>@-1</marker>
             </delete>
@@ -1138,7 +1138,7 @@ The level of character sequence acceptance defined in WTT 2.0.
             </insert>
           </list>
           <list>
-            <or>
+            <logior>
               <eq>
                 <varref vname="w"/>
                 <integer>0x0E30</integer>
@@ -1147,7 +1147,7 @@ The level of character sequence acceptance defined in WTT 2.0.
                 <varref vname="w"/>
                 <integer>0x0E32</integer>
               </eq>
-            </or>
+            </logior>
             <delete>
               <marker>@-1</marker>
             </delete>
@@ -1158,8 +1158,8 @@ The level of character sequence acceptance defined in WTT 2.0.
             </set>
             <cond>
               <list>
-                <or>
-                  <and>
+                <logior>
+                  <logand>
                     <ge>
                       <varref vname="v"/>
                       <integer>0x0E01</integer>
@@ -1168,12 +1168,12 @@ The level of character sequence acceptance defined in WTT 2.0.
                       <varref vname="v"/>
                       <integer>0x0E23</integer>
                     </le>
-                  </and>
+                  </logand>
                   <eq>
                     <varref vname="v"/>
                     <integer>0x0E25</integer>
                   </eq>
-                  <and>
+                  <logand>
                     <ge>
                       <varref vname="v"/>
                       <integer>0x0E27</integer>
@@ -1182,8 +1182,8 @@ The level of character sequence acceptance defined in WTT 2.0.
                       <varref vname="v"/>
                       <integer>0x0E2E</integer>
                     </le>
-                  </and>
-                </or>
+                  </logand>
+                </logior>
                 <delete>
                   <marker>@-1</marker>
                 </delete>

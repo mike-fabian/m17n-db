@@ -79,7 +79,7 @@ AC_SUBST(ICONS)
 LANGNAME_TABLES=`cd LANGDATA; echo *.lnm`
 AC_SUBST(LANGNAME_TABLES)
 
-AC_CONFIG_FILES([Makefile mapconv m17n-db-2.pc
+AC_CONFIG_FILES([Makefile mapconv m17n-db-2.0.pc
 		 icons/Makefile po/Makefile.in
 		 FLT/Makefile MIM/Makefile LANGDATA/Makefile
 		 ])

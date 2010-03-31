@@ -2,9 +2,14 @@
 
 	* Version 2.0.0 released.
 
+	* .cvsignore: Change m17n-db-2.pc to m17n-db-2.0.pc.
+
 	* m17n-db-2.0.pc.in: Renamed from m17n-db.pc.in.
 
 	* Makefile.am (EXTRA_DIST): Add mdb.rng.
+	(pkgconfig_DATA): Change to m17n-db-2.0.pc.
+	(pkgdata_DATA): Add BLOCK.tab.
+	(CHAR_TABLE): Remove BLOCK.tab.
 
 	* configure.ac: Versions changed to 2.0.0alpha.
 	(AC_CONFIG_FILES): Change m17n-db-2.pc to m17n-db-2.0.pc.

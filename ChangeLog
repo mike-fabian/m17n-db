@@ -1,3 +1,11 @@
+2010-03-31  Kenichi Handa  <handa@m17n.org>
+
+	* Version 2.0.0 released.
+
+	* Makefile.am (EXTRA_DIST): Add mdb.rng.
+
+	* configure.ac: Versions changed to 2.0.0alpha.
+
 2010-03-26  Kenichi Handa  <handa@m17n.org>
 
 	* .cvsignore: Change m17n-db.pc to m17n-db-2.pc.

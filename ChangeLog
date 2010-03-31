@@ -7,6 +7,7 @@
 	* Makefile.am (EXTRA_DIST): Add mdb.rng.
 
 	* configure.ac: Versions changed to 2.0.0alpha.
+	(AC_CONFIG_FILES): Change m17n-db-2.pc to m17n-db-2.0.pc.
 
 2010-03-26  Kenichi Handa  <handa@m17n.org>
 

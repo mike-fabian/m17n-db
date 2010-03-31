@@ -27,6 +27,7 @@ pkgdata_DATA = \
 	${CHARSETS} \
 	${CHAR_TABLE} \
 	${MISC_TABLE} \
+	BLOCK.tab \
 	mdb.xml mdb.rng
 
 EXTRA_DIST = config.rpath mkinstalldirs m4/ChangeLog \
@@ -80,8 +81,7 @@ MISC =  KOI-8.map KOI8-R.map KOI8-U.map KOI8-T.map \
 CHAR_TABLE = \
 	NAME.tab SCRIPT.tab CASE-S.tab CASE-C.tab \
 	CATEGORY.tab COMBINE.tab BIDI.tab LINEBREAK.tab \
-	CASED.tab SOFT-DOTTED.tab CASE-MAPPING.tab \
-	BLOCK.tab
+	CASED.tab SOFT-DOTTED.tab CASE-MAPPING.tab
 
 MISC_TABLE = \
 	LOCALE.cs LOCALE.ali \

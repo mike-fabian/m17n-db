@@ -288,7 +288,7 @@ pkgdatadir=$(datadir)/@INSTSUBDIR@
 
 pkgconfigdir = ${datadir}/pkgconfig
 
-pkgconfig_DATA = m17n-db-2.pc
+pkgconfig_DATA = m17n-db-2.0.pc
 
 # Clear files that are automatically generated.
 clean:

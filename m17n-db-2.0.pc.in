@@ -1,0 +1,7 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+version=@PACKAGE_VERSION@
+
+Name: m17n-db
+Description: The m17n database (ver.2) used by the m17n library.
+Version: ${version}

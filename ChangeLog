@@ -17,6 +17,7 @@
 	* MIM/kn-inscript.mim: Add mapping for ZWNJ
 	* MIM/gu-itrans.mim: Fix e o mappings
 	* MIM/bo-ewts.mim: Fix ld mapping
+	* MIM/bo-ewts.mim: remove whitespace in rn and brn mapping
 
 2023-05-07  Mike FABIAN  <mfabian@redhat.com>
 

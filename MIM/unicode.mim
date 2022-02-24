@@ -23,9 +23,13 @@
 
 (input-method t unicode)
 
-(description (_"Input method for Unicode BMP characters using hexadigits.
-Type C-u followed by four hexadecimal numbers [0-9A-Fa-f]
+(description (_"Input method for Unicode characters using hexadigits.
+Type C-u followed by hexadecimal numbers [0-9A-Fa-f]
 of a Unicode character code.
+To finish and insert the resulting character, type a space.
+
+If you type more than 5 hex digits and finish with space,
+the result is empty and nothing at all is inserted.
 "))
 
 (title "UNICODE")
@@ -44,6 +48,7 @@ Start typing hexadecimal numbers of Unicode character.")
   (start prompt))
 
  (hex
+  (" " " ") ; The space key is used to commit
   ("0" "0") ("1" "1") ("2" "2") ("3" "3") ("4" "4")
   ("5" "5") ("6" "6") ("7" "7") ("8" "8") ("9" "9")
   ("A" "A") ("B" "B") ("C" "C") ("D" "D") ("E" "E") ("F" "F")
@@ -60,9 +65,11 @@ Start typing hexadecimal numbers of Unicode character.")
   (hex (set this @-1)
        (cond ((< @-1 ?A) (sub this 48))
 	     (1 (sub this 55)))
-       (set code (+ (* code 16) this))
+       (cond ((= @-1 0x0020) (set code code))
+             ((> count 4) (set code 0))
+             (1 (set code (+ (* code 16) this))))
        (set count (+ count 1))
-       (cond ((= count 4)
+       (cond ((= @-1 0x0020)
 	      (delete @<) (insert code) (shift init))))
   (backspace (undo))))
 

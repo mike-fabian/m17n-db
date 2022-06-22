@@ -1,0 +1,133 @@
+;; ta-inscript2.mim -- Tamil input method for enhanced inscript layout
+;; Copyright (c) 2011-2016, 2021 Red Hat, Inc. All Rights Reserved.
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU Lesser General Public License as published by
+;; the Free Software Foundation; either version 2.1 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with the m17n library; if not, write to the Free
+;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+;;
+;; Author: Parag Nemade <pnemade@redhat.com>
+
+(input-method ta inscript2)
+
+(description "Tamil input method for enhanced inscript layout.
+
+Reference URL - http://ildc.in/Inscript-layout.html
+
+Use AltGr (Alt_R key) to type the following characters:
+
+Character    Key
+----------------------------
+ZWJ            AltGr + 1
+ZWNJ           AltGr + 2
+₹              AltGr + 4
+")
+
+(title "க")
+
+(map
+ (trans
+  ("~" "ஒ")
+  ("`" "ொ")
+  ("1" "௧")
+  ((G-1) "‍")
+  ("2" "௨")
+  ((G-2) "‌")
+  ("3" "௩")
+  ("4" "௪")
+  ((G-4) "₹")
+  ("5" "௫")
+  ("^" "த்ர")
+  ("6" "௬")
+  ("&" "க்ஷ")
+  ("7" "௭")
+  ("*" "ஷ்ர")
+  ("8" "௮")
+  ("(" "(")
+  ("9" "௯")
+  (")" ")")
+  ("0" "௦")
+  ((G-0) "௰")
+  ("_" "ஃ")
+  ("-" "-")
+  ((G--) "௱")
+  ("=""=")
+  ((G-=) "௲")
+  ("Q" "ஔ")
+  ("q" "ௌ")
+  ("W" "ஐ")
+  ("w" "ை")
+  ("E" "ஆ")
+  ("e" "ா")
+  ("R" "ஈ")
+  ("r" "ீ")
+  ("T" "ஊ")
+  ("t" "ூ")
+  ("y" "y")
+  ((G-y) "௷")
+  ("U" "ங")
+  ("u" "ஹ")
+  ("p" "ஜ")
+  ("}" "ஞ")
+  ("A" "ஓ")
+  ("a" "ோ ")
+  ("S" "ஏ")
+  ("s" "ே")
+  ("D" "அ")
+  ("d" "்")
+  ("F" "இ")
+  ("f" "ி")
+  ("G" "உ")
+  ("g" "ு")
+  ("h" "ப")
+  ((G-h) "௶")
+  ("J" "ற")
+  ("j" "ர")
+  ("k" "க")
+  ("l" "த")
+  (";" "ச")
+  ("'" "ட")
+  ("~" "ஒ")
+  ("`" "ொ")
+  ("Z" "எ")
+  ("z" "ெ")
+  ("x" "ஂ") 
+  ((G-X) "ௐ")
+  ("C" "ண")
+  ((G-C) "௸")
+  ("c" "ம")
+  ((G-c) "௴")
+  ("V" "ன")
+  ((G-V) "௺")
+  ("v" "ந")
+  ((G-v) "௳")
+  ("B" "ழ") 
+  ("b" "வ")
+  ((G-b) "௵")
+  ("N" "ள")
+  ("n" "ல")
+  ("M" "ஶ")
+  ("m" "ஸ")
+  ("<" "ஷ")
+  ("," ",")
+  ((G-,) "௹")
+  (">" "।")
+  ("." ".")
+  ((G-.) "॥")
+  ("/" "ய")
+  ))
+
+(state
+ (init
+    (trans)))
+

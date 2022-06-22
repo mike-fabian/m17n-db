@@ -1,0 +1,190 @@
+;; te-inscript2.mim -- Telugu input method for enhanced inscript layout
+;; Copyright (c) 2011-2016, 2021 Red Hat, Inc. All Rights Reserved.
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU Lesser General Public License as published by
+;; the Free Software Foundation; either version 2.1 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with the m17n library; if not, write to the Free
+;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+;;
+;; Author: Parag Nemade <pnemade@redhat.com>
+
+(input-method te inscript2)
+
+(description "Telugu input method for enhanced inscript layout.
+
+Reference URL - http://ildc.in/Inscript-layout.html
+
+Use AltGr (Alt_R key) to type the following characters:
+
+Character    Key
+----------------------------
+ZWJ            AltGr + 1
+ZWNJ           AltGr + 2
+₹              AltGr + 4
+
+Key description
+
+శ => స్ + హ్  + అ
+ష => S + హ్ + అ
+ర్త్స => ర్ + త్ + స్ + అ
+కృ => క్ + ఱ్ + ఱ్ + ఇ
+కై => క్ + అ + ఇ
+కౌ => క్ + అ + ఉ
+స్త్రీ => స్ + త్ + ర్ + ఈ
+శ్రీ => శ్ + ర్  + ఈ
+
+These are the characterstics of the Telugu words
+1. Telugu word must be end with vowel (Telugu is a vowel ending language)
+2. Telugu words don't have the letter య  at the initial position.
+3. In telugu we dont use the combination of Sanskrit loan words + native Telugu words. 
+
+Key summary : Sree Thottempudi <sthottem@redhat.com>
+")
+
+(title "క")
+
+(map
+ (trans
+  ((KP_1) "౧")
+  ((KP_2) "౨")
+  ((KP_3) "౩")
+  ((KP_4) "౪")
+  ((KP_5) "౫")
+  ((KP_6) "౬")
+  ((KP_7) "౭")
+  ((KP_8) "౮")
+  ((KP_9) "౯")
+  ((KP_0) "౦")
+  ((KP_Decimal) ".")
+  ((KP_Divide) "/")
+  ((KP_Multiply) "*")
+  ((KP_Add) "+")
+  ((KP_Subtract) "-") 
+ 
+  ("~" "ఒ")
+  ("`" "ొ")
+  ((G-!) "౹")
+  ("1" "౧")
+  ((G-1) "‍")
+  ((G-@) "౼")
+  ("2" "౨")
+  ((G-2) "‌")
+  ("#" "్ర")
+  ((G-#) "౺")
+  ("3" "౩")
+  ((G-$) "౽")
+  ("4" "౪")
+  ((G-4) "₹")
+  ("%" "జ్ఞ")
+  ((G-%) "౻")
+  ("5" "౫")
+  ("^" "త్ర")
+  ((G-^) "౾")
+  ("6" "౬")
+  ("&" "క్ష")
+  ("7" "౭")
+  ("*" "శ్ర")
+  ("8" "౮")
+  ("(" "(")
+  ("9" "౯")
+  (")" ")")
+  ((G-\)) "౸")
+  ("0" "౦")
+  ("_" "ః")
+  ("-" "-")
+  ("_" "ః")
+  ((G--) "౿")
+  ("+" "ఋ")
+  ((G-+) "ౠ")
+  ("=" "ృ")
+  ((G-=) "ౄ")
+  ("Q" "ఔ")
+  ("q" "ౌ")
+  ("W" "ఐ")
+  ("w" "ై")
+  ("E" "ఆ")
+  ("e" "ా")
+  ("R" "ఈ")
+  ((G-R) "ౣ")
+  ("r" "ీ")
+  ((G-r) "ౡ")
+  ("T" "ఊ")
+  ("t" "ూ")
+  ("Y" "భ")
+  ("y" "బ")
+  ("U" "ఙ")
+  ("u" "హ")
+  ("I" "ఘ")
+  ("i" "గ")
+  ("O" "ధ")
+  ("o" "ద")
+  ("P" "ఝ")
+  ("p" "జ")
+  ((G-p) "ౙ")
+  ("{" "ఢ")
+  ("[" "డ")
+  ("}" "ఞ")
+  ("A" "ఓ")
+  ("a" "ో")
+  ("S" "ఏ")
+  ("s" "ే")
+  ("D" "అ")
+  ("d" "్")
+  ("F" "ఇ")
+  ((G-F) "ఌ")
+  ("f" "ి")
+  ((G-f) "ౢ")
+  ("G" "ఉ")
+  ("g" "ు")
+  ("H" "ఫ")
+  ("h" "ప")
+  ("J" "ఱ")
+  ("j" "ర")
+  ("K" "ఖ")
+  ("k" "క")
+  ("L" "థ")
+  ("l" "త")
+  (":" "ఛ")
+  (";" "చ")
+  ((G-;) "ౘ")
+  ("\"" "ఠ")
+  ("'" "ట")
+  ("~" "ఒ")
+  ("`" "ొ")
+  ("Z" "ఎ")
+  ((G-Z) "ౖ")
+  ("z" "ె")
+  ((G-z) "ౕ")
+  ("X" "ఁ")
+  ("x" "ం")
+  ("C" "ణ")
+  ("c" "మ")
+  ("v" "న")
+  ("b" "వ")
+  ("N" "ళ")
+  ("n" "ల")
+  ("M" "శ")
+  ("m" "స")
+  ("<" "ష")
+  ("," ",")
+  (">" "।")
+  ((G->) "ఽ")
+  ("." ".")
+  ((G-.) "॥")
+  ("/" "య")
+  ))
+
+(state
+ (init
+    (trans)))
+

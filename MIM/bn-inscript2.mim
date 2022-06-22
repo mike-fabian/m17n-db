@@ -1,0 +1,175 @@
+;; bn-inscript2.mim -- Bengali input method for inscript layout
+;; Copyright (c) 2011-2016, 2021 Red Hat, Inc. All Rights Reserved.
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU Lesser General Public License as published by
+;; the Free Software Foundation; either version 2.1 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with the m17n library; if not, write to the Free
+;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+;;
+;; Author: Parag Nemade <pnemade@redhat.com>
+
+(input-method bn inscript2)
+
+(description "Bengali input method for enhanced inscript layout.
+
+Reference URL - http://ildc.in/Inscript-layout.html
+
+Key summary:
+Use AltGr (Alt_R key) to type the following characters:
+
+Character    Key
+----------------------------
+ZWJ            AltGr + 1
+ZWNJ           AltGr + 2
+₹              AltGr + 4
+
+To write \"juktakhor\" i.e. conjunct characters of consonants please use the \"halant\" character on the key 'd' between the two consonant akshar. 
+
+E.g. ক্ষ = k+d+<
+
+Key summary: Runa Bhattacharjee <runab@redhat.com>
+")
+
+(title "ক")
+
+(map
+ (trans
+  ((KP_1) "১")
+  ((KP_2) "২")
+  ((KP_3) "৩")
+  ((KP_4) "৪")
+  ((KP_5) "৫")
+  ((KP_6) "৬")
+  ((KP_7) "৭")
+  ((KP_8) "৮")
+  ((KP_9) "৯")
+  ((KP_0) "০")
+  ((KP_Decimal) ".")
+  ((KP_Divide) "/")
+  ((KP_Multiply) "*")
+  ((KP_Add) "+")
+  ((KP_Subtract) "-") 
+ 
+  ((G-1) "‍")
+  ("!" "অ্যা")
+  ((G-!) "৴")
+  ("1" "১")
+  ((G-@) "৵")
+  ("2" "২")
+  ((G-2) "‌")
+  ("#" "্র")
+  ((G-#) "৶")
+  ("3" "৩")
+  ("$" "র্")
+  ((G-$) "৷")
+  ("4" "৪")
+  ((G-4) "₹")
+  ("%" "জ্ঞ")
+  ((G-%) "৸")
+  ("5" "৫")
+  ("^" "ত্র")
+  ((G-^) "৹")
+  ("6" "৬")
+  ("&" "ক্ষ")
+  ("7" "৭")
+  ("*" "শ্র")
+  ("8" "৮")
+  ("(" "(")
+  ("9" "৯")
+  (")" ")")
+  ("0" "০")
+  ("-" "-")
+  ("_" "ঃ")
+  ("=" "ৃ")
+  ((G-=) "ৄ")
+  ("+" "ঋ")
+  ((G-+) "ৠ")
+  ("Q" "ঔ")
+  ("q" "ৌ")
+  ("W" "ঐ")
+  ("w" "ৈ")
+  ("E" "আ")
+  ("e" "া")
+  ("R" "ঈ")
+  ((G-R) "ৡ")
+  ("r" "ী")
+  ((G-r) "ৣ")
+  ("T" "ঊ")
+  ("t" "ূ")
+  ("Y" "ভ")
+  ("y" "ব")
+  ("U" "ঙ")
+  ("u" "হ")
+  ("I" "ঘ")
+  ("i" "গ")
+  ("O" "ধ")
+  ("o" "দ")
+  ("P" "ঝ")
+  ("p" "জ")
+  ("{" "ঢ")
+  ((G-{) "ঢ়")
+  ("[" "ড")
+  ((G-[) "ড়")
+  ("}" "ঞ")
+  ("]" "়")
+  ("A" "ও")
+  ("a" "ো")
+  ("S" "এ")
+  ("s" "ে")
+  ("D" "অ")
+  ("d" "্")
+  ("F" "ই")
+  ((G-F) "ঌ")
+  ("f" "ি")
+  ((G-f) "ৢ")
+  ("G" "উ")
+  ("g" "ু")
+  ("H" "ফ")
+  ("h" "প")
+  ("j" "র")
+  ("K" "খ")
+  ("k" "ক")
+  ("L" "থ")
+  ("l" "ত")
+  ((G-l) "ৎ")
+  (":" "ছ")
+  (";" "চ")
+  ("\"" "ঠ")
+  ("'" "ট")
+  ("z" "ʼ")
+  ("X" "ঁ")
+  ("x" "ং")
+  ((G-x) "৺")
+  ("C" "ণ")
+  ("c" "ম")
+  ("v" "ন")
+  ("n" "ল")
+  ("M" "শ")
+  ("m" "স")
+  ("<" "ষ")
+  ((G-<) "৲")
+  ("," ",")
+  ((G-,) "৳")
+  (">" "।")
+  ((G->) "ঽ")
+  ("." ".")
+  ((G-.) "॥")
+  ("?" "য")
+  ((G-?) "৻")
+  ("/" "য়")
+  ((G-/) "্য")
+  ))
+
+(state
+ (init
+    (trans)))

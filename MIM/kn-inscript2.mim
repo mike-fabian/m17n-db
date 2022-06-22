@@ -1,0 +1,189 @@
+;; kn-inscript2.mim -- Kannada input method for enhanced inscript layout
+;; Copyright (c) 2011-2016, 2021 Red Hat, Inc. All Rights Reserved.
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU Lesser General Public License as published by
+;; the Free Software Foundation; either version 2.1 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with the m17n library; if not, write to the Free
+;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+;;
+;; Author: Parag Nemade <pnemade@redhat.com>
+
+(input-method kn inscript2)
+
+(description "Kannada input method for enhanced inscript layout.
+
+Reference URL - http://ildc.in/Inscript-layout.html
+
+Use AltGr (Alt_R key) to type the following characters:
+
+Character    Key
+----------------------------
+ZWJ            AltGr + 1
+ZWNJ           AltGr + 2
+₹              AltGr + 4
+
+Key summary :
+1)	\"praa\" = pa + halant + raa
+ 	\"ಪ್ರಾ\" =  ಪ  +  ್  + ರ  +  ಾ
+	h + d + j + e 
+ 
+2)	\"ska\" = sa+halant+ka
+ 	\"ಸ್ಕ\"  = ಸ  +  ್  +  ಕ
+	m + d + k 
+ 
+3)	\"ththhaa\" = th + halanth + thhaa
+ 	\" ತ್ಥಾ\" = ತ + ್ +ಥ + ಾ
+	l + d + L + e 
+
+4)	\"shhtya\" : shh + halat + T + halant + ya
+	\"ಷ್ಟ್ಯ\"  =  ಷ  +್   +  ಟ  +  ್  +  ಯ
+	< + d + ' + d + /  
+
+5)	\"dgaa\" : d + halant + gaa
+	\"ದ್ಗಾ\"  :  ದ + ್ + ಗ +ಾ
+	o + d + i + e 
+
+6)	ZWJ is assigned to key 'AltGr+1'
+	ZWNJ  is assigned to key 'AltGr+2'
+
+Key summary: Shankar Prasad <svenkate@redhat.com>
+")
+
+(title "ಕ")
+
+(map
+ (trans
+  ((KP_1) "೧")
+  ((KP_2) "೨")
+  ((KP_3) "೩")
+  ((KP_4) "೪")
+  ((KP_5) "೫")
+  ((KP_6) "೬")
+  ((KP_7) "೭")
+  ((KP_8) "೮")
+  ((KP_9) "೯")
+  ((KP_0) "೦")
+  ((KP_Decimal) ".")
+  ((KP_Divide) "/")
+  ((KP_Multiply) "*")
+  ((KP_Add) "+")
+  ((KP_Subtract) "-")  
+ 
+  ("~" "ಒ")
+  ("`" "ೊ")
+  ("1" "೧")
+  ((G-1) "‍")
+  ("2" "೨")
+  ((G-2) "‌")
+  ("#" "್ರ")
+  ("3" "೩")
+  ("$" "ರ್")
+  ("4" "೪")
+  ((G-4) "₹")
+  ("%" "ಜ್ಞ")
+  ("5" "೫")
+  ("^" "ತ್ರ")
+  ("6" "೬")
+  ("&" "ಕ್ಷ")
+  ("7" "೭")
+  ("*" "ಶ್ರ")
+  ("8" "೮")
+  ("(" "(")
+  ("9" "೯")
+  (")" ")")
+  ("0" "೦")
+  ("_" "ಃ")
+  ("-" "-")
+  ("+" "ಋ")
+  ((G-+) "ೠ")
+  ("=" "ೃ")
+  ((G-=) "ೄ")
+  ("Q" "ಔ")
+  ("q" "ೌ")
+  ("W" "ಐ")
+  ("w" "ೈ")
+  ("E" "ಆ")
+  ("e" "ಾ")
+  ("R" "ಈ")
+  ((G-R) "ೡ")
+  ("r" "ೀ")
+  ((G-r) "ೣ")
+  ("T" "ಊ")
+  ("t" "ೂ")
+  ("Y" "ಭ")
+  ("y" "ಬ")
+  ("U" "ಙ")
+  ("u" "ಹ")
+  ((G-u) "ೱ")
+  ("I" "ಘ")
+  ("i" "ಗ")
+  ("O" "ಧ")
+  ("o" "ದ")
+  ("P" "ಝ")
+  ("p" "ಜ")
+  ("{" "ಢ")
+  ("[" "ಡ")
+  ("}" "ಞ")
+  ("]" "಼")
+  ("A" "ಓ")
+  ("a" "ೋ")
+  ("S" "ಏ")
+  ("s" "ೇ")
+  ("D" "ಅ")
+  ("d" "್")
+  ("F" "ಇ")
+  ((G-F) "ಌ")
+  ("f" "ಿ")
+  ((G-f) "ೢ")
+  ("G" "ಉ")
+  ("g" "ು")
+  ("H" "ಫ")
+  ((G-H) "ೞ")
+  ("h" "ಪ")
+  ("J" "ಱ")
+  ("j" "ರ")
+  ((G-j) "ೲ")
+  ("K" "ಖ")
+  ("k" "ಕ")
+  ("L" "ಥ")
+  ("l" "ತ")
+  (":" "ಛ")
+  (";" "ಚ")
+  ("\"" "ಠ")
+  ("'" "ಟ")
+  ("~" "ಒ")
+  ("`" "ೊ")
+  ("Z" "ಎ")
+  ("z" "ೆ")
+  ("x" "ಂ")
+  ("C" "ಣ")
+  ("c" "ಮ")
+  ("v" "ನ")
+  ("b" "ವ")
+  ("N" "ಳ")
+  ("n" "ಲ")
+  ("M" "ಶ")
+  ("m" "ಸ")
+  ("<" "ಷ")
+  ("," ",")
+  (">" "।")
+  ((G->) "ಽ")
+  ("." ".")
+  ((G-.) "॥")
+  ("/" "ಯ")
+  ))
+
+(state
+ (init
+    (trans)))
+

@@ -1,0 +1,161 @@
+;; gu-inscript2.mim -- Gujarati input method for enhanced inscript layout
+;; Copyright (c) 2011-2016, 2021 Red Hat, Inc. All Rights Reserved.
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU Lesser General Public License as published by
+;; the Free Software Foundation; either version 2.1 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with the m17n library; if not, write to the Free
+;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+;;
+;; Author: Parag Nemade <pnemade@redhat.com>
+
+(input-method gu inscript2)
+
+(description "Gujarati input method for enhanced inscript layout.
+
+Reference URL - http://ildc.in/Inscript-layout.html
+
+Use AltGr (Alt_R key) to type the following characters:
+
+Character    Key
+----------------------------
+ZWJ           AltGr + 1
+ZWNJ          AltGr + 2
+₹             AltGr + 4
+")
+
+(title "ક")
+
+(map
+ (trans
+  ((KP_1) "૧")
+  ((KP_2) "૨")
+  ((KP_3) "૩")
+  ((KP_4) "૪")
+  ((KP_5) "૫")
+  ((KP_6) "૬")
+  ((KP_7) "૭")
+  ((KP_8) "૮")
+  ((KP_9) "૯")
+  ((KP_0) "૦")
+  ((KP_Decimal) ".")
+  ((KP_Divide) "/")
+  ((KP_Multiply) "*")
+  ((KP_Add) "+")
+  ((KP_Subtract) "-") 
+ 
+  ("!" "ઍ")
+  ("1" "૧")
+  ((G-1) "‍")
+  ("@" "ૅ")
+  ("2" "૨")
+  ((G-2) "‌")
+  ("#" "્ર")
+  ("3" "૩")
+  ("$" "ર્")
+  ("4" "૪")
+  ((G-4) "₹")
+  ("%" "જ્ઞ")
+  ("5" "૫")
+  ("^" "ત્ર")
+  ("6" "૬")
+  ("&" "ક્ષ")
+  ("7" "૭")
+  ("*" "શ્ર")
+  ("8" "૮")
+  ("(" "(")
+  ("9" "૯")
+  (")" ")")
+  ("0" "૦")
+  ("_" "ઃ")
+  ("-" "-")
+  ("+" "ઋ")
+  ((G-+) "ૠ")
+  ("=" "ૃ")
+  ((G-=) "ૄ")
+  ("Q" "ઔ")
+  ("q" "ૌ")
+  ("W" "ઐ")
+  ("w" "ૈ")
+  ("E" "આ")
+  ("e" "ા")
+  ("R" "ઈ")
+  ((G-R) "ૡ")
+  ("r" "ી")
+  ((G-r) "ૣ")
+  ("T" "ઊ")
+  ("t" "ૂ")
+  ("Y" "ભ")
+  ("y" "બ")
+  ("U" "ઙ")
+  ("u" "હ")
+  ("I" "ઘ")
+  ("i" "ગ")
+  ("O" "ધ")
+  ("o" "દ")
+  ("P" "ઝ")
+  ("p" "જ")
+  ("{" "ઢ")
+  ("[" "ડ")
+  ("}" "ઞ")
+  ("]" "઼")
+  ("|" "ઑ")
+  ("\\" "ૉ")
+  ("A" "ઓ")
+  ("a" "ો")
+  ("S" "એ")
+  ("s" "ે")
+  ("D" "અ")
+  ("d" "્")
+  ("F" "ઇ")
+  ((G-F) "ઌ")
+  ("f" "િ")
+  ((G-f) "ૢ")
+  ("G" "ઉ")
+  ("g" "ુ")
+  ("H" "ફ")
+  ("h" "પ")
+  ("j" "ર")
+  ("K" "ખ")
+  ("k" "ક")
+  ("L" "થ")
+  ("l" "ત")
+  (":" "છ")
+  (";" "ચ")
+  ("\"" "ઠ")
+  ("'" "ટ")
+  ("X" "ઁ")
+  ((G-X) "ૐ")
+  ("x" "ં")
+  ("C" "ણ")
+  ("c" "મ")
+  ("v" "ન")
+  ("b" "વ")
+  ("N" "ળ")
+  ("n" "લ")
+  ("M" "શ")
+  ("m" "સ")
+  ("<" "ષ")
+  ((G-<) "॰")
+   ("," ",")
+  ((G-,) "૱")
+  (">" "।")
+  ((G->) "ઽ")
+  ("." ".")
+  ((G-.) "॥")
+  ("/" "ય")
+  ))
+
+(state
+ (init
+    (trans)))
+

@@ -1,0 +1,211 @@
+;; as-inscript2.mim -- Assamese input method for enhanced inscript layout
+;; Copyright (c) 2011-2016, 2021 Red Hat, Inc. All Rights Reserved.
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU Lesser General Public License as published by
+;; the Free Software Foundation; either version 2.1 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with the m17n library; if not, write to the Free
+;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+;;
+;; Author: Parag Nemade <pnemade@redhat.com>
+
+(input-method as inscript2)
+
+(description "Assamese input method for enhanced inscript layout.
+
+Reference URL - http://ildc.in/Inscript-layout.html
+
+Use AltGr (Alt_R key) to type the following characters:
+
+Character    Key
+----------------------------
+ZWJ            AltGr + 1
+ZWNJ           AltGr + 2
+₹              AltGr + 4
+
+Key Summary: 
+The differences between Assamese and Bengali alphabets are:
+
+The 'ra' of Assamese is different from Bengali 'ra'. The Assamese inscript keyboard layout has included this key in the English keyboard alphabet \"j\". The letter 'wa' in Assamese can be found out in the alphabet \"b\" of the English keyboard.
+
+The following are the important key combinations for the Assamese keyboard layout:
+
+1. The alphabet 'ৰ' can be obtained by pressing the key 'j' in the English keyboard.
+2. The alphabet 'ঞ' can be obtained by pressing '}'  in the Eglish keyboard.
+3. The '।' is located in '>', i.e. 'Shift' and '.' together in the English keyboard.
+4. The alphabet 'আ' can be typed in two ways: one is to type 'অ' and then 'া' ,i.e. 'D' and then 'e'; other is by typing 'E' alone.
+5. The alphabet 'ঃ' is found in '_' key, i.e. 'Shift' and then '-' key in English keyboard.
+6. The alphabet 'ঋ' is located in '+', i.e. 'Shift' and then '=' key in English keyboard.
+7. Special characters 'জ্ঞ', 'ত্ৰ', 'ক্ষ' and 'শ্ৰ' are included respectively at '%', '^', '&' and '*'.
+8. The special combinations for 'ref' and 'rakar' are incorporated respectively at '$' and '#' .
+
+Some important combinations are as follows:
+
+1. 'tra' : 'ta' + 'halant' + 'ra'
+            (ত্ৰ)      (ত)         (্)            (ৰ)
+            'l'      'd'       'j'
+
+2. 'khya': 'ka' + 'halant' + 'Sha'
+             (ক্ষ)     (ক)      (্)                   (ষ)
+            'k'     'd'         '<' 
+
+3. 'kra':  'ka' + 'halant' + 'ra'
+            (ক্ৰ)     (ক)      (্)           (ৰ)
+            'k'     'd'        'j'
+
+4. 'akta': 'ka' + 'halant' + 'ta'
+           (ক্ত)    (ক)      (্)      (ত)
+           'k'     'd'        'l' 
+
+5. 'kla'  : 'ka' + 'halant' + 'la'
+              (ক্ল)     (ক)      (্)     (ল)
+	    'k'       'd'     'n'
+
+6. ''gya'  : 'ja' + 'halant' + 'nya'
+                (জ্ঞ)     (জ)      (্)        (ঞ)
+             'p'       'd'      '}'
+Key summary: Amitakhya Phukan <aphukan@redhat.com>
+")
+
+(title "ক")
+
+(map
+ (trans
+  ((KP_1) "১")
+  ((KP_2) "২")
+  ((KP_3) "৩")
+  ((KP_4) "৪")
+  ((KP_5) "৫")
+  ((KP_6) "৬")
+  ((KP_7) "৭")
+  ((KP_8) "৮")
+  ((KP_9) "৯")
+  ((KP_0) "০")
+  ((KP_Decimal) ".")
+  ((KP_Divide) "/")
+  ((KP_Multiply) "*")
+  ((KP_Add) "+")
+  ((KP_Subtract) "-") 
+ 
+  ("!" "অ্যা")
+  ((G-!) "৴")
+  ((G-1) "‍")
+  ("1" "১")
+  ((G-@) "৵")
+  ("2" "২")
+  ((G-2) "‌")
+  ("#" "্ৰ")
+  ((G-#) "৶")
+  ("3" "৩")
+  ("$" "ৰ্")
+  ((G-$) "৷")
+  ("4" "৪")
+  ((G-4) "₹")
+  ("%" "জ্ঞ")
+  ((G-%) "৸")
+  ("5" "৫")
+  ("^" "ত্র")
+  ((G-^) "৹")
+  ("6" "৬")
+  ("&" "ক্ষ")
+  ("7" "৭")
+  ("*" "শ্র")
+  ("8" "৮")
+  ("9" "৯")
+  ("(" "(")
+  (")" ")")
+  ("0" "০")
+  ("-" "-")
+  ("_" "ঃ")
+  ("+" "ঋ")
+  ((G-+) "ৠ")
+  ("=" "ৃ")
+  ((G-=) "ৄ")
+  ("Q" "ঔ")
+  ("q" "ৌ")
+  ("W" "ঐ")
+  ("w" "ৈ")
+  ("E" "আ")
+  ("e" "া")
+  ("R" "ঈ")
+  ((G-R) "ৡ")
+  ("r" "ী")
+  ((G-r) "ৣ")
+  ("T" "ঊ")
+  ("t" "ূ")
+  ("Y" "ভ")
+  ("y" "ব")
+  ("U" "ঙ")
+  ("u" "হ")
+  ("I" "ঘ")
+  ("i" "গ")
+  ("O" "ধ")
+  ("o" "দ")
+  ("P" "ঝ")
+  ("p" "জ")
+  ("{" "ঢ")
+  ((G-{) "ঢ়")
+  ("[" "ড")
+  ((G-[) "ড়")
+  ("}" "ঞ")
+  ("]" "়")
+  ("A" "ও")
+  ("a" "ো")
+  ("S" "এ")
+  ("s" "ে")
+  ("D" "অ")
+  ("d" "্")
+  ("F" "ই")
+  ((G-F) "ঌ")
+  ("f" "ি")
+  ((G-f) "ৢ")
+  ("G" "উ")
+  ("g" "ু")
+  ("H" "ফ")
+  ("h" "প")
+  ("j" "ৰ")
+  ("K" "খ")
+  ("k" "ক")
+  ("L" "থ")
+  ("l" "ত")
+  ((G-l) "ৎ")
+  (":" "ছ")
+  (";" "চ")
+  ("\"" "ঠ")
+  ("'" "ট")
+  ("z" "ʼ")
+  ("X" "ঁ")
+  ("x" "ং")
+  ((G-x) "৺")
+  ("C" "ণ")
+  ("c" "ম")
+  ("v" "ন")
+  ("b" "ৱ")
+  ("n" "ল")
+  ("M" "শ")
+  ("m" "স")
+  ("<" "ষ")
+  ((G-<) "৲")
+  ("," ",")
+  ((G-,) "৳")
+  (">" "।")
+  ((G->) "ঽ")
+  ("." ".")
+  ((G-.) "॥")
+  ("?" "য")
+  ("/" "য়")
+  ((G-/) "্য")
+  ))
+
+(state
+ (init
+    (trans)))

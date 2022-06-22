@@ -1,0 +1,165 @@
+;; or-inscript2.mim -- Odia input method for enhanced inscript layout
+;; Copyright (c) 2011-2016, 2021 Red Hat, Inc. All Rights Reserved.
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU Lesser General Public License as published by
+;; the Free Software Foundation; either version 2.1 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with the m17n library; if not, write to the Free
+;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+;;
+;; Author: Parag Nemade <pnemade@redhat.com>
+
+(input-method or inscript2)
+
+(description "Odia input method for enhanced inscript layout.
+
+Reference URL - http://ildc.in/Inscript-layout.html
+
+Use AltGr (Alt_R key) to type the following characters:
+
+Character    Key
+----------------------------
+ZWJ            AltGr + 1
+ZWNJ           AltGr + 2
+₹              AltGr + 4
+")
+
+(title "କ")
+
+(map
+ (trans
+  ((KP_1) "୧")
+  ((KP_2) "୨")
+  ((KP_3) "୩")
+  ((KP_4) "୪")
+  ((KP_5) "୫")
+  ((KP_6) "୬")
+  ((KP_7) "୭")
+  ((KP_8) "୮")
+  ((KP_9) "୯")
+  ((KP_0) "୦")
+  ((KP_Decimal) ".")
+  ((KP_Divide) "/")
+  ((KP_Multiply) "*")
+  ((KP_Add) "+")
+  ((KP_Subtract) "-") 
+ 
+  ("1" "୧")
+  ((G-1) "‍")
+  ("2" "୨")
+  ((G-2) "‌")
+  ("#" "୍ର")
+  ("3" "୩")
+  ("$" "ର୍")
+  ((G-$) "୲")
+  ("4" "୪")
+  ((G-4) "₹")
+  ("%" "ଜ୍ଞ")
+  ((G-%) "୳")
+  ("5" "୫")
+  ("^" "ତ୍ର")
+  ((G-^) "୴")
+  ("6" "୬")
+  ("&" "କ୍ଷ")
+  ((G-&) "୵")
+  ("7" "୭")
+  ("*" "ଶ୍ର")
+  ((G-*) "୶")
+  ("8" "୮")
+  ("(" "(")
+  ((G-\() "୷")
+  ("9" "୯")
+  (")" ")")
+  ("0" "୦")
+  ("_" "ଃ")   
+  ("-" "-") 
+  ("+" "ଋ")
+  ((G-+) "ୠ")
+  ("=" "ୃ")
+  ((G-=) "ୄ")
+  ("Q" "ଔ")
+  ("q" "ୌ")
+  ("W" "ଐ")
+  ("w" "ୈ")
+  ("E" "ଆ")
+  ("e" "ା")
+  ("R" "ଈ")
+  ((G-R) "ୡ")
+  ("r" "ୀ")
+  ((G-r) "ୣ")
+  ("T" "ଊ")
+  ("t" "ୂ")
+  ("Y" "ଭ")
+  ("y" "ବ")
+  ("U" "ଙ")
+  ("u" "ହ")
+  ("I" "ଘ")
+  ("i" "ଗ")
+  ("O" "ଧ")
+  ("o" "ଦ")
+  ("P" "ଝ")
+  ("p" "ଜ")
+  ("{" "ଢ")
+  ((G-{) "ଢ଼")
+  ("[" "ଡ")
+  ((G-[) "ଡ଼")
+  ("}" "ଞ")
+  ("]" "଼")
+  ("A" "ଓ")
+  ("a" "ୋ")
+  ("S" "ଏ")
+  ("s" "େ")
+  ("D" "ଅ")
+  ("d" "୍")
+  ("F" "ଇ")
+  ((G-F) "ଌ")
+  ("f" "ି")
+  ((G-f) "ୢ")
+  ("G" "ଉ")
+  ("g" "ୁ")
+  ("H" "ଫ")
+  ("h" "ପ")
+  ("j" "ର")
+  ("K" "ଖ")
+  ("k" "କ")
+  ("L" "ଥ")
+  ("l" "ତ")
+  (":" "ଛ")
+  (";" "ଚ")
+  ("\"" "ଠ")
+  ("'" "ଟ")
+  ("X" "ଁ")
+  ("x" "ଂ")
+  ((G-x) "୰")
+  ("C" "ଣ")
+  ("c" "ମ")
+  ("v" "ନ")
+  ("b" "ୱ")
+  ((G-b) "ଵ")
+  ("N" "ଳ")
+  ("n" "ଲ")
+  ("M" "ଶ")
+  ("m" "ସ")
+  ("<" "ଷ")
+  ("," ",")
+  (">" "।")
+  ((G->) "ଽ")
+  ("." ".")
+  ((G-.) "॥")
+  ("?" "ଯ")
+  ("/" "ୟ")
+  ))
+
+(state
+ (init
+    (trans)))
+

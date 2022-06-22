@@ -1,0 +1,125 @@
+;; mni-inscript2-mtei.mim -- Manipuri input method for enhanced inscript layout
+;; Copyright (c) 2011-2016, 2021 Red Hat, Inc. All Rights Reserved.
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU Lesser General Public License as published by
+;; the Free Software Foundation; either version 2.1 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with the m17n library; if not, write to the Free
+;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+;;
+;; Author: Parag Nemade <pnemade@redhat.com>
+
+(input-method mni inscript2-mtei)
+
+(description "Manipuri Meetei Mayek input method for enhanced inscript layout.
+
+Reference URL - http://ildc.in/Inscript-layout.html
+
+Use AltGr (Alt_R key) to type the following characters:
+
+Character    Key
+----------------------------
+ZWJ            AltGr + 1
+ZWNJ           AltGr + 2
+₹              AltGr + 4
+")
+
+(title "ꯀ")
+
+(map
+ (trans
+  ((KP_1) "১")
+  ((KP_2) "২")
+  ((KP_3) "৩")
+  ((KP_4) "৪")
+  ((KP_5) "৫")
+  ((KP_6) "৬")
+  ((KP_7) "৭")
+  ((KP_8) "৮")
+  ((KP_9) "৯")
+  ((KP_0) "০")
+  ((KP_Decimal) ".")
+  ((KP_Divide) "/")
+  ((KP_Multiply) "*")
+  ((KP_Add) "+")
+  ((KP_Subtract) "-")
+ 
+  ("1" "꯱")
+  ((G-1) "‍")
+  ("2" "꯲")
+  ((G-2) "‌")
+  ("3" "꯳")
+  ("4" "꯴")
+  ((G-4) "₹")
+  ("5" "꯵")
+  ("6" "꯶")
+  ("7" "꯷")
+  ("8" "꯸")
+  ("9" "꯹")
+  ("(" "(")
+  (")" ")")
+  ("0" "꯰")
+  ("q" "ꯧ")
+  ("w" "ꯩ")
+  ("e" "ꯥ")
+  ("Y" "ꯚ")
+  ("y" "ꯕ")
+  ("U" "ꯉ")
+  ((G-U) "ꯡ")
+  ("u" "ꯍ")
+  ("I" "ꯘ")
+  ("i" "ꯒ")
+  ("O" "ꯙ")
+  ("o" "ꯗ")
+  ("P" "ꯓ")
+  ("p" "ꯖ")
+  ("]" "꯬")
+  ("a" "ꯣ")
+  ("s" "ꯦ")
+  ("D" "ꯑ")
+  ("d" "꯭")
+  ("F" "ꯏ")
+  ((G-F) "ꯢ")
+  ("f" "ꯤ")
+  ("G" "ꯎ")
+  ("g" "ꯨ")
+  ("H" "ꯐ")
+  ("h" "ꯄ")
+  ((G-h) "ꯞ")
+  ("j" "ꯔ")
+  ("K" "ꯈ")
+  ("k" "ꯀ")
+  ((G-k) "ꯛ")
+  ("L" "ꯊ")
+  ("l" "ꯇ")
+  ((G-l) "ꯠ")
+  (";" "ꯆ")
+  ("x" "ꯪ")
+  ("c" "ꯃ")
+  ((G-c) "ꯝ")
+  ("v" "ꯅ")
+  ((G-v) "ꯟ")
+  ("b" "ꯋ")
+  ("n" "ꯂ")
+  ((G-n) "ꯜ")
+  ("m" "ꯁ")
+  ("<" "<")
+  ("," ",")
+  (">" "꯫")
+  ("." ".")
+  ("/" "ꯌ")
+  ))
+
+(state
+ (init
+    (trans)))
+

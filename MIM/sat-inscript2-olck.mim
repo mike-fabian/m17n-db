@@ -1,0 +1,95 @@
+;; sat-inscript2-olck.mim -- Santali Ol Chicky input method for enhanced inscript layout
+;; Copyright (c) 2011-2016, 2021 Red Hat, Inc. All Rights Reserved.
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU Lesser General Public License as published by
+;; the Free Software Foundation; either version 2.1 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with the m17n library; if not, write to the Free
+;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+;;
+;; Author: Parag Nemade <pnemade@redhat.com>
+
+(input-method sat inscript2-olck)
+
+(description "Santali Ol Chicky input method for enhanced inscript layout.
+
+Reference URL - http://ildc.in/Inscript-layout.html
+
+Use AltGr (Alt_R key) to type the following characters:
+
+Character    Key
+----------------------------
+₹              AltGr + 4
+")
+
+(title "ᱚ")
+
+(map
+ (trans
+  ("~" "ᱻ")
+  ("1" "᱑")
+  ("G-1" "‍")
+  ("2" "᱒")
+  ("G-2" "‌")
+  ("3" "᱓")
+  ("4" "᱔")
+  ((G-4) "₹")
+  ("5" "᱕")
+  ("6" "᱖")
+  ("7" "᱗")
+  ("8" "᱘")
+  ("9" "᱙")
+  ("0" "᱐")
+  ("_" "ᱼ")
+  ("e" "ᱟ")
+  ("y" "ᱵ")
+  ("U" "ᱝ")
+  ("u" "ᱦ")
+  ("i" "ᱜ")
+  ("o" "ᱫ")
+  ("p" "ᱡ")
+  ("{" "ᱲ")
+  ("[" "ᱰ")
+  ("}" "ᱧ")
+  ("]" "ᱹ")
+  ("a" "ᱳ")
+  ("s" "ᱮ")
+  ("d" "ᱚ")
+  ("f" "ᱤ")
+  ("g" "ᱩ")
+  ("h" "ᱯ")
+  ("j" "ᱨ")
+  ("k" "ᱠ")
+  ("l" "ᱛ")
+  (":" "ᱺ")
+  (";" "ᱪ")
+  ("'" "ᱴ")
+  ("Z" "ᱽ")
+  ("z" "ᱷ")
+  ("x" "ᱸ")
+  ("C" "ᱬ")
+  ("c" "ᱢ")
+  ("v" "ᱱ")
+  ("B" "ᱶ")
+  ("b" "ᱣ")
+  ("n" "ᱞ")
+  ("m" "ᱥ")
+  ("<" "᱿")
+  ("," ",")
+  (">" "᱾")
+  ("." ".")
+  ("/" "ᱭ")
+ ))
+
+(state
+  (init
+    (trans)))

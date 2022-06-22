@@ -1,0 +1,172 @@
+;; pa-inscript2-guru.mim -- Punjabi input method for enhanced inscript layout
+;; Copyright (c) 2011-2016, 2021 Red Hat, Inc. All Rights Reserved.
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU Lesser General Public License as published by
+;; the Free Software Foundation; either version 2.1 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with the m17n library; if not, write to the Free
+;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+;;
+;; Author: Parag Nemade <pnemade@redhat.com>
+
+(input-method pa inscript2-guru)
+
+(description "Punjabi input method for enhanced inscript layout.
+
+Reference URL - http://ildc.in/Inscript-layout.html
+
+Use AltGr (Alt_R key) to type the following characters:
+
+Character    Key
+----------------------------
+ZWJ            AltGr + 1
+ZWNJ           AltGr + 2
+₹              AltGr + 4
+
+Key summary:
+
+Some complex Characters
+d=੍  (halant to type Parian character like Ra/Ha)
+
+The  conjuncts called HALANT letters can be used using the following keys:
+(i) Consonant + RA 
+ie, key 'K' + key 'd' + key 'j' 
+
+(ii) Consonant + HA
+ie, key 'K' + key 'd' + key 'u' 
+
+(iii) Consonant + VA
+ie, key 'K' + key 'd' + key 'b'   
+
+(iv) Consonant + YA
+ie, key 'K' + key 'd' + key '/'
+
+Key summary: AP Singh Brar <apbrar@gmail.com>, Jaswinder Singh <jsingh@redhat.com>
+")
+
+(title "ਕ")
+
+(map
+ (trans
+  ((KP_1) "੧")
+  ((KP_2) "੨")
+  ((KP_3) "੩")
+  ((KP_4) "੪")
+  ((KP_5) "੫")
+  ((KP_6) "੬")
+  ((KP_7) "੭")
+  ((KP_8) "੮")
+  ((KP_9) "੯")
+  ((KP_0) "੦")
+  ((KP_Decimal) ".")
+  ((KP_Divide) "/")
+  ((KP_Multiply) "*")
+  ((KP_Add) "+")
+  ((KP_Subtract) "-") 
+ 
+  ("1" "੧")
+  ((G-1) "‍")
+  ("2" "੨")
+  ((G-2) "‌")
+  ("3" "੩")
+  ("$" "ੱ")
+  ("4" "੪")
+  ((G-4) "₹")
+  ("5" "੫")
+  ("6" "੬")
+  ("7" "੭")
+  ("8" "੮")
+  ("9" "੯")
+  ("0" "੦")
+  ("(" "(")
+  (")" ")")
+  ("_" "ਃ")
+  ("-" "-")
+  ("Q" "ਔ")
+  ("q" "ੌ")
+  ("W" "ਐ")
+  ("w" "ੈ")
+  ("E" "ਆ")
+  ("e" "ਾ")
+  ("R" "ਈ")
+  ("r" "ੀ")
+  ("T" "ਊ")
+  ("t" "ੂ")
+  ("Y" "ਭ")
+  ("y" "ਬ")
+  ("U" "ਙ")
+  ("u" "ਹ")
+  ("I" "ਘ")
+  ("i" "ਗ")
+  ((G-i) "ਗ਼")
+  ("O" "ਧ")
+  ("o" "ਦ")
+  ("P" "ਝ")
+  ("p" "ਜ")
+  ((G-p) "ਜ਼")
+  ("{" "ਢ")
+  ("[" "ਡ")
+  ((G-[) "ੜ")
+  ("}" "ਞ")
+  ("]" "਼")
+  ("A" "ਓ")
+  ("a" "ੋ")
+  ("S" "ਏ")
+  ("s" "ੇ")
+  ("D" "ਅ")
+  ((G-D) "☬")
+  ("d" "੍")
+  ((G-d) "ੑ")
+  ("F" "ਇ")
+  ((G-F) "ੲ")
+  ("f" "ਿ")
+  ("G" "ਉ")
+  ((G-\G) "ੳ")
+  ("g" "ੁ")
+  ("H" "ਫ")
+  ((G-H) "ਫ਼")
+  ("h" "ਪ")
+  ("j" "ਰ")
+  ("K" "ਖ")
+  ((G-K) "ਖ਼")
+  ("k" "ਕ")
+  ("L" "ਥ")
+  ("l" "ਤ")
+  (":" "ਛ")
+  (";" "ਚ")
+  ("\"" "ਠ")
+  ("'" "ਟ")
+  ("X" "ਂ")
+  ((G-X) "ੴ")
+  ("x" "ੰ")
+  ((G-x) "ਁ")
+  ("C" "ਣ")
+  ("c" "ਮ")
+  ("v" "ਨ")
+  ("b" "ਵ")
+  ((G-N) "ਲ਼")
+  ("n" "ਲ")
+  ("M" "ਸ਼")
+  ("m" "ਸ")
+  ("," ",")
+  (">" "।")
+  ("." ".")
+  ((G-.) "॥")
+  ("/" "ਯ")
+  ((G-/) "ੵ")
+  ("#" "੍ਰ")
+  ))
+
+(state
+ (init
+    (trans)))
+

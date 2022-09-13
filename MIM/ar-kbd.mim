@@ -24,22 +24,47 @@
 (input-method ar kbd)
 
 (description "Input Method for Arabic simulating Arabic keyboard (MS Windows).
+
+The 0-9 keys produce the digits 0-9.
+
+Eastern Arabic digits (also called Arabic-Indic digits) can be typed using AltGr:
+
+  AltGr-1 -> ١
+  AltGr-2 -> ٢
+  AltGr-3 -> ٣
+  AltGr-4 -> ٤
+  AltGr-5 -> ٥
+  AltGr-6 -> ٦
+  AltGr-7 -> ٧
+  AltGr-8 -> ٨
+  AltGr-9 -> ٩
+  AltGr-0 -> ٠
 ")
 
 (title "ض")
 
 (map
  (generic
-  ("1" "١")
-  ("2" "٢")
-  ("3" "٣")
-  ("4" "٤")
-  ("5" "٥")
-  ("6" "٦")
-  ("7" "٧")
-  ("8" "٨")
-  ("9" "٩")
-  ("0" "٠")
+  ("1" "1")
+  ("2" "2")
+  ("3" "3")
+  ("4" "4")
+  ("5" "5")
+  ("6" "6")
+  ("7" "7")
+  ("8" "8")
+  ("9" "9")
+  ("0" "0")
+  ((G-1) "١")
+  ((G-2) "٢")
+  ((G-3) "٣")
+  ((G-4) "٤")
+  ((G-5) "٥")
+  ((G-6) "٦")
+  ((G-7) "٧")
+  ((G-8) "٨")
+  ((G-9) "٩")
+  ((G-0) "٠")
   ("`" "ذ")
 
   ("q" "ض")

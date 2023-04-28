@@ -1,3 +1,9 @@
+2023-04-28  Mike FABIAN  <mfabian@redhat.com>
+
+	* MIM/ar-kbd.mim (map:geneirc): Change mappings of Arabic-Indic digits.
+
+	* MIM/unicode.mim (state:uni-hex): Make it handle more than 4 digits.
+
 2022-06-18  Parag Nemade  <pnemade@redhat.com>
 
 	* MIM/as-inscript2.mim, MIM/bn-inscript2.mim,

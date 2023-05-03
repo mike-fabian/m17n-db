@@ -31,7 +31,7 @@ pressed.  For instance,
    \"/<3\" -> hearts (e.g. ♥♡)
    \"/*\"  -> flowers and stars (e.g. 🌹★)
    \"&&\" -> spiritual (e.g. ☸☯)   \"/xx\" -> checks (e.g. ✔✘)
-   \"$\" -> currency (€£)          \"@\" -> legal/text signs (e.g "©¶")
+   \"$\" -> currency (€£)          \"@\" -> legal/text signs (e.g ©¶)
 
 The user can select the appropriate symbol using ↑,↓,→,←
 (or C-p, C-n, C-f, C-b) keys and/or the digits.

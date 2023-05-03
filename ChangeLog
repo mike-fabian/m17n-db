@@ -1,6 +1,10 @@
+2023-05-03  Mike FABIAN  <mfabian@redhat.com>
+
+	* MIM/lsymbol.mim: (description) Remove unescaped double quotes
+
 2023-04-28  Mike FABIAN  <mfabian@redhat.com>
 
-	* MIM/ar-kbd.mim (map:geneirc): Change mappings of Arabic-Indic digits.
+	* MIM/ar-kbd.mim (map:generic): Change mappings of Arabic-Indic digits.
 
 	* MIM/unicode.mim (state:uni-hex): Make it handle more than 4 digits.
 

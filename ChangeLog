@@ -1,6 +1,7 @@
 2023-05-03  Mike FABIAN  <mfabian@redhat.com>
 
 	* MIM/lsymbol.mim: (description) Remove unescaped double quotes
+	* configure.ac: fix a typo in a help text
 
 2023-04-28  Mike FABIAN  <mfabian@redhat.com>
 

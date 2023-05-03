@@ -91,7 +91,7 @@ AC_OUTPUT
 # Print configuration message.
 if test "x$CHARMAPS" != "x"; then
   echo "------------------------------------------------------------"
-  echo "Charset maps are generated from files under thie directory:"
+  echo "Charset maps are generated from files under the directory:"
   echo "  $CHARMAPS/"
   echo "------------------------------------------------------------"
 else

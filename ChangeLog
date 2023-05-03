@@ -3,6 +3,7 @@
 	* MIM/lsymbol.mim: (description) Remove unescaped double quotes
 	* configure.ac: fix a typo in a help text
 	* po/de.po: Update and complete the German translation
+	* MIM/ml-mozhi.mim (consonant, independent): fix spurious ZWNJ being added (bug #59681)
 
 2023-04-28  Mike FABIAN  <mfabian@redhat.com>
 

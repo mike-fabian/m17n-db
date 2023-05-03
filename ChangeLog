@@ -1,3 +1,9 @@
+2023-05-05  Mike FABIAN  <mfabian@redhat.com>
+
+	Version 1.8.1 released.
+
+	* configure.ac: Version changed to 1.8.1
+
 2023-05-04  Mike FABIAN  <mfabian@redhat.com>
 
 	* configure.ac: Update autoconf macros to avoid deprecation warnings

@@ -4,7 +4,45 @@ Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013
   National Institute of Advanced Industrial Science and Technology (AIST)
   Registration Number H15PRO112
 See the end for copying conditions.
-Copyright (C) 2015, 2016, 2017, 2018 Kenichi Handa <handa@gnu.org>
+Copyright (C) 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023 Kenichi Handa <handa@gnu.org>
+
+
+* Changes in the m17n database 1.8.1
+
+** New input methods are added.
+
+pa-remington.mim: Punjabi input method for remington layout
+ta-remington.mim: Tamil input method for Remington typewriter layout
+as-inscript2.mim: Input method for enhanced inscript layout
+bn-inscript2.mim: Input method for enhanced inscript layout
+brx-inscript2-deva.mim: Input method for enhanced inscript layout
+doi-inscript2-deva.mim: Input method for enhanced inscript layout
+gu-inscript2.mim: Input method for enhanced inscript layout
+hi-inscript2.mim: Input method for enhanced inscript layout
+kn-inscript2.mim: Input method for enhanced inscript layout
+kok-inscript2-deva.mim: Input method for enhanced inscript layout
+ks-inscript2-deva.mim: Input method for enhanced inscript layout
+mai-inscript2.mim: Input method for enhanced inscript layout
+ml-inscript2.mim: Input method for enhanced inscript layout
+mni-inscript2-beng.mim: Input method for enhanced inscript layout
+mni-inscript2-mtei.mim: Input method for enhanced inscript layout
+mr-inscript2.mim: Input method for enhanced inscript layout
+ne-inscript2-deva.mim: Input method for enhanced inscript layout
+or-inscript2.mim: Input method for enhanced inscript layout
+pa-inscript2-guru.mim: Input method for enhanced inscript layout
+sa-inscript2.mim: Input method for enhanced inscript layout
+sat-inscript2-deva.mim: Input method for enhanced inscript layout
+sat-inscript2-olck.mim: Input method for enhanced inscript layout
+sd-inscript2-deva.mim: Input method for enhanced inscript layout
+ta-inscript2.mim: Input method for enhanced inscript layout
+te-inscript2.mim: Input method for enhanced inscript layout
+
+** Changes in input methods.
+
+ml-swanalekha.mim: Adjusted for the latest Unicode
+unicode.mim: allow input of characters above the BMP
+ar-kbd.mim: Use digits 0-9 on the 0-9 keys
+ml-mozhi.mim: fix spurious ZWNJ being added (Resolves: https://savannah.nongnu.org/bugs/index.php?59681)
 
 
 * Changes in the m17n database 1.8.0
@@ -282,7 +320,7 @@ Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013
   2014
   National Institute of Advanced Industrial Science and Technology (AIST)
   Registration Number H15PRO112
-Copyright (C) 2015, 2016, 2017, 2018 Kenichi Handa <handa@gnu.org>
+Copyright (C) 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023 Kenichi Handa <handa@gnu.org>
 
 This file is part of the m17n database; a sub-part of the m17n
 library.

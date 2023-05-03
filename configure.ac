@@ -2,7 +2,7 @@
 #   2012, 2013, 2014
 #   National Institute of Advanced Industrial Science and Technology (AIST)
 #   Registration Number H15PRO112
-# Copyright (C) 2015, 2016, 2017, 2018 Kenichi Handa <handa@gnu.org>
+# Copyright (C) 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023 Kenichi Handa <handa@gnu.org>
 
 # This file is part of the m17n database; a sub-part of the m17n
 # library.
@@ -23,7 +23,7 @@
 # Boston, MA 02110-1301, USA.
 
 # Process this file with autoconf to produce a configure script.
-AC_INIT([m17n-db],[1.8.0],[bugs-m17n-lib@m17n.org])
+AC_INIT([m17n-db],[1.8.1],[bugs-m17n-lib@m17n.org])
 AM_INIT_AUTOMAKE
 AM_GNU_GETTEXT([external])
 

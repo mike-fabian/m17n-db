@@ -1,3 +1,16 @@
+2023-05-04  Mike FABIAN  <mfabian@redhat.com>
+
+	* configure.ac: Update autoconf macros to avoid deprecation warnings
+	* m4/codeset.m4: Update autoconf macros to avoid deprecation warnings
+	* m4/gettext.m4: Update autoconf macros to avoid deprecation warnings
+	* m4/iconv.m4: Update autoconf macros to avoid deprecation warnings
+	* m4/lcmessage.m4: Update autoconf macros to avoid deprecation warnings
+	* m4/lib-link.m4: Update autoconf macros to avoid deprecation warnings
+	* m4/lock.m4: Update autoconf macros to avoid deprecation warnings
+	* m4/longlong.m4: Update autoconf macros to avoid deprecation warnings
+	* m4/po.m4: Update autoconf macros to avoid deprecation warnings
+	* m4/ulonglong.m4: Update autoconf macros to avoid deprecation warnings
+
 2023-05-03  Mike FABIAN  <mfabian@redhat.com>
 
 	* MIM/lsymbol.mim: (description) Remove unescaped double quotes

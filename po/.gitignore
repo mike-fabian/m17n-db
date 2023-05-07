@@ -3,3 +3,6 @@ POTFILES.in
 *.gmo
 remove-potcdate.sed
 stamp-po
+Rules-quot
+Makevars.template
+Makefile.in.in

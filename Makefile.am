@@ -32,7 +32,7 @@ pkgdata_DATA = \
 	@FLT@ \
 	mdb.dir
 
-EXTRA_DIST = config.rpath mkinstalldirs m4/ChangeLog bootstrap.sh \
+EXTRA_DIST = config.rpath bootstrap.sh \
 	mdb.dir \
 	${MISC_TABLE} \
 	BLOCK.tab \

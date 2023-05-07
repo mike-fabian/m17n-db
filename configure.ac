@@ -25,7 +25,12 @@
 # Process this file with autoconf to produce a configure script.
 AC_INIT([m17n-db],[1.8.1],[bugs-m17n-lib@m17n.org])
 AM_INIT_AUTOMAKE
-AM_GNU_GETTEXT([external])
+AM_GNU_GETTEXT
+AM_GNU_GETTEXT_VERSION([0.17])
+GETTEXTDIR="$datadir/locale"
+AC_SUBST(GETTEXTDIR)
+
+LT_INIT
 
 # Checks for programs.
 AC_PROG_INSTALL

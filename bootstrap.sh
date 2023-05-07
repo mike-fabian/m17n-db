@@ -21,15 +21,14 @@
 # Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 # Boston, MA 02110-1301, USA.
 
-echo "Running aclocal..."
-aclocal -I m4
-echo "Running automake..."
-automake -a
-echo "Running autoconf..."
-autoconf
+echo "Cleaning up old files..."
+rm -rf INSTALL aclocal.m4 autom4te.cache config.guess config.rpath config.sub install-sh libtool ltmain.sh missing mkinstalldirs intl/[D-Za-z]* m4/[a-z]*
+
+echo "Running autoreconf -v -f -i"
+autoreconf -v -f -i
 echo "Producing po/POTFILES.in"
 ls MIM/*.mim > po/POTFILES.in
-echo "The remaining steps to install this packge are:"
+echo "The remaining steps to install this package are:"
 echo "  % ./configure"
 echo "  % make"
 echo "  % make install"

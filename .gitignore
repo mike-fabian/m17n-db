@@ -29,5 +29,9 @@ NAME.tab
 SCRIPT.tab
 SOFT-DOTTED.tab
 m17n-db.pc
-po/Makevars.template
+libtool
+ltmain.sh
+ABOUT-NLS
+intl/*
+m4/*
 *~

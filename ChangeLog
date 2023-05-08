@@ -1,5 +1,9 @@
 2023-05-08  Mike FABIAN  <mfabian@redhat.com>
 
+	Version 1.8.2 released.
+
+	* configure.ad: Version changed to 1.8.2
+	* NEWS: Update for the 1.8.2 release
 	* MIM/si-sayura.mim: New input method
 	* icons/si-sayura.png: New icon file
 	* MIM/mr-gamabhana.mim: New input method

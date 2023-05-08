@@ -1,3 +1,8 @@
+2023-05-08  Mike FABIAN  <mfabian@redhat.com>
+
+	* MIM/si-sayura.mim: New input method
+	* icons/si-sayura.png: New icon file
+
 2023-05-07  Mike FABIAN  <mfabian@redhat.com>
 
 	* bootstrap.sh: use "autoreconf -v -f -i" and make it more similar

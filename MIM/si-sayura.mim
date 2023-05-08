@@ -1,0 +1,462 @@
+;; si-sayura.mim -- Sinhala input method with sayura method
+;; Copyright (C) 2004, 2019
+;;   National Institute of Advanced Industrial Science and Technology (AIST)
+;;   Registration Number H15PRO112
+;; Copyright (C) 2019  Kenichi Handa <handa@m17n.org>
+;; Copyright (C) 2019  Mike Fabian <maiku.fabian@gmail.com>
+;; Copyright (C) 2008  Pravin Satpute <pravin.d.s@gmail.com>
+;; Copyright (C) 2004  Anuradha Ratnaweera <anuradha@taprobane.org>
+
+;; This file is part of the m17n database; a sub-part of the m17n
+;; library.
+
+;; The m17n library is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU Lesser General Public License
+;; as published by the Free Software Foundation; either version 2.1 of
+;; the License, or (at your option) any later version.
+
+;; The m17n library is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with the m17n library; if not, write to the Free
+;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+(input-method si sayura)
+
+(description "Sinhala input method using the sayura transliteration system.
+
+Also, see: https://www.sayura.net/im/ .")
+
+(title "අ")
+
+(macro
+ (handle-vowel
+  (cond
+   ((! (< 0 @-1)) ;; if there is no previous character
+    (insert SINGLE0))
+   (PREVIOUS-CONSONANT
+    (insert SINGLE1))
+   ((= @-1 SINGLE0)
+    (delete @-1)
+    (insert DOUBLE0))
+   ((= @-1 SINGLE1)
+    (delete @-1)
+    (insert DOUBLE1))
+   ((& (| (= @-1 0x0D86) (= @-1 0x0D87))
+       (= KEY ?a))
+    (delete @-1)
+    (set X (+ SINGLE0 1)) (insert X))
+   ((& (| (= @-1 SINGLE0) (= @-1 DOUBLE0))
+       (| (= KEY ?e)
+          (= KEY ?E)
+          (= KEY ?i)
+          (= KEY ?o)
+          (= KEY ?u)
+          (= KEY ?U)
+          (= KEY ?A)
+          (= KEY ?q)))
+    (delete @-1)
+    (insert DOUBLE0))
+   (1
+    (insert SINGLE0)))
+  (set CONSONANT 0)
+  (set MAHAPRANA 0)
+  (set SAGNGNAKA 0)
+  (set PREVIOUS-CONSONANT 0)
+  (set PREVIOUS-MAHAPRANA 0)
+  (set PREVIOUS-SAGNGNAKA 0))
+ (handle-consonant
+  (cond
+   ((&
+     (= KEY ?w)
+     (< 0 PREVIOUS-CONSONANT))
+    (insert 0x0DCA))
+   ((&
+     (= KEY ?W)
+     (< 0 PREVIOUS-CONSONANT))
+    (insert 0x0DCA)
+    ;; FIXME: commit preedit here?
+    (insert 0x200D))
+   ((&
+     (= KEY ?H)
+     (< 0 PREVIOUS-CONSONANT)
+     (< 0 PREVIOUS-MAHAPRANA))
+    (delete @-1)
+    (insert  PREVIOUS-MAHAPRANA))
+   ((&
+     (= KEY ?G)
+     (< 0 PREVIOUS-CONSONANT)
+     (< 0 PREVIOUS-SAGNGNAKA))
+    (delete @-1)
+    (insert  PREVIOUS-SAGNGNAKA))
+   ((&
+     (= KEY ?R)
+     (< 0 PREVIOUS-CONSONANT))
+    (insert 0x0DCA)
+    (insert 0x200D)
+    ;; FIXME: commit preedit here?
+    (insert 0x0DBB))
+   ((&
+     (= KEY ?Y)
+     (< 0 PREVIOUS-CONSONANT))
+    (insert 0x0DCA)
+    (insert 0x200D)
+    ;; FIXME: commit preedit here?
+    (insert 0x0DBA))
+   (1 
+    (insert CONSONANT)))
+  (set PREVIOUS-CONSONANT CONSONANT)
+  (set PREVIOUS-MAHAPRANA MAHAPRANA)
+  (set PREVIOUS-SAGNGNAKA SAGNGNAKA)
+  (set SINGLE0 0)
+  (set DOUBLE0 0)
+  (set SINGLE1 0)
+  (set DOUBLE1 0))
+ )
+  
+(map
+ (vowels
+  ("a"
+   (set KEY ?a)
+   (set SINGLE0 0x0D85)
+   (set DOUBLE0 0x0D86)
+   (set SINGLE1 0x0DCF)
+   (set DOUBLE1 0x0DCF)
+   (handle-vowel))
+  ("A"
+   (set KEY ?A)
+   (set SINGLE0 0x0D87)
+   (set DOUBLE0 0x0D88)
+   (set SINGLE1 0x0DD0)
+   (set DOUBLE1 0x0DD1)
+   (handle-vowel))
+  ("q"
+   (set KEY ?q)
+   (set SINGLE0 0x0D87)
+   (set DOUBLE0 0x0D88)
+   (set SINGLE1 0x0DD0)
+   (set DOUBLE1 0x0DD1)
+   (handle-vowel))
+  ("e"
+   (set KEY ?e)
+   (set SINGLE0 0x0D91)
+   (set DOUBLE0 0x0D92)
+   (set SINGLE1 0x0DD9)
+   (set DOUBLE1 0x0DDA)
+   (handle-vowel))
+  ("E"
+   (set KEY ?E)
+   (set SINGLE0 0x0D91)
+   (set DOUBLE0 0x0D92)
+   (set SINGLE1 0x0DD9)
+   (set DOUBLE1 0x0DDA)
+   (handle-vowel))
+  ("i"
+   (set KEY ?i)
+   (set SINGLE0 0x0D89)
+   (set DOUBLE0 0x0D8A)
+   (set SINGLE1 0x0DD2)
+   (set DOUBLE1 0x0DD3)
+   (handle-vowel))
+  ("I"
+   (set KEY ?I)
+   (set SINGLE0 0x0D93)
+   (set DOUBLE0 0x0000)
+   (set SINGLE1 0x0DDB)
+   (set DOUBLE1 0x0DDB)
+   (handle-vowel))
+  ("o"
+   (set KEY ?o)
+   (set SINGLE0 0x0D94)
+   (set DOUBLE0 0x0D95)
+   (set SINGLE1 0x0DDC)
+   (set DOUBLE1 0x0DDD)
+   (handle-vowel))
+  ("O"
+   (set KEY ?O)
+   (set SINGLE0 0x0D96)
+   (set DOUBLE0 0x0000)
+   (set SINGLE1 0x0DDE)
+   (set DOUBLE1 0x0DDF)
+   (handle-vowel))
+  ("u"
+   (set KEY ?u)
+   (set SINGLE0 0x0D8B)
+   (set DOUBLE0 0x0D8C)
+   (set SINGLE1 0x0DD4)
+   (set DOUBLE1 0x0DD6)
+   (handle-vowel))
+  ("U"
+   (set KEY ?U)
+   (set SINGLE0 0x0D8D)
+   (set DOUBLE0 0x0D8E)
+   (set SINGLE1 0x0DD8)
+   (set DOUBLE1 0x0DF2)
+   (handle-vowel))
+;; FIXME:
+;;  ("Z"
+;;   (set SINGLE0 0x0D8F)
+;;   (set DOUBLE0 0x0D90)
+;;   (set SINGLE1 0x0D8F)
+;;   (set DOUBLE1 0x0D90)
+;;   (handle-vowel))
+  )
+ (consonants
+  ("z"
+   (set KEY ?z)
+   (set CONSONANT 0x0DA4)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("Z"
+   (set KEY ?Z)
+   (set CONSONANT 0x0DA5)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("w"
+   (set KEY ?w)
+   (set CONSONANT 0x0DC0)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("W"
+   (set KEY ?W)
+   (set CONSONANT 0x200C)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("r"
+   (set KEY ?r)
+   (set CONSONANT 0x0DBB)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("R"
+   (set KEY ?R)
+   (set CONSONANT 0x0DBB)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("t"
+   (set KEY ?t)
+   (set CONSONANT 0x0DAD)
+   (set MAHAPRANA 0x0DAE)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("T"
+   (set KEY ?T)
+   (set CONSONANT 0x0DA7)
+   (set MAHAPRANA 0x0DA8)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("y"
+   (set KEY ?y)
+   (set CONSONANT 0x0DBA)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("Y"
+   (set KEY ?Y)
+   (set CONSONANT 0x0DBA)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("p"
+   (set KEY ?p)
+   (set CONSONANT 0x0DB4)
+   (set MAHAPRANA 0x0DB5)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("P"
+   (set KEY ?P)
+   (set CONSONANT 0x0DB5)
+   (set MAHAPRANA 0x0DB5)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("s"
+   (set KEY ?s)
+   (set CONSONANT 0x0DC3)
+   (set MAHAPRANA 0x0DC2)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("S"
+   (set KEY ?S)
+   (set CONSONANT 0x0DC1)
+   (set MAHAPRANA 0x0DC2)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("d"
+   (set KEY ?d)
+   (set CONSONANT 0x0DAF)
+   (set MAHAPRANA 0x0DB0)
+   (set SAGNGNAKA 0x0DB3)
+   (handle-consonant))
+  ("D"
+   (set KEY ?D)
+   (set CONSONANT 0x0DA9)
+   (set MAHAPRANA 0x0DAA)
+   (set SAGNGNAKA 0x0DAC)
+   (handle-consonant))
+  ("f"
+   (set KEY ?f)
+   (set CONSONANT 0x0DC6)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("F"
+   (set KEY ?F)
+   (set CONSONANT 0x0DC6)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("g"
+   (set KEY ?G)
+   (set CONSONANT 0x0D9C)
+   (set MAHAPRANA 0x0D9D)
+   (set SAGNGNAKA 0x0D9F)
+   (handle-consonant))
+  ("G"
+   (set KEY ?G)
+   (set CONSONANT 0x0D9F)
+   (set MAHAPRANA 0x0D9D)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("h"
+   (set KEY ?h)
+   (set CONSONANT 0x0DC4)
+   (set MAHAPRANA 0x0D83)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("H"
+   (set KEY ?H)
+   (set CONSONANT 0x0DC4)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("j"
+   (set KEY ?j)
+   (set CONSONANT 0x0DA2)
+   (set MAHAPRANA 0x0DA3)
+   (set SAGNGNAKA 0x0DA6)
+   (handle-consonant))
+  ("J"
+   (set KEY ?J)
+   (set CONSONANT 0x0DA3)
+   (set MAHAPRANA 0x0DA3)
+   (set SAGNGNAKA 0x0DA6)
+   (handle-consonant))
+  ("k"
+   (set KEY ?k)
+   (set CONSONANT 0x0D9A)
+   (set MAHAPRANA 0x0D9B)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("K"
+   (set KEY ?K)
+   (set CONSONANT 0x0D9B)
+   (set MAHAPRANA 0x0D9B)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("l"
+   (set KEY ?l)
+   (set CONSONANT 0x0DBD)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("L"
+   (set KEY ?L)
+   (set CONSONANT 0x0DC5)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("x"
+   (set KEY ?x)
+   (set CONSONANT 0x0D82)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("X"
+   (set KEY ?X)
+   (set CONSONANT 0x0D9E)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("c"
+   (set KEY ?c)
+   (set CONSONANT 0x0DA0)
+   (set MAHAPRANA 0x0DA1)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("C"
+   (set KEY ?C)
+   (set CONSONANT 0x0DA1)
+   (set MAHAPRANA 0x0DA1)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("v"
+   (set KEY ?v)
+   (set CONSONANT 0x0DC0)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("V"
+   (set KEY ?V)
+   (set CONSONANT 0x0DC0)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("b"
+   (set KEY ?b)
+   (set CONSONANT 0x0DB6)
+   (set MAHAPRANA 0x0DB7)
+   (set SAGNGNAKA 0x0DB9)
+   (handle-consonant))
+  ("B"
+   (set KEY ?B)
+   (set CONSONANT 0x0DB7)
+   (set MAHAPRANA 0x0DB7)
+   (set SAGNGNAKA 0x0DB9)
+   (handle-consonant))
+  ("n"
+   (set KEY ?n)
+   (set CONSONANT 0x0DB1)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0D82)
+   (handle-consonant))
+  ("N"
+   (set KEY ?N)
+   (set CONSONANT 0x0DAB)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0D9E)
+   (handle-consonant))
+  ("m"
+   (set KEY ?m)
+   (set CONSONANT 0x0DB8)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ("M"
+   (set KEY ?M)
+   (set CONSONANT 0x0DB9)
+   (set MAHAPRANA 0x0000)
+   (set SAGNGNAKA 0x0000)
+   (handle-consonant))
+  ))
+
+(state
+ (init
+  (vowels (shift second))
+  (consonants (shift second)))
+ (second
+  (vowels)
+  (consonants)))
+
+;; Local Variables:
+;; coding: utf-8
+;; mode: emacs-lisp
+;; End:

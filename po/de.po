@@ -7,14 +7,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: m17n-db 1.6.1-1\n"
 "Report-Msgid-Bugs-To: bugs-m17n-lib@m17n.org\n"
-"POT-Creation-Date: 2023-05-03 14:07+0200\n"
-"PO-Revision-Date: 2023-05-03 15:52+0200\n"
+"POT-Creation-Date: 2023-05-08 16:49+0200\n"
+"PO-Revision-Date: 2023-05-08 16:53+0200\n"
 "Last-Translator: Chris Leick <c.leick@vollbio.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: MIM/bn-national-jatiya.mim:67
+msgid ""
+"If this variable is 1 (the default), automatic vowel forming is used.\n"
+"For example, a dependent vowel like া is automatically converted to\n"
+"the independent form আ if it is not typed after a consonant."
+msgstr ""
+"Wenn diese Variable den Wert 1 hat (Standardwert), wird automatische Vokalbildung verwendet.\n"
+"Beispielsweise wird ein abhängiger Vokal wie া automatisch in die unabhängige\n"
+"Form আ umgewandelt, wenn er nicht nach einem Konsonanten eingegeben wird."
 
 # FIXME blank missing before (U+0F76
 #: MIM/bo-ewts.mim:36
@@ -447,7 +457,7 @@ msgstr ""
 "»m17n«-Bibliothek reservierten Spezialbefehle und sollte nicht in einer\n"
 "Belegung einer Eingabemethode benutzt werden."
 
-#: MIM/hi-itrans.mim:53
+#: MIM/hi-itrans.mim:53 MIM/mr-gamabhana.mim:49
 msgid ""
 "If this variable is 1 (the default), the last Halant in a syllable\n"
 "is removed if it is followed by non Devanagari letter.  For instance,\n"
@@ -487,7 +497,8 @@ msgid ""
 msgstr ""
 "Eingabemethode für Symbole mit relativ langen Tastenkombinationen.\n"
 "Es bietet Zugriff auf eine breite Kategorie von Symbolen, indem die Technik\n"
-"verwendet wird, die basierend auf den Starter-Tasten mehrere Alternativen anzeigt.\n"
+"verwendet wird, die basierend auf den Starter-Tasten mehrere Alternativen "
+"anzeigt.\n"
 "Zum Beispiel:\n"
 "   \"/->\" -> Pfeile (z.B. →↑)\n"
 "   \"/||\" -> Handgesten (z.B. 👍👎)\n"
@@ -507,8 +518,10 @@ msgstr ""
 "   \"//\" -> \"/\"\n"
 "   \"/...\" -> \"…\"\n"
 "\n"
-"Diese Eingabemethode ist standardmäßig als eine der Fallback-Eingabemethoden registriert.\n"
-"Weitere Details finden Sie auf der Dokumentationsseite von m17n-Eingabemethoden.\n"
+"Diese Eingabemethode ist standardmäßig als eine der Fallback-Eingabemethoden "
+"registriert.\n"
+"Weitere Details finden Sie auf der Dokumentationsseite von m17n-"
+"Eingabemethoden.\n"
 "  http://www.nongnu.org/m17n/manual-en/m17nDBData.html#mim-list"
 
 #: MIM/ml-swanalekha.mim:32
@@ -537,26 +550,6 @@ msgstr ""
 "Sie diese Eingabemethode \"lsymbol\" vorziehen, die standardmäßig als\n"
 "eine der Fallback-Eingabemethoden registriert ist, passen Sie die\n"
 "Variable \"fallback-input-method\" an."
-
-#: MIM/ta-lk-renganathan.mim:33
-msgid ""
-"Surrounding text vs. preedit\n"
-"If 1, try to use surrounding text.  Otherwise, use preedit."
-msgstr ""
-"Umliegender Text gegenüber vorherigem Bearbeiten\n"
-"Falls 1, versuchen Sie umliegenden Text zu benutzen. Andernfalls benutzen\n"
-"Sie vorheriges Bearbeiten."
-
-#: MIM/ta-remington.mim:23
-msgid ""
-"Tamil Remington Layout\n"
-"Author: Mohan R <mohan43u@gmail.com>\n"
-"Derived From: https://github.com/thamizha/ekalappai/blob/master/installer/"
-"app/keyboards/Tamil-typewriter.txt.in\n"
-msgstr ""
-"Tamil Remington Layout\n"
-"Author: Mohan R <mohan43u@gmail.com>\n"
-"Derived From: https://github.com/thamizha/ekalappai/blob/master/installer/app/keyboards/Tamil-typewriter.txt.in\n"
 
 #: MIM/tai-sonla.mim:30
 msgid ""
@@ -601,6 +594,27 @@ msgstr ""
 "  '!' -> '꫞'\n"
 "  '@' -> '꫟'\n"
 
+#: MIM/ta-lk-renganathan.mim:33
+msgid ""
+"Surrounding text vs. preedit\n"
+"If 1, try to use surrounding text.  Otherwise, use preedit."
+msgstr ""
+"Umliegender Text gegenüber vorherigem Bearbeiten\n"
+"Falls 1, versuchen Sie umliegenden Text zu benutzen. Andernfalls benutzen\n"
+"Sie vorheriges Bearbeiten."
+
+#: MIM/ta-remington.mim:23
+msgid ""
+"Tamil Remington Layout\n"
+"Author: Mohan R <mohan43u@gmail.com>\n"
+"Derived From: https://github.com/thamizha/ekalappai/blob/master/installer/"
+"app/keyboards/Tamil-typewriter.txt.in\n"
+msgstr ""
+"Tamil Remington Layout\n"
+"Author: Mohan R <mohan43u@gmail.com>\n"
+"Derived From: https://github.com/thamizha/ekalappai/blob/master/installer/"
+"app/keyboards/Tamil-typewriter.txt.in\n"
+
 # WTT=Wor Tor Tor (Thailändische API von TAPIC)
 #: MIM/th-kesmanee.mim:35 MIM/th-pattachote.mim:35 MIM/th-tis820.mim:35
 msgid ""
@@ -628,9 +642,11 @@ msgstr ""
 "Eingabemethode für Unicode-Zeichen unter Verwendung von Hexadezimalziffern.\n"
 "Geben Sie C-u ein, gefolgt von den hexadezimalen Zahlen [0-9A-Fa-f]\n"
 "des Unicode-Zeichencodes.\n"
-"Um das resultierende Zeichen abzuschließen und einzufügen, geben Sie ein Leerzeichen ein.\n"
+"Um das resultierende Zeichen abzuschließen und einzufügen, geben Sie ein "
+"Leerzeichen ein.\n"
 "\n"
-"Wenn Sie mehr als 5 Hexadezimalziffern eingeben und mit einem Leerzeichen abschließen,\n"
+"Wenn Sie mehr als 5 Hexadezimalziffern eingeben und mit einem Leerzeichen "
+"abschließen,\n"
 "ist das Ergebnis leer und es wird nichts eingefügt.\n"
 
 #: MIM/unicode.mim:38

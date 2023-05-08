@@ -7,6 +7,7 @@
 	* MIM/bn-national-jatiya.mim: New input method
 	* icons/bn-national-jatiya.png: New icon file
 	* po/de: Update and complete the German translation
+	* AUTHORS: Add authors of some contributed input methods, fix typo
 
 2023-05-07  Mike FABIAN  <mfabian@redhat.com>
 

@@ -14,6 +14,20 @@ Satoru Tomura <tomura@m17n.org>
 
 # Contributers of input methods, icons, translations.
 
+Mike FABIAN <maiku.fabian@gmail.com>
+
+        MIM/bn-national-jatiya.mim
+        icons/bn-national-jatiya.png
+        MIM/si-sayura.mim
+        icons/si-sayura.png
+        MIM/hu-rovas-post.mim
+        icons/hu-rovas-post.png
+
+Shantanu Oak <shantanu oak <shantanu.oak@gmail.com>
+
+        MIM/mr-gamabhana.mim
+        icons/mr-gamabhana.png
+
 Amanpreet Singh Brar <apbrar@gmail.com>
 	MIM/pa-inscript.mim -- Punjabi input method for inscript layout
 	icons/pa-inscript.png
@@ -51,7 +65,7 @@ Suyash Shrestha <suyash.shr@gmail.com>
 Maxim Treskin <zerthurd@gmail.com>
 	MIM/ru-translit.mim -- Cyrillic input method with translit keyboard layout
 
-Red Had, Inc (by Subhransu Behera <sbehera@redhat.com>
+Red Hat, Inc (by Subhransu Behera <sbehera@redhat.com>
 		Rahul Bhalerao <rbhalera@redhat.com>
 		Runa Bhattacharjee <runab@redhat.com>
 		I. Felix <ifelix@redhat.com>

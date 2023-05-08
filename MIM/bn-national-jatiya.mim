@@ -1,0 +1,403 @@
+;; bn-national-jatiya.mim -- Bengali input method National Jatiya layout
+;; Copyright (c) 2022 Red Hat, Inc. All Rights Reserved.
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU Lesser General Public License as published by
+;; the Free Software Foundation; either version 2.1 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with the m17n library; if not, write to the Free
+;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+;;
+;; Author: Mike FABIAN <mfabian@redhat.com>
+
+(input-method bn national-jatiya (version "1.0.0"))
+
+(description "Bengali input method for National Jatiya layout.
+
+https://en.wikipedia.org/wiki/Bengali_input_methods#Bangla_Jatiyo
+
+Layout taken from
+
+https://github.com/OpenBangla/OpenBangla-Keyboard/blob/master/data/National_Jatiya.json
+
+and ported to m17n-db, merging in differences /usr/share/X11/xkb/symbols/bd as far
+as possible, giving priority to National_Jatiya.json in case of a conflict.
+
+One of the conflicts is that National_Jatiya.json has ZWNJ on ` and
+AltGr+` and ZWJ on ~ and AltGr+~ whereas /usr/share/X11/xkb/symbols/bd
+produces the ASCII characters ` and ~ on these keys.
+
+See also:
+
+https://en.wikipedia.org/wiki/Bengali_input_methods#/media/File:KB-Bengali-Jatiyo.svg
+
+The layout picture from Wikipedia shows a few characters on AltGr which do exist
+neither in National_Jatiya.json nor /usr/share/X11/xkb/symbols/bd.
+
+On top of implementing the plain “National Jatiya” keyboard
+layout, this input method also does “automatic vowel forming”,
+i.e. if a diacritical form of a vowel like
+
+া U+09BE BENGALI VOWEL SIGN AA
+
+is typed after a consonant, it is inserted like that but if it is typed
+anywhere else, not following a consonant, it is inserted as
+
+আ U+0986 BENGALI LETTER AA
+
+See also:
+
+https://github.com/lifeparticle/Bengali-Alphabet/blob/master/vowel_diacritics.md
+http://unicode.org/charts/nameslist/n_0980.html
+
+")
+
+(title "ক")
+
+(variable
+ (use-automatic-vowel-forming
+  (_"If this variable is 1 (the default), automatic vowel forming is used.
+For example, a dependent vowel like া is automatically converted to
+the independent form আ if it is not typed after a consonant.")
+  1 0 1)) ; ((NAME [DESCRIPTION DEFAULT-VALUE VALID-VALUE ...])
+
+(map
+ (independent-vowels
+  ("H" "অ")  ; U+0985 BENGALI LETTER A
+  ((G-h) "আ") ; U+0986 BENGALI LETTER AA
+  ((G-d) "ই") ; U+0987 BENGALI LETTER I
+  ((G-D) "ঈ") ; U+0988 BENGALI LETTER II
+  ((G-s) "উ") ; U+0989 BENGALI LETTER U
+  ((G-S) "ঊ") ; U+098A BENGALI LETTER UU
+  ((G-a) "ঋ") ; U+098B BENGALI LETTER VOCALIC R
+  ((G-l) "ঌ") ; U+098C BENGALI LETTER VOCALIC L
+  ((G-c) "এ") ; U+098F BENGALI LETTER E
+  ((G-C) "ঐ") ; U+0990 BENGALI LETTER AI
+  ((G-x) "ও") ; U+0993 BENGALI LETTER O
+  ((G-X) "ঔ") ; U+0994 BENGALI LETTER AU
+  )
+
+ (additional-independent-vowels-for-sanskrit
+  ((G-A) "ৠ") ; U+09E0 BENGALI LETTER VOCALIC RR
+  ((G-L) "ৡ") ; U+09E1 BENGALI LETTER VOCALIC LL
+  )
+
+ (dependent-vowel-signs
+  ("h" (cond ((= consonant-flag 0) "আ")    ; U+0986 BENGALI LETTER AA
+             ((= consonant-flag 1) "া")))  ; U+09BE BENGALI VOWEL SIGN AA
+  ("d" (cond ((= consonant-flag 0) "ই")     ; U+0987 BENGALI LETTER I
+             ((= consonant-flag 1) "ি")))  ; U+09BF BENGALI VOWEL SIGN I
+  ("D" (cond ((= consonant-flag 0) "ঈ")     ; U+0988 BENGALI LETTER II
+             ((= consonant-flag 1) "ী")))  ; U+09C0 BENGALI VOWEL SIGN II
+  ("s" (cond ((= consonant-flag 0) "উ")     ; U+0989 BENGALI LETTER U
+             ((= consonant-flag 1) "ু")))   ; U+09C1 BENGALI VOWEL SIGN U
+  ("S" (cond ((= consonant-flag 0) "ঊ")     ; U+098A BENGALI LETTER UU
+             ((= consonant-flag 1) "ূ")))   ; U+09C2 BENGALI VOWEL SIGN UU
+  ("a" (cond ((= consonant-flag 0) "ঋ")     ; U+098B BENGALI LETTER VOCALIC R
+             ((= consonant-flag 1) "ৃ")))   ; U+09C3 BENGALI VOWEL SIGN VOCALIC R
+  ((G-e) (cond ((= consonant-flag 0) "ৠ")   ; U+09E0 BENGALI LETTER VOCALIC RR
+               ((= consonant-flag 1) "ৄ"))) ; U+09C4 BENGALI VOWEL SIGN VOCALIC RR
+  ("c" (cond ((= consonant-flag 0) "এ")     ; U+098F BENGALI LETTER E
+             ((= consonant-flag 1) "ে")))  ; U+09C7 BENGALI VOWEL SIGN E
+  ("C" (cond ((= consonant-flag 0) "ঐ")     ; U+0990 BENGALI LETTER AI
+             ((= consonant-flag 1) "ৈ")))  ; U+09C8 BENGALI VOWEL SIGN AI
+  ("x" (cond ((= consonant-flag 0) "ও")     ; U+0993 BENGALI LETTER O
+             ((= consonant-flag 1) "ো")))  ; U+09CB BENGALI VOWEL SIGN O
+  ("X" (cond ((= consonant-flag 0) "ঔ")     ; U+0994 BENGALI LETTER AU
+             ((= consonant-flag 1) "ৌ")))  ; U+09CC BENGALI VOWEL SIGN AU
+  )
+
+ (additional-dependent-vowel-signs-for-sanskrit
+  ((G-q) (cond ((= consonant-flag 0) "ঌ")   ; U+098C BENGALI LETTER VOCALIC L
+               ((= consonant-flag 1) "ৢ"))) ; U+09E2 BENGALI VOWEL SIGN VOCALIC L
+  ((G-Q) (cond ((= consonant-flag 0) "ৡ")   ; U+09E1 BENGALI LETTER VOCALIC LL
+               ((= consonant-flag 1) "ৣ"))) ; U+09E3 BENGALI VOWEL SIGN VOCALIC LL
+  )
+
+ (consonants
+  ("j" "ক") ; U+0995 BENGALI LETTER KA
+  ("J" "খ") ; U+0996 BENGALI LETTER KHA
+  ("o" "গ") ; U+0997 BENGALI LETTER GA
+  ("O" "ঘ") ; U+0998 BENGALI LETTER GHA
+  ("q" "ঙ") ; U+0999 BENGALI LETTER NGA
+  ("y" "চ") ; U+099A BENGALI LETTER CA
+  ("Y" "ছ") ; U+099B BENGALI LETTER CHA
+  ("u" "জ") ; U+099C BENGALI LETTER JA
+  ("U" "ঝ") ; U+099D BENGALI LETTER JHA
+  ("I" "ঞ") ; U+099E BENGALI LETTER NYA
+  ("t" "ট") ; U+099F BENGALI LETTER TTA
+  ("T" "ঠ") ; U+09A0 BENGALI LETTER TTHA
+  ("e" "ড") ; U+09A1 BENGALI LETTER DDA
+  ("E" "ঢ") ; U+09A2 BENGALI LETTER DDHA
+  ("B" "ণ") ; U+09A3 BENGALI LETTER NNA
+  ("k" "ত") ; U+09A4 BENGALI LETTER TA
+  ("K" "থ") ; U+09A5 BENGALI LETTER THA
+  ("l" "দ") ; U+09A6 BENGALI LETTER DA
+  ("L" "ধ") ; U+09A7 BENGALI LETTER DHA
+  ("b" "ন") ; U+09A8 BENGALI LETTER NA
+  ("r" "প") ; U+09AA BENGALI LETTER PA
+  ("R" "ফ") ; U+09AB BENGALI LETTER PHA
+  ("f" "ব") ; U+09AC BENGALI LETTER BA
+  ("F" "ভ") ; U+09AD BENGALI LETTER BHA
+  ("m" "ম") ; U+09AE BENGALI LETTER MA
+  ("w" "য") ; U+09AF BENGALI LETTER YA
+  ("v" "র") ; U+09B0 BENGALI LETTER RA
+  ("V" "ল") ; U+09B2 BENGALI LETTER LA
+  ("M" "শ") ; U+09B6 BENGALI LETTER SHA
+  ("N" "ষ") ; U+09B7 BENGALI LETTER SSA
+  ("n" "স") ; U+09B8 BENGALI LETTER SA
+  ("i" "হ") ; U+09B9 BENGALI LETTER HA
+  )
+
+ (additional-consonant
+  ;; a dead consonant form of ta, without implicit vowel, used in some sequences:
+  ((G-^) "ৎ") ; U+09CE BENGALI LETTER KHANDA TA
+  )
+
+ (additional-consonants
+  ;; These three consonants with nuktas are listed in
+  ;; CompositionExclusions.txt. That means that they do not recompose
+  ;; during normalization. The NFC form is the same as the decomposed
+  ;; sequence:
+  ("p" "ড়")  ; U+09DC BENGALI LETTER RRA ≡ 09A1 ড 09BC ◌়
+  ("P" "ঢ়")  ; U+09DD BENGALI LETTER RHA ≡ 09A2 ঢ 09BC ◌়
+  ("W" "য়")  ; U+09DF BENGALI LETTER YYA ≡ 09AF য 09BC ◌়
+  )
+
+ (various-signs
+  ("A" "ৗ")  ; U+09D7 BENGALI AU LENGTH MARK
+  ("z" "ঁ")  ; U+0981 BENGALI SIGN CANDRABINDU
+  ("Q" "ং")  ; U+0982 BENGALI SIGN ANUSVARA
+  ("Z" "ঃ")  ; U+0983 BENGALI SIGN VISARGA
+  ((G-.) "়") ; U+09BC BENGALI SIGN NUKTA (for extending the alphabet to new letters, only in /usr/share/X11/xkb/symbols/bn)
+  ((G-i) "ঽ") ; U+09BD BENGALI SIGN AVAGRAHA
+  ((G-z) "৺") ; U+09FA BENGALI ISSHAR =	ishvar (represents the name of a deity) = svargiya (written before the name of a deceased person)
+  )
+
+ (additions-for-assamese
+  ((G-f) "ৰ") ; U+09F0 BENGALI LETTER RA WITH MIDDLE DIAGONAL = Assamese letter ra
+  ((G-F) "ৱ") ; U+09F1 BENGALI LETTER RA WITH LOWER DIAGONAL = Assamese letter wa
+  )
+
+ (currency-symbols
+  ((G-$) "৲") ; U+09F2 BENGALI RUPEE MARK = taka • historic currency sign
+  ((G-4) "৳") ; U+09F3 BENGALI RUPEE SIGN = Bangladeshi taka
+  )
+
+ (historic-symbols-for-fractional-values
+  ((G-1) "৴") ; U+09F4 BENGALI CURRENCY NUMERATOR ONE
+  ((G-2) "৵") ; U+09F5 BENGALI CURRENCY NUMERATOR TWO
+  ((G-3) "৶") ; U+09F6 BENGALI CURRENCY NUMERATOR THREE
+  ((G-5) "৷") ; U+09F7 BENGALI CURRENCY NUMERATOR FOUR
+  ((G-6) "৸") ; U+09F8 BENGALI CURRENCY NUMERATOR ONE LESS THAN THE DENOMINATOR
+  ((G-0) "৹") ; U+09F9 BENGALI CURRENCY DENOMINATOR SIXTEEN
+  )
+
+ (other
+  ((G-7) "ं") ; U+0902 DEVANAGARI SIGN ANUSVARA (Only in /usr/share/X11/xkb/symbols/bn)
+  ("G" "।")  ; U+0964 DEVANAGARI DANDA
+  ((G-g) "॥") ; U+0965 DEVANAGARI DOUBLE DANDA
+  ((G-j) "঻") ; U+09BB script bengali, not assigned (Only in /usr/share/X11/xkb/symbols/bn)
+  ((G-k) "ৎ") ; U+09CE BENGALI LETTER KHANDA TA (Only in /usr/share/X11/xkb/symbols/bn)
+  )
+
+ (joiner
+  ((G--)  "‌") ; U+200C ZERO WIDTH NON-JOINER (Only in /usr/share/X11/xkb/symbols/bn)
+  ("~" "‍")   ; U+200D ZERO WIDTH JOINER (Only in OpenBangla National_Jatiya.json)
+  ((G-~) "‍") ; U+200D ZERO WIDTH JOINER (Only in OpenBangla National_Jatiya.json)
+  ("`" "‌")   ; U+200C ZERO WIDTH NON-JOINER (Only in OpenBangla National_Jatiya.json)
+  ((G-`) "‌") ; U+200C ZERO WIDTH NON-JOINER (Only in OpenBangla National_Jatiya.json)
+  ((G-=) "‍") ; U+200D ZERO WIDTH JOINER (Only in /usr/share/X11/xkb/symbols/bn)
+  )
+
+ (nothing
+  ((G-8) "") ; Nothing
+  ((G-9) "") ; Nothing
+  ((G-&) "") ; Nothing
+  ((G-') "") ; Nothing
+  ((G-*) "") ; Nothing
+  ((G-@) "") ; Nothing
+  ((G-B) "") ; Nothing
+  ((G-\\) "") ; Nothing
+  ((G-|) "") ; Nothing
+  ((G-{) "") ; Nothing
+  ((G-}) "") ; Nothing
+  ((G-[) "") ; Nothing
+  ((G-]) "") ; Nothing
+  ((G-:) "") ; Nothing
+  ((G-,) "") ; Nothing
+  ((G-E) "") ; Nothing
+  ((G-!) "") ; Nothing
+  ((G-G) "") ; Nothing
+  ((G->) "") ; Nothing
+  ((G-H) "") ; Nothing
+  ((G-#) "") ; Nothing
+  ((G-I) "") ; Nothing
+  ((G-J) "") ; Nothing
+  ((G-K) "") ; Nothing
+  ((G-<) "") ; Nothing
+  ((G-M) "") ; Nothing
+  ((G-N) "") ; Nothing
+  ((G-O) "") ; Nothing
+  ((G-P) "") ; Nothing
+  ((G-\() "") ; Nothing
+  ((G-\)) "") ; Nothing
+  ((G-%) "") ; Nothing
+  ((G-+) "") ; Nothing
+  ((G-?) "") ; Nothing
+  ((G-\") "") ; Nothing
+  ((G-R) "") ; Nothing
+  ((G-;) "") ; Nothing
+  ((G-/) "") ; Nothing
+  ((G-T) "") ; Nothing
+  ((G-U) "") ; Nothing
+  ((G-_) "") ; Nothing
+  ((G-V) "") ; Nothing
+  ((G-W) "") ; Nothing
+  ((G-Y) "") ; Nothing
+  ((G-Z) "") ; Nothing
+  ((G-b) "") ; Nothing
+  ((G-m) "") ; Nothing
+  ((G-n) "") ; Nothing
+  ((G-o) "") ; Nothing
+  ((G-p) "") ; Nothing
+  ((G-r) "") ; Nothing
+  ((G-t) "") ; Nothing
+  ((G-u) "") ; Nothing
+  ((G-v) "") ; Nothing
+  ((G-w) "") ; Nothing
+  ((G-t) "") ; Nothing
+  ((G-u) "") ; Nothing
+  ((G-v) "") ; Nothing
+  ((G-w) "") ; Nothing
+  ((G-y) "") ; Nothing
+  )
+
+ (digits
+  ("0" "০") ; U+09E6 BENGALI DIGIT ZERO
+  ("1" "১") ; U+09E7 BENGALI DIGIT ONE
+  ("2" "২") ; U+09E8 BENGALI DIGIT TWO
+  ("3" "৩") ; U+09E9 BENGALI DIGIT THREE
+  ("4" "৪") ; U+09EA BENGALI DIGIT FOUR
+  ("5" "৫") ; U+09EB BENGALI DIGIT FIVE
+  ("6" "৬") ; U+09EC BENGALI DIGIT SIX
+  ("7" "৭") ; U+09ED BENGALI DIGIT SEVEN
+  ("8" "৮") ; U+09EE BENGALI DIGIT EIGHT
+  ("9" "৯") ; U+09EF BENGALI DIGIT NINE
+  )
+
+ (numpad
+  ((KP_0) "০") ; U+09E6 BENGALI DIGIT ZERO
+  ((KP_1) "১") ; U+09E7 BENGALI DIGIT ONE
+  ((KP_2) "২") ; U+09E8 BENGALI DIGIT TWO
+  ((KP_3) "৩") ; U+09E9 BENGALI DIGIT THREE
+  ((KP_4) "৪") ; U+09EA BENGALI DIGIT FOUR
+  ((KP_5) "৫") ; U+09EB BENGALI DIGIT FIVE
+  ((KP_6) "৬") ; U+09EC BENGALI DIGIT SIX
+  ((KP_7) "৭") ; U+09ED BENGALI DIGIT SEVEN
+  ((KP_8) "৮") ; U+09EE BENGALI DIGIT EIGHT
+  ((KP_9) "৯") ; U+09EF BENGALI DIGIT NINE
+  ((KP_Add) "+") ; U+002B PLUS SIGN
+  ((KP_Decimal) ".") ; U+002E FULL STOP
+  ((KP_Divide) "/") ; U+002F SOLIDUS
+  ((KP_Multiply) "*") ; U+002A ASTERISK
+  ((KP_Subtract) "-") ; U+002D HYPHEN-MINUS
+  )
+
+ (special
+  ("." ".")  ; U+002E FULL STOP
+  ("&" "&")  ; U+0026 AMPERSAND
+  ("'" "'")  ; U+0027 APOSTROPHE
+  ("*" "*")  ; U+002A ASTERISK
+  ("@" "@")  ; U+0040 COMMERCIAL AT
+  ("\\" "\\")  ; U+005C REVERSE SOLIDUS
+  ("|" "|")  ; U+007C VERTICAL LINE
+  ("{" "{")  ; U+007B LEFT CURLY BRACKET
+  ("}" "}")  ; U+007D RIGHT CURLY BRACKET
+  ("[" "[")  ; U+005B LEFT SQUARE BRACKET
+  ("]" "]")  ; U+005D RIGHT SQUARE BRACKET
+  ("^" "^")  ; U+005E CIRCUMFLEX ACCENT
+  (":" ":")  ; U+003A COLON
+  ("," ",")  ; U+002C COMMA
+  ("$" "$")  ; U+0024 DOLLAR SIGN
+  ("=" "=")  ; U+003D EQUALS SIGN
+  ("!" "!")  ; U+0021 EXCLAMATION MARK
+  (">" ">")  ; U+003E GREATER-THAN SIGN
+  ("#" "#")  ; U+0023 NUMBER SIGN
+  ("<" "<")  ; U+003C LESS-THAN SIGN
+  ("-" "-")  ; U+002D HYPHEN-MINUS
+  ("(" "(")  ; U+0028 LEFT PARENTHESIS
+  (")" ")")  ; U+0029 RIGHT PARENTHESIS
+  ("%" "%")  ; U+0025 PERCENT SIGN
+  ("+" "+")  ; U+002B PLUS SIGN
+  ("?" "?")  ; U+003F QUESTION MARK
+  ("\"" "\"") ; U+0022 QUOTATION MARK
+  (";" ";")  ; U+003B SEMICOLON
+  ("/" "/")  ; U+002F SOLIDUS
+  ("_" "_")  ; U+005F LOW LINE
+  )
+
+ (deadkey
+  ("g" "্") ; U+09CD BENGALI SIGN VIRAMA
+  )
+
+ (dead-key-completions
+  ("h" (delete @-) "আ") ; + া U+09BE BENGALI VOWEL SIGN AA = আ U+0986 BENGALI LETTER AA
+  ("d" (delete @-) "ই") ; + ি U+09BF BENGALI VOWEL SIGN I = ই U+0987 BENGALI LETTER I
+  ("D" (delete @-) "ঈ") ; + ী U+09C0 BENGALI VOWEL SIGN II = ঈ U+0988 BENGALI LETTER II
+  ("s" (delete @-) "উ") ; + ু U+09C1 BENGALI VOWEL SIGN U = উ U+0989 BENGALI LETTER U
+  ("S" (delete @-) "ঊ") ; + ূ U+09C2 BENGALI VOWEL SIGN UU = ঊ U+098A BENGALI LETTER UU
+  ("a" (delete @-) "ঋ") ; + ৃ U+09C3 BENGALI VOWEL SIGN VOCALIC R = ঋ U+098B BENGALI LETTER VOCALIC R
+  ("c" (delete @-) "এ") ; + ে U+09C7 BENGALI VOWEL SIGN E = এ U+098F BENGALI LETTER E
+  ("C" (delete @-) "ঐ") ; + ৈ U+09C8 BENGALI VOWEL SIGN AI = ঐ U+0990 BENGALI LETTER AI
+  ("x" (delete @-) "ও") ; + ো U+09CB BENGALI VOWEL SIGN O = ও U+0993 BENGALI LETTER O
+  ("X" (delete @-) "ঔ") ; + ৌ U+09CC BENGALI VOWEL SIGN AU = ঔ U+0994 BENGALI LETTER AU
+  ("G" (delete @-) "॥") ; + । U+0964 DEVANAGARI DANDA = ॥ U+0965 DEVANAGARI DOUBLE DANDA
+  ))
+
+(state
+ (init
+  (t (cond
+      ((= use-automatic-vowel-forming 1) (set consonant-flag 0))
+      (1 (set consonant-flag 1))))
+  (independent-vowels)
+  (additional-independent-vowels-for-sanskrit)
+  (dependent-vowel-signs)
+  (additional-dependent-vowel-signs-for-sanskrit)
+  (consonants (set consonant-flag 1) (shift after-consonant))
+  (additional-consonant)
+  (additional-consonants (set consonant-flag 1) (shift after-consonant))
+  (various-signs)
+  (additions-for-assamese)
+  (currency-symbols)
+  (historic-symbols-for-fractional-values)
+  (other)
+  (joiner)
+  (nothing)
+  (digits)
+  (numpad)
+  (special)
+  (deadkey (shift virama)))
+
+ (after-consonant
+  (dependent-vowel-signs (shift init))
+  (additional-dependent-vowel-signs-for-sanskrit (shift init))
+  (nil (shift init))
+  )
+
+ (virama
+  (dead-key-completions (shift init))
+  (nil (shift init))))
+
+;; Local Variables:
+;; coding: utf-8
+;; mode: emacs-lisp
+;; End:

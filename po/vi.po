@@ -92,7 +92,7 @@ msgstr ""
 
 #: MIM/global.mim:32
 msgid ""
-"Maxmum number of candidates in a candidate group.\n"
+"Maximum number of candidates in a candidate group.\n"
 "Value must be an integer.\n"
 "If the value is not positive, number of candidates in a group is decided\n"
 "by how candiates are grouped in an input method source file."

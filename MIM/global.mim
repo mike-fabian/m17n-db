@@ -29,7 +29,7 @@ global commands."))
 
 (variable
  (candidates-group-size
-  (_"Maxmum number of candidates in a candidate group.
+  (_"Maximum number of candidates in a candidate group.
 Value must be an integer.
 If the value is not positive, number of candidates in a group is decided
 by how candiates are grouped in an input method source file.")

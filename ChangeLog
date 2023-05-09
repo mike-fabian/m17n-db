@@ -9,6 +9,11 @@
 	* po/de: Update and complete the German translation
 	* AUTHORS: Add authors of some contributed input methods, fix typo
 	* icons/hu-rovas-post.png: Add icon for hu-rovas-post input method
+	* MIM/global.mim: Fix typo in variable description
+	* po/de.po: Fix typo in variable description
+	* po/eo.po: Fix typo in variable description
+	* po/ja.po: Fix typo in variable description
+	* po/vi.po: Fix typo in variable description
 
 2023-05-07  Mike FABIAN  <mfabian@redhat.com>
 

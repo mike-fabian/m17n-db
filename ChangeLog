@@ -15,6 +15,7 @@
 	* po/ja.po: Fix typo in variable description
 	* po/vi.po: Fix typo in variable description
 	* MIM/kn-inscript.mim: Add mapping for ZWNJ
+	* MIM/gu-itrans.mim: Fix e o mappings
 
 2023-05-07  Mike FABIAN  <mfabian@redhat.com>
 

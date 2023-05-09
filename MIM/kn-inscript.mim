@@ -59,6 +59,9 @@ Key summary :
 	\"ಜ್ಞ\" : ಜ + ್ + ಞ
 	p + d + } [OR] %
 
+9)	ZWNJ is assigned to key 'V'
+	ZWJ  is assigned to key '\\\\'
+
 Key summary: Shankar Prasad <svenkate@redhat.com>
 
 ")
@@ -161,7 +164,7 @@ Key summary: Shankar Prasad <svenkate@redhat.com>
   ("X" "")
   ("C" ?ಣ)
   ("c" ?ಮ)
-;; V
+  ("V" "‌")
   ("v" ?ನ)
 ;; B
   ("b" ?ವ)

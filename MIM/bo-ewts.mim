@@ -105,7 +105,7 @@ If 0, generate only decomposed characters (i.e. NFD) (e.g. \"ྲྀ\" (U+0FB2 U+
   ("lc" "ལྕ")
   ("lj" "ལྗ")
   ("lt" "ལྟ")
-  ("ld" "སྡ")
+  ("ld" "ལྡ")
   ("lp" "ལྤ")
   ("lb" "ལྦ")
   ("lh" "ལྷ")

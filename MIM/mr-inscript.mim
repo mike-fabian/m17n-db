@@ -64,7 +64,7 @@ Author : Rahul Bhalerao <rbhalera@redhat.com>
   ((KP_7) "७")
   ((KP_8) "८")
   ((KP_9) "९")
-  ((KP_0) "൦")
+  ((KP_0) "०")
   ((KP_Decimal) ".")
   ((KP_Divide) "/")
   ((KP_Multiply) "*")

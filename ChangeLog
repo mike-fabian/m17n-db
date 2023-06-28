@@ -1,3 +1,8 @@
+2023-06-28  K. Handa  <handa@gnu.org>
+
+	* MIM/ta-vutam.mim (description): Change the header comment to
+	description.
+
 2023-05-08  Mike FABIAN  <mfabian@redhat.com>
 
 	Version 1.8.2 released.

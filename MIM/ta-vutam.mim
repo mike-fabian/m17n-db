@@ -18,28 +18,23 @@
 ;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 ;; Boston, MA 02110-1301, USA.
 
-
-;; Begin author's comments:
-
-;; Vutam Type_As_You_Write is suitable for 3 basket mechanical type writers.
-;; Meant for those who know to write Tamil.
-;; Had the Unicode encoding scheme followed that of TSCII, Vutam can run even in unintelligent keyboards with atleast three baskets.
-;; The intelligent SCIM supports many baskets; the third basket is selected in it, by pressing any Alt. key & a Normal key together.
-;; Basket one Normal: Short vowels & Consonants.
-;; Basket two Shift: Long vowels & consonants with "u" vowel mark.
-;; Basket three Alt.: Tamil abbreviations, Numerals & consonants with "U" vowel mark. (H & Alt. h may also be used to get u & U vowel mark hooks.)
-;; SCIM's frontend globalsetup trigger may be configured, not to include Alt. grave, since Alt. `  has to produce ` in our layout.
-;; Hence the name: VUTAM.
-;; The vowel marks: "ai", "e" and  "E"  to be typed before the consonants, as in writing Tamil.
-;; Hence the name: Type_As_You_Write.
-;; Key allocation scheme: (1). No logic: \ & q  (2). Script similarity: w & f  (3). Convention: z,x & b(big)  & (4). Phonetic similarity: Rest.
-;;
-;; Author: V.Ramasami <v.ramasami@gmail.com>, www.geocities.com/vee_ramasami
-
-;; End author's comments.
-
-
 (input-method ta vutam)
+
+(description "Vutam Type_As_You_Write is suitable for 3 basket mechanical type writers.
+Meant for those who know to write Tamil.
+Had the Unicode encoding scheme followed that of TSCII, Vutam can run even in unintelligent keyboards with atleast three baskets.
+The intelligent SCIM supports many baskets; the third basket is selected in it, by pressing any Alt. key & a Normal key together.
+Basket one Normal: Short vowels & Consonants.
+Basket two Shift: Long vowels & consonants with \"u\" vowel mark.
+Basket three Alt.: Tamil abbreviations, Numerals & consonants with \"U\" vowel mark. (H & Alt. h may also be used to get u & U vowel mark hooks.)
+SCIM's frontend globalsetup trigger may be configured, not to include Alt. grave, since Alt. `  has to produce ` in our layout.
+Hence the name: VUTAM.
+The vowel marks: \"ai\", \"e\" and  \"E\"  to be typed before the consonants, as in writing Tamil.
+Hence the name: Type_As_You_Write.
+Key allocation scheme: (1). No logic: \ & q  (2). Script similarity: w & f  (3). Convention: z,x & b(big)  & (4). Phonetic similarity: Rest.
+
+Author: V.Ramasami <v.ramasami@gmail.com>, www.geocities.com/vee_ramasami")
+
 (title "க")
 (map
  (trans

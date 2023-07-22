@@ -56,7 +56,7 @@ value is 160 in decimal.
 <li> SYMBOL
 
 An element that matches the regular expression
-<tt>[^-0-9(]([^\\()]|\\.)+</tt> represents a property whose key is
+<tt>[^-(0-9]</tt><tt>([^\\()]|\\.)+</tt> represents a property whose key is
 <tt> Msymbol</tt>.  In the element, <tt>\\t</tt>, <tt>\\n</tt>,
 <tt>\\r</tt>, and <tt>\\e</tt> are replaced with tab (code 9), newline
 (code 10), carriage return (code 13), and escape (code 27)

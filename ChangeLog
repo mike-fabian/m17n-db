@@ -1,3 +1,8 @@
+2023-07-22  Mike FABIAN  <mfabian@redhat.com>
+
+	* FORMATS/0General.ja.txt: Workaround for the problem of doxygen
+	generating a link incorrectly.
+
 2023-07-22  K. Handa  <handa@gnu.org>
 
 	* FORMATS/0General.txt: Workaround for the problem of doxygen

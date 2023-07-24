@@ -1,3 +1,23 @@
+2023-07-24  Mike FABIAN  <mfabian@redhat.com>
+
+	* eo-h-f.im: Renamed to eo-h-fundamente.mim
+	* eo-h-mim: Renamed to eo-h-sistemo.mim
+	* eo-q.mim: Renamed to eo-q-sistemo.mim
+	* eo-x.mim: Renamed to eo-x-sistemo.mim
+	* FLT/KHMR-OTF.flt: Update link to KhmerOS fonts
+	* FLT/LAOO-MULE.flt: Update link to GNU intlfonts
+	* FLT/TIBT-MULE.flt: Update link to GNU intlfonts
+	* FLT/TIBT-MTIB.flt: Fix typo in comment
+	* icons/latn1-pre.png: Add new icon
+	* icons/ar-translit.png: Add new icon
+	* icons/ath-phonetic.png: Add new icon
+	* icons/bla-phonetic.png: Add new icon
+	* icons/cr-western.png: Add new icon
+	* icons/iu-phonetic.png: Add new icon
+	* icons/nsk-phonetic.png: Add new icon
+	* icons/oj-phonetic.png: Add new icon
+	* icons/uk-kbd.png: Add new icon
+
 2023-07-22  Mike FABIAN  <mfabian@redhat.com>
 
 	* FORMATS/0General.ja.txt: Workaround for the problem of doxygen

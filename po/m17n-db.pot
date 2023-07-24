@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: m17n-db 1.8.2\n"
+"Project-Id-Version: m17n-db 1.8.3\n"
 "Report-Msgid-Bugs-To: bugs-m17n-lib@m17n.org\n"
-"POT-Creation-Date: 2023-05-09 10:52+0200\n"
+"POT-Creation-Date: 2023-07-24 23:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,12 +41,12 @@ msgid ""
 "Backspace and Delete also work in the manner of visual order."
 msgstr ""
 
-#: MIM/eo-h-f.mim:29
+#: MIM/eo-h-fundamente.mim:29
 msgid ""
 "Meant for writing Esperanto-letters using Zamenhof's fundamental system."
 msgstr ""
 
-#: MIM/eo-h.mim:29
+#: MIM/eo-h-sistemo.mim:29
 msgid "Meant for writing Esperanto-letters adding h's."
 msgstr ""
 
@@ -56,11 +56,11 @@ msgid ""
 "system, like the default of EK."
 msgstr ""
 
-#: MIM/eo-q.mim:29
+#: MIM/eo-q-sistemo.mim:29
 msgid "Meant for writing Esperanto-letters adding q's."
 msgstr ""
 
-#: MIM/eo-x.mim:29
+#: MIM/eo-x-sistemo.mim:29
 msgid "Meant for writing Esperanto-letters adding x's (the X-system)."
 msgstr ""
 

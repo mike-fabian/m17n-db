@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: m17n-db 1.6.1-1\n"
 "Report-Msgid-Bugs-To: bugs-m17n-lib@m17n.org\n"
-"POT-Creation-Date: 2023-05-08 16:49+0200\n"
+"POT-Creation-Date: 2023-07-24 23:13+0200\n"
 "PO-Revision-Date: 2023-05-08 16:53+0200\n"
 "Last-Translator: Chris Leick <c.leick@vollbio.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
@@ -22,8 +22,10 @@ msgid ""
 "For example, a dependent vowel like া is automatically converted to\n"
 "the independent form আ if it is not typed after a consonant."
 msgstr ""
-"Wenn diese Variable den Wert 1 hat (Standardwert), wird automatische Vokalbildung verwendet.\n"
-"Beispielsweise wird ein abhängiger Vokal wie া automatisch in die unabhängige\n"
+"Wenn diese Variable den Wert 1 hat (Standardwert), wird automatische "
+"Vokalbildung verwendet.\n"
+"Beispielsweise wird ein abhängiger Vokal wie া automatisch in die "
+"unabhängige\n"
 "Form আ umgewandelt, wenn er nicht nach einem Konsonanten eingegeben wird."
 
 # FIXME blank missing before (U+0F76
@@ -56,14 +58,14 @@ msgstr ""
 "Reihenfolge eintippen. Rücktaste und Löschen funktionieren ebenfalls wie\n"
 "in visueller Reihenfolge."
 
-#: MIM/eo-h-f.mim:29
+#: MIM/eo-h-fundamente.mim:29
 msgid ""
 "Meant for writing Esperanto-letters using Zamenhof's fundamental system."
 msgstr ""
 "Ausgelegt, um durch Benutzen von Zamenhofs Grundsystem Esperanto-Buchstaben "
 "zu schreiben."
 
-#: MIM/eo-h.mim:29
+#: MIM/eo-h-sistemo.mim:29
 msgid "Meant for writing Esperanto-letters adding h's."
 msgstr "Ausgelegt, um Esperanto-Buchstaben mit zugefügten »h«s zu schreiben."
 
@@ -75,11 +77,11 @@ msgstr ""
 "Ausgelegt, um Esperanto-Buchstaben mit dem Grundsystem und dem X-System zu "
 "schreiben, wie die Vorgabe von EK."
 
-#: MIM/eo-q.mim:29
+#: MIM/eo-q-sistemo.mim:29
 msgid "Meant for writing Esperanto-letters adding q's."
 msgstr "Ausgelegt, um Esperanto-Buchstaben mit zugefügten »q«s zu schreiben."
 
-#: MIM/eo-x.mim:29
+#: MIM/eo-x-sistemo.mim:29
 msgid "Meant for writing Esperanto-letters adding x's (the X-system)."
 msgstr ""
 "Ausgelegt, um Esperanto-Buchstaben mit zugefügten »x«s zu schreiben (das X-"

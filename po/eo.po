@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: m17n-contrib 1.1.2\n"
 "Report-Msgid-Bugs-To: bugs-m17n-lib@m17n.org\n"
-"POT-Creation-Date: 2017-12-09 00:35+0900\n"
+"POT-Creation-Date: 2023-07-24 23:13+0200\n"
 "PO-Revision-Date: 2007-07-20 16:15+0900\n"
 "Last-Translator: Kenichi Handa <m17n-lib@m17n.org>\n"
 "Language-Team: Esperanto\n"
@@ -17,13 +17,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: MIM/bn-national-jatiya.mim:67
+msgid ""
+"If this variable is 1 (the default), automatic vowel forming is used.\n"
+"For example, a dependent vowel like া is automatically converted to\n"
+"the independent form আ if it is not typed after a consonant."
+msgstr ""
+
 #: MIM/bo-ewts.mim:36
 msgid ""
 "Flag to tell whether or not to generate precomposed characters.\n"
 "If 1 (the default), generate precomposed characters (i.e. NFC) if available "
 "(e.g. \"ྲྀ\"(U+0F76).\n"
-"If 0, generate only decomposed characters (i.e. NFD) (e.g. \"ྲྀ\" (U+0FB2 U"
-"+0F80)."
+"If 0, generate only decomposed characters (i.e. NFD) (e.g. \"ྲྀ\" (U+0FB2 "
+"U+0F80)."
 msgstr ""
 
 #: MIM/cmc-kbd.mim:26
@@ -34,14 +41,14 @@ msgid ""
 "Backspace and Delete also work in the manner of visual order."
 msgstr ""
 
-#: MIM/eo-h-f.mim:29
+#: MIM/eo-h-fundamente.mim:29
 msgid ""
 "Meant for writing Esperanto-letters using Zamenhof's fundamental system."
 msgstr ""
 "Skribi Esperanton per la fundamenta skribmetodo. ch, ..., sh iĝas ĉ, ..., ŝ "
 "kaj au kaj eu iĝas aŭ kaj eŭ."
 
-#: MIM/eo-h.mim:29
+#: MIM/eo-h-sistemo.mim:29
 msgid "Meant for writing Esperanto-letters adding h's."
 msgstr "Skribi Esperanton per postmeto de h-o."
 
@@ -53,14 +60,14 @@ msgstr ""
 "Skribi Esperanton per la iksa skribmetodo kaj per la fundamenta sistemo. Ĉi "
 "tiu maniero egalas al la defaŭltaj agordoj de EK."
 
-#: MIM/eo-q.mim:29
+#: MIM/eo-q-sistemo.mim:29
 msgid "Meant for writing Esperanto-letters adding q's."
 msgstr ""
 "Skribi Esperanton per la kua skribmetodo. Ĉi tio precipe estas ŝerco, sed "
 "povas esti utila ĉar literkombinoj kiel cq ktp preskaŭ ne uziĝas kaj la q-"
 "klavo en qwerty-klavaro situas tute angule."
 
-#: MIM/eo-x.mim:29
+#: MIM/eo-x-sistemo.mim:29
 msgid "Meant for writing Esperanto-letters adding x's (the X-system)."
 msgstr "Skribi Esperanton per la iksa skribmetodo."
 
@@ -122,8 +129,8 @@ msgid ""
 "fallback input methods (in the order specified in this variable) try\n"
 "to handle that key, and the first one that can handle the key is activated\n"
 "temporarily.\n"
-"For instance, as the default value of this variable is \"lsymbol, unicode"
-"\",\n"
+"For instance, as the default value of this variable is \"lsymbol, "
+"unicode\",\n"
 "when you type \"/...\" while you are activating an input method\n"
 "that doesn't handle that key sequence, \"lsymbol\" input method is "
 "activated\n"
@@ -325,7 +332,7 @@ msgid ""
 "should not be used in a map of an input method."
 msgstr ""
 
-#: MIM/hi-itrans.mim:53
+#: MIM/hi-itrans.mim:53 MIM/mr-gamabhana.mim:49
 msgid ""
 "If this variable is 1 (the default), the last Halant in a syllable\n"
 "is removed if it is followed by non Devanagari letter.  For instance,\n"
@@ -345,7 +352,23 @@ msgid ""
 "   \"/<3\" -> hearts (e.g. ♥♡)\n"
 "   \"/*\"  -> flowers and stars (e.g. 🌹★)\n"
 "   \"&&\" -> spiritual (e.g. ☸☯)   \"/xx\" -> checks (e.g. ✔✘)\n"
-"   \"$\" -> currency (€£)          \"@\" -> legal/text signs (e.g "
+"   \"$\" -> currency (€£)          \"@\" -> legal/text signs (e.g ©¶)\n"
+"\n"
+"The user can select the appropriate symbol using ↑,↓,→,←\n"
+"(or C-p, C-n, C-f, C-b) keys and/or the digits.\n"
+"\n"
+"Other miscellaneous keys are:\n"
+"   \"//\" -> \"/\"\n"
+"   \"/...\" -> \"…\"\n"
+"\n"
+"This input methods is registered as one of fallback input methods by "
+"default.\n"
+"See the documentation page of m17n input methods for more detail.\n"
+"  <http://www.nongnu.org/m17n/manual-en/m17nDBData.html#mim-list>"
+msgstr ""
+
+#: MIM/ml-swanalekha.mim:32
+msgid "Show lookup table"
 msgstr ""
 
 #: MIM/si-wijesekera.mim:36
@@ -361,12 +384,6 @@ msgid ""
 "If you prefer this input method to \"lsymbol\" which is registered\n"
 "as one of fallback input methods by default, customize the variable\n"
 "\"fallback-input-method\"."
-msgstr ""
-
-#: MIM/ta-lk-renganathan.mim:33
-msgid ""
-"Surrounding text vs. preedit\n"
-"If 1, try to use surrounding text.  Otherwise, use preedit."
 msgstr ""
 
 #: MIM/tai-sonla.mim:30
@@ -392,6 +409,20 @@ msgid ""
 "  '@' -> '꫟'\n"
 msgstr ""
 
+#: MIM/ta-lk-renganathan.mim:33
+msgid ""
+"Surrounding text vs. preedit\n"
+"If 1, try to use surrounding text.  Otherwise, use preedit."
+msgstr ""
+
+#: MIM/ta-remington.mim:23
+msgid ""
+"Tamil Remington Layout\n"
+"Author: Mohan R <mohan43u@gmail.com>\n"
+"Derived From: https://github.com/thamizha/ekalappai/blob/master/installer/"
+"app/keyboards/Tamil-typewriter.txt.in\n"
+msgstr ""
+
 #: MIM/th-kesmanee.mim:35 MIM/th-pattachote.mim:35 MIM/th-tis820.mim:35
 msgid ""
 "Acceptance level\n"
@@ -402,18 +433,22 @@ msgstr ""
 
 #: MIM/unicode.mim:26
 msgid ""
-"Input method for Unicode BMP characters using hexadigits.\n"
-"Type C-u followed by four hexadecimal numbers [0-9A-Fa-f]\n"
+"Input method for Unicode characters using hexadigits.\n"
+"Type C-u followed by hexadecimal numbers [0-9A-Fa-f]\n"
 "of a Unicode character code.\n"
+"To finish and insert the resulting character, type a space.\n"
+"\n"
+"If you type more than 5 hex digits and finish with space,\n"
+"the result is empty and nothing at all is inserted.\n"
 msgstr ""
 
-#: MIM/unicode.mim:34
+#: MIM/unicode.mim:38
 msgid ""
 "Preedit prompt\n"
 "Prompt string shown in the preedit area while typing hexadecimal numbers."
 msgstr ""
 
-#: MIM/unicode.mim:38
+#: MIM/unicode.mim:42
 msgid ""
 "Start Unicode\n"
 "Start typing hexadecimal numbers of Unicode character."

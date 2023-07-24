@@ -9,7 +9,7 @@
 ;;;
 ;;; For Khmer OpenType fonts to draw Khmer.
 ;;; A Font is available from 
-;;; <http://www.khmeros.info/drupal/?q=en/download/fonts>.
+;;; <https://sourceforge.net/projects/khmer/files/Fonts%20-%20KhmerOS/KhmerOS%20Fonts%204.0-%20LGPL%20License/>.
 
 (category
  (0x1780 0x17FF ?E)			; E: else

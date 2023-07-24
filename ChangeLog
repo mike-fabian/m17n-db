@@ -1,9 +1,11 @@
 2023-07-24  Mike FABIAN  <mfabian@redhat.com>
 
-	* eo-h-f.im: Renamed to eo-h-fundamente.mim
-	* eo-h-mim: Renamed to eo-h-sistemo.mim
-	* eo-q.mim: Renamed to eo-q-sistemo.mim
-	* eo-x.mim: Renamed to eo-x-sistemo.mim
+	* MIM/eo-vi.mim: Renamed to eo-vi-sistemo.mim
+	* icons/eo-vi-sistemo.png: Add new icon
+	* MIM/eo-h-f.mim: Renamed to eo-h-fundamente.mim
+	* MIM/eo-h-mim: Renamed to eo-h-sistemo.mim
+	* MIM/eo-q.mim: Renamed to eo-q-sistemo.mim
+	* MIM/eo-x.mim: Renamed to eo-x-sistemo.mim
 	* FLT/KHMR-OTF.flt: Update link to KhmerOS fonts
 	* FLT/LAOO-MULE.flt: Update link to GNU intlfonts
 	* FLT/TIBT-MULE.flt: Update link to GNU intlfonts

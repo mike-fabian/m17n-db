@@ -10,8 +10,8 @@
 ;;; For the muletibetan font developed by Dr. Tomabechi to draw Tibetan
 ;;; script.  The font is available at:
 ;;; <ul>
-;;; <li> infopage: http://www.gnu.org/directory/Localization/intlfonts.html
-;;; <li> download: ftp://ftp.gnu.org/pub/gnu/intlfonts/intlfonts-1.2.1.tar.gz
+;;; <li> infopage: https://directory.fsf.org/wiki/Intlfonts
+;;; <li> download: https://ftp.gnu.org/gnu/intlfonts/intlfonts-1.2.1.tar.gz
 ;;; </ul>
 
 (category

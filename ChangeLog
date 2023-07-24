@@ -1,3 +1,15 @@
+2023-07-25  Mike FABIAN  <mfabian@redhat.com>
+
+	Version 1.8.3 released.
+
+	* configure.ac: Version changed to 1.8.3
+	* NEWS: Update for the 1.8.3 release
+	* po/m17n-db.pot: Update for the release
+	* po/de.po: Update for the release
+	* po/eo.po: Update for the release
+	* po/ja.po: Update for the release
+	* po/vi.po: Update for the release
+
 2023-07-24  Mike FABIAN  <mfabian@redhat.com>
 
 	* MIM/eo-vi.mim: Renamed to eo-vi-sistemo.mim
@@ -43,7 +55,7 @@
 
 	Version 1.8.2 released.
 
-	* configure.ad: Version changed to 1.8.2
+	* configure.ac: Version changed to 1.8.2
 	* NEWS: Update for the 1.8.2 release
 	* MIM/si-sayura.mim: New input method
 	* icons/si-sayura.png: New icon file

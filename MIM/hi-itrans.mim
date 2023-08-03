@@ -38,7 +38,7 @@ is followed by non Devanagari letter, the last halant is removed.
 For instance, 'k SPC'->'क ', 'k..'->'क।'.
 
 The motivation behind additions made to the basic ITRANS scheme
-is described in https://sanskrit-coders.github.io/site/pages/input/optitrans/,
+is described in https://sanskrit-coders.github.io/input/optitrans/,
 along with a tabulated comparison with several other
 transliteration schemes.
 

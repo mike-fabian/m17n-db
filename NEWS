@@ -6,6 +6,70 @@ Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013
 See the end for copying conditions.
 Copyright (C) 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023 Kenichi Handa <handa@gnu.org>
 
+* Changes in the m17n database 1.8.4
+
+** New input methods are added.
+
+sa-vedic-itrans: from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+dra-iso-15919-itrans: from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+hi-brahmi-itrans: from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+ks-sharada-itrans: from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+mr-modi-itrans: from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+sa-brahmi-itrans: from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+sa-grantha-itrans: from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+sa-iso-15919-itrans: from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+sa-sharada-itrans: from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+sa-inscript: from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+sa-iast-vedic: from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+
+** Changes in input medhods.
+
+hi-itrans: Updates from "विश्वासो वासुकिजः (Vishvas Vasuki)" <vishvas.vasuki@gmail.com>
+ne-trad-ttf: Update from author,  Santosh Pradhan <sapradhan8@gmail.com>
+ja-trycode: Add icon.
+ks-inscript: Add icon.
+mai-inscript: Add icon.
+ml-enhanced-inscript: Add icon.
+mr-itrans: Add icon.
+hi-remington: Add icon.
+mr-typewriter: Add icon.
+mr-phonetic: Add icon.
+ne-rom-translit: Add icon.
+zh-pinyin-yi: Add icon.
+unicode: Add icon.
+da-post: Add icon.
+bo-ewts: Add icon.
+bo-tcrc: Add icon.
+kn-typewriter: Add icon.
+grc-mizuochi: Add icon.
+fr-azerty: Add icon.
+hi-optitransv2: Updates from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)"
+kn-optitransv2: Updates from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)"
+sa-itrans: Updates from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)"
+kn-itrans: Updates from "विश्वासो वासुकिजः (Vishvas Vasuki)" <vishvas.vasuki@gmail.com> and some extra bug fixes.
+lsymbol: Some additions from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)" and
+         some more improvements: Use emoji presentation when possible, better grouping in groups of 6, better description
+math-latex: Updates from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)"
+            New option "with-backslash-prefix".
+ks-kbd: Fix typo in description, add icon.
+ug-kbd: Add icon.
+tai-sonla-kbd.png: Add icon.
+mni-inscript2-mtei.png: Add icon.
+sat-inscript2-olck.png: Add icon.
+or-phonetic.png: Add icon.
+sa-harvard-kyoto.png: Add icon.
+pa-anmollipi.png: Add icon.
+pa-remington.png: Add icon.
+si-singlish.png: Add icon.
+ta-lk-renganathan.png: Add icon.
+te-rts.png: Add icon.
+vi-han.png: Add icon.
+vi-nomvni: Make existing icon work.
+vi-nomtelex: Make existing icon work.
+lsymbol: Add icon.
+ssymbol: Add icon.
+
+
 * Changes in the m17n database 1.8.3
 
 ** Changes in input methods.

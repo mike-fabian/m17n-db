@@ -1,3 +1,81 @@
+2023-08-03  Mike FABIAN  <mfabian@redhat.com>
+
+	Version 1.8.4 released.
+
+	* configure.ac: Version changed to 1.8.4
+	* NEWS: Update for the 1.8.4 release
+	* MIM/sa-vedic-itrans.mim: New input method, from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* icons/sa-vedic-itrans.png: New icon file
+	* MIM/hi-itrans.mim: Updates from "विश्वासो वासुकिजः (Vishvas Vasuki)" <vishvas.vasuki@gmail.com>
+	* MIM/ne-trad-ttf.mim: Update from author,  Santosh Pradhan <sapradhan8@gmail.com>
+	* icons/ja-trycode: New icon file
+	* icons/ks-inscript.png: New icon file
+	* icons/mai-inscript.png: New icon file
+	* icons/ml-enhanced-inscript.png: New icon file
+	* icons/mr-itrans.png: New icon file
+	* icons/hi-remington.png: New icon file
+	* icons/mr-typewriter.png: New icon file
+	* icons/mr-phonetic.png: New icon file
+	* icons/ne-rom-translit.png: New icon file
+	* MIM/hi-optitransv2.mim: Updates from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* MIM/kn-optitransv2.mim: Updates from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* MIM/dra-iso-15919-itrans.mim: New input method, from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* MIM/hi-brahmi-itrans.mim: New input method, from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* MIM/ks-sharada-itrans.mim: New input method, from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* MIM/mr-modi-itrans.mim: New input method, from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* MIM/sa-brahmi-itrans.mim: New input method, from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* MIM/sa-grantha-itrans.mim: New input method, from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* MIM/sa-iso-15919-itrans.mim: New input method, from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* MIM/sa-sharada-itrans.mim: New input method, from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* icons/dra-iso-15919-itrans.png: New icon, from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* icons/hi-brahmi-itrans.png: New icon, from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* icons/ks-sharada-itrans.png: New icon, from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* icons/mr-modi-itrans.png: New icon, from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* icons/sa-brahmi-itrans.png: New icon, from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* icons/sa-grantha-itrans.png: New icon, from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* icons/sa-iso-15919-itrans.png: New icon, from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* icons/sa-sharada-itrans.png: New icon, from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* MIM/sa-itrans.mim: Updates from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* MIM/sa-inscript.mim: New input method, from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* icons/zh-pinyin-vi.png: New icon file
+	* icons/unicode.png: New icon file
+	* MIM/kn-itrans: Updates from "विश्वासो वासुकिजः (Vishvas Vasuki)" <vishvas.vasuki@gmail.com>,
+	fix ".ph" and "f", make "LL", "LLi", "LLI" work, make dependent "LLI" insert U+0CE3 KANNADA VOWEL SIGN VOCALIC LL,
+	do not use LLi and LLI as independent vowels,
+	LLi and L^i as dependent vowels should yield KANNADA VOWEL SIGN VOCALIC L **not** KANNADA VOWEL SIGN VOCALIC RR,
+	Add "LLL" as a simple unambiguous option
+	* icons/da-post.png: New icon file
+	* icons/bo-ewts.png: New icon file
+	* icons/bo-tcrc.png: New icon file
+	* icons/kn-typewriter.png: New icon file
+	* MIM/lsymbol.mim: Some additions from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)"
+	* MIM/lsymbol.mim: Some more improvements: Use emoji presentation when possible, better grouping in groups of 6, better description
+	* MIM/sa-iast-vedic.mim: New input method, from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* icons/sa-IAST-vedic.png: New icon file
+	* icons/grc-mizuochi.png: New icon file
+	* icons/fr-azerty.png: New icon file
+	* MIM/math-latex.mim: Updates from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
+	* MIM/ks-kbd.mim: Fix typo in description
+	* icons/ug-kbd.png: New icon file
+	* icons/ks-kbd.png: New icon file
+	* icons/tai-sonla-kbd.png: New icon file
+	* icons/mni-inscript2-mtei.png: New icon file
+	* icons/sat-inscript2-olck.png: New icon file
+	* icons/or-phonetic.png: New icon file
+	* icons/sa-harvard-kyoto.png: New icon file
+	* icons/pa-anmollipi.png: New icon file
+	* icons/pa-remington.png: New icon file
+	* icons/si-singlish.png: New icon file
+	* icons/ta-lk-renganathan.png: New icon file
+	* icons/te-rts.png: New icon file
+	* icons/vi-han.png: New icon file
+	* icons/vi-nom.png: Rename to vi-nomtelex.png: To make the icon work
+	* icons/vi-nom-vni.png: Rename to vi-nomvni.png: To make the icon work
+	* MIM/vi-nom.mim: Rename to vi-nomtelex.mim: To make the icon work
+	* MIM/vi-nom-vni.mim: Rename to vi-nomvni.mim: To make the icon work
+	* icons/lsymbol.png: New icon file
+	* icons/ssymbol.png: New icon file
+
 2023-07-25  Mike FABIAN  <mfabian@redhat.com>
 
 	Version 1.8.3 released.

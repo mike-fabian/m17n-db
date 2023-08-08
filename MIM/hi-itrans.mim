@@ -87,17 +87,17 @@ typing \"har..\" produces \"हर।\", not \"हर्।\".")
   ("~N" "ङ्")
   ("N^" "ङ्")
   ("ch" "च्")
-  ("Ch" "छ्")			      ; not in ITRANS Devenagari table
+  ("Ch" "छ्")			      ; not in ITRANS Devanagari table
   ("c" "च्")
-  ("C" "छ्")			      ; not in ITRANS Devenagari table
+  ("C" "छ्")			      ; not in ITRANS Devanagari table
   ("chh" "छ्")
   ("j" "ज्")
   ("jh" "झ्")
   ("J" "झ्")
   ("nch" "ञ्च्")
-  ("nCh" "ञ्छ्")			      ; not in ITRANS Devenagari table
+  ("nCh" "ञ्छ्")			      ; not in ITRANS Devanagari table
   ("nc" "ञ्च्")
-  ("nC" "ञ्छ्")			      ; not in ITRANS Devenagari table
+  ("nC" "ञ्छ्")			      ; not in ITRANS Devanagari table
   ("nchh" "ञ्छ्")
   ("nj" "ञ्ज्")
   ("njh" "ञ्झ्")
@@ -120,7 +120,7 @@ typing \"har..\" produces \"हर।\", not \"हर्।\".")
   ("d" "द्")
   ("dh" "ध्")
   ("n" "न्")
-  (":n" "ऩ्")			      ; not in ITRANS Devenagari table
+  (":n" "ऩ्")			      ; not in ITRANS Devanagari table
   ("p" "प्")
   ("ph" "फ्")
   ("P" "फ्")

@@ -52,9 +52,11 @@ Examples:
   - s<Commit key>h or s<left arrow, right arrow>h or sah or saha - सह (Avoids श)
 
 The motivation behind additions made to the basic ITRANS scheme
-is described in https://sites.google.com/site/sanskritcode/optitrans,
+is described in https://sanskrit-coders.github.io/input/optitrans/ ,
 along with a tabulated comparison with several other
 transliteration schemes.
+
+Note: You can use many symbols defined in lsymbol.mim.
 
 Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
 
@@ -221,6 +223,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ("BB" "भ्")
   ("mm" "म्")
   ("M" "ं")
+  (".n" "ं")
   ("MM" "म्")
   ("yy" "य्")
   ("rr" "र्")
@@ -281,6 +284,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   ; Visarga and the like may appear after a vowel. So, they aren't expected just in the dependent state.
   (".N" "ँ")
   ("M" "ं")
+  (".n" "ं")
   ("H" "ः")
   ("HH" "ᳲ")  ; ardhavisarga - often used to denote jihvAmUlIya and upadhmAnIya. 
  ) ; ayogavAhas end
@@ -356,11 +360,10 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   (".h" "्")
   ) ; dependent end
 
- (dot_start
-  ("." "।")
+ (dot_start_default
   (".." "।")
   (".," "॥")
-  ("./" "॰")
+  ("..." "॰")
   (". " "।" (pushback 1))
   ((?. Return) "।" (pushback 1))
   ((?. Tab) "।" (pushback 1))
@@ -371,7 +374,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   (".{" "।" (pushback 1))
   (".}" "।" (pushback 1))
   (".'" "।" (pushback 1))
-  (".\"" "।" (pushback 1))) ; dot_start ends
+  (".\"" "।" (pushback 1))) ; dot_start_default ends
 
  (commit-key
   ((S-C-Return)))
@@ -394,7 +397,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   (consonant_with_space (shift state_init))
   (consonant_with_viraama (shift state_init))
   (independent (shift state_init))
-  (dot_start (shift state_init))
+  (dot_start_default (shift state_init))
   (backspace)
   (ayogavAhas (shift state_init))
   )
@@ -405,7 +408,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
   (consonant_with_space (shift state_init))
   (consonant_with_viraama (shift state_init))
   (dependent (shift state_init))
-  (dot_start (shift state_init))
+  (dot_start_default (shift state_init))
   (backspace)
   (ayogavAhas (shift state_init))
   )

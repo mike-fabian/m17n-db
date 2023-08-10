@@ -1,0 +1,104 @@
+;; sa-sharada-itrans.mim -- Sanskrit sharada input method with ITRANS method
+;; Copyright (C) 2012 Kencihi Handa 
+
+;; This file is part of the m17n database; a sub-part of the m17n
+;; library.
+
+;; The m17n library is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU Lesser General Public License
+;; as published by the Free Software Foundation; either version 2.1 of
+;; the License, or (at your option) any later version.
+
+;; The m17n library is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with the m17n library; if not, write to the Free
+;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+;; This file is branched from ks-sharada-itrans.mim.
+
+(input-method sa sharada-itrans)
+
+(description "Sanskrit sharada input method by ITRANS and Harvard-Kyoto
+transliteration systems.
+
+You can use all the standard ITRANS key sequences plus key
+sequences such as the below.
+
+nk->𑆕𑇀𑆑𑇀, nkh->𑆕𑇀𑆒𑇀, ng->𑆕𑇀𑆓𑇀, ngh->𑆕𑇀𑆔𑇀
+nch->𑆚𑇀𑆖𑇀, nCh->𑆚𑇀𑆗𑇀, nc->𑆚𑇀𑆖𑇀, nC->𑆚𑇀𑆗𑇀, nchh->𑆚𑇀𑆗𑇀,
+nj->𑆚𑇀𑆘𑇀, njh->𑆚𑇀𑆙𑇀, nT->𑆟𑇀𑆛𑇀, nTh->𑆟𑇀𑆜𑇀, nD->𑆟𑇀𑆝𑇀, nDh->𑆟𑇀𑆞𑇀
+c->𑆖𑇀, C->𑆗𑇀, z->𑆯𑇀, S->𑆰𑇀, jn->𑆘𑇀𑆚𑇀, R->𑆉
+_->॒, ''->॑
+
+For motivations and further details, see description of ks-sharada-itrans.mim.")
+
+(title "𑆱𑆁")
+
+(variable (trim-last-halant nil 0)
+(enable-udatta nil 1))
+
+(include (ks sharada-itrans) map)
+
+(map
+(udattta
+("_" "॒")
+("''" "॑")))
+
+(state
+(init
+(starter (pushback 1) (shift intermediate))
+(udattta)
+(misc))
+
+(intermediate
+;; CANDRA-E-O is set to the character CANDRA E or CANDRA O when "e"
+;; or "o" is typed, and in that case, if ".c" is typed, the
+;; character set to CANDRA-E-O is inserted.
+(t (set CANDRA-E-O 0))
+;; LAST-HALANT-POS is set to the position after a consonat + HALANT
+;; sequence. If the following key is for non-letter, that HALANT
+;; character is removed.
+(consonant (mark LAST-HALANT-POS) (shift second))
+(independent (cond (CANDRA-E-O (shift after-eo)) (1 (shift init))))
+(digit (shift init))
+(danda (shift init))
+(udattta (shift init))
+(backspace)
+(commit-key (shift init)))
+
+(second
+;; CANDRA-E-O is set to the character CANDRA E or CANDRA O when "e"
+;; or "o" is typed, and in that case, if ".c" is typed, the
+;; character set to CANDRA-E-O is inserted.
+(t (set CANDRA-E-O 0))
+(consonant (mark LAST-HALANT-POS))
+(dependent (cond (CANDRA-E-O (shift after-eo)) (1 (shift init))))
+(danda
+(cond (trim-last-halant (move LAST-HALANT-POS) (delete @-) (move @>)))
+(shift init))
+(udattta
+(cond (trim-last-halant (move LAST-HALANT-POS) (delete @-) (move @>)))
+(shift init))
+(backspace)
+(commit-key (shift init))
+(nil (cond (trim-last-halant (move LAST-HALANT-POS) (delete @-) (move @>)))
+(shift init)))
+
+(after-eo
+(t (set DOT 0))
+(dot)
+(eo-dot-c (shift init))
+(danda (shift init))
+(udattta (shift init))
+(commit-key (shift init))
+(nil (cond (DOT (delete @-) (pushback 1))) (shift init))))
+
+;; Local Variables:
+;; coding: utf-8
+;; mode: emacs-lisp
+;; End:

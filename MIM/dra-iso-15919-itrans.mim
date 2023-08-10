@@ -1,0 +1,247 @@
+(input-method dra iso-15919-itrans)
+
+(description "Dravidian ISO-15919 input method roughly mapped from ITRANS and Harvard-Kyoto
+transliteration systems. Such a mapping is particularly useful for people who use ITRANS / Harvard-Kyoto based input methods (found for example in sa-itrans.mim) to type sanskrit in other scripts. Not having to memorize multiple input maps for multiple scripts is a plus.
+
+You can use all the standard ITRANS key sequences (other than ch, which has a different meaning in this script) plus key
+sequences such as the below.
+
+nk->ṅk, nkh->ṅkh, ng->ṅg, ngh->ṅgh
+nc->ñc, nch->ñch, nj->ñj, njh->ñjh, 
+nT->ṇṭ, nTh->ṇṭh, nD->ṇḍ, nDh->ṇḍh
+S->ṣ, jn->jñ, R->r̥
+
+Unlike classical Sanskrit, e and o are not automatically mapped to ē and ō.  
+So, this also serves to type via reconstructed vedic pronunciation sanskrit, where ai=ए, Ai=ऐ, au=ओ, Au=औ.
+
+Capital letters may be produced or forced by prefixing a ~, reduplicating a letter (T,D,N,R) for disambiguation where necessary. For example: 
+
+Raama or ~Raama -> Rāma, ~RRkaara -> R̥kāra, KRShNa or ~KRShNa -> Kr̥ṣṇa,
+~Tyaaga -> Tyāga, ~TTakaara -> Ṭakāra,  ~Dhiira -> Dhīra, ~DDhakaara -> Ḍhakāra,
+~LLakaara -> Ḷakāra
+
+The motivation behind additions made to the basic ITRANS scheme
+is described in https://sanskrit-coders.github.io/site/pages/input/optitrans/,
+along with a tabulated comparison with several other
+transliteration schemes.
+
+Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
+
+
+(title "dra iso-15919")
+
+(map
+
+(trans
+(".k" "q")
+(".g" "ġ")
+("nk" "ṅk")
+("nx" "ṅkṣ")
+("nkh" "ṅkh")
+("nK" "ṅkh")
+("ng" "ṅg")
+("ngh" "ṅgh")
+("nG" "ṅgh")
+("~N" "ṅ")  
+("nch" "ñc")
+("nCh" "ñch")	; not in ITRANS Devenagari table
+("nc" "ñc")
+("nC" "ñch")	; not in ITRANS Devenagari table
+("nchh" "ñch")
+("nj" "ñj")
+("njh" "ñjh")
+("nJ" "ñjh")
+("~n" "ñ")
+("JN" "ñ")
+("T" "ṭ")
+("D" "ḍ")
+("Dh" "ḍh")
+("nT" "ṇṭ")
+("nD" "ṇḍ")
+("N" "ṇ")
+(":n" "ṉ")	; not in ITRANS Devenagari table
+(".ph" "f")
+("yh" "ẏ") ; not in ITRANS Devanagari table
+("DR" "ṛ")
+(".r" "ṛ")
+("L" "ḷ")
+("LH" "ḻ")
+("sh" "ś")
+(".j" "z")
+("S" "ṣ")
+("Sh" "ṣ")
+("jn" "jñ")
+("j~n" "jñ")
+("jn" "jñ")
+("GY" "jñ")
+("dny" "jñ")	; not in ITRANS Devanagari table
+("x" "kṣ")
+
+("aa" "ā")
+("A" "ā")
+("ii" "ī")
+("I" "ī")
+("uu" "ū")
+("U" "ū")
+("R" "r̥")
+("RRi" "r̥")
+("R^i" "r̥")
+("LL" "ḷḷ")	; not in ITRANS Devanagari table
+("LLi" "l̥")	; not in ITRANS Devanagari table
+("L^i" "l̥")	; not in ITRANS Devanagari table
+("ea" "æ") ; not in ITRANS Devanagari table
+("ee" "ē")	; not in ITRANS Devanagari table
+("E" "ē")	; not in ITRANS Devanagari table
+("oo" "ō") ; not in ITRANS Devanagari table
+("O" "ō")	; not in ITRANS Devanagari table
+("oa" "ô")
+("RRI" "r̥̄")	; not in ITRANS Devanagari table
+("RR" "r̥̄")	; not in ITRANS Devanagari table
+("R^I" "r̥̄")	; not in ITRANS Devanagari table
+("LLI" "l̥̄")	; not in ITRANS Devanagari table
+("L^I" "l̥̄")	; not in ITRANS Devanagari table
+
+; : Á á É é Ế ế Ḗ ḗ Í í Ī́  i ó Ố ố Ṓ ṓ Ŕ ŕ Ĺ ĺ Ú ú  Ū́
+
+("``" "̀")
+("''" "́")
+("a''" "á")
+("i''" "í")
+("u''" "ú")
+
+
+("ea" "æ") ; not in ITRANS Devanagari table
+("ee''" "ḗ")	; not in ITRANS Devanagari table
+("E''" "ḗ")	; not in ITRANS Devanagari table
+("oo''" "ṓ") ; not in ITRANS Devanagari table
+("O''" "ṓ")	; not in ITRANS Devanagari table
+
+("a``" "à")
+("i``" "ì")
+("u``" "ù")
+("ee``" "ḕ")	; not in ITRANS Devanagari table
+("E``" "ḕ")	; not in ITRANS Devanagari table
+("oo``" "ṑ") ; not in ITRANS Devanagari table
+("O``" "ṑ")	; not in ITRANS Devanagari table
+
+
+(".N" "m̐")
+(".n" "ṁ")
+("M" "ṁ")
+("Ml" "l̐l") ; perhaps not in ISO 15919, but useful to represent anunAsika l
+("Mv" "ṁv")
+("My" "ṁy")
+("MV" "v̐v") ; perhaps not in ISO 15919, but useful to represent anunAsika v
+("MY" "y̐y") ; perhaps not in ISO 15919, but useful to represent anunAsika v
+("H" "ḥ")
+("kH" "ẖ") 
+("pH" "ḫ")
+(".a" "’")
+(".h" "")
+("AUM" "ōṁ")
+("OM" "ōṁ")
+
+; Capitals for use in the beginnings of words.
+("KK" "K") ; adding this code for intuitive use.
+("GG" "G") ; adding this code for intuitive use.
+(";N" "Ṇ")
+("CCC" "C") ; adding this code for intuitive use.
+("JJJ" "J") ; adding this code for intuitive use.
+("tt" "tt")
+("ttt" "T") ; And not mUrdhanya T
+("dd" "dd")
+("ddd" "D") ; And not mUrdhanya D
+("nn" "nn")
+("nnn" "N") ; And not mUrdhanya N.
+("TT" "ṭṭ")
+("TTT" "Ṭ") ; Note extra T compared to lowercase map.
+("DD" "DD")
+("DDD" "Ḍ") ; Note extra D compared to lowercase map.
+("NN" "NN")
+("NNN" "N") ; Note extra N compared to lowercase map.
+("PP" "PP")
+("PPP" "P") ; adding this code for intuitive use.
+("BB" "BB")
+("BBB" "B") ; B works just fine - still adding this code for intuitive use.
+("MM" "M") 
+("SHSH" "Ṣ")
+("XX" "KṢ")
+
+("~~" "~")
+("~K" "K") ; adding this code for intuitive use.
+("~G" "G") ; adding this code for intuitive use.
+("~;N" "Ṇ")
+("~C" "C") ; adding this code for intuitive use.
+("~J" "J") ; adding this code for intuitive use.
+("~~n" "Ñ")
+("~T" "T") ; And not mUrdhanya T
+("~D" "D") ; And not mUrdhanya D
+("~N" "N") ; And not mUrdhanya N.
+("~TT" "Ṭ") ; Note extra T compared to lowercase map.
+("~DD" "Ḍ") ; Note extra D compared to lowercase map.
+("~NN" "Ṇ") ; Note extra N compared to lowercase map.
+("~P" "P") ; adding this code for intuitive use.
+("~B" "B") ; B works just fine - still adding this code for intuitive use.
+("~M" "M") 
+("~Y" "Y") ; adding this code for intuitive use.
+("~R" "R") ; adding this code for intuitive use.
+("~L" "L") ; adding this code for intuitive use.
+("~V" "V") ; adding this code for intuitive use.
+("~sh" "Ś") ; And not mUrdhanya Sh.
+("~Sh" "Ś") ; And not mUrdhanya Sh.
+("~SH" "Ṣ")
+("~SS" "Ṣ") ; Note the extra S compared to lower case output map.
+("~S" "S")  ; And not mUrdhanya Sh.
+("~LL" "Ḷ")  ; Note the extra L compared to lower case output map.
+("~LH" "Ḻ")  ; Note the extra L compared to lower case output map.
+("~x" "Kṣ")
+("~X" "KṢ")
+("~jn" "Jñ")
+("~GY" "Jñ")
+("~JN" "JÑ")
+
+("AA" "Ā") ; Note the extra A compared to lower case output map.
+("II" "Ī")
+("UU" "Ū")
+("RRR" "R̥")
+("RRRR" "R̥̄")
+("EE" "Ē")
+("OO" "Ō")
+
+("~A" "A")
+("~aa" "Ā")
+("~AA" "Ā") ; Note the extra A compared to lower case output map.
+("~ii" "Ī")
+("~I" "Ī")
+("~uu" "Ū")
+("~U" "Ū")
+("~RR" "R̥") ; Note the extra R compared to lower case output map.
+("~RRi" "R̥")
+("~R^i" "R̥")
+("~RRI" "R̥̄")	; not in ITRANS Devanagari table
+("~RRR" "R̥̄")	; Note the extra R compared to lower case output map.
+("~R^I" "R̥̄")	; not in ITRANS Devanagari table
+("~LLi" "L̥")	; not in ITRANS Devanagari table
+("~LLI" "L̥̄")	; not in ITRANS Devanagari table
+("~L^I" "L̥̄")	; not in ITRANS Devanagari table
+("EA" "Æ") ; not in ITRANS Devanagari table
+("~ee" "Ē")	; not in ITRANS Devanagari table
+("~EE" "Ē")
+("~E" "E")
+("~O" "O")	; not in ITRANS Devanagari table
+("~OO" "Ō")
+("~oo" "Ō") ; not in ITRANS Devanagari table
+("~oa" "Ô")
+("~au" "Au")
+("~Au" "Au")
+("~AU" "AU")
+("Au" "Au")
+("~.N" "M̐")
+("~H" "H")  ; And not visarga.
+("~AUM" "Ōṁ")
+("~OM" "Ōṁ")
+))
+
+(state
+ (init
+  (trans)))

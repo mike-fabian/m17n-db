@@ -1,0 +1,310 @@
+(input-method hi brahmi-itrans)
+
+(description "Hindi brAhmi input method by ITRANS and Harvard-Kyoto
+transliteration systems.
+You can use all the standard ITRANS key sequences plus key
+sequences such as the below.
+
+nk->𑀗𑁆𑀓𑁆, nkh->𑀗𑁆𑀔𑁆, ng->𑀗𑁆𑀕𑁆, ngh->𑀗𑁆𑀖𑁆
+nch->𑀜𑁆𑀘𑁆, nCh->𑀜𑁆𑀙𑁆, nc->𑀜𑁆𑀘𑁆, nC->𑀜𑁆𑀙𑁆, nchh->𑀜𑁆𑀙𑁆,
+nj->𑀜𑁆𑀚𑁆, njh->𑀜𑁆𑀛𑁆, nT->𑀡𑁆𑀝𑁆, nTh->𑀡𑁆𑀞𑁆, nD->𑀡𑁆𑀟𑁆, nDh->𑀡𑁆𑀠𑁆
+c->𑀘𑁆, C->𑀙𑁆, z->𑀰𑁆, S->𑀱𑁆, jn->𑀚𑁆𑀜𑁆, R->𑀋
+
+In addition, for convenience, when a consonant + halant sequence
+is followed by non Devanagari letter, the last halant is removed.
+For instance, 'k SPC'->'𑀓 ', 'k..'->'𑀓𑁇'.
+
+The motivation behind additions made to the basic ITRANS scheme
+is described in https://sanskrit-coders.github.io/site/pages/input/optitrans.html,
+along with a tabulated comparison with several other
+transliteration schemes.
+
+Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
+
+(title "𑀓")
+
+(variable
+(trim-last-halant
+(_"If this variable is 1 (the default), the last Halant in a syllable
+is removed if it is followed by non Brahmi letter. For instance,
+typing \"har..\" produces \"𑀳𑀭𑁇\", not \"𑀳𑀭𑁆𑁇\".")
+1 0 1))
+
+(map
+(starter
+(".") ("~") ("#") ("$") ("*") ("]") ((C-@))
+("0") ("1") ("2") ("3") ("4") ("5") ("6") ("7") ("8") ("9")
+("A") ("C") ("D") ("E") ("G") ("H") ("I") ("J") ("K") ("L")
+("M") ("N") ("O") ("R") ("S") ("T") ("U") ("Y")
+("a") ("b") ("c") ("d") ("e") ("f") ("g") ("h") ("i")
+("j") ("k") ("l") ("m") ("n") ("o") ("p") ("q") ("r")
+("s") ("t") ("u") ("v") ("w") ("x") ("y") ("z")
+((KP_1)) ((KP_2)) ((KP_3)) ((KP_4)) ((KP_5))
+((KP_6)) ((KP_7)) ((KP_8)) ((KP_9)) ((KP_0)))
+
+(consonant
+("k" "𑀓𑁆")
+("kh" "𑀔𑁆")
+("K" "𑀔𑁆")
+("g" "𑀕𑁆")
+("gh" "𑀖𑁆")
+("G" "𑀖𑁆")
+(".k" "𑀓𑁆 ")
+("q" "𑀓𑁆")
+(".kh" "𑀔𑁆")
+(".K" "𑀔𑁆")
+(".g" "𑀕𑁆")
+("nk" "𑀗𑁆𑀓𑁆")
+("nx" "𑀗𑁆𑀓𑁆𑀱𑁆")
+("nkh" "𑀗𑁆𑀔𑁆")
+("nK" "𑀗𑁆𑀔𑁆")
+("ng" "𑀗𑁆𑀕𑁆")
+("ngh" "𑀗𑁆𑀖𑁆")
+("nG" "𑀗𑁆𑀖𑁆")
+("~N" "𑀗𑁆")
+("N^" "𑀗𑁆")
+("ch" "𑀘𑁆")
+("Ch" "𑀙𑁆")	; not in ITRANS Devenagari table
+("c" "𑀘𑁆")
+("C" "𑀙𑁆")	; not in ITRANS Devenagari table
+("chh" "𑀙𑁆")
+("j" "𑀚𑁆")
+("jh" "𑀛𑁆")
+("J" "𑀛𑁆")
+("nch" "𑀜𑁆𑀘𑁆")
+("nCh" "𑀜𑁆𑀙𑁆")	; not in ITRANS Devenagari table
+("nc" "𑀜𑁆𑀘𑁆")
+("nC" "𑀜𑁆𑀙𑁆")	; not in ITRANS Devenagari table
+("nchh" "𑀜𑁆𑀙𑁆")
+("nj" "𑀜𑁆𑀚𑁆")
+("njh" "𑀜𑁆𑀛𑁆")
+("nJ" "𑀜𑁆𑀛𑁆")
+("~n" "𑀜𑁆")
+("JN" "𑀜𑁆")
+("T" "𑀝𑁆")
+("Th" "𑀞𑁆")
+("D" "𑀟𑁆")
+("Dh" "𑀠𑁆")
+(".D" "𑀟𑁆")
+(".Dh" "𑀠𑁆")
+("nT" "𑀡𑁆𑀝𑁆")
+("nTh" "𑀡𑁆𑀞𑁆")
+("nD" "𑀡𑁆𑀟𑁆")
+("nDh" "𑀡𑁆𑀠𑁆")
+("N" "𑀡𑁆")
+("t" "𑀢𑁆")
+("th" "𑀣𑁆")
+("d" "𑀤𑁆")
+("dh" "𑀥𑁆")
+("n" "𑀦𑁆")
+(":n" "𑀦𑁆")	; not in ITRANS Devenagari table
+("p" "𑀧𑁆")
+("ph" "𑀨𑁆")
+("P" "𑀨𑁆")
+(".ph" "𑀨𑁆")
+("f" "𑀨𑁆")
+("b" "𑀩𑁆")
+("bh" "𑀪𑁆")
+("B" "𑀪𑁆")
+("m" "𑀫𑁆")
+("y" "𑀬𑁆")
+("Y" "𑀬𑁆") ; not in ITRANS Brahmi table
+("yh" "𑀬𑁆") ; not in ITRANS Brahmi table
+(".y" "𑀬𑁆")
+("r" "𑀭𑁆")
+("l" "𑀮𑁆")
+("L" "𑀴𑁆")
+("ld" "𑀴𑁆")
+("v" "𑀯𑁆")
+("w" "𑀯𑁆")
+("sh" "𑀰𑁆")
+("z" "𑀚𑁆")
+(".j" "𑀚𑁆")
+; ("z" "𑀰𑁆")
+("S" "𑀱𑁆")
+("Sh" "𑀱𑁆")
+("shh" "𑀱𑁆")
+("s" "𑀲𑁆")
+("h" "𑀳𑁆")
+("jn" "𑀚𑁆𑀜𑁆")
+("j~n" "𑀚𑁆𑀜𑁆")
+("jn" "𑀚𑁆𑀜𑁆")
+("GY" "𑀚𑁆𑀜𑁆")
+("dny" "𑀚𑁆𑀜𑁆")	; not in ITRANS Brahmi table
+("x" "𑀓𑁆𑀱𑁆")
+("ks" "𑀓𑁆𑀲𑁆")
+("ksh" "𑀓𑁆𑀱𑁆")
+("gH" 𑀕𑁆)
+("jH" 𑀚𑁆)
+("DH" "𑀟𑁆")
+("bH" "𑀩𑁆"))
+
+(independent
+("a" "𑀅")
+("aa" "𑀆")
+("A" "𑀆")
+("i" "𑀇")
+("ii" "𑀈")
+("I" "𑀈")
+("u" "𑀉")
+("uu" "𑀊")
+("U" "𑀊")
+("R" "𑀋")
+("RRi" "𑀋")
+("R^i" "𑀋")
+("LLi" "𑀍")	; not in ITRANS Brahmi table
+("L^i" "𑀍")	; not in ITRANS Brahmi table
+(".c" "𑀏") ; not in ITRANS Brahmi table
+("ea" "𑀏") ; not in ITRANS Brahmi table
+("ee" (set CANDRA-E-O 0) "𑀏")	; not in ITRANS Brahmi table
+("E" "𑀏")	; not in ITRANS Brahmi table
+("e" (set CANDRA-E-O ?𑀏) "𑀏")
+("ai" "𑀐")
+("oo" (set CANDRA-E-O 0) "𑀑") ; not in ITRANS Brahmi table
+("O" "𑀑")	; not in ITRANS Brahmi table
+("o" (set CANDRA-E-O ?𑀆) "𑀑")
+("oa" "𑀆")
+("au" "𑀒")
+("RRI" "𑀌")	; not in ITRANS Brahmi table
+("RR" "𑀌")	; not in ITRANS Brahmi table
+("R^I" "𑀌")	; not in ITRANS Brahmi table
+("LLI" "𑀎")	; not in ITRANS Brahmi table
+("L^I" "𑀎")	; not in ITRANS Brahmi table
+(".N" "𑀀")
+(".n" "𑀁")
+("M" "𑀁")
+("H" "𑀂")
+("kH" "ᳵ") 
+("pH" "ᳶ")
+(".a" "")
+(".h" "𑁆")
+("AUM" "𑀑𑀁")
+("OM" "𑀑𑀁"))
+
+(digit
+("0" "𑁦")
+("1" "𑁧")
+("2" "𑁨")
+("3" "𑁩")
+("4" "𑁪")
+("5" "𑁫")
+("6" "𑁬")
+("7" "𑁭")
+("8" "𑁮")
+("9" "𑁯")
+((KP_0) "𑁦")
+((KP_1) "𑁧")
+((KP_2) "𑁨")
+((KP_3) "𑁩")
+((KP_4) "𑁪")
+((KP_5) "𑁫")
+((KP_6) "𑁬")
+((KP_7) "𑁭")
+((KP_8) "𑁮")
+((KP_9) "𑁯"))
+
+(dependent
+("a" (delete @-) "")
+("aa" (delete @-) "𑀸")
+("A" (delete @-) "𑀸")
+("i" (delete @-) "𑀺")
+("ii" (delete @-) "𑀻")
+("I" (delete @-) "𑀻")
+("u" (delete @-) "𑀼")
+("uu" (delete @-) "𑀽")
+("U" (delete @-) "𑀽")
+("R" (delete @-) "𑀾")
+("RRi" (delete @-) "𑀾")
+("R^i" (delete @-) "𑀾")
+("LLi" (delete @-) "𑁀")	; not in ITRANS Brahmi table
+("L^i" (delete @-) "𑁀")	; not in ITRANS Brahmi table
+(".c" (delete @-) "𑁂") ; not in ITRANS Brahmi table
+("ea" (delete @-) "𑁂") ; not in ITRANS Brahmi table
+("ee" (delete @-) (set CANDRA-E-O 0) "𑁂") ; not in ITRANS Brahmi table
+("E" (delete @-) "𑁂")	; not in ITRANS Brahmi table
+("e" (delete @-) (set CANDRA-E-O ?𑁂) "𑁂")
+("ai" (delete @-) "𑁃")
+("oo" (delete @-) (set CANDRA-E-O 0) "𑁄") ; not in ITRANS Brahmi table
+("O" (delete @-) "𑁄")	; not in ITRANS Brahmi table
+("o" (delete @-) (set CANDRA-E-O ?𑀸) "𑁄")
+("oa" "𑀸")
+("au" (delete @-) "𑁅")
+("RR" (delete @-) "𑀿")	; not in ITRANS Brahmi table
+("RRI" (delete @-) "𑀿")	; not in ITRANS Brahmi table
+("R^I" (delete @-) "𑀿")	; not in ITRANS Brahmi table
+("LLI" (delete @-) "𑁁")	; not in ITRANS Brahmi table
+("L^I" (delete @-) "𑁁"))	; not in ITRANS Brahmi table
+
+(dot
+("." (set DOT 1) "."))
+
+(eo-dot-c
+(".c" (delete @-) (insert CANDRA-E-O)))
+
+(danda
+(".." "𑁇")	; not in ITRANS Brahmi table
+(".," "𑁈")	; not in ITRANS Brahmi table
+(". " "𑁇" (pushback 1))
+((?. Return) "𑁇" (pushback 1))
+((?. Tab) "𑁇" (pushback 1))
+(".(" "𑁇" (pushback 1))
+(".)" "𑁇" (pushback 1))
+(".[" "𑁇" (pushback 1))
+(".]" "𑁇" (pushback 1))
+(".{" "𑁇" (pushback 1))
+(".}" "𑁇" (pushback 1))
+(".'" "𑁇" (pushback 1))
+(".\"" "𑁇" (pushback 1)))
+
+(commit-key
+((S-C-Return)))
+
+(backspace
+((BackSpace) (undo))))
+
+(state
+(init
+(starter (pushback 1) (shift intermediate)))
+
+(intermediate
+;; CANDRA-E-O is set to the character CANDRA E or CANDRA O when "e"
+;; or "o" is typed, and in that case, if ".c" is typed, the
+;; character set to CANDRA-E-O is inserted.
+(t (set CANDRA-E-O 0))
+;; LAST-HALANT-POS is set to the position after a consonat + HALANT
+;; sequence. If the following key is for non-letter, that HALANT
+;; character is removed.
+(consonant (mark LAST-HALANT-POS) (shift second))
+(independent (cond (CANDRA-E-O (shift after-eo)) (1 (shift init))))
+(digit (shift init))
+(danda (shift init))
+(backspace)
+(commit-key (shift init)))
+
+(second
+;; CANDRA-E-O is set to the character CANDRA E or CANDRA O when "e"
+;; or "o" is typed, and in that case, if ".c" is typed, the
+;; character set to CANDRA-E-O is inserted.
+(t (set CANDRA-E-O 0))
+(consonant (mark LAST-HALANT-POS))
+(dependent (cond (CANDRA-E-O (shift after-eo)) (1 (shift init))))
+(danda
+(cond (trim-last-halant (move LAST-HALANT-POS) (delete @-) (move @>)))
+(shift init))
+(backspace)
+(commit-key (shift init))
+(nil (cond (trim-last-halant (move LAST-HALANT-POS) (delete @-) (move @>)))
+(shift init)))
+
+(after-eo
+(t (set DOT 0))
+(dot)
+(eo-dot-c (shift init))
+(danda (shift init))
+(commit-key (shift init))
+(nil (cond (DOT (delete @-) (pushback 1))) (shift init))))
+
+;; Local Variables:
+;; coding: utf-8
+;; mode: emacs-lisp
+;; End:

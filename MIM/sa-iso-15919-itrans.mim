@@ -1,3 +1,22 @@
+;; sa-iso-15919-itrans.mim -- Sanskrit ISO-15919 input method roughly mapped from ITRANS and Harvard-Kyoto transliteration systems.
+;; Copyright (C) 2023  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+;; This file is part of the m17n database; a sub-part of the m17n
+;; library.
+
+;; The m17n library is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU Lesser General Public License
+;; as published by the Free Software Foundation; either version 2.1 of
+;; the License, or (at your option) any later version.
+
+;; The m17n library is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>
+
 (input-method sa iso-15919-itrans)
 
 (description "Sanskrit ISO-15919 input method roughly mapped from ITRANS and Harvard-Kyoto
@@ -21,7 +40,7 @@ Raama or ~Raama -> Rāma, ~RRkaara -> R̥kāra, KRShNa or ~KRShNa -> Kr̥ṣṇa
 ~LLakaara -> Ḷakāra
 
 The motivation behind additions made to the basic ITRANS scheme
-is described in https://sanskrit-coders.github.io/site/pages/input/optitrans/,
+is described in https://sanskrit-coders.github.io/input/optitrans/,
 along with a tabulated comparison with several other
 transliteration schemes.
 

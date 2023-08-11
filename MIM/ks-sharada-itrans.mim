@@ -1,3 +1,22 @@
+;; ks-sharada-itrans.mim -- Kashmiri sharada input method by ITRANS and Harvard-Kyoto transliteration systems.
+;; Copyright (C) 2023  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+;; This file is part of the m17n database; a sub-part of the m17n
+;; library.
+
+;; The m17n library is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU Lesser General Public License
+;; as published by the Free Software Foundation; either version 2.1 of
+;; the License, or (at your option) any later version.
+
+;; The m17n library is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>
+
 (input-method ks sharada-itrans)
 
 (description "Kashmiri sharada input method by ITRANS and Harvard-Kyoto
@@ -15,7 +34,7 @@ is followed by non Devanagari letter, the last halant is removed.
 For instance, 'k SPC'->'𑆑 ', 'k..'->'𑆑𑇅'.
 
 The motivation behind additions made to the basic ITRANS scheme
-is described in https://sanskrit-coders.github.io/site/pages/input/optitrans.html,
+is described in https://sanskrit-coders.github.io/input/optitrans/,
 along with a tabulated comparison with several other
 transliteration schemes.
 
@@ -64,17 +83,17 @@ typing \"har..\" produces \"𑆲𑆫𑇅\", not \"𑆲𑆫𑇀𑇅\".")
 ("~N" "𑆕𑇀")
 ("N^" "𑆕𑇀")
 ("ch" "𑆖𑇀")
-("Ch" "𑆗𑇀")	; not in ITRANS Devenagari table
+("Ch" "𑆗𑇀")	; not in ITRANS Devanagari table
 ("c" "𑆖𑇀")
-("C" "𑆗𑇀")	; not in ITRANS Devenagari table
+("C" "𑆗𑇀")	; not in ITRANS Devanagari table
 ("chh" "𑆗𑇀")
 ("j" "𑆘𑇀")
 ("jh" "𑆙𑇀")
 ("J" "𑆙𑇀")
 ("nch" "𑆚𑇀𑆖𑇀")
-("nCh" "𑆚𑇀𑆗𑇀")	; not in ITRANS Devenagari table
+("nCh" "𑆚𑇀𑆗𑇀")	; not in ITRANS Devanagari table
 ("nc" "𑆚𑇀𑆖𑇀")
-("nC" "𑆚𑇀𑆗𑇀")	; not in ITRANS Devenagari table
+("nC" "𑆚𑇀𑆗𑇀")	; not in ITRANS Devanagari table
 ("nchh" "𑆚𑇀𑆗𑇀")
 ("nj" "𑆚𑇀𑆘𑇀")
 ("njh" "𑆚𑇀𑆙𑇀")
@@ -97,7 +116,7 @@ typing \"har..\" produces \"𑆲𑆫𑇅\", not \"𑆲𑆫𑇀𑇅\".")
 ("d" "𑆢𑇀")
 ("dh" "𑆣𑇀")
 ("n" "𑆤𑇀")
-(":n" "𑆤𑇊𑇀")	; not in ITRANS Devenagari table
+(":n" "𑆤𑇊𑇀")	; not in ITRANS Devanagari table
 ("p" "𑆥𑇀")
 ("ph" "𑆦𑇀")
 ("P" "𑆦𑇀")
@@ -174,7 +193,7 @@ typing \"har..\" produces \"𑆲𑆫𑇅\", not \"𑆲𑆫𑇀𑇅\".")
 (".n" "𑆁")
 ("M" "𑆁")
 ("H" "𑆂")
-("kH" "ᳵ") 
+("kH" "ᳵ")
 ("pH" "ᳶ")
 (".a" "𑇁")
 (".h" "𑇀")

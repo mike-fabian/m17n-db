@@ -1,6 +1,21 @@
 ;; sa-grantha-itrans.mim -- Sanskrit input method with ITRANS method
 ;; Copyright (C) 2012 Kencihi Handa 
 
+;; This file is part of the m17n database; a sub-part of the m17n
+;; library.
+
+;; The m17n library is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU Lesser General Public License
+;; as published by the Free Software Foundation; either version 2.1 of
+;; the License, or (at your option) any later version.
+
+;; The m17n library is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>
 
 (input-method sa grantha-itrans)
 
@@ -61,17 +76,17 @@ typing \"har..\" produces \"𑌹𑌰।\", not \"𑌹𑌰𑍍।\".")
 ("~N" "𑌙𑍍")
 ("N^" "𑌙𑍍")
 ("ch" "𑌚𑍍")
-("Ch" "𑌛𑍍")	; not in ITRANS Devenagari table
+("Ch" "𑌛𑍍")	; not in ITRANS Devanagari table
 ("c" "𑌚𑍍")
-("C" "𑌛𑍍")	; not in ITRANS Devenagari table
+("C" "𑌛𑍍")	; not in ITRANS Devanagari table
 ("chh" "𑌛𑍍")
 ("j" "𑌜𑍍")
 ("jh" "𑌝𑍍")
 ("J" "𑌝𑍍")
 ("nch" "𑌞𑍍𑌚𑍍")
-("nCh" "𑌞𑍍𑌛𑍍")	; not in ITRANS Devenagari table
+("nCh" "𑌞𑍍𑌛𑍍")	; not in ITRANS Devanagari table
 ("nc" "𑌞𑍍𑌚𑍍")
-("nC" "𑌞𑍍𑌛𑍍")	; not in ITRANS Devenagari table
+("nC" "𑌞𑍍𑌛𑍍")	; not in ITRANS Devanagari table
 ("nchh" "𑌞𑍍𑌛𑍍")
 ("nj" "𑌞𑍍𑌜𑍍")
 ("njh" "𑌞𑍍𑌝𑍍")
@@ -94,7 +109,7 @@ typing \"har..\" produces \"𑌹𑌰।\", not \"𑌹𑌰𑍍।\".")
 ("d" "𑌦𑍍")
 ("dh" "𑌧𑍍")
 ("n" "𑌨𑍍")
-(":n" "𑌨𑌼𑍍")	; not in ITRANS Devenagari table
+(":n" "𑌨𑌼𑍍")	; not in ITRANS Devanagari table
 ("p" "𑌪𑍍")
 ("ph" "𑌫𑍍")
 ("P" "𑌫𑍍")

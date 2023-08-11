@@ -5,7 +5,7 @@
 ;; Copyright (C) 2013  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
 
 ;; Tiny change by Hari Prasad Nadig, Kannada l10n Team, kannada.l10n@gmail.com
-;; http://kannada.sourceforge.net/  18 Aug 2005. 
+;; http://kannada.sourceforge.net/  18 Aug 2005.
 
 ;; This file is part of the m17n database; a sub-part of the m17n
 ;; library.
@@ -38,14 +38,14 @@ nj->ಂಜ್, njh->ಂಝ್, nT->ಂಟ್, nTh->ಂಠ್, nD->ಂಡ್, nDh
 c->ಚ್, C->ಛ್, z->ಶ್, S->ಷ್, jn->ಜ್ಞ್, R->ಋ
 
 The motivation behind additions made to the basic ITRANS scheme
-is described in http://sanskritnlp.appspot.com/optitrans.html,
+is described in https://sanskrit-coders.github.io/input/optitrans/,
 along with a tabulated comparison with several other
 transliteration schemes.
 
 Earlier changes:
 Kannada l10n Team, kannada.l10n@gmail.com
   <http://kannada.sourceforge.net>
-on 18 Aug 2005. 
+on 18 Aug 2005.
 ")
 
 (title "ಕ")
@@ -55,7 +55,7 @@ on 18 Aug 2005.
   (".") ("~") ("#") ("$") ("^") ("*") ((S-\ )) ((C-@))
   ("0") ("1") ("2") ("3") ("4")
   ("5") ("6") ("7") ("8") ("9")
-  ("A") ("C") ("D") ("E") ("G") ("H") ("I") ("J") ("K") 
+  ("A") ("C") ("D") ("E") ("G") ("H") ("I") ("J") ("K")
   ("L") ("M") ("N") ("O") ("R") ("S") ("T") ("U") ("Y")
   ("a") ("b") ("c") ("d") ("e") ("f") ("g") ("h") ("i")
   ("j") ("k") ("l") ("m") ("n") ("o") ("p") ("q") ("r")

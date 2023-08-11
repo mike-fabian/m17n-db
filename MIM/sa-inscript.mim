@@ -1,0 +1,169 @@
+;; sa-inscript.mim -- Sanskrit input method for inscript layout
+;; This file is derived from the hi-inscript.mim, with modifications
+;; requried/ appropriate for Sanskrit use.
+
+;; This file is part of the m17n contrib; a sub-part of the m17n
+;; library.
+
+;; The m17n library is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU Lesser General Public License
+;; as published by the Free Software Foundation; either version 2.1 of
+;; the License, or (at your option) any later version.
+
+;; The m17n library is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with the m17n library; if not, write to the Free
+;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+(input-method sa inscript)
+
+(description "Sanskrit input method for inscript layout.
+
+Reference URL : http://indlinux.org/wiki/index.php/InscriptLayouts#Devanagari
+
+Key Summary:
+1. ज्ञ : % 
+         This can also be typed as a sequence of following:                 
+                ज + ्  + ञ i.e. p + d + }
+2. त्र : ^
+          This can also be typed as a sequence of following:
+                 त + ्  + र i.e. l + d + j
+ 
+3. क्ष : &
+          This can also be typed as a sequence of following:
+                 क + ्  + ष i.e. k + d + <
+ 
+4. श्र : *
+         This can also be typed as a sequence of following:
+                 श + ्  + र i.e. M + d + j
+                 
+Key summary: Rajesh Ranjan <rranjan@redhat.com>                 
+
+")
+
+(title "क")
+
+(map
+ (trans
+  ((KP_1) "१")
+  ((KP_2) "२")
+  ((KP_3) "३")
+  ((KP_4) "४")
+  ((KP_5) "५")
+  ((KP_6) "६")
+  ((KP_7) "७")
+  ((KP_8) "८")
+  ((KP_9) "९")
+  ((KP_0) "०")
+  ((KP_Decimal) ".")
+  ((KP_Divide) "/")
+  ((KP_Multiply) "*")
+  ((KP_Add) "+")
+  ((KP_Subtract) "-") 
+
+  ("!" ?॑)
+  ("1" ?१)
+  ("@" ?॒)
+  ("2" ?२)
+  ("#" ?#)
+  ("3" ?३)
+  ("$" ?$)
+  ("4" ?४)
+  ((G-4) "₹")
+  ("5" ?५)
+  ("6" ?६)
+  ("7" ?७)
+  ("8" ?८)
+  ("(" ?()
+  ("9" ?९)
+  (")" ?))
+  ("0" ?०)
+  ("_" ?ः)
+  ("-" ?-)
+  ("+" ?ऋ)
+  ("=" ?ृ)
+  ("Q" ?औ)
+  ("q" ?ौ)
+  ("W" ?ऐ)
+  ("w" ?ै)
+  ("E" ?आ)
+  ("e" ?ा)
+  ("R" ?ई)
+  ("r" ?ी)
+  ("T" ?ऊ)
+  ("t" ?ू)
+  ("Y" ?भ)
+  ("y" ?ब)
+  ("U" ?ङ)
+  ("u" ?ह)
+  ("I" ?घ)
+  ("i" ?ग)
+  ("O" ?ध)
+  ("o" ?द)
+  ("P" ?झ)
+  ("p" ?ज)
+  ("{" ?ढ)
+  ("[" ?ड)
+  ("}" ?ञ)
+  ("]" ?़)
+  ("A" ?ओ)
+  ("a" ?ो)
+  ("S" ?ए)
+  ("s" ?े)
+  ("D" ?अ)
+  ("d" ?्)
+  ("F" ?इ)
+  ("f" ?ि)
+  ("G" ?उ)
+  ("g" ?ु)
+  ("H" ?फ)
+  ("h" ?प)
+  ("J" ?ऱ)
+  ("j" ?र)
+  ("K" ?ख)
+  ("k" ?क)
+  ("L" ?थ)
+  ("l" ?त)
+  (":" ?छ)
+  (";" ?च)
+  ("\"" ?ठ)
+  ("'" ?ट)
+  ("|" ?ऑ)
+  ("\\" ?ॉ)
+  ("~" ?ऒ)
+  ("`" ?ॊ)
+  ("Z" ?ऎ)
+  ("z" ?ॆ)
+  ("X" ?ँ)
+  ("x" ?ं)
+  ("C" ?ण)
+  ("c" ?म)
+  ("V" ?ऩ)
+  ("v" ?न)
+  ("B" ?ऴ)
+  ("b" ?व)
+  ("N" ?ळ)
+  ("n" ?ल)
+  ("M" ?श)
+  ("m" ?स)
+  ("<" ?ष)
+  ("," ?,)
+  (">" ?।)
+  ("." ?.)
+  ("?" ?य़)
+  ("/" ?य)
+  ("%" "ज्ञ")
+  ("^" "त्र")
+  ("&" "क्ष")
+  ("*" "श्र")
+  ("dd" "्‌") 
+  ))
+
+(state
+  (init
+    (trans)))

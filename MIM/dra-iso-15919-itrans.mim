@@ -1,3 +1,22 @@
+;; dra-iso-15919-itrans.mim -- Dravidian ISO-15919 input method roughly mapped from ITRANS and Harvard-Kyoto
+;; Copyright (C) 2023  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+;; This file is part of the m17n database; a sub-part of the m17n
+;; library.
+
+;; The m17n library is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU Lesser General Public License
+;; as published by the Free Software Foundation; either version 2.1 of
+;; the License, or (at your option) any later version.
+
+;; The m17n library is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>
+
 (input-method dra iso-15919-itrans)
 
 (description "Dravidian ISO-15919 input method roughly mapped from ITRANS and Harvard-Kyoto
@@ -7,11 +26,11 @@ You can use all the standard ITRANS key sequences (other than ch, which has a di
 sequences such as the below.
 
 nk->ṅk, nkh->ṅkh, ng->ṅg, ngh->ṅgh
-nc->ñc, nch->ñch, nj->ñj, njh->ñjh, 
+nc->ñc, nch->ñch, nj->ñj, njh->ñjh,
 nT->ṇṭ, nTh->ṇṭh, nD->ṇḍ, nDh->ṇḍh
 S->ṣ, jn->jñ, R->r̥
 
-Unlike classical Sanskrit, e and o are not automatically mapped to ē and ō.  
+Unlike classical Sanskrit, e and o are not automatically mapped to ē and ō.
 So, this also serves to type via reconstructed vedic pronunciation sanskrit, where ai=ए, Ai=ऐ, au=ओ, Au=औ.
 
 Capital letters may be produced or forced by prefixing a ~, reduplicating a letter (T,D,N,R) for disambiguation where necessary. For example: 
@@ -42,11 +61,11 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
 ("ng" "ṅg")
 ("ngh" "ṅgh")
 ("nG" "ṅgh")
-("~N" "ṅ")  
+("~N" "ṅ")
 ("nch" "ñc")
-("nCh" "ñch")	; not in ITRANS Devenagari table
+("nCh" "ñch")	; not in ITRANS Devanagari table
 ("nc" "ñc")
-("nC" "ñch")	; not in ITRANS Devenagari table
+("nC" "ñch")	; not in ITRANS Devanagari table
 ("nchh" "ñch")
 ("nj" "ñj")
 ("njh" "ñjh")
@@ -59,7 +78,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
 ("nT" "ṇṭ")
 ("nD" "ṇḍ")
 ("N" "ṇ")
-(":n" "ṉ")	; not in ITRANS Devenagari table
+(":n" "ṉ")	; not in ITRANS Devanagari table
 (".ph" "f")
 ("yh" "ẏ") ; not in ITRANS Devanagari table
 ("DR" "ṛ")
@@ -134,7 +153,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
 ("MV" "v̐v") ; perhaps not in ISO 15919, but useful to represent anunAsika v
 ("MY" "y̐y") ; perhaps not in ISO 15919, but useful to represent anunAsika v
 ("H" "ḥ")
-("kH" "ẖ") 
+("kH" "ẖ")
 ("pH" "ḫ")
 (".a" "’")
 (".h" "")
@@ -163,7 +182,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
 ("PPP" "P") ; adding this code for intuitive use.
 ("BB" "BB")
 ("BBB" "B") ; B works just fine - still adding this code for intuitive use.
-("MM" "M") 
+("MM" "M")
 ("SHSH" "Ṣ")
 ("XX" "KṢ")
 
@@ -182,7 +201,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
 ("~NN" "Ṇ") ; Note extra N compared to lowercase map.
 ("~P" "P") ; adding this code for intuitive use.
 ("~B" "B") ; B works just fine - still adding this code for intuitive use.
-("~M" "M") 
+("~M" "M")
 ("~Y" "Y") ; adding this code for intuitive use.
 ("~R" "R") ; adding this code for intuitive use.
 ("~L" "L") ; adding this code for intuitive use.

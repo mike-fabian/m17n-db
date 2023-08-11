@@ -27,22 +27,22 @@
 Reference URL : http://indlinux.org/wiki/index.php/InscriptLayouts#Devanagari
 
 Key Summary:
-1. ज्ञ : % 
-         This can also be typed as a sequence of following:                 
+1. ज्ञ : %
+         This can also be typed as a sequence of following:
                 ज + ्  + ञ i.e. p + d + }
 2. त्र : ^
           This can also be typed as a sequence of following:
                  त + ्  + र i.e. l + d + j
- 
+
 3. क्ष : &
           This can also be typed as a sequence of following:
                  क + ्  + ष i.e. k + d + <
- 
+
 4. श्र : *
          This can also be typed as a sequence of following:
                  श + ्  + र i.e. M + d + j
-                 
-Key summary: Rajesh Ranjan <rranjan@redhat.com>                 
+
+Key summary: Rajesh Ranjan <rranjan@redhat.com>
 
 ")
 
@@ -64,7 +64,7 @@ Key summary: Rajesh Ranjan <rranjan@redhat.com>
   ((KP_Divide) "/")
   ((KP_Multiply) "*")
   ((KP_Add) "+")
-  ((KP_Subtract) "-") 
+  ((KP_Subtract) "-")
 
   ("!" ?॑)
   ("1" ?१)
@@ -161,7 +161,7 @@ Key summary: Rajesh Ranjan <rranjan@redhat.com>
   ("^" "त्र")
   ("&" "क्ष")
   ("*" "श्र")
-  ("dd" "्‌") 
+  ("dd" "्‌")
   ))
 
 (state

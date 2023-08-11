@@ -40,7 +40,7 @@ For motivations and further details, see description of hi-itrans.mim.")
 (title "सं")
 
 (variable (trim-last-halant nil 0)
-	  (enable-udatta nil 1))
+          (enable-udatta nil 1))
 
 (include (hi itrans) map)
 
@@ -48,10 +48,10 @@ For motivations and further details, see description of hi-itrans.mim.")
  (udattta
   ("_" "॒")
   ; ("__" "᳘") ; shatapatha brAhmaNa style
-  ; ("___" "꣣") ; kauthuma saMhitA style. 
-  ("''" "॑") 
+  ; ("___" "꣣") ; kauthuma saMhitA style.
+  ("''" "॑")
   ("'''" "᳕") ; kaTha style। Doesn't show well in skmnktl's Mac as of 202209
-  ; ("'''" "꣡") ; kauthuma saMhitA style. More frequently used than  \꣢, so should be able to type easily. Doesn't show well on Mac and android whatsapp. 
+  ; ("'''" "꣡") ; kauthuma saMhitA style. More frequently used than  \꣢, so should be able to type easily. Doesn't show well on Mac and android whatsapp.
   ; Alternate - shaunaka vulage style: ("\'\"\"" "᳡")
   ("\'\"" "꣢") ; "" is not suitable since it is frequently typed with the intention of inserting text between the quotes.
   ("!!" "꣡")

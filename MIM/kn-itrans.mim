@@ -52,7 +52,7 @@ on 18 Aug 2005.
 
 (map
  (starter
-  (".") ("~") ("#") ("$") ("^") ("*") ((S-\ )) ((C-@))
+  (".") ("~") ("#") ("$") ("^") ("*") ((C-#)) ((C-@))
   ("0") ("1") ("2") ("3") ("4")
   ("5") ("6") ("7") ("8") ("9")
   ("A") ("C") ("D") ("E") ("G") ("H") ("I") ("J") ("K")
@@ -137,12 +137,13 @@ on 18 Aug 2005.
   ("shh" "ಷ್")
   ("s" "ಸ್")
   ("h" "ಹ್")
-  ("f" "ೞ್")				; not in ITRANS Kannada table
+  ("LH" "ೞ್")				; not in ITRANS Kannada table
   ("GY" "ಜ್ಞ್")
   ("jn" "ಜ್ಞ್")
   ("j~n" "ಜ್ಞ್")
   ("dny" "ಜ್ಞ್")			; not in ITRANS Kannada table
   ("x" "ಕ್ಷ್")
+  ("LLL" "ಳ್ಳ್")
   ("ks" "ಕ್ಸ್")
   ("ksh" "ಕ್ಷ್")
  )
@@ -203,8 +204,6 @@ on 18 Aug 2005.
   ("7" "೭")
   ("8" "೮")
   ("9" "೯")
-  ("#" "್ರ")				; not in ITRANS Kannada table
-  ("$" "ರ್")				; not in ITRANS Kannada table
   ((KP_1) "೧")
   ((KP_2) "೨")
   ((KP_3) "೩")
@@ -215,7 +214,7 @@ on 18 Aug 2005.
   ((KP_8) "೮")
   ((KP_9) "೯")
   ((KP_0) "೦")
-  ((S-\ ) "‌")				; not in ITRANS Kannada table
+  ((C-#) "‌")				; not in ITRANS Kannada table
   ((C-@) "‍"))				; not in ITRANS Kannada table
 
  (dependent

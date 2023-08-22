@@ -245,8 +245,9 @@ on 18 Aug 2005.
   ("O" (delete @-) "ೋ")
   ("oo" (delete @-) "ೋ")		; not in ITRANS Kannada table
   ("au" (delete @-) "ೌ")
-  ("LLI" (delete @-) "")		; not in ITRANS Kannada table ; (conflict) commented, to support the LL consonant cluster
-  ("L^I" (delete @-) "")		; not in ITRANS Kannada table
+  ("LLI" (delete @-) "ೣ")		; not in ITRANS Kannada table ; (conflict) commented, to support the LL consonant cluster
+  ("L^I" (delete @-) "ೣ")		; not in ITRANS Kannada table
+  ("LRU" (delete @-) "ೣ")		; not in ITRANS Kannada table
  )
 
  (return

@@ -162,7 +162,9 @@ on 18 Aug 2005.
   ("R^i" "ಋ")
   ("R" "ಋ")        ; not in ITRANS Kannada table
   ("Ru" "ಋ")        ; not in ITRANS Kannada table
-  ("LLi" "ಌ")				; (conflict) commented, to support the LL consonant cluster
+  ; Do not use LLi as an independent vowel. The reason is that kaLLi and aLLi should intuitively yield ಕಳ್ಳಿ  and ಅಳ್ಳಿ ,
+  ; while kLLipti should yield ಕೢಪ್ತಿ (since ಳ್ಳ್ after a consonant is very unusual).
+  ; ("LLi" "ಌ")
   ("L^i" "ಌ")
 ;;("Lru" "ಌ")				; not in ITRANS Kannada table ; (objection) LRu is more appropriate
   ("LRu" "ಌ") 				; not in ITRANS Kannada table ; (correction) Replaces "Lru"
@@ -178,7 +180,7 @@ on 18 Aug 2005.
   ("RRI" "ೠ")
   ("R^I" "ೠ")
   ("RU" "ೠ")        ; not in ITRANS Kannada table
-  ("LLI" "ೡ")				; (conflict) commented, to support the LL consonant cluster
+  ; ("LLI" "ೡ") ; Do not use this independent vowel
   ("L^I" "ೡ")
   ("LRU" "ೡ")				; not in ITRANS Kannada table
   (".n" "ಂ")

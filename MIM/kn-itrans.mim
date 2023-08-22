@@ -237,8 +237,8 @@ on 18 Aug 2005.
   ("RRI" (delete @-) "ೄ")
   ("R^I" (delete @-) "ೄ")
   ("RU" (delete @-) "ೄ") 		; not in ITRANS kannada table ; (consistency) adde to sync with the independent "RU"
-  ("LLi" (delete @-) "ೄ")		; not in ITRANS Kannada table ; (conflict) commented, to support the LL consonant cluster
-  ("L^i" (delete @-) "ೄ")		; not in ITRANS Kannada table ; (conflict) commented, to support the LL consonant cluster
+  ("LLi" (delete @-) "ೢ")		; not in ITRANS Kannada table
+  ("L^i" (delete @-) "ೢ")		; not in ITRANS Kannada table
   ("e" (delete @-) "ೆ")
   ("E" (delete @-) "ೇ")
   ("ee" (delete @-) "ೇ")		; not in ITRANS Kannada table
@@ -247,7 +247,7 @@ on 18 Aug 2005.
   ("O" (delete @-) "ೋ")
   ("oo" (delete @-) "ೋ")		; not in ITRANS Kannada table
   ("au" (delete @-) "ೌ")
-  ("LLI" (delete @-) "ೣ")		; not in ITRANS Kannada table ; (conflict) commented, to support the LL consonant cluster
+  ("LLI" (delete @-) "ೣ")		; not in ITRANS Kannada table
   ("L^I" (delete @-) "ೣ")		; not in ITRANS Kannada table
   ("LRU" (delete @-) "ೣ")		; not in ITRANS Kannada table
  )

@@ -143,7 +143,7 @@ on 18 Aug 2005.
   ("j~n" "ಜ್ಞ್")
   ("dny" "ಜ್ಞ್")			; not in ITRANS Kannada table
   ("x" "ಕ್ಷ್")
-  ("LLL" "ಳ್ಳ್")
+  ("LL" "ಳ್ಳ್")
   ("ks" "ಕ್ಸ್")
   ("ksh" "ಕ್ಷ್")
  )
@@ -162,7 +162,7 @@ on 18 Aug 2005.
   ("R^i" "ಋ")
   ("R" "ಋ")        ; not in ITRANS Kannada table
   ("Ru" "ಋ")        ; not in ITRANS Kannada table
-;;("LLi" "ಌ")				; (conflict) commented, to support the LL consonant cluster
+  ("LLi" "ಌ")				; (conflict) commented, to support the LL consonant cluster
   ("L^i" "ಌ")
 ;;("Lru" "ಌ")				; not in ITRANS Kannada table ; (objection) LRu is more appropriate
   ("LRu" "ಌ") 				; not in ITRANS Kannada table ; (correction) Replaces "Lru"
@@ -178,7 +178,7 @@ on 18 Aug 2005.
   ("RRI" "ೠ")
   ("R^I" "ೠ")
   ("RU" "ೠ")        ; not in ITRANS Kannada table
-;;("LLI" "ೡ")				; (conflict) commented, to support the LL consonant cluster
+  ("LLI" "ೡ")				; (conflict) commented, to support the LL consonant cluster
   ("L^I" "ೡ")
   ("LRU" "ೡ")				; not in ITRANS Kannada table
   (".n" "ಂ")
@@ -235,7 +235,7 @@ on 18 Aug 2005.
   ("RRI" (delete @-) "ೄ")
   ("R^I" (delete @-) "ೄ")
   ("RU" (delete @-) "ೄ") 		; not in ITRANS kannada table ; (consistency) adde to sync with the independent "RU"
-;;("LLi" (delete @-) "ೄ")		; not in ITRANS Kannada table ; (conflict) commented, to support the LL consonant cluster
+  ("LLi" (delete @-) "ೄ")		; not in ITRANS Kannada table ; (conflict) commented, to support the LL consonant cluster
   ("L^i" (delete @-) "ೄ")		; not in ITRANS Kannada table ; (conflict) commented, to support the LL consonant cluster
   ("e" (delete @-) "ೆ")
   ("E" (delete @-) "ೇ")
@@ -245,7 +245,7 @@ on 18 Aug 2005.
   ("O" (delete @-) "ೋ")
   ("oo" (delete @-) "ೋ")		; not in ITRANS Kannada table
   ("au" (delete @-) "ೌ")
-;;("LLI" (delete @-) "")		; not in ITRANS Kannada table ; (conflict) commented, to support the LL consonant cluster
+  ("LLI" (delete @-) "")		; not in ITRANS Kannada table ; (conflict) commented, to support the LL consonant cluster
   ("L^I" (delete @-) "")		; not in ITRANS Kannada table
  )
 

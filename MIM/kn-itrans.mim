@@ -143,7 +143,10 @@ on 18 Aug 2005.
   ("j~n" "ಜ್ಞ್")
   ("dny" "ಜ್ಞ್")			; not in ITRANS Kannada table
   ("x" "ಕ್ಷ್")
-  ("LL" "ಳ್ಳ್")
+  ("LL" "ಳ್ಳ್") ; LL consonant cluster, for example aLL should yield ಅಳ್ಳ್  and aLLi should yield ಅಳ್ಳ
+  ; As a simple unambiguous option, it would be good to retain ("LLL" "ಳ್ಳ್")
+  ; (https://lists.nongnu.org/archive/html/m17n-list/2023-08/msg00027.html)
+  ("LLL" "ಳ್ಳ್") ; Makes kaLLa and kaLLLa both yield ಕಳ್ಳ
   ("ks" "ಕ್ಸ್")
   ("ksh" "ಕ್ಷ್")
  )

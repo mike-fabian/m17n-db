@@ -24,7 +24,7 @@
 (input-method sa IAST-vedic )
 
 (description "Romanized Sanskrit input method with IAST and ISO 15919 conventions.
-The table is based on 
+The table is based on
   <http://en.wikipedia.org/wiki/International_Alphabet_of_Sanskrit_Transliteration> and https://en.wikipedia.org/wiki/ISO_15919.
 ")
 
@@ -41,7 +41,11 @@ The table is based on
   ("uu" "ū")
   ("UU" "Ū")
 
-
+  ;; Widely used Vedic accents in postfix notation (See:
+  ;; https://en.wikipedia.org/wiki/Vedic_accent) They clarify the
+  ;; pitch accent of a vowel, _after_ its type and length are
+  ;; determined (which is common for those used to unaccented
+  ;; sanskrit; and devanAgarI accent notation)
   ("``" "̀")
   ("''" "́")
   ("a''" "á")
@@ -51,8 +55,6 @@ The table is based on
   ("U''" "ṹ")
   ("e''" "é")
   ("o''" "ó")
-
-
   ("a``" "á")
   ("i``" "ì")
   ("u``" "ù")

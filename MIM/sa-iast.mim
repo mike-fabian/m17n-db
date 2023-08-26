@@ -22,8 +22,9 @@
 (input-method sa IAST )
 
 (description "Romanized Sanskrit input method with IAST/ISO 15919 convention.
-The table is based on 
+The table is based on
   <http://en.wikipedia.org/wiki/International_Alphabet_of_Sanskrit_Transliteration>
+  and https://en.wikipedia.org/wiki/ISO_15919.
 ")
 
 (title "ISO 15919")

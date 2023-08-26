@@ -1,0 +1,161 @@
+;; sa-iast-vedic.mim -- Input method for Romanized Sanskrit/Pali using a combination of IAST and the ISO 15919 scheme and widely used Vedic accents
+;; Copyright (C) 2011  William Giddings <wjgiddings@googlemail.com>
+;; Copyright (C) 2023  Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+;; This file is part of the m17n contrib; a sub-part of the m17n
+;; library.
+
+;; The m17n library is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU Lesser General Public License
+;; as published by the Free Software Foundation; either version 2.1 of
+;; the License, or (at your option) any later version.
+
+;; The m17n library is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>
+
+;; This file is branched from sa-iast.mim.
+;; Author: Vishvas Vasuki  <vishvas.vasuki@gmail.com>
+
+(input-method sa IAST-vedic )
+
+(description "Romanized Sanskrit input method with IAST and ISO 15919 conventions.
+The table is based on 
+  <http://en.wikipedia.org/wiki/International_Alphabet_of_Sanskrit_Transliteration> and https://en.wikipedia.org/wiki/ISO_15919.
+")
+
+(title "IAST ISO-15919 Vedic")
+
+(map
+ (trans
+  ("aa" "ā")
+  ("AA" "Ā")
+  ("^a" "â")
+  ("^A" "Â")
+  ("ii" "ī")
+  ("II" "Ī")
+  ("uu" "ū")
+  ("UU" "Ū")
+
+
+  ("``" "̀")
+  ("''" "́")
+  ("a''" "á")
+  ("i''" "í")
+  ("u''" "ú")
+  ("uu''" "ṹ")
+  ("U''" "ṹ")
+  ("e''" "é")
+  ("o''" "ó")
+
+
+  ("a``" "á")
+  ("i``" "ì")
+  ("u``" "ù")
+  ("uu``" "ṹ")
+  ("U``" "ṹ")
+  ("e``" "è")
+  ("o``" "ò")
+
+  (".r" "ṛ")
+  (".R" "Ṛ")
+  (".rr" "ṝ")
+  (".RR" "Ṝ")
+  (".l" "ḷ")
+  (".L" "Ḷ")
+  (".ll" "ḹ")
+  (".LL" "Ḹ")
+  (".M" "Ṃ")
+  (".m" "ṃ")
+  (".h" "ḥ")
+  (".H" "Ḥ")
+  (";n" "ṅ")
+  (";N" "Ṅ")
+  ("~n" "ñ")
+  ("~N" "Ñ")
+  (".t" "ṭ")
+  (".T" "Ṭ")
+  (".d" "ḍ")
+  (".D" "Ḍ")
+  (".n" "ṇ")
+  (".N" "Ṇ")
+  (".z" "ẓ")
+  (".Z" "Ẓ")
+  (";s" "ś")
+  (";S" "Ś")
+  (".s" "ṣ")
+  (".S" "Ṣ")
+  ("ee" "ē")
+  ("EE" "Ē")
+  ("oo" "ō")
+  ("OO" "Ō")
+  (";m" "ṁ")
+  (",r" "r̥")
+  (",R" "R̥")
+  (",rr" "r̥̄")
+  (",RR" "R̥̄")
+  (",l" "l̥")
+  (",L" "L̥")
+  (",ll" "l̥̄")
+  (",LL" "L̥̄")
+  ("_h" "ẖ")
+  ("_H" "H̱")
+  ("_k" "ḵ")
+  ("_K" "Ḵ")
+  ("_kh" "k͟h")
+  ("_KH" "K͟H")
+  ("_l" "ḻ")
+  ("_L" "Ḻ")
+  ("_n" "ṉ")
+  ("_N" "Ṉ")
+  ("_r" "ṟ")
+  ("_R" "Ṟ")
+  ("_s" "s̱")
+  ("_S" "S̱")
+  ("_t" "ṯ")
+  ("_T" "Ṯ")
+  ("_z" "ẕ")
+  ("_Z" "Ẕ")
+  (";y" "ẏ")
+  (";Y" "Ẏ")
+  (";z" "ż")
+  (";Z" "Ż")
+  (".g" "ġ")
+  (".G" "Ġ")
+  ("~l" "l̐")
+  ("~m" "m̐")
+  (",h" "h̤")
+  (",H" "H̤")
+  (",s" "s̤")
+  (",S" "S̤")
+  (",t" "t̤")
+  (",T" "T̤")
+  ("^c" "ĉ")
+  ("^C" "Ĉ")
+  ("^e" "ê")
+  ("^E" "Ê")
+  ("^h" "ḫ")
+  ("^H" "Ḫ")
+  ("^j" "ĵ")
+  ("^J" "Ĵ")
+  ("^m" "m̆")
+  ("^M" "M̆")
+  ("^n" "n̆")
+  ("^N" "N̆")
+  ("^o" "ô")
+  ("^O" "Ô")
+  ("^r" "r̆")
+  ("^R" "R̆")
+  ("^u" "ŭ")
+  ("^U" "Ŭ")
+  ("^z" "ž")
+  ("^Z" "Ž")
+  ))
+
+(state
+ (init
+  (trans)))

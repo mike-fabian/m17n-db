@@ -26,6 +26,9 @@
 (description "Romanized Sanskrit input method with IAST and ISO 15919 conventions.
 The table is based on
   <http://en.wikipedia.org/wiki/International_Alphabet_of_Sanskrit_Transliteration> and https://en.wikipedia.org/wiki/ISO_15919.
+
+Some widely used Vedic accents in postfix notation are also supported
+(See: https://en.wikipedia.org/wiki/Vedic_accent).
 ")
 
 (title "IAST ISO-15919 Vedic")
@@ -46,22 +49,22 @@ The table is based on
   ;; pitch accent of a vowel, _after_ its type and length are
   ;; determined (which is common for those used to unaccented
   ;; sanskrit; and devanAgarI accent notation)
-  ("``" "̀")
-  ("''" "́")
-  ("a''" "á")
-  ("i''" "í")
-  ("u''" "ú")
-  ("uu''" "ṹ")
-  ("U''" "ṹ")
-  ("e''" "é")
-  ("o''" "ó")
-  ("a``" "á")
-  ("i``" "ì")
-  ("u``" "ù")
-  ("uu``" "ṹ")
-  ("U``" "ṹ")
-  ("e``" "è")
-  ("o``" "ò")
+  ("``" "̀") ; U+0300 COMBINING GRAVE ACCENT
+  ("''" "́") ; U+0301 COMBINING ACUTE ACCENT
+  ("a''" "á") ; U+00E1 LATIN SMALL LETTER A WITH ACUTE
+  ("i''" "í") ; U+00ED LATIN SMALL LETTER I WITH ACUTE
+  ("u''" "ú") ; U+00FA LATIN SMALL LETTER U WITH ACUTE
+  ("uu''" "ṹ") ; U+1E79 LATIN SMALL LETTER U WITH TILDE AND ACUTE
+  ("U''" "ṹ") ; U+1E79 LATIN SMALL LETTER U WITH TILDE AND ACUTE
+  ("e''" "é") ; U+00E9 LATIN SMALL LETTER E WITH ACUTE
+  ("o''" "ó") ; U+00F3 LATIN SMALL LETTER O WITH ACUTE
+  ("a``" "à") ; U+00E0 LATIN SMALL LETTER A WITH GRAVE
+  ("i``" "ì") ; U+00EC LATIN SMALL LETTER I WITH GRAVE
+  ("u``" "ù") ; U+00F9 LATIN SMALL LETTER U WITH GRAVE
+  ("uu``" "ũ̀") ; U+0169 LATIN SMALL LETTER U WITH TILDE U+0300 COMBINING GRAVE ACCENT
+  ("U``" "ũ̀") ; U+0169 LATIN SMALL LETTER U WITH TILDE U+0300 COMBINING GRAVE ACCENT
+  ("e``" "è") ; U+00E8 LATIN SMALL LETTER E WITH GRAVE
+  ("o``" "ò") ; U+00F2 LATIN SMALL LETTER O WITH GRAVE
 
   (".r" "ṛ")
   (".R" "Ṛ")

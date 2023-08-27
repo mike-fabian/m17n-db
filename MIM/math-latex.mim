@@ -1,6 +1,6 @@
 ;; math-latex.mim -- Mathematics input method using LaTeX command names
 ;; Copyright (C) 2012 Urs Holzer <urs@andonyar.com>
-;; Copyright (C) 2012 Vishvas Vasuki <vishvas.vasuki@gmail.com>
+;; Copyright (C) 2012, 2023 Vishvas Vasuki <vishvas.vasuki@gmail.com>
 
 ;; This file is part of the m17n contrib; a sub-part of the m17n
 ;; library.
@@ -15,10 +15,8 @@
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 ;; Lesser General Public License for more details.
 
-;; You should have received a copy of the GNU Lesser General Public
-;; License along with the m17n library; if not, write to the Free
-;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-;; Boston, MA 02110-1301, USA.
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>
 
 ;; This code is based on StateMath.mim included in methods.tar.gz
 ;; which is distributed at:
@@ -34,10 +32,10 @@
 
 (variable
   (with-backslash-prefix
-    (_"If this variable is 1 (the default is 0), the latex commands are
+    (_"If this variable is 1 (the default is 1), the latex commands are
 recognized only when you type them after backslash '\\'.  In other words,
 you don't have to turn off this input method to input normal ASCII characters.")
-    1 0 1))
+    1 0 1)) ; ((NAME [DESCRIPTION DEFAULT-VALUE VALID-VALUE ...])
 
 (map
   ;; All starter keys must be registered here.

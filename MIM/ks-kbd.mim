@@ -22,7 +22,7 @@
 
 (input-method ks kbd)
 
-(description "Kashmiri input method simulating Kahsmiri keyboard.
+(description "Kashmiri input method simulating Kashmiri keyboard.
 This input method simulates the Kashmiri keyboard
 shown in this text book:
     کءشر کتاب نمبر ۱

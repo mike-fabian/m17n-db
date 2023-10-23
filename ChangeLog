@@ -1,3 +1,14 @@
+2023-10-23  Mike FABIAN  <mfabian@redhat.com>
+
+	Version 1.8.5 released.
+
+	* configure.ac: Version changed to 1.8.5
+	* NEWS: Update for the 1.8.5 release
+	* MIM/new-newa-traditional-extended.mim: New input method by Swornim Nakarmi <svarnim.nakahmi1.618@gmail.com>
+	* icons/new-newa-traditional-extended.png: icon for new input method by Swornim Nakarmi <svarnim.nakahmi1.618@gmail.com
+	* MIM/{en-pn-eqf,ml-pn-c}.mim: New input method for Malayalam by Ajith R <ajithramayyan at yahoo dot co dot in>
+	* icons/{en-pn-eqf,ml-pn-c}.png: icons for the new input method for Malayalam by Ajith R <ajithramayyan at yahoo dot co dot in>
+
 2023-08-03  Mike FABIAN  <mfabian@redhat.com>
 
 	Version 1.8.4 released.

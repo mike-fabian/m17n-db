@@ -6,6 +6,15 @@ Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013
 See the end for copying conditions.
 Copyright (C) 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023 Kenichi Handa <handa@gnu.org>
 
+* Changes in the m17n database 1.8.5
+
+** New input methods are added.
+
+new-newa-traditional-extended: New input method by Swornim Nakarmi <svarnim.nakahmi1.618@gmail.com>
+ml-pn-c: New input method for Malayalam by Ajith R <ajithramayyan at yahoo dot co dot in>
+en-pn-eqf: This is a slightly modified version of the QWERTY English layout to be used along with the ml-pn-c input method
+
+
 * Changes in the m17n database 1.8.4
 
 ** New input methods are added.
@@ -22,7 +31,7 @@ sa-sharada-itrans: from https://github.com/indic-transliteration/m17n-db-indic "
 sa-inscript: from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
 sa-iast-vedic: from https://github.com/indic-transliteration/m17n-db-indic "विश्वासो वासुकिजः (Vishvas Vasuki)
 
-** Changes in input medhods.
+** Changes in input methods.
 
 hi-itrans: Updates from "विश्वासो वासुकिजः (Vishvas Vasuki)" <vishvas.vasuki@gmail.com>
 ne-trad-ttf: Update from author,  Santosh Pradhan <sapradhan8@gmail.com>

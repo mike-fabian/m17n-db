@@ -1,0 +1,176 @@
+﻿;; newa-traditional-extended -- Prachalit Newa Script input method for traditional layout
+;; similar to newa traditional layout
+;; v1.0 2023-10-20
+;; Creative Commons (cc) 2023 Swornim Nakarmi <svarnim.nakahmi1.618@gmail.com>
+
+;; This file is part of the m17n contrib; a sub-part of the m17n
+;; library.
+
+;; The m17n library is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU Lesser General Public License
+;; as published by the Free Software Foundation; either version 2.1 of
+;; the License, or (at your option) any later version.
+
+;; The m17n library is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with the m17n library; if not, write to the Free
+;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+(input-method new newa-traditional-extended)
+
+(description "Prachalit Newa Script input method for traditional layout.
+This layout is an extended version of newa traditional layout and includes
+the most commonly used conjuncts and special symbols.
+Author: Swornim Nakarmi <svarnim.nakahmi1.618@gmail.com>
+")
+
+(title "𑐂 newa-traditional-extended")
+
+(map
+ (trans
+  ("~" ?𑑇)
+  ("!" "𑐖𑑂𑐘")
+  ("@" ?𑐃)
+  ("#" ?𑐑)
+  ("$" ?𑐒)
+  ("%" ?𑐕)
+  ("^" ?𑐚)
+  ("&" ?𑐛)
+  ("*" ?𑐜)
+  ("(" ?𑐝)
+  (")" ?𑐞)
+  ("+" ?𑑄)
+  ("_" ?𑐍)
+  ("`" ?𑐘)
+  ("0" ?𑑐)
+  ("1" ?𑑑)
+  ("2" ?𑑒)
+  ("3" ?𑑓)
+  ("4" ?𑑔)
+  ("5" ?𑑕)
+  ("6" ?𑑖)
+  ("7" ?𑑗)
+  ("8" ?𑑘)
+  ("9" ?𑑙)
+  ("-" ?𑐌)
+  ("=" ?.)
+  ("A" ?𑐁)
+  ("B" ?𑑁)
+  ("C" ?𑐆)
+  ("D" "𑐩𑑂𑐴")
+  ("E" ?𑐋)
+  ("F" ?𑑃)
+  ("G" "𑐣𑑂𑐴")
+  ("H" ?𑐗)
+  ("I" "𑐎𑑂𑐲")
+  ("J" ?𑑀)
+  ("K" ?𑐦)
+  ("L" ?𑐷)
+  ("M" ?𑑅)
+  ("N" "𑐮𑑂𑐴")
+  ("O" ?𑐂)
+  ("P" ?𑐊)
+  ("Q" ?𑑊)
+  ("R" "𑐴𑑂𑐬")
+  ("S" "𑐫𑑂‌")
+  ("T" "𑐟𑑂𑐬")
+  ("U" ?𑐅)
+  ("V" ?𑑈)
+  ("W" ?𑑏)
+  ("X" ?𑑝)
+  ("Y" ?❈)
+  ("Z" "𑐱𑑂𑐬")
+  ("a" ?𑐧)
+  ("b" ?𑐡)
+  ("c" ?𑐀)
+  ("d" ?𑐩)
+  ("e" ?𑐨)
+  ("f" ?𑐵)
+  ("g" ?𑐣)
+  ("h" ?𑐖)
+  ("i" ?𑐲)
+  ("j" ?𑐰)
+  ("k" ?𑐥)
+  ("l" ?𑐶)
+  ("m" ?‌)
+  ("n" ?𑐮)
+  ("o" ?𑐫)
+  ("p" ?𑐄)
+  ("q" ?𑑉)
+  ("r" ?𑐔)
+  ("s" ?𑐎)
+  ("t" ?𑐟)
+  ("u" ?𑐐)
+  ("v" ?𑐏)
+  ("w" ?𑐢)
+  ("x" ?𑐴)
+  ("y" ?𑐠)
+  ("z" ?𑐱)
+  ("'" ?𑐸)
+  ("\"" ?𑐹)
+  (";" ?𑐳)
+  (":" ?𑑎)
+  ("," ?𑑍)
+  ("<" ?𑑚)
+  ("." ?𑑋)
+  (">" ?𑑌)
+  ("/" ?𑐬)
+  ("?" ??)
+  ("\\" ?𑑂)
+  ("|" ?‍)
+  ("[" ?𑐺)
+  ("]" ?𑐾)
+  ("{" " ")
+  ("}" ?𑐿)
+
+  ("{`" ?`)
+  ("{~" ?~)
+  ("{!" ?!)
+  ("{@" ?@)
+  ("{#" ?#)
+  ("{$" ?$)
+  ("{%" ?%)
+  ("{^" ?^)
+  ("{&" ?&)
+  ("{*" ?*)
+  ("{(" ?\()
+  ("{)" ?\))
+  ("{1" ?!)
+  ("{2" ?@)
+  ("{3" ?#)
+  ("{4" ?$)
+  ("{5" ?%)
+  ("{6" ?^)
+  ("{7" ?&)
+  ("{8" ?*)
+  ("{9" ?\()
+  ("{0" ?\))
+  ("{-" ?-)
+  ("{_" ?_)
+  ("{=" ?=)
+  ("{+" ?+)
+  ("{[" ?[)
+  ("{{" "{")
+  ("{]" ?])
+  ("{}" "}")
+  ("{\\" ?\\)
+  ("{|" ?|)
+  ("{;" ?;)
+  ("{:" ?:)
+  ("{'" ?')
+  ("{\"" ?\")
+  ("{<" ?<)
+  ("{." ?.)
+  ("{," ?,)
+  ("{>" ?>)
+  ("{/" ?/)
+  ))
+
+(state
+  (init
+    (trans)))

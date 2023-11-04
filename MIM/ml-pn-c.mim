@@ -1,0 +1,465 @@
+;; ml-pn-c.mim -- Malayalam input method based on usage frequency
+;; Copyright (C) 2023 Ajith R <ajithramayyan at yahoo dot co dot in>
+
+;; This file is part of the m17n database; a sub-part of the m17n
+;; library.
+
+;; The m17n library is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU Lesser General Public License
+;; as published by the Free Software Foundation; either version 2.1 of
+;; the License, or (at your option) any later version.
+
+;; The m17n library is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>
+
+;; See the paper at http://languageinindia.com/july2023/drajithnewkeyboardsmalayalamfinal1.html
+;; Original Author : Ajith R <ajithramayyan at yahoo dot co dot in>
+;; See https://ajithramayyan.gitlab.io/puthunira/ for usage
+;;  നിർദ്ദേശങ്ങള്‍ക്കായ് https://ajithramayyan.gitlab.io/puthunira/ എന്ന കണ്ണി കാണുക 
+
+(input-method ml pn-c)
+
+(description (_"Puthu Nira Charutha
+See the paper at http://languageinindia.com/july2023/drajithnewkeyboardsmalayalamfinal1.html
+Original Author : Ajith R <ajithramayyan at yahoo dot co dot in>
+See https://ajithramayyan.gitlab.io/puthunira/ for usage
+നിർദ്ദേശങ്ങള്‍ക്കായ് https://ajithramayyan.gitlab.io/puthunira/ എന്ന കണ്ണി കാണുക
+"))
+
+(title "pn-c")
+
+(variable
+ (geminate-nga
+  (_"If this variable is 1 (the default), the geminate of nga ങ്ങ is used")
+  1 0 1)
+ (geminate-nja
+  (_"If this variable is 1 (the default), the geminate of nja ഞ്ഞ is used")
+  1 0 1)
+  (always-atomic-chillu
+  (_"If this variable is 1, only atomic chillu are used; otherwise legacy encoding used when defined (the default)")
+  0 0 1)
+  (archaic-au
+  (_"If this variable is 1, archaic form of au ൌ is used; otherwise the common form ൗ is used (the default). The position of length mark ൗ is interchanged with that of ൌ")
+  0 0 1))
+
+
+(map
+ (vL	;; vowel Letters
+  ("f" "അ")
+  ("s" "ആ")
+  ("j" "ഇ")
+  ("t" "ഈ")
+  ("k" "ഉ")
+  ("F" "ഊ")
+  ("Z" "ഋ")
+  ("i" "എ")
+  ("h" "ഏ")
+  ("E" "ഐ")
+  ("J" "ഒ")
+  ("q" "ഓ")
+  ("C" "ഔ")
+
+  ;; Fonts restrict the secondary forms of certain consonants in conjuncts to യരലവ
+  ;; though റ and ള are allowed in the language
+  ;; The "corrections" that change റ to ര and ള to ല when they appear after ് introduce
+  ;; a bug that necessitates the next three lines.
+  ;; Otherwise അ റ becomes ്ര
+  ("fo" " അറ")
+  ("fof" "അൎ")
+  ("fofo" "അറ്റ"))
+
+ (vS	;; vowel Signs
+  ("f" "്")
+  ("s" "ാ")
+  ("j" "ി")
+  ("t" "ീ")
+  ("k" "ു")
+  ("F" "ൂ")
+  ("Z" "ൃ")
+  ("i" "െ")
+  ("h" "േ")
+  ("E" "ൈ")
+  ("J" "ൊ")
+  ("q" "ോ")
+  ("C" (cond ((= archaic-au 0) "ൗ")
+             ((= archaic-au 1) "ൌ"))))
+
+ (common
+  ;; change the symbols in the top row
+  ("`" "(")
+  ("~" "{")
+  ("!" "“")
+  ("@" "‘")
+  ("#" "+")
+  ("$" "×")
+  ("%" "*")
+  ("^" "/")
+  ("&" "÷")
+  ("*" "%")
+  ("(" "’")
+  (")" "”")
+  ("_" "}")
+  ("+" "!")
+  ("-" ")")
+  ("=" ":")
+
+  ;; change the characters and symbols in the qwerty row first (unshift) plane
+  ("q" "ഓ")
+  ("w" "ര")
+  ("e" "ല")
+  ("r" "") ;; the chillu key r doesn't have a character associated. Forms chillu of the consonant after which it is typed
+  ("t" "ഈ")
+  ("y" (cond ((= geminate-nga 0) "ങ")
+             ((= geminate-nga 1) "ങ്ങ")));; geminate form is much more common than the non-geminate form
+  ("u" "ത")
+  ("i" "എ")
+  ("o" "റ")
+  ("p" "ച")
+  ("[" ",")
+  ("]" "'")
+  ("\\" ";")
+
+  ;; change characters and symbols in the asdfg row
+  ("a" "യ")
+  ("s" "ആ")
+  ("d" "") ;; the geminate key d doesn't have a character associated. Forms geminate of the consonant after which it is typed
+  ("f" "അ")
+  ("g" "ദ")
+  ("h" "ഏ")
+  ("j" "ഇ")
+  ("k" "ഉ")
+  ("l" "ന")
+  (";" "ക")
+  ("'" ".")
+
+  ;; change characters and symbols in the zxcvb row
+  ("z" "വ")
+  ("x" "ള")
+  ("c" "ം")
+  ("v" "പ")
+  ("b" "ഗ")
+  ("n" "ഷ")
+  ("m" "മ")
+  ("," "സ")
+  ("." "ണ")
+  ("/" "ട")
+
+  ;; change the characters and symbols in the QWERTY row second (shift) plane
+  ("Q" "ഝ")
+  ("W" "ഴ")
+  ("E" "ഐ")
+  ;; Unicode defines many alternate sequences to obtain the conjunct ന്റ
+  ;; The most commonly used sequence 0x0D28 0x0D4D 0x0D31 is used below
+  ;; Hoping that one day, fonts will support the correct sequence ഩ്ഺ 0x0D29 0x0D4D 0x0D3A;
+  ;; when I will be able to change the code below to
+  ;; ("R" "ഩ്ഺ")
+  ("R" "ന്റ")
+  ("T" "&")
+  ("Y" "#")
+  ("U" "ഭ")
+  ("I" "ഥ")
+  ("O" "ഡ")
+  ("P" "ഢ")
+  ("{" "\"")
+  ("}" "?")
+  ("|" "=")
+
+  ;; change the characters and symbols in the ASDFG row second (shift) plane
+  ("A" "ഹ")
+  ("S" "ബ")
+  ("D" "ജ")
+  ("F" "ഊ")
+  ("G" 0x200C) ;; zero width non-joiner
+  ("H" 0x200D) ;; zero width joiner
+  ("J" "ഒ")
+  ("K" "ശ")
+  ("L" "ധ")
+  ;; The non-geminated form of the character represented by the glyph റ്റ is encoded in Unicode by  ഺ.
+  ;; But, unfortunately, the glyph റ്റ to show the geminated form is defined as gemination of റ.
+  ;; Providing റ്റ as a single keypress in the shift level may reduce the confusion as users are shielded from the underlying sequence used
+  ;; Hoping that one day that the glyph റ്റ will be mapped to the correct sequence when I will change the code below to
+  ;; ((":" "ഺ്ഺ")
+  (":" "റ്റ")
+  ("\"" "-")
+
+  ;; change the characters and symbols in the ZXCVB row second (shift) plane
+  ("Z" "ഋ")
+  ("X" "ഛ")
+  ("C" "ഔ")
+  ("V" "ഘ")
+  ("B" "@")
+  ("N" "$")
+  ("M" "ഫ")
+  ("<" "ഖ")
+  (">" "ഠ")
+  ("?" (cond ((= geminate-nja 0) "ഞ")
+           ((= geminate-nja 1) "ഞ്ഞ")));; geminate form is much more common than the non-geminate form
+
+  ;; add third layer number row
+  ((G-`) "`")
+  ((G-1) "൧")
+  ((G-2) "൨")
+  ((G-3) "൩")
+  ((G-4) "൪")
+  ((G-5) "൫")
+  ((G-6) "൬")
+  ((G-7) "൭")
+  ((G-8) "൮")
+  ((G-9) "൯")
+  ((G-0) "൦")
+  ((G--) "~")
+  ((G-=) "_")
+  
+  ;; add third layer qwerty row
+  ((G-q) "₹")
+  ((G-w) "ഄ")
+  ((G-e) "ഁ")
+  ((G-r) "ഀ")
+  ((G-t) "<")
+  ((G-y) ">")
+  ((G-u) "഻")
+  ((G-i) "഼")
+  ((G-o) "ൟ")
+  ((G-p) "₨")
+  ((G-[) "≤")
+  ((G-]) "≥")
+  ((G-\\) "∞")
+  
+  ;; add third layer asdfg row
+  ((G-a) "൹")
+  ((G-s) (cond ((= archaic-au 0) "ൌ")
+             ((= archaic-au 1) "ൗ")))
+  ((G-d) "൏")
+  ((G-f) "ഽ")
+  ((G-g) "ഺ")
+  ((G-h) "ഩ")
+  ((G-j) "ൎ")
+  ((G-k) "൰")
+  ((G-l) "൱")
+  ((G-;) "൲")
+  ((G-') "∝")
+  
+  ;; add third layer zxcvb row
+  ((G-z) "\\")
+  ((G-x) "ൠ")
+  ((G-c) "ഌ")
+  ((G-v) "ൡ")
+  ((G-b) "[")
+  ((G-n) "]")
+  ((G-m) "ൣ")
+  ((G-,) "ൢ")
+  ((G-.) "ൄ")
+  ((G-/) "|")
+
+  ;; add fourth layer number row
+  ((G-~) "")
+  ((G-!) "")
+  ((G-@) "")
+  ((G-#) "")
+  ((G-$) "")
+  ((G-%) "൷")
+  ((G-^) "൳")
+  ((G-&) "൴")
+  ((G-*) "൵")
+  ((G-\() "")
+  ((G-\)) "")
+  ((G-_) "")
+  ((G-+) "")
+  ((G--) "")
+  ((G-=) "")
+
+  ;; add fourth layer QWERTY row
+  ((G-Q) "")
+  ((G-W) "")
+  ((G-E) "")
+  ((G-R) "")
+  ((G-T) "")
+  ((G-Y) "൶")
+  ((G-U) "")
+  ((G-I) "൸")
+  ((G-O) "")
+  ((G-P) "")
+  ((G-{) "")
+  ((G-}) "")
+  ((G-|) "")
+  
+  ;; add fourth layer ASDFG row
+  ((G-A) "")
+  ((G-S) "")
+  ((G-D) "")
+  ((G-F) "")
+  ((G-G) "൙")
+  ((G-H) "൛")
+  ((G-J) "൜")
+  ((G-K) "൝")
+  ((G-L) "൞")
+  ((G-:) "")
+  ((G-\") "")
+
+  ;; add fourth layer ZXCV row
+  ((G-Z) "")
+  ((G-X) "")
+  ((G-C) "")
+  ((G-V) "")
+  ((G-B) "൘")
+  ((G-N) "മ")
+  ((G-M) "")
+  ((G-<) "൚")
+  ((G->) "")
+  ((G-?) "")
+
+  ;; form chillu (pure consonant forms) when the chillu key - r is typed after those consonants that have a specified chillu form
+  ;; based on user preferance legacy chillu encoding is used when that is defined in Unicode, otherwise atomic chillu are used
+
+  (";r" "ൿ")
+  ("/r" "ൾ") ;; the grapheme ൾ can be considered as the chillu of  ട as well
+  (".r" (cond ((= always-atomic-chillu 0) "ണ്‍")
+             ((= always-atomic-chillu 1) "ൺ")))
+  ("ur" "ൽ") ;; the grapheme ൽ can be considered as the chillu of ത as well
+  ("lr" (cond ((= always-atomic-chillu 0) "ന്‍")
+             ((= always-atomic-chillu 1) "ൻ")))
+  ((G-h r) "ൻ") ;; the grapheme ൻ is predominantly the chillu of ഩ, though Unicode defines it for ന
+  ("mr" "ൔ") ;; anuswaram is considered a separate character
+  ("ar" "ൕ")
+  ("wr" (cond ((= always-atomic-chillu 0) "ര്‍")
+             ((= always-atomic-chillu 1) "ർ")))
+  ("er" (cond ((= always-atomic-chillu 0) "ല്‍")
+             ((= always-atomic-chillu 1) "ൽ")))
+  ("Ar" "ഃ") ;; visargam is considered chillu of ഹ
+  ("xr" (cond ((= always-atomic-chillu 0) "ള്‍")
+             ((= always-atomic-chillu 1) "ൾ")))
+  ("Wr" "ൖ")
+  ("or" "ർ") ;; the grapheme ർ can be considered as the chillu of റ as well
+
+  ;; form geminates when the geminate key d is typed after a consonant, if it has a geminate form
+  (";d" "ക്ക")
+  ("bd" "ഗ്ഗ")
+  ;; ങ്ങ is available with a single key press
+  ("pd" "ച്ച")
+  ("Dd" "ജ്ജ")
+
+  ;; ഞ്ഞ is available with a single key press in the shift level
+  ("/d" "ട്ട")
+  ("Od" "ഡ്ഡ")
+  (".d" "ണ്ണ")
+  ("ud" "ത്ത")
+  ("gd" "ദ്ദ")
+  ("ld" "ന്ന")
+  ("Td" "ഩ്ഩ") ;; unlikely that fonts will have a glyph for this geminate form.
+  ("vd" "പ്പ")
+  ("Sd" "ബ്ബ")
+  ("md" "മ്മ")
+  ("ad" "യ്യ")
+  ("ed" "ല്ല")
+  ("zd" "വ്വ")
+  ("Kd" "ശ്ശ")
+  (",d" "സ്സ")
+  ("xd" "ള്ള")
+  ;; The non-geminated form of the character represented by the glyph റ്റ is encoded in Unicode by  ഺ.
+  ;; But, unfortunately, the glyph റ്റ to show the geminated form is defined as gemination of റ.
+  ;; Though റ്റ is avialble with  a single keypress in the shift level, it is also available as റ followed by the geminate key - d
+  ("od" "റ്റ")
+  ;; The first character of the geminated forms of the 2nd and 4th column of characters is replaced by the first and third column characters respectively
+  ("<d" "ക്ഖ")
+  ("Vd" "ഗ്ഘ")
+  ("Xd" "ച്ഛ")
+  ("Qd" "ജ്ഝ")
+  (">d" "ട്ഠ")
+  ("Pd" "ഡ്ഢ")
+  ("Id" "ത്ഥ")
+  ("Ld" "ദ്ധ")
+  ("Md" "പ്ഫ")
+  ("Ud" "ബ്ഭ")
+
+  ;; Fonts restrict the secondary forms of certain consonants in conjuncts to രലവയ
+  ;; The following "corrections" change റ to ര and ള to ല when they appear after ്
+
+  ("fo" "്ര")
+  ("fx" "്ല")
+  ;; Allow use of dot reph from the first layer itself
+  ;;  Change റ് to ൎ if consonants follow
+  ("of" "റ്")
+  ("of;" "ൎക")
+  ("of<" "ൎഖ")
+  ("ofb" "ൎഗ")
+  ("ofV" "ൎഘ")
+  ("ofy" "ൎങ്ങ")
+  ("ofp" "ൎച")
+  ("ofX" "ൎഛ")
+  ("ofD" "ൎജ")
+  ("ofQ" "ൎഝ")
+  ("ofB" "ൎഞ്ഞ")
+  ("of/" "ൎട")
+  ("of>" "ൎഠ")
+  ("ofO" "ൎഡ")
+  ("ofP" "ൎഢ")
+  ("of." "ൎണ")
+  ("ofu" "ൎത")
+  ("ofI" "ൎഥ")
+  ("ofg" "ൎദ")
+  ("ofL" "ൎധ")
+  ("ofl" "ൎന")
+  ("of`" "ൎഩ")
+  ("ofv" "ൎപ")
+  ("ofM" "ൎഫ")
+  ("ofS" "ൎബ")
+  ("ofU" "ൎഭ")
+  ("ofm" "ൎമ")
+  ("ofa" "ൎയ")
+  ("ofe" "ൎല")
+  ("ofz" "ൎവ")
+  ("ofK" "ൎശ")
+  ("ofn" "ൎഷ")
+  ("of," "ൎസ")
+  ("ofx" "ൎള")
+  ("ofo" "റ്റ")
+  ;;  Change റ് to ൎ if consonants follow and permit gemination too
+  ("of;d" "ൎക്ക")
+  ("of<d" "ൎക്ഖ" )
+  ("ofbd" "ൎഗ്ഗ")
+  ("ofVd" "ൎഗ്ഘ")
+  ("ofpd" "ൎച്ച")
+  ("ofXd" "ൎച്ഛ")
+  ("ofDd" "ൎജ്ജ")
+  ("ofQd" "ൎജ്ഝ")
+  ("of/d" "ൎട്ട")
+  ("of>d" "ൎട്ഠ")
+  ("ofOd" "ൎഡ്ഡ")
+  ("ofPd" "ൎഡ്ഢ")
+  ("of.d" "ൎണ്ണ")
+  ("ofud" "ൎത്ത")
+  ("ofId" "ൎത്ഥ")
+  ("ofgd" "ൎദ്ദ")
+  ("ofLd" "ൎദ്ധ")
+  ("ofld" "ൎന്ന")
+  ("of`d" "ൎഩ്ഩ")
+  ("ofvd" "ൎപ്പ")
+  ("ofMd" "ൎപ്ഫ")
+  ("ofSd" "ൎബ്ബ")
+  ("ofUd" "ൎബ്ഭ")
+  ("ofmd" "ൎമ്മ")
+  ("ofad" "ൎയ്യ")
+  ("ofed" "ൎല്ല")
+  ("ofzd" "ൎവ്വ")
+  ("ofKd" "ൎശ്ശ")
+  ("of,d" "ൎസ്സ")
+  ("ofxd" "ൎള്ള")))
+
+(state
+  (init
+    (vL (commit) (shift nonWS))
+    (common (commit) (shift nonWS)))
+  (nonWS
+    (vS (commit))
+    (common (commit))
+    (nil (shift init))))
+
+;; Local Variables:
+;; coding: utf-8
+;; mode: emacs-lisp
+;; End:

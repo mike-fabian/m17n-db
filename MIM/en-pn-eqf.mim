@@ -1,0 +1,140 @@
+;; en-pn-eqf.mim -- minimally modified qwerty with changes in symbols paralleling Puthunira Charutha
+;; Copyright (c) 2023 Ajith R <ajithramayyan at yahoo dot co dot in>
+
+;; This file is part of the m17n database; a sub-part of the m17n
+;; library.
+
+;; The m17n library is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU Lesser General Public License
+;; as published by the Free Software Foundation; either version 2.1 of
+;; the License, or (at your option) any later version.
+
+;; The m17n library is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>
+
+;; See the paper at http://languageinindia.com/july2023/drajithnewkeyboardsmalayalamfinal1.html
+;; Original Author : Ajith R <ajithramayyan at yahoo dot co dot in>
+;; See https://ajithramayyan.gitlab.io/puthunira/ for usage
+;;  നിർദ്ദേശങ്ങള്‍ക്കായ് https://ajithramayyan.gitlab.io/puthunira/ എന്ന കണ്ണി കാണുക 
+
+(input-method en pn-eqf)
+
+(description (_"Puthu Nira English Quick Fix
+
+This is a slightly modified version of the QWERTY English layout to be
+used along with the Puthunira Charutha (the ml-pn-c input method)
+because ml-pn-c changes some punctuation marks from their locations on
+the QWERTY layout.
+
+See the paper at http://languageinindia.com/july2023/drajithnewkeyboardsmalayalamfinal1.html
+Original Author : Ajith R <ajithramayyan at yahoo dot co dot in>
+See https://ajithramayyan.gitlab.io/puthunira/ for usage
+നിർദ്ദേശങ്ങള്‍ക്കായ് https://ajithramayyan.gitlab.io/puthunira/ എന്ന കണ്ണി കാണുക
+"))
+
+(title "pn-eqf")
+
+(map
+ (changes
+  ("`" "(")
+  ("~" "{")
+  ("!" "“")
+  ("@" "‘")
+  ("#" "+")
+  ("$" "×")
+  ("%" "*")
+  ("^" "/")
+  ("&" "÷")
+  ("*" "%")
+  ("(" "’")
+  (")" "”")
+  ("_" "}")
+  ("+" "!")
+  ("-" ")")
+  ("=" ":")
+  ("t" "&")
+  ("y" "#")
+  ("[" ",")
+  ("]" "'")
+  ("\\" ";")
+  (";" "t")
+  ("'" ".")
+  ("b" "@")
+  ("n" "$")
+  ("," "n")
+  ("." "y")
+  ("/" "b")
+  ("T" "<")
+  ("Y" ">")
+  ("{" "\"")
+  ("}" "?")
+  ("|" "=")
+  (":" "T")
+  ("\"" "-")
+  ("B" "[")
+  ("N" "]")
+  ("<" "N")
+  (">" "Y")
+  ("?" "B")
+  ((G-`) "`")
+  ((G-1) "")
+  ((G-2) "")
+  ((G-3) "")
+  ((G-4) "")
+  ((G-5) "")
+  ((G-6) "")
+  ((G-7) "")
+  ((G-8) "")
+  ((G-9) "")
+  ((G-0) "")
+  ((G--) "~")
+  ((G-=) "_")
+  ((G-q) "₹")
+  ((G-w) "")
+  ((G-e) "")
+  ((G-r) "")
+  ((G-t) "")
+  ((G-y) "")
+  ((G-u) "")
+  ((G-i) "")
+  ((G-o) "")
+  ((G-p) "₨")
+  ((G-[) "≤")
+  ((G-]) "≥")
+  ((G-\\) "∞")
+  ((G-a) "")
+  ((G-s) "")
+  ((G-d) "")
+  ((G-e) "")
+  ((G-f) "")
+  ((G-g) "")
+  ((G-h) "")
+  ((G-j) "")
+  ((G-k) "")
+  ((G-l) "")
+  ((G-;) "")
+  ((G-') "∝")
+  ((G-z) "\\")
+  ((G-x) "")
+  ((G-c) "")
+  ((G-v) "")
+  ((G-b) "^")
+  ((G-n) "")
+  ((G-m) "")
+  ((G-,) "")
+  ((G-.) "")
+  ((G-/) "|")))
+
+(state
+ (init
+  (changes commit)))
+
+;; Local Variables:
+;; coding: utf-8
+;; mode: emacs-lisp
+;; End:

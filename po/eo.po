@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: m17n-contrib 1.1.2\n"
 "Report-Msgid-Bugs-To: bugs-m17n-lib@m17n.org\n"
-"POT-Creation-Date: 2023-07-24 23:13+0200\n"
+"POT-Creation-Date: 2023-11-07 15:08+0100\n"
 "PO-Revision-Date: 2007-07-20 16:15+0900\n"
 "Last-Translator: Kenichi Handa <m17n-lib@m17n.org>\n"
 "Language-Team: Esperanto\n"
@@ -39,6 +39,22 @@ msgid ""
 "Cham characters are encoded in logical order in memory and in files.\n"
 "But, you can type Cham text in visual order with this input method.\n"
 "Backspace and Delete also work in the manner of visual order."
+msgstr ""
+
+#: MIM/en-pn-eqf.mim:27
+msgid ""
+"Puthu Nira English Quick Fix\n"
+"\n"
+"This is a slightly modified version of the QWERTY English layout to be\n"
+"used along with the Puthunira Charutha (the ml-pn-c input method)\n"
+"because ml-pn-c changes some punctuation marks from their locations on\n"
+"the QWERTY layout.\n"
+"\n"
+"See the paper at http://languageinindia.com/july2023/"
+"drajithnewkeyboardsmalayalamfinal1.html\n"
+"Original Author : Ajith R <ajithramayyan at yahoo dot co dot in>\n"
+"See https://ajithramayyan.gitlab.io/puthunira/ for usage\n"
+"നിർദ്ദേശങ്ങള്‍ക്കായ് https://ajithramayyan.gitlab.io/puthunira/ എന്ന കണ്ണി കാണുക\n"
 msgstr ""
 
 #: MIM/eo-h-fundamente.mim:29
@@ -332,11 +348,25 @@ msgid ""
 "should not be used in a map of an input method."
 msgstr ""
 
-#: MIM/hi-itrans.mim:53 MIM/mr-gamabhana.mim:49
+#: MIM/hi-brahmi-itrans.mim:47
+msgid ""
+"If this variable is 1 (the default), the last Halant in a syllable\n"
+"is removed if it is followed by non Brahmi letter. For instance,\n"
+"typing \"har..\" produces \"𑀳𑀭𑁇\", not \"𑀳𑀭𑁆𑁇\"."
+msgstr ""
+
+#: MIM/hi-itrans.mim:51 MIM/mr-gamabhana.mim:49
 msgid ""
 "If this variable is 1 (the default), the last Halant in a syllable\n"
 "is removed if it is followed by non Devanagari letter.  For instance,\n"
 "typing \"har..\" produces \"हर।\", not \"हर्।\"."
+msgstr ""
+
+#: MIM/ks-sharada-itrans.mim:47
+msgid ""
+"If this variable is 1 (the default), the last Halant in a syllable\n"
+"is removed if it is followed by non Devanagari letter. For instance,\n"
+"typing \"har..\" produces \"𑆲𑆫𑇅\", not \"𑆲𑆫𑇀𑇅\"."
 msgstr ""
 
 #: MIM/lsymbol.mim:23
@@ -345,14 +375,22 @@ msgid ""
 "It provides access to a broad category of symbols by using the\n"
 "technique of showing multiple alternatives based on the starter keys\n"
 "pressed.  For instance,\n"
-"   \"/->\" -> arrows (e.g. →↑)\n"
-"   \"/||\" -> hand genstures (e.g. 👍👎)\n"
-"   \"/:)\" -> happy faces (e.g. ☺😃)\n"
-"   \"/:(\" -> unhappy faces (e.g. 😢😡)\n"
-"   \"/<3\" -> hearts (e.g. ♥♡)\n"
-"   \"/*\"  -> flowers and stars (e.g. 🌹★)\n"
-"   \"&&\" -> spiritual (e.g. ☸☯)   \"/xx\" -> checks (e.g. ✔✘)\n"
-"   \"$\" -> currency (€£)          \"@\" -> legal/text signs (e.g ©¶)\n"
+"   \"/->\" -> arrows (e.g.  →←↑↓ 👉👈👆👇✋ ►◄▲▾ ◤◥◣◢)\n"
+"   \"/||\" -> hand gestures (e.g. 👍👎👍👎👌✋👏🙆 🙏👋🙌✌✊👊 💁🙋💪✍💆💅)\n"
+"   \"/:)\" -> happy faces (e.g. ☺️ 😃😅😆😉😇 😂😏😛😜😝😋 😉💏💋😍😘😚 😽"
+"😻)\n"
+"   \"/:(\" -> unhappy faces (e.g. 😢😩😡😭😪 🙈🙊🙉)\n"
+"   \"/<3\" -> hearts (e.g. ♥️🤍️💔💖💘 💓💞💕💌💑😍😘)\n"
+"   \"/*\"  -> flowers and stars (e.g. 🌹💐❁✽ ★☆⭐🌟💫✨🌠✯🌃 ☀❂✷✸✹🌞⛅🌅🌇 💡"
+"☄⚡ϟ🔥🌈🎆 ❄❆❅)\n"
+"   \"/&&\" -> spiritual (e.g. 💀☠️👹👼😇 ☸️✡️☯️✝️☦️☪️ 🕉️🛐☮️🕎🪯 💒⛪🙈🙊🙉 卍卐☯☬✙)\n"
+"   \"/xx\" -> checks (e.g. ✔✘☐☑☒)\n"
+"   \"/$\" -> currency (e.g. €£¥﷼₱₹ 💰💵💶💴💷)\n"
+"   \"/@\" -> legal/text signs (e.g ©®™§¶†‡)\n"
+"   \"/^\" -> math symbols (e.g. √)\n"
+"   \"/z\" -> zodiac symbols (e.g. ♈♉♊♋♌♍ ♎♏♐♑♒♓)\n"
+"   \"/p\" -> astrological planet symbols (e.g. ☉☽☿♀⊕♂♃♄♅♆♇)\n"
+"   \"/ \" -> zero width joiners (currently only U+ZERO WIDTH NON-JOINER)\n"
 "\n"
 "The user can select the appropriate symbol using ↑,↓,→,←\n"
 "(or C-p, C-n, C-f, C-b) keys and/or the digits.\n"
@@ -367,8 +405,61 @@ msgid ""
 "  <http://www.nongnu.org/m17n/manual-en/m17nDBData.html#mim-list>"
 msgstr ""
 
+#: MIM/math-latex.mim:35
+msgid ""
+"If this variable is 1 (the default is 1), the latex commands are\n"
+"recognized only when you type them after backslash '\\'.  In other words,\n"
+"you don't have to turn off this input method to input normal ASCII "
+"characters."
+msgstr ""
+
+#: MIM/ml-pn-c.mim:27
+msgid ""
+"Puthu Nira Charutha\n"
+"See the paper at http://languageinindia.com/july2023/"
+"drajithnewkeyboardsmalayalamfinal1.html\n"
+"Original Author : Ajith R <ajithramayyan at yahoo dot co dot in>\n"
+"See https://ajithramayyan.gitlab.io/puthunira/ for usage\n"
+"നിർദ്ദേശങ്ങള്‍ക്കായ് https://ajithramayyan.gitlab.io/puthunira/ എന്ന കണ്ണി കാണുക\n"
+msgstr ""
+
+#: MIM/ml-pn-c.mim:38
+msgid "If this variable is 1 (the default), the geminate of nga ങ്ങ is used"
+msgstr ""
+
+#: MIM/ml-pn-c.mim:41
+msgid "If this variable is 1 (the default), the geminate of nja ഞ്ഞ is used"
+msgstr ""
+
+#: MIM/ml-pn-c.mim:44
+msgid ""
+"If this variable is 1, only atomic chillu are used; otherwise legacy "
+"encoding used when defined (the default)"
+msgstr ""
+
+#: MIM/ml-pn-c.mim:47
+msgid ""
+"If this variable is 1, archaic form of au ൌ is used; otherwise the common "
+"form ൗ is used (the default). The position of length mark ൗ is interchanged "
+"with that of ൌ"
+msgstr ""
+
 #: MIM/ml-swanalekha.mim:32
 msgid "Show lookup table"
+msgstr ""
+
+#: MIM/mr-modi-itrans.mim:47
+msgid ""
+"If this variable is 1 (the default), the last Halant in a syllable\n"
+"is removed if it is followed by non Devanagari letter. For instance,\n"
+"typing \"har..\" produces \"𑘮𑘨𑙁\", not \"𑘮𑘨𑘿𑙁\"."
+msgstr ""
+
+#: MIM/sa-grantha-itrans.mim:40
+msgid ""
+"If this variable is 1 (the default), the last Halant in a syllable\n"
+"is removed if it is followed by non Devanagari letter. For instance,\n"
+"typing \"har..\" produces \"𑌹𑌰।\", not \"𑌹𑌰𑍍।\"."
 msgstr ""
 
 #: MIM/si-wijesekera.mim:36
@@ -384,6 +475,20 @@ msgid ""
 "If you prefer this input method to \"lsymbol\" which is registered\n"
 "as one of fallback input methods by default, customize the variable\n"
 "\"fallback-input-method\"."
+msgstr ""
+
+#: MIM/ta-lk-renganathan.mim:33
+msgid ""
+"Surrounding text vs. preedit\n"
+"If 1, try to use surrounding text.  Otherwise, use preedit."
+msgstr ""
+
+#: MIM/ta-remington.mim:23
+msgid ""
+"Tamil Remington Layout\n"
+"Author: Mohan R <mohan43u@gmail.com>\n"
+"Derived From: https://github.com/thamizha/ekalappai/blob/master/installer/"
+"app/keyboards/Tamil-typewriter.txt.in\n"
 msgstr ""
 
 #: MIM/tai-sonla.mim:30
@@ -407,20 +512,6 @@ msgid ""
 "  '%' -> 'ꫝ'\n"
 "  '!' -> '꫞'\n"
 "  '@' -> '꫟'\n"
-msgstr ""
-
-#: MIM/ta-lk-renganathan.mim:33
-msgid ""
-"Surrounding text vs. preedit\n"
-"If 1, try to use surrounding text.  Otherwise, use preedit."
-msgstr ""
-
-#: MIM/ta-remington.mim:23
-msgid ""
-"Tamil Remington Layout\n"
-"Author: Mohan R <mohan43u@gmail.com>\n"
-"Derived From: https://github.com/thamizha/ekalappai/blob/master/installer/"
-"app/keyboards/Tamil-typewriter.txt.in\n"
 msgstr ""
 
 #: MIM/th-kesmanee.mim:35 MIM/th-pattachote.mim:35 MIM/th-tis820.mim:35

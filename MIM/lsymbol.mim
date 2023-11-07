@@ -25,7 +25,7 @@ It provides access to a broad category of symbols by using the
 technique of showing multiple alternatives based on the starter keys
 pressed.  For instance,
    \"/->\" -> arrows (e.g.  →←↑↓ 👉👈👆👇✋ ►◄▲▾ ◤◥◣◢)
-   \"/||\" -> hand genstures (e.g. 👍👎👍👎👌✋👏🙆 🙏👋🙌✌✊👊 💁🙋💪✍💆💅)
+   \"/||\" -> hand gestures (e.g. 👍👎👍👎👌✋👏🙆 🙏👋🙌✌✊👊 💁🙋💪✍💆💅)
    \"/:)\" -> happy faces (e.g. ☺️ 😃😅😆😉😇 😂😏😛😜😝😋 😉💏💋😍😘😚 😽😻)
    \"/:(\" -> unhappy faces (e.g. 😢😩😡😭😪 🙈🙊🙉)
    \"/<3\" -> hearts (e.g. ♥️🤍️💔💖💘 💓💞💕💌💑😍😘)
@@ -34,7 +34,7 @@ pressed.  For instance,
    \"/xx\" -> checks (e.g. ✔✘☐☑☒)
    \"/$\" -> currency (e.g. €£¥﷼₱₹ 💰💵💶💴💷)
    \"/@\" -> legal/text signs (e.g ©®™§¶†‡)
-   \"/^\" ->  math symbols (e.g. √)
+   \"/^\" -> math symbols (e.g. √)
    \"/z\" -> zodiac symbols (e.g. ♈♉♊♋♌♍ ♎♏♐♑♒♓)
    \"/p\" -> astrological planet symbols (e.g. ☉☽☿♀⊕♂♃♄♅♆♇)
    \"/ \" -> zero width joiners (currently only U+ZERO WIDTH NON-JOINER)

@@ -1680,7 +1680,7 @@ For detailed documentation, refer https://swanalekha.smc.org.in")
 
  (select
   (t (set K @@) (sub K 1))
-  ;; When a number is typed, select the corresponding canidate,
+  ;; When a number is typed, select the corresponding candidate,
   ;; produce it, and shift to "init" state.
   (focus-change)
   (choose (hide) (shift init))

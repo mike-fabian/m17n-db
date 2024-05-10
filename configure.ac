@@ -65,7 +65,10 @@ else :
 fi
 
 if test "x$CHARMAPS" != "x"; then
-  if test -r "$CHARMAPS/EUC-JP.gz"; then
+  if test -r "$CHARMAPS/EUC-JP.zst"; then
+    CHARMAP_EXT=".zst"
+    CHARMAP_CAT="zstdcat"
+  elif test -r "$CHARMAPS/EUC-JP.gz"; then
     CHARMAP_EXT=".gz"
     CHARMAP_CAT="zcat"
   elif test -r "$CHARMAPS/EUC-JP"; then

@@ -1,4 +1,4 @@
-;; si-wijesekera.mim -- Sinhala input method with wijesekera method
+;; si-wijesekara.mim -- Sinhala input method with wijesekara method
 ;; Copyright (C) 2005, 2006, 2008, 2009, 2011
 ;;   National Institute of Advanced Industrial Science and Technology (AIST)
 ;;   Registration Number H15PRO112
@@ -21,7 +21,7 @@
 ;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 ;; Boston, MA 02110-1301, USA.
 
-(input-method si wijesekera (version "1.6.0"))
+(input-method si wijesekara (version "1.6.0"))
 
 (description "Sinhala input method based on SLS 1134 Rev. 3:2011.
   <https://www.language.lk/en/download/standards/>

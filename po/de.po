@@ -642,7 +642,7 @@ msgstr ""
 "Nicht-Devanagari-Buchstaben gefolgt wird. Zum Beispiel führt die\n"
 "Eingabe von \"har..\" zu \"हर।\" und nicht zu \"हर्।\"."
 
-#: MIM/si-wijesekera.mim:36
+#: MIM/si-wijesekara.mim:36
 msgid ""
 "Surrounding text vs. preedit.\n"
 "If 1, try to use surrounding text.  Otherwise, use preedit."

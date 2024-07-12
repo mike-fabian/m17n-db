@@ -767,6 +767,7 @@ If 1, try to use surrounding text.  Otherwise, use preedit.")
    ((A-\') "෴")				; 0DF4
    ((G-\') "෴")				; 0DF4
 
+   ("|" "‍්")				; touch (ZWJ 0DCA)
    ("J" "ළු")				; muurdhaja lu (0DC5 0DD4)
 
    ((S-\ ) " ")				; NBSP (00A0)

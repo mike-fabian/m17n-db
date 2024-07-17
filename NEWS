@@ -4,8 +4,20 @@ Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013
   National Institute of Advanced Industrial Science and Technology (AIST)
   Registration Number H15PRO112
 See the end for copying conditions.
-Copyright (C) 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023 Kenichi Handa <handa@gnu.org>
+Copyright (C) 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Kenichi Handa <handa@gnu.org>
 
+* Changes in the m17n database 1.8.6
+
+** Changes in input methods.
+
+si-wijesekera.mim: Many updates by Harshula Jayasuriya <harshula@hj.id.au>
+si-wijesekera.mim renamed to si-wijesekara.mim: also by Harshula Jayasuriya <harshula@hj.id.au
+
+** Changes in the build system.
+
+configure.ac: Add support for zstd-compressed charmaps
+
+
 * Changes in the m17n database 1.8.5
 
 ** New input methods are added.

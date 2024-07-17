@@ -1,3 +1,13 @@
+2024-07-17  Mike FABIAN  <mfabian@redhat.com>
+
+	Version 1.8.6 released.
+
+	* configure.ac: Version changed to 1.8.6
+	* NEWS: Update for the 1.8.6 release
+	* MIM/si-wijesekera.mim: Many updates by Harshula Jayasuriya <harshula@hj.id.au>
+	* MIM/si-wijesekera.mim renamed to MIM/si-wijesekara.mim
+	* configure.ac: Add support for zstd-compressed charmaps (by Thomas Staudinger <staudi.kaos@gmail.com>)
+
 2023-10-23  Mike FABIAN  <mfabian@redhat.com>
 
 	Version 1.8.5 released.

@@ -2,7 +2,7 @@
 #   2012, 2013, 2014
 #   National Institute of Advanced Industrial Science and Technology (AIST)
 #   Registration Number H15PRO112
-# Copyright (C) 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023 Kenichi Handa <handa@gnu.org>
+# Copyright (C) 2015-2024 Kenichi Handa <handa@gnu.org>
 
 # This file is part of the m17n database; a sub-part of the m17n
 # library.

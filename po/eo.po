@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: m17n-contrib 1.1.2\n"
 "Report-Msgid-Bugs-To: bugs-m17n-lib@m17n.org\n"
-"POT-Creation-Date: 2024-07-18 15:26+0200\n"
+"POT-Creation-Date: 2024-07-30 09:54+0200\n"
 "PO-Revision-Date: 2007-07-20 16:15+0900\n"
 "Last-Translator: Kenichi Handa <m17n-lib@m17n.org>\n"
 "Language-Team: Esperanto\n"
@@ -365,7 +365,7 @@ msgstr ""
 #: MIM/ks-sharada-itrans.mim:47
 msgid ""
 "If this variable is 1 (the default), the last Halant in a syllable\n"
-"is removed if it is followed by non Devanagari letter. For instance,\n"
+"is removed if it is followed by non Sharada letter. For instance,\n"
 "typing \"har..\" produces \"𑆲𑆫𑇅\", not \"𑆲𑆫𑇀𑇅\"."
 msgstr ""
 
@@ -451,7 +451,7 @@ msgstr ""
 #: MIM/mr-modi-itrans.mim:47
 msgid ""
 "If this variable is 1 (the default), the last Halant in a syllable\n"
-"is removed if it is followed by non Devanagari letter. For instance,\n"
+"is removed if it is followed by non Modi letter. For instance,\n"
 "typing \"har..\" produces \"𑘮𑘨𑙁\", not \"𑘮𑘨𑘿𑙁\"."
 msgstr ""
 
@@ -462,7 +462,7 @@ msgid ""
 "typing \"har..\" produces \"𑌹𑌰।\", not \"𑌹𑌰𑍍।\"."
 msgstr ""
 
-#: MIM/si-wijesekara.mim:36
+#: MIM/si-wijesekara.mim:37
 msgid ""
 "Surrounding text vs. preedit.\n"
 "If 1, try to use surrounding text.  Otherwise, use preedit."

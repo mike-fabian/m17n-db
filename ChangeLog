@@ -1,3 +1,13 @@
+2024-07-29  Mike FABIAN  <mfabian@redhat.com>
+
+	* configure.ac: Version changed to 1.8.7
+	* NEWS: Update for the 1.8.6 release
+	* MIM/mr-gamabhana.mim: Update by Shantanu Oak <shantanu.oak@gmail.com>
+	* MIM/sa-vedic-itrans.mim: Additions by विश्वासो वासुकिजः (Vishvas Vasuki) <vishvas.vasuki@gmail.com>
+	* MIM/ks-sharada-itrans.mim: Fix typos in comments
+	* MIM/mr-modi-itrans.mim: Fix typos in comments
+	* po/de.po: Update and complete the German translation
+
 2024-07-24  K. Handa  <handa@gnu.org>
 
 	* configure.ac, NEWS, MIM/si-wijesekara.mim: Update copyright notice.
@@ -19,7 +29,7 @@
 	* configure.ac: Version changed to 1.8.5
 	* NEWS: Update for the 1.8.5 release
 	* MIM/new-newa-traditional-extended.mim: New input method by Swornim Nakarmi <svarnim.nakahmi1.618@gmail.com>
-	* icons/new-newa-traditional-extended.png: icon for new input method by Swornim Nakarmi <svarnim.nakahmi1.618@gmail.com
+	* icons/new-newa-traditional-extended.png: icon for new input method by Swornim Nakarmi <svarnim.nakahmi1.618@gmail.com>
 	* MIM/{en-pn-eqf,ml-pn-c}.mim: New input method for Malayalam by Ajith R <ajithramayyan at yahoo dot co dot in>
 	* icons/{en-pn-eqf,ml-pn-c}.png: icons for the new input method for Malayalam by Ajith R <ajithramayyan at yahoo dot co dot in>
 

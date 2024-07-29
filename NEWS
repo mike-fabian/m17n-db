@@ -6,6 +6,14 @@ Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013
 See the end for copying conditions.
 Copyright (C) 2015-2024 Kenichi Handa <handa@gnu.org>
 
+* Changes in the m17n database 1.8.7
+
+** Changes in input methods.
+
+mr-gamabhana.mim: Update by Shantanu Oak <shantanu.oak@gmail.com>
+sa-vedic-itrans.mim: Additions by विश्वासो वासुकिजः (Vishvas Vasuki) <vishvas.vasuki@gmail.com>
+
+
 * Changes in the m17n database 1.8.6
 
 ** Changes in input methods.

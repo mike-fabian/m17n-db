@@ -194,6 +194,41 @@ For motivations and further details, see description of hi-itrans.mim.")
   ("pH" "ᳶ")
   (".a" "ऽ")
   (".h" "्")
+  ;; Below we add some keys so as to be able to type mAtrA-s without a
+  ;; preceding consonant. This is especially useful for searching
+  ;; through text.
+  (".aa" "ा")
+  (".A" "ा")
+  (".i" "ि")
+  (".ii" "ी")
+  (".I" "ी")
+  (".u" "ु")
+  (".uu" "ू")
+  (".U" "ू")
+  (".R" "ृ")
+  (".RRi" "ृ")
+  (".R^i" "ृ")
+  (".LLi" "ॢ")	      ; not in ITRANS Devanagari table
+  (".L^i" "ॢ")	      ; not in ITRANS Devanagari table
+  (".ea" "ॅ")        ; not in ITRANS Devanagari table
+  (".e" (set CANDRA-E-O 0) "ॆ") ; not in ITRANS Devanagari table
+  (".E" (set CANDRA-E-O 0) "े")		      ; not in ITRANS Devanagari table
+  (".ee" (set CANDRA-E-O 0) "े")
+  (".ai" "े")
+  (".aai" "ै")
+  (".Ai" "ै")
+  (".o" (set CANDRA-E-O 0)  "ॊ") ; not in ITRANS Devanagari table
+  (".O" (set CANDRA-E-O 0)  "ो")		      ; not in ITRANS Devanagari table
+  (".oo" (set CANDRA-E-O 0)  "ो")
+  (".au" (set CANDRA-E-O 0)  "ो")
+  (".oa" "ॉ")
+  (".Au" "ौ")
+  (".aau" "ौ")
+  (".RR" "ॄ")	      ; not in ITRANS Devanagari table
+  (".RRI" "ॄ")	      ; not in ITRANS Devanagari table
+  (".R^I" "ॄ")	      ; not in ITRANS Devanagari table
+  (".LLI" "ॣ")	      ; not in ITRANS Devanagari table
+  (".L^I" "ॣ")
   ("AUM" "ॐ")
   ("OM" "ॐ")
   ((C-#) "‌")		      ; not in ITRANS Devanagari table

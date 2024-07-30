@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: m17n-db 1.6.1-1\n"
 "Report-Msgid-Bugs-To: bugs-m17n-lib@m17n.org\n"
 "POT-Creation-Date: 2024-07-30 09:54+0200\n"
-"PO-Revision-Date: 2024-07-29 19:17+0200\n"
+"PO-Revision-Date: 2024-07-30 09:56+0200\n"
 "Last-Translator: Chris Leick <c.leick@vollbio.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
@@ -510,7 +510,6 @@ msgstr ""
 "Eingabe von \"har..\" zu \"हर।\" und nicht zu \"हर्।\"."
 
 #: MIM/ks-sharada-itrans.mim:47
-#, fuzzy
 msgid ""
 "If this variable is 1 (the default), the last Halant in a syllable\n"
 "is removed if it is followed by non Sharada letter. For instance,\n"
@@ -518,7 +517,7 @@ msgid ""
 msgstr ""
 "Wenn diese Variable den Wert 1 hat (Standardwert), wird das letzte\n"
 "Halant in einer Silbe entfernt, wenn es von einem\n"
-"Nicht-Devanagari-Buchstaben gefolgt wird. Zum Beispiel führt die\n"
+"Nicht-Sharada-Buchstaben gefolgt wird. Zum Beispiel führt die\n"
 "Eingabe von \"har..\" zu \"𑆲𑆫𑇅\" und nicht zu \"𑆲𑆫𑇀𑇅\"."
 
 #: MIM/lsymbol.mim:23
@@ -653,7 +652,6 @@ msgid "Show lookup table"
 msgstr "Lookup-Tabelle anzeigen"
 
 #: MIM/mr-modi-itrans.mim:47
-#, fuzzy
 msgid ""
 "If this variable is 1 (the default), the last Halant in a syllable\n"
 "is removed if it is followed by non Modi letter. For instance,\n"
@@ -661,7 +659,7 @@ msgid ""
 msgstr ""
 "Wenn diese Variable den Wert 1 hat (Standardwert), wird das letzte\n"
 "Halant in einer Silbe entfernt, wenn es von einem\n"
-"Nicht-Devanagari-Buchstaben gefolgt wird. Zum Beispiel führt die\n"
+"Nicht-Modi-Buchstaben gefolgt wird. Zum Beispiel führt die\n"
 "Eingabe von \"har..\" zu \"𑘮𑘨𑙁\" und nicht zu \"𑘮𑘨𑘿𑙁\"."
 
 #: MIM/sa-grantha-itrans.mim:40

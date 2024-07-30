@@ -30,7 +30,7 @@ nj->𑆚𑇀𑆘𑇀, njh->𑆚𑇀𑆙𑇀, nT->𑆟𑇀𑆛𑇀, nTh->𑆟𑇀
 c->𑆖𑇀, C->𑆗𑇀, z->𑆯𑇀, S->𑆰𑇀, jn->𑆘𑇀𑆚𑇀, R->𑆉
 
 In addition, for convenience, when a consonant + halant sequence
-is followed by non Devanagari letter, the last halant is removed.
+is followed by non Sharada letter, the last halant is removed.
 For instance, 'k SPC'->'𑆑 ', 'k..'->'𑆑𑇅'.
 
 The motivation behind additions made to the basic ITRANS scheme
@@ -45,7 +45,7 @@ Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
 (variable
 (trim-last-halant
 (_"If this variable is 1 (the default), the last Halant in a syllable
-is removed if it is followed by non Devanagari letter. For instance,
+is removed if it is followed by non Sharada letter. For instance,
 typing \"har..\" produces \"𑆲𑆫𑇅\", not \"𑆲𑆫𑇀𑇅\".")
 1 0 1))
 

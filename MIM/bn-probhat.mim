@@ -59,24 +59,32 @@ Key summary: Runa Bhattacharjee <runab@redhat.com>
   ((KP_Subtract) "-") 
  
   ("!" ?!)
+  ((G-1) ?৴) ; U+09F4 BENGALI CURRENCY NUMERATOR ONE
   ("1" ?১)
   ("@" ?@)
+  ((G-2) ?৵) ; U+09F5 BENGALI CURRENCY NUMERATOR TWO
   ("2" ?২)
   ("#" ?#)
+  ((G-3) ?৶) ; U+09F6 BENGALI CURRENCY NUMERATOR THREE
   ("3" ?৩)
+  ((G-$) ?৲) ; U+09F2 BENGALI RUPEE MARK
   ("$" ?৳)
+  ((G-4) ?৷) ; U+09F7 BENGALI CURRENCY NUMERATOR FOUR
   ("4" ?৪)
   ("%" ?%)
   ("5" ?৫)
   ("^" ?^)
   ("6" ?৬)
   ("&" ?ঞ)
+  ((G-7) ?৺) ; U+09FA BENGALI ISSHAR
   ("7" ?৭)
   ("*" "ৎ")
   ("8" ?৮)
   ("(" ?()
   ("9" ?৯)
+  ((G-\)) ?৹) ; U+09F9 BENGALI CURRENCY DENOMINATOR SIXTEEN
   (")" ?))
+  ((G-0) ?৸) ; U+09F8 BENGALI CURRENCY NUMERATOR ONE LESS THAN THE DENOMINATOR
   ("0" ?০)
   ("_" ?_)
   ("-" ?-)
@@ -89,6 +97,7 @@ Key summary: Runa Bhattacharjee <runab@redhat.com>
   ("E" ?ঈ)
   ("e" ?ী)
   ("R" ?ড়)
+  ((G-r) ?₹) ; U+20B9 INDIAN RUPEE SIGN
   ("r" ?র)
   ("T" ?ঠ)
   ("t" ?ট)
@@ -105,18 +114,26 @@ Key summary: Runa Bhattacharjee <runab@redhat.com>
   ("{" ?ৈ)
   ("[" ?ে)
   ("}" ?ৌ)
+  ((G-]) ?ৗ) ; U+09D7 BENGALI AU LENGTH MARK
   ("]" ?ো)
+  ((G-A) ?ৠ) ; U+09E0 BENGALI LETTER VOCALIC RR
   ("A" ?অ)
+  ((G-a) ?ঌ) ; U+098C BENGALI LETTER VOCALIC L
   ("a" ?া)
+  ((G-S) ?ৣ) ; U+09E3 BENGALI VOWEL SIGN VOCALIC LL
   ("S" ?ষ)
+  ((G-s) ?ৡ) ; U+09E1 BENGALI LETTER VOCALIC LL
   ("s" ?স)
+  ((G-D) ?ৢ) ; U+90E2 BENGALI VOWEL SIGN VOCALIC L
   ("D" ?ঢ)
+  ((G-d) ?ৄ) ; U+09C4 BENGALI VOWEL SIGN VOCALIC RR
   ("d" ?ড)
   ("F" ?থ)
   ("f" ?ত)
   ("G" ?ঘ)
   ("g" ?গ)
   ("H" ?ঃ)
+  ((G-h) ?ঽ) ; U+09BD BENGALI SIGN AVAGRAHA
   ("h" ?হ)
   ("J" ?ঝ)
   ("j" ?জ)
@@ -149,6 +166,7 @@ Key summary: Runa Bhattacharjee <runab@redhat.com>
   ("<" ?ৃ)
   ("," ?,)
   (">" ?ঁ)
+  ((G-.) ?়) ; U+09BC BENGALI SIGN NUKTA
   ("." ?।)
   ("?" ??)
   ("/" ?্)

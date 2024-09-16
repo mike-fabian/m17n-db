@@ -42,6 +42,8 @@ is described in https://sanskrit-coders.github.io/input/optitrans/,
 along with a tabulated comparison with several other
 transliteration schemes.
 
+Basic ITRANS references - https://www.aczoom.com/itrans/html/dvnc/node3.html
+
 Also, see: http://en.wikipedia.org/wiki/Devanagari_transliteration.")
 
 (title "क")
@@ -179,7 +181,7 @@ typing \"har..\" produces \"हर।\", not \"हर्।\".")
   ("R^i" "ऋ")
   ("LLi" "ऌ")			      ; not in ITRANS Devanagari table
   ("L^i" "ऌ")			      ; not in ITRANS Devanagari table
-  (".c" "ऍ")            ; not in ITRANS Devanagari table
+  ("a.c" "ऍ")            ; not in ITRANS Devanagari table
   ("ea" "ऍ")            ; not in ITRANS Devanagari table
   ("ee" (set CANDRA-E-O 0) "ऎ")	      ; not in ITRANS Devanagari table
   ("E" "ऎ")			      ; not in ITRANS Devanagari table
@@ -188,6 +190,7 @@ typing \"har..\" produces \"हर।\", not \"हर्।\".")
   ("oo" (set CANDRA-E-O 0) "ऒ")      ; not in ITRANS Devanagari table
   ("O" "ऒ")			      ; not in ITRANS Devanagari table
   ("o" (set CANDRA-E-O ?ऑ) "ओ")
+  ("aa.c" "ऑ")
   ("oa" "ऑ")
   ("au" "औ")
   ("RRI" "ॠ")			      ; not in ITRANS Devanagari table
@@ -203,6 +206,38 @@ typing \"har..\" produces \"हर।\", not \"हर्।\".")
   ("pH" "ᳶ")
   (".a" "ऽ")
   (".h" "्")
+  (".aa" "ा")
+  (".A" "ा")
+  (".i" "ि")
+  (".ii" "ी")
+  (".I" "ी")
+  (".u" "ु")
+  (".uu" "ू")
+  (".U" "ू")
+  (".R" "ृ")
+  (".RRi" "ृ")
+  (".R^i" "ृ")
+  (".LLi" "ॢ")	      ; not in ITRANS Devanagari table
+  (".L^i" "ॢ")	      ; not in ITRANS Devanagari table
+  (".ea" "ॅ")        ; not in ITRANS Devanagari table
+  (".e" (set CANDRA-E-O 0) "ॆ") ; not in ITRANS Devanagari table
+  (".E" (set CANDRA-E-O 0) "े")		      ; not in ITRANS Devanagari table
+  (".ee" (set CANDRA-E-O 0) "े")
+  (".ai" "े")
+  (".aai" "ै")
+  (".Ai" "ै")
+  (".o" (set CANDRA-E-O 0)  "ॊ") ; not in ITRANS Devanagari table
+  (".O" (set CANDRA-E-O 0)  "ो")		      ; not in ITRANS Devanagari table
+  (".oo" (set CANDRA-E-O 0)  "ो")
+  (".au" (set CANDRA-E-O 0)  "ो")
+  (".oa" "ॉ")
+  (".Au" "ौ")
+  (".aau" "ौ")
+  (".RR" "ॄ")	      ; not in ITRANS Devanagari table
+  (".RRI" "ॄ")	      ; not in ITRANS Devanagari table
+  (".R^I" "ॄ")	      ; not in ITRANS Devanagari table
+  (".LLI" "ॣ")	      ; not in ITRANS Devanagari table
+  (".L^I" "ॣ")
   ("AUM" "ॐ")
   ("OM" "ॐ")
   ((C-#) "‌")		      ; not in ITRANS Devanagari table
@@ -245,7 +280,7 @@ typing \"har..\" produces \"हर।\", not \"हर्।\".")
   ("R^i" (delete @-) "ृ")
   ("LLi" (delete @-) "ॢ")	      ; not in ITRANS Devanagari table
   ("L^i" (delete @-) "ॢ")	      ; not in ITRANS Devanagari table
-  (".c" (delete @-) "ॅ")        ; not in ITRANS Devanagari table
+  ("a.c" (delete @-) "ॅ")        
   ("ea" (delete @-) "ॅ")        ; not in ITRANS Devanagari table
   ("ee" (delete @-) (set CANDRA-E-O 0) "ॆ") ; not in ITRANS Devanagari table
   ("E" (delete @-) "ॆ")		      ; not in ITRANS Devanagari table
@@ -254,7 +289,8 @@ typing \"har..\" produces \"हर।\", not \"हर्।\".")
   ("oo" (delete @-) (set CANDRA-E-O 0) "ॊ") ; not in ITRANS Devanagari table
   ("O" (delete @-) "ॊ")		      ; not in ITRANS Devanagari table
   ("o" (delete @-) (set CANDRA-E-O ?ॉ) "ो")
-  ("oa" "ॉ")
+  ("oa" (delete @-) "ॉ")
+  ("aa.c" (delete @-) "ॉ")
   ("au" (delete @-) "ौ")
   ("RR" (delete @-) "ॄ")	      ; not in ITRANS Devanagari table
   ("RRI" (delete @-) "ॄ")	      ; not in ITRANS Devanagari table

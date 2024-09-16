@@ -23,7 +23,7 @@
 # Boston, MA 02110-1301, USA.
 
 # Process this file with autoconf to produce a configure script.
-AC_INIT([m17n-db],[1.8.7],[bugs-m17n-lib@m17n.org])
+AC_INIT([m17n-db],[1.8.8],[bugs-m17n-lib@m17n.org])
 AM_INIT_AUTOMAKE
 AM_GNU_GETTEXT
 AM_GNU_GETTEXT_VERSION([0.17])

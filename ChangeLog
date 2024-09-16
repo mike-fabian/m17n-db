@@ -1,3 +1,12 @@
+2024-09-18  Mike FABIAN  <mfabian@redhat.com>
+
+	* MIM/bn-probhat.mim: Sync with the "in(ben_probhat)" layout in xkeyboard-config
+	* MIM/sa-vedic-itrans.mim: Improvements by विश्वासो वासुकिजः (Vishvas Vasuki) <vishvas.vasuki@gmail.com>
+	* MIM/sa-itrans.mim: Improvements by विश्वासो वासुकिजः (Vishvas Vasuki) <vishvas.vasuki@gmail.com>
+	* MIM/hi-itrans.mim: Improvements by विश्वासो वासुकिजः (Vishvas Vasuki) <vishvas.vasuki@gmail.com>
+	* MIM/hu-rovas-post.mim: Sync with the improvements in hu-old-hungarian-rovas.txt in ibus-table-others.
+	Also make it possible to use non-ASCII accented characters like ü as input.
+
 2024-07-29  Mike FABIAN  <mfabian@redhat.com>
 
 	* configure.ac: Version changed to 1.8.7

@@ -24,7 +24,7 @@
 
 (description "Sanskrit input method by a modified version of ITRANS and Harvard-Kyoto transliteration systems with added support for reconstructed vedic pronunciation ai=ए, Ai=ऐ, au=ओ, Au=औ.
 
-You can use all the standard ITRANS key sequences plus key
+You can use all the standard ITRANS key sequences (modulo ऍ ऑ) plus key
 sequences such as the below.
 
   nk->ङ्क्, nkh->ङ्ख्, ng->ङ्ग्, ngh->ङ्घ्
@@ -32,6 +32,8 @@ sequences such as the below.
   nj->ञ्ज्, njh->ञ्झ्, nT->ण्ट्, nTh->ण्ठ्, nD->ण्ड्, nDh->ण्ढ्
   c->च्, C->छ्, z->श्, S->ष्, jn->ज्ञ्, R->ऋ
   _->॒, ''->॑
+
+Basic ITRANS references - https://www.aczoom.com/itrans/html/dvnc/node3.html
 
 For motivations and further details, see description of hi-itrans.mim.")
 
@@ -59,7 +61,7 @@ For motivations and further details, see description of hi-itrans.mim.")
   ("g" "ग्")
   ("gh" "घ्")
   ("G" "घ्")
-  (".k" "क़् ")
+  (".k" "क़्")
   ("q" "क़्")
   (".kh" "ख़्")
   (".K" "ख़्")
@@ -282,7 +284,7 @@ For motivations and further details, see description of hi-itrans.mim.")
   ("O" (delete @-) (set CANDRA-E-O 0)  "ो")		      ; not in ITRANS Devanagari table
   ("oo" (delete @-) (set CANDRA-E-O 0)  "ो")
   ("au" (delete @-) (set CANDRA-E-O 0)  "ो")
-  ("oa" "ॉ")
+  ("oa" (delete @-) "ॉ")
   ("Au" (delete @-) "ौ")
   ("aau" (delete @-) "ौ")
   ("RR" (delete @-) "ॄ")	      ; not in ITRANS Devanagari table

@@ -16,30 +16,76 @@ https://en.wikipedia.org/wiki/Old_Hungarian_alphabet
 
 Latin letter(s) | Input sequence | Old Hungarian
 ================================================
+,                 ,                ⹁ U+2E41 reversed comma
+?                 ?                ⸮ U+2E2E reversed question mark
+;                 ;                ⁏ U+204F reversed semicolon
+0                 0                U+200D zero width joiner
+0                 AltGr-0          0
+§                 §                U+200F RIGHT-TO-LEFT MARK
+§                 AltGr-§          U+200E LEFT-TO-RIGHT MARK
+1                 1                𐳺
+1                 AltGr-1          1
+10                10               𐳼
+100               100              𐳾
+1000              1000             𐳿
+2                 2                𐳺𐳺
+2                 AltGr-2          2
+3                 3                𐳺𐳺𐳺
+3                 AltGr-3          3
+4                 4                𐳺𐳺𐳺𐳺
+4                 AltGr-4          4
+5                 5                𐳻
+5                 AltGr-5          5
+6                 6                𐳻𐳺
+6                 AltGr-6          6
+7                 7                𐳻𐳺𐳺
+7                 AltGr-7          7
+8                 8                𐳻𐳺𐳺𐳺
+8                 AltGr-8          8
+9                 9                𐳻𐳺𐳺𐳺𐳺
+9                 AltGr-9          9
 a                 a                𐳀
 A                 A                𐲀
+a                 AltGr-a          𐳃
+A                 AltGr-A          𐲃
+á                 á                𐳁
+Á                 Á                𐲁
 á                 a'               𐳁
 Á                 A'               𐲁
+á                 AltGr-á          𐳈
+Á                 AltGr-Á          𐲈
+á                 AltGr-a '        𐳈
+Á                 AltGr-A '        𐲈
 b                 b                𐳂
 B                 B                𐲂
 c                 c                𐳄
 C                 C                𐲄
+c                 AltGr-c          𐳅
+C                 AltGr-C          𐲅
 cs                cs               𐳆
 Cs                Cs               𐲆
 CS                CS               𐲆
 d                 d                𐳇
 D                 D                𐲇
-dz                dz               𐳇‍𐳯  ¹
-Dz                Dz               𐲇‍𐲯  ¹
-DZ                DZ               𐲇‍𐲯  ¹
-dzs               dzs              𐳇‍𐳰  ¹
-Dzs               Dzs              𐲇‍𐲰  ¹
-DZs               DZs              𐲇‍𐲰  ¹
-DZS               DZS              𐲇‍𐲰  ¹
+d                 AltGr-d          𐳧
+D                 AltGr-D          𐲧
+dz                AltGr-d z        𐳇‍𐳯  ¹
+Dz                AltGr-D z        𐲇‍𐲯  ¹
+DZ                AltGr-D Z        𐲇‍𐲯  ¹
+dzs               AltGr-d z s      𐳇‍𐳰  ¹
+Dzs               AltGr-D z s      𐲇‍𐲰  ¹
+DZs               AltGr-D Z s      𐲇‍𐲰  ¹
+DZS               AltGr-D Z S      𐲇‍𐲰  ¹
 e                 e                𐳉
 E                 E                𐲉
+e                 AltGr-e          𐳊
+E                 AltGr-E          𐲊
+ë                 ë                𐳊
+Ë                 Ë                𐲊
 ë                 e\"               𐳊
 Ë                 E\"               𐲊
+é                 é                𐳋
+É                 É                𐲋
 é                 e'               𐳋
 É                 E'               𐲋
 f                 f                𐳌
@@ -51,8 +97,14 @@ Gy                Gy               𐲎
 GY                GY               𐲎
 h                 h                𐳏
 H                 H                𐲏
+h                 AltGr-h          𐳩
+H                 AltGr-H          𐲩
 i                 i                𐳐
 I                 I                𐲐
+i                 AltGr-i          𐳑
+I                 AltGr-I          𐲑
+í                 í                𐳑
+Í                 Í                𐲑
 í                 i'               𐳑
 Í                 I'               𐲑
 j                 j                𐳒
@@ -75,22 +127,34 @@ Ny                Ny               𐲚
 NY                NY               𐲚
 o                 o                𐳛
 O                 O                𐲛
+ó                 ó                𐳜
+Ó                 Ó                𐲜
 ó                 o'               𐳜
 Ó                 O'               𐲜
+ö                 ö                𐳞
+Ö                 Ö                𐲞
 ö                 o\"               𐳞
 Ö                 O\"               𐲞
-ö                 AltGr-o          𐳝
-Ö                 AltGr-O          𐲝
+ö                 AltGr-ö          𐳝
+Ö                 AltGr-Ö          𐲝
+ö                 AltGr-o \"       𐳝
+Ö                 AltGr-O \"       𐲝
+ő                 ő                𐳟
+Ő                 Ő                𐲟
 ő                 o:               𐳟
 Ő                 O:               𐲟
 p                 p                𐳠
 P                 P                𐲠
-q                 q                𐳓‍𐳮  ¹
-Q                 Q                𐲓‍𐲮  ¹
+q                 q                𐳎
+Q                 Q                𐲎
+q                 AltGr-q          𐳓‍𐳮  ¹
+Q                 AltGr-Q          𐲓‍𐲮  ¹
 r                 r                𐳢
 R                 R                𐲢
 s                 s                𐳤
 S                 S                𐲤
+s                 AltGr-s          𐳡
+S                 AltGr-S          𐲡
 sz                sz               𐳥
 Sz                Sz               𐲥
 SZ                SZ               𐲥
@@ -101,30 +165,95 @@ Ty                Ty               𐲨
 TY                TY               𐲨
 u                 u                𐳪
 U                 U                𐲪
+u                 AltGr-u          𐳲
+U                 AltGr-U          𐲲
+ú                 ú                𐳫
+Ú                 Ú                𐲫
 ú                 u'               𐳫
 Ú                 U'               𐲫
-ü                 u\"               𐳬
-Ü                 U\"               𐲬
+ú                 AltGr-ú          𐳕
+Ú                 AltGr-Ú          𐲕
+ú                 AltGr-u '        𐳕
+Ú                 AltGr-U '        𐲕
+ü                 ü                𐳭
+Ü                 Ü                𐲭
+ü                 u\"               𐳭
+Ü                 U\"               𐲭
+ű                 ű                𐳭
+Ű                 Ű                𐲭
 ű                 u:               𐳭
 Ű                 U:               𐲭
 v                 v                𐳮
 V                 V                𐲮
-w                 w                𐳮‍𐳮  ¹
-W                 W                𐲮‍𐲮  ¹
-x                 x                𐳓‍𐳥  ¹
-X                 X                𐲓‍𐲥  ¹
-y                 y                𐳐‍𐳒  ¹
-Y                 Y                𐲐‍𐲒  ¹
+w                 w                𐳰
+W                 W                𐲰
+w                 AltGr-w          𐳮‍𐳮  ¹
+W                 AltGr-W          𐲮‍𐲮  ¹
+x                 x                𐳥
+X                 X                𐲥
+x                 AltGr-x          𐳓‍𐳥  ¹
+X                 AltGr-X          𐲓‍𐲥  ¹
+y                 y                𐳗
+Y                 Y                𐲗
+y                 AltGr-y          𐳐‍𐳒  ¹
+Y                 AltGr-Y          𐲐‍𐲒  ¹
 z                 z                𐳯
 Z                 Z                𐲯
 zs                zs               𐳰
 Zs                Zs               𐲰
 ZS                ZS               𐲰
-ENT               ENT              𐲧  ³
-EMP               EMP              𐲡  ³
-UNK               UNK              𐲕  ³
-US                US               𐲲  ³
-AMB               AMB              𐲃  ³
+_and              _and             𐳈
+_And              _And             𐲈
+_ANd              _ANd             𐲈
+_AND              _AND             𐲈
+_ech              _ech             𐳩
+_Ech              _Ech             𐲩
+_ECh              _ECh             𐲩
+_ECH              _ECH             𐲩
+_enc              _enc             𐳅
+_Enc              _Enc             𐲅
+_ENc              _ENc             𐲅
+_ENC              _ENC             𐲅
+_ent              _ent             𐳧
+_Ent              _Ent             𐲧
+_ENt              _ENt             𐲧
+_ENT              _ENT             𐲧
+_ents             _ents            𐳱
+_Ents             _Ents            𐲱
+_ENts             _ENts            𐲱
+_ENTs             _ENTs            𐲱
+_ENTS             _ENTS            𐲱
+_ent              AltGr-_ e n t    𐳱
+_Ent              AltGr-_ E n t    𐲱
+_ENt              AltGr-_ E N t    𐲱
+_ENT              AltGr-_ E N T    𐲱
+_emp              _emp             𐳡
+_Emp              _Emp             𐲡
+_EMp              _EMp             𐲡
+_EMP              _EMP             𐲡
+_unk              _unk             𐳕
+_Unk              _Unk             𐲕
+_UNk              _UNk             𐲕
+_UNK              _UNK             𐲕
+_us               _us              𐳲
+_Us               _Us              𐲲
+_US               _US              𐲲
+_amb              _amb             𐳃
+_Amb              _Amb             𐲃
+_AMb              _AMb             𐲃
+_AMB              _AMB             𐲃
+_ZWJ              _ZWJ             U+200D ZERO WIDTH JOINER
+_RLM              _RLM             U+200F RIGHT-TO-LEFT MARK
+_LRM              _LRM             U+200C LEFT-TO-RIGHT MARK
+_LRE              _LRE             U+202A LEFT-TO-RIGHT EMBEDDING
+_RLE              _RLE             U+202B RIGHT-TO-LEFT EMBEDDING
+_LRO              _LRO             U+202D LEFT-TO-RIGHT OVERRIDE
+_RLO              _RLO             U+202E RIGHT-TO-LEFT OVERRIDE
+_PDF              _PDF             U+202C POP DIRECTIONAL FORMATTING
+_LRI              _LRI             U+2066 LEFT-TO-RIGHT ISOLATE
+_RLI              _RLI             U+2067 RIGHT-TO-LEFT ISOLATE
+_FSI              _FSI             U+2068 FIRST STRONG ISOLATE
+_PDI              _PDI             U+2069 POP DIRECTIONAL ISOLATE
 
 Footnotes:
 
@@ -132,10 +261,7 @@ Footnotes:
 
 ² Repeating the postfix changes ambiguous combining marks:
   Example: u -> 𐳪, u' -> 𐳫, u'' -> 𐳪', u''' -> 𐳫'
-
-³ The Hungarian runes also include some non-alphabetical runes
-  which are not ligatures but separate signs.
-  These are called capita dictionum.")
+")
 
 (title "𐲢")
 
@@ -145,150 +271,307 @@ Footnotes:
   ;; of a proper name was often written a bit larger. Though the Unicode
   ;; standard has upper and lowercase letters, which are same shaped,
   ;; the difference is only their size.
-  ("a" ?𐳀)
-  ("A" ?𐲀)
-  ("a'" ?𐳁)
-  ("a''" "𐳀'")
-  ("A'" ?𐲁)
-  ("A''" "𐲁'")
-  ("b" ?𐳂)
-  ("B" ?𐲂)
-  ("c" ?𐳄)
-  ("C" ?𐲄)
-  ("cs" ?𐳆)
-  ("Cs" ?𐲆)
-  ("CS" ?𐲆)
-  ("d" ?𐳇)
-  ("D" ?𐲇)
-  ("dz" "𐳇‍𐳯") ; Ligature of 𐳇 and 𐳯
-  ("Dz" "𐲇‍𐲯") ; Ligature of 𐲇 and 𐲯
-  ("DZ" "𐲇‍𐲯") ; Ligature of 𐲇 and 𐲯
-  ("dzs" "𐳇‍𐳰") ; Ligature of 𐳇 and 𐳰
-  ("Dzs" "𐲇‍𐲰") ; Ligature of 𐳇 and 𐳰
-  ("DZs" "𐲇‍𐲰") ; Ligature of 𐳇 and 𐳰
-  ("DZS" "𐲇‍𐲰") ; Ligature of 𐲇 and 𐲰
-  ("e" ?𐳉)
-  ("E" ?𐲉)
-  ("e\"" ?𐳊)
-  ("e\"\"" "𐳊\"")
-  ("E\"" ?𐲊)
-  ("E\"\"" "𐲊\"")
-  ("e'" ?𐳋)
-  ("e''" "𐳋'")
-  ("E'" ?𐲋)
-  ("E''" "𐲋'")
-  ("f" ?𐳌)
-  ("F" ?𐲌)
-  ("g" ?𐳍)
-  ("G" ?𐲍)
-  ("gy" ?𐳎)
-  ("Gy" ?𐲎)
-  ("GY" ?𐲎)
-  ("h" ?𐳏)
-  ("H" ?𐲏)
-  ("i" ?𐳐)
-  ("I" ?𐲐)
-  ("i'" ?𐳑)
-  ("i''" "𐳑'")
-  ("I'" ?𐲑)
-  ("I''" "𐲑'")
-  ("j" ?𐳒)
-  ("J" ?𐲒)
-  ("k" ?𐳓)
-  ("K" ?𐲓)
-  ((G-k) ?𐳔)
-  ((G-K) ?𐲔)
-  ("l" ?𐳖)
-  ("L" ?𐲖)
-  ("ly" ?𐳗)
-  ("Ly" ?𐲗)
-  ("LY" ?𐲗)
-  ("m" "𐳘")
-  ("M" "𐲘")
-  ("n" "𐳙")
-  ("N" "𐲙")
-  ("ny" ?𐳚)
-  ("Ny" ?𐲚)
-  ("NY" ?𐲚)
-  ("o" ?𐳛)
-  ("O" ?𐲛)
-  ("o'" ?𐳜)
-  ("o''" "𐳛'")
-  ("o'''" "𐳜'")
-  ("O'" ?𐲜)
-  ("O''" "𐲛'")
-  ("O'''" "𐲜'")
-  ("o\"" ?𐳞)
-  ("o\"\"" "𐳛\"")
-  ("o\"\"\"" "𐳞\"")
-  ("O\"" ?𐲞)
-  ("O\"\"" "𐲜\"")
-  ("O\"\"\"" "𐲞\"")
-  ((G-o) ?𐳝)
-  ((G-O) ?𐲝)
-  ("o:" ?𐳟)
-  ("o::" "𐳛:")
-  ("o:::" "𐳟:")
-  ("O:" ?𐲟)
-  ("O::" "𐲛:")
-  ("O:::" "𐲟:")
-  ("p" ?𐳠)
-  ("P" ?𐲠)
-  ("q" "𐳓‍𐳮") ; Ligature of 𐳓 and 𐳮, contains ZERO WIDTH JOINER
-  ("Q" "𐲓‍𐲮") ; Ligature of 𐲓 and 𐲮, contains ZERO WIDTH JOINER
-  ("r" ?𐳢)
-  ("R" ?𐲢)
-  ("s" ?𐳤)
-  ("S" ?𐲤)
-  ("sz" ?𐳥)
-  ("Sz" ?𐲥)
-  ("SZ" ?𐲥)
-  ("t" ?𐳦)
-  ("T" ?𐲦)
-  ("ty" ?𐳨)
-  ("Ty" ?𐲨)
-  ("TY" ?𐲨)
-  ("u" ?𐳪)
-  ("U" ?𐲪)
-  ("u'" ?𐳫)
-  ("u''" "𐳪'")
-  ("u'''" "𐳫'")
-  ("U'" ?𐲫)
-  ("U''" "𐲪'")
-  ("U'''" "𐲫'")
-  ("u\"" ?𐳬)
-  ("u\"\"" "𐳪\"")
-  ("u\"\"\"" "𐳬\"")
-  ("U\"" ?𐲬)
-  ("U\"\"" "𐲪\"")
-  ("U\"\"\"" "𐲬\"")
-  ("u:" ?𐳭)
-  ("u::" "𐳪:")
-  ("u:::" "𐳭:")
-  ("U:" ?𐲭)
-  ("U::" "𐲪:")
-  ("U:::" "𐲭:")
-  ("v" ?𐳮)
-  ("V" ?𐲮)
-  ("w" "𐳮‍𐳮") ; Ligature of 𐳮 and 𐳮, contains ZERO WIDTH JOINER
-  ("W" "𐲮‍𐲮") ; Ligature of 𐲮 and 𐲮, contains ZERO WIDTH JOINER
-  ("x" "𐳓‍𐳥") ; Ligature of 𐳓 and 𐳥, contains ZERO WIDTH JOINER
-  ("X" "𐲓‍𐲥" ) ; Ligature of 𐲓 and 𐲥, contains ZERO WIDTH JOINER
-  ("y" "𐳐‍𐳒") ; Ligature of 𐳐 and 𐳒, contains ZERO WIDTH JOINER
-  ("Y" "𐲐‍𐲒") ; Ligature of 𐲐 and 𐲒, contains ZERO WIDTH JOINER
-  ("z" ?𐳯)
-  ("Z" ?𐲯)
-  ("zs" ?𐳰)
-  ("Zs" ?𐲰)
-  ("ZS" ?𐲰)
-  ;; The Hungarian runes also include some non-alphabetical runes
-  ;; which are not ligatures but separate signs.
-  ;; These are called capita dictionum:
-  ("ENT" ?𐲧)
-  ("EMP" ?𐲡)
-  ("UNK" ?𐲕)
-  ("US" ?𐲲)
-  ("AMB" ?𐲃)
+  ("," ?⹁)           ; U+2E41 REVERSED COMMA
+  ("?" ?⸮)           ; U+2E2E REVERSED QUESTION MARK
+  (";" ?⁏)           ; U+204F REVERSED SEMICOLON
+  ("0" 0x200D)       ; U+200D ZERO WIDTH JOINER
+  ((G-0) ?0)
+  ((section) 0x200F)   ; § -> U+200F RIGHT-TO-LEFT MARK
+  ((G-section) 0x200E) ; G-§ -> U+200E LEFT-TO-RIGHT MARK
+  ("1" ?𐳺)           ; U+10CFA OLD HUNGARIAN NUMBER ONE
+  ((G-1) ?1)
+  ("10" ?𐳼)          ; U+10CFC OLD HUNGARIAN NUMBER TEN
+  ("100" ?𐳾)         ; U+10CFE OLD HUNGARIAN NUMBER ONE HUNDRED
+  ("1000" ?𐳿)        ; U+10CFF OLD HUNGARIAN NUMBER ONE THOUSAND
+  ("2" "𐳺𐳺")          ; U+10CFA U+10CFA
+  ((G-2) ?2)
+  ("3" "𐳺𐳺𐳺")          ; U+10CFA U+10CFA U+10CFA
+  ((G-3) ?3)
+  ("4" "𐳺𐳺𐳺𐳺")         ; U+10CFA U+10CFA U+10CFA U+10CFA
+  ((G-4) ?4)
+  ("5" ?𐳻)           ; U+10CFB OLD HUNGARIAN NUMBER FIVE
+  ((G-5) ?5)
+  ("50" ?𐳽)          ; U+10CFD OLD HUNGARIAN NUMBER FIFTY
+  ("6" "𐳻𐳺")          ; U+10CFB U+10CFA
+  ((G-6) ?6)
+  ("7" "𐳻𐳺𐳺")         ; U+10CFB U+10CFA U+10CFA
+  ((G-7) ?7)
+  ("8" "𐳻𐳺𐳺𐳺")         ; U+10CFB U+10CFA U+10CFA U+10CFA
+  ((G-8) ?8)
+  ("9" "𐳻𐳺𐳺𐳺𐳺")        ; U+10CFB U+10CFA U+10CFA U+10CFA U+10CFA
+  ((G-9) ?9)
+  ("a" ?𐳀)           ; U+10CC0 OLD HUNGARIAN SMALL LETTER A
+  ("A" ?𐲀)           ; U+10C80 OLD HUNGARIAN CAPITAL LETTER A
+  ((G-a) ?𐳃)         ; U+10CC3 OLD HUNGARIAN SMALL LETTER AMB
+  ((G-A) ?𐲃)         ; U+10C83 OLD HUNGARIAN CAPITAL LETTER AMB
+  ((aacute) ?𐳁)      ; U+10CC1 OLD HUNGARIAN SMALL LETTER AA
+  ((Aacute) ?𐲁)      ; U+10C81 OLD HUNGARIAN CAPITAL LETTER AA
+  ("a'" ?𐳁)          ; U+10CC1 OLD HUNGARIAN SMALL LETTER AA
+  ("A'" ?𐲁)          ; U+10C81 OLD HUNGARIAN CAPITAL LETTER AA
+  ("a''" "𐳀'")       ; U+10CC0 OLD HUNGARIAN SMALL LETTER A
+  ("A''" "𐲀'")       ; U+10C80 OLD HUNGARIAN CAPITAL LETTER A
+  ("a'''" "𐳁'")      ; U+10CC1 OLD HUNGARIAN SMALL LETTER AA
+  ("A'''" "𐲁'")      ; U+10C81 OLD HUNGARIAN CAPITAL LETTER AA
+  ((G-aacute) ?𐳈)    ; U+10CC8 OLD HUNGARIAN SMALL LETTER AND
+  ((G-Aacute) ?𐲈)    ; U+10C88 OLD HUNGARIAN CAPITAL LETTER AND
+  ((G-a ') ?𐳈)       ; U+10CC8 OLD HUNGARIAN SMALL LETTER AND
+  ((G-A ') ?𐲈)       ; U+10C88 OLD HUNGARIAN CAPITAL LETTER AND
+  ((G-a ' ') "𐳃'")   ; U+10CC3 OLD HUNGARIAN SMALL LETTER AMB
+  ((G-A ' ') "𐲃'")   ; U+10C83 OLD HUNGARIAN CAPITAL LETTER AMB
+  ((G-a ' ' ') "𐳈'") ; U+10CC8 OLD HUNGARIAN SMALL LETTER AND
+  ((G-A ' ' ') "𐲈'") ; U+10C88 OLD HUNGARIAN CAPITAL LETTER AND
+  ((adiaeresis) ?𐳉)  ; U+10CC9 OLD HUNGARIAN SMALL LETTER E
+  ((Adiaeresis) ?𐲉)  ; U+10C89 OLD HUNGARIAN CAPITAL LETTER E
+  ("a\"" ?𐳉)         ; U+10CC9 OLD HUNGARIAN SMALL LETTER E
+  ("A\"" ?𐲉)         ; U+10C89 OLD HUNGARIAN CAPITAL LETTER E
+  ("a\"\"" "𐳀\"")    ; U+10CC0 OLD HUNGARIAN SMALL LETTER A
+  ("A\"\"" "𐲀\"")    ; U+10C80 OLD HUNGARIAN CAPITAL LETTER A
+  ("a\"\"\"" "𐳉\"")  ; U+10CC9 OLD HUNGARIAN SMALL LETTER E
+  ("A\"\"\"" "𐲉\"")  ; U+10C89 OLD HUNGARIAN CAPITAL LETTER E
+  ("b" ?𐳂)           ; U+10CC2 OLD HUNGARIAN SMALL LETTER EB
+  ("B" ?𐲂)           ; U+10C82 OLD HUNGARIAN CAPITAL LETTER EB
+  ("c" ?𐳄)           ; U+10CC4 OLD HUNGARIAN SMALL LETTER EC
+  ("C" ?𐲄)           ; U+10C84 OLD HUNGARIAN CAPITAL LETTER EC
+  ((G-c) ?𐳅)         ; U+10CC5 OLD HUNGARIAN SMALL LETTER ENC
+  ((G-C) ?𐲅)         ; U+10C85 OLD HUNGARIAN CAPITAL LETTER ENC
+  ("cs" ?𐳆)          ; U+10CC6 OLD HUNGARIAN SMALL LETTER ECS
+  ("Cs" ?𐲆)          ; U+10C86 OLD HUNGARIAN CAPITAL LETTER ECS
+  ("CS" ?𐲆)          ; U+10C86 OLD HUNGARIAN CAPITAL LETTER ECS
+  ("d" ?𐳇)           ; U+10CC7 OLD HUNGARIAN SMALL LETTER ED
+  ("D" ?𐲇)           ; U+10C87 OLD HUNGARIAN CAPITAL LETTER ED
+  ((G-d) ?𐳧)         ; U+10CE7 OLD HUNGARIAN SMALL LETTER ENT
+  ((G-D) ?𐲧)         ; U+10CA7 OLD HUNGARIAN CAPITAL LETTER ENT
+  ((G-d z) "𐳇‍𐳯")     ; Ligature U+10CC7 U+200D U+10CEF
+  ((G-D z) "𐲇‍𐲯")     ; Ligature U+10C87 U+200D U+10CAF
+  ((G-D Z) "𐲇‍𐲯")     ; Ligature U+10C87 U+200D U+10CAF
+  ((G-d z s) "𐳇‍𐳰")   ;  Ligature U+10CC7 U+200D U+10CF0
+  ((G-D z s) "𐲇‍𐲰")   ; Ligature U+10C87 U+200D U+10CB0
+  ((G-D Z s) "𐲇‍𐲰")   ; Ligature U+10C87 U+200D U+10CB0
+  ((G-D Z S) "𐲇‍𐲰")   ; Ligature U+10C87 U+200D U+10CB0
+  ("e" ?𐳉)           ; U+10CC9 OLD HUNGARIAN SMALL LETTER E
+  ("E" ?𐲉)           ; U+10C89 OLD HUNGARIAN CAPITAL LETTER E
+  ((G-e) ?𐳊)         ; U+10CCA OLD HUNGARIAN SMALL LETTER CLOSE E
+  ((G-E) ?𐲊)         ; U+10C8A OLD HUNGARIAN CAPITAL LETTER CLOSE E
+  ((ediaeresis) ?𐳊)  ; U+10CCA OLD HUNGARIAN SMALL LETTER CLOSE E
+  ((Ediaeresis) ?𐲊)  ; U+10C8A OLD HUNGARIAN CAPITAL LETTER CLOSE E
+  ("e\"" ?𐳊)         ; U+10CCA OLD HUNGARIAN SMALL LETTER CLOSE E
+  ("E\"" ?𐲊)         ; U+10C8A OLD HUNGARIAN CAPITAL LETTER CLOSE E
+  ("e\"\"" "𐳉\"")    ; U+10CC9 OLD HUNGARIAN SMALL LETTER E
+  ("E\"\"" "𐲉\"")    ; U+10C89 OLD HUNGARIAN CAPITAL LETTER E
+  ("e\"\"\"" "𐳊\"")  ; U+10CCA OLD HUNGARIAN SMALL LETTER CLOSE E
+  ("E\"\"\"" "𐲊\"")  ; U+10C8A OLD HUNGARIAN CAPITAL LETTER CLOSE E
+  ((eacute) ?𐳋)      ; U+10CCB OLD HUNGARIAN SMALL LETTER EE
+  ((Eacute) ?𐲋)      ; U+10C8B OLD HUNGARIAN CAPITAL LETTER EE
+  ("e'" ?𐳋)          ; U+10CCB OLD HUNGARIAN SMALL LETTER EE
+  ("E'" ?𐲋)          ; U+10C8B OLD HUNGARIAN CAPITAL LETTER EE
+  ("e''" "𐳉'")        ; U+10CC9 OLD HUNGARIAN SMALL LETTER E
+  ("E''" "𐲉'")        ; U+10C89 OLD HUNGARIAN CAPITAL LETTER E
+  ("e'''" "𐳋'")       ; U+10CCB OLD HUNGARIAN SMALL LETTER EE
+  ("E'''" "𐲋'")       ; U+10C8B OLD HUNGARIAN CAPITAL LETTER EE
+  ("f" ?𐳌)            ; U+10CCC OLD HUNGARIAN SMALL LETTER EF
+  ("F" ?𐲌)            ; U+10C8C OLD HUNGARIAN CAPITAL LETTER EF
+  ("g" ?𐳍)            ; U+10CCD OLD HUNGARIAN SMALL LETTER EG
+  ("G" ?𐲍)            ; U+10C8D OLD HUNGARIAN CAPITAL LETTER EG
+  ("gy" ?𐳎)           ; U+10CCE OLD HUNGARIAN SMALL LETTER EGY
+  ("Gy" ?𐲎)           ; U+10C8E OLD HUNGARIAN CAPITAL LETTER EGY
+  ("GY" ?𐲎)           ; U+10C8E OLD HUNGARIAN CAPITAL LETTER EGY
+  ("h" ?𐳏)            ; U+10CCF OLD HUNGARIAN SMALL LETTER EH
+  ("H" ?𐲏)            ; U+10C8F OLD HUNGARIAN CAPITAL LETTER EH
+  ((G-h) ?𐳩)          ; U+10CE9 OLD HUNGARIAN SMALL LETTER ECH
+  ((G-H) ?𐲩)          ; U+10CA9 OLD HUNGARIAN CAPITAL LETTER ECH
+  ("i" ?𐳐)            ; U+10CD0 OLD HUNGARIAN SMALL LETTER I
+  ("I" ?𐲐)            ; U+10C90 OLD HUNGARIAN CAPITAL LETTER I
+  ((G-i) ?𐳑)          ; U+10CD1 OLD HUNGARIAN SMALL LETTER II
+  ((G-I) ?𐲑)          ; U+10C91 OLD HUNGARIAN CAPITAL LETTER II
+  ((iacute) ?𐳑)       ; U+10CD1 OLD HUNGARIAN SMALL LETTER II
+  ((Iacute) ?𐲑)       ; U+10C91 OLD HUNGARIAN CAPITAL LETTER II
+  ("i'" ?𐳑)           ; U+10CD1 OLD HUNGARIAN SMALL LETTER II
+  ("I'" ?𐲑)           ; U+10C91 OLD HUNGARIAN CAPITAL LETTER II
+  ("i''" "𐳐'")        ; U+10CD0 OLD HUNGARIAN SMALL LETTER I
+  ("I''" "𐲐'")        ; U+10C90 OLD HUNGARIAN CAPITAL LETTER I
+  ("i'''" "𐳑'")       ; U+10CD1 OLD HUNGARIAN SMALL LETTER II
+  ("I'''" "𐲑'")       ; U+10C91 OLD HUNGARIAN CAPITAL LETTER II
+  ("j" ?𐳒)            ; U+10CD2 OLD HUNGARIAN SMALL LETTER EJ
+  ("J" ?𐲒)            ; U+10C92 OLD HUNGARIAN CAPITAL LETTER EJ
+  ("k" ?𐳓)            ; U+10CD3 OLD HUNGARIAN SMALL LETTER EK
+  ("K" ?𐲓)            ; U+10C93 OLD HUNGARIAN CAPITAL LETTER EK
+  ((G-k) ?𐳔)          ; U+10CD4 OLD HUNGARIAN SMALL LETTER AK
+  ((G-K) ?𐲔)          ; U+10C94 OLD HUNGARIAN CAPITAL LETTER AK
+  ("l" ?𐳖)            ; U+10CD6 OLD HUNGARIAN SMALL LETTER EL
+  ("L" ?𐲖)            ; U+10C96 OLD HUNGARIAN CAPITAL LETTER EL
+  ("ly" ?𐳗)           ; U+10CD7 OLD HUNGARIAN SMALL LETTER ELY
+  ("Ly" ?𐲗)           ; U+10C97 OLD HUNGARIAN CAPITAL LETTER ELY
+  ("LY" ?𐲗)           ; U+10C97 OLD HUNGARIAN CAPITAL LETTER ELY
+  ("m" "𐳘")           ; U+10CD8 OLD HUNGARIAN SMALL LETTER EM
+  ("M" "𐲘")           ; U+10C98 OLD HUNGARIAN CAPITAL LETTER EM
+  ("n" "𐳙")           ; U+10CD9 OLD HUNGARIAN SMALL LETTER EN
+  ("N" "𐲙")           ; U+10C99 OLD HUNGARIAN CAPITAL LETTER EN
+  ("ny" ?𐳚)           ; U+10CDA OLD HUNGARIAN SMALL LETTER ENY
+  ("Ny" ?𐲚)           ; U+10C9A OLD HUNGARIAN CAPITAL LETTER ENY
+  ("NY" ?𐲚)           ; U+10C9A OLD HUNGARIAN CAPITAL LETTER ENY
+  ("o" ?𐳛)            ; U+10CDB OLD HUNGARIAN SMALL LETTER O
+  ("O" ?𐲛)            ; U+10C9B OLD HUNGARIAN CAPITAL LETTER O
+  ((oacute) ?𐳜)       ; U+10CDC OLD HUNGARIAN SMALL LETTER OO
+  ((Oacute) ?𐲜)       ; U+10C9C OLD HUNGARIAN CAPITAL LETTER OO
+  ("o'" ?𐳜)           ; U+10CDC OLD HUNGARIAN SMALL LETTER OO
+  ("O'" ?𐲜)           ; U+10C9C OLD HUNGARIAN CAPITAL LETTER OO
+  ("o''" "𐳛'")        ; U+10CDB OLD HUNGARIAN SMALL LETTER O
+  ("O''" "𐲛'")        ; U+10C9B OLD HUNGARIAN CAPITAL LETTER O
+  ("o'''" "𐳜'")       ; U+10CDC OLD HUNGARIAN SMALL LETTER OO
+  ("O'''" "𐲜'")       ; U+10C9C OLD HUNGARIAN CAPITAL LETTER OO
+  ((odiaeresis) ?𐳞)   ; U+10CDE OLD HUNGARIAN SMALL LETTER RUDIMENTA OE
+  ((Odiaeresis) ?𐲞)   ; U+10C9E OLD HUNGARIAN CAPITAL LETTER RUDIMENTA OE
+  ("o\"" ?𐳞)          ; U+10CDE OLD HUNGARIAN SMALL LETTER RUDIMENTA OE
+  ("O\"" ?𐲞)          ; U+10C9E OLD HUNGARIAN CAPITAL LETTER RUDIMENTA OE
+  ("o\"\"" "𐳛\"")     ; U+10CDB OLD HUNGARIAN SMALL LETTER O
+  ("O\"\"" "𐲛\"")     ; U+10C9B OLD HUNGARIAN CAPITAL LETTER O
+  ("o\"\"\"" "𐳞\"")   ; U+10CDE OLD HUNGARIAN SMALL LETTER RUDIMENTA OE
+  ("O\"\"\"" "𐲞\"")   ; U+10C9E OLD HUNGARIAN CAPITAL LETTER RUDIMENTA OE
+  ((G-odiaeresis) ?𐳝) ; U+10CDD OLD HUNGARIAN SMALL LETTER NIKOLSBURG OE
+  ((G-Odiaeresis) ?𐲝) ; U+10C9D OLD HUNGARIAN CAPITAL LETTER NIKOLSBURG OE
+  ((G-o \") ?𐳝)       ; U+10CDD OLD HUNGARIAN SMALL LETTER NIKOLSBURG OE
+  ((G-O \") ?𐲝)       ; U+10C9D OLD HUNGARIAN CAPITAL LETTER NIKOLSBURG OE
+  ((G-o \" \") "𐳛\"") ; U+10CDB OLD HUNGARIAN SMALL LETTER O
+  ((G-O \" \") "𐲛\"") ; U+10C9B OLD HUNGARIAN CAPITAL LETTER O
+  ((G-o \" \" \") "𐳝\"") ; U+10CDD OLD HUNGARIAN SMALL LETTER NIKOLSBURG OE
+  ((G-O \" \" \") "𐲝\"") ; U+10C9D OLD HUNGARIAN CAPITAL LETTER NIKOLSBURG OE
+  ((odoubleacute) ?𐳟) ; U+10CDF OLD HUNGARIAN SMALL LETTER OEE
+  ((Odoubleacute) ?𐲟) ; U+10C9F OLD HUNGARIAN CAPITAL LETTER OEE
+  ("o:" ?𐳟)           ; U+10CDF OLD HUNGARIAN SMALL LETTER OEE
+  ("O:" ?𐲟)           ; U+10C9F OLD HUNGARIAN CAPITAL LETTER OEE
+  ("o::" "𐳛:")        ; U+10CDB OLD HUNGARIAN SMALL LETTER O
+  ("O::" "𐲛:")        ; U+10C9B OLD HUNGARIAN CAPITAL LETTER O
+  ("o:::" "𐳟:")       ; U+10CDF OLD HUNGARIAN SMALL LETTER OEE
+  ("O:::" "𐲟:")       ; U+10C9F OLD HUNGARIAN CAPITAL LETTER OEE
+  ("p" ?𐳠)            ; U+10CE0 OLD HUNGARIAN SMALL LETTER EP
+  ("P" ?𐲠)            ; U+10CA0 OLD HUNGARIAN CAPITAL LETTER EP
+  ("q" ?𐳎)            ; U+10CCE OLD HUNGARIAN SMALL LETTER EGY
+  ("Q" ?𐲎)            ; U+10C8E OLD HUNGARIAN CAPITAL LETTER EGY
+  ((G-q) "𐳓‍𐳮")        ; Ligature U+10CD3 U+200D U+10CEE
+  ((G-Q) "𐲓‍𐲮")        ; Ligature U+10C93 U+200D U+10CAE
+  ("r" ?𐳢)            ; U+10CE2 OLD HUNGARIAN SMALL LETTER ER
+  ("R" ?𐲢)            ; U+10CA2 OLD HUNGARIAN CAPITAL LETTER ER
+  ((G-r) ?𐳣)          ; U+10CE3 OLD HUNGARIAN SMALL LETTER SHORT ER
+  ((G-R) ?𐲣)          ; U+10CA3 OLD HUNGARIAN CAPITAL LETTER SHORT ER
+  ("s" ?𐳤)            ; U+10CE4 OLD HUNGARIAN SMALL LETTER ES
+  ("S" ?𐲤)            ; U+10CA4 OLD HUNGARIAN CAPITAL LETTER ES
+  ((G-s) ?𐳡)          ; U+10CE1 OLD HUNGARIAN SMALL LETTER EMP
+  ((G-S) ?𐲡)          ; U+10CA1 OLD HUNGARIAN CAPITAL LETTER EMP
+  ("sz" ?𐳥)           ; U+10CE5 OLD HUNGARIAN SMALL LETTER ESZ
+  ("Sz" ?𐲥)           ; U+10CA5 OLD HUNGARIAN CAPITAL LETTER ESZ
+  ("SZ" ?𐲥)           ; U+10CA5 OLD HUNGARIAN CAPITAL LETTER ESZ
+  ("t" ?𐳦)            ; U+10CE6 OLD HUNGARIAN SMALL LETTER ET
+  ("T" ?𐲦)            ; U+10CA6 OLD HUNGARIAN CAPITAL LETTER ET
+  ("ty" ?𐳨)           ; U+10CE8 OLD HUNGARIAN SMALL LETTER ETY
+  ("Ty" ?𐲨)           ; U+10CA8 OLD HUNGARIAN CAPITAL LETTER ETY
+  ("TY" ?𐲨)           ; U+10CA8 OLD HUNGARIAN CAPITAL LETTER ETY
+  ("u" ?𐳪)            ; U+10CEA OLD HUNGARIAN SMALL LETTER U
+  ("U" ?𐲪)            ; U+10CAA OLD HUNGARIAN CAPITAL LETTER U
+  ((G-u) ?𐳲)          ; U+10CF2 OLD HUNGARIAN SMALL LETTER US
+  ((G-U) ?𐲲)          ; U+10CB2 OLD HUNGARIAN CAPITAL LETTER US
+  ((uacute) ?𐳫)       ; U+10CEB OLD HUNGARIAN SMALL LETTER UU
+  ((Uacute) ?𐲫)       ; U+10CAB OLD HUNGARIAN CAPITAL LETTER UU
+  ("u'" ?𐳫)           ; U+10CEB OLD HUNGARIAN SMALL LETTER UU
+  ("U'" ?𐲫)           ; U+10CAB OLD HUNGARIAN CAPITAL LETTER UU
+  ("u''" "𐳪'")        ; U+10CEA OLD HUNGARIAN SMALL LETTER U
+  ("U''" "𐲪'")        ; U+10CAA OLD HUNGARIAN CAPITAL LETTER U
+  ("u'''" "𐳫'")       ; U+10CEB OLD HUNGARIAN SMALL LETTER UU
+  ("U'''" "𐲫'")       ; U+10CAB OLD HUNGARIAN CAPITAL LETTER UU
+  ((G-uacute) ?𐳕)     ; U+10CD5 OLD HUNGARIAN SMALL LETTER UNK
+  ((G-Uacute) ?𐲕)     ; U+10C95 OLD HUNGARIAN CAPITAL LETTER UNK
+  ((G-u ') ?𐳕)        ; U+10CD5 OLD HUNGARIAN SMALL LETTER UNK
+  ((G-U ') ?𐲕)        ; U+10C95 OLD HUNGARIAN CAPITAL LETTER UNK
+  ((G-u ' ') "𐳲'")    ; U+10CF2 OLD HUNGARIAN SMALL LETTER US
+  ((G-U ' ') "𐲲'")    ; U+10CB2 OLD HUNGARIAN CAPITAL LETTER US
+  ((G-u ' ' ') "𐳕'")  ; U+10CD5 OLD HUNGARIAN SMALL LETTER UNK
+  ((G-U ' ' ') "𐲕'")  ; U+10C95 OLD HUNGARIAN CAPITAL LETTER UNK
+  ((udiaeresis) ?𐳭)   ; U+10CED OLD HUNGARIAN SMALL LETTER RUDIMENTA UE
+  ((Udiaeresis) ?𐲭)   ; U+10CAD OLD HUNGARIAN CAPITAL LETTER RUDIMENTA UE
+  ("u\"" ?𐳭)          ; U+10CED OLD HUNGARIAN SMALL LETTER RUDIMENTA UE
+  ("U\"" ?𐲭)          ; U+10CAD OLD HUNGARIAN CAPITAL LETTER RUDIMENTA UE
+  ("u\"\"" "𐳪\"")     ; U+10CEA OLD HUNGARIAN SMALL LETTER U
+  ("U\"\"" "𐲪\"")     ; U+10CAA OLD HUNGARIAN CAPITAL LETTER U
+  ("u\"\"\"" "𐳭\"")   ; U+10CED OLD HUNGARIAN SMALL LETTER RUDIMENTA UE
+  ("U\"\"\"" "𐲭\"")   ; U+10CAD OLD HUNGARIAN CAPITAL LETTER RUDIMENTA UE
+  ((udoubleacute) ?𐳬) ; U+10CEC OLD HUNGARIAN SMALL LETTER NIKOLSBURG UE
+  ((Udoubleacute) ?𐲬) ; U+10CAC OLD HUNGARIAN CAPITAL LETTER NIKOLSBURG UE
+  ("u:" ?𐳬)           ; U+10CEC OLD HUNGARIAN SMALL LETTER NIKOLSBURG UE
+  ("U:" ?𐲬)           ; U+10CAC OLD HUNGARIAN CAPITAL LETTER NIKOLSBURG UE
+  ("u::" "𐳪:")        ; U+10CEA OLD HUNGARIAN SMALL LETTER U
+  ("U::" "𐲪:")        ; U+10CAA OLD HUNGARIAN CAPITAL LETTER U
+  ("u:::" "𐳬:")       ; U+10CEC OLD HUNGARIAN SMALL LETTER NIKOLSBURG UE
+  ("U:::" "𐲬:")       ; U+10CAC OLD HUNGARIAN CAPITAL LETTER NIKOLSBURG UE
+  ("v" ?𐳮)            ; U+10CEE OLD HUNGARIAN SMALL LETTER EV
+  ("V" ?𐲮)            ; U+10CAE OLD HUNGARIAN CAPITAL LETTER EV
+  ("w" ?𐳰)            ; U+10CF0 OLD HUNGARIAN SMALL LETTER E
+  ("W" ?𐲰)            ; U+10CB0 OLD HUNGARIAN CAPITAL LETTER EZS
+  ((G-w) "𐳮‍𐳮")        ; Ligature U+10CEE U+200D U+10CEE
+  ((G-W) "𐲮‍𐲮")        ; Ligature U+10CAE U+200D U+10CAE
+  ("x" ?𐳥)             ; U+10CE5 OLD HUNGARIAN SMALL LETTER ESZ
+  ("X" ?𐲥)             ; U+10CA5 OLD HUNGARIAN CAPITAL LETTER ESZ
+  ((G-x) "𐳓‍𐳥")         ; Ligature U+10CD3 U+200D U+10CE5
+  ((G-X) "𐲓‍𐲥")         ; Ligature U+10C93 U+200D U+10CA5
+  ("y" ?𐳗)             ; U+10CD7 OLD HUNGARIAN SMALL LETTER ELY
+  ("Y" ?𐲗)             ; U+10C97 OLD HUNGARIAN CAPITAL LETTER ELY
+  ((G-y) "𐳐‍𐳒")         ; Ligature U+10CD0 U+200D U+10CD2
+  ((G-Y) "𐲐‍𐲒")         ; Ligature U+10C90 U+200D U+10C92
+  ("z" ?𐳯)             ; U+10CEF OLD HUNGARIAN SMALL LETTER E
+  ("Z" ?𐲯)             ; U+10CAF OLD HUNGARIAN CAPITAL LETTER EZ
+  ("zs" ?𐳰)            ; U+10CF0 OLD HUNGARIAN SMALL LETTER EZS
+  ("Zs" ?𐲰)            ; U+10CB0 OLD HUNGARIAN CAPITAL LETTER EZS
+  ("ZS" ?𐲰)            ; U+10CB0 OLD HUNGARIAN CAPITAL LETTER EZS
+  ("_and" ?𐳈)          ; U+10CC8 OLD HUNGARIAN SMALL LETTER AND
+  ("_And" ?𐲈)          ; U+10C88 OLD HUNGARIAN CAPITAL LETTER AND
+  ("_ANd" ?𐲈)          ; U+10C88 OLD HUNGARIAN CAPITAL LETTER AND
+  ("_AND" ?𐲈)          ; U+10C88 OLD HUNGARIAN CAPITAL LETTER AND
+  ("_ech" ?𐳩)          ; U+10CE9 OLD HUNGARIAN SMALL LETTER ECH
+  ("_Ech" ?𐲩)          ; U+10CA9 OLD HUNGARIAN CAPITAL LETTER ECH
+  ("_ECh" ?𐲩)          ; U+10CA9 OLD HUNGARIAN CAPITAL LETTER ECH
+  ("_ECH" ?𐲩)          ; U+10CA9 OLD HUNGARIAN CAPITAL LETTER ECH
+  ("_enc" ?𐳅)          ; U+10CC5 OLD HUNGARIAN SMALL LETTER ENC
+  ("_Enc" ?𐲅)          ; U+10C85 OLD HUNGARIAN CAPITAL LETTER ENC
+  ("_ENc" ?𐲅)          ; U+10C85 OLD HUNGARIAN CAPITAL LETTER ENC
+  ("_ENC" ?𐲅)          ; U+10C85 OLD HUNGARIAN CAPITAL LETTER ENC
+  ("_ent" ?𐳧)          ; U+10CE7 OLD HUNGARIAN SMALL LETTER ENT
+  ("_Ent" ?𐲧)          ; U+10CA7 OLD HUNGARIAN CAPITAL LETTER ENT
+  ("_ENt" ?𐲧)          ; U+10CA7 OLD HUNGARIAN CAPITAL LETTER ENT
+  ("_ENT" ?𐲧)          ; U+10CA7 OLD HUNGARIAN CAPITAL LETTER ENT
+  ("_ents" ?𐳱)         ; U+10CF1 OLD HUNGARIAN SMALL LETTER ENT-SHAPED SIGN
+  ("_Ents" ?𐲱)         ; U+10CB1 OLD HUNGARIAN CAPITAL LETTER ENT-SHAPED SIGN
+  ("_ENts" ?𐲱)         ; U+10CB1 OLD HUNGARIAN CAPITAL LETTER ENT-SHAPED SIGN
+  ("_ENTs" ?𐲱)         ; U+10CB1 OLD HUNGARIAN CAPITAL LETTER ENT-SHAPED SIGN
+  ("_ENTS" ?𐲱)         ; U+10CB1 OLD HUNGARIAN CAPITAL LETTER ENT-SHAPED SIGN
+  ((G-_ e n t) ?𐳱)     ; U+10CF1 OLD HUNGARIAN SMALL LETTER ENT-SHAPED SIGN
+  ((G-_ E n t) ?𐲱)     ; U+10CB1 OLD HUNGARIAN CAPITAL LETTER ENT-SHAPED SIGN
+  ((G-_ E N t) ?𐲱)     ; U+10CB1 OLD HUNGARIAN CAPITAL LETTER ENT-SHAPED SIGN
+  ((G-_ E N T) ?𐲱)     ; U+10CB1 OLD HUNGARIAN CAPITAL LETTER ENT-SHAPED SIGN
+  ("_emp" ?𐳡)          ; U+10CE1 OLD HUNGARIAN SMALL LETTER EMP
+  ("_Emp" ?𐲡)          ; U+10CA1 OLD HUNGARIAN CAPITAL LETTER EMP
+  ("_EMp" ?𐲡)          ; U+10CA1 OLD HUNGARIAN CAPITAL LETTER EMP
+  ("_EMP" ?𐲡)          ; U+10CA1 OLD HUNGARIAN CAPITAL LETTER EMP
+  ("_unk" ?𐳕)          ; U+10CD5 OLD HUNGARIAN SMALL LETTER UNK
+  ("_Unk" ?𐲕)          ; U+10C95 OLD HUNGARIAN CAPITAL LETTER UNK
+  ("_UNk" ?𐲕)          ; U+10C95 OLD HUNGARIAN CAPITAL LETTER UNK
+  ("_UNK" ?𐲕)          ; U+10C95 OLD HUNGARIAN CAPITAL LETTER UNK
+  ("_us" ?𐳲)           ; U+10CF2 OLD HUNGARIAN SMALL LETTER US
+  ("_Us" ?𐲲)           ; U+10CB2 OLD HUNGARIAN CAPITAL LETTER US
+  ("_US" ?𐲲)           ; U+10CB2 OLD HUNGARIAN CAPITAL LETTER US
+  ("_amb" ?𐳃)          ; U+10CC3 OLD HUNGARIAN SMALL LETTER AMB
+  ("_Amb" ?𐲃)          ; U+10C83 OLD HUNGARIAN CAPITAL LETTER AMB
+  ("_AMb" ?𐲃)          ; U+10C83 OLD HUNGARIAN CAPITAL LETTER AMB
+  ("_AMB" ?𐲃)          ; U+10C83 OLD HUNGARIAN CAPITAL LETTER AMB
+  ("_ZWJ" 0x200D)      ; U+200D ZERO WIDTH JOINER
+  ("_RLM" 0x200F)      ; U+200F RIGHT-TO-LEFT MARK
+  ("_LRM" 0x200C)      ; U+200C LEFT-TO-RIGHT MARK
+  ("_LRE" 0x202A)      ; U+202A LEFT-TO-RIGHT EMBEDDING
+  ("_RLE" 0x202B)      ; U+202B RIGHT-TO-LEFT EMBEDDING
+  ("_LRO" 0x202D)      ; U+202D LEFT-TO-RIGHT OVERRIDE
+  ("_RLO" 0x202E)      ; U+202E RIGHT-TO-LEFT OVERRIDE
+  ("_PDF" 0x202C)      ; U+202C POP DIRECTIONAL FORMATTING
+  ("_LRI" 0x2066)      ; U+2066 LEFT-TO-RIGHT ISOLATE
+  ("_RLI" 0x2067)      ; U+2067 RIGHT-TO-LEFT ISOLATE
+  ("_FSI" 0x2068)      ; U+2068 FIRST STRONG ISOLATE
+  ("_PDI" 0x2069)      ; U+2069 POP DIRECTIONAL ISOLATE
   ))
 
 (state

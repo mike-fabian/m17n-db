@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: m17n-contrib 1.1.2\n"
 "Report-Msgid-Bugs-To: bugs-m17n-lib@m17n.org\n"
-"POT-Creation-Date: 2024-07-30 09:54+0200\n"
+"POT-Creation-Date: 2024-09-19 15:07+0200\n"
 "PO-Revision-Date: 2007-07-20 16:15+0900\n"
 "Last-Translator: Kenichi Handa <m17n-lib@m17n.org>\n"
 "Language-Team: Esperanto\n"
@@ -355,7 +355,7 @@ msgid ""
 "typing \"har..\" produces \"𑀳𑀭𑁇\", not \"𑀳𑀭𑁆𑁇\"."
 msgstr ""
 
-#: MIM/hi-itrans.mim:51 MIM/mr-gamabhana.mim:49
+#: MIM/hi-itrans.mim:53 MIM/mr-gamabhana.mim:28
 msgid ""
 "If this variable is 1 (the default), the last Halant in a syllable\n"
 "is removed if it is followed by non Devanagari letter.  For instance,\n"

@@ -81,6 +81,7 @@ It uses common transliterations, when several interpretations are possible you c
   ("x" "ْ")	; sukun
   ("o" "ٰ")	; superscript alif
   ("v" "ّ")	; shaddah
+  ("T" "ـ")	; tatweel
 
   ("?" "؟")
 

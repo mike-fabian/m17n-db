@@ -1,3 +1,17 @@
+2024-11-14  Mike FABIAN  <mfabian@redhat.com>
+
+	* MIM/mr-gamabhana.mim: Update by Shantanu Oak <shantanu.oak@gmail.com>
+	* MIM/bn-probhat.mim: Update copyright notice
+	* UNIDATA/CaseFolding.txt: Update Unicode data files to Unicode 16.0.0
+	* UNIDATA/LineBreak.txt: Update Unicode data files to Unicode 16.0.0
+	* UNIDATA/PropList.txt: Update Unicode data files to Unicode 16.0.0
+	* UNIDATA/README: Update Unicode data files to Unicode 16.0.0
+	* UNIDATA/Scripts.txt: Update Unicode data files to Unicode 16.0.0
+	* UNIDATA/SpecialCasing.txt: Update Unicode data files to Unicode 16.0.0
+	* UNIDATA/UnicodeData.txt: Update Unicode data files to Unicode 16.0.0
+	* UNIDATA/WordBreakProperty.txt: Update Unicode data files to Unicode 16.0.0
+	* MIM/ar-translit: Use Shift+t (T) in ar-translit.mim to input the Arabic tatweel (by Benjamin Westphal <benjamin.westphal@riseup.net>)
+
 2024-09-18  Mike FABIAN  <mfabian@redhat.com>
 
 	* MIM/bn-probhat.mim: Sync with the "in(ben_probhat)" layout in xkeyboard-config

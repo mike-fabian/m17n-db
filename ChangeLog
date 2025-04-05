@@ -1,3 +1,13 @@
+2025-04-07  Mujeeb Rahman K <mujeebcpy@gmail.com>
+
+	* icons/ml-poorna-remington.png: Change colour of ml-poorna-remington.png to make it visible on light themes
+
+2025-04-05  Mike FABIAN  <mfabian@redhat.com>
+
+	* MIM/ml-poorna-remington.mim: New input method by Mujeeb Rahman K <mujeebcpy@gmail.com>
+	* icons/ml-poorna-remington.png: Icon for new input method by Mujeeb Rahman K <mujeebcpy@gmail.com>
+	* MIM/ml-poorna-remington.mim: fix input method name so that the icon file is found
+
 2024-11-14  Mike FABIAN  <mfabian@redhat.com>
 
 	* MIM/mr-gamabhana.mim: Update by Shantanu Oak <shantanu.oak@gmail.com>

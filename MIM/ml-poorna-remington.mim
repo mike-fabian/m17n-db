@@ -19,7 +19,7 @@
 ;; Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
 ;; Boston, MA 02110-1301 USA.
 
-(input-method ml poornaremington)
+(input-method ml poorna-remington)
 
 (description "Malayalam input method for Poorna Remington typewriter layout.
 The detailed information is available <http://wiki.smc.org.in/Remington>.

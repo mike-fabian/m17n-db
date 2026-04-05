@@ -37,7 +37,7 @@ Key Summary:
 			SRii = <U+0BB6, U+0BCD, U+0BB0, U+0BC0>
             ஸ ஷ ஜ ஹ க்ஷ ஶ்ரீ
             
-2. A consonant symbol followed by the pulli produces a pure consonant. (A consonant symbol is also known as consonant with inherant a)
+2. A consonant symbol followed by the pulli produces a pure consonant. (A consonant symbol is also known as consonant with inherent a)
             e.g. க + ் -> க் 
             
 3. A consonant symbol followed by a vowel other than the first vowel அ produces a vowelised consonant.
@@ -82,6 +82,13 @@ Author: I. Felix <ifelix@redhat.com>
 ;; Based on official standard Keyboard reference 
 ;; http://www.tamilvu.org/tkbd/doc_file/Help_windows.pdf published by GoTN
 
+;; Changes made by thesupertechie <thesupertechie1@gmail.com>, 05 Apr 2026
+;; 1. Remove certain symbols that are no longer in modern versions of Tamil 99, such as the full moon and new moon symbols.
+;; 2. Add : (colon), which is supposed to be under shift+த (or L in QWERTY; not to be confused with l).
+;; 3. Remove certain symbols that were never present on printed Tamil 99 keyboards (such as copyright symbol, interpunct etc. etc.).
+;; 4. Move various symbols from ^ to AltGr. This means that the ^ can be used for mathematics, makes the Tamil numerals easier to enter, and makes the combining characters more in line with the correct implementation (the combining characters should use AltGr, not an arbitrary character).
+;; 5. Add missing Tamil place value characters for Tamil numerals, namely ௰, ௱, and ௲.
+;; See also a picture of a printed Tamil 99 keyboard at: https://commons.wikimedia.org/wiki/File:Tamil_99_keyboard.jpg
 
 (title "க")
 
@@ -103,7 +110,7 @@ Author: I. Felix <ifelix@redhat.com>
   ("u" ?ற)
   ("U" ?ஶ)
   ("i" ?ன)
-  ("I" ?:)
+  ("I" "") ;; return nothing
   ("o" ?ட)
   ("O" ?[)
   ("p" ?ண)
@@ -845,53 +852,47 @@ Author: I. Felix <ifelix@redhat.com>
   ("A" ?௹)
   ("S" ?௺)
   ("D" ?௸)
-  ("L" ?௱)
+  ("L" ?:)
   ("Z" ?௳)
   ("X" ?௴)
   ("C" ?௵)
   ("V" ?௶)
   ("B" ?௷)
   ("N" ?ௐ)
-  ("G" ?🌕) ;;U+1F315 -- Full Moon symbol
-  ("H" ?🌑) ;;U+1F311 -- New Moon symbol
-  ("J" ?★)  ;;U+2605 -- star symbol
+  ("G" "") ;; return nothing
+  ("H" "") ;; return nothing
+  ("J" "")  ;; return nothing
 
+  ((G-@) "½")
+  ((G-#) "¾")
+  ((G-!) "¼")
+  ((G-$) "₹") ;;U+20B9 -- Indian Rupee sign
 
-  ("^^" "^")
-  ("^c" "©")
-  ("^." "•")
+  ((G-q) "ா")
+  ((G-s) "ி")
+  ((G-w) "ீ")
+  ((G-d) "ு")
+  ((G-e) "ூ")
+  ((G-g) "ெ")
+  ((G-t) "ே")
+  ((G-r) "ை")
+  ((G-z) "ௌ")
+  ((G-x) "ோ")
+  ((G-c) "ொ")
 
-  ("^2" "½")
-  ("^3" "¾")
-  ("^4" "¼")
-  ("^$" "₹") ;;U+20B9 -- Indian Rupee sign
-  ("^7" "‘")
-  ("^8" "’")
-  ("^9" "“")
-  ("^0" "”")
-
-  ("^q" "ா")
-  ("^s" "ி")
-  ("^w" "ீ")
-  ("^d" "ு")
-  ("^e"  "ூ")
-  ("^g" "ெ")
-  ("^t" "ே")
-  ("^r" "ை")
-  ("^z" "ௌ")
-  ("^x" "ோ")
-  ("^C" "ொ")
-
-  ("^#1" "௧")
-  ("^#2" "௨")
-  ("^#3" "௩")
-  ("^#4" "௪")
-  ("^#5" "௫")
-  ("^#6" "௬")
-  ("^#7" "௭")
-  ("^#8" "௮")
-  ("^#9" "௯")
-  ("^#0" "௦")
+  ((G-1) "௧")
+  ((G-2) "௨")
+  ((G-3) "௩")
+  ((G-4) "௪")
+  ((G-5) "௫")
+  ((G-6) "௬")
+  ((G-7) "௭")
+  ((G-8) "௮")
+  ((G-9) "௯")
+  ((G-0) "௦")
+  ((G-i) "௰")
+  ((G-o) "௱")
+  ((G-p) "௲")
 
   ))
 

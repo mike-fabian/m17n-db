@@ -110,7 +110,7 @@ Author: I. Felix <ifelix@redhat.com>
   ("u" ?ற)
   ("U" ?ஶ)
   ("i" ?ன)
-  ("I" ?) ;; return nothing
+  ("I" "") ;; return nothing
   ("o" ?ட)
   ("O" ?[)
   ("p" ?ண)
@@ -859,9 +859,9 @@ Author: I. Felix <ifelix@redhat.com>
   ("V" ?௶)
   ("B" ?௷)
   ("N" ?ௐ)
-  ("G" ?) ;; return nothing
-  ("H" ?) ;; return nothing
-  ("J" ?)  ;; return nothing
+  ("G" "") ;; return nothing
+  ("H" "") ;; return nothing
+  ("J" "")  ;; return nothing
 
   ((G-@) "½")
   ((G-#) "¾")

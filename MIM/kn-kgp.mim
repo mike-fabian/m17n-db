@@ -1,27 +1,50 @@
 ;; kn-kgp.mim -- Kannada input method with KGP method
-;;   Copyright (C) 2008
-;;   Sridhar M.A., Mysore; mas@mylug.org
+;;   Copyright (C) 2025
+;;   Sridhar M. A., Mysuru; alaymari@gmail.com
+;;   Sat 21 Feb 2026 07:08:18 IST
 
+;; Added laghu, guru, danda, double danda, ellipsis, chandrabindu, etc
+;; and method to input ottakshara to ra rather than arkavottu
 ;; Modified for better visual appeal by Prasad H. L. hlprasu@gmail.com
 
+;; --- USAGE GUIDE ---
+;; Consonants & Vowels: Standard KGP mapping.
+;; Numerals:
+;;   - Main Keyboard (0-9): Outputs Kannada digits (೦-೯)
+;;   - Numpad (0-9): Outputs Latin digits (0-9)
+;;
+;; Special Punctuation:
+;;   .|  -> । (Danda)        
+;;   .|| -> ॥ (Double Danda)
+;;   .&  -> ಆ್ಯಂಡ್‌ (And)      
+;;   ... -> … (Ellipsis)
+;;   --  -> – (En-dash)      
+;;   --- -> — (Em-dash)
+;;
+;; Vedic & Prosody Markers:
+;;   ^X  ->  ̆ (Laghu)        
+;;   -X  ->  ̄ (Guru)
+;;   _X  ->  ॒ (Anudatta)     
+;;   'X  ->  ॑ (Svarita)
+;;   "X  ->  ᳚ (Dirgha Svarita)
+;;
+;; Special Symbols:
+;;   CX -> Chandrabindu ಀ 
+;;   cX -> Chandrabindu ಁ (ಮಾಁ -> mAcX) 
+;;   sX -> Avagraha ಽ 
+;;
+;; Advanced Ra-vattu:
+;;   Standard 'r' creates Arkavattu (e.g.,  A + r + f + y -> ಆರ್ಯ).
+;;   Using 'F' creates a non-Arkavattu sub-joined Ra (e.g., A + r + F + y -> ಆರ‍್ಯ).
+;;      Also helps in typing 'rank' properly: ರ್ಯಾಂಕ್‌ (rfyAMkff) -> ರ‍್ಯಾಂಕ್‌ (rFyAMkff).
+;;      Also to get ಗ‍್ಂ (gFM) 
+;; -------------------
 
-;; This file is part of the m17n contrib; a sub-part of the m17n
-;; library.
-
+;; This file is part of the m17n contrib; a sub-part of the m17n library.
 ;; The m17n library is free software; you can redistribute it and/or
 ;; modify it under the terms of the GNU Lesser General Public License
 ;; as published by the Free Software Foundation; either version 2.1 of
 ;; the License, or (at your option) any later version.
-
-;; The m17n library is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-;; Lesser General Public License for more details.
-
-;; You should have received a copy of the GNU Lesser General Public
-;; License along with the m17n library; if not, write to the Free
-;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-;; Boston, MA 02110-1301, USA.
 
 (input-method kn kgp)
 
@@ -32,18 +55,21 @@
 
 (map
  (starter
-  ("0") ("1") ("2") ("3") ("4")
-  ("5") ("6") ("7") ("8") ("9")
+  (".") ("~") ("#") ("$") ("^") ("*") ("-") ("_") ("'") ("/") ("\"") ("|") ("=") ("&") ("`")
+  ("0") ("1") ("2") ("3") ("4") ("5") ("6") ("7") ("8") ("9")
   ("A") ("B") ("C") ("D") ("E") ("G") ("H") ("I") ("J") ("K") 
   ("L") ("M") ("N") ("O") ("P") ("Q") ("R") ("S") ("T") ("U")
   ("V") ("W") ("Y") ("Z")
   ("a") ("b") ("c") ("d") ("e") ("g") ("h") ("i")
   ("j") ("k") ("l") ("m") ("n") ("o") ("p") ("q") ("r")
-  ("s") ("t") ("u") ("v") ("w") ("x") ("y") ("z"))
+  ("s") ("t") ("u") ("v") ("w") ("x") ("y") ("z")
+  ((KP_1)) ((KP_2)) ((KP_3)) ((KP_4)) ((KP_5))
+  ((KP_6)) ((KP_7)) ((KP_8)) ((KP_9)) ((KP_0)))
 
  (consonant
   ("k" "ಕ")
   ("K" "ಖ")
+  ("KX" "ಖ಼")
   ("g" "ಗ")
   ("G" "ಘ")
   ("Z" "ಙ")
@@ -52,6 +78,7 @@
   ("j" "ಜ")
   ("jX" "ಜ಼")
   ("J" "ಝ")
+  ("JX" "ಝ಼")
   ("z" "ಞ")
   ("q" "ಟ")
   ("Q" "ಠ")
@@ -79,9 +106,11 @@
   ("s" "ಸ")
   ("h" "ಹ")
   ("L" "ಳ")
-  ("LX" "ೞ"))
+  ("LX" "ೞ")
+ )
 
  (independent
+  ("SX" "಄")
   ("a" "ಅ")
   ("A" "ಆ")
   ("i" "ಇ")
@@ -96,9 +125,8 @@
   ("o" "ಒ")
   ("O" "ಓ")
   ("V" "ಔ")
-  ("|" "।")
-  ("||" "॥")
   ("sX" "ಽ")
+  ;; Kannada Numerals on Main Row
   ("0" "೦")
   ("1" "೧")
   ("2" "೨")
@@ -108,15 +136,59 @@
   ("6" "೬")
   ("7" "೭")
   ("8" "೮")
-  ("9" "೯"))
+  ("9" "೯")
+  ;; Latin Numerals on Numpad
+  ((KP_1) "1")
+  ((KP_2) "2")
+  ((KP_3) "3")
+  ((KP_4) "4")
+  ((KP_5) "5")
+  ((KP_6) "6")
+  ((KP_7) "7")
+  ((KP_8) "8")
+  ((KP_9) "9")
+  ((KP_0) "0")
+  ("&" "&")
+  ("|" "|")
+  ("." ".")
+  ("~" "~")
+  ("#" "#")
+  ("$" "$")
+  ("^" "^")
+  ("*" "*")
+  (".|" "।")
+  (".||" "॥")
+  (".&" "ಆ್ಯಂಡ್‌")
+  ("`" "‘")
+  ("'" "’")
+  ("```" "`")
+  ("'''" "'")
+  ("--" "–")
+  ("---" "—")
+  ("..." "…")
+  ("``" "“")
+  ("''" "”")
+  ("L^r" "ಌ")
+  ("L^R" "ೡ")
+  ("CX" "ಀ")
+  ("cX" "ಁ") 
+  ("^X" "̆")
+  ("-X" "̄")
+  ("=X" "̳")
+  ("_X" "॒")
+  ("'X" "॑")
+  ("\"X" "᳚")
+ )
 
  (halantha
-   ("f" "್")
-   ("ff" "್‌"))
+  ("f" "್") 
+  ("ff" "್‌")
+ )
  
  (ayogavaaha
-  ("M" "ಂ")
-  ("H" "ಃ"))
+  ("M" "ಂ") 
+  ("H" "ಃ")
+ )
 
  (dependent
   ("A" "ಾ")
@@ -131,7 +203,8 @@
   ("Y" "ೈ")
   ("o" "ೊ")
   ("O" "ೋ")
-  ("V" "ೌ"))
+  ("V" "ೌ")
+  ("F" "‍್"))
 
  (return
   ((Return)))
@@ -165,16 +238,11 @@
  (ayogavaaha
   (ayogavaaha (shift ayogavaaha))
   (backspace)
-  (return (shift init))
+  (return (shift init)))
 
  (finish
   (backspace)
-  (return))
-)
-
-;; (finish
-;;  (return)
-;;  (t (shift init))))
+  (return)))
 
 ;; Local Variables:
 ;; coding: utf-8

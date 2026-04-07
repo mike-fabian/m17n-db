@@ -1,3 +1,20 @@
+2026-04-08  thesupertechie  <thesupertechie1@gmail.com>
+
+	* MIM/ta-tamil99.mim: Various fixes to Tamil 99
+
+2026-02-21  Sridhar M A <alaymari@gmail.com>
+
+	* MIM/kn-kgp.mim: Updated to include Vedic markers and modern punctuation.
+	(map): Added laghu (^X), guru (-X), anudatta (_X), and svarita ('X).
+	Added danda (.|) and double danda (.||).
+	Added ellipsis (...), en-dash (--), em-dash (---), and smart quotes (``, '').
+	Added chandrabindu (CX, cX) and avagraha (sX).
+	Added Kannada numerals (0-9) to main row and Latin numerals (KP_0-9)
+	to keypad for bilingual efficiency.
+	Added 'F' mapping for ottakshara 'ra' (ರ‍್) to allow non-arkavattu forms.
+	(state): Fixed parenthesis mismatch in 'ayogavaaha' state.
+	Consolidated 'dependent' maps for better structure.
+
 2025-04-07  Mujeeb Rahman K <mujeebcpy@gmail.com>
 
 	* icons/ml-poorna-remington.png: Change colour of ml-poorna-remington.png to make it visible on light themes

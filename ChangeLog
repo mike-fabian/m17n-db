@@ -1,3 +1,15 @@
+2026-05-21  Mike FABIAN  <mfabian@redhat.com>
+
+	Version 1.8.12 released.
+
+	* configure.ac: Version changed to 1.8.12
+	* NEWS: Udate for 1.8.12 release
+
+2026-05-20  Nafee Bishan <abdunnafialif@gmail.com>
+
+	* MIM/bn-khipro.mim: Add new Bengali input method
+	* icons/bn-khipro.png: Add icon for new Bengali input method
+
 2026-04-08  thesupertechie  <thesupertechie1@gmail.com>
 
 	* MIM/ta-tamil99.mim: Various fixes to Tamil 99

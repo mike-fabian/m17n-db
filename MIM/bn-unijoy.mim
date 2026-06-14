@@ -113,7 +113,7 @@
   ((A-4) "$") ;; DOLLAR SIGN
   ((A-7) "&") ;; AMPERSAND
   ((A-0) "‌") ;; ZERO WIDTH NON-JOINER
-  ((A-\-) "–") ;; EN DASH
+  ((A--) "–") ;; EN DASH
 
   ((A-a) "ঋ")	;; BENGALI LETTER VOCALIC R
   ((A-s) "উ")	;; BENGALI LETTER U

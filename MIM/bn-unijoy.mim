@@ -31,7 +31,7 @@
 
 (map
  (livekey
-  ("`" "‌") ;; ZERO WIDTH NON-JOINER
+  ("`" "‘") ;; LEFT SINGLE QUOTATION MARK
   ("1" "১") ;; BENGALI DIGIT ONE
   ("2" "২") ;; BENGALI DIGIT TWO
   ("3" "৩") ;; BENGALI DIGIT THREE
@@ -53,7 +53,7 @@
   ("i" "হ") ;; BENGALI LETTER HA
   ("o" "গ") ;; BENGALI LETTER GA
   ("p" "ড়") ;; BENGALI LETTER RRA
-  ("\\" "ঃ") ;; BENGALI SIGN VISARGA
+  ("\\" "ৎ") ;; BENGALI LETTER KHANDA TA
 
   ("a" "ৃ") ;; BENGALI VOWEL SIGN VOCALIC R
   ("s" "ু") ;; BENGALI VOWEL SIGN U
@@ -63,6 +63,7 @@
   ("j" "ক") ;; BENGALI LETTER KA
   ("k" "ত") ;; BENGALI LETTER TA
   ("l" "দ") ;; BENGALI LETTER DA
+  ("'" "’") ;; RIGHT SINGLE QUOTATION MARK
 
   ("z" "্র") ;; BENGALI SIGN VIRAMA + BENGALI LETTER RA
   ("x" "ো") ;; BENGALI VOWEL SIGN O
@@ -72,11 +73,10 @@
   ("n" "স") ;; BENGALI LETTER SA
   ("m" "ম") ;; BENGALI LETTER MA
 
-  ("~" "‍") ;; ZERO WIDTH JOINER
+  ("~" "“") ;; LEFT DOUBLE QUOTATION MARK
   ("$" "৳") ;; BENGALI RUPEE SIGN
-  ("^" "÷") ;; DIVISION SIGN
   ("&" "ঁ") ;; BENGALI SIGN CANDRABINDU
-  ("*" "×") ;; MULTIPLICATION SIGN
+  ("_" "—") ;; EM DASH
 
   ("Q" "ং") ;; BENGALI SIGN ANUSVARA
   ("W" "য়") ;; BENGALI LETTER YYA
@@ -88,7 +88,7 @@
   ("I" "ঞ") ;; BENGALI LETTER NYA
   ("O" "ঘ") ;; BENGALI LETTER GHA
   ("P" "ঢ়") ;; BENGALI LETTER RHA
-  ("|" "ৎ") ;; BENGALI SIGN KHANDATA
+  ("|" "ঃ") ;; BENGALI SIGN VISARGA
 
   ("A" "র্") ;; BENGALI LETTER RA + BENGALI SIGN VIRAMA
   ("S" "ূ") ;; BENGALI VOWEL SIGN UU
@@ -99,6 +99,7 @@
   ("J" "খ") ;; BENGALI LETTER KHA
   ("K" "থ") ;; BENGALI LETTER THA
   ("L" "ধ") ;; BENGALI LETTER DHA
+  ("\"" "”") ;; RIGHT DOUBLE QUOTATION MARK
 
   ("Z" "্য") ;; BENGALI SIGN VIRAMA + BENGALI LETTER YA
   ("X" "ৌ") ;; BENGALI VOWEL SIGN AU
@@ -108,46 +109,37 @@
   ("N" "ষ") ;; BENGALI LETTER SSA
   ("M" "শ") ;; BENGALI LETTER SHA
 
-
-  ((A-=) "≠")	;; NOT EQUAL TO
-
-  ((A-e) "ঈ")	;; BENGALI LETTER II
-  ((A-u) "ঊ")	;; BENGALI LETTER UU
-  ((A-i) "ঐ")	;; BENGALI LETTER AI
-  ((A-o) "ঔ")	;; BENGALI LETTER AU
+  ((A-`) "`") ;; GRAVE ACCENT
+  ((A-4) "$") ;; DOLLAR SIGN
+  ((A-7) "&") ;; AMPERSAND
+  ((A-0) "‌") ;; ZERO WIDTH NON-JOINER
+  ((A-\-) "–") ;; EN DASH
 
   ((A-a) "ঋ")	;; BENGALI LETTER VOCALIC R
   ((A-s) "উ")	;; BENGALI LETTER U
   ((A-d) "ই")	;; BENGALI LETTER I
   ((A-f) "আ")	;; BENGALI LETTER AA
   ((A-g) "্")	;; BENGALI SIGN VIRAMA //not a dead key now
-  ((A-h) "ৰ")	;; BENGALI LETTER RA WITH MIDDLE DIAGONAL
+  ((A-\\) "\\") ;; SLASH
 
+  ((A-z) "‍্য") ;; BENGALI CONJUNCT YA PHALAA (U+200D U+9CD U+9AF)
   ((A-x) "ও")	;; BENGALI LETTER O
+  ((A-v) "র‍্য") ;; BENGALI CONJUNCT RA with YA PHALAA (U+9B0 U+200D U+9CD U+9AF)
   ((A-c) "এ")	;; BENGALI LETTER E
-  ((A-v) "ৱ")	;; BENGALI LETTER RA WITH LOWER DIAGONAL
   ((A-.) "়")	;; BENGALI SIGN NUKTA
 
-  ((A-!) "৴")	;; BENGALI CURRENCY NUMERATOR ONE
-  ((A-@) "৵")	;; BENGALI CURRENCY NUMERATOR TWO
-  ((A-\#) "৶")	;; BENGALI CURRENCY NUMERATOR THREE
-  ((A-$) "৷")	;; BENGALI CURRENCY NUMERATOR FOUR
-  ((A-%) "৲")	;; BENGALI RUPEE MARK
-  ((A-&) "৺")	;; BENGALI ISSHAR
-  ((A-\)) "৸") ;;BENGALI CURRENCY NUMERATOR ONE LESS THAN THE DENOMINATOR
-  ((A-_) "৹")	;; BENGALI CURRENCY DENOMINATOR SIXTEEN
+  ((A-~) "~") ;; TILDE
+  ((A-&) "৺") ;; BENGALI ISSHAR
+  ((A-\)) "‍") ;; ZERO WIDTH JOINER
+  ((A-_) "_") ;; LOW LINE
 
-  ((A-Q) "ঌ")	;; BENGALI LETTER VOCALIC L
-  ((A-W) "ৡ")	;; BENGALI LETTER VOCALIC LL
-  ((A-I) "ঽ")	;; BENGALI LETTER AVAGRAHA
+  ((A-D) "ঈ") ;; BENGALI LETTER II
+  ((A-S) "ঊ") ;; BENGALI LETTER UU
+  ((A-G) "্‌") ;; NON JOINER BENGALI SIGN VIRAMA (U+9CD U+200C)
+  ((A-|) "|") ;; VERTICAL LINE
 
-  ((A-Z) "ৢ")	;; BENGALI VOWEL SIGN VOCALIC L
-  ((A-X) "ৗ")	;; BENGALI AU LENGTH MARK
-  ((A-C) "ৠ")	;; BENGALI LETTER VOCALIC RR
-  ((A-V) "ৣ")	;; BENGALI VOWEL SIGN VOCALIC LL
-  ((A-B) "ৄ")	;; BENGALI VOWEL SIGN VOCALIC RR
-  ((A-<) "≤")	;; LESS-THAN OR EQUAL TO
-  ((A->) "≥")	;; GREATER-THAN OR EQUAL TO
+  ((A-X) "ঔ")	;; BENGALI LETTER AU
+  ((A-C) "ঐ")	;; BENGALI LETTER AI
   )
 
  (deadkey
@@ -165,6 +157,7 @@
   ("C" (delete @-) "ঐ") ;; BENGALI LETTER AI
   ("x" (delete @-) "ও") ;; BENGALI LETTER O
   ("X" (delete @-) "ঔ") ;; BENGALI LETTER AU
+  ("g" (delete @-) "্‌") ;; NON JOINER BENGALI SIGN VIRAMA (U+9CD U+200C)
   ("G" (delete @-) "॥") ;; DEVANAGARI DOUBLE DANDA
   ))
 

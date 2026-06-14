@@ -120,7 +120,7 @@
   ((A-d) "ই")	;; BENGALI LETTER I
   ((A-f) "আ")	;; BENGALI LETTER AA
   ((A-g) "্")	;; BENGALI SIGN VIRAMA //not a dead key now
-  ((A-\\) "\\") ;; SLASH
+  ((A-\\) "\\") ;; REVERSE SOLIDUS
 
   ((A-z) "‍্য") ;; BENGALI CONJUNCT YA PHALAA (U+200D U+9CD U+9AF)
   ((A-x) "ও")	;; BENGALI LETTER O

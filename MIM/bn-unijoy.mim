@@ -115,18 +115,18 @@
   ((A-0) "‌") ;; ZERO WIDTH NON-JOINER
   ((A--) "–") ;; EN DASH
 
-  ((A-a) "ঋ")	;; BENGALI LETTER VOCALIC R
-  ((A-s) "উ")	;; BENGALI LETTER U
-  ((A-d) "ই")	;; BENGALI LETTER I
-  ((A-f) "আ")	;; BENGALI LETTER AA
-  ((A-g) "্")	;; BENGALI SIGN VIRAMA //not a dead key now
+  ((A-a) "ঋ") ;; BENGALI LETTER VOCALIC R
+  ((A-s) "উ") ;; BENGALI LETTER U
+  ((A-d) "ই") ;; BENGALI LETTER I
+  ((A-f) "আ") ;; BENGALI LETTER AA
+  ((A-g) "্") ;; BENGALI SIGN VIRAMA //not a dead key now
   ((A-\\) "\\") ;; REVERSE SOLIDUS
 
   ((A-z) "‍্য") ;; BENGALI CONJUNCT YA PHALAA (U+200D U+9CD U+9AF)
-  ((A-x) "ও")	;; BENGALI LETTER O
+  ((A-x) "ও") ;; BENGALI LETTER O
   ((A-v) "র‍্য") ;; BENGALI CONJUNCT RA with YA PHALAA (U+9B0 U+200D U+9CD U+9AF)
-  ((A-c) "এ")	;; BENGALI LETTER E
-  ((A-.) "়")	;; BENGALI SIGN NUKTA
+  ((A-c) "এ") ;; BENGALI LETTER E
+  ((A-.) "়") ;; BENGALI SIGN NUKTA
 
   ((A-~) "~") ;; TILDE
   ((A-&) "৺") ;; BENGALI ISSHAR
@@ -138,8 +138,8 @@
   ((A-G) "্‌") ;; NON JOINER BENGALI SIGN VIRAMA (U+9CD U+200C)
   ((A-|) "|") ;; VERTICAL LINE
 
-  ((A-X) "ঔ")	;; BENGALI LETTER AU
-  ((A-C) "ঐ")	;; BENGALI LETTER AI
+  ((A-X) "ঔ") ;; BENGALI LETTER AU
+  ((A-C) "ঐ") ;; BENGALI LETTER AI
   )
 
  (deadkey

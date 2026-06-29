@@ -29,7 +29,7 @@ Author: Aniruddha Purushottamrao Mohod <aniruddha.mohod@gmail.com>
 
 (map
  (trans
- 
+
   ((KP_1) "१")
   ((KP_2) "२")
   ((KP_3) "३")
@@ -44,12 +44,12 @@ Author: Aniruddha Purushottamrao Mohod <aniruddha.mohod@gmail.com>
   ((KP_Divide) "/")
   ((KP_Multiply) "*")
   ((KP_Add) "+")
-  ((KP_Subtract) "-") 
- 
+  ((KP_Subtract) "-")
+
 
 
   ("~" "्")
- ("`" "ृ") 
+ ("`" "ृ")
  ("!" "!")
   ("1" "१")
  ("@" "/")
@@ -128,7 +128,7 @@ Author: Aniruddha Purushottamrao Mohod <aniruddha.mohod@gmail.com>
  ("\"k" "ष")
   ("'" "श्")
  ("'k" "श")
- ("Z" "र्‍") 
+ ("Z" "र्‍")
  ("z" "्र")
  ("X" "ग्")
  ("x" "ग")
@@ -255,9 +255,9 @@ Author: Aniruddha Purushottamrao Mohod <aniruddha.mohod@gmail.com>
 ("Vz" "ट्र")
 ("Mz" "ड्र")
 
-("Vzks" "ट्रो") 
-("VzkS" "ट्रौ") 
-("Mzks" "ड्रो") 
+("Vzks" "ट्रो")
+("VzkS" "ट्रौ")
+("Mzks" "ड्रो")
 ("MzkS" "ड्रौ")
 
 ("dz" "क्र")
@@ -821,7 +821,7 @@ Author: Aniruddha Purushottamrao Mohod <aniruddha.mohod@gmail.com>
 ("R;a" "त्यं")
 ("R;%" "त्यः")
 
-("Jk" "श्रा") 
+("Jk" "श्रा")
 ("=kk" "त्रा")
 ("fX" "ग्‍ि")
 ("f?" "घ्‍ि")

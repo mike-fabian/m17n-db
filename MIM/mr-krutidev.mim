@@ -1,4 +1,4 @@
-;; mr-unicode.mim -- Marathi input method for Remington typewriter layout
+;; mr-krutidev.mim -- Marathi input method for Remington (Godrej) typewriter layout
 ;; Copyright (c) 2006-2007 Red Hat, Inc. All Rights Reserved.
 
 ;; This file is part of the m17n contrib; a sub-part of the m17n
@@ -21,7 +21,7 @@
 
 (input-method mr krutidev)
 
-(description "Marathi input method for Godrej typewriter layout.
+(description "Marathi input method for Remington (Godrej) typewriter layout.
 Author: Aniruddha Purushottamrao Mohod <aniruddha.mohod@gmail.com>
 ")
 

@@ -1,3 +1,22 @@
+2026-06-29  Mike FABIAN  <mfabian@redhat.com>
+
+	* Add icons/mr-krutidev.png: Add an icon for mr-krutidev
+	* MIM/mr-krutidev.mim: Fix wrong filename in comment and fix description,
+	Remove trailing whitespace,
+	Use indentation and empty lines more consistently,
+	Change mapping of `/kkSZ`
+	* Add MIM/mr-krutidev.mim: added Marathi krutidev layout,
+	(by Shantanu Oak <shantanu.oak@gmail.com>)
+	* MIM/bn-unijoy.mim: Update to modern Unijoy layout,
+	removing unnecessary escape character for hyphen,
+	Correct backslash character name,
+	Replaces tab characters with spaces for consistent alignment
+	(by Md. Rifat Hasan Jihan <rhjihan@outlook.com>)
+	* MIM/bn-khipro.mim: add number+dot mappings, delete trailing whitespace,
+	dot mappings for up to 6 dots, add rule for slicing the conjunct গ্‌গ to জ্ঞগ,
+	define iif as িই, add blinder function: bn-khipro v35.0.1
+	(by Nafee <abdunnafialif@gmail.com>)
+
 2026-05-21  Mike FABIAN  <mfabian@redhat.com>
 
 	Version 1.8.12 released.

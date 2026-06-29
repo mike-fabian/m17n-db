@@ -6,6 +6,18 @@ Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013
 See the end for copying conditions.
 Copyright (C) 2015-2026 Kenichi Handa <handa@gnu.org>
 
+* Changes in the m17n database 1.8.13
+
+** New input methods are added.
+
+mr-krutidev.mim: Marathi input method for Remington (Godrej) typewriter layout. By Aniruddha Purushottamrao Mohod <aniruddha.mohod@gmail.com>
+
+** Changes in input methods.
+
+bn-unijoy.mim: Update to modern Unijoy layout (by Md. Rifat Hasan Jihan <rhjihan@outlook.com>)
+bn-khipro.mim: Updates by the author: Nafee <abdunnafialif@gmail.com>
+
+
 * Changes in the m17n database 1.8.12
 
 ** New input methods are added.

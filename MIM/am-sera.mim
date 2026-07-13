@@ -24,7 +24,19 @@
 (input-method am sera)
 
 (description "Amharic input method with SERA.
-For more information, see the page http://www.geez.org/IM/.
+
+For more information, see:
+
+SERA 1997 System
+
+ Yacob, Daniel, and Yitna Firdyiwek. “The System for Ethiopic Representation in ASCII - 1997 Standard.”
+ The Abyssinia Gateway, 1997, abyssiniagateway.net/fidel/sera-97.html.
+
+Related:
+ http://abyssiniagateway.net/fidel/sera-faq.html
+ http://abyssiniagateway.net/fidel/sera-faq_0.html
+
+Prepared by Daniel Yacob <yacob@geez.org>
 ")
 
 (title "ፊደል")

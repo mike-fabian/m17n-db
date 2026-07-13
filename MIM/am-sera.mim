@@ -90,8 +90,8 @@ For more information, see the page http://www.geez.org/IM/.
   ("mo" ?ሞ)
   ("mW" ?ሟ)
   ("mWa" ?ሟ)
-  ("mY" ?ፘ)
-  ("mYa" ?ፘ)
+  ("mY" ?ፙ)
+  ("mYa" ?ፙ)
 
   ("Me" ?መ)
   ("Mu" ?ሙ)
@@ -103,8 +103,8 @@ For more information, see the page http://www.geez.org/IM/.
   ("Mo" ?ሞ)
   ("MW" ?ሟ)
   ("MWa" ?ሟ)
-  ("MY" ?ፘ)
-  ("MYa" ?ፘ)
+  ("MY" ?ፙ)
+  ("MYa" ?ፙ)
 
   ("`se" ?ሠ)
   ("`su" ?ሡ)
@@ -149,8 +149,8 @@ For more information, see the page http://www.geez.org/IM/.
   ("ro" ?ሮ)
   ("rW" ?ሯ)
   ("rWa" ?ሯ)
-  ("rY" ?ፙ)
-  ("rYa" ?ፙ)
+  ("rY" ?ፘ)
+  ("rYa" ?ፘ)
 
   ("Re" ?ረ)
   ("Ru" ?ሩ)
@@ -162,7 +162,8 @@ For more information, see the page http://www.geez.org/IM/.
   ("Ro" ?ሮ)
   ("RW" ?ሯ)
   ("RWa" ?ሯ)
-  ("RYa" ?ፙ)
+  ("RY" ?ፘ)
+  ("RYa" ?ፘ)
 
   ("se" ?ሰ)
   ("su" ?ሱ)
@@ -563,6 +564,8 @@ For more information, see the page http://www.geez.org/IM/.
   ("Gee" ?ጜ)
   ("G" ?ጝ)
   ("Go" ?ጞ)
+  ("GW" ?ጟ)
+  ("GWa" ?ጟ)
 
   ("Te" ?ጠ)
   ("Tu" ?ጡ)

@@ -201,9 +201,13 @@
 
 (state
  (init
-  (fullwidth)
   (map)
-  ()
+  (to-fullwidth (shift fullwidth-mode))
+  ())
+ (fullwidth-mode
+  (to-fullwidth (shift init))
+  (fullwidth (commit))
+  (nil (unhandle))))
 
 
 ;; Local Variables:

@@ -247,7 +247,7 @@
 		("....." "....")
 		("......" ".....")
 		("......." "......")
-		("\\\\" "\\")
+
 		("$" "৳")
 		("$f" "₹")
 		(",,," ",,")
@@ -272,6 +272,9 @@
 	)
 	(slicer3
 		("///" "//")
+	)
+	(slicer4
+		("////" "///")
 	)
 	(backspace
 		( (BackSpace)  (undo) )
@@ -393,6 +396,7 @@
 		(diacritic (commit)  (shift shor_state))
 		(slicer (commit))
 		(slicer3 (commit))
+		(slicer4 (commit) (shift slash_state))
 		(slicer2 (delete @-) (insert "ঁ") (shift shor_state))
 		(shor (shift shor_state))
 		(fkar (commit)  (shift shor_state))
@@ -416,6 +420,7 @@
 		(slicer (delete @-) (insert "ঁ"))
 		(slicer2 (shift init))
 		(slicer3 (shift init))
+		(slicer4 (shift slash_state))
 		(shor )
 		(fkar )
 		(biram ) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
@@ -855,7 +860,18 @@
 				((= CmpdCnstFlag 0) (delete @-) (insert "ঁ") (shift shor_state))
 			)
 		)
-		(slicer3 (shift init))
+		(slicer3
+			(cond
+				((| (= CmpdCnstFlag 1)(= FrstCnstID 16) ) (delete @-2) (insert "ঁ") (shift shor_state))
+				(1 (shift init))
+			)
+		)
+		(slicer4
+			(cond
+				((| (= CmpdCnstFlag 1)(= FrstCnstID 16) ) (delete @-) (shift slash_state))
+				(1 (shift slash_state))
+			)
+		)
 		(diacritic  (shift shor_state))
 		(blinder (shift blind_state))
 		(backspace)
@@ -895,7 +911,8 @@
 		)
 		(diacritic  (shift shor_state))
 		(slicer2 (shift init))
-		(slicer3 (shift init))
+		(slicer3 (delete @-2) (insert "ঁ") (shift shor_state))
+		(slicer4 (delete @-) (shift slash_state))
 		(prithayok (delete @-)  (shift init))
 		(ongko  (shift init))
 		(biram  (shift shor_state))
@@ -1031,5 +1048,8 @@
 		(blinder)
 		(symbolsNoIdentity)
 		(prithayok (delete @-) (shift init))
+	)
+	(slash_state
+		(slicer (commit))
 	)
 )

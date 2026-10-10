@@ -1,3 +1,9 @@
+2026-10-10  Mike Fabian  <mfabian@redhat.com>
+
+	* MIM/bn-khipro.mim: Update to to v36.6.0 (by Nafee <abdunnafialif@gmail.com)
+	* MIM/zn-bopomofo.mim: Fix unusuable zh-bopomofo, was always in fullwidth mode,
+        add proper switch rule for it with "\" key (by Weng Xuetian <wengxt@gmail.com>)
+
 2026-07-13  Mike FABIAN  <mfabian@redhat.com>
 
 	* MIM/am-sera.mim: Fix Ethiopic Swap between ፙ and ፘ, and Add ጟ

@@ -477,7 +477,7 @@
 				((& (= Cnst2 187)(= Cnst1 189)) (delete cstm2) (delete @-2) (insert "রড়") (set CnstID 191) (reset_cnst_buffer_after_cnjnct))
 				((& (= Cnst2 191)(= Cnst1 189)) (delete cstm2) (delete @-2) (insert "রঢ়") (reset_cnst_buffer_after_cnjnct))
 				((& (= Cnst2 187) (> Cnst1 0) ) (move cstm2) (delete @-) (insert ?্) (move @>)  (reset_cnst_buffer_after_cnjnct)) ;; রর এর পরে কোনো ব্যঞ্জনবর্ণ লিখলে সেটা রেফ তৈরি করবে কোনো মডিফায়ার ছাড়াই
-				((& (= Cnst2 27) (= Cnst1 190)) (form_jo_phola) (reset_cnst_buffer_after_cnjnct))
+				((& (> Cnst2 0) (= Cnst1 190)) (form_jo_phola) (reset_cnst_buffer_after_cnjnct))
 			)
 		)
 		(fuser
@@ -879,6 +879,7 @@
 		(cond
 			((& (= Cnst2 27)(= Cnst1 26)) (move @-) (insert "‍্") (move @>)) ;; র‍্য
 			((& (= Cnst2 27)(= Cnst1 190)) (move @-) (delete @-) (insert "‍্") (move @>)) ;; zf র‍্য
+			((& (> Cnst2 0)(= Cnst1 190)) (move @>)) ;; zf ক্য do nothing
 			(1 (move @-) (insert "্") (move @>))
 		)
 	)

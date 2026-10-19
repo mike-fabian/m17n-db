@@ -742,10 +742,12 @@
 		(backspace)
 	)
 	(dot_state
+		(t (set overflow 0))
 		(dot (commit))
 		(backspace)
 	)
 	(comma_state
+		(t (set overflow 0))
 		(comma (commit))
 		(backspace)
 	)

@@ -70,7 +70,7 @@ function index_to_gb(idx) {
   return (b0 * 256 + b1);
 }
 
-/^\#/ {
+/^#/ {
   print;
   next;
 }

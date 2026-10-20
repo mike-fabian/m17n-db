@@ -68,7 +68,7 @@ function index_to_gb(idx) {
   return sprintf("%02X%02X%02X%02X", b0, b1, b2, b3);
 }
 
-/^\#/ {
+/^#/ {
   print;
   next;
 }

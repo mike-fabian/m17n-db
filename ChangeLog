@@ -1,3 +1,16 @@
+2026-10-20  Mike FABIAN  <mfabian@redhat.com>
+
+	* CASE-MAPPING.awk, CASED.awk, compact.awk, gb180302.awk, gb180304.awk:
+	Remove unnessecary `\` in awk scripts to avoid warning
+
+2026-10-20  Nafee <abdunnafialif@gmail.com>
+
+	* MIM/bn-khipro-classic.mim: rename from MIM/bn-khipro.mim and add some improvements,
+	version is now khipro-classic v37.0.1.
+	* MIM/bn-khipro-dark.mim: add khipro-dark v2.0.0
+	* icons/bn-knipro-classic.png: rename from icons/bn-khipro.png
+	* icons/bn-khipro-dark.png: add icon for khipro-dark
+
 2026-10-10  Mike Fabian  <mfabian@redhat.com>
 
 	* MIM/bn-khipro.mim: Update to to v36.6.0 (by Nafee <abdunnafialif@gmail.com)

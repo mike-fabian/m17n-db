@@ -6,6 +6,17 @@ Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013
 See the end for copying conditions.
 Copyright (C) 2015-2026 Kenichi Handa <handa@gnu.org>
 
+* Changes in the m17n database 1.8.16
+
+** Changes in input methods.
+
+bn-khipro diverges into two variants: khipro-classic v37.0.1 &
+khipro-dark v2.0.0 (by Nafee <abdunnafialif@gmail.com>):
+
+bn-khipro-classic.mim: add khipro-classic v37.0.1
+bn-khipro-dark.mim: add khipro-dark v2.0.0
+
+
 * Changes in the m17n database 1.8.15
 
 ** Changes in input methods.

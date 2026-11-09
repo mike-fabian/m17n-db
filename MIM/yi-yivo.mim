@@ -23,9 +23,12 @@
 (input-method yi yivo)
 											
 (description "Yiddish input method using YIVO transliteration.
-A short description of the YIVO transliteration scheme can be found here: http://www.ibiblio.org/pub/academic/languages/yiddish/mendele/vol4.170
-A description of the YIVO orthography can be found in Mordkhe Schaechter, _Der eynheytlekher Yidisher oysleyg: Takones fun yidishn oysleyg_, New York: Yivo and Yiddish Language Resource Center of the League for Yiddish (6th ed. 1999).
-")
+A short description of the YIVO transliteration scheme can be found here:
+http://www.ibiblio.org/pub/academic/languages/yiddish/mendele/vol4.170
+A description of the YIVO orthography can be found in Mordkhe Schaechter,
+_Der eynheytlekher Yidisher oysleyg: Takones fun yidishn oysleyg_, New York:
+Yivo and Yiddish Language Resource Center of the League for Yiddish (6th
+ed. 1999).")
 											
 (title "ייִדיש")
 (map

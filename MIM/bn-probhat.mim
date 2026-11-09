@@ -23,13 +23,16 @@
 
 (description "Bengali input method for probhat layout.
 
-Phonetic Based Bengali Keymap Layout created by Taneem Ahmed and proposed by Ankur Group (www.bengalinux.org) in accordance to the image in the following link:
+Phonetic Based Bengali Keymap Layout created by Taneem Ahmed and proposed by
+Ankur Group (www.bengalinux.org) in accordance to the image in the following
+link:
 
 http://www.bengalinux.org/images/probhat_layout.png
 
 Key summary:
 
-To write \"juktakhor\" i.e. conjunct characters of consonants please use the \"halant\" character on the key '/' between the two consonant akshar. 
+To write \"juktakhor\" i.e. conjunct characters of consonants please use the
+\"halant\" character on the key '/' between the two consonant akshar.
 
 E.g. ক্ষ = k+/+S
 

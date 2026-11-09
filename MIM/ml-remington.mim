@@ -22,9 +22,10 @@
 (input-method ml remington)
 
 (description "Malayalam input method for Remington typewriter layout.
+
 The detailed information is available <http://wiki.smc.org.in/Remington>.
-Author: Sebin Abraham Jacob <sebinajacob@gmail.com>, Icons: Hiran Venugopal <hiran.v@gmail.com>
-")
+Author: Sebin Abraham Jacob <sebinajacob@gmail.com>,
+Icons: Hiran Venugopal <hiran.v@gmail.com>")
 
 (title "റ")
 

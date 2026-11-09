@@ -24,18 +24,27 @@
 (input-method ml inscript)
 
 (description "Malayalam input method for inscript layout.
-INSCRIPT (Indian Script) is a keyboard layout scheme to input Indic text on computer, standardized by Government of India. Each key on keyboard is mapped to a Malayalam alphabet. Once SCIM is activated, select Malayalam Inscript from the SCIM tab appearing on the down right corner and input Malayalam text. To type 0-9 in Malayalam press 0-9 on Inscript keyboard. For English numerals, switch back to English keyboard using control + space bar and press 0-9.
-INSCRIPT KEYBOARD LAYOUT is available at:
+INSCRIPT (Indian Script) is a keyboard layout scheme to input Indic text on
+computer, standardized by Government of India. Each key on keyboard is
+mapped to a Malayalam alphabet. Once SCIM is activated, select Malayalam
+Inscript from the SCIM tab appearing on the down right corner and input
+Malayalam text. To type 0-9 in Malayalam press 0-9 on Inscript keyboard. For
+English numerals, switch back to English keyboard using control + space bar
+and press 0-9.  INSCRIPT KEYBOARD LAYOUT is available at:
 http://fedoraproject.org/wiki/I18N/Indic/MalayalamKeyboardLayouts
 http://tdil.mit.gov.in/isciichart.pdfwill be provided in the next release.
 
 IMPORTANT:
 
-1. key ']' is mapped to Zero Width Joiner (ZWJ) which helps you to write the five chillaksharam.
-2. key '\\' is mapped to Zero Width Non Joiner (ZWNJ) which helps you to stop the consonants from joining to form conjuncts.
-[Note: consonants are ക, ഖ, ഗ,..... and conjuncts are those formed using two consonants like ക്ക, ഗ്ഗ, ന്ത, ക്യ, ക്വ, ....]
+1. key ']' is mapped to Zero Width Joiner (ZWJ) which helps you to write the
+   five chillaksharam.
+2. key '\\' is mapped to Zero Width Non Joiner (ZWNJ) which helps you to
+   stop the consonants from joining to form conjuncts.
+[Note: consonants are ക, ഖ, ഗ,..... and conjuncts are those formed using two
+consonants like ക്ക, ഗ്ഗ, ന്ത, ക്യ, ക്വ, ....]
 
-Following are the conjuncts formed in our language, shown along with the keys to reproduce them:
+Following are the conjuncts formed in our language, shown along with the
+keys to reproduce them:
 
 Case 1:
 CHILLU aksharam:

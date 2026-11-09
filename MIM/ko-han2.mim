@@ -21,12 +21,7 @@
 ;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 ;; Boston, MA 02110-1301, USA.
 
-;;; @if FOR_LATEX
-;;; Hangul input method with 2-bul style.
-;;; @endif
-;;; @if FOR_HTML
 ;;; Hangul input method with 2벌식.
-;;; @endif
 ;;; This input method uses this keyboard layout:
 ;;; @image html ko-han2.png "Keyboard Layout"
 ;;; @image latex ko-han2.eps "Keyboard Layout" width=\narrowwidth

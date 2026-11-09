@@ -25,18 +25,19 @@
 
 (description "Bengali input method for inscript layout.
 
-Inscript (Indian Script) Keyboard overlay in accordance to the standardization recommended by the Department of Electronics, Government of India. Reference Link:
-http://tdil.mit.gov.in/keyoverlay.htm
+Inscript (Indian Script) Keyboard overlay in accordance to the
+standardization recommended by the Department of Electronics, Government of
+India. Reference Link: http://tdil.mit.gov.in/keyoverlay.htm
 
 Also see - http://indlinux.org/wiki/index.php/InscriptLayouts#Bengali
 
 Key Summary:
-To write \"juktakhor\" i.e. conjunct characters of consonants please use the \"halant\" character on the key 'd' between the two consonant akshar. 
+To write \"juktakhor\" i.e. conjunct characters of consonants please use the
+\"halant\" character on the key 'd' between the two consonant akshar.
 
 E.g. ক্ষ = k+d+<
 
 Key summary: Runa Bhattacharjee <runab@redhat.com>
-
 ")
 
 (title "ক")

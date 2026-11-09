@@ -19,11 +19,14 @@
 
 (input-method dra iso-15919-itrans)
 
-(description "Dravidian ISO-15919 input method roughly mapped from ITRANS and Harvard-Kyoto
-transliteration systems. Such a mapping is particularly useful for people who use ITRANS / Harvard-Kyoto based input methods (found for example in sa-itrans.mim) to type sanskrit in other scripts. Not having to memorize multiple input maps for multiple scripts is a plus.
+(description "Dravidian ISO-15919 input method roughly mapped from ITRANS and
+Harvard-Kyoto transliteration systems. Such a mapping is particularly useful
+for people who use ITRANS / Harvard-Kyoto based input methods (found for
+example in sa-itrans.mim) to type sanskrit in other scripts. Not having to
+memorize multiple input maps for multiple scripts is a plus.
 
-You can use all the standard ITRANS key sequences (other than ch, which has a different meaning in this script) plus key
-sequences such as the below.
+You can use all the standard ITRANS key sequences (other than ch, which has
+a different meaning in this script) plus key sequences such as the below.
 
 nk->ṅk, nkh->ṅkh, ng->ṅg, ngh->ṅgh
 nc->ñc, nch->ñch, nj->ñj, njh->ñjh,
@@ -31,13 +34,15 @@ nT->ṇṭ, nTh->ṇṭh, nD->ṇḍ, nDh->ṇḍh
 S->ṣ, jn->jñ, R->r̥
 
 Unlike classical Sanskrit, e and o are not automatically mapped to ē and ō.
-So, this also serves to type via reconstructed vedic pronunciation sanskrit, where ai=ए, Ai=ऐ, au=ओ, Au=औ.
+So, this also serves to type via reconstructed vedic pronunciation sanskrit,
+where ai=ए, Ai=ऐ, au=ओ, Au=औ.
 
-Capital letters may be produced or forced by prefixing a ~, reduplicating a letter (T,D,N,R) for disambiguation where necessary. For example: 
+Capital letters may be produced or forced by prefixing a ~, reduplicating a
+letter (T,D,N,R) for disambiguation where necessary. For example:
 
 Raama or ~Raama -> Rāma, ~RRkaara -> R̥kāra, KRShNa or ~KRShNa -> Kr̥ṣṇa,
-~Tyaaga -> Tyāga, ~TTakaara -> Ṭakāra,  ~Dhiira -> Dhīra, ~DDhakaara -> Ḍhakāra,
-~LLakaara -> Ḷakāra
+~Tyaaga -> Tyāga, ~TTakaara -> Ṭakāra,  ~Dhiira -> Dhīra,
+~DDhakaara -> Ḍhakāra, ~LLakaara -> Ḷakāra
 
 The motivation behind additions made to the basic ITRANS scheme
 is described in https://sanskrit-coders.github.io/input/optitrans/,

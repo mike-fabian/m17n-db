@@ -28,8 +28,9 @@ Layout taken from
 
 https://github.com/OpenBangla/OpenBangla-Keyboard/blob/master/data/National_Jatiya.json
 
-and ported to m17n-db, merging in differences /usr/share/X11/xkb/symbols/bd as far
-as possible, giving priority to National_Jatiya.json in case of a conflict.
+and ported to m17n-db, merging in differences
+/usr/share/X11/xkb/symbols/bd as far as possible, giving priority to
+National_Jatiya.json in case of a conflict.
 
 One of the conflicts is that National_Jatiya.json has ZWNJ on ` and
 AltGr+` and ZWJ on ~ and AltGr+~ whereas /usr/share/X11/xkb/symbols/bd
@@ -39,8 +40,9 @@ See also:
 
 https://en.wikipedia.org/wiki/Bengali_input_methods#/media/File:KB-Bengali-Jatiyo.svg
 
-The layout picture from Wikipedia shows a few characters on AltGr which do exist
-neither in National_Jatiya.json nor /usr/share/X11/xkb/symbols/bd.
+The layout picture from Wikipedia shows a few characters on AltGr which
+do exist neither in National_Jatiya.json nor
+/usr/share/X11/xkb/symbols/bd.
 
 On top of implementing the plain “National Jatiya” keyboard
 layout, this input method also does “automatic vowel forming”,

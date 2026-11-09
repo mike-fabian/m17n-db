@@ -23,9 +23,6 @@
 ;; Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
 ;; Boston, MA 02110-1301 USA.
 
-;;; Input method for Yi
-;;;
-
 (input-method ii phonetic)
 
 (description

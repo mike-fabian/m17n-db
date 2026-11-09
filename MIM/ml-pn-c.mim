@@ -25,10 +25,12 @@
 (input-method ml pn-c)
 
 (description (_"Puthu Nira Charutha
-See the paper at http://languageinindia.com/july2023/drajithnewkeyboardsmalayalamfinal1.html
+
+See the paper at
+http://languageinindia.com/july2023/drajithnewkeyboardsmalayalamfinal1.html
 Original Author : Ajith R <ajithramayyan at yahoo dot co dot in>
-See https://ajithramayyan.gitlab.io/puthunira/ for usage
-നിർദ്ദേശങ്ങള്‍ക്കായ് https://ajithramayyan.gitlab.io/puthunira/ എന്ന കണ്ണി കാണുക
+See https://ajithramayyan.gitlab.io/puthunira/ for usage നിർദ്ദേശങ്ങള്‍ക്കായ്
+https://ajithramayyan.gitlab.io/puthunira/ എന്ന കണ്ണി കാണുക
 "))
 
 (title "pn-c")

@@ -1,3 +1,48 @@
+2026-11-09  K. Handa  <handa@gnu.org>
+
+	* MIM/am-sera.mim, MIM/ar-kbd.mim, MIM/ar-translit.mim:
+	* MIM/as-inscript.mim, MIM/as-inscript2.mim, MIM/as-phonetic.mim:
+	* MIM/bn-disha.mim, MIM/bn-inscript.mim, MIM/bn-inscript2.mim:
+	* MIM/bn-khipro.mim, MIM/bn-national-jatiya.mim:
+	* MIM/bn-probhat.mim, MIM/bo-ewts.mim:
+	* MIM/dra-iso-15919-itrans.mim, MIM/en-pn-eqf.mim:
+	* MIM/eo-h-fundamente.mim, MIM/eo-h-sistemo.mim, MIM/eo-plena.mim:
+	* MIM/eo-q-sistemo.mim, MIM/eo-vi-sistemo.mim:
+	* MIM/eo-x-sistemo.mim, MIM/hi-inscript.mim:
+	* MIM/hi-optitransv2.mim, MIM/hi-vedmata.mim, MIM/ii-phonetic.mim:
+	* MIM/kn-optitransv2.mim, MIM/ko-han2.mim, MIM/lsymbol.mim:
+	* MIM/ml-inscript.mim, MIM/ml-inscript2.mim, MIM/ml-pn-c.mim:
+	* MIM/ml-poorna-remington.mim, MIM/ml-remington.mim:
+	* MIM/pa-inscript.mim, MIM/pa-inscript2-guru.mim:
+	* MIM/pa-jhelum.mim, MIM/sa-iast-vedic.mim, MIM/sa-iast.mim:
+	* MIM/sa-iso-15919-itrans.mim, MIM/sa-sharada-itrans.mim:
+	* MIM/sa-vedic-itrans.mim, MIM/si-singlish.mim:
+	* MIM/ta-tamil99.mim, MIM/ta-vutam.mim, MIM/tai-sonla.mim:
+	* MIM/te-inscript.mim, MIM/te-inscript2.mim, MIM/te-sarala.mim:
+	* MIM/yi-yivo.mim, MIM/zh-pinyin-vi.mim: Adjust line length for
+	Doxygen.
+
+	* FORMATS/IM.txt: Describe how to use ";;; ..." lines for Doxygen.
+	Use apostrophe ('), not backquote (`) for quoting symbols.  Hide
+	reference to mim-list for "man".
+
+	* FORMATS/FLT.txt, FORMATS/FLT.ja.txt: Hide reference to flt-list
+	for "man".
+
+	* FORMATS/Dir.txt (dir-description), FORMATS/Dir.ja.txt
+	(dir-description): Use apostrophe ('), not backquote (`) for
+	quoting symbols.
+
+	* FORMATS/Dir.txt (dir-description): Use apostrophe ('), not
+	backquote (`) for quoting symbols.
+
+	* FORMATS/0General.ja.txt (general-syntax): Quote ".
+	(general-example): Escape '\' by '\'.
+
+	* FORMATS/0General.txt (general-example): Escape '\' by '\'.
+
+	* mdb.dir: Prepare for using subsections for input methods.
+
 2026-10-10  Mike Fabian  <mfabian@redhat.com>
 
 	* MIM/bn-khipro.mim: Update to to v36.6.0 (by Nafee <abdunnafialif@gmail.com)

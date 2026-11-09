@@ -4,7 +4,8 @@
 
 (input-method zh pinyin-vi)
 
-(description "Input method for Chinese Pinyin characters.Note that it's not for inputting Han characters.")
+(description "Input method for Chinese Pinyin characters.
+Note that it's not for inputting Han characters.")
 
 (title "PinYinVi")
 

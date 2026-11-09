@@ -21,9 +21,8 @@
 
 (input-method hi vedmata)
 
-(description "Hindi input method for Remington typewriter layout. Author: Shantikunj, Haridwar, UK, INDIA <www.awgp.org>")
-
-
+(description "Hindi input method for Remington typewriter layout.
+Author: Shantikunj, Haridwar, UK, INDIA <www.awgp.org>")
 
 (title "वेदमाता हिन्दी - Remington")
 

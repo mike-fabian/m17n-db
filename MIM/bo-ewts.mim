@@ -27,7 +27,8 @@
 
 (description "Tibetan input method based on EWTS.
 This implementation is based on THDL Extended Wylie Transliteration Scheme
-Version 2.0 <http://www.thlib.org/reference/transliteration/#!essay=/thl/ewts>.")
+Version 2.0
+<http://www.thlib.org/reference/transliteration/#!essay=/thl/ewts>.")
 
 (title "ཀ")
 

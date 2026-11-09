@@ -22,8 +22,11 @@
 (input-method ml poorna-remington)
 
 (description "Malayalam input method for Poorna Remington typewriter layout.
+
 The detailed information is available <http://wiki.smc.org.in/Remington>.
-Authors: Basic layout: Sebin Abraham Jacob <sebinajacob@gmail.com>, Extended Layout : Mujeeb Rahman k <mujeebcpy@gmail.com>
+Authors:
+Basic layout: Sebin Abraham Jacob <sebinajacob@gmail.com>,
+Extended Layout : Mujeeb Rahman k <mujeebcpy@gmail.com>
 ")
 
 (title "റ")

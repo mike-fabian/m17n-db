@@ -25,9 +25,12 @@
 
 (input-method si singlish)
 
-(description "Singlish Transliteration Scheme, (C) madura.x86. <http://madurax86.co.nr/singlish.mim>
-Parts of this file are copyrighted to Harshula Jayasuriya <harshula@gmail.com>
-Based on original transliteration scheme for Realtime Singlish, <http://realtimesinglish.tk>")
+(description "Singlish Transliteration Scheme, (C) madura.x86.
+<http://madurax86.co.nr/singlish.mim>
+Parts of this file are copyrighted to Harshula Jayasuriya
+ <harshula@gmail.com>
+Based on original transliteration scheme for Realtime Singlish,
+ <http://realtimesinglish.tk>")
 
 (title "සිංග්ලිශ්")
 

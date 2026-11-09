@@ -22,7 +22,9 @@
 
 (input-method sa vedic-itrans)
 
-(description "Sanskrit input method by a modified version of ITRANS and Harvard-Kyoto transliteration systems with added support for reconstructed vedic pronunciation ai=ए, Ai=ऐ, au=ओ, Au=औ.
+(description "Sanskrit input method by a modified version of ITRANS
+and Harvard-Kyoto transliteration systems with added support for
+reconstructed vedic pronunciation ai=ए, Ai=ऐ, au=ओ, Au=औ.
 
 You can use all the standard ITRANS key sequences (modulo ऍ ऑ) plus key
 sequences such as the below.

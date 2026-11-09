@@ -24,18 +24,25 @@
 (description "Hindi input method by the OPTITRANS
 transliteration system. 
 
-0. A major deviation from other transliteration systems like ITRANS and HK
-is that latin consonants are mapped to the correpsonding devanAgarI consonant *followed by the 
-vowel a*. For example, k maps to क, not क्.
+0. A major deviation from other transliteration systems like ITRANS and
+HK is that latin consonants are mapped to the correpsonding devanAgarI
+consonant *followed by the vowel a*. For example, k maps to क, not क्.
 
 1. panchama-varNa-s of vyanjana-varga-s 
   nnk->ङ्क, nnkh->ङ्ख, nng->ङ्ग, nngh->ङ्घ
   nnch->ञ्च, nnCh->ञ्छ, nnc->ञ्च, nnC->ञ्छ,
 
-2. Any common consonant, typed twice, yields that consonant with the virAma. So, nn yields न्. The rationale is that a repeated consonant such as नन and दद is far less common than the consonants with a virAma, such as न् and द्.
+2. Any common consonant, typed twice, yields that consonant with the
+virAma. So, nn yields न्. The rationale is that a repeated consonant such
+as नन and दद is far less common than the consonants with a virAma, such
+as न् and द्.
 
-3. The rare character sequences that conflict with shortcuts for more frequently occuring strings can be typed using the "commit key" - (Ctrl + Shift  + Enter), or with the use of the arrow key. 
-For example, sh yields श. But if one wanted to type सह, one can type: s<Commit key>h or s<left arrow, right arrow>h.
+3. The rare character sequences that conflict with shortcuts for more
+frequently occuring strings can be typed using the \"commit key\"
+- (Ctrl + Shift + Enter), or with the use of the arrow key.
+
+For example, sh yields श. But if one wanted to type सह, one can type:
+s<Commit key>h or s<left arrow, right arrow>h.
 
 Examples:
 - Avoiding unnecessary 'a'-s.
@@ -49,7 +56,8 @@ Examples:
   - shann karoti - शङ् करोति।
 - Overriding shortcuts
   - pashyann  karoti - पश्यन् करोति। (Note two spaces here. Avoids पश्यङ् करोति )
-  - s<Commit key>h or s<left arrow, right arrow>h or sah or saha - सह (Avoids श)
+  - s<Commit key>h or s<left arrow, right arrow>h or sah or saha -
+    सह (Avoids श)
 
 The motivation behind additions made to the basic ITRANS scheme
 is described in https://sanskrit-coders.github.io/input/optitrans/ ,

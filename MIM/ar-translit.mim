@@ -22,7 +22,13 @@
 (input-method ar translit)
 
 (description "Arabic input method based on Roman transliteration.
-It uses common transliterations, when several interpretations are possible you can get other variations with a preceding dot. For some letters the commonly used numbers from chat usage are used, these are then preceded by or two dots. Usually the dotted variation also has dots in the written form. If you speak Arabic, use this translit and have motivated suggestions to improve it, please mail me on joop@kiefte.net")
+It uses common transliterations, when several interpretations are
+possible you can get other variations with a preceding dot. For some
+letters the commonly used numbers from chat usage are used, these are
+then preceded by or two dots. Usually the dotted variation also has
+dots in the written form. If you speak Arabic, use this translit and
+have motivated suggestions to improve it, please mail me on
+joop@kiefte.net")
 
 (title "ض")
 

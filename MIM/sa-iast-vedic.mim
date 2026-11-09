@@ -25,7 +25,8 @@
 
 (description "Romanized Sanskrit input method with IAST and ISO 15919 conventions.
 The table is based on
-  <http://en.wikipedia.org/wiki/International_Alphabet_of_Sanskrit_Transliteration> and https://en.wikipedia.org/wiki/ISO_15919.
+<http://en.wikipedia.org/wiki/International_Alphabet_of_Sanskrit_Transliteration>
+and https://en.wikipedia.org/wiki/ISO_15919.
 
 Some widely used Vedic accents in postfix notation are also supported
 (See: https://en.wikipedia.org/wiki/Vedic_accent).

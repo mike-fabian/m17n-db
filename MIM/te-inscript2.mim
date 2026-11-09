@@ -46,7 +46,8 @@ Key description
 These are the characterstics of the Telugu words
 1. Telugu word must be end with vowel (Telugu is a vowel ending language)
 2. Telugu words don't have the letter య  at the initial position.
-3. In telugu we dont use the combination of Sanskrit loan words + native Telugu words. 
+3. In telugu we don't use the combination of Sanskrit loan words + native
+Telugu words.
 
 Key summary : Sree Thottempudi <sthottem@redhat.com>
 ")

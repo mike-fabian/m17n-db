@@ -29,49 +29,62 @@ Key Summary:
 
 The differences between Assamese and Bengali alphabets are:
 
-The 'ra' of Assamese is different from Bengali 'ra'. The Assamese inscript keyboard layout has included this key in the English keyboard alphabet \"j\". The letter 'wa' in Assamese can be found out in the alphabet \"b\" of the English keyboard.
+The 'ra' of Assamese is different from Bengali 'ra'.  The Assamese inscript
+keyboard layout has included this key in the English keyboard alphabet
+\"j\". The letter 'wa' in Assamese can be found out in the alphabet \"b\" of
+the English keyboard.
 
-The following are the important key combinations for the Assamese keyboard layout:
+The following are the important key combinations for the Assamese keyboard
+layout:
 
-1. The alphabet 'ৰ' can be obtained by pressing the key 'j' in the English keyboard.
-2. The alphabet 'ৱ' can be obtained by pressing the key 'b' in the English keyboard.
-3. The alphabet 'ৎ' can be obtained by pressing the key 'z' in the English keyboard.
-4. The alphabet 'ঞ' can be obtained by pressing '}'  in the Eglish keyboard.
-5. The '।' is located in '>', i.e. 'Shift' and '.' together in the English keyboard.
-6. The alphabet 'আ' can be typed in two ways: one is to type 'অ' and then 'া' ,i.e. 'D' and then 'e'; other is by typing 'E' alone.
-7. The alphabet 'ঃ' is found in '_' key, i.e. 'Shift' and then '-' key in English keyboard.
-8. The alphabet 'ঋ' is located in '+', i.e. 'Shift' and then '=' key in English keyboard.
+1. The alphabet 'ৰ' can be obtained by pressing the key 'j' in the English
+   keyboard.
+2. The alphabet 'ৱ' can be obtained by pressing the key 'b' in the English
+   keyboard.
+3. The alphabet 'ৎ' can be obtained by pressing the key 'z' in the English
+   keyboard.
+4. The alphabet 'ঞ' can be obtained by pressing '}' in the Eglish keyboard.
+5. The '।' is located in '>', i.e. 'Shift' and '.' together in the English
+   keyboard.
+6. The alphabet 'আ' can be typed in two ways: one is to type 'অ' and then
+   'া' ,i.e. 'D' and then 'e'; other is by typing 'E' alone.
+7. The alphabet 'ঃ' is found in '_' key, i.e. 'Shift' and then '-' key in
+   English keyboard.
+8. The alphabet 'ঋ' is located in '+', i.e. 'Shift' and then '=' key in
+   English keyboard.
 9. The \"Rakar\" matra is typed as 'd' and then 'j'.
-10. The \"ref\" is typed as 'j' and then 'd' .
-11. Special characters 'জ্ঞ', 'ত্ৰ', 'ক্ষ' and 'শ্ৰ' are included respectively at '%', '^', '&' and '*'.
-12. The special combinations for 'ref' and 'rakar' are incorporated respectively at '$' and '#' .
+10. The \"ref\" is typed as 'j' and then 'd'.
+11. Special characters 'জ্ঞ', 'ত্ৰ', 'ক্ষ' and 'শ্ৰ' are included respectively
+    at '%', '^', '&' and '*'.
+12. The special combinations for 'ref' and 'rakar' are incorporated
+    respectively at '$' and '#' .
 13. The character '৺' can be obtained by pressing 'Z', i.e. 'Shift' and 'z'.
 
 Some important combinations are as follows:
 
 1. 'tra' : 'ta' + 'halant' + 'ra'
-   (ত্ৰ)      (ত)      (্)        (ৰ)
-                  'l'           'd'             'j'
+   (ত্ৰ)     (ত)      (্)      (ৰ)
+           'l'       'd'      'j'
 
 2. 'khya': 'ka' + 'halant' + 'Sha'
    (ক্ষ)     (ক)      (্)      (ষ)
-                  'k'          'd'         '<' 
+           'k'       'd'      '<' 
 
 3. 'kra':  'ka' + 'halant' + 'ra'
-   (ক্ৰ)    (ক)      (্)    (ৰ)
-	         'k'          'd'        'j'
+   (ক্ৰ)     (ক)      (্)      (ৰ)
+           'k'       'd'      'j'
 
 4. 'akta': 'ka' + 'halant' + 'ta'
-   (ক্ত)    (ক)      (্)      (ত)
-                'k'          'd'          'l' 
+   (ক্ত)     (ক)      (্)     (ত)
+            'k'      'd'      'l' 
 
 5. 'kla'  : 'ka' + 'halant' + 'la'
-   (ক্ল)     (ক)      (্)     (ল)
-	          'k'          'd'          'n'
+   (ক্ল)      (ক)     (্)      (ল)
+            'k'      'd'      'n'
 
-6. ''gya'  : 'ja' + 'halant' + 'nya'
-   (জ্ঞ)     (জ)      (্)        (ঞ)
-                   'p'           'd'              '}'
+6. ''gya' : 'ja' + 'halant' + 'nya'
+   (জ্ঞ)     (জ)      (্)      (ঞ)
+            'p'      'd'       '}'
 
 Author: Amitakhya Phukan <aphukan@redhat.com> 
 ")

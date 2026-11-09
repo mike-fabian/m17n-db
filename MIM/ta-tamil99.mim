@@ -37,35 +37,56 @@ Key Summary:
 			SRii = <U+0BB6, U+0BCD, U+0BB0, U+0BC0>
             ஸ ஷ ஜ ஹ க்ஷ ஶ்ரீ
             
-2. A consonant symbol followed by the pulli produces a pure consonant. (A consonant symbol is also known as consonant with inherent a)
-            e.g. க + ் -> க் 
+2. A consonant symbol followed by the pulli produces a pure consonant. (A
+   consonant symbol is also known as consonant with inherent a)
+            e.g. க + ் -> க்
             
-3. A consonant symbol followed by a vowel other than the first vowel அ produces a vowelised consonant.
+3. A consonant symbol followed by a vowel other than the first vowel அ
+   produces a vowelised consonant.
             e.g. ம + ஆ -> மா
             த + இ -> தி
             க + ஒ -> கோ 
             
-4. A consonant symbol followed by the same consonant symbol automatically puts a pulli for the first consonant symbol
+4. A consonant symbol followed by the same consonant symbol automatically
+   puts a pulli for the first consonant symbol
             e.g. க + க -> க்க 
             
-5. After placing a pulli automatically, this feature of automatic placing of pulli will be 
-disabled temporarily for one stroke. That is, when the same consonant symbol is typed three times continuously one after another, then the first consonants symbol alone gets the pulli automatically, and the second consonant symbol does not get a pulli, since when the third consonant symbol is typed the automatic pulli feature is temporarily disabled. This feature will be restored immediately after that.
+5. After placing a pulli automatically, this feature of automatic placing of
+   pulli will be disabled temporarily for one stroke. That is, when the same
+   consonant symbol is typed three times continuously one after another,
+   then the first consonants symbol alone gets the pulli automatically, and
+   the second consonant symbol does not get a pulli, since when the third
+   consonant symbol is typed the automatic pulli feature is temporarily
+   disabled. This feature will be restored immediately after that.
+
             e.g. க + க + க -> க்கக
             க + க + க + க -> க்கக்க
             
-6. When the first vowel அ is typed after a consonant symbol, it simply confirms that the previous stroke is an akarameria uyrmei. This disables temporarily the combining of any other stroke with the previous stroke. Hence typing any vowel will not join with the previous consonant symbol. Similarly the automatic pulli feature will also be disabled just for the next stroke. This automatic pulli feature gets restored immediately after the next stroke. The Vowel அ works as the delinking symbol.
+6. When the first vowel அ is typed after a consonant symbol, it simply
+   confirms that the previous stroke is an akarameria uyrmei. This disables
+   temporarily the combining of any other stroke with the previous
+   stroke. Hence typing any vowel will not join with the previous consonant
+   symbol. Similarly the automatic pulli feature will also be disabled just
+   for the next stroke. This automatic pulli feature gets restored
+   immediately after the next stroke.
+   The Vowel அ works as the delinking symbol.
+
             e.g. க + அ + இ -> கஇ
             க + அ + க -> கக
             க + அ + க + க -> கக்க 
             
-7. The same behaviour is also seen when a soft consonant symbol is followed by the corresponding hard consonant symbol. (ங, க), (ஞ, ச), (ந, த), (ண, ட), (ம, ப), (ன, ற), are the soft and hard consonants pairs
+7. The same behaviour is also seen when a soft consonant symbol is followed
+   by the corresponding hard consonant symbol. (ங, க), (ஞ, ச), (ந, த),
+   (ண, ட), (ம, ப), (ன, ற), are the soft and hard consonants pairs
+
             e.g. ங + க -> ங்க
             ந + த + த -> ந்தத
             ந + த + த +த -> ந்தத்த
             ந + அ +த -> நத
             ந + அ + த + த -> நத்த 
             
-8. A vowel after anything other than a consonant symbol will remain an independent vowel
+8. A vowel after anything other than a consonant symbol will remain an
+   independent vowel
             e.g ஆ + இ -> ஆஇ
             ப + ஆ + இ -> பாஇ
             (இடைவெளி) + உ -> (இடைவெளி)உ

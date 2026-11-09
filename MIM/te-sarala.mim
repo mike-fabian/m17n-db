@@ -31,8 +31,10 @@
 (input-method te sarala)
 
 (description "Enhanced Sarala Telugu Keyboard layout for Professionals
-Author: Current developer & maintainer, Satyam Pothamsetti <satyam@teluguvahini.com>
-Initial layout designer: Krishna Dhullipalla, http://www.medhajananam.org/sarala/
+Author: Current developer & maintainer,
+  Satyam Pothamsetti <satyam@teluguvahini.com>
+Initial layout designer: Krishna Dhullipalla,
+http://www.medhajananam.org/sarala/
 ")
 
 (title "స")

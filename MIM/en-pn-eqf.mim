@@ -31,10 +31,13 @@ used along with the Puthunira Charutha (the ml-pn-c input method)
 because ml-pn-c changes some punctuation marks from their locations on
 the QWERTY layout.
 
-See the paper at http://languageinindia.com/july2023/drajithnewkeyboardsmalayalamfinal1.html
+See the paper at
+http://languageinindia.com/july2023/drajithnewkeyboardsmalayalamfinal1.html
 Original Author : Ajith R <ajithramayyan at yahoo dot co dot in>
 See https://ajithramayyan.gitlab.io/puthunira/ for usage
-നിർദ്ദേശങ്ങള്‍ക്കായ് https://ajithramayyan.gitlab.io/puthunira/ എന്ന കണ്ണി കാണുക
+നിർദ്ദേശങ്ങള്‍ക്കായ്
+https://ajithramayyan.gitlab.io/puthunira/
+എന്ന കണ്ണി കാണുക
 "))
 
 (title "pn-eqf")

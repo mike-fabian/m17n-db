@@ -27,7 +27,9 @@
 
 (title "꫞")
 
-(description (_"Tai Viet input method using the phonetic key sequence with the Tai Son La keyboard layout.
+(description (_"Tai Viet input method using the phonetic key sequence
+with the Tai Son La keyboard layout.
+
 The phonetic key sequence means that you type a syllable in this order:
   C W? V v? F? T?
 where

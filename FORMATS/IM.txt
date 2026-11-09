@@ -22,6 +22,11 @@ The following data format defines an input method.  The driver loads a
 definition from a file, a stream, etc.  The definition is converted
 into the form of plist in the driver.
 
+Any line beginning with ';' is treated as a comment and ignored by the input
+method driver. However, lines starting with ';;; ' must be written in valid
+Doxygen-compatible text and serve as the input method's documentation for
+the m17n-docs package.
+
 @verbatim
 INPUT-METHOD ::=
     IM-DECLARATION ? IM-DESCRIPTION ? TITLE ?
@@ -128,7 +133,7 @@ MACRO-NAME ::= SYMBOL
 
 MACRO-ACTION ::= ACTION
 
-TAGS ::= `(` LANGUAGE NAME EXTRA-ID ? `)`
+TAGS ::= '(' LANGUAGE NAME EXTRA-ID ? ')'
 
 MACRO-INCLUSION ::= '(' 'include' TAGS 'macro' MACRO-NAME ? ')'
 
@@ -752,7 +757,9 @@ as Backspace.
 
 @section im-seealso SEE ALSO
 
+@ifnot FOR_MAN
 @ref mim-list "Input Methods provided by the m17n database",
+@endif
 @ref mdbGeneral "mdbGeneral(5)"
 */
 

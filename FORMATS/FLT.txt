@@ -460,7 +460,9 @@ above) generation rules having these patterns never match.
 @section flt-seealso SEE ALSO
 
 @ref mdbGeneral "mdbGeneral(5)", 
+@ifnot FOR_MAN
 @ref flt-list "FLTs provided by the m17n database"
+@endif
 */
 
 /* 

@@ -25,8 +25,8 @@ FILE ::= MTEXT
 VERSION ::= MTEXT
 @endverbatim
 
-If TAG0 is neither `charset' nor `char-table', and TAGn (n > 0) is a
-symbol `*', FILE can contain a wildcard charater, and all files
+If TAG0 is neither 'charset' nor 'char-table', and TAGn (n > 0) is a
+symbol '*', FILE can contain a wildcard charater, and all files
 matching FILE accoding to the rules used by the shell are the target
 of database files.  In that case, each file must contain
 SELF-DEFINITION which is a plist element providing the actual TAGn

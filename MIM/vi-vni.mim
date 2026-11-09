@@ -34,10 +34,10 @@ The following variables are customizable:
 (variable
  (tone-mark-on-last
   (_"Flag to control tone mark position in equivocal cases.
-If this variable is 0 (the default), put tone mark on the first vowel
-in such equivocal cases as \"oa\", \"oe\", \"uy\".
-Otherwise, put tone mark on the last vowel.")
-  0 0 1)
+If this variable is 1 (the default), put tone mark on the last vowel
+in such equivocal cases as \"oa\", \"oe\", \"uy\" (e.g. \"hoà\").
+If the value is 0, put tone mark on the first vowel (e.g. \"hòa\").")
+  1 0 1)
 
  (backspace-is-undo
   (_"Flag to control the action of Backspace key (delete or undo).

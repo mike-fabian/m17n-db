@@ -135,7 +135,7 @@ and is read into this plist:
     2nd element: key Minteger, value: 255
 4th element: key: Mtext,    value: m"text
 5th element: key: Mplist,   value: a plist of these elements:
-    1st element: key: Msymbol, value: _\_
+    1st element: key: Msymbol, value: _\\_
     2nd element: key: Mplist,  value: a plist of these elements:
         1st element: key: Mtext,    value: string
 	2nd element: key: Msymbol,  value: xyz

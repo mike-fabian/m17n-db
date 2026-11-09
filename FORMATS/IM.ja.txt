@@ -23,6 +23,11 @@ m17n ライブラリは、m17n データベースから動的にロードでき�
 以下のデータフォーマットによって入力メソッドが定義される。ドライバはファ
 イルやストリームから定義をロードし、プロパティリストの形式に変換する。
 
+';'で始まる行はすべてコメントとして扱われ、入力メソッドドライバーからは無視
+される。ただし、';;; 'で始まる行は、有効な Doxygen 互換のテキストで記述され
+ている必要があり、m17n-docs パッケージにおける入力メソッドのドキュメントとし
+て機能する。
+
 @verbatim
 INPUT-METHOD ::=
     IM-DECLARATION ? DESCRIPTION ? TITLE ?
@@ -127,7 +132,7 @@ MACRO-NAME ::= SYMBOL
 
 MACRO-ACTION ::= ACTION
 
-TAGS ::= `(` LANGUAGE NAME EXTRA-ID ? `)`
+TAGS ::= '(' LANGUAGE NAME EXTRA-ID ? ')'
 
 MACRO-INCLUSION ::= '(' 'include' TAGS 'macro' MACRO-NAME ? ')'
 
@@ -726,7 +731,9 @@ Control-u):
 
 @section im-seealso SEE ALSO
 
+@ifnot FOR_MAN
 @ref mim-list "Input Methods provided by the m17n database",
+@endif
 @ref mdbGeneral "mdbGeneral(5)"
 */
 

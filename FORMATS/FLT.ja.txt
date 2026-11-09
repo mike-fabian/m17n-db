@@ -422,7 +422,9 @@ S1 がフォントF1 によって描かれ、先行する列 S0 が常にフォ�
 @section flt-seealso 参照
 
 @ref mdbGeneral "mdbGeneral(5)", 
+@ifnot FOR_MAN
 @ref flt-list "FLTs provided by the m17n database"
+@endif
 */
 
 /* 

@@ -81,10 +81,10 @@ Msymbol</tt>であるプロパティを示す。要素中の <tt>\\t</tt>,
 
 @section general-syntax 文法の表記
 
-データのプロパティリストフォーマットの説明では、BNF風の記法が用いられ
-る。この記法では、非終端は大文字（間に'-'が入ってもよい） で、終端は " 
-で囲って表される。特別な非終端 INTEGER, SYMBOL,
-MTEXT, PLIST はそれぞれ対応するプロパティを意味する。
+データのプロパティリストフォーマットの説明では、BNF風の記法が用いられる。こ
+の記法では、非終端は大文字（間に'-'が入ってもよい） で、終端は '"' で囲って
+表される。特別な非終端 INTEGER, SYMBOL, MTEXT, PLIST はそれぞれ対応するプロ
+パティを意味する。
 
 @section general-example 例
 
@@ -121,7 +121,7 @@ abc 123 (pqr 0xff) "m\"text" (_\\_ ("string" xyz) -456)
     第２要素: キー Minteger, 値: 255
 第４要素: キー: Mtext,    値: m"text
 第５要素: キー: Mplist,   値: 次の要素からなるプロパティリスト
-    第１要素: キー: Msymbol, 値: _\_
+    第１要素: キー: Msymbol, 値: _\\_
     第２要素: キー: Mplist,  値: 次の要素からなるプロパティリスト
         第１要素: キー: Mtext,    値: string
 	第２要素: キー: Msymbol,  値: xyz

@@ -73,6 +73,106 @@ to be included in the other Vietnamese input method (e.g. vi-telex, vi-vni).
 	(1 (set TPLACE 1)))
   (select SELECT)
   (mark T)
+  (move @>))
+
+ ;; Record a vowel added after another one and re-place the tone.
+ (add-vowel
+  (mark M) (set V-3 V-2) (set V-2 V-1) (set V-1 @-1)
+  (fix-uo) (move T) (select 0) (handle-mark) (move M))
+
+ ;; "aw" or "uw" (VNI "a8", "u7") right after another vowel may mark
+ ;; that vowel: "muaw" is "mưa", "huuw" is "hưu", "ruouw" is "rượu".
+ ;; Add the letter plain, then let the key mark the vowels.
+ (w-after-vowel
+  (set KEY 0)
+  (cond ((= @-1 ?ă) (set KEY ?w) (delete @-) (insert ("aáàảãạ")))
+	((= @-1 ?Ă) (set KEY ?w) (delete @-) (insert ("AÁÀẢÃẠ")))
+	((= @-1 ?ư) (set KEY ?7) (delete @-) (insert ("uúùủũụ")))
+	((= @-1 ?Ư) (set KEY ?7) (delete @-) (insert ("UÚÙỦŨỤ"))))
+  (add-vowel)
+  (cond (KEY (late-mark) (handle-mark))))
+
+ ;; Typing a circumflex, breve or horn key after the vowel it belongs to
+ ;; (e.g. "vietej", "nguoiwf", "khongo") marks that earlier vowel.
+ ;; KEY is the typed key; K is set to the position of the changed vowel
+ ;; (1 is V-1), or 0 if nothing matched.
+ (late-mark
+  (set K 0) (set UO 0)
+  (cond ((| (= KEY ?a) (= KEY ?A) (= KEY ?6))
+	 (set MARK 1) (set LO ?a) (set UP ?A) (find-vowel)))
+  (cond ((& (= K 0) (| (= KEY ?e) (= KEY ?E) (= KEY ?6)))
+	 (set MARK 1) (set LO ?e) (set UP ?E) (find-vowel)))
+  (cond ((& (= K 0) (| (= KEY ?o) (= KEY ?O) (= KEY ?6)))
+	 (set MARK 1) (set LO ?o) (set UP ?O) (find-vowel)))
+  (cond ((| (= KEY ?w) (= KEY ?W) (= KEY ?7))
+	 (set MARK 3) (mark-uo)
+	 ;; u after q is part of the consonant ("quăn", not "quưn").
+	 (cond ((& (= K 0) (! (| (= C ?q) (= C ?Q))))
+		(set LO ?u) (set UP ?U) (find-vowel)))))
+  (cond ((& (= K 0) (| (= KEY ?w) (= KEY ?W) (= KEY ?8)))
+	 (set MARK 2) (set LO ?a) (set UP ?A) (find-vowel)))
+  (cond ((& (= K 0) (| (= KEY ?w) (= KEY ?W) (= KEY ?7)))
+	 (set MARK 3) (set LO ?o) (set UP ?O) (find-vowel)))
+  (cond ((& (> K 0) (= UO 0)) (replace-vowel))))
+
+ ;; Set K to the position of the first vowel that is LO or UP.
+ (find-vowel
+  (cond ((| (= V-3 LO) (= V-3 UP)) (set K 3))
+	((| (= V-2 LO) (= V-2 UP)) (set K 2))
+	((| (= V-1 LO) (= V-1 UP)) (set K 1))))
+
+ ;; One horn key marks both letters of "uo" (người, được).
+ (mark-uo
+  (cond ((& (| (= V-2 ?u) (= V-2 ?U) (= V-2 ?ư) (= V-2 ?Ư))
+	    (| (= V-1 ?o) (= V-1 ?O) (= V-1 ?ơ) (= V-1 ?Ơ))
+	    (! (& (| (= V-2 ?ư) (= V-2 ?Ư)) (| (= V-1 ?ơ) (= V-1 ?Ơ)))))
+	 (set UO 1))
+	((& (| (= V-3 ?u) (= V-3 ?U) (= V-3 ?ư) (= V-3 ?Ư))
+	    (| (= V-2 ?o) (= V-2 ?O) (= V-2 ?ơ) (= V-2 ?Ơ))
+	    (! (& (| (= V-3 ?ư) (= V-3 ?Ư)) (| (= V-2 ?ơ) (= V-2 ?Ơ)))))
+	 (set UO 2)))
+  (cond (UO (set K UO) (set LO ?o) (replace-vowel)
+	    (add K 1) (set LO ?u) (replace-vowel))))
+
+ ;; "ưo" and "uơ" followed by another letter can only be "ươ".  Call
+ ;; after a vowel is added; the vowel before it decides.
+ (fix-uo
+  (set MARK 3)
+  (cond ((& (| (= V-2 ?ư) (= V-2 ?Ư)) (| (= V-1 ?o) (= V-1 ?O)))
+	 (set K 1) (set LO ?o) (replace-vowel))
+	((& (| (= V-3 ?u) (= V-3 ?U)) (| (= V-2 ?ơ) (= V-2 ?Ơ))
+	    (! (| (= C ?q) (= C ?Q))))
+	 (set K 3) (set LO ?u) (replace-vowel))))
+
+ ;; The same when a final consonant follows "uơ" (dduowcj -> được).
+ (fix-uo-before-consonant
+  (cond ((& (| (= V-2 ?u) (= V-2 ?U)) (| (= V-1 ?ơ) (= V-1 ?Ơ))
+	    (! (| (= C ?q) (= C ?Q))))
+	 (set MARK 3) (set K 2) (set LO ?u) (replace-vowel) (handle-mark))))
+
+ ;; Replace vowel K with LO carrying MARK (1 circumflex, 2 breve,
+ ;; 3 horn), keeping its case.  The tone is cleared; call handle-mark
+ ;; afterwards to put it back.
+ (replace-vowel
+  (cond ((= K 1) (set CH V-1)) ((= K 2) (set CH V-2)) (1 (set CH V-3)))
+  (set CAP (| (= CH ?A) (= CH ?E) (= CH ?O) (= CH ?U) (= CH ?Ơ) (= CH ?Ư)))
+  (move T) (select 0)
+  (move M)
+  (cond ((> K 1) (move @-)))
+  (cond ((> K 2) (move @-)))
+  (delete @-)
+  (cond ((= MARK 1)
+	 (cond ((= LO ?a) (cond (CAP (insert ("ÂẤẦẨẪẬ"))) (1 (insert ("âấầẩẫậ")))))
+	       ((= LO ?e) (cond (CAP (insert ("ÊẾỀỂỄỆ"))) (1 (insert ("êếềểễệ")))))
+	       (1 (cond (CAP (insert ("ÔỐỒỔỖỘ"))) (1 (insert ("ôốồổỗộ")))))))
+	((= MARK 2) (cond (CAP (insert ("ĂẮẰẲẴẶ"))) (1 (insert ("ăắằẳẵặ")))))
+	((= LO ?o) (cond (CAP (insert ("ƠỚỜỞỠỢ"))) (1 (insert ("ơớờởỡợ")))))
+	(1 (cond (CAP (insert ("ƯỨỪỬỮỰ"))) (1 (insert ("ưứừửữự"))))))
+  (set CH @-1)
+  (cond ((= K 1) (set V-1 CH))
+	((= K 2) (set V-2 CH) (move @+))
+	(1 (set V-3 CH) (move @+) (move @+)))
+  (mark M) (mark T)
   (move @>)))
 
 (map

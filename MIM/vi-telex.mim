@@ -78,6 +78,12 @@ If the value is 1, Backspace key undoes the previous key
   ("x" (set SELECT 4) ?x) ("X" (set SELECT 4) ?X)
   ("j" (set SELECT 5) ?j) ("J" (set SELECT 5) ?J))
 
+ ;; A mark key after a final consonant.  Unlike vowel-ext, nothing
+ ;; longer starts with these keys, so khongo shows "không" at once.
+ (late-mark-key
+  ("a" (set KEY ?a)) ("e" (set KEY ?e)) ("o" (set KEY ?o)) ("w" (set KEY ?w))
+  ("A" (set KEY ?A)) ("E" (set KEY ?E)) ("O" (set KEY ?O)) ("W" (set KEY ?W)))
+
  (consonant-or-tone-mark
   ("z" ?z) ("s" ?s) ("f" ?f) ("r" ?r) ("x" ?x) ("j" ?j)
   ("Z" ?Z) ("S" ?S) ("F" ?F) ("R" ?R) ("X" ?X) ("J" ?J))
@@ -127,11 +133,19 @@ If the value is 1, Backspace key undoes the previous key
 
  ;; The state shifted to when a vowel is typed.
  (after-v
-  (ending-1st-consonant (handle-mark) (shift after-vc)) ; toans/toasn->toán
-  (vowel (mark M) (set V-3 V-2) (set V-2 V-1) (set V-1 @-1)
-	 (move T) (select 0) (handle-mark) (move M))
-  (vowel-ext (mark M) (set V-3 V-2) (set V-2 V-1) (set V-1 @-1)
-	     (move T) (select 0) (handle-mark) (move M))
+  (ending-1st-consonant (fix-uo-before-consonant)
+			(handle-mark) (shift after-vc)) ; toans/toasn->toán
+  (vowel (set KEY @-1)
+	 ;; "oeo" and "oao" are vowels of their own (ngoẻo).
+	 (cond ((& (| (= KEY ?o) (= KEY ?O))
+		   (| (= V-1 ?e) (= V-1 ?E) (= V-1 ?a) (= V-1 ?A)))
+		(set KEY 0)))
+	 (late-mark)
+	 (cond (K (delete @-) (handle-mark))
+	       (1 (add-vowel))))
+  (vowel-ext (set KEY @-1) (late-mark)
+	     (cond (K (delete @-) (handle-mark))
+		   (1 (w-after-vowel))))
   (ending-1st-notviet-consonant (shift temporary-escape)) ;; See ending-1st-notviet-consonant section in the vi-base.mim 
   (consonant-or-tone-mark (delete @-) (pushback 1) (shift after-t))
   (backspace (delete @-)
@@ -152,8 +166,11 @@ If the value is 1, Backspace key undoes the previous key
          (1 (shift temporary-escape))))
   (ending-1st-notviet-consonant (shift temporary-escape)) ;; Expand notviet-consonant section in the vi-base.mim 
   (consonant-or-tone-mark (delete @-) (pushback 1) (shift after-t))
-  (vowel (shift temporary-escape))      ; There can only be one
-  (vowel-ext (shift temporary-escape))  ; main vowel in a word
+  ;; There can only be one main vowel in a word, but a circumflex,
+  ;; breve or horn key may still mark it (vietej -> việt).
+  (late-mark-key (late-mark)
+		 (cond (K (handle-mark)) (1 (pushback 1) (shift temporary-escape))))
+  (vowel (shift temporary-escape))
   (backspace (delete @-)
 	     (sub C-AFTER-V 1)
 	     (handle-mark)

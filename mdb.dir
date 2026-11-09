@@ -112,10 +112,10 @@
 ;;; @section mim-list Input method
 ;;;
 ;;; See @ref mdbIM for the format of these files.
-;;; <ul>
+;;;
 ;; The actual tags and filename are defined in each file with extension "mim".
 (input-method * "*.mim")
-;;; </ul>
+;;;
 
 ;;; @section flt-list Font Layout Table
 ;;;

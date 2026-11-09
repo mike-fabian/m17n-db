@@ -25,8 +25,8 @@ FILE ::= MTEXT
 VERSION ::= MTEXT
 @endverbatim
 
-TAG0 が `charset' でも `char-table' でもなく、TAGn (n > 0) がシンボル
-`*' ならば、FILE にワイルドカードが含まれて良い。そしてシェルが用いる規
+TAG0 が 'charset' でも 'char-table' でもなく、TAGn (n > 0) がシンボル
+'*' ならば、FILE にワイルドカードが含まれて良い。そしてシェルが用いる規
 則によって FILE とマッチするすべてのファイルがデータベースファイルのター
 ゲットとなる。この際、各ファイルは実際の TAGn の値を与える
 SELF-DEFINITION を持たなくてはならない。SELF-DEFINITION は以下の形式の

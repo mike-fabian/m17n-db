@@ -1,3 +1,10 @@
+2026-11-10  nguyenphivn <vietphi.dang@gmail.com>
+
+	* MIM/vi-*.mim: put the tone mark on the last vowel of oa, oe, uy
+	by default
+	* MIM/vi-base.mim, MIM/vi-telex.mim, MIM/vi-vni.mim: accept vowel
+	marks typed after the word
+
 2026-10-20  Mike FABIAN  <mfabian@redhat.com>
 
 	* CASE-MAPPING.awk, CASED.awk, compact.awk, gb180302.awk, gb180304.awk:

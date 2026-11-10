@@ -1,5 +1,5 @@
-;; bn-khipro.mim | A compositional keyboard layout or input method concept for Bengali, aiming to be the fastest typing method available for the language.
-;; MIT License
+;; bn-khipro-classic.mim | A compositional keyboard layout or input method concept for Bengali, aiming to be the fastest typing method available for the language.
+;;	MIT License
 ;;
 ;; Copyright (c) 2024 rank_coder
 ;;
@@ -21,7 +21,9 @@
 ;; OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 ;; SOFTWARE.
 
-(input-method bn khipro)
+(input-method bn khipro-classic)
+(description "
+	A compositional keyboard layout or input method concept for Bengali, aiming to be the fastest typing method available for the language.
 
 (description "A compositional keyboard layout or input method concept for
 Bengali, aiming to be the fastest typing method available for the language.
@@ -42,16 +44,13 @@ Key Characteristics:
 7. Utilizes *function keys* like slicer (/) to break readily formed
    conjuncts.
 
-PLEASE use it with *TYPING BOOSTER*
-<https://mike-fabian.github.io/ibus-typing-booster/> for the best and a
-steady experience.
-PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
-  * Website: <https://khiproteam.github.io/khipro>
-  * Author: Nafee [<https://github.com/rank-coder>]
-  * Team: Contributors of the GitHub repository
-    [<https://github.com/rank-coder/khipro-m17n>] and members of the
-    [<https://github.com/khiproteam>] GitHub organization.")
-(title "Khipro Compositional")
+	PLEASE use it with *TYPING BOOSTER* <https://mike-fabian.github.io/ibus-typing-booster/> for the best and a steady experience.
+	PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
+		* Website: <https://khiproteam.github.io/khipro>
+		* Author: Nafee [<https://github.com/rank-coder>]
+		* Team: Contributors of the GitHub repository [<https://github.com/rank-coder/khipro-m17n>] and members of the [<https://github.com/khiproteam>] GitHub organization.
+")
+(title "Khipro Classic Compositional")
 (map
 	(shor
 		("o" "অ")
@@ -122,7 +121,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("p" (set CnstID 21) (set CmpdCnstFlag 0) "প")
 		("ph" (set CnstID 22) (set CmpdCnstFlag 1) (set Fflag 0) "ফ")
 		("pf" (set CnstID 22) (set Fflag 1) (set CmpdCnstFlag 0) "ফ")
-		("f" (set CnstID 189) (set CmpdCnstFlag 0) "⁌")
+		("f" (set CnstID 189) (set CmpdCnstFlag 0) "◌")
 		("b" (set CnstID 23) (set CmpdCnstFlag 0) "ব")
 		("bf" (set CnstID 24) (set Fflag 1) (set CmpdCnstFlag 0) "ভ")
 		("v" (set CnstID 24) (set CmpdCnstFlag 0) (set Fflag 0) "ভ")
@@ -252,14 +251,12 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("." "।")
 		(".." ".")
 		("..." "..")
-		("...." "...")
-		("....." "....")
-		("......" ".....")
-		("......." "......")
+		("...." (set overflow 1) "...")
+
 
 		("$" "৳")
 		("$f" "₹")
-		(",,," ",,")
+		(",,," (set overflow 2) ",,")
 		(".f" "॥")
 		(".ff" "৺")
 		("+" "+")
@@ -269,6 +266,12 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("$$" "$")
 		("=" "=")
 		("=f" "≠")
+	)
+	(dot
+		("." ".")
+	)
+	(comma
+		("," ",")
 	)
 	(prithayok
 		(";" ";")
@@ -411,7 +414,14 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(fkar (commit)  (shift shor_state))
 		(prithayok (commit) )
 		(ongko )
-		(biram (shift shor_state)) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
+		(biram
+			(cond
+				((= overflow 1) (shift dot_state))
+				((= overflow 2) (shift comma_state))
+				(1 (shift init))
+			)
+		)
+		;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
 		(byanjon
 			(set PrvCnstID FrstCnstID) (set FrstCnstID CnstID)
 			(shift byanjon_state)
@@ -422,6 +432,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		;; VARIABLE FrstCnstID অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে FrstCnstID তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। ScndCnstID হচ্ছে তার পরের ব্যঞ্জনের ID.
 		;; কোনো যুক্তবর্ণ গঠিত হলে সেই যুক্তব‍র্ণের আলাদা CnstID সেট করা হবে। সেটাকে সাথে সাথে FrstCnstID তে পাসও করে দেওয়া হবে। এতে পরব‍র্তী ব্যঞ্জন এই যুক্তবর্ণের সাথে যুক্ত হবে কিনা সিদ্ধান্ত নেওয়া যাবে।
 		(blinder (shift blind_state))
+		(backspace)
 	)
 	(shor_state
 		(t (set CmpdCnstFlag 0) (set Fflag 0) (set ScndCnstID 0) (set PrvCnstID 0) (set ALTERNATE 0) (set FrstCnstID 0) (set CnstID 0) (set SLICER 0) (set KAR 0))
@@ -432,7 +443,14 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(slicer4 (shift slash_state))
 		(shor )
 		(fkar )
-		(biram ) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
+		(biram
+			(cond
+				((= overflow 1) (shift dot_state))
+				((= overflow 2) (shift comma_state))
+				(1 (shift init))
+			)
+		)
+		;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
 		(prithayok (delete @-)  (shift init) )
 		(ongko (shift init))
 		(byanjon
@@ -448,7 +466,14 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	(byanjon_state
 		(prithayok (delete @-)  (shift init))
 		(ongko  (shift init))
-		(biram  (shift shor_state)) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
+		(biram
+			(cond
+				((= overflow 1) (shift dot_state))
+				((= overflow 2) (shift comma_state))
+				(1 (shift init))
+			)
+		)
+		;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
 		(kar
 			(cond
 				( (& (| (= FrstCnstID 27) (= FrstCnstID 187)) (= KAR 1)) (move @-) (move @-) (move @-) (insert "‍") (move @>) (set KAR 0) )  ;; র, রর
@@ -476,7 +501,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				((= FrstCnstID 187) ;; রর
 					(cond
 						((= CnstID 39) (move @-) (move @-) (move @-) (delete @-) (insert "্") (move @>) (set ScndCnstID CnstID) (set SLICER 4)) ;; ক্ষ
-						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 34) (insert "ড়")) ;; ‍রর লেখার পরে ⁌ লিখলে ড় আসবে।
+						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 34) (insert "ড়")) ;; ‍রর লেখার পরে ◌ লিখলে ড় আসবে।
 						((= CnstID 187) (set ScndCnstID CnstID)) ;; ‍রর এর পরে ‍রর লিখলে রেফ আসবে না। এতে বারবার র-ফলা আসার ইশু ফিক্স হবে।
 						((= CnstID 190) (move @-) (move @-) (insert "‍") (move @>) (shift juktoborno_state) ) ;; রর লেখার পরে zf লিখলে যাতে রেফ না হয়ে রর‍্য হয়।
 						(1 (move @-) (delete @-) (insert "্") (move @>) (set ScndCnstID CnstID) (set SLICER 1))
@@ -495,7 +520,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CnstID 30) (delete @-2) (set ScndCnstID CnstID) (set CnstID 39) (insert "ক্ষ") (set SLICER 1) (shift juktoborno_state)) ;; ষ
 						((= CnstID 28) (delete @-2) (set ScndCnstID CnstID) (set CnstID 44) (insert "ক্ল") (set SLICER 1) (shift juktoborno_state)) ;; ল
 						((= CnstID 31) (delete @-2) (set ScndCnstID CnstID) (set CnstID 45) (insert "ক্স") (set SLICER 1) (shift juktoborno_state)) ;; স
-						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 39) (insert "ক্ষ")) ;; ⁌
+						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 39) (insert "ক্ষ")) ;; ◌
 						((= CnstID 32) (delete @-2) (set ScndCnstID CnstID) (set CnstID 2) (insert "খ")) ;; হ
 					)
 				)
@@ -510,7 +535,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						;; গ + ব -এর গ্‌ব এই রূপটি বাঞ্ছিত আর গ্ব এই রূপটি বাঞ্ছিত না। গ্ব লিখতে gqqb লিখতে হবে।
 						((= CnstID 25) (delete @-2) (set ScndCnstID CnstID) (set CnstID 50) (insert "গ্ম") (set SLICER 1) (shift juktoborno_state)) ;; ম
 						((= CnstID 28) (delete @-2) (set ScndCnstID CnstID) (set CnstID 51) (insert "গ্ল") (set SLICER 1) (shift juktoborno_state)) ;; ল
-						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 4) (set Fflag 1) (insert "ঘ")) ;; ⁌
+						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 4) (set Fflag 1) (insert "ঘ")) ;; ◌
 						((= CnstID 32) (delete @-2) (set ScndCnstID CnstID) (set CnstID 4) (insert "ঘ")) ;; হ
 					)
 				)
@@ -536,7 +561,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CnstID 7) (delete @-2) (set ScndCnstID CnstID) (set CnstID 60) (insert "চ্ছ") (set SLICER 1) (shift juktoborno_state)) ;; ছ
 						((= CnstID 10) (delete @-2) (set ScndCnstID CnstID) (set CnstID 61) (insert "চ্ঞ") (set SLICER 1) (shift juktoborno_state)) ;; ঞ
 						((= CnstID 23) (delete @-2) (set ScndCnstID CnstID) (set CnstID 62) (insert "চ্ব") (set SLICER 1) (shift juktoborno_state)) ;; ব
-						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 7) (set Fflag 1) (insert "ছ")) ;; ⁌
+						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 7) (set Fflag 1) (insert "ছ")) ;; ◌
 						((= CnstID 32) (delete @-2) (set ScndCnstID CnstID) (set CnstID 7) (insert "ছ")) ;; হ
 					)
 				)
@@ -547,7 +572,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CnstID 10) (delete @-2) (set ScndCnstID CnstID) (set CnstID 65) (insert "জ্ঞ") (set SLICER 1) (shift juktoborno_state)) ;; ঞ
 						;; যাতে jnff এর পরে g লিখলে গ্‌গ না আসে তাই juktoborno_state এর byanjon ব্রাঞ্চে pcid 65 এর জন্য ScndCnstID চেক করা হবে।
 						((= CnstID 23) (delete @-2) (set ScndCnstID CnstID) (set CnstID 66) (insert "জ্ব") (set SLICER 1) (shift juktoborno_state)) ;; ব
-						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 9) (set Fflag 1) (insert "ঝ")) ;; ⁌
+						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 9) (set Fflag 1) (insert "ঝ")) ;; ◌
 						((= CnstID 32) (delete @-2) (set ScndCnstID CnstID) (set CnstID 9) (insert "ঝ")) ;; হ
 					)
 				)
@@ -564,14 +589,14 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CnstID 11) (delete @-2) (set ScndCnstID CnstID) (set CnstID 71) (insert "ট্ট") (set SLICER 1) (shift juktoborno_state)) ;; ট
 						((= CnstID 23) (delete @-2) (set ScndCnstID CnstID) (set CnstID 72) (insert "ট্ব") (set SLICER 1) (shift juktoborno_state)) ;; ব
 						((= CnstID 25) (delete @-2) (set ScndCnstID CnstID) (set CnstID 73) (insert "ট্ম") (set SLICER 1) (shift juktoborno_state)) ;; ম
-						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 12) (insert "ঠ")) ;; ⁌
+						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 12) (insert "ঠ")) ;; ◌
 					)
 				)
 				((= FrstCnstID 13) ;; ড
 					(cond
 						((= CnstID 13) (delete @-2) (set ScndCnstID CnstID) (set CnstID 74) (insert "ড্ড") (set SLICER 1) (shift juktoborno_state)) ;; ড
 						((= CnstID 23) (delete @-2) (set ScndCnstID CnstID) (set CnstID 75) (insert "ড্ব") (set SLICER 1) (shift juktoborno_state)) ;; ব
-						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 14) (insert "ঢ")) ;; ⁌
+						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 14) (insert "ঢ")) ;; ◌
 					)
 				)
 				;; লক্ষ্যণীয়, আমরা য-ফলা ও র-ফলা যুক্তবর্ণ গুলো এড়িয়ে যাচ্ছি।
@@ -585,7 +610,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CnstID 20) (delete @-2) (set ScndCnstID CnstID) (set CnstID 81) (insert "ণ্ণ") (set SLICER 3) (set ALTERNATE 3) (shift juktoborno_state)) ;; ন
 						((= CnstID 23) (delete @-2) (set ScndCnstID CnstID) (set CnstID 82) (insert "ণ্ব") (set SLICER 1) (shift juktoborno_state)) ;; ব
 						((= CnstID 25) (delete @-2) (set ScndCnstID CnstID) (set CnstID 83) (insert "ণ্ম") (set SLICER 1) (shift juktoborno_state)) ;; ম
-						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 10) (insert "ঞ")) ;; ⁌
+						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 10) (insert "ঞ")) ;; ◌
 					)
 				)
 				((= FrstCnstID 16) ;; ত
@@ -596,7 +621,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CnstID 20) (delete @-2) (set ScndCnstID CnstID) (set CnstID 86) (insert "ত্ন") (set SLICER 1) (shift juktoborno_state)) ;; ন
 						((= CnstID 23) (delete @-2) (set ScndCnstID CnstID) (set CnstID 87) (insert "ত্ব") (set SLICER 1) (shift juktoborno_state)) ;; ব
 						((= CnstID 25) (delete @-2) (set ScndCnstID CnstID) (set CnstID 88) (insert "ত্ম") (set SLICER 1) (shift juktoborno_state)) ;; ম
-						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 11) (insert "ট")) ;; ⁌
+						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 11) (insert "ট")) ;; ◌
 						((= CnstID 32) (delete @-2) (set ScndCnstID CnstID) (set CnstID 17) (insert "থ")) ;; হ
 					)
 				)
@@ -615,7 +640,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CnstID 23) (delete @-2) (set ScndCnstID CnstID) (set CnstID 94) (insert "দ্ব") (set SLICER 1) (shift juktoborno_state)) ;; ব
 						((= CnstID 24) (delete @-2) (set ScndCnstID CnstID) (set CnstID 95) (insert "দ্ভ") (set SLICER 1) (shift juktoborno_state)) ;; ভ
 						((= CnstID 25) (delete @-2) (set ScndCnstID CnstID) (set CnstID 96) (insert "দ্ম") (set SLICER 1) (shift juktoborno_state)) ;; ম
-						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 13) (insert "ড")) ;; ⁌
+						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 13) (insert "ড")) ;; ◌
 						((= CnstID 32) (delete @-2) (set ScndCnstID CnstID) (set CnstID 19) (insert "ধ")) ;; হ
 					)
 				)
@@ -645,7 +670,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CnstID 23) (delete @-2) (set ScndCnstID CnstID) (set CnstID 108) (insert "ন্ব") (set SLICER 1) (shift juktoborno_state)) ;; ব
 						((= CnstID 25) (delete @-2) (set ScndCnstID CnstID) (set CnstID 109) (insert "ন্ম") (set SLICER 1) (shift juktoborno_state)) ;; ম
 						((= CnstID 31) (delete @-2) (set ScndCnstID CnstID) (set CnstID 110) (insert "ন্স") (set SLICER 1) (shift juktoborno_state)) ;; স
-						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 15) (insert "ণ")) ;; ⁌
+						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 15) (insert "ণ")) ;; ◌
 						((= CnstID 3) (delete @-2) (set ScndCnstID CnstID) (set CnstID 5) (insert "ঙ")) ;; গ
 					)
 				)
@@ -657,7 +682,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CnstID 21) (delete @-2) (set ScndCnstID CnstID) (set CnstID 114) (insert "প্প") (set SLICER 1) (shift juktoborno_state)) ;; প
 						((= CnstID 28) (delete @-2) (set ScndCnstID CnstID) (set CnstID 115) (insert "প্ল") (set SLICER 1) (shift juktoborno_state)) ;; ল
 						((= CnstID 31) (delete @-2) (set ScndCnstID CnstID) (set CnstID 116) (insert "প্স") (set SLICER 1) (shift juktoborno_state)) ;; স
-						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 22) (set Fflag 1) (insert "ফ")) ;; ⁌
+						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 22) (set Fflag 1) (insert "ফ")) ;; ◌
 						((= CnstID 32) (delete @-2) (set ScndCnstID CnstID) (set CnstID 22) (insert "ফ")) ;; হ
 					)
 				)
@@ -673,7 +698,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CnstID 19) (delete @-2) (set ScndCnstID CnstID) (set CnstID 120) (insert "ব্ধ") (set SLICER 1) (shift juktoborno_state)) ;; ধ
 						((= CnstID 23) (delete @-2) (set ScndCnstID CnstID) (set CnstID 121) (insert "ব্ব") (set SLICER 1) (shift juktoborno_state)) ;; ব
 						((= CnstID 28) (delete @-2) (set ScndCnstID CnstID) (set CnstID 122) (insert "ব্ল") (set SLICER 1) (shift juktoborno_state)) ;; ল
-						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 24) (set Fflag 1) (insert "ভ")) ;; ⁌
+						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 24) (set Fflag 1) (insert "ভ")) ;; ◌
 					)
 				)
 				((= FrstCnstID 24) ;; ভ
@@ -691,7 +716,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CnstID 24) (delete @-2) (set ScndCnstID CnstID) (set CnstID 129) (insert "ম্ভ") (set SLICER 1) (shift juktoborno_state)) ;; ভ
 						((= CnstID 25) (delete @-2) (set ScndCnstID CnstID) (set CnstID 130) (insert "ম্ম") (set SLICER 1) (shift juktoborno_state)) ;; ম
 						((= CnstID 28) (delete @-2) (set ScndCnstID CnstID) (set CnstID 131) (insert "ম্ল") (set SLICER 1) (shift juktoborno_state)) ;; ল
-						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 10) (insert "ঞ")) ;; ⁌
+						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 10) (insert "ঞ")) ;; ◌
 					)
 				)
 				((= FrstCnstID 28) ;; ল
@@ -744,7 +769,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CnstID 23) (delete @-2) (set ScndCnstID CnstID) (set CnstID 164) (insert "স্ব") (set SLICER 1) (shift juktoborno_state)) ;; ব
 						((= CnstID 25) (delete @-2) (set ScndCnstID CnstID) (set CnstID 165) (insert "স্ম") (set SLICER 1) (shift juktoborno_state)) ;; ম
 						((= CnstID 28) (delete @-2) (set ScndCnstID CnstID) (set CnstID 166) (insert "স্ল") (set SLICER 1) (shift juktoborno_state)) ;; ল
-						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 30) (insert "ষ")) ;; ⁌
+						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 30) (insert "ষ")) ;; ◌
 						((= CnstID 32) (delete @-2) (set ScndCnstID CnstID) (set CnstID 29) (insert "শ")) ;; হ
 					)
 				)
@@ -760,7 +785,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				((= FrstCnstID 34) ;; ড়
 					(cond
 						((= CnstID 3) (delete @-2) (set ScndCnstID CnstID) (set CnstID 76) (insert "ড়্‌গ") (set SLICER 2) (shift juktoborno_state)) ;; গ
-						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 35) (insert "ঢ়")) ;; ⁌
+						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 35) (insert "ঢ়")) ;; ◌
 					)
 				)
 				((= FrstCnstID 39) ;; ক্ষ
@@ -773,7 +798,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				)
 				((= FrstCnstID 27) ;; র
 					(cond
-						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 34) (insert "ড়")) ;; ⁌
+						((= CnstID 189) (delete @-2) (set ScndCnstID CnstID) (set CnstID 34) (insert "ড়")) ;; ◌
 						((= CnstID 190) (move @-) (move @-) (insert "‍") (move @>) (shift juktoborno_state)) ;; zf
 					)
 				)
@@ -924,7 +949,13 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(slicer4 (delete @-) (shift slash_state))
 		(prithayok (delete @-)  (shift init))
 		(ongko  (shift init))
-		(biram  (shift shor_state))
+		(biram
+			(cond
+				((= overflow 1) (shift dot_state))
+				((= overflow 2) (shift comma_state))
+				(1 (shift init))
+			)
+		)
 		(kar (shift shor_state))
 		(phola
 			(cond
@@ -1048,6 +1079,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(prithayok (move @-) (delete @-) (move @>) (shift blind_state2))
 		(blinder)
 		(symbolsNoIdentity (move @-) (delete @-) (move @>) (shift blind_state2))
+		(backspace)
 	)
 	(blind_state2
 		(lowercaseIdentity)
@@ -1057,8 +1089,20 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(blinder)
 		(symbolsNoIdentity)
 		(prithayok (delete @-) (shift init))
+		(backspace)
 	)
 	(slash_state
 		(slicer (commit))
+		(backspace)
+	)
+	(dot_state
+		(t (set overflow 0))
+		(dot (commit))
+		(backspace)
+	)
+	(comma_state
+		(t (set overflow 0))
+		(comma (commit))
+		(backspace)
 	)
 )

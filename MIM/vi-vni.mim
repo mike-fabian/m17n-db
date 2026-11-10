@@ -34,10 +34,10 @@ The following variables are customizable:
 (variable
  (tone-mark-on-last
   (_"Flag to control tone mark position in equivocal cases.
-If this variable is 0 (the default), put tone mark on the first vowel
-in such equivocal cases as \"oa\", \"oe\", \"uy\".
-Otherwise, put tone mark on the last vowel.")
-  0 0 1)
+If this variable is 1 (the default), put tone mark on the last vowel
+in such equivocal cases as \"oa\", \"oe\", \"uy\" (e.g. \"hoà\").
+If the value is 0, put tone mark on the first vowel (e.g. \"hòa\").")
+  1 0 1)
 
  (backspace-is-undo
   (_"Flag to control the action of Backspace key (delete or undo).
@@ -50,6 +50,12 @@ If the value is 1, Backspace key undoes the previous key
 (include (t nil vi-base) macro)
 (include (t nil vi-base) map)
 
+(macro
+ ;; Without a vowel to mark, the key ends the word as before.
+ (late-mark-or-commit
+  (late-mark)
+  (cond (K (handle-mark)) (1 (pushback 1) (shift init)))))
+
 (map
  (vowel-ext
   ("a6" ("âấầẩẫậ")) ("A6" ("ÂẤẦẨẪẬ"))
@@ -61,6 +67,10 @@ If the value is 1, Backspace key undoes the previous key
 
  (consonant-ext
   ("d9" ?đ) ("D9" ?Đ))
+
+ ;; A mark key typed after the vowel it belongs to (viet65 -> việt).
+ (late-mark-key
+  ("6" (set KEY ?6)) ("7" (set KEY ?7)) ("8" (set KEY ?8)))
 
  (tone-mark
   ("0" (set SELECT 0) ?0)
@@ -103,12 +113,11 @@ If the value is 1, Backspace key undoes the previous key
 
  ;; The state shifted to when a vowel is typed.
  (after-v
-  (consonant (shift after-vc))
-  (consonant-ext (shift after-vc))
-  (vowel (mark M) (set V-3 V-2) (set V-2 V-1) (set V-1 @-1)
-	 (move T) (select 0) (handle-mark) (move M))
-  (vowel-ext (mark M) (set V-3 V-2) (set V-2 V-1) (set V-1 @-1)
-	     (move T) (select 0) (handle-mark) (move M))
+  (consonant (fix-uo-before-consonant) (shift after-vc))
+  (consonant-ext (fix-uo-before-consonant) (shift after-vc))
+  (vowel (add-vowel))
+  (vowel-ext (w-after-vowel))
+  (late-mark-key (late-mark-or-commit))
   (tone-mark (delete @-) (pushback 1) (shift after-t))
   (backspace (delete @-)
 	     (cond (V-3 (set V-1 V-2) (set V-2 V-3) (set V-3 0)
@@ -122,6 +131,7 @@ If the value is 1, Backspace key undoes the previous key
   (t (set C-AFTER-V 1))
   (consonant (add C-AFTER-V 1))
   (consonant-ext (add C-AFTER-V 1))
+  (late-mark-key (late-mark-or-commit))
   (tone-mark (delete @-) (pushback 1) (shift after-t))
   (backspace (delete @-)
 	     (sub C-AFTER-V 1)

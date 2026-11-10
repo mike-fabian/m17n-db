@@ -63,7 +63,7 @@ function decode_hex(str, idx) {
   return n;
 }
 
-/^\#/ {
+/^#/ {
   print;
   next;
 }

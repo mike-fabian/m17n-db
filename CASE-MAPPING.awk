@@ -38,7 +38,7 @@ function mtext (str) {
   printf (" ");
 }
 
-/^[^\#]/ {
+/^[^#]/ {
   if (FILENAME == "UNIDATA/SpecialCasing.txt" && NF == 5) {
     printf ("0x%s ( ", $1);
     mtext($2);

@@ -74,7 +74,7 @@ function range(str, bit) {
       cased[i] += bit;
 }
 
-/^[^\#]/ {
+/^[^#]/ {
   if (FILENAME == "UNIDATA/UnicodeData.txt") {
     if ($3 ~ /L[ltu]/)
       single($1, 1);

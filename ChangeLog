@@ -3,8 +3,8 @@
 	* MIM/am-sera.mim, MIM/ar-kbd.mim, MIM/ar-translit.mim:
 	* MIM/as-inscript.mim, MIM/as-inscript2.mim, MIM/as-phonetic.mim:
 	* MIM/bn-disha.mim, MIM/bn-inscript.mim, MIM/bn-inscript2.mim:
-	* MIM/bn-khipro.mim, MIM/bn-national-jatiya.mim:
-	* MIM/bn-probhat.mim, MIM/bo-ewts.mim:
+	* MIM/bn-khipro-classic.mim, MIM/bn-khipro-classic.mim:
+	* MIM/bn-national-jatiya.mim, MIM/bn-probhat.mim, MIM/bo-ewts.mim:
 	* MIM/dra-iso-15919-itrans.mim, MIM/en-pn-eqf.mim:
 	* MIM/eo-h-fundamente.mim, MIM/eo-h-sistemo.mim, MIM/eo-plena.mim:
 	* MIM/eo-q-sistemo.mim, MIM/eo-vi-sistemo.mim:

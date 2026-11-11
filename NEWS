@@ -6,6 +6,23 @@ Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013
 See the end for copying conditions.
 Copyright (C) 2015-2026 Kenichi Handa <handa@gnu.org>
 
+* Changes in the m17n database 1.8.18
+
+** New input methods are added.
+
+bn-jatiya.mim: Add new layout created by "Omi Azad" <omi@ekushey.org>.
+               Implements the government-backed national standard BDS 1738:2018
+               officially standardised and published by the Bangladesh Computer Council (BCC)
+               and the Bangladesh Standards and Testing Institution (BSTI).
+
+** Changes in input methods.
+
+vi-base.mim, vi-telex.mim, vi-vni.mim: Lots of improvements by nguyenphivn <vietphi.dang@gmail.com>
+bn-national-jatiya.mim: Mention that `bn-national-jatiya` is obsolete and replaced by `bn-jatiya` in the description
+
+Adjusted line lengths of comments in many .mim files for Doxygen.
+
+
 * Changes in the m17n database 1.8.17
 
 ** Changes in input methods.

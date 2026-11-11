@@ -1,4 +1,16 @@
-2026-11-12  K. Hannda  <handa@gnu.org>
+2026-11-17  Mike FABIAN  <mfabian@redhat.com>
+
+	* MIM/bn-jatiya.mim: Add new layout created by "Omi Azad" <omi@ekushey.org>
+	* icons/bn-jatiya.png: Add icon for new layout by "Omi Azad" <omi@ekushey.org>
+	* MIM/bn-national-jatiya: Mention that `bn-national-jatiya` is
+	obsolete and replaced by `bn-jatiya` in the description
+
+2026-11-17  nguyenphivn <vietphi.dang@gmail.com>
+
+	* MIM/vi-telex.mim, MIM/vi-base.mim, MIM/vi-vni.mim: Lots of
+	improvements by nguyenphivn <vietphi.dang@gmail.com>
+
+2026-11-12  K. Handa  <handa@gnu.org>
 
 	* FORMATS/IM.txt, FORMATS/IM.ja.txt: Improve the description about
 	the lines beginning with ";;; ".

@@ -59,7 +59,8 @@ If the value is 1, Backspace key undoes the previous key
  (lower-pq
   (cond ((& (>= P ?A) (<= P ?Z)) (add P 32))
 	((= P ?Đ) (set P ?đ))
-	((= P ?Ư) (set P ?ư)))
+	((= P ?Ư) (set P ?ư))
+	((= P ?Ơ) (set P ?ơ)))
   (cond ((& (>= Q ?A) (<= Q ?Z)) (add Q 32))))
 
  ;; BAD is 1 if the last two letters start English words only (show,
@@ -87,7 +88,11 @@ If the value is 1, Backspace key undoes the previous key
 	      (& (= P ?y) (| (= Q ?i) (= Q ?o)))
 	      (& (= P ?y) (| (= Q ?a) (= Q ?u))
 		 (! (| (= V-2 ?u) (= V-2 ?U))))
-	      (& (= P ?ư) (| (= Q ?e) (= Q ?y) (& (= Q ?i) (! INITIAL)))))))
+	      (& (= P ?ư) (| (= Q ?e) (= Q ?y) (& (= Q ?i) (! INITIAL))))
+	      ;; power, way: w gives ơ or ư, and nothing in Vietnamese
+	      ;; continues them like this.
+	      (& (= P ?ơ) (= Q ?e))
+	      (& (= P ?a) (| (= Q ?y) (= Q ?i)) (| (= V-2 ?ư) (= V-2 ?Ư))))))
 
  ;; BAD is 1 if no final consonant can follow the vowels typed
  ;; (using, axit, virut).  Exceptions: quít, giun, giòn.
@@ -99,7 +104,8 @@ If the value is 1, Backspace key undoes the previous key
 	      (| (& (= P ?i) (! QU) (! GI))
 		 (& (= P ?u) (! GI))
 		 (& (= P ?o) (| (= Q ?a) (= Q ?e)))
-		 (& (= P ?y) (| (= Q ?a) (= Q ?â) (= Q ?Â)))))))
+		 (& (= P ?y) (| (= Q ?a) (= Q ?â) (= Q ?Â)))
+		 (& (= P ?a) (= Q ?ư))))))
 
  (final-consonant
   (check-final)
@@ -209,6 +215,9 @@ If the value is 1, Backspace key undoes the previous key
 		  (cond (BAD (restore-keys)) (1 (add-vowel))))))
   (vowel-ext (set KEY @-1) (late-mark)
 	     (cond (K (delete @-) (handle-mark))
+		   ;; No Vietnamese word has ư before ê (tweet).
+		   ((& (| (= @-1 ?ê) (= @-1 ?Ê)) (| (= V-1 ?ư) (= V-1 ?Ư)))
+		    (restore-keys))
 		   (1 (w-after-vowel))))
   ;; k ends place names such as Đắk Lắk, Krông Búk and Srê Pốk, after a
   ;; single a, ă, ô or u only, so that disk or work stay English.

@@ -53,7 +53,58 @@ If the value is 1, Backspace key undoes the previous key
 (macro
  (restore-keys
   ;; Drop the marks put so far and replay every key of this word as is.
-  (delete @<) (shift restore) (pushback 0)))
+  (delete @<) (shift restore) (pushback 0))
+
+ ;; Lowercase the letters in P and Q.
+ (lower-pq
+  (cond ((& (>= P ?A) (<= P ?Z)) (add P 32))
+	((= P ?Đ) (set P ?đ))
+	((= P ?Ư) (set P ?ư)))
+  (cond ((& (>= Q ?A) (<= Q ?Z)) (add Q 32))))
+
+ ;; BAD is 1 if the last two letters start English words only (show,
+ ;; class, smart).  Pairs found in names from the Central Highlands
+ ;; (Krông, Hmông, Pleiku, Stiêng) are not listed.
+ (check-initial
+  (set P @-2) (set Q @-1) (lower-pq)
+  (set BAD (| (& (= P ?s) (| (= Q ?h) (= Q ?c) (= Q ?k) (= Q ?m) (= Q ?n)
+			     (= Q ?p)))
+	      (& (| (= P ?c) (= P ?g)) (| (= Q ?l) (= Q ?r)))
+	      (& (= P ?k) (= Q ?n)))))
+
+ ;; BAD is 1 if the vowel just typed cannot follow the previous one
+ ;; (cafe, your, search, web).
+ (check-vowel-pair
+  (set P V-1) (set Q @-1) (lower-pq)
+  (set INITIAL (| (& (>= C ?a) (<= C ?z)) (& (>= C ?A) (<= C ?Z))
+		  (= C ?đ) (= C ?Đ)))
+  (set GI (& (| (= C ?g) (= C ?G)) (| (= V-1 ?i) (= V-1 ?I))))
+  (set BAD (| (& (= P ?a) (= Q ?e)) (& (= P ?e) (= Q ?a))
+	      (& (= P ?e) (| (= Q ?i) (= Q ?y)))
+	      (& (= P ?i) (| (= Q ?i) (= Q ?y)) (! GI))
+	      (& (= P ?i) (= Q ?o) (! GI))
+	      (& (= P ?o) (| (= Q ?u) (= Q ?y)))
+	      (& (= P ?y) (| (= Q ?i) (= Q ?o)))
+	      (& (= P ?y) (| (= Q ?a) (= Q ?u))
+		 (! (| (= V-2 ?u) (= V-2 ?U))))
+	      (& (= P ?ư) (| (= Q ?e) (= Q ?y) (& (= Q ?i) (! INITIAL)))))))
+
+ ;; BAD is 1 if no final consonant can follow the vowels typed
+ ;; (using, axit, virut).  Exceptions: quít, giun, giòn.
+ (check-final
+  (set P V-1) (set Q V-2) (lower-pq)
+  (set GI (& (| (= C ?g) (= C ?G)) (= Q ?i)))
+  (set QU (& (| (= C ?q) (= C ?Q)) (= Q ?u)))
+  (set BAD (& (! (= Q 0))
+	      (| (& (= P ?i) (! QU) (! GI))
+		 (& (= P ?u) (! GI))
+		 (& (= P ?o) (| (= Q ?a) (= Q ?e)))
+		 (& (= P ?y) (| (= Q ?a) (= Q ?â) (= Q ?Â)))))))
+
+ (final-consonant
+  (check-final)
+  (cond (BAD (restore-keys))
+	(1 (fix-uo-before-consonant) (handle-mark) (shift after-vc)))))
 
 (map
  (vowel-ext
@@ -116,11 +167,15 @@ If the value is 1, Backspace key undoes the previous key
   (t (set C @-1) (set V-1 0) (set V-2 0) (set V-3 0) (set C-AFTER-V 0)
      (set SELECT 0) (set NST (= @-0 -2)))
 
-  (consonant (set C @-1) (cond (NST (shift after-c))))
+  (consonant (check-initial)
+	     (cond (BAD (shift temporary-escape))
+		   (1 (set C @-1) (cond (NST (shift after-c))))))
   (consonant-ext (set C @-1) (cond (NST (shift after-c))))
   (consonant-or-tone-mark
+   (check-initial)
    (cond ((| (= @-1 ?f) (= @-1 ?j) (= @-1 ?z) ; Invalid beginning consonants
              (= @-1 ?F) (= @-1 ?J) (= @-1 ?Z)) (shift temporary-escape))
+	 (BAD (shift temporary-escape))
          (1 (set C @-1) (cond (NST (shift after-c))))))
 
   ;; Mark M remembers the preedit position after the last vowel.
@@ -133,13 +188,16 @@ If the value is 1, Backspace key undoes the previous key
  ;; The state shifted to when an initial consonants is typed and
  ;; surrounding text is not supported.
  (after-c
+  (consonant (check-initial)
+	     (cond (BAD (shift temporary-escape)) (1 (set C @-1))))
+  (consonant-or-tone-mark
+   (check-initial) (cond (BAD (shift temporary-escape)) (1 (set C @-1))))
   (vowel (mark M) (set V-2 V-1) (set V-1 @-1) (shift after-v))
   (vowel-ext (mark M) (set V-2 V-1) (set V-1 @-1) (shift after-v)))
 
  ;; The state shifted to when a vowel is typed.
  (after-v
-  (ending-1st-consonant (fix-uo-before-consonant)
-			(handle-mark) (shift after-vc)) ; toans/toasn->toán
+  (ending-1st-consonant (final-consonant)) ; toans/toasn->toán
   (vowel (set KEY @-1)
 	 ;; "oeo" and "oao" are vowels of their own (ngoẻo).
 	 (cond ((& (| (= KEY ?o) (= KEY ?O))
@@ -147,7 +205,8 @@ If the value is 1, Backspace key undoes the previous key
 		(set KEY 0)))
 	 (late-mark)
 	 (cond (K (delete @-) (handle-mark))
-	       (1 (add-vowel))))
+	       (1 (check-vowel-pair)
+		  (cond (BAD (restore-keys)) (1 (add-vowel))))))
   (vowel-ext (set KEY @-1) (late-mark)
 	     (cond (K (delete @-) (handle-mark))
 		   (1 (w-after-vowel))))
@@ -157,7 +216,7 @@ If the value is 1, Backspace key undoes the previous key
    (cond ((& (| (= @-1 ?k) (= @-1 ?K)) (= V-2 0)
 	     (| (= V-1 ?a) (= V-1 ?A) (= V-1 ?ă) (= V-1 ?Ă)
 		(= V-1 ?ô) (= V-1 ?Ô) (= V-1 ?u) (= V-1 ?U)))
-	  (fix-uo-before-consonant) (handle-mark) (shift after-vc))
+	  (final-consonant))
 	 (1 (restore-keys))))
   (consonant-or-tone-mark (delete @-) (pushback 1) (shift after-t))
   (backspace (delete @-)
@@ -183,6 +242,8 @@ If the value is 1, Backspace key undoes the previous key
   (late-mark-key (late-mark)
 		 (cond (K (handle-mark)) (1 (restore-keys))))
   (vowel (restore-keys))
+  ;; The only final consonant pairs are ng, nh, ch (internet, tennis).
+  (consonant (restore-keys))
   (backspace (delete @-)
 	     (sub C-AFTER-V 1)
 	     (handle-mark)

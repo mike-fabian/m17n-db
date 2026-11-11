@@ -50,6 +50,11 @@ If the value is 1, Backspace key undoes the previous key
 (include (t nil vi-base) macro)
 (include (t nil vi-base) map)
 
+(macro
+ (restore-keys
+  ;; Drop the marks put so far and replay every key of this word as is.
+  (delete @<) (shift restore) (pushback 0)))
+
 (map
  (vowel-ext
   ("aa" ("âấầẩẫậ")) ("AA" ("ÂẤẦẨẪẬ")) ("Aa" ("ÂẤẦẨẪẬ"))
@@ -146,7 +151,14 @@ If the value is 1, Backspace key undoes the previous key
   (vowel-ext (set KEY @-1) (late-mark)
 	     (cond (K (delete @-) (handle-mark))
 		   (1 (w-after-vowel))))
-  (ending-1st-notviet-consonant (shift temporary-escape)) ;; See ending-1st-notviet-consonant section in the vi-base.mim 
+  ;; k ends place names such as Đắk Lắk, Krông Búk and Srê Pốk, after a
+  ;; single a, ă, ô or u only, so that disk or work stay English.
+  (ending-1st-notviet-consonant
+   (cond ((& (| (= @-1 ?k) (= @-1 ?K)) (= V-2 0)
+	     (| (= V-1 ?a) (= V-1 ?A) (= V-1 ?ă) (= V-1 ?Ă)
+		(= V-1 ?ô) (= V-1 ?Ô) (= V-1 ?u) (= V-1 ?U)))
+	  (fix-uo-before-consonant) (handle-mark) (shift after-vc))
+	 (1 (restore-keys))))
   (consonant-or-tone-mark (delete @-) (pushback 1) (shift after-t))
   (backspace (delete @-)
 	     (cond (V-3 (set V-1 V-2) (set V-2 V-3) (set V-3 0)
@@ -163,14 +175,14 @@ If the value is 1, Backspace key undoes the previous key
   (ending-2nd-consonant
    (cond ((| (= @-2 ?n) (= @-2 ?c) ; 1st ending consonant must be n/c
              (= @-2 ?N) (= @-2 ?C)) (add C-AFTER-V 1))
-         (1 (shift temporary-escape))))
-  (ending-1st-notviet-consonant (shift temporary-escape)) ;; Expand notviet-consonant section in the vi-base.mim 
+         (1 (restore-keys))))
+  (ending-1st-notviet-consonant (restore-keys))
   (consonant-or-tone-mark (delete @-) (pushback 1) (shift after-t))
   ;; There can only be one main vowel in a word, but a circumflex,
   ;; breve or horn key may still mark it (vietej -> việt).
   (late-mark-key (late-mark)
-		 (cond (K (handle-mark)) (1 (pushback 1) (shift temporary-escape))))
-  (vowel (shift temporary-escape))
+		 (cond (K (handle-mark)) (1 (restore-keys))))
+  (vowel (restore-keys))
   (backspace (delete @-)
 	     (sub C-AFTER-V 1)
 	     (handle-mark)
@@ -189,6 +201,14 @@ If the value is 1, Backspace key undoes the previous key
   "en"
   (t (commit))
   (alnum (commit)))
+
+ ;; Reached when the keys typed so far cannot be a Vietnamese word.
+ ;; The keys are typed again as plain letters (casino, server).
+ ;; Backspace reads the remaining keys again, so "serv BS BS e" gives sê.
+ (restore
+  "en"
+  (alnum)
+  (backspace (cond ((= backspace-is-undo 0) (undo)))))
 
  (escape-in-normal-mode
   "EN"

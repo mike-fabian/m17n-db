@@ -25,7 +25,7 @@ into the form of plist in the driver.
 Any line starting with ';' is treated as a comment and ignored by the
 input method driver.  However, lines beginning with ";;; ", if any,
 serve as documentation for the input method in the m17n-docs package.
-Because these lines are rendered inside HTML <pre> tags and LaTeX
+Because these lines are rendered inside HTML "pre" tags and LaTeX
 verbatim environments, each line should ideally be kept to 76 columns
 or less.  If there is no such line, DESCRIPTION text (see below)
 serves as the documentation.  In that case, the rule of line length

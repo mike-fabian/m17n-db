@@ -22,10 +22,14 @@ The following data format defines an input method.  The driver loads a
 definition from a file, a stream, etc.  The definition is converted
 into the form of plist in the driver.
 
-Any line beginning with ';' is treated as a comment and ignored by the input
-method driver. However, lines starting with ';;; ' must be written in valid
-Doxygen-compatible text and serve as the input method's documentation for
-the m17n-docs package.
+Any line starting with ';' is treated as a comment and ignored by the
+input method driver.  However, lines beginning with ";;; ", if any,
+serve as documentation for the input method in the m17n-docs package.
+Because these lines are rendered inside HTML <pre> tags and LaTeX
+verbatim environments, each line should ideally be kept to 76 columns
+or less.  If there is no such line, DESCRIPTION text (see below)
+serves as the documentation.  In that case, the rule of line length
+applies to the DESCRIPTION text as well.
 
 @verbatim
 INPUT-METHOD ::=

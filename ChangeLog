@@ -1,3 +1,8 @@
+2026-11-12  K. Hannda  <handa@gnu.org>
+
+	* FORMATS/IM.txt, FORMATS/IM.ja.txt: Improve the description about
+	the lines beginning with ";;; ".
+
 2026-11-11  K. Handa  <handa@gnu.org>
 
 	* MIM/am-sera.mim, MIM/ar-kbd.mim, MIM/ar-translit.mim:

@@ -113,6 +113,8 @@ If the value is 1, Backspace key undoes the previous key
   (set X V-1) (lower-x) (set Q X)
   (set BAD (| (& (= P ?ă) (> Q 0))
 	      (& (= P ?e) (| (= Q ?ơ) (= Q ?ư)))
+	      ;; A w that marks nothing is not a letter here (news, view).
+	      (= Q ?w)
 	      (& (= P ?â) (! (| (= Q ?u) (= Q ?y))))
 	      (& (= P ?ê) (! (= Q ?u)))
 	      (& (= P ?ô) (! (= Q ?i)))
@@ -284,7 +286,12 @@ If the value is 1, Backspace key undoes the previous key
   (t (set C-AFTER-V 1))
   (ending-2nd-consonant
    (cond ((| (= @-2 ?n) (= @-2 ?c) ; 1st ending consonant must be n/c
-             (= @-2 ?N) (= @-2 ?C)) (add C-AFTER-V 1))
+             (= @-2 ?N) (= @-2 ?C))
+	  (add C-AFTER-V 1)
+	  ;; A single i takes nh, not ng (thing, king).
+	  (cond ((& (| (= @-1 ?g) (= @-1 ?G)) (= V-2 0)
+		    (| (= V-1 ?i) (= V-1 ?I)))
+		 (restore-keys))))
          (1 (restore-keys))))
   (ending-1st-notviet-consonant (restore-keys))
   (consonant-or-tone-mark (delete @-) (pushback 1) (shift after-t))

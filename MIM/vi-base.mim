@@ -93,46 +93,54 @@ to be included in the other Vietnamese input method (e.g. vi-telex, vi-vni).
   (cond (KEY (late-mark) (handle-mark))))
 
  ;; Typing a circumflex, breve or horn key after the vowel it belongs to
- ;; (e.g. "vietej", "nguoiwf", "khongo") marks that earlier vowel.
+ ;; (e.g. "vietej", "nguoiwf", "khongo") marks that earlier vowel.  The
+ ;; key also swaps â and ă, ô and ơ ("caamw" -> "căm", "cowo" -> "cô").
  ;; KEY is the typed key; K is set to the position of the changed vowel
  ;; (1 is V-1), or 0 if nothing matched.
  (late-mark
-  (set K 0) (set UO 0)
+  (set K 0) (set UO 0) (set LO2 -1) (set UP2 -1)
   (cond ((| (= KEY ?a) (= KEY ?A) (= KEY ?6))
-	 (set MARK 1) (set LO ?a) (set UP ?A) (find-vowel)))
+	 (set MARK 1) (set LO ?a) (set UP ?A) (set LO2 ?ă) (set UP2 ?Ă)
+	 (find-vowel)))
   (cond ((& (= K 0) (| (= KEY ?e) (= KEY ?E) (= KEY ?6)))
 	 (set MARK 1) (set LO ?e) (set UP ?E) (find-vowel)))
   (cond ((& (= K 0) (| (= KEY ?o) (= KEY ?O) (= KEY ?6)))
-	 (set MARK 1) (set LO ?o) (set UP ?O) (find-vowel)))
+	 (set MARK 1) (set LO ?o) (set UP ?O) (set LO2 ?ơ) (set UP2 ?Ơ)
+	 (find-vowel)))
   (cond ((| (= KEY ?w) (= KEY ?W) (= KEY ?7))
 	 (set MARK 3) (mark-uo)
 	 ;; u after q is part of the consonant ("quăn", not "quưn").
 	 (cond ((& (= K 0) (! (| (= C ?q) (= C ?Q))))
 		(set LO ?u) (set UP ?U) (find-vowel)))))
   (cond ((& (= K 0) (| (= KEY ?w) (= KEY ?W) (= KEY ?8)))
-	 (set MARK 2) (set LO ?a) (set UP ?A) (find-vowel)))
+	 (set MARK 2) (set LO ?a) (set UP ?A) (set LO2 ?â) (set UP2 ?Â)
+	 (find-vowel)))
   (cond ((& (= K 0) (| (= KEY ?w) (= KEY ?W) (= KEY ?7)))
-	 (set MARK 3) (set LO ?o) (set UP ?O) (find-vowel)))
+	 (set MARK 3) (set LO ?o) (set UP ?O) (set LO2 ?ô) (set UP2 ?Ô)
+	 (find-vowel)))
   (cond ((& (> K 0) (= UO 0)) (replace-vowel))))
 
- ;; Set K to the position of the first vowel that is LO or UP.
+ ;; Set K to the position of the first vowel that is LO, UP, LO2 or UP2.
  (find-vowel
-  (cond ((| (= V-3 LO) (= V-3 UP)) (set K 3))
-	((| (= V-2 LO) (= V-2 UP)) (set K 2))
-	((| (= V-1 LO) (= V-1 UP)) (set K 1))))
+  (cond ((| (= V-3 LO) (= V-3 UP) (= V-3 LO2) (= V-3 UP2)) (set K 3))
+	((| (= V-2 LO) (= V-2 UP) (= V-2 LO2) (= V-2 UP2)) (set K 2))
+	((| (= V-1 LO) (= V-1 UP) (= V-1 LO2) (= V-1 UP2)) (set K 1))))
 
- ;; One horn key marks both letters of "uo" (người, được).
+ ;; One horn key marks both letters of "uo" (người, được), and of "uô"
+ ;; (suoongw -> sương).  A word ending in "uô" takes it on the o only
+ ;; (huoow -> huơ); a final consonant typed later still gives "ươ".
  (mark-uo
   (cond ((& (| (= V-2 ?u) (= V-2 ?U) (= V-2 ?ư) (= V-2 ?Ư))
-	    (| (= V-1 ?o) (= V-1 ?O) (= V-1 ?ơ) (= V-1 ?Ơ))
+	    (| (= V-1 ?o) (= V-1 ?O) (= V-1 ?ơ) (= V-1 ?Ơ) (= V-1 ?ô) (= V-1 ?Ô))
 	    (! (& (| (= V-2 ?ư) (= V-2 ?Ư)) (| (= V-1 ?ơ) (= V-1 ?Ơ)))))
 	 (set UO 1))
 	((& (| (= V-3 ?u) (= V-3 ?U) (= V-3 ?ư) (= V-3 ?Ư))
-	    (| (= V-2 ?o) (= V-2 ?O) (= V-2 ?ơ) (= V-2 ?Ơ))
+	    (| (= V-2 ?o) (= V-2 ?O) (= V-2 ?ơ) (= V-2 ?Ơ) (= V-2 ?ô) (= V-2 ?Ô))
 	    (! (& (| (= V-3 ?ư) (= V-3 ?Ư)) (| (= V-2 ?ơ) (= V-2 ?Ơ)))))
 	 (set UO 2)))
+  (set ONLY-O (& (= UO 1) (= C-AFTER-V 0) (| (= V-1 ?ô) (= V-1 ?Ô))))
   (cond (UO (set K UO) (set LO ?o) (replace-vowel)
-	    (add K 1) (set LO ?u) (replace-vowel))))
+	    (cond ((! ONLY-O) (add K 1) (set LO ?u) (replace-vowel))))))
 
  ;; "ưo" and "uơ" followed by another letter can only be "ươ".  Call
  ;; after a vowel is added; the vowel before it decides.
@@ -155,7 +163,8 @@ to be included in the other Vietnamese input method (e.g. vi-telex, vi-vni).
  ;; afterwards to put it back.
  (replace-vowel
   (cond ((= K 1) (set CH V-1)) ((= K 2) (set CH V-2)) (1 (set CH V-3)))
-  (set CAP (| (= CH ?A) (= CH ?E) (= CH ?O) (= CH ?U) (= CH ?Ơ) (= CH ?Ư)))
+  (set CAP (| (= CH ?A) (= CH ?E) (= CH ?O) (= CH ?U) (= CH ?Ơ) (= CH ?Ư)
+	      (= CH ?Â) (= CH ?Ă) (= CH ?Ô)))
   (move T) (select 0)
   (move M)
   (cond ((> K 1) (move @-)))

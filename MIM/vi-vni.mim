@@ -51,6 +51,22 @@ If the value is 1, Backspace key undoes the previous key
 (include (t nil vi-base) map)
 
 (macro
+ (restore-keys
+  ;; Drop the marks put so far and replay every key of this word as is.
+  (delete @<) (shift restore) (pushback 0))
+
+ ;; STOP is 1 if the final consonant typed is c, ch, p or t, which take
+ ;; only the acute and the dot below.  BAD is 1 if the tone does not fit.
+ (check-stop-tone
+  (set BAD (& STOP (> SELECT 1) (< SELECT 5))))
+
+ (final-consonant
+  (set STOP (| (= @-1 ?c) (= @-1 ?p) (= @-1 ?t) (= @-1 ?k)
+	       (= @-1 ?C) (= @-1 ?P) (= @-1 ?T) (= @-1 ?K)))
+  (check-stop-tone)
+  (cond (BAD (restore-keys))
+	(1 (fix-uo-before-consonant) (handle-mark) (shift after-vc))))
+
  ;; Without a vowel to mark, the key ends the word as before.
  (late-mark-or-commit
   (late-mark)
@@ -67,6 +83,10 @@ If the value is 1, Backspace key undoes the previous key
 
  (consonant-ext
   ("d9" ?đ) ("D9" ?Đ))
+
+ (digit
+  ("0" ?0) ("1" ?1) ("2" ?2) ("3" ?3) ("4" ?4)
+  ("5" ?5) ("6" ?6) ("7" ?7) ("8" ?8) ("9" ?9))
 
  ;; A mark key typed after the vowel it belongs to (viet65 -> việt).
  (late-mark-key
@@ -94,9 +114,11 @@ If the value is 1, Backspace key undoes the previous key
   ;; (N-1)th vowel from the last.  C-AFTER-V is a number of consonants
   ;; typed after vowel.  NST is 1 iff surrounding text is not supported.
   (t (set C @-1) (set V-1 0) (set V-2 0) (set V-3 0) (set C-AFTER-V 0)
-     (set SELECT 0) (set NST (= @-0 -2)))
+     (set SELECT 0) (set STOP 0) (set NST (= @-0 -2)))
 
   (consonant (set C @-1) (cond (NST (shift after-c))))
+  ;; No Vietnamese word starts with a digit (12a1, 4g).
+  (digit (shift temporary-escape))
   (consonant-ext (set C @-1) (cond (NST (shift after-c))))
   ;; Mark M remembers the preedit position after the last vowel.
   (vowel (mark M) (set V-2 V-1) (set V-1 @-1) (shift after-v))
@@ -113,8 +135,17 @@ If the value is 1, Backspace key undoes the previous key
 
  ;; The state shifted to when a vowel is typed.
  (after-v
-  (consonant (fix-uo-before-consonant) (shift after-vc))
-  (consonant-ext (fix-uo-before-consonant) (shift after-vc))
+  (ending-1st-consonant (final-consonant))
+  ;; k ends place names such as Đắk Lắk and Srê Pốk, after a single a,
+  ;; ă, ô or u only; other letters cannot end a word (web2, covid19).
+  (ending-1st-notviet-consonant
+   (cond ((& (| (= @-1 ?k) (= @-1 ?K)) (= V-2 0)
+	     (| (= V-1 ?a) (= V-1 ?A) (= V-1 ?ă) (= V-1 ?Ă)
+		(= V-1 ?ô) (= V-1 ?Ô) (= V-1 ?u) (= V-1 ?U)))
+	  (final-consonant))
+	 (1 (restore-keys))))
+  (consonant (restore-keys))
+  (consonant-ext (restore-keys))
   (vowel (add-vowel))
   (vowel-ext (w-after-vowel))
   (late-mark-key (late-mark-or-commit))
@@ -129,8 +160,14 @@ If the value is 1, Backspace key undoes the previous key
  ;; The state shifted to when a consonant is typed after a vowel.
  (after-vc
   (t (set C-AFTER-V 1))
-  (consonant (add C-AFTER-V 1))
-  (consonant-ext (add C-AFTER-V 1))
+  ;; The only final consonant pairs are ng, nh and ch.
+  (ending-2nd-consonant
+   (cond ((| (= @-2 ?n) (= @-2 ?N))
+	  (add C-AFTER-V 1) (set STOP 0) (handle-mark))
+	 ((| (= @-2 ?c) (= @-2 ?C)) (add C-AFTER-V 1) (handle-mark))
+	 (1 (restore-keys))))
+  (consonant (restore-keys))
+  (consonant-ext (restore-keys))
   (late-mark-key (late-mark-or-commit))
   (tone-mark (delete @-) (pushback 1) (shift after-t))
   (backspace (delete @-)
@@ -142,7 +179,10 @@ If the value is 1, Backspace key undoes the previous key
   (t (set CURRENT-SELECT -1))
   (tone-mark (cond ((= CURRENT-SELECT SELECT) (move T) (select 0) (move @>)
 		    (shift temporary-escape))
-		   (1 (delete @-) (handle-mark) (set CURRENT-SELECT SELECT))))
+		   (1 (check-stop-tone)
+		      (cond (BAD (restore-keys))
+			    (1 (delete @-) (handle-mark)
+			       (set CURRENT-SELECT SELECT))))))
   (nil (cond (C-AFTER-V (shift after-vc))
 	     (1 (shift after-v)))))
 
@@ -150,6 +190,13 @@ If the value is 1, Backspace key undoes the previous key
   "en"
   (t (commit))
   (alnum (commit)))
+
+ ;; Reached when the keys typed so far cannot be a Vietnamese word.
+ ;; The keys are typed again as plain letters and digits (web2).
+ (restore
+  "en"
+  (alnum)
+  (backspace (cond ((= backspace-is-undo 0) (undo)))))
 
  (escape-in-normal-mode
   "EN"

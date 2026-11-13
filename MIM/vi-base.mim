@@ -118,7 +118,19 @@ to be included in the other Vietnamese input method (e.g. vi-telex, vi-vni).
   (cond ((& (= K 0) (| (= KEY ?w) (= KEY ?W) (= KEY ?7)))
 	 (set MARK 3) (set LO ?o) (set UP ?O) (set LO2 ?ô) (set UP2 ?Ô)
 	 (find-vowel)))
-  (cond ((& (> K 0) (= UO 0)) (replace-vowel))))
+  (cond ((& (> K 0) (= UO 0))
+	 ;; ư never comes before ô: "ươ" becomes "uô" (suoongwo -> suông).
+	 (set PLAIN-U 0)
+	 (cond ((= MARK 1)
+		(cond ((& (= K 1) (| (= V-1 ?ơ) (= V-1 ?Ơ))
+			  (| (= V-2 ?ư) (= V-2 ?Ư)))
+		       (set PLAIN-U 2))
+		      ((& (= K 2) (| (= V-2 ?ơ) (= V-2 ?Ơ))
+			  (| (= V-3 ?ư) (= V-3 ?Ư)))
+		       (set PLAIN-U 3)))))
+	 (replace-vowel)
+	 (cond (PLAIN-U (set K PLAIN-U) (set MARK 0) (set LO ?u)
+			(replace-vowel))))))
 
  ;; Set K to the position of the first vowel that is LO, UP, LO2 or UP2.
  (find-vowel
@@ -158,8 +170,8 @@ to be included in the other Vietnamese input method (e.g. vi-telex, vi-vni).
 	    (! (| (= C ?q) (= C ?Q))))
 	 (set MARK 3) (set K 2) (set LO ?u) (replace-vowel) (handle-mark))))
 
- ;; Replace vowel K with LO carrying MARK (1 circumflex, 2 breve,
- ;; 3 horn), keeping its case.  The tone is cleared; call handle-mark
+ ;; Replace vowel K with LO carrying MARK (0 none, only for u;
+ ;; 1 circumflex, 2 breve, 3 horn), keeping its case.  The tone is cleared; call handle-mark
  ;; afterwards to put it back.
  (replace-vowel
   (cond ((= K 1) (set CH V-1)) ((= K 2) (set CH V-2)) (1 (set CH V-3)))
@@ -170,7 +182,8 @@ to be included in the other Vietnamese input method (e.g. vi-telex, vi-vni).
   (cond ((> K 1) (move @-)))
   (cond ((> K 2) (move @-)))
   (delete @-)
-  (cond ((= MARK 1)
+  (cond ((= MARK 0) (cond (CAP (insert ("UÚÙỦŨỤ"))) (1 (insert ("uúùủũụ")))))
+	((= MARK 1)
 	 (cond ((= LO ?a) (cond (CAP (insert ("ÂẤẦẨẪẬ"))) (1 (insert ("âấầẩẫậ")))))
 	       ((= LO ?e) (cond (CAP (insert ("ÊẾỀỂỄỆ"))) (1 (insert ("êếềểễệ")))))
 	       (1 (cond (CAP (insert ("ÔỐỒỔỖỘ"))) (1 (insert ("ôốồổỗộ")))))))

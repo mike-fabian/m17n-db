@@ -94,6 +94,45 @@ If the value is 1, Backspace key undoes the previous key
 	      (& (= P ?ơ) (= Q ?e))
 	      (& (= P ?a) (| (= Q ?y) (= Q ?i)) (| (= V-2 ?ư) (= V-2 ?Ư))))))
 
+ ;; Lowercase X, keeping its mark.
+ (lower-x
+  (cond ((& (>= X ?A) (<= X ?Z)) (add X 32))
+	((= X ?Â) (set X ?â)) ((= X ?Ă) (set X ?ă)) ((= X ?Ê) (set X ?ê))
+	((= X ?Ô) (set X ?ô)) ((= X ?Ơ) (set X ?ơ)) ((= X ?Ư) (set X ?ư))))
+
+ ;; Lowercase X and drop its mark.
+ (base-x
+  (lower-x)
+  (cond ((| (= X ?â) (= X ?ă)) (set X ?a)) ((= X ?ê) (set X ?e))
+	((| (= X ?ô) (= X ?ơ)) (set X ?o)) ((= X ?ư) (set X ?u))))
+
+ ;; BAD is 1 if the vowels typed so far cannot be in one syllable, even
+ ;; with marks still to come (euro, layer, raise, stereo, choose).
+ (check-vowels
+  (set X V-2) (lower-x) (set P X)
+  (set X V-1) (lower-x) (set Q X)
+  (set BAD (| (& (= P ?ă) (> Q 0))
+	      (& (= P ?e) (| (= Q ?ơ) (= Q ?ư)))
+	      (& (= P ?â) (! (| (= Q ?u) (= Q ?y))))
+	      (& (= P ?ê) (! (= Q ?u)))
+	      (& (= P ?ô) (! (= Q ?i)))
+	      (& (= P ?ơ) (! (| (= Q ?i) (= Q ?u))))))
+  (cond ((& (! BAD) V-3)
+	 (set X V-3) (base-x) (set R X)
+	 (set X P) (base-x) (set P X)
+	 (set X Q) (base-x) (set Q X)
+	 ;; After gi and qu the first vowel letter is part of the consonant.
+	 (set GQ (| (& (| (= C ?g) (= C ?G)) (= R ?i))
+		    (& (| (= C ?q) (= C ?Q)) (= R ?u))))
+	 (set BAD (& (! GQ)
+		     (! (| (& (= R ?i) (= P ?e) (= Q ?u))
+			   (& (= R ?y) (= P ?e) (= Q ?u))
+			   (& (= R ?o) (= P ?a) (| (= Q ?i) (= Q ?y) (= Q ?o)))
+			   (& (= R ?o) (= P ?e) (= Q ?o))
+			   (& (= R ?u) (= P ?a) (= Q ?y))
+			   (& (= R ?u) (= P ?o) (| (= Q ?i) (= Q ?u)))
+			   (& (= R ?u) (= P ?y) (| (= Q ?a) (= Q ?e) (= Q ?u))))))))))
+
  ;; BAD is 1 if no final consonant can follow the vowels typed
  ;; (using, axit, virut).  Exceptions: quít, giun, giòn.
  (check-final
@@ -210,15 +249,18 @@ If the value is 1, Backspace key undoes the previous key
 		   (| (= V-1 ?e) (= V-1 ?E) (= V-1 ?a) (= V-1 ?A)))
 		(set KEY 0)))
 	 (late-mark)
-	 (cond (K (delete @-) (handle-mark))
+	 (cond (K (delete @-) (handle-mark) (check-vowels))
 	       (1 (check-vowel-pair)
-		  (cond (BAD (restore-keys)) (1 (add-vowel))))))
+		  (cond ((! BAD) (add-vowel) (check-vowels)))))
+	 (cond (BAD (restore-keys))))
   (vowel-ext (set KEY @-1) (late-mark)
-	     (cond (K (delete @-) (handle-mark))
+	     (cond (K (delete @-) (handle-mark) (check-vowels)
+		      (cond (BAD (restore-keys))))
 		   ;; No Vietnamese word has ư before ê (tweet).
 		   ((& (| (= @-1 ?ê) (= @-1 ?Ê)) (| (= V-1 ?ư) (= V-1 ?Ư)))
 		    (restore-keys))
-		   (1 (w-after-vowel))))
+		   (1 (w-after-vowel) (check-vowels)
+		      (cond (BAD (restore-keys))))))
   ;; k ends place names such as Đắk Lắk, Krông Búk and Srê Pốk, after a
   ;; single a, ă, ô or u only, so that disk or work stay English.
   (ending-1st-notviet-consonant

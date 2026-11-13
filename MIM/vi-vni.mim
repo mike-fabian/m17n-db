@@ -51,9 +51,13 @@ If the value is 1, Backspace key undoes the previous key
 (include (t nil vi-base) map)
 
 (macro
+ ;; Drop the marks put so far and replay every key of this word as is.
+ ;; Replaying a Backspace undoes it and drops the keys after it, so
+ ;; once one was typed in this word keep the text and add the last key
+ ;; as is.
  (restore-keys
-  ;; Drop the marks put so far and replay every key of this word as is.
-  (delete @<) (shift restore) (pushback 0))
+  (cond (BSEEN (delete @-) (shift restore) (pushback 1))
+	(1 (delete @<) (shift restore) (pushback 0))))
 
  ;; STOP is 1 if the final consonant typed is c, ch, p or t, which take
  ;; only the acute and the dot below.  BAD is 1 if the tone does not fit.
@@ -114,7 +118,9 @@ If the value is 1, Backspace key undoes the previous key
   ;; (N-1)th vowel from the last.  C-AFTER-V is a number of consonants
   ;; typed after vowel.  NST is 1 iff surrounding text is not supported.
   (t (set C @-1) (set V-1 0) (set V-2 0) (set V-3 0) (set C-AFTER-V 0)
-     (set SELECT 0) (set STOP 0) (set NST (= @-0 -2)))
+     (set SELECT 0) (set STOP 0) (set NST (= @-0 -2))
+     ;; Backspace may have emptied the word without ending it.
+     (cond ((! KEEP-BSEEN) (set BSEEN 0))) (set KEEP-BSEEN 0))
 
   (consonant (set C @-1) (cond (NST (shift after-c))))
   ;; No Vietnamese word starts with a digit (12a1, 4g).
@@ -150,12 +156,12 @@ If the value is 1, Backspace key undoes the previous key
   (vowel-ext (w-after-vowel))
   (late-mark-key (late-mark-or-commit))
   (tone-mark (delete @-) (pushback 1) (shift after-t))
-  (backspace (delete @-)
+  (backspace (delete @-) (set BSEEN 1)
 	     (cond (V-3 (set V-1 V-2) (set V-2 V-3) (set V-3 0)
 			(cond ((> TPLACE 2) (set SELECT 0))))
 		   (V-2 (set V-1 V-2) (set V-2 0)
 			(cond ((> TPLACE 1) (set SELECT 0))))
-		   (1 (shift init)))))
+		   (1 (set KEEP-BSEEN 1) (shift init)))))
 
  ;; The state shifted to when a consonant is typed after a vowel.
  (after-vc
@@ -170,7 +176,7 @@ If the value is 1, Backspace key undoes the previous key
   (consonant-ext (restore-keys))
   (late-mark-key (late-mark-or-commit))
   (tone-mark (delete @-) (pushback 1) (shift after-t))
-  (backspace (delete @-)
+  (backspace (delete @-) (set BSEEN 1)
 	     (sub C-AFTER-V 1)
 	     (cond ((= C-AFTER-V 0) (shift after-v)))))
 

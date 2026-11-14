@@ -118,7 +118,8 @@ If the value is 1, Backspace key undoes the previous key
   (set STOP (| (= P ?c) (= P ?p) (= P ?t) (= P ?k)))
   (cond ((! BAD) (check-stop-tone)))
   (cond (BAD (restore-keys))
-	(1 (fix-uo-before-consonant) (handle-mark) (shift after-vc)))))
+	(1 (fix-uo-before-consonant) (handle-mark)
+	   (set C-AFTER-V 1) (shift after-vc)))))
 
 (map
  (vowel-ext
@@ -247,7 +248,6 @@ If the value is 1, Backspace key undoes the previous key
 
  ;; The state shifted to when a consonant is typed after a vowel.
  (after-vc
-  (t (set C-AFTER-V 1))
   (ending-2nd-consonant
    (cond ((| (= @-2 ?n) (= @-2 ?c) ; 1st ending consonant must be n/c
              (= @-2 ?N) (= @-2 ?C)) (add C-AFTER-V 1))

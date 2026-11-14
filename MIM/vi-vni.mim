@@ -69,12 +69,26 @@ If the value is 1, Backspace key undoes the previous key
 	       (= @-1 ?C) (= @-1 ?P) (= @-1 ?T) (= @-1 ?K)))
   (check-stop-tone)
   (cond (BAD (restore-keys))
-	(1 (fix-uo-before-consonant) (handle-mark) (shift after-vc))))
+	(1 (fix-uo-before-consonant) (handle-mark)
+	   (set C-AFTER-V 1) (shift after-vc))))
+
+ ;; BAD is 1 unless the vowel before a final k is a single a, ă, ô or u.
+ (check-final-k
+  (set BAD (! (& (= V-2 0)
+		 (| (= V-1 ?a) (= V-1 ?A) (= V-1 ?ă) (= V-1 ?Ă)
+		    (= V-1 ?ô) (= V-1 ?Ô) (= V-1 ?u) (= V-1 ?U))))))
 
  ;; Without a vowel to mark, the key ends the word as before.
  (late-mark-or-commit
   (late-mark)
-  (cond (K (handle-mark)) (1 (pushback 1) (shift init)))))
+  (cond (K (handle-mark)) (1 (pushback 1) (shift init))))
+
+ ;; A late mark may change the vowel before a final k (ak6 -> âk).
+ (late-mark-after-final
+  (late-mark-or-commit)
+  (cond ((& K (| (= @-1 ?k) (= @-1 ?K)))
+	 (check-final-k)
+	 (cond (BAD (restore-keys)))))))
 
 (map
  (vowel-ext
@@ -144,9 +158,11 @@ If the value is 1, Backspace key undoes the previous key
   (ending-1st-consonant (final-consonant))
   ;; k ends place names such as Đắk Lắk and Srê Pốk, after a single a,
   ;; ă, ô or u only; other letters cannot end a word (web2, covid19).
+  ;; An o may still take a late 6 (pok61 -> pốk).
   (ending-1st-notviet-consonant
    (cond ((& (| (= @-1 ?k) (= @-1 ?K)) (= V-2 0)
 	     (| (= V-1 ?a) (= V-1 ?A) (= V-1 ?ă) (= V-1 ?Ă)
+		(= V-1 ?o) (= V-1 ?O)
 		(= V-1 ?ô) (= V-1 ?Ô) (= V-1 ?u) (= V-1 ?U)))
 	  (final-consonant))
 	 (1 (restore-keys))))
@@ -165,20 +181,20 @@ If the value is 1, Backspace key undoes the previous key
 
  ;; The state shifted to when a consonant is typed after a vowel.
  (after-vc
-  (t (set C-AFTER-V 1))
   ;; The only final consonant pairs are ng, nh and ch.
   (ending-2nd-consonant
    (cond ((| (= @-2 ?n) (= @-2 ?N))
 	  (add C-AFTER-V 1) (set STOP 0) (handle-mark))
-	 ((| (= @-2 ?c) (= @-2 ?C)) (add C-AFTER-V 1) (handle-mark))
+	 ((& (| (= @-2 ?c) (= @-2 ?C)) (| (= @-1 ?h) (= @-1 ?H)))
+	  (add C-AFTER-V 1) (handle-mark))
 	 (1 (restore-keys))))
   (consonant (restore-keys))
   (consonant-ext (restore-keys))
-  (late-mark-key (late-mark-or-commit))
+  (late-mark-key (late-mark-after-final))
   (tone-mark (delete @-) (pushback 1) (shift after-t))
   (backspace (delete @-) (set BSEEN 1)
 	     (sub C-AFTER-V 1)
-	     (cond ((= C-AFTER-V 0) (shift after-v)))))
+	     (cond ((= C-AFTER-V 0) (set STOP 0) (shift after-v)))))
 
  ;; The state shifted to when a tone-mark is typed.
  (after-t

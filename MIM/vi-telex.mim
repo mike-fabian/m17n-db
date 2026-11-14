@@ -51,9 +51,17 @@ If the value is 1, Backspace key undoes the previous key
 (include (t nil vi-base) map)
 
 (macro
+ ;; Drop the marks put so far and replay every key of this word as is.
+ ;; Replaying a Backspace undoes it and drops the keys after it, so
+ ;; once one was typed in this word keep the text and add the last key
+ ;; as is (tang, Backspace, k gives tank).  The key's letter is in the
+ ;; preedit; restore-keys-no-char is for a key that inserted nothing.
  (restore-keys
-  ;; Drop the marks put so far and replay every key of this word as is.
-  (delete @<) (shift restore) (pushback 0))
+  (cond (BSEEN (delete @-) (shift restore) (pushback 1))
+	(1 (delete @<) (shift restore) (pushback 0))))
+ (restore-keys-no-char
+  (cond (BSEEN (shift restore) (pushback 1))
+	(1 (delete @<) (shift restore) (pushback 0))))
 
  ;; Lowercase the letters in P and Q.
  (lower-pq
@@ -212,7 +220,9 @@ If the value is 1, Backspace key undoes the previous key
   ;; (N-1)th vowel from the last.  C-AFTER-V is a number of consonants
   ;; typed after vowel.  NST is 1 iff surrounding text is not supported.
   (t (set C @-1) (set V-1 0) (set V-2 0) (set V-3 0) (set C-AFTER-V 0)
-     (set SELECT 0) (set NST (= @-0 -2)))
+     (set SELECT 0) (set NST (= @-0 -2))
+     ;; Backspace may have emptied the word without ending it.
+     (cond ((! KEEP-BSEEN) (set BSEEN 0))) (set KEEP-BSEEN 0))
 
   (consonant (check-initial)
 	     (cond (BAD (shift temporary-escape))
@@ -251,13 +261,13 @@ If the value is 1, Backspace key undoes the previous key
 		   (| (= V-1 ?e) (= V-1 ?E) (= V-1 ?a) (= V-1 ?A)))
 		(set KEY 0)))
 	 (late-mark)
-	 (cond (K (delete @-) (handle-mark) (check-vowels))
+	 (cond (K (check-vowels) (cond ((! BAD) (delete @-) (handle-mark))))
 	       (1 (check-vowel-pair)
 		  (cond ((! BAD) (add-vowel) (check-vowels)))))
 	 (cond (BAD (restore-keys))))
   (vowel-ext (set KEY @-1) (late-mark)
-	     (cond (K (delete @-) (handle-mark) (check-vowels)
-		      (cond (BAD (restore-keys))))
+	     (cond (K (check-vowels)
+		      (cond (BAD (restore-keys)) (1 (delete @-) (handle-mark))))
 		   ;; No Vietnamese word has ư before ê (tweet).
 		   ((& (| (= @-1 ?ê) (= @-1 ?Ê)) (| (= V-1 ?ư) (= V-1 ?Ư)))
 		    (restore-keys))
@@ -272,14 +282,14 @@ If the value is 1, Backspace key undoes the previous key
 	  (final-consonant))
 	 (1 (restore-keys))))
   (consonant-or-tone-mark (delete @-) (pushback 1) (shift after-t))
-  (backspace (delete @-)
+  (backspace (delete @-) (set BSEEN 1)
 	     (cond (V-3 (set V-1 V-2) (set V-2 V-3) (set V-3 0)
 			(cond ((> TPLACE 2) (set SELECT 0)))
 			(handle-mark))
 		   (V-2 (set V-1 V-2) (set V-2 0)
 			(cond ((> TPLACE 1) (set SELECT 0)))
 			(handle-mark))
-		   (1 (shift init)))))
+		   (1 (set KEEP-BSEEN 1) (shift init)))))
 
  ;; The state shifted to when a consonant is typed after a vowel.
  (after-vc
@@ -298,11 +308,11 @@ If the value is 1, Backspace key undoes the previous key
   ;; There can only be one main vowel in a word, but a circumflex,
   ;; breve or horn key may still mark it (vietej -> việt).
   (late-mark-key (late-mark)
-		 (cond (K (handle-mark)) (1 (restore-keys))))
+		 (cond (K (handle-mark)) (1 (restore-keys-no-char))))
   (vowel (restore-keys))
   ;; The only final consonant pairs are ng, nh, ch (internet, tennis).
   (consonant (restore-keys))
-  (backspace (delete @-)
+  (backspace (delete @-) (set BSEEN 1)
 	     (sub C-AFTER-V 1)
 	     (handle-mark)
 	     (cond ((= C-AFTER-V 0) (shift after-v)))))

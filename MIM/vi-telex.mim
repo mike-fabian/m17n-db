@@ -148,10 +148,19 @@ If the value is 1, Backspace key undoes the previous key
 		 (& (= P ?y) (| (= Q ?a) (= Q ?â) (= Q ?Â)))
 		 (& (= P ?a) (= Q ?ư))))))
 
+ ;; BAD is 1 if the tone cannot go with a final c, ch, p, t or k, which
+ ;; take only the acute and the dot below (text, part, soft).
+ (check-stop-tone
+  (set BAD (& STOP (> SELECT 1) (< SELECT 5))))
+
  (final-consonant
   (check-final)
+  (set P @-1) (set Q 0) (lower-pq)
+  (set STOP (| (= P ?c) (= P ?p) (= P ?t) (= P ?k)))
+  (cond ((! BAD) (check-stop-tone)))
   (cond (BAD (restore-keys))
-	(1 (fix-uo-before-consonant) (handle-mark) (shift after-vc)))))
+	(1 (fix-uo-before-consonant) (handle-mark)
+	   (set C-AFTER-V 1) (shift after-vc)))))
 
 (map
  (vowel-ext
@@ -212,7 +221,7 @@ If the value is 1, Backspace key undoes the previous key
   ;; (N-1)th vowel from the last.  C-AFTER-V is a number of consonants
   ;; typed after vowel.  NST is 1 iff surrounding text is not supported.
   (t (set C @-1) (set V-1 0) (set V-2 0) (set V-3 0) (set C-AFTER-V 0)
-     (set SELECT 0) (set NST (= @-0 -2)))
+     (set SELECT 0) (set STOP 0) (set NST (= @-0 -2)))
 
   (consonant (check-initial)
 	     (cond (BAD (shift temporary-escape))
@@ -283,7 +292,6 @@ If the value is 1, Backspace key undoes the previous key
 
  ;; The state shifted to when a consonant is typed after a vowel.
  (after-vc
-  (t (set C-AFTER-V 1))
   (ending-2nd-consonant
    (cond ((| (= @-2 ?n) (= @-2 ?c) ; 1st ending consonant must be n/c
              (= @-2 ?N) (= @-2 ?C))
@@ -305,14 +313,17 @@ If the value is 1, Backspace key undoes the previous key
   (backspace (delete @-)
 	     (sub C-AFTER-V 1)
 	     (handle-mark)
-	     (cond ((= C-AFTER-V 0) (shift after-v)))))
+	     (cond ((= C-AFTER-V 0) (set STOP 0) (shift after-v)))))
 
  ;; The state shifted to when a tone-mark is typed.
  (after-t
   (t (set CURRENT-SELECT -1))
   (tone-mark (cond ((= CURRENT-SELECT SELECT) (move T) (select 0) (move @>)
 		    (shift temporary-escape))
-		   (1 (delete @-) (handle-mark) (set CURRENT-SELECT SELECT))))
+		   (1 (check-stop-tone)
+		      (cond (BAD (restore-keys))
+			    (1 (delete @-) (handle-mark)
+			       (set CURRENT-SELECT SELECT))))))
   (nil (cond (C-AFTER-V (shift after-vc))
 	     (1 (shift after-v)))))
 

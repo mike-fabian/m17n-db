@@ -53,7 +53,7 @@ If the value is 1, Backspace key undoes the previous key
 (macro
  (restore-keys
   ;; Drop the marks put so far and replay every key of this word as is.
-  (delete @<) (shift restore) (pushback 0))
+  (delete @<) (cond (D-MOVED (insert D-MOVED))) (shift restore) (pushback 0))
 
  ;; Lowercase the letters in P and Q.
  (lower-pq
@@ -151,7 +151,28 @@ If the value is 1, Backspace key undoes the previous key
  (final-consonant
   (check-final)
   (cond (BAD (restore-keys))
-	(1 (fix-uo-before-consonant) (handle-mark) (shift after-vc)))))
+	(1 (fix-uo-before-consonant) (handle-mark) (shift after-vc))))
+
+ ;; A d typed after the vowels makes an initial d into đ (did -> đi,
+ ;; dangd -> đang), and a second one makes it d again (didd -> did).
+ (late-d
+  ;; With surrounding text the initial was committed, and is moved into
+  ;; the preedit here; D-MOVED keeps it for restore-keys.
+  (move @<)
+  (cond ((| NST D-MOVED) (move @+)))
+  (set P @-1) (set Q @-2)
+  (cond ((| (& (>= Q ?A) (<= Q ?Z)) (& (>= Q ?a) (<= Q ?z)) (>= Q 192))
+	 (move @>) (restore-keys))
+	((| (= P ?d) (= P ?D))
+	 (cond ((! NST) (set D-MOVED P)))
+	 (delete @-1)
+	 (cond ((= P ?d) (insert ?đ) (set C ?đ)) (1 (insert ?Đ) (set C ?Đ)))
+	 (move @>))
+	((| (= P ?đ) (= P ?Đ))
+	 (delete @-1)
+	 (cond ((= P ?đ) (insert ?d)) (1 (insert ?D)))
+	 (move @>) (insert KEY) (shift temporary-escape))
+	(1 (move @>) (restore-keys)))))
 
 (map
  (vowel-ext
@@ -187,6 +208,9 @@ If the value is 1, Backspace key undoes the previous key
   ("a" (set KEY ?a)) ("e" (set KEY ?e)) ("o" (set KEY ?o)) ("w" (set KEY ?w))
   ("A" (set KEY ?A)) ("E" (set KEY ?E)) ("O" (set KEY ?O)) ("W" (set KEY ?W)))
 
+ (late-d-key
+  ("d" (set KEY ?d)) ("D" (set KEY ?D)))
+
  (consonant-or-tone-mark
   ("z" ?z) ("s" ?s) ("f" ?f) ("r" ?r) ("x" ?x) ("j" ?j)
   ("Z" ?Z) ("S" ?S) ("F" ?F) ("R" ?R) ("X" ?X) ("J" ?J))
@@ -212,7 +236,7 @@ If the value is 1, Backspace key undoes the previous key
   ;; (N-1)th vowel from the last.  C-AFTER-V is a number of consonants
   ;; typed after vowel.  NST is 1 iff surrounding text is not supported.
   (t (set C @-1) (set V-1 0) (set V-2 0) (set V-3 0) (set C-AFTER-V 0)
-     (set SELECT 0) (set NST (= @-0 -2)))
+     (set SELECT 0) (set D-MOVED 0) (set NST (= @-0 -2)))
 
   (consonant (check-initial)
 	     (cond (BAD (shift temporary-escape))
@@ -244,6 +268,7 @@ If the value is 1, Backspace key undoes the previous key
 
  ;; The state shifted to when a vowel is typed.
  (after-v
+  (late-d-key (late-d))
   (ending-1st-consonant (final-consonant)) ; toans/toasn->toán
   (vowel (set KEY @-1)
 	 ;; "oeo" and "oao" are vowels of their own (ngoẻo).
@@ -284,6 +309,7 @@ If the value is 1, Backspace key undoes the previous key
  ;; The state shifted to when a consonant is typed after a vowel.
  (after-vc
   (t (set C-AFTER-V 1))
+  (late-d-key (late-d))
   (ending-2nd-consonant
    (cond ((| (= @-2 ?n) (= @-2 ?c) ; 1st ending consonant must be n/c
              (= @-2 ?N) (= @-2 ?C))

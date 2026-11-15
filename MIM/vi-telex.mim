@@ -52,16 +52,23 @@ If the value is 1, Backspace key undoes the previous key
 
 (macro
  ;; Drop the marks put so far and replay every key of this word as is.
- ;; Replaying a Backspace undoes it and drops the keys after it, so
- ;; once one was typed in this word keep the text and add the last key
- ;; as is (tang, Backspace, k gives tank).  The key's letter is in the
+ ;; Once Backspace was typed in this word, keep the text and add only
+ ;; the last key as is (tang, Backspace, k gives tank): replayed as
+ ;; letters, a Backspace would delete a tone key instead of the letter
+ ;; it deleted (vieetj, Backspace, k).  The key's letter is in the
  ;; preedit; restore-keys-no-char is for a key that inserted nothing.
  (restore-keys
   (cond (BSEEN (delete @-) (shift restore) (pushback 1))
-	(1 (delete @<) (shift restore) (pushback 0))))
+	(1 (restore-all-keys))))
+ ;; For a key that already changed a letter before it (a i Backspace i a
+ ;; turns the first a into â, ee makes one ê of two keys), keeping the
+ ;; text would keep that change, so every key is replayed; REPLAY-END
+ ;; tells a replayed Backspace from one typed afterwards.
+ (restore-all-keys
+  (set REPLAY-END @@) (delete @<) (shift restore) (pushback 0))
  (restore-keys-no-char
   (cond (BSEEN (shift restore) (pushback 1))
-	(1 (delete @<) (shift restore) (pushback 0))))
+	(1 (restore-all-keys))))
 
  ;; Lowercase the letters in P and Q.
  (lower-pq
@@ -273,15 +280,15 @@ If the value is 1, Backspace key undoes the previous key
 	 (cond (K (check-vowels) (cond ((! BAD) (delete @-) (handle-mark))))
 	       (1 (check-vowel-pair)
 		  (cond ((! BAD) (add-vowel) (check-vowels)))))
-	 (cond (BAD (restore-keys))))
+	 (cond (BAD (cond (K (restore-all-keys)) (1 (restore-keys))))))
   (vowel-ext (set KEY @-1) (late-mark)
 	     (cond (K (check-vowels)
-		      (cond (BAD (restore-keys)) (1 (delete @-) (handle-mark))))
+		      (cond (BAD (restore-all-keys)) (1 (delete @-) (handle-mark))))
 		   ;; No Vietnamese word has ư before ê (tweet).
 		   ((& (| (= @-1 ?ê) (= @-1 ?Ê)) (| (= V-1 ?ư) (= V-1 ?Ư)))
-		    (restore-keys))
+		    (restore-all-keys))
 		   (1 (w-after-vowel) (check-vowels)
-		      (cond (BAD (restore-keys))))))
+		      (cond (BAD (restore-all-keys))))))
   ;; k ends place names such as Đắk Lắk, Krông Búk and Srê Pốk, after a
   ;; single a, ă, ô or u only, so that disk or work stay English.
   (ending-1st-notviet-consonant
@@ -348,7 +355,10 @@ If the value is 1, Backspace key undoes the previous key
  (restore
   "en"
   (alnum)
-  (backspace (cond ((= backspace-is-undo 0) (undo)))))
+  ;; A replayed Backspace deletes the letter before it, as it did when
+  ;; typed; undoing it would drop the keys still to be replayed.
+  (backspace (cond ((< @@ REPLAY-END) (delete @-))
+		   ((= backspace-is-undo 0) (undo)))))
 
  (escape-in-normal-mode
   "EN"

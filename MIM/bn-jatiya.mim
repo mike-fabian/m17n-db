@@ -1,0 +1,240 @@
+;; bn-Jatiya.mim -- Bengali input method simulating Jatiya keyboard.
+;; Standardise by - 
+;; Bangladesh Standards and Testing Institution (BSTI)
+;; BDS 1738:2018
+;;
+;; Adapted for logical Unicode ordering by Ekushey <https://github.com/ekushey-org>
+;; Copyright (C) 2026 Ekushey <https://ekushey.org>
+
+;; This file is part of the m17n database; a sub-part of the m17n
+;; library.
+
+;; The m17n library is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU Lesser General Public License
+;; as published by the Free Software Foundation; either version 2.1 of
+;; the License, or (at your option) any later version.
+
+;; The m17n library is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with the m17n library; if not, write to the Free
+;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+(input-method bn jatiya)
+
+(description "Bengali input method simulating Jatiya Bangla Standard Layout.
+  <https://github.com/ekushey-org/bangla-bsti-m17n>
+")
+
+(title "অ")
+
+(map
+ (livekey
+  ;; =========================================================================
+  ;; 1. Base & Shift Keys (Columns 0 & 1 from Windows .klc)
+  ;; =========================================================================
+
+  ;; Number Row (Normal)
+  ("`" "‘")   ;; U+2018 LEFT SINGLE QUOTATION MARK
+  ("1" "১")   ;; U+09E7 BENGALI DIGIT ONE
+  ("2" "২")   ;; U+09E8 BENGALI DIGIT TWO
+  ("3" "৩")   ;; U+09E9 BENGALI DIGIT THREE
+  ("4" "৪")   ;; U+09EA BENGALI DIGIT FOUR
+  ("5" "৫")   ;; U+09EB BENGALI DIGIT FIVE
+  ("6" "৬")   ;; U+09EC BENGALI DIGIT SIX
+  ("7" "৭")   ;; U+09ED BENGALI DIGIT SEVEN
+  ("8" "৮")   ;; U+09EE BENGALI DIGIT EIGHT
+  ("9" "৯")   ;; U+09EF BENGALI DIGIT NINE
+  ("0" "০")   ;; U+09E6 BENGALI DIGIT ZERO
+  ("-" "-")   ;; U+002D HYPHEN-MINUS
+  ("=" "=")   ;; U+003D EQUALS SIGN
+
+  ;; Number Row (Shift)
+  ("~" "“")   ;; U+201C LEFT DOUBLE QUOTATION MARK
+  ("!" "!")   ;; U+0021 EXCLAMATION MARK
+  ("@" "@")   ;; U+0040 COMMERCIAL AT
+  ("#" "#")   ;; U+0023 NUMBER SIGN
+  ("$" "৳")   ;; U+09F3 BENGALI RUPEE SIGN
+  ("%" "%")   ;; U+0025 PERCENT SIGN
+  ("^" "×")   ;; U+00D7 MULTIPLICATION SIGN
+  ("&" "ঁ")   ;; U+0981 BENGALI SIGN CANDRABINDU
+  ("*" "*")   ;; U+002A ASTERISK
+  ("(" "(")   ;; U+0028 LEFT PARENTHESIS
+  (")" ")")   ;; U+0029 RIGHT PARENTHESIS
+  ("_" "_")   ;; U+005F LOW LINE
+  ("+" "+")   ;; U+002B PLUS SIGN
+
+  ;; Top Row (Normal)
+  ("q" "ঙ")   ;; U+0999 BENGALI LETTER NGA
+  ("w" "য")   ;; U+09AF BENGALI LETTER YA
+  ("e" "ড")   ;; U+09A1 BENGALI LETTER DDA
+  ("r" "প")   ;; U+09AA BENGALI LETTER PA
+  ("t" "ট")   ;; U+099F BENGALI LETTER TTA
+  ("y" "চ")   ;; U+099A BENGALI LETTER CA
+  ("u" "জ")   ;; U+099C BENGALI LETTER JA
+  ("i" "হ")   ;; U+09B9 BENGALI LETTER HA
+  ("o" "গ")   ;; U+0997 BENGALI LETTER GA
+  ("p" "ড়")  ;; U+09DC BENGALI LETTER RRA
+  ("[" "[")   ;; U+005B LEFT SQUARE BRACKET
+  ("]" "]")   ;; U+005D RIGHT SQUARE BRACKET
+  ("\\" "ৎ")  ;; U+09CE BENGALI LETTER KHANDA TA
+
+  ;; Top Row (Shift)
+  ("Q" "ং")   ;; U+0982 BENGALI SIGN ANUSVARA
+  ("W" "য়")  ;; U+09DF BENGALI LETTER YYA
+  ("E" "ঢ")   ;; U+09A2 BENGALI LETTER DDHA
+  ("R" "ফ")   ;; U+09AB BENGALI LETTER PHA
+  ("T" "ঠ")   ;; U+09A0 BENGALI LETTER TTHA
+  ("Y" "ছ")   ;; U+099B BENGALI LETTER CHA
+  ("U" "ঝ")   ;; U+099D BENGALI LETTER JHA
+  ("I" "ঞ")   ;; U+099E BENGALI LETTER NYA
+  ("O" "ঘ")   ;; U+0998 BENGALI LETTER GHA
+  ("P" "ঢ়")  ;; U+09DD BENGALI LETTER RHA
+  ("{" "{") ;; U+007B LEFT CURLY BRACKET
+  ("}" "}") ;; U+007D RIGHT CURLY BRACKET
+  ("|" "ঃ")   ;; U+0983 BENGALI SIGN VISARGA
+
+  ;; Home Row (Normal)
+  ("a" "ৃ")   ;; U+09C3 BENGALI VOWEL SIGN VOCALIC R
+  ("s" "ু")   ;; U+09C1 BENGALI VOWEL SIGN U
+  ("d" "ি")   ;; U+09BF BENGALI VOWEL SIGN I
+  ("f" "া")   ;; U+09BE BENGALI VOWEL SIGN AA
+  ("h" "ব")   ;; U+09AC BENGALI LETTER BA
+  ("j" "ক")   ;; U+0995 BENGALI LETTER KA
+  ("k" "ত")   ;; U+09A4 BENGALI LETTER TA
+  ("l" "দ")   ;; U+09A6 BENGALI LETTER DA
+  (";" ";")   ;; U+003B SEMICOLON
+  ("'" "’")   ;; U+2019 RIGHT SINGLE QUOTATION MARK
+
+  ;; Home Row (Shift)
+  ("A" "র্")  ;; U+09B0 + U+09CD (BENGALI LETTER RA + VIRAMA)
+  ("S" "ূ")   ;; U+09C2 BENGALI VOWEL SIGN UU
+  ("D" "ী")   ;; U+09C0 BENGALI VOWEL SIGN II
+  ("F" "অ")   ;; U+0985 BENGALI LETTER A
+  ("G" "।")   ;; U+0964 DEVANAGARI DANDA
+  ("H" "ভ")   ;; U+09AD BENGALI LETTER BHA
+  ("J" "খ")   ;; U+0996 BENGALI LETTER KHA
+  ("K" "থ")   ;; U+09A5 BENGALI LETTER THA
+  ("L" "ধ")   ;; U+09A7 BENGALI LETTER DHA
+  (":" ":")   ;; U+003A COLON
+  ("\"" "”")  ;; U+201D RIGHT DOUBLE QUOTATION MARK
+
+  ;; Bottom Row (Normal)
+  ("z" "্র")  ;; U+09CD + U+09B0 (VIRAMA + BENGALI LETTER RA)
+  ("x" "ো")   ;; U+09CB BENGALI VOWEL SIGN O
+  ("c" "ে")   ;; U+09C7 BENGALI VOWEL SIGN E
+  ("v" "র")   ;; U+09B0 BENGALI LETTER RA
+  ("b" "ন")   ;; U+09A8 BENGALI LETTER NA
+  ("n" "স")   ;; U+09B8 BENGALI LETTER SA
+  ("m" "ম")   ;; U+09AE BENGALI LETTER MA
+  ("," ",")   ;; U+002C COMMA
+  ("." ".")   ;; U+002E FULL STOP
+  ("/" "/")   ;; U+002F SOLIDUS
+
+  ;; Bottom Row (Shift)
+  ("Z" "্য")  ;; U+09CD + U+09AF (VIRAMA + BENGALI LETTER YA)
+  ("X" "ৌ")   ;; U+09CC BENGALI VOWEL SIGN AU
+  ("C" "ৈ")   ;; U+09C8 BENGALI VOWEL SIGN AI
+  ("V" "ল")   ;; U+09B2 BENGALI LETTER LA
+  ("B" "ণ")   ;; U+09A3 BENGALI LETTER NNA
+  ("N" "ষ")   ;; U+09B7 BENGALI LETTER SSA
+  ("M" "শ")   ;; U+09B6 BENGALI LETTER SHA
+  ("<" "<")   ;; U+003C LESS-THAN SIGN
+  (">" ">")   ;; U+003E GREATER-THAN SIGN
+  ("?" "?")   ;; U+003F QUESTION MARK
+
+  ;; =========================================================================
+  ;; 2. AltGr / Alt / Ctrl+Alt Mappings (Column 8 / Mod 4 + LIGATURE in .klc)
+  ;;    Supports G- (AltGr), A- (Alt), and C-A- (Ctrl+Alt) simultaneously
+  ;; =========================================================================
+
+  ;; Symbols & Joiners
+  ((G-6) "÷")       ((A-6) "÷")       ((C-A-6) "÷")       ;; U+00F7 DIVISION SIGN
+  ((G-8) "°")       ((A-8) "°")       ((C-A-8) "°")       ;; U+00B0 DEGREE SIGN
+  ((G-\[) "‌") ((A-\[) "‌") ((C-A-\[) "‌") ;; U+200C ZERO WIDTH NON-JOINER
+  ((G-\]) "‍")  ((A-\]) "‍")  ((C-A-\]) "‍")  ;; U+200D ZERO WIDTH JOINER
+  ((G-g) "্")       ((A-g) "্")       ((C-A-g) "্")       ;; Non-deadkey Virama fallback
+
+  ;; Ligatures (Conjuncts on AltGr)
+  ((G-q) "ঙ্ক")     ((A-q) "ঙ্ক")     ((C-A-q) "ঙ্ক")     ;; 0999 + 09CD + 0995 (ঙ + ্ + ক)
+  ((G-y) "ঞ্চ")     ((A-y) "ঞ্চ")     ((C-A-y) "ঞ্চ")     ;; 099E + 09CD + 099A (ঞ + ্ + চ)
+  ((G-u) "ঞ্জ")     ((A-u) "ঞ্জ")     ((C-A-u) "ঞ্জ")     ;; 099E + 09CD + 099C (ঞ + ্ + জ)
+  ((G-i) "জ্ঞ")     ((A-i) "জ্ঞ")     ((C-A-i) "জ্ঞ")     ;; 099C + 09CD + 099E (জ + ্ + ঞ)
+  ((G-o) "ঙ্গ")     ((A-o) "ঙ্গ")     ((C-A-o) "ঙ্গ")     ;; 0999 + 09CD + 0997 (ঙ + ্ + গ)
+  ((G-j) "ক্ষ")     ((A-j) "ক্ষ")     ((C-A-j) "ক্ষ")     ;; 0995 + 09CD + 09B7 (ক + ্ + ষ)
+  ((G-v) "ব়্য")    ((A-v) "ব়্য")    ((C-A-v) "ব়্য")    ;; 09AC + 09BC + 09CD + 09AF (ব + ় + ্ + য)
+  ((G-b) "ঞ্চ")     ((A-b) "ঞ্চ")     ((C-A-b) "ঞ্চ")     ;; 099E + 09CD + 099A (ঞ + ্ + চ)
+  ((G-n) "ষ্ণ")     ((A-n) "ষ্ণ")     ((C-A-n) "ষ্ণ")     ;; 09B7 + 09CD + 09A3 (ষ + ্ + ণ)
+  ((G-m) "হ্ম")     ((A-m) "হ্ম")     ((C-A-m) "হ্ম")     ;; 09B9 + 09CD + 09AE (হ + ্ + ম)
+ )
+
+ ;; ===========================================================================
+ ;; 3. Deadkey '09cd' (Pressing 'g' then next key -> DEADKEY 09cd in .klc)
+ ;; ===========================================================================
+ (deadkey
+  ("g" "্") ;; U+09CD BENGALI SIGN VIRAMA
+ )
+
+ (independent
+  ;; Independent Vowels
+  ("f" (delete @-) "আ") ;; 09be (া) -> 0986 (আ)
+  ("d" (delete @-) "ই") ;; 09bf (ি) -> 0987 (ই)
+  ("D" (delete @-) "ঈ") ;; 09c0 (ী) -> 0988 (ঈ)
+  ("s" (delete @-) "উ") ;; 09c1 (ু) -> 0989 (উ)
+  ("S" (delete @-) "ঊ") ;; 09c2 (ূ) -> 098a (ঊ)
+  ("a" (delete @-) "ঋ") ;; 09c3 (ৃ) -> 098b (ঋ)
+  ("c" (delete @-) "এ") ;; 09c7 (ে) -> 098f (এ)
+  ("C" (delete @-) "ঐ") ;; 09c8 (ৈ) -> 0990 (ঐ)
+  ("x" (delete @-) "ও") ;; 09cb (ো) -> 0993 (ও)
+  ("X" (delete @-) "ঔ") ;; 09cc (ৌ) -> 0994 (ঔ)
+
+  ;; Punctuation, Currency Numerators & Historic/Assamese Characters
+  ("G" (delete @-) "॥") ;; 0964 (।) -> 0965 (॥)
+  ("`" (delete @-) "~") ;; 2018 (‘) -> 007e (~)
+  ("1" (delete @-) "৴") ;; 09e7 (১) -> 09f4 (৴)
+  ("!" (delete @-) "ঀ") ;; 0021 (!) -> 0980 (ঀ)
+  ("2" (delete @-) "৵") ;; 09e8 (২) -> 09f5 (৵)
+  ("3" (delete @-) "৶") ;; 09e9 (৩) -> 09f6 (৶)
+  ("#" (delete @-) "ঽ") ;; 0023 (#) -> 09bd (ঽ)
+  ("4" (delete @-) "৷") ;; 09ea (৪) -> 09f7 (৷)
+  ("$" (delete @-) "৲") ;; 09f3 (৳) -> 09f2 (৲)
+  ("5" (delete @-) "৸") ;; 09eb (৫) -> 09f8 (৸)
+  ("%" (delete @-) "ৄ") ;; 0025 (%) -> 09c4 (ৄ)
+  ("6" (delete @-) "৻") ;; 09ec (৬) -> 09fb (৻)
+  ("^" (delete @-) "ৠ") ;; 00d7 (×) -> 09e0 (ৠ)
+  ("7" (delete @-) "৺") ;; 09ed (৭) -> 09fa (৺)
+  ("&" (delete @-) "ৼ") ;; 0981 (ঁ) -> 09fc (ৼ)
+  ("8" (delete @-) "ৡ") ;; 09ee (৮) -> 09e1 (ৡ)
+  ("*" (delete @-) "ৣ") ;; 002a (*) -> 09e3 (ৣ)
+  ("9" (delete @-) "ঌ") ;; 09ef (৯) -> 098c (ঌ)
+  ("(" (delete @-) "ৢ") ;; 0028 (() -> 09e2 (ৢ)
+  ("0" (delete @-) "৹") ;; 09e6 (০) -> 09f9 (৹)
+  (")" (delete @-) "৽") ;; 0029 ()) -> 09fd (৽)
+  ("-" (delete @-) "÷") ;; 002d (-) -> 00f7 (÷)
+  ("," (delete @-) "ৰ") ;; 002c (,) -> 09f0 (ৰ)
+  ("." (delete @-) "ৱ") ;; 002e (.) -> 09f1 (ৱ)
+  ("<" (delete @-) "≤") ;; 003c (<) -> 2264 (≤)
+  (">" (delete @-) "≥") ;; 003e (>) -> 2265 (≥)
+  ("+" (delete @-) "≠") ;; 002b (+) -> 2260 (≠)
+  ("/" (delete @-) "়") ;; 002f (/) -> 09bc (়)
+  ("]" (delete @-) "ৗ") ;; 005d (]) -> 09d7 (ৗ)
+ ))
+
+(state
+ (init
+  (livekey)
+  (deadkey (shift virama)))
+
+ (virama
+  (independent (shift init))
+  (nil (shift init))))
+
+
+;; Local Variables:
+;; coding: utf-8
+;; mode: lisp
+;; End:

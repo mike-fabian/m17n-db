@@ -186,7 +186,11 @@ If the value is 1, Backspace key undoes the previous key
   (move @<)
   (cond ((| NST D-MOVED) (move @+)))
   (set P @-1) (set Q @-2)
-  (cond ((| (& (>= Q ?A) (<= Q ?Z)) (& (>= Q ?a) (<= Q ?z)) (>= Q 192))
+  ;; A letter before the d means it is not the initial; punctuation such
+  ;; as a curly quote or a dash does not.
+  (cond ((| (& (>= Q ?A) (<= Q ?Z)) (& (>= Q ?a) (<= Q ?z))
+	    (& (>= Q 192) (<= Q 591) (! (= Q 215)) (! (= Q 247)))
+	    (& (>= Q 768) (<= Q 1327)) (& (>= Q 7680) (<= Q 7935)))
 	 (move @>) (restore-keys))
 	((| (= P ?d) (= P ?D))
 	 (cond ((! NST) (set D-MOVED P)))

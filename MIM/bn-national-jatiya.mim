@@ -22,6 +22,16 @@
 
 (description "Bengali input method for National Jatiya layout.
 
+This layout implements the old, draft Bangladesh Standard BDS 1738:2004.
+Apparently this saw very limited adoption and is now considered obsolete.
+
+More recently, the Bangladesh Computer Council (BCC) and the
+Bangladesh Standards and Testing Institution (BSTI) officially
+standardised and published the updated national standard under
+BDS 1738:2018. This new, open, government-backed public standard
+layout is available in m17n-db as “bn-jatiya”. Consider
+using “bn-jatiya” instead of the legacy layout “bn-national-jatiya”.
+
 https://en.wikipedia.org/wiki/Bengali_input_methods#Bangla_Jatiyo
 
 Layout taken from

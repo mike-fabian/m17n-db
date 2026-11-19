@@ -81,9 +81,11 @@ If the value is 1, Backspace key undoes the previous key
 
  ;; BAD is 1 if the last two letters start English words only (show,
  ;; class, smart).  Pairs found in names from the Central Highlands
- ;; (Krông, Hmông, Pleiku, Stiêng) are not listed.
+ ;; (Krông, Hmông, Pleiku, Stiêng) are not listed.  The previous letter
+ ;; comes from C, not @-2: with surrounding text it was committed, and
+ ;; some apps (Firefox web pages) report the text from before that commit.
  (check-initial
-  (set P @-2) (set Q @-1) (lower-pq)
+  (cond (IC (set P C)) (1 (set P 0))) (set Q @-1) (lower-pq)
   (set BAD (| (& (= P ?s) (| (= Q ?h) (= Q ?c) (= Q ?k) (= Q ?m) (= Q ?n)
 			     (= Q ?p)))
 	      (& (| (= P ?c) (= P ?g)) (| (= Q ?l) (= Q ?r)))
@@ -264,28 +266,31 @@ If the value is 1, Backspace key undoes the previous key
   ;; Initialize variables.  C is the initial consonant.  V-N is the
   ;; (N-1)th vowel from the last.  C-AFTER-V is a number of consonants
   ;; typed after vowel.  NST is 1 iff surrounding text is not supported.
-  (t (set C @-1) (set V-1 0) (set V-2 0) (set V-3 0) (set C-AFTER-V 0)
+  ;; IC is 1 when C holds an initial consonant typed in this word.
+  (t (set V-1 0) (set V-2 0) (set V-3 0) (set C-AFTER-V 0)
      (set SELECT 0) (set STOP 0) (set D-MOVED 0) (set NST (= @-0 -2))
-     ;; Backspace may have emptied the word without ending it.
-     (cond ((! KEEP-BSEEN) (set BSEEN 0))) (set KEEP-BSEEN 0))
+     ;; Backspace may have emptied the word without ending it; the
+     ;; initial consonants typed so far then still count.
+     (cond ((! KEEP-BSEEN) (set C @-1) (set IC 0) (set BSEEN 0)))
+     (set KEEP-BSEEN 0))
 
   (consonant (check-initial)
 	     (cond (BAD (shift temporary-escape))
-		   (1 (set C @-1) (cond (NST (shift after-c))))))
-  (consonant-ext (set C @-1) (cond (NST (shift after-c))))
+		   (1 (set C @-1) (set IC 1) (cond (NST (shift after-c))))))
+  (consonant-ext (set C @-1) (set IC 1) (cond (NST (shift after-c))))
   (consonant-or-tone-mark
    (check-initial)
    (cond ((| (= @-1 ?f) (= @-1 ?j) (= @-1 ?z) ; Invalid beginning consonants
              (= @-1 ?F) (= @-1 ?J) (= @-1 ?Z)) (shift temporary-escape))
 	 (BAD (shift temporary-escape))
-         (1 (set C @-1) (cond (NST (shift after-c))))))
+         (1 (set C @-1) (set IC 1) (cond (NST (shift after-c))))))
 
   ;; Mark M remembers the preedit position after the last vowel.
   (vowel (mark M) (set V-2 V-1) (set V-1 @-1) (shift after-v))
   (vowel-ext (mark M) (set V-2 V-1) (set V-1 @-1) (shift after-v))
   (temporary-escape (shift temporary-escape))
   (permanent-escape (shift escape-in-normal-mode))
-  (smart-quotes))
+  (smart-quotes (set IC 0)))
 
  ;; The state shifted to when an initial consonants is typed and
  ;; surrounding text is not supported.

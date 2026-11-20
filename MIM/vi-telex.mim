@@ -209,7 +209,9 @@ If the value is 1, Backspace key undoes the previous key
   (letter-q)
   (cond ((& (! DPRE) QL)
 	 (move @>) (restore-keys))
-	((| (= P ?d) (= P ?D))
+	;; C is the d only when it is the sole initial consonant; no
+	;; Vietnamese initial is d and another consonant (dried, dwarfed).
+	((& (| (= P ?d) (= P ?D)) (= P C))
 	 (cond ((! (| NST DPRE)) (set D-MOVED P)))
 	 (delete @-1)
 	 (cond ((= P ?d) (insert ?đ) (set C ?đ)) (1 (insert ?Đ) (set C ?Đ)))

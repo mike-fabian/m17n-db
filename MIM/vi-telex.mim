@@ -180,22 +180,37 @@ If the value is 1, Backspace key undoes the previous key
 	(1 (fix-uo-before-consonant) (handle-mark)
 	   (set C-AFTER-V 1) (shift after-vc))))
 
+ ;; QL is 1 if Q is a letter; punctuation such as a curly quote or a
+ ;; dash is not.
+ (letter-q
+  (set QL (| (& (>= Q ?A) (<= Q ?Z)) (& (>= Q ?a) (<= Q ?z))
+	       (& (>= Q 192) (<= Q 591) (! (= Q 215)) (! (= Q 247)))
+	       (& (>= Q 768) (<= Q 1327)) (& (>= Q 7680) (<= Q 7935)))))
+
+ ;; Shift to after-c, keeping the initial in the preedit, when surrounding
+ ;; text is not supported or the word starts with d: some apps (Chromium,
+ ;; LibreOffice) do not delete committed text, which late-d would need.
+ (keep-initial
+  (set DPRE (& (! NST) (& (! IC) (| (= C ?d) (= C ?D)))))
+  (set IC 1)
+  (cond ((| NST DPRE) (shift after-c))))
+
  ;; A d typed after the vowels makes an initial d into đ (did -> đi,
  ;; dangd -> đang), and a second one makes it d again (didd -> did).
  (late-d
-  ;; With surrounding text the initial was committed, and is moved into
+  ;; An initial d kept in the preedit (DPRE) starts the word.  Otherwise,
+  ;; with surrounding text the initial was committed, and is moved into
   ;; the preedit here; D-MOVED keeps it for restore-keys.
   (move @<)
-  (cond ((| NST D-MOVED) (move @+)))
+  (cond ((| NST DPRE D-MOVED) (move @+)))
   (set P @-1) (set Q @-2)
   ;; A letter before the d means it is not the initial; punctuation such
   ;; as a curly quote or a dash does not.
-  (cond ((| (& (>= Q ?A) (<= Q ?Z)) (& (>= Q ?a) (<= Q ?z))
-	    (& (>= Q 192) (<= Q 591) (! (= Q 215)) (! (= Q 247)))
-	    (& (>= Q 768) (<= Q 1327)) (& (>= Q 7680) (<= Q 7935)))
+  (letter-q)
+  (cond ((& (! DPRE) QL)
 	 (move @>) (restore-keys))
 	((| (= P ?d) (= P ?D))
-	 (cond ((! NST) (set D-MOVED P)))
+	 (cond ((! (| NST DPRE)) (set D-MOVED P)))
 	 (delete @-1)
 	 (cond ((= P ?d) (insert ?đ) (set C ?đ)) (1 (insert ?Đ) (set C ?Đ)))
 	 (move @>))
@@ -268,7 +283,8 @@ If the value is 1, Backspace key undoes the previous key
   ;; typed after vowel.  NST is 1 iff surrounding text is not supported.
   ;; IC is 1 when C holds an initial consonant typed in this word.
   (t (set V-1 0) (set V-2 0) (set V-3 0) (set C-AFTER-V 0)
-     (set SELECT 0) (set STOP 0) (set D-MOVED 0) (set NST (= @-0 -2))
+     (set SELECT 0) (set STOP 0) (set D-MOVED 0) (set DPRE 0)
+     (set NST (= @-0 -2))
      ;; Backspace may have emptied the word without ending it; the
      ;; initial consonants typed so far then still count.
      (cond ((! KEEP-BSEEN) (set C @-1) (set IC 0) (set BSEEN 0)))
@@ -276,14 +292,14 @@ If the value is 1, Backspace key undoes the previous key
 
   (consonant (check-initial)
 	     (cond (BAD (shift temporary-escape))
-		   (1 (set C @-1) (set IC 1) (cond (NST (shift after-c))))))
-  (consonant-ext (set C @-1) (set IC 1) (cond (NST (shift after-c))))
+		   (1 (set C @-1) (keep-initial))))
+  (consonant-ext (set C @-1) (keep-initial))
   (consonant-or-tone-mark
    (check-initial)
    (cond ((| (= @-1 ?f) (= @-1 ?j) (= @-1 ?z) ; Invalid beginning consonants
              (= @-1 ?F) (= @-1 ?J) (= @-1 ?Z)) (shift temporary-escape))
 	 (BAD (shift temporary-escape))
-         (1 (set C @-1) (set IC 1) (cond (NST (shift after-c))))))
+         (1 (set C @-1) (keep-initial))))
 
   ;; Mark M remembers the preedit position after the last vowel.
   (vowel (mark M) (set V-2 V-1) (set V-1 @-1) (shift after-v))
@@ -293,12 +309,16 @@ If the value is 1, Backspace key undoes the previous key
   (smart-quotes (set IC 0)))
 
  ;; The state shifted to when an initial consonants is typed and
- ;; surrounding text is not supported.
+ ;; surrounding text is not supported, or the initial is d.
  (after-c
   (consonant (check-initial)
 	     (cond (BAD (shift temporary-escape)) (1 (set C @-1))))
   (consonant-or-tone-mark
-   (check-initial) (cond (BAD (shift temporary-escape)) (1 (set C @-1))))
+   (check-initial)
+   (cond ((| (= @-1 ?f) (= @-1 ?j) (= @-1 ?z) ; Invalid in initial consonants
+	     (= @-1 ?F) (= @-1 ?J) (= @-1 ?Z)) (shift temporary-escape))
+	 (BAD (shift temporary-escape))
+	 (1 (set C @-1))))
   (vowel (mark M) (set V-2 V-1) (set V-1 @-1) (shift after-v))
   (vowel-ext (mark M) (set V-2 V-1) (set V-1 @-1) (shift after-v)))
 

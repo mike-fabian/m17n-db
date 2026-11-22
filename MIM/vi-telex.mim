@@ -188,10 +188,10 @@ If the value is 1, Backspace key undoes the previous key
 	       (& (>= Q 768) (<= Q 1327)) (& (>= Q 7680) (<= Q 7935)))))
 
  ;; Shift to after-c, keeping the initial in the preedit, when surrounding
- ;; text is not supported or the word starts with d: some apps (Chromium,
+ ;; text is not supported or the word starts with d or đ: some apps (Chromium,
  ;; LibreOffice) do not delete committed text, which late-d would need.
  (keep-initial
-  (set DPRE (& (! NST) (& (! IC) (| (= C ?d) (= C ?D)))))
+  (set DPRE (& (! NST) (& (! IC) (| (= C ?d) (= C ?D) (= C ?đ) (= C ?Đ)))))
   (set IC 1)
   (cond ((| NST DPRE) (shift after-c))))
 
@@ -207,11 +207,10 @@ If the value is 1, Backspace key undoes the previous key
   ;; A letter before the d means it is not the initial; punctuation such
   ;; as a curly quote or a dash does not.
   (letter-q)
-  (cond ((& (! DPRE) QL)
+  ;; No Vietnamese initial is d or đ and another consonant (dried, dndid).
+  (cond ((| (& (! DPRE) QL) C2)
 	 (move @>) (restore-keys))
-	;; C is the d only when it is the sole initial consonant; no
-	;; Vietnamese initial is d and another consonant (dried, dwarfed).
-	((& (| (= P ?d) (= P ?D)) (= P C))
+	((| (= P ?d) (= P ?D))
 	 (cond ((! (| NST DPRE)) (set D-MOVED P)))
 	 (delete @-1)
 	 (cond ((= P ?d) (insert ?đ) (set C ?đ)) (1 (insert ?Đ) (set C ?Đ)))
@@ -285,7 +284,7 @@ If the value is 1, Backspace key undoes the previous key
   ;; typed after vowel.  NST is 1 iff surrounding text is not supported.
   ;; IC is 1 when C holds an initial consonant typed in this word.
   (t (set V-1 0) (set V-2 0) (set V-3 0) (set C-AFTER-V 0)
-     (set SELECT 0) (set STOP 0) (set D-MOVED 0) (set DPRE 0)
+     (set SELECT 0) (set STOP 0) (set D-MOVED 0) (set DPRE 0) (set C2 0)
      (set NST (= @-0 -2))
      ;; Backspace may have emptied the word without ending it; the
      ;; initial consonants typed so far then still count.
@@ -313,16 +312,18 @@ If the value is 1, Backspace key undoes the previous key
  ;; The state shifted to when an initial consonants is typed and
  ;; surrounding text is not supported, or the initial is d.
  (after-c
+  ;; C2 is 1 once a second initial consonant is typed.
   (consonant (check-initial)
-	     (cond (BAD (shift temporary-escape)) (1 (set C @-1))))
+	     (cond (BAD (shift temporary-escape)) (1 (set C @-1) (set C2 1))))
   (consonant-or-tone-mark
    (check-initial)
    (cond ((| (= @-1 ?f) (= @-1 ?j) (= @-1 ?z) ; Invalid in initial consonants
 	     (= @-1 ?F) (= @-1 ?J) (= @-1 ?Z)) (shift temporary-escape))
 	 (BAD (shift temporary-escape))
-	 (1 (set C @-1))))
+	 (1 (set C @-1) (set C2 1))))
   (vowel (mark M) (set V-2 V-1) (set V-1 @-1) (shift after-v))
-  (vowel-ext (mark M) (set V-2 V-1) (set V-1 @-1) (shift after-v)))
+  (vowel-ext (mark M) (set V-2 V-1) (set V-1 @-1) (shift after-v))
+  (temporary-escape (shift temporary-escape)))
 
  ;; The state shifted to when a vowel is typed.
  (after-v

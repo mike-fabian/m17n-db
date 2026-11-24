@@ -1,3 +1,11 @@
+2026-11-24  nguyenphivn <19565657+nguyenphivn@users.noreply.github.com>
+
+	* MIM/vi-telex.mim: improvements by nguyenphivn <vietphi.dang@gmail.com>:
+	- check the initial pair against the consonant typed last
+	- keep an initial d in the preedit for late-d
+	- late-d only for a d that is the sole initial
+	- fix late-d and escapes with the initial in the preedit
+
 2026-11-17  Mike FABIAN  <mfabian@redhat.com>
 
 	* MIM/bn-jatiya.mim: Add new layout created by "Omi Azad" <omi@ekushey.org>

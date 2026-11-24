@@ -6,6 +6,17 @@ Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013
 See the end for copying conditions.
 Copyright (C) 2015-2026 Kenichi Handa <handa@gnu.org>
 
+* Changes in the m17n database 1.8.19
+
+** Changes in input methods.
+
+vi-telex.mim: improvements by nguyenphivn <vietphi.dang@gmail.com>:
+    - check the initial pair against the consonant typed last
+    - keep an initial d in the preedit for late-d
+    - late-d only for a d that is the sole initial
+    - fix late-d and escapes with the initial in the preedit
+
+
 * Changes in the m17n database 1.8.18
 
 ** New input methods are added.

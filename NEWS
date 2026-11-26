@@ -6,6 +6,28 @@ Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013
 See the end for copying conditions.
 Copyright (C) 2015-2026 Kenichi Handa <handa@gnu.org>
 
+* Changes in the m17n database 1.8.20
+
+** Changes in input methods.
+
+math-latex.mim: improvements by Giuseppe Castagna <castagnag@gmail.com>
+   - Add 357 commands taken from my LaTeX table for ibus-table: arrows,
+      relations, operators, letterlike symbols, fractions, Greek variants,
+      card suits, etc.  Names follow LaTeX/amssymb; symbols that had no
+      LaTeX name get their unicode-math name (\arceq, \questeq, \smallin...).
+    - Subscripts and superscripts can be typed directly (_1, ^2, _x, ^n...),
+      also when with-backslash-prefix is 1, through new starter3 and
+      scripts maps and a rule in the init state.  \_ and \^ give the
+      plain characters, also before a digit (\_1 gives _1).
+    - Change eight commands to the symbol LaTeX prints: \epsilon (ϵ, ε is
+      \varepsilon), \phi (ϕ, φ is \varphi), \Cup (⋓, n-ary union is
+      \bigcup), \ll (≪), \gg (≫), \preceq (⪯, ≼ is \preccurlyeq),
+      \succeq (⪰, ≽ is \succcurlyeq), \cdot (U+22C5, the old U+00B7 is
+      \cdotp).
+    - Regenerate the filler map from the full key list; this also adds 25
+      prefixes that were already missing (e.g. for \because, \therefore).
+
+
 * Changes in the m17n database 1.8.19
 
 ** Changes in input methods.

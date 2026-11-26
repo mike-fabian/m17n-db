@@ -1,4 +1,34 @@
-2026-11-24  nguyenphivn <19565657+nguyenphivn@users.noreply.github.com>
+2026-11-26  Giuseppe Castagna <castagnag@gmail.com>
+
+	* MIM/math-latex.mim: fixes by Giuseppe Castagna <castagnag@gmail.com>
+	- \_ and \^ followed by a character that has a subscript or
+	  superscript form gave that form (\_1 gave ₁): the _X and ^X
+	  entries are moved to a new map "scripts", used only in state
+	  main1, so that \_1 gives _1.
+	- Follow LaTeX for \phi (ϕ) and \varphi (φ), \vDash (⊨) and
+	  \models (⊧), \eqslantless (⪕), \eqslantgtr (⪖), \preceq (⪯),
+	  \succeq (⪰), \amalg (⨿).
+	- Add \eqless (⋜), \eqgtr (⋝) and \coprod (∐), which give the
+	  characters that \eqslantless, \eqslantgtr and \amalg gave.
+	- Regenerate the filler map (8 new prefixes).
+
+2026-11-25  Giuseppe Castagna <castagnag@gmail.com>
+
+	* MIM/math-latex.mim: improvements by Giuseppe Castagna <castagnag@gmail.com>
+	- Add 354 commands taken from my LaTeX table for ibus-table: arrows,
+	  relations, operators, letterlike symbols, fractions, Greek variants,
+	  card suits, etc.  Names follow LaTeX/amssymb; symbols that had no
+	  LaTeX name get their unicode-math name (\arceq, \questeq, \smallin...).
+	- Subscripts and superscripts can be typed directly (_1, ^2, _x, ^n...),
+	  also when with-backslash-prefix is 1, through a new starter3 map and
+	  a rule in the init state.  \_ and \^ give the plain characters.
+	- Change five commands to the symbol LaTeX prints: \epsilon (ϵ, ε is
+	  \varepsilon), \Cup (⋓, n-ary union is \bigcup), \ll (≪), \gg (≫),
+	  \cdot (U+22C5, the old U+00B7 is \cdotp).
+	- Regenerate the filler map from the full key list; this also adds 25
+	  prefixes that were already missing (e.g. for \because, \therefore).
+
+2026-11-24  nguyenphivn  <19565657+nguyenphivn@users.noreply.github.com>
 
 	* MIM/vi-telex.mim: improvements by nguyenphivn <vietphi.dang@gmail.com>:
 	- check the initial pair against the consonant typed last
@@ -13,7 +43,7 @@
 	* MIM/bn-national-jatiya: Mention that `bn-national-jatiya` is
 	obsolete and replaced by `bn-jatiya` in the description
 
-2026-11-17  nguyenphivn <vietphi.dang@gmail.com>
+2026-11-17  nguyenphivn  <vietphi.dang@gmail.com>
 
 	* MIM/vi-telex.mim, MIM/vi-base.mim, MIM/vi-vni.mim: Lots of
 	improvements by nguyenphivn <vietphi.dang@gmail.com>

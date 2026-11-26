@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: bugs-m17n-lib@m17n.org\n"
-"POT-Creation-Date: 2026-10-20 11:35+0200\n"
+"POT-Creation-Date: 2026-11-25 15:56+0100\n"
 "PO-Revision-Date: 2006-09-21 23:16+0900\n"
 "Last-Translator: Kenichi Handa <handa@m17n.org>\n"
 "Language-Team: ja <ja@li.org>\n"
@@ -16,14 +16,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: MIM/bn-national-jatiya.mim:67
+#: MIM/bn-national-jatiya.mim:79
 msgid ""
 "If this variable is 1 (the default), automatic vowel forming is used.\n"
 "For example, a dependent vowel like া is automatically converted to\n"
 "the independent form আ if it is not typed after a consonant."
 msgstr ""
 
-#: MIM/bo-ewts.mim:36
+#: MIM/bo-ewts.mim:37
 msgid ""
 "Flag to tell whether or not to generate precomposed characters.\n"
 "If 1 (the default), generate precomposed characters (i.e. NFC) if available "
@@ -49,33 +49,35 @@ msgid ""
 "because ml-pn-c changes some punctuation marks from their locations on\n"
 "the QWERTY layout.\n"
 "\n"
-"See the paper at http://languageinindia.com/july2023/"
-"drajithnewkeyboardsmalayalamfinal1.html\n"
+"See the paper at\n"
+"http://languageinindia.com/july2023/drajithnewkeyboardsmalayalamfinal1.html\n"
 "Original Author : Ajith R <ajithramayyan at yahoo dot co dot in>\n"
 "See https://ajithramayyan.gitlab.io/puthunira/ for usage\n"
-"നിർദ്ദേശങ്ങള്‍ക്കായ് https://ajithramayyan.gitlab.io/puthunira/ എന്ന കണ്ണി കാണുക\n"
+"നിർദ്ദേശങ്ങള്‍ക്കായ്\n"
+"https://ajithramayyan.gitlab.io/puthunira/\n"
+"എന്ന കണ്ണി കാണുക\n"
 msgstr ""
 
-#: MIM/eo-h-fundamente.mim:29
+#: MIM/eo-h-fundamente.mim:27
 msgid ""
 "Meant for writing Esperanto-letters using Zamenhof's fundamental system."
 msgstr ""
 
-#: MIM/eo-h-sistemo.mim:29
+#: MIM/eo-h-sistemo.mim:27
 msgid "Meant for writing Esperanto-letters adding h's."
 msgstr ""
 
-#: MIM/eo-plena.mim:29
+#: MIM/eo-plena.mim:27
 msgid ""
 "Meant for writing Esperanto-letters with the fundamental system and the X-"
 "system, like the default of EK."
 msgstr ""
 
-#: MIM/eo-q-sistemo.mim:29
+#: MIM/eo-q-sistemo.mim:27
 msgid "Meant for writing Esperanto-letters adding q's."
 msgstr ""
 
-#: MIM/eo-x-sistemo.mim:29
+#: MIM/eo-x-sistemo.mim:27
 msgid "Meant for writing Esperanto-letters adding x's (the X-system)."
 msgstr ""
 
@@ -380,9 +382,10 @@ msgid ""
 "😻)\n"
 "   \"/:(\" -> unhappy faces (e.g. 😢😩😡😭😪 🙈🙊🙉)\n"
 "   \"/<3\" -> hearts (e.g. ♥️🤍️💔💖💘 💓💞💕💌💑😍😘)\n"
-"   \"/*\"  -> flowers and stars (e.g. 🌹💐❁✽ ★☆⭐🌟💫✨🌠✯🌃 ☀❂✷✸✹🌞⛅🌅🌇 💡"
-"☄⚡ϟ🔥🌈🎆 ❄❆❅)\n"
-"   \"/&&\" -> spiritual (e.g. 💀☠️👹👼😇 ☸️✡️☯️✝️☦️☪️ 🕉️🛐☮️🕎🪯 💒⛪🙈🙊🙉 卍卐☯☬✙)\n"
+"   \"/*\"  -> flowers and stars (e.g. 🌹💐❁✽ ★☆⭐🌟💫✨🌠✯🌃 ☀❂✷✸✹🌞⛅🌅🌇\n"
+"                             💡☄⚡ϟ🔥🌈🎆 ❄❆❅)\n"
+"   \"/&&\" -> spiritual (e.g. 💀☠️👹👼😇 ☸️✡️☯️✝️☦️☪️ 🕉️🛐☮️🕎🪯\n"
+"                             💒⛪🙈🙊🙉 卍卐☯☬✙)\n"
 "   \"/xx\" -> checks (e.g. ✔✘☐☑☒)\n"
 "   \"/$\" -> currency (e.g. €£¥﷼₱₹ 💰💵💶💴💷)\n"
 "   \"/@\" -> legal/text signs (e.g ©®™§¶†‡)\n"
@@ -404,7 +407,7 @@ msgid ""
 "  <http://www.nongnu.org/m17n/manual-en/m17nDBData.html#mim-list>"
 msgstr ""
 
-#: MIM/math-latex.mim:35
+#: MIM/math-latex.mim:42
 msgid ""
 "If this variable is 1 (the default is 1), the latex commands are\n"
 "recognized only when you type them after backslash '\\'.  In other words,\n"
@@ -415,28 +418,29 @@ msgstr ""
 #: MIM/ml-pn-c.mim:27
 msgid ""
 "Puthu Nira Charutha\n"
-"See the paper at http://languageinindia.com/july2023/"
-"drajithnewkeyboardsmalayalamfinal1.html\n"
+"\n"
+"See the paper at\n"
+"http://languageinindia.com/july2023/drajithnewkeyboardsmalayalamfinal1.html\n"
 "Original Author : Ajith R <ajithramayyan at yahoo dot co dot in>\n"
-"See https://ajithramayyan.gitlab.io/puthunira/ for usage\n"
-"നിർദ്ദേശങ്ങള്‍ക്കായ് https://ajithramayyan.gitlab.io/puthunira/ എന്ന കണ്ണി കാണുക\n"
+"See https://ajithramayyan.gitlab.io/puthunira/ for usage നിർദ്ദേശങ്ങള്‍ക്കായ്\n"
+"https://ajithramayyan.gitlab.io/puthunira/ എന്ന കണ്ണി കാണുക\n"
 msgstr ""
 
-#: MIM/ml-pn-c.mim:38
+#: MIM/ml-pn-c.mim:40
 msgid "If this variable is 1 (the default), the geminate of nga ങ്ങ is used"
 msgstr ""
 
-#: MIM/ml-pn-c.mim:41
+#: MIM/ml-pn-c.mim:43
 msgid "If this variable is 1 (the default), the geminate of nja ഞ്ഞ is used"
 msgstr ""
 
-#: MIM/ml-pn-c.mim:44
+#: MIM/ml-pn-c.mim:46
 msgid ""
 "If this variable is 1, only atomic chillu are used; otherwise legacy "
 "encoding used when defined (the default)"
 msgstr ""
 
-#: MIM/ml-pn-c.mim:47
+#: MIM/ml-pn-c.mim:49
 msgid ""
 "If this variable is 1, archaic form of au ൌ is used; otherwise the common "
 "form ൗ is used (the default). The position of length mark ൗ is interchanged "
@@ -492,8 +496,9 @@ msgstr ""
 
 #: MIM/tai-sonla.mim:30
 msgid ""
-"Tai Viet input method using the phonetic key sequence with the Tai Son La "
-"keyboard layout.\n"
+"Tai Viet input method using the phonetic key sequence\n"
+"with the Tai Son La keyboard layout.\n"
+"\n"
 "The phonetic key sequence means that you type a syllable in this order:\n"
 "  C W? V v? F? T?\n"
 "where\n"
@@ -564,9 +569,9 @@ msgstr ""
 #: MIM/vi-tcvn.mim:36 MIM/vi-telex.mim:36 MIM/vi-viqr.mim:36 MIM/vi-vni.mim:36
 msgid ""
 "Flag to control tone mark position in equivocal cases.\n"
-"If this variable is 0 (the default), put tone mark on the first vowel\n"
-"in such equivocal cases as \"oa\", \"oe\", \"uy\".\n"
-"Otherwise, put tone mark on the last vowel."
+"If this variable is 1 (the default), put tone mark on the last vowel\n"
+"in such equivocal cases as \"oa\", \"oe\", \"uy\" (e.g. \"hoà\").\n"
+"If the value is 0, put tone mark on the first vowel (e.g. \"hòa\")."
 msgstr ""
 
 #: MIM/vi-tcvn.mim:43 MIM/vi-telex.mim:43 MIM/vi-viqr.mim:43 MIM/vi-vni.mim:43
